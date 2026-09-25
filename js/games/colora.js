@@ -1,4 +1,4 @@
-/* Colora con Lena — disegni a zone: scegli un colore e tocca una zona per riempirla. */
+/* Colora con Lena / Colorie avec Lena — disegni a zone: scegli un colore e tocca una zona per riempirla. Bilingue FR/IT. */
 (() => {
   const { h, say, sfx, pick, wait } = App;
 
@@ -174,10 +174,47 @@
     },
   ];
 
-  const TUT = ['Scegli un colore qui sotto.', 'Poi tocca il disegno per colorarlo!', 'Quando hai finito, tocca la stella!'];
+  /* traduzioni francesi: nomi dei colori, dei disegni e delle zone delle sfide */
+  const PAL_FR = {
+    Rosso: 'Rouge', Arancione: 'Orange', Giallo: 'Jaune', Verde: 'Vert', Azzurro: 'Bleu clair', Blu: 'Bleu', Viola: 'Violet',
+    Rosa: 'Rose', Marrone: 'Marron', Grigio: 'Gris', Nero: 'Noir', Bianco: 'Blanc', 'Arcobaleno magico': 'Arc-en-ciel magique',
+    'Glitter oro': 'Paillettes dorées', 'Glitter rosa': 'Paillettes roses', 'Glitter argento': 'Paillettes argentées', 'Glitter viola': 'Paillettes violettes',
+  };
+  const DR_FR = {
+    sole: 'Le soleil', casa: 'La maison', fiore: 'La fleur', farfalla: 'Le papillon', pesce: 'Le poisson', gatto: 'Le chat',
+    unicorno: 'La licorne', macchina: 'La voiture', torta: 'Le gâteau', arcobaleno: "L'arc-en-ciel", gelato: 'La glace', coniglio: 'Le petit lapin',
+  };
+  const Q_FR = {
+    'il cielo': 'le ciel', 'il prato': "l'herbe", 'il sole': 'le soleil', 'il tetto': 'le toit', 'la porta': 'la porte', 'lo stelo': 'la tige',
+    'il vaso': 'le pot', 'il centro del fiore': 'le cœur de la fleur', 'il corpo della farfalla': 'le corps du papillon', 'il mare': 'la mer',
+    'la sabbia': 'le sable', "l'alga": "l'algue", 'il pesce': 'le poisson', 'la coda': 'la queue', 'il gatto': 'le chat', 'il naso': 'le nez',
+    'la criniera': 'la crinière', 'il muso': 'le museau', 'il corno': 'la corne', 'la strada': 'la route', 'la macchina': 'la voiture',
+    'il finestrino': 'la vitre', 'la ruota': 'la roue', 'il faro': 'le phare', 'il piatto': "l'assiette", 'la glassa': 'le glaçage',
+    'la fiammella': 'la flamme', "la prima striscia dell'arcobaleno": "la première bande de l'arc-en-ciel", 'il cono': 'le cornet',
+    'il gelato': 'la glace', 'la ciliegina': 'la cerise', "l'orecchio": "l'oreille", 'la carota': 'la carotte',
+  };
+  const TX = {
+    it: {
+      tut: ['Scegli un colore qui sotto.', 'Poi tocca il disegno per colorarlo!', 'Quando hai finito, tocca la stella!'],
+      choose: 'Scegli un disegno da colorare!', chooseShow: 'Scegli un disegno! 🖍️', galBtn: '🖼️ La mia galleria', galTitle: '🖼️ La galleria di Lena',
+      colorBtn: '🖍️ Colora', more: 'Colora ancora un pochino!', exact: 'Esatto! Bravissima!', saved: "Che bel disegno! L'ho messo nella tua galleria.",
+      gal: 'Ecco la tua galleria!', galEmpty: 'Ancora nessun disegno: coloriamone uno!', restart: 'Vuoi ricominciare?', done: 'Finito! ⭐',
+      ch: (q, c) => `Colora ${q} di ${c.toLowerCase()}!`,
+    },
+    fr: {
+      tut: ['Choisis une couleur ici en bas.', 'Puis touche le dessin pour le colorier !', "Quand tu as fini, touche l'étoile !"],
+      choose: 'Choisis un dessin à colorier !', chooseShow: 'Choisis un dessin ! 🖍️', galBtn: '🖼️ Ma galerie', galTitle: '🖼️ La galerie de Lena',
+      colorBtn: '🖍️ Colorier', more: 'Colorie encore un petit peu !', exact: 'Exactement ! Bravo !', saved: 'Quel beau dessin ! Je le mets dans ta galerie.',
+      gal: 'Voici ta galerie !', galEmpty: 'Pas encore de dessin : colorions-en un !', restart: 'Tu veux recommencer ?', done: 'Fini ! ⭐',
+      ch: (q, c) => `Colorie ${Q_FR[q] || q} en ${(PAL_FR[c] || c).toLowerCase()} !`,
+    },
+  };
+  const tx = () => TX[App.lang];
+  const pn = (p, l = App.lang) => (l === 'fr' ? PAL_FR[p.n] || p.n : p.n);
+  const dn = (dr, l = App.lang) => (l === 'fr' ? DR_FR[dr.id] : dr.name);
+  const bang = (l = App.lang) => (l === 'fr' ? ' !' : '!');
   const svgOf = dr => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">${DEFS}` +
     `<g stroke="#2b2b2b" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">${dr.svg()}</g></svg>`;
-  const lc = s => s.toLowerCase();
 
   function toPng(svgEl) {
     return new Promise(res => {
@@ -198,16 +235,15 @@
   }
 
   App.registerGame({
-    id: 'colora', title: 'Colora con Lena', short: 'Colora', icon: '🖍️',
-    phrases: () => {
-      const out = [...TUT, 'Scegli un disegno da colorare!', 'Colora ancora un pochino!', 'Esatto! Bravissima!',
-        'Che bel disegno! L\'ho messo nella tua galleria.', 'Ecco la tua galleria!', 'Ancora nessun disegno: coloriamone uno!',
-        'Vuoi ricominciare?'];
-      PAL.forEach(p => out.push(`${p.n}!`));
+    id: 'colora', title: { fr: 'Colorie avec Lena', it: 'Colora con Lena' }, short: 'Colora', icon: '🖍️',
+    phrases: l => {
+      const T = TX[l];
+      const out = [...T.tut, T.choose, T.more, T.exact, T.saved, T.gal, T.galEmpty, T.restart];
+      PAL.forEach(p => out.push(pn(p, l) + bang(l)));
       DRAWINGS.forEach(dr => {
-        out.push(`${dr.name}!`);
+        out.push(dn(dr, l) + bang(l));
         const tmp = dr.svg().matchAll(/data-q="([^"]+)" data-c="([^"]+)"/g);
-        for (const m of tmp) out.push(`Colora ${m[1].replace(/&#39;/g, "'")} di ${lc(m[2])}!`);
+        for (const m of tmp) out.push(T.ch(m[1].replace(/&#39;/g, "'"), m[2]));
       });
       return out;
     },
@@ -237,9 +273,9 @@
           b.onclick = () => { sfx.pop(); color(dr); };
           grid.append(b);
         });
-        stage.append(h('div', { class: 'prompt' }, 'Scegli un disegno! 🖍️'),
-          h('button', { class: 'soft-btn col-gal-btn', onclick: gallery }, '🖼️ La mia galleria'), grid);
-        say('Scegli un disegno da colorare!');
+        stage.append(h('div', { class: 'prompt' }, tx().chooseShow),
+          h('button', { class: 'soft-btn col-gal-btn', onclick: gallery }, tx().galBtn), grid);
+        say(tx().choose);
       }
 
       function gallery() {
@@ -252,15 +288,16 @@
               h('div', { class: 'row', style: 'margin-top:14px' }, h('button', { class: 'big-btn', onclick: () => close() }, '👍'))]);
           },
         }, h('img', { src: dw.url, alt: '', style: 'width:100%;height:100%;object-fit:cover;border-radius:14px' }))));
-        stage.append(h('div', { class: 'prompt' }, '🖼️ La galleria di Lena'),
-          h('button', { class: 'soft-btn col-gal-btn', onclick: () => { sfx.pop(); picker(); } }, '🖍️ Colora'), grid);
-        say(list.length ? 'Ecco la tua galleria!' : 'Ancora nessun disegno: coloriamone uno!');
+        stage.append(h('div', { class: 'prompt' }, tx().galTitle),
+          h('button', { class: 'soft-btn col-gal-btn', onclick: () => { sfx.pop(); picker(); } }, tx().colorBtn), grid);
+        say(list.length ? tx().gal : tx().galEmpty);
       }
 
       /* ---------- colorare ---------- */
       function color(dr) {
         stage.innerHTML = '';
-        say(`${dr.name}!`);
+        App.nextLang();
+        say(dn(dr) + bang());
         let cur = PAL[0];
         const undo = [];
         const board = h('div', { class: 'col-board', html: svgOf(dr) });
@@ -283,7 +320,7 @@
             class: 'col-sw' + (p.gl ? ' glitter-sw' : '') + (p === cur ? ' sel' : ''), 'aria-label': p.n,
             style: p.rb ? `background:linear-gradient(180deg,${RB.join(',')})` : p.gl ? `--g1:${p.gl.bg[0]};--g2:${p.gl.bg[1]};--g3:${p.gl.bg[2]}` : `background:${p.c}`,
             onclick: () => {
-              cur = p; sfx.tap(); say(`${p.n}!`);
+              cur = p; sfx.tap(); say(pn(p) + bang());
               swatches.forEach(s => s.classList.toggle('sel', s === b));
             },
           });
@@ -305,7 +342,9 @@
             challenge = null;
             sfx.ding();
             App.floatAt(e.clientX, e.clientY, '⭐');
-            say('Esatto! Bravissima!');
+            say(tx().exact);
+            App.addStars(1, e.clientX, e.clientY);
+            App.track(null, null, true);
           }
         });
 
@@ -316,7 +355,7 @@
             u[0].setAttribute('fill', u[1]); sfx.tap(); persist();
           } }, '↩️'),
           h('button', { class: 'icon-btn', 'aria-label': 'Ricomincia', onclick: () => {
-            say('Vuoi ricominciare?');
+            say(tx().restart);
             const close = App.modal([h('div', { class: 'big' }, '🗑️'), h('div', { class: 'row' },
               h('button', { class: 'big-btn', style: 'background:#4cd06b;box-shadow:0 8px 0 #2f9a4a', onclick: () => {
                 close(); regions.forEach(el => el.setAttribute('fill', '#ffffff')); undo.length = 0; persist(); sfx.boing();
@@ -324,18 +363,20 @@
               h('button', { class: 'big-btn', style: 'background:#ff6b6b;box-shadow:0 8px 0 #c94444', onclick: () => close() }, '✖️'))]);
           } }, '🗑️'),
           h('button', { class: 'icon-btn', 'aria-label': 'Disegni', onclick: () => { sfx.pop(); picker(); } }, '🎨'),
-          h('button', { class: 'big-btn col-done', onclick: finish }, 'Finito! ⭐'));
+          h('button', { class: 'big-btn col-done', onclick: finish }, tx().done));
 
         async function finish() {
           const colored = regions.filter(el => el.getAttribute('fill') !== '#ffffff').length;
-          if (colored < 3) { sfx.boing(); say('Colora ancora un pochino!'); return; }
+          if (colored < 3) { sfx.boing(); say(tx().more); return; }
           const blob = await toPng(svg);
           if (blob) await App.saveDrawing(blob, dr.name);
           delete st.paint[dr.id];
           st.colorDone = (st.colorDone || 0) + 1;
           App.save();
           App.confetti(90); sfx.win();
-          await say('Che bel disegno! L\'ho messo nella tua galleria.');
+          const dr0 = tools.querySelector('.col-done').getBoundingClientRect();
+          App.addStars(3, dr0.left + dr0.width / 2, dr0.top);
+          await say(tx().saved);
           if (!alive) return;
           if (st.colorDone % 2 === 0) { await App.reward(); if (!alive) return; }
           picker();
@@ -343,14 +384,14 @@
 
         stage.append(board, tools, pal);
         lastSteps = [
-          { text: TUT[0], icon: '🎨', action: 'tap', at: () => swatches[2], cap: 'top' },
-          { text: TUT[1], icon: '👆', action: 'tap', at: () => regions[Math.min(3, regions.length - 1)], cap: 'top' },
-          { text: TUT[2], icon: '⭐', action: 'tap', at: () => tools.querySelector('.col-done'), cap: 'top' },
+          { text: tx().tut[0], icon: '🎨', action: 'tap', at: () => swatches[2], cap: 'top' },
+          { text: tx().tut[1], icon: '👆', action: 'tap', at: () => regions[Math.min(3, regions.length - 1)], cap: 'top' },
+          { text: tx().tut[2], icon: '⭐', action: 'tap', at: () => tools.querySelector('.col-done'), cap: 'top' },
         ];
         App.intro('colora', lastSteps).then(async ran => {
           if (!alive || !challenge) return;
           if (!ran) await wait(1200);
-          if (alive && challenge) say(`Colora ${challenge.el.dataset.q} di ${lc(challenge.c.n)}!`);
+          if (alive && challenge) say(tx().ch(challenge.el.dataset.q, challenge.c.n));
         });
       }
 

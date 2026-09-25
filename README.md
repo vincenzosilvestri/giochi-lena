@@ -1,5 +1,7 @@
 # Giochi di Lena
 
+Bilingue francese/italiano: ogni gioco alterna un turno in 🇫🇷 e uno in 🇮🇹 (modificabile dal menu papà).
+
 App web installabile (PWA), senza pubblicità, che funziona offline. Contiene 5 giochi educativi per bambini di 5 anni.
 
 | Gioco | Cosa insegna |
@@ -33,7 +35,7 @@ Dopo ogni modifica cambia `VERSION` in `sw.js` (es. `lena-v2`). Poi fai commit e
 `python -m http.server 8765`, poi apri http://localhost:8765
 
 ## Voce
-Le frasi fisse sono file audio in `voice/`, generati con una voce neurale italiana (it-IT-IsabellaNeural). Le frasi che non sono nel catalogo, come i nomi delle foto, usano la voce del telefono.
+Le frasi fisse sono file audio in `voice/`, generati con voci neurali (it-IT-IsabellaNeural, fr-FR-DeniseNeural). Le frasi che non sono nel catalogo, come i nomi delle foto, usano la voce del telefono.
 
 Se aggiungi o cambi una frase nel codice (ricordati di inserirla anche in `phrases()` del gioco):
 ```

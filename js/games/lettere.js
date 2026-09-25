@@ -1,30 +1,60 @@
-/* Pesca le Lettere — riconoscere le lettere e l'iniziale delle parole, poi comporre un nome. */
+/* Pesca le Lettere / Pêche les lettres — riconoscere le lettere e l'iniziale delle parole, poi comporre un nome. Bilingue FR/IT. */
 (() => {
-  const { h, say, sfx, rint, pick, shuffle, wait } = App;
+  const { h, say, sfx, rint, pick, shuffle } = App;
   const LETTER_NAME = {
     A: 'a', B: 'bi', C: 'ci', D: 'di', E: 'e', F: 'effe', G: 'gi', H: 'acca', I: 'i', J: 'i lunga', K: 'cappa',
     L: 'elle', M: 'emme', N: 'enne', O: 'o', P: 'pi', Q: 'cu', R: 'erre', S: 'esse', T: 'ti', U: 'u', V: 'vu',
     W: 'doppia vu', X: 'ics', Y: 'ipsilon', Z: 'zeta',
   };
+  /* in italiano si dice il nome della lettera ("elle"), in francese la lettera stessa, letta dalla voce */
+  const ln = (L, l) => (l === 'it' ? LETTER_NAME[L] : L);
   const WORDS = {
-    A: [['Ape', '🐝'], ['Arancia', '🍊']], B: [['Balena', '🐳'], ['Banana', '🍌']], C: [['Casa', '🏠'], ['Cuore', '❤️']],
-    D: [['Dado', '🎲'], ['Delfino', '🐬']], E: [['Elefante', '🐘'], ['Erba', '🌿']], F: [['Fiore', '🌸'], ['Fragola', '🍓']],
-    G: [['Gatto', '🐱'], ['Gelato', '🍦']], I: [['Isola', '🏝️'], ['Igloo', '🧊']], L: [['Luna', '🌙'], ['Lena', '👧'], ['Leone', '🦁']],
-    M: [['Mela', '🍎'], ['Mucca', '🐮']], N: [['Nave', '🚢'], ['Neve', '❄️']], O: [['Orso', '🐻'], ['Occhiali', '👓']],
-    P: [['Pesce', '🐟'], ['Papà', '👨'], ['Palla', '⚽']], R: [['Rana', '🐸'], ['Razzo', '🚀']], S: [['Sole', '☀️'], ['Stella', '⭐']],
-    T: [['Topo', '🐭'], ['Torta', '🎂']], U: [['Uva', '🍇'], ['Uovo', '🥚']], V: [['Volpe', '🦊'], ['Vulcano', '🌋']],
-    Z: [['Zebra', '🦓'], ['Zucca', '🎃']],
+    it: {
+      A: [['Ape', '🐝'], ['Arancia', '🍊']], B: [['Balena', '🐳'], ['Banana', '🍌']], C: [['Casa', '🏠'], ['Cuore', '❤️']],
+      D: [['Dado', '🎲'], ['Delfino', '🐬']], E: [['Elefante', '🐘'], ['Erba', '🌿']], F: [['Fiore', '🌸'], ['Fragola', '🍓']],
+      G: [['Gatto', '🐱'], ['Gelato', '🍦']], I: [['Isola', '🏝️'], ['Igloo', '🧊']], L: [['Luna', '🌙'], ['Lena', '👧'], ['Leone', '🦁']],
+      M: [['Mela', '🍎'], ['Mucca', '🐮']], N: [['Nave', '🚢'], ['Neve', '❄️']], O: [['Orso', '🐻'], ['Occhiali', '👓']],
+      P: [['Pesce', '🐟'], ['Papà', '👨'], ['Palla', '⚽']], R: [['Rana', '🐸'], ['Razzo', '🚀']], S: [['Sole', '☀️'], ['Stella', '⭐']],
+      T: [['Topo', '🐭'], ['Torta', '🎂']], U: [['Uva', '🍇'], ['Uovo', '🥚']], V: [['Volpe', '🦊'], ['Vulcano', '🌋']],
+      Z: [['Zebra', '🦓'], ['Zucca', '🎃']],
+    },
+    fr: {
+      A: [['Abeille', '🐝'], ['Avion', '✈️']], B: [['Ballon', '🎈'], ['Baleine', '🐳']], C: [['Chat', '🐱'], ['Cœur', '❤️']],
+      D: [['Dauphin', '🐬'], ['Dé', '🎲']], E: [['Escargot', '🐌'], ['Enveloppe', '✉️']], F: [['Fleur', '🌸'], ['Fraise', '🍓']],
+      G: [['Gâteau', '🎂'], ['Girafe', '🦒']], I: [['Igloo', '🧊'], ['Iguane', '🦎']], L: [['Lune', '🌙'], ['Lena', '👧'], ['Lion', '🦁']],
+      M: [['Maison', '🏠'], ['Mouton', '🐑']], N: [['Nuage', '☁️'], ['Nez', '👃']], O: [['Oiseau', '🐦'], ['Orange', '🍊']],
+      P: [['Pomme', '🍎'], ['Papa', '👨'], ['Poisson', '🐟']], R: [['Renard', '🦊'], ['Robot', '🤖']], S: [['Soleil', '☀️'], ['Serpent', '🐍']],
+      T: [['Tortue', '🐢'], ['Tomate', '🍅']], U: [['Usine', '🏭']], V: [['Vache', '🐮'], ['Vélo', '🚲']],
+      Z: [['Zèbre', '🦓'], ['Zéro', '0️⃣']],
+    },
+  };
+  const DAD = { it: 'Papà', fr: 'Papa' };
+  const TX = {
+    it: {
+      find: (L, w) => `Pesca la ${ln(L, 'it')} di ${w}!`, iam: L => `Io sono la ${ln(L, 'it')}!`,
+      write: (n, L) => `Adesso scriviamo ${n}! Pesca la ${ln(L, 'it')}!`, first: L => `Prima la ${ln(L, 'it')}!`,
+      now: L => `Ora la ${ln(L, 'it')}!`, again: L => `Ancora la ${ln(L, 'it')}!`,
+      spelled: (w, n) => `${[...w].map(L => ln(L, 'it')).join(', ')}. ${n}! Hai scritto ${n}!`,
+      tut: ['Ascolta la lettera: la vedi anche qui in alto.', 'Poi tocca il pesce con la lettera giusta!',
+        'Scriviamo un nome! Le lettere vanno qui, in ordine.', 'Pesca le lettere una alla volta!'],
+    },
+    fr: {
+      find: (L, w) => `Attrape le ${L} comme ${w} !`, iam: L => `Moi, je suis le ${L} !`,
+      write: (n, L) => `On écrit ${n} ! Attrape le ${L} !`, first: L => `D'abord le ${L} !`,
+      now: L => `Maintenant le ${L} !`, again: L => `Encore le ${L} !`,
+      spelled: (w, n) => `${[...w].join(', ')}. ${n} ! Tu as écrit ${n} !`,
+      tut: ['Écoute la lettre : tu la vois aussi ici, en haut.', 'Puis touche le poisson avec la bonne lettre !',
+        'On écrit un prénom ! Les lettres vont ici, dans l\'ordre.', 'Attrape les lettres une par une !'],
+    },
   };
   const POOLS = [
     ['L', 'E', 'N', 'A'],
     ['L', 'E', 'N', 'A'],
     ['L', 'E', 'N', 'A', 'I', 'O', 'U', 'M', 'P'],
-    Object.keys(WORDS),
+    Object.keys(WORDS.it),
   ];
   const FISH_COLORS = ['#ff7eb6', '#ffb341', '#7bd96b', '#b28dff', '#ff6b6b', '#4fd1c5', '#f6c945'];
   const ROUND = 6;
-  const TUT = ['Ascolta la lettera: la vedi anche qui in alto.', 'Poi tocca il pesce con la lettera giusta!',
-    'Scriviamo un nome! Le lettere vanno qui, in ordine.', 'Pesca le lettere una alla volta!'];
   const norm = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase().replace(/[^A-Z]/g, '');
 
   function familyWords() {
@@ -39,16 +69,13 @@
   }
 
   App.registerGame({
-    id: 'lettere', title: 'Pesca le Lettere', short: 'Lettere', icon: '🎣', cls: 'sea',
-    phrases: () => {
-      const out = [...TUT];
-      Object.entries(WORDS).forEach(([L, list]) => list.forEach(([w]) => out.push(`Pesca la ${LETTER_NAME[L]} di ${w}!`)));
-      Object.values(LETTER_NAME).forEach(n => out.push(`Io sono la ${n}!`, `Prima la ${n}!`, `Ora la ${n}!`, `Ancora la ${n}!`));
-      [App.NAME, 'Papà'].forEach(shown => {
-        const word = norm(shown);
-        out.push(`Adesso scriviamo ${shown}! Pesca la ${LETTER_NAME[word[0]]}!`,
-          `${[...word].map(L => LETTER_NAME[L]).join(', ')}. ${shown}! Hai scritto ${shown}!`);
-      });
+    id: 'lettere', title: { fr: 'Pêche les lettres', it: 'Pesca le Lettere' }, short: 'Lettere', icon: '🎣', cls: 'sea',
+    phrases: l => {
+      const T = TX[l];
+      const out = [...T.tut];
+      Object.entries(WORDS[l]).forEach(([L, list]) => list.forEach(([w]) => out.push(T.find(L, w))));
+      Object.keys(LETTER_NAME).forEach(L => out.push(T.iam(L), T.first(L), T.now(L), T.again(L)));
+      [App.NAME, DAD[l]].forEach(n => { const w = norm(n); out.push(T.write(n, w[0]), T.spelled(w, n)); });
       return out;
     },
     start({ stage, addPill, setHelp }) {
@@ -127,31 +154,36 @@
       /* domanda: trova la lettera iniziale */
       function question() {
         if (!alive) return;
+        const l = App.nextLang(), T = TX[l];
         const pool = POOLS[Math.min(lv, POOLS.length - 1)].slice();
         const fam = lv >= 2 ? familyWords() : [];
         fam.forEach(([n]) => { const L = norm(n)[0]; if (L && !pool.includes(L)) pool.push(L); });
-        const T = pick(pool);
-        const options = (WORDS[T] || []).concat(fam.filter(([n]) => norm(n)[0] === T));
-        const [word, pic] = options.length ? pick(options) : [T, '🔤'];
-        const count = Math.min(3 + lv, 6);
-        const others = shuffle(Object.keys(WORDS).filter(x => x !== T));
-        const pref = shuffle(pool.filter(x => x !== T));
-        const letters = shuffle([T, T].concat(pref.concat(others).filter((x, i, a) => a.indexOf(x) === i).slice(0, count - 2)));
+        const TL = pick(pool);
+        const options = (WORDS[l][TL] || []).concat(fam.filter(([n]) => norm(n)[0] === TL));
+        const [word, pic] = options.length ? pick(options) : [TL, '🔤'];
+        const cnt = Math.min(3 + lv, 6);
+        const others = shuffle(Object.keys(WORDS.it).filter(x => x !== TL));
+        const pref = shuffle(pool.filter(x => x !== TL));
+        const letters = shuffle([TL, TL].concat(pref.concat(others).filter((x, i, a) => a.indexOf(x) === i).slice(0, cnt - 2)));
 
         prompt.innerHTML = '';
         prompt.append(h('span', { class: 'pic' }, pic), h('span', { class: 'word', html: `<b>${word[0]}</b>${word.slice(1)}` }));
         spawn(letters);
-        ask(`Pesca la ${LETTER_NAME[T]} di ${word}!`, 'lettere', [
-          { text: TUT[0], icon: '👂', action: 'tap', at: () => prompt },
-          { text: TUT[1], icon: '🐟', action: 'tap', at: () => (fish.find(f => f.L === T && !f.caught) || {}).el },
+        ask(T.find(TL, word), 'lettere', [
+          { text: T.tut[0], icon: '👂', action: 'tap', at: () => prompt },
+          { text: T.tut[1], icon: '🐟', action: 'tap', at: () => (fish.find(f => f.L === TL && !f.caught) || {}).el },
         ]);
+        let first = true;
 
         onCatch = async f => {
           if (f.caught) return;
-          if (f.L === T) {
+          if (first) { App.track('letters', TL, f.L === TL); first = false; }
+          if (f.L === TL) {
             onCatch = null;
+            const fr = f.el.getBoundingClientRect();
             catchAnim(f);
             sfx.ding();
+            App.addStars(1, fr.left + 55, fr.top);
             good++;
             pill.textContent = `🐟 ${good}/${ROUND}`;
             await App.praise();
@@ -160,14 +192,15 @@
           } else {
             sfx.boing();
             f.boost = 1.2;
-            say(`Io sono la ${LETTER_NAME[f.L]}!`);
+            say(T.iam(f.L));
           }
         };
       }
 
       /* bonus: comporre un nome lettera per lettera */
       function compose() {
-        const names = [App.NAME].concat(lv >= 2 ? ['Papà'].concat(familyWords().map(w => w[0])) : []);
+        const l = App.nextLang(), T = TX[l];
+        const names = [App.NAME].concat(lv >= 2 ? [DAD[l]].concat(familyWords().map(w => w[0])) : []);
         const shown = pick(names);
         const word = norm(shown);
         if (!word) return question();
@@ -178,11 +211,11 @@
         prompt.append(slots);
         mark();
         const uniq = [...new Set(word)];
-        const extra = shuffle(Object.keys(WORDS).filter(x => !uniq.includes(x))).slice(0, 2);
+        const extra = shuffle(Object.keys(WORDS.it).filter(x => !uniq.includes(x))).slice(0, 2);
         spawn(shuffle(uniq.concat(extra)));
-        ask(`Adesso scriviamo ${shown}! Pesca la ${LETTER_NAME[word[0]]}!`, 'compose', [
-          { text: TUT[2], icon: '✏️', action: 'tap', at: () => slots },
-          { text: TUT[3], icon: '🐟', action: 'tap', at: () => (fish.find(f => f.L === word[idx]) || {}).el },
+        ask(T.write(shown, word[0]), 'compose', [
+          { text: T.tut[2], icon: '✏️', action: 'tap', at: () => slots },
+          { text: T.tut[3], icon: '🐟', action: 'tap', at: () => (fish.find(f => f.L === word[idx]) || {}).el },
         ]);
 
         onCatch = async f => {
@@ -190,7 +223,7 @@
           const need = word[idx];
           if (f.L !== need) {
             sfx.boing(); f.boost = 1.2;
-            say(`Prima la ${LETTER_NAME[need]}!`);
+            say(T.first(need));
             return;
           }
           sfx.ding();
@@ -200,11 +233,13 @@
           mark();
           f.boost = 1.5;
           if (idx < word.length) {
-            say(LETTER_NAME[word[idx]] === LETTER_NAME[need] ? `Ancora la ${LETTER_NAME[need]}!` : `Ora la ${LETTER_NAME[word[idx]]}!`);
+            say(word[idx] === need ? T.again(need) : T.now(word[idx]));
             return;
           }
           onCatch = null;
-          await say(`${[...word].map(L => LETTER_NAME[L]).join(', ')}. ${shown}! Hai scritto ${shown}!`, { rate: .85 });
+          const sr = slots.getBoundingClientRect();
+          App.addStars(3, sr.left + sr.width / 2, sr.bottom);
+          await say(T.spelled(word, shown), { rate: .85 });
           if (!alive) return;
           await App.reward();
           if (!alive) return;
@@ -214,7 +249,7 @@
         };
       }
 
-      requestAnimationFrame(t => { last = t; question(); raf = requestAnimationFrame(loop); });
+      requestAnimationFrame(tt => { last = tt; question(); raf = requestAnimationFrame(loop); });
       return () => { alive = false; cancelAnimationFrame(raf); };
     },
   });

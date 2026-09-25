@@ -453,3 +453,70 @@ button:active { transform: translateY(3px) scale(.98); }
   animation: twinkle 1.6s ease-in-out infinite;
 }
 .col-sw[aria-label="Bianco"]:not(.sel) { border-color: #d9d2e0; }
+
+/* ---------- Bilingue ---------- */
+.splash .sub { font-size: 22px; color: var(--accent-dark); opacity: .8; margin-top: -12px; }
+.tile .lbl2 { font-size: 14px; opacity: .6; text-align: center; margin-top: -2px; }
+.tile.tward { background: #fff0c9; }
+.flag-pill { font-size: 22px; padding: 6px 10px; }
+.flag-pill.flip { animation: flagflip .5s ease; }
+@keyframes flagflip { 0% { transform: rotateY(90deg) scale(.6); } 60% { transform: rotateY(0) scale(1.25); } 100% { transform: none; } }
+.home-head .stars-pill { font-size: 17px; padding: 6px 10px; }
+
+/* ---------- Personaggio con accessori ---------- */
+.av { position: relative; display: inline-block; width: 1em; height: 1em; line-height: 1; vertical-align: middle; }
+.av .base { position: relative; z-index: 2; display: block; line-height: 1; }
+.av .acc { position: absolute; line-height: 1; z-index: 3; pointer-events: none; }
+.av .head { font-size: .55em; left: 50%; top: -.55em; transform: translateX(-50%) rotate(-8deg); }
+.av .eyes { font-size: .52em; left: 50%; top: .42em; transform: translateX(-50%); }
+.av .hand { font-size: .46em; right: -.55em; bottom: -.1em; transform: rotate(12deg); }
+.av .aura { inset: 0; z-index: 1; font-size: .3em; }
+.av .aura i { position: absolute; font-style: normal; animation: auraFloat 2.4s ease-in-out infinite; }
+.av .aura i:nth-child(1) { left: -1.1em; top: -.4em; }
+.av .aura i:nth-child(2) { right: -1.1em; top: .2em; animation-delay: -.6s; }
+.av .aura i:nth-child(3) { left: -.9em; bottom: -.3em; animation-delay: -1.2s; }
+.av .aura i:nth-child(4) { right: -.8em; bottom: -.6em; animation-delay: -1.8s; }
+.av .aura-arcobaleno { font-size: 1.25em; inset: auto; left: 50%; top: -.42em; transform: translateX(-50%); opacity: .9; }
+@keyframes auraFloat { 0%, 100% { transform: translateY(0) scale(1); opacity: .9; } 50% { transform: translateY(-.35em) scale(1.15); opacity: 1; } }
+.avatar { overflow: visible; }
+.avatar::after { border-radius: 50%; }
+.hero .av, .sleeper .av { display: inline-block; }
+
+/* ---------- Armadio ---------- */
+.wardrobe .ward-av {
+  display: grid; place-items: center; height: 230px; margin: 12px 0 10px; border-radius: 30px;
+  background: radial-gradient(circle at 50% 60%, #fff 0%, var(--accent-soft) 70%); box-shadow: var(--shadow); padding-top: 40px;
+}
+.ward-grid { flex: 1; overflow-y: auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; align-content: start; padding: 4px 2px 16px; }
+.ward-item { aspect-ratio: 1; border-radius: 20px; background: #fff; box-shadow: var(--shadow); position: relative; display: grid; place-items: center; padding: 0; }
+.ward-item .e { font-size: 40px; }
+.ward-item:not(.own) .e { opacity: .55; filter: saturate(.5); }
+.ward-item .price { position: absolute; bottom: 4px; font-size: 13px; background: #fff3c4; border-radius: 999px; padding: 1px 7px; }
+.ward-item .tag { position: absolute; top: 4px; right: 8px; color: #2f9a4a; font-size: 18px; }
+.ward-item.worn { box-shadow: 0 0 0 4px var(--accent), var(--shadow); }
+
+/* ---------- Storia della buonanotte ---------- */
+.story {
+  background: linear-gradient(180deg, #141a45 0%, #2d3480 100%); color: #fff;
+  align-items: center; justify-content: center; text-align: center; gap: 18px;
+}
+.story-moon { position: absolute; top: calc(20px + var(--safe-top)); right: 24px; font-size: 54px; }
+.story-scene { display: flex; gap: 14px; justify-content: center; align-items: center; min-height: 140px; font-size: 76px; }
+.story-scene > span { animation: storyIn .8s ease both, auraFloat 3s ease-in-out 1s infinite; display: inline-block; }
+@keyframes storyIn { from { opacity: 0; transform: translateY(20px) scale(.6); } to { opacity: 1; transform: none; } }
+.story-text { font-size: 24px; line-height: 1.35; max-width: 360px; margin: 0; min-height: 4em; }
+.story-dots { display: flex; gap: 8px; }
+.story-dots i { width: 10px; height: 10px; border-radius: 50%; background: rgba(255, 255, 255, .3); }
+.story-dots i.on { background: #ffd700; }
+.story-next { font-size: 22px; padding: 12px 28px; }
+
+/* ---------- Pagella ---------- */
+.parent section > b { display: block; margin: 12px 0 6px; font-size: 15px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { padding: 4px 10px; border-radius: 999px; font-size: 14px; font-weight: 800; }
+.chip.ok { background: #d8f5d0; color: #23702f; }
+.chip.ko { background: #ffe3c9; color: #9a4a00; }
+.bars { display: flex; gap: 8px; align-items: flex-end; height: 110px; margin-top: 6px; }
+.bar { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 2px; font-size: 12px; }
+.bar i { width: 70%; background: var(--accent); border-radius: 6px 6px 2px 2px; display: block; }
+.bar small { color: #7a6d86; }

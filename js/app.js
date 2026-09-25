@@ -1,37 +1,135 @@
-/* Giochi di Lena — nucleo dell'app: stato, voce, suoni, schermate, premi, timer, area genitori. */
+/* Giochi di Lena — nucleo dell'app: stato, lingue FR/IT, voce, suoni, schermate, premi, armadio,
+   timer con storia della buonanotte, pagella e area genitori (in italiano). */
 const App = (() => {
   const NAME = 'Lena';
   const BIRTH = { y: 2022, m: 0, d: 18 }; // 18 gennaio 2022
   const KEY = 'lena_v1';
-  const VERSION = '7 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
+  const VERSION = '8 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
+  const LANGS = ['fr', 'it'];
+  const FLAG = { fr: '🇫🇷', it: '🇮🇹' };
 
   const CHARS = [
-    { id: 'coniglio', e: '🐰', name: 'Coniglietto', the: 'il coniglietto' },
-    { id: 'gatto', e: '🐱', name: 'Gattino', the: 'il gattino' },
-    { id: 'unicorno', e: '🦄', name: 'Unicorno', the: "l'unicorno" },
-    { id: 'cane', e: '🐶', name: 'Cagnolino', the: 'il cagnolino' },
+    { id: 'coniglio', e: '🐰', name: { it: 'Coniglietto', fr: 'Petit lapin' }, the: { it: 'il coniglietto', fr: 'le petit lapin' }, fem: { it: 0, fr: 0 } },
+    { id: 'gatto', e: '🐱', name: { it: 'Gattino', fr: 'Petit chat' }, the: { it: 'il gattino', fr: 'le petit chat' }, fem: { it: 0, fr: 0 } },
+    { id: 'unicorno', e: '🦄', name: { it: 'Unicorno', fr: 'Licorne' }, the: { it: "l'unicorno", fr: 'la licorne' }, fem: { it: 0, fr: 1 } },
+    { id: 'cane', e: '🐶', name: { it: 'Cagnolino', fr: 'Petit chien' }, the: { it: 'il cagnolino', fr: 'le petit chien' }, fem: { it: 0, fr: 0 } },
   ];
   const COLORS = [
-    { c: '#ff6fa8', n: 'Rosa' }, { c: '#ff5a5a', n: 'Rosso' }, { c: '#ff9f40', n: 'Arancione' },
-    { c: '#f5c400', n: 'Giallo' }, { c: '#3cc45c', n: 'Verde' }, { c: '#2ed3c6', n: 'Turchese' },
-    { c: '#3fb0ff', n: 'Azzurro' }, { c: '#4a6cff', n: 'Blu' }, { c: '#9b5cff', n: 'Viola' },
-    { c: '#d17de8', n: 'Lilla' },
+    { c: '#ff6fa8', n: { it: 'Rosa', fr: 'Rose' } }, { c: '#ff5a5a', n: { it: 'Rosso', fr: 'Rouge' } },
+    { c: '#ff9f40', n: { it: 'Arancione', fr: 'Orange' } }, { c: '#f5c400', n: { it: 'Giallo', fr: 'Jaune' } },
+    { c: '#3cc45c', n: { it: 'Verde', fr: 'Vert' } }, { c: '#2ed3c6', n: { it: 'Turchese', fr: 'Turquoise' } },
+    { c: '#3fb0ff', n: { it: 'Azzurro', fr: 'Bleu clair' } }, { c: '#4a6cff', n: { it: 'Blu', fr: 'Bleu' } },
+    { c: '#9b5cff', n: { it: 'Viola', fr: 'Violet' } }, { c: '#d17de8', n: { it: 'Lilla', fr: 'Lilas' } },
   ];
   const STICKERS = ['🦄', '🌈', '🍦', '🎈', '🦋', '🌸', '⭐', '🐞', '🍓', '🐬', '🦊', '🐼',
     '🧁', '🎀', '🐙', '🌻', '🍭', '🐢', '🦜', '🏰', '👑', '🚀', '🐳', '🍉'];
+  /* armadio: accessori comprati con le stelle, uno per zona */
+  const ITEMS = [
+    { id: 'fiore', e: '🌸', slot: 'head', price: 5, n: { fr: 'La fleur', it: 'Il fiore' } },
+    { id: 'fiocco', e: '🎀', slot: 'head', price: 8, n: { fr: 'Le nœud', it: 'Il fiocco' } },
+    { id: 'paglia', e: '👒', slot: 'head', price: 10, n: { fr: 'Le chapeau de paille', it: 'Il cappello di paglia' } },
+    { id: 'cilindro', e: '🎩', slot: 'head', price: 12, n: { fr: 'Le chapeau magique', it: 'Il cappello magico' } },
+    { id: 'corona', e: '👑', slot: 'head', price: 15, n: { fr: 'La couronne', it: 'La corona' } },
+    { id: 'occhiali', e: '👓', slot: 'eyes', price: 6, n: { fr: 'Les lunettes', it: 'Gli occhiali' } },
+    { id: 'sole', e: '🕶️', slot: 'eyes', price: 10, n: { fr: 'Les lunettes de soleil', it: 'Gli occhiali da sole' } },
+    { id: 'lecca', e: '🍭', slot: 'hand', price: 5, n: { fr: 'La sucette', it: 'Il lecca-lecca' } },
+    { id: 'palloncino', e: '🎈', slot: 'hand', price: 6, n: { fr: 'Le ballon', it: 'Il palloncino' } },
+    { id: 'bacchetta', e: '🪄', slot: 'hand', price: 20, n: { fr: 'La baguette magique', it: 'La bacchetta magica' } },
+    { id: 'cuori', e: '💖', slot: 'aura', price: 12, n: { fr: 'Les cœurs', it: 'I cuori' } },
+    { id: 'farfalle', e: '🦋', slot: 'aura', price: 18, n: { fr: 'Les papillons', it: 'Le farfalle' } },
+    { id: 'brillantini', e: '✨', slot: 'aura', price: 25, n: { fr: 'Les paillettes', it: 'I brillantini' } },
+    { id: 'arcobaleno', e: '🌈', slot: 'aura', price: 30, n: { fr: "L'arc-en-ciel", it: "L'arcobaleno" } },
+  ];
   const VOICE_SLOTS = [
-    { id: 'ciao', label: 'Saluto all\'apertura', hint: 'es. «Ciao amore, giochiamo?»', max: 3 },
-    { id: 'bravo', label: 'Complimenti', hint: 'es. «Bravissima Lena!», «Sei un fenomeno!»', max: 6 },
+    { id: 'ciao', label: 'Saluto all\'apertura', hint: 'es. «Ciao amore, giochiamo?» / «Coucou ma chérie !»', max: 3 },
+    { id: 'bravo', label: 'Complimenti', hint: 'es. «Bravissima Lena!», «Bravo ma puce !»', max: 6 },
     { id: 'nanna', label: 'Buonanotte (fine tempo)', hint: 'es. «Ora basta giocare, vieni ad abbracciarmi!»', max: 3 },
   ];
-  const PRAISE = ['Bravissima!', 'Brava Lena!', 'Evviva!', 'Super!', 'Fantastico!', 'Che brava!', 'Grande Lena!', 'Perfetto!'];
-  const RETRY = ['Riprova!', 'Quasi! Riprova.', 'Prova ancora!'];
+  const NUM = {
+    it: ['zero', 'uno', 'due', 'tre', 'quattro', 'cinque', 'sei', 'sette', 'otto', 'nove', 'dieci'],
+    fr: ['zéro', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix'],
+  };
+  const numWord = (n, fem, l = lang) => (n === 1 ? (l === 'fr' ? (fem ? 'une' : 'un') : (fem ? 'una' : 'uno')) : NUM[l][n]);
+
+  /* testi dell'app (fr/it); le funzioni ricevono parametri */
+  const T = {
+    hello: { fr: `Coucou ${NAME} !`, it: `Ciao ${NAME}!` },
+    playBtn: { fr: 'On joue ! ▶', it: 'Giochiamo! ▶' },
+    greet: { fr: `Coucou ${NAME} ! On joue ?`, it: `Ciao ${NAME}! Giochiamo?` },
+    forDad: { fr: "Ça, c'est pour papa !", it: 'Questo è per papà!' },
+    chooseFriend: { fr: 'Choisis ton ami !', it: 'Scegli il tuo amico!' },
+    chooseColor: { fr: 'Choisis ta couleur !', it: 'Scegli il tuo colore!' },
+    done: { fr: "C'est fait ! ✓", it: 'Fatto! ✓' },
+    setupSay: { fr: `Coucou ${NAME} ! Choisis ton ami et ta couleur préférée !`, it: `Ciao ${NAME}! Scegli il tuo amico e il tuo colore preferito!` },
+    hiChar: { fr: n => `Youpi ! Coucou ${n} !`, it: n => `Evviva! Ciao ${n}!` },
+    album: { fr: `L'album de ${NAME}`, it: `Album di ${NAME}` },
+    albumDone: { fr: "Tu as complété l'album ! Tu es super forte !", it: "Hai completato l'album! Sei bravissima!" },
+    albumCount: { fr: n => (n <= 1 ? `Tu as ${n} autocollant. Joue pour en gagner d'autres !` : `Tu as ${n} autocollants. Joue pour en gagner d'autres !`), it: n => `Hai ${n} sticker. Gioca per vincerne altri!` },
+    albumLocked: { fr: 'Celui-là, tu le gagnes en jouant !', it: 'Questo lo vinci giocando!' },
+    newSticker: { fr: 'Nouvel autocollant !', it: 'Nuovo sticker!' },
+    newStickerSay: { fr: 'Youpi ! Un nouvel autocollant pour ton album !', it: 'Evviva! Un nuovo sticker per il tuo album!' },
+    yay: { fr: 'Youpi !', it: 'Evviva!' },
+    diplomaOf: { fr: 'Diplôme de', it: 'Diploma di' },
+    diplomaTxt: { fr: "a complété l'album d'autocollants !", it: "ha completato l'album di sticker!" },
+    diplomaSay: { fr: `Bravo ${NAME} ! Tu as complété tout l'album ! Tu es une Super ${NAME} !`, it: `Complimenti ${NAME}! Hai completato tutto l'album! Sei una Super ${NAME}!` },
+    yourTurn: { fr: 'À toi de jouer !', it: 'Adesso prova tu!' },
+    gotIt: { fr: "J'ai compris ! 👍", it: 'Ho capito! 👍' },
+    tutGame: { fr: 'Touche un jeu pour commencer !', it: 'Tocca un gioco per iniziare!' },
+    tutAlbum: { fr: 'Ici, tu trouves les autocollants que tu gagnes !', it: 'Qui trovi gli sticker che vinci giocando!' },
+    tutWardrobe: { fr: 'Ici, tu dépenses tes étoiles pour habiller ton ami !', it: 'Qui spendi le stelle per vestire il tuo amico!' },
+    minute: { fr: c => `Encore une minute et ${c} va faire dodo !`, it: c => `Ancora un minuto e poi ${c} va a nanna!` },
+    sleepTxt: { fr: (c, f) => `${cap(c)} est fatigué${f ? 'e' : ''} et va faire dodo. À demain, ${NAME} !`, it: c => `${cap(c)} è stanco e va a nanna. Ci vediamo domani, ${NAME}!` },
+    sleepSay: { fr: (c, f) => `${cap(c)} est fatigué${f ? 'e' : ''} et va faire dodo. À demain, ${NAME} ! Bonne nuit !`, it: c => `${cap(c)} è stanco e va a nanna. Ci vediamo domani, ${NAME}! Buonanotte!` },
+    bdayTitle: { fr: `Joyeux anniversaire ${NAME} ! 🎉`, it: `Buon compleanno ${NAME}! 🎉` },
+    bdayHint: { fr: 'Touche les bougies pour les souffler !', it: 'Tocca le candeline per soffiarle!' },
+    bdaySay: { fr: a => `Joyeux anniversaire ${NAME} ! Aujourd'hui tu as ${a} ans ! Comptons les bougies et soufflons-les toutes !`, it: a => `Buon compleanno ${NAME}! Oggi compi ${a} anni! Contiamo le candeline e soffiamole tutte!` },
+    bdayWish: { fr: a => `Joyeux anniversaire ${NAME} ! Tu as ${a} ans !`, it: a => `Tanti auguri ${NAME}! Oggi hai ${a} anni!` },
+    gift: { fr: 'Un cadeau ! 🎁', it: 'Un regalo! 🎁' },
+    wardrobe: { fr: `L'armoire de ${NAME}`, it: `L'armadio di ${NAME}` },
+    wardrobeTile: { fr: 'Armoire', it: 'Armadio' },
+    wardrobeSay: { fr: 'Choisis des habits pour ton ami !', it: 'Scegli i vestiti per il tuo amico!' },
+    buyQ: { fr: "Tu veux l'acheter ?", it: 'Lo vuoi comprare?' },
+    bought: { fr: "Youpi ! C'est à toi !", it: 'Evviva! È tuo!' },
+    missing: { fr: n => (n === 1 ? 'Il te manque une étoile ! Joue pour en gagner.' : `Il te manque ${n} étoiles ! Joue pour en gagner.`), it: n => (n === 1 ? 'Ti manca una stella! Gioca per vincerla.' : `Ti mancano ${n} stelle! Gioca per vincerle.`) },
+    storyNext: { fr: 'Suite ▶', it: 'Avanti ▶' },
+  };
+  const PRAISE = {
+    fr: ['Bravo !', `Bravo ${NAME} !`, 'Youpi !', 'Super !', 'Génial !', 'Trop bien !', 'Parfait !', 'Bien joué !'],
+    it: ['Bravissima!', `Brava ${NAME}!`, 'Evviva!', 'Super!', 'Fantastico!', 'Che brava!', `Grande ${NAME}!`, 'Perfetto!'],
+  };
+  const RETRY = { fr: ['Essaie encore !', 'Presque ! Réessaie.', 'Encore une fois !'], it: ['Riprova!', 'Quasi! Riprova.', 'Prova ancora!'] };
+
+  /* storie della buonanotte: {c} = personaggio di Lena nella scena */
+  const STORIES = [
+    [
+      { s: '🌙 🏡 {c}', fr: `Il était une fois, un soir, ${NAME} et son ami qui regardaient le ciel.`, it: `C'era una volta, una sera, ${NAME} e il suo amico che guardavano il cielo.` },
+      { s: '✨ ⭐ 🌷', fr: 'Tout à coup, une petite étoile est tombée dans le jardin !', it: 'A un tratto, una piccola stella è caduta in giardino!' },
+      { s: '⭐ 💧', fr: "L'étoile était triste : elle voulait rentrer chez elle, dans le ciel.", it: 'La stella era triste: voleva tornare a casa, nel cielo.' },
+      { s: '{c} 🎈 ⭐', fr: `${NAME} a eu une idée : un ballon ! L'étoile s'est envolée tout doucement.`, it: `${NAME} ha avuto un'idea: un palloncino! La stella è volata su, piano piano.` },
+      { s: '🌌 ⭐ 💖', fr: `Maintenant, chaque nuit, l'étoile brille rien que pour ${NAME}. Bonne nuit !`, it: `Adesso, ogni notte, la stella brilla solo per ${NAME}. Buonanotte!` },
+    ],
+    [
+      { s: '🌊 🐟', fr: 'Au fond de la mer vivait un petit poisson qui avait peur du noir.', it: 'In fondo al mare viveva un pesciolino che aveva paura del buio.' },
+      { s: '🐟 🌑', fr: 'Chaque soir, il se cachait derrière un gros rocher.', it: 'Ogni sera si nascondeva dietro a un grande scoglio.' },
+      { s: '🐙 💡', fr: 'Un soir, une gentille pieuvre est arrivée avec une lanterne.', it: 'Una sera è arrivata una polpessa gentile con una lanterna.' },
+      { s: '🐟 🐙 🐚', fr: 'Ensemble, ils ont découvert les coquillages qui brillent dans la nuit.', it: 'Insieme hanno scoperto le conchiglie che brillano nella notte.' },
+      { s: '🐟 😴 💤', fr: "Le petit poisson n'avait plus peur. Il s'est endormi en souriant. Bonne nuit !", it: 'Il pesciolino non aveva più paura. Si è addormentato sorridendo. Buonanotte!' },
+    ],
+    [
+      { s: '☁️ 🌤️', fr: 'Il était une fois un petit nuage qui voulait dormir.', it: 'C\'era una volta una nuvoletta che voleva dormire.' },
+      { s: '☁️ 🌬️', fr: 'Mais le vent le faisait voler partout : ici, là-bas, et encore plus loin !', it: 'Ma il vento la faceva volare dappertutto: di qua, di là, e ancora più lontano!' },
+      { s: '☁️ 🌙', fr: 'Alors la lune lui a dit : viens, je te garde une place près de moi.', it: 'Allora la luna le ha detto: vieni, ti tengo un posto vicino a me.' },
+      { s: '{c} ☁️ ⭐', fr: `${NAME} et son ami ont fait un bisou au petit nuage.`, it: `${NAME} e il suo amico hanno dato un bacino alla nuvoletta.` },
+      { s: '🌙 ☁️ 💤', fr: 'Et le petit nuage a fait de beaux rêves tout doux. Bonne nuit !', it: 'E la nuvoletta ha fatto sogni belli e morbidi. Buonanotte!' },
+    ],
+  ];
 
   const games = [];
   let state;
   let cleanup = null;
   let screenName = '';
   let started = false;
+  let lang = 'fr';
 
   /* ---------- utilità ---------- */
   const rint = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
@@ -42,6 +140,7 @@ const App = (() => {
     return a;
   };
   const wait = ms => new Promise(r => setTimeout(r, ms));
+  const cap = s => s[0].toUpperCase() + s.slice(1);
 
   function h(tag, props, ...kids) {
     const e = document.createElement(tag);
@@ -60,24 +159,63 @@ const App = (() => {
     return e;
   }
 
+  /* ---------- lingue ---------- */
+  /* tr({fr, it}) → testo nella lingua corrente; t('chiave', ...args) → testo dell'app */
+  const tr = o => (o == null ? '' : typeof o === 'string' ? o : (o[lang] ?? o.it));
+  function t(key, ...args) { const v = tr(T[key]); return typeof v === 'function' ? v(...args) : v; }
+  const langMode = () => state.langMode || 'alt';
+  /* nuovo turno: in alternanza cambia lingua */
+  function nextLang() {
+    const m = langMode();
+    lang = m === 'alt' ? (lang === 'fr' ? 'it' : 'fr') : m;
+    document.querySelectorAll('.flag-pill').forEach(p => {
+      p.textContent = FLAG[lang];
+      p.classList.remove('flip'); void p.offsetWidth; p.classList.add('flip');
+    });
+    return lang;
+  }
+
   /* ---------- stato ---------- */
   const defaults = () => ({
     char: null, color: '#ff6fa8', stickers: [], levels: {}, timerMin: 20, pin: null,
     usage: { day: '', sec: 0, extra: 0, warned: false }, bdayShown: 0, hopBest: 0, diploma: false, tut: {},
+    langMode: 'alt', stars: 0, owned: [], wear: {}, story: 0,
+    stats: { letters: {}, numbers: {}, langs: { fr: [0, 0], it: [0, 0] }, greens: 0, reds: 0, zebra: 0, days: {}, games: {} },
   });
   function load() {
     try { state = Object.assign(defaults(), JSON.parse(localStorage.getItem(KEY) || '{}')); }
     catch (e) { state = defaults(); }
+    state.stats = Object.assign(defaults().stats, state.stats);
   }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* storage pieno o bloccato */ } }
   const char = () => CHARS.find(c => c.id === state.char) || CHARS[0];
   const level = id => state.levels[id] || 1;
   function setLevel(id, n) { state.levels[id] = n; save(); }
 
+  /* pagella: registra la prima risposta a una domanda (cat: letters|numbers) */
+  function track(cat, key, ok) {
+    const s = state.stats;
+    if (cat && key != null) {
+      const e = s[cat][key] = s[cat][key] || [0, 0];
+      e[ok ? 0 : 1]++;
+    }
+    s.langs[lang][ok ? 0 : 1]++;
+    save();
+  }
+  function count(key, n = 1) { state.stats[key] = (state.stats[key] || 0) + n; save(); }
+
+  /* stelle: moneta per l'armadio */
+  function addStars(n, x, y) {
+    state.stars += n;
+    save();
+    if (x != null) floatAt(x, y, n > 1 ? `+${n}⭐` : '⭐');
+    document.querySelectorAll('.stars-pill').forEach(p => { p.textContent = `⭐ ${state.stars}`; });
+  }
+
   /* ---------- tema ---------- */
-  function mix(hex, other, t) {
+  function mix(hex, other, k) {
     const a = parseInt(hex.slice(1), 16), b = parseInt(other.slice(1), 16);
-    const ch = s => Math.round(((a >> s) & 255) * (1 - t) + ((b >> s) & 255) * t);
+    const ch = s => Math.round(((a >> s) & 255) * (1 - k) + ((b >> s) & 255) * k);
     return '#' + [16, 8, 0].map(s => ch(s).toString(16).padStart(2, '0')).join('');
   }
   function applyTheme(c) {
@@ -99,16 +237,16 @@ const App = (() => {
   }
   function tone(freq, dur, type = 'sine', vol = .2, when = 0, slideTo = 0) {
     if (!ac) return;
-    const t = ac.currentTime + when;
+    const t0 = ac.currentTime + when;
     const o = ac.createOscillator(), g = ac.createGain();
     o.type = type;
-    o.frequency.setValueAtTime(freq, t);
-    if (slideTo) o.frequency.exponentialRampToValueAtTime(slideTo, t + dur);
-    g.gain.setValueAtTime(.0001, t);
-    g.gain.exponentialRampToValueAtTime(vol, t + .02);
-    g.gain.exponentialRampToValueAtTime(.0001, t + dur);
+    o.frequency.setValueAtTime(freq, t0);
+    if (slideTo) o.frequency.exponentialRampToValueAtTime(slideTo, t0 + dur);
+    g.gain.setValueAtTime(.0001, t0);
+    g.gain.exponentialRampToValueAtTime(vol, t0 + .02);
+    g.gain.exponentialRampToValueAtTime(.0001, t0 + dur);
     o.connect(g).connect(ac.destination);
-    o.start(t); o.stop(t + dur + .05);
+    o.start(t0); o.stop(t0 + dur + .05);
   }
   function noise(dur, vol = .15) {
     if (!ac) return;
@@ -133,6 +271,8 @@ const App = (() => {
     puff: () => { noise(.3, .18); tone(260, .25, 'sine', .12, 0, 90); },
     flip: () => tone(500, .07, 'triangle', .12, 0, 700),
     win: () => [523, 659, 784, 1047].forEach((f, i) => tone(f, .3, 'triangle', .18, i * .12)),
+    bell: () => { tone(988, .18, 'square', .06); tone(988, .18, 'square', .06, .3); },
+    train: () => { noise(1.4, .2); tone(440, .5, 'sawtooth', .06); tone(554, .5, 'sawtooth', .05, .05); },
   };
   function birthdaySong() {
     const N = { G4: 392, A4: 440, B4: 494, C5: 523, D5: 587, E5: 659, F5: 698, G5: 784 };
@@ -141,24 +281,25 @@ const App = (() => {
       ['G4', .75], ['G4', .25], ['G5', 1], ['E5', 1], ['C5', 1], ['B4', 1], ['A4', 2],
       ['F5', .75], ['F5', .25], ['E5', 1], ['C5', 1], ['D5', 1], ['C5', 2]];
     const beat = .42;
-    let t = 0;
-    for (const [n, b] of song) { tone(N[n], b * beat * .95, 'triangle', .2, t); t += b * beat; }
-    return t;
+    let t0 = 0;
+    for (const [n, b] of song) { tone(N[n], b * beat * .95, 'triangle', .2, t0); t0 += b * beat; }
+    return t0;
   }
 
   /* ---------- voce ----------
-     Le frasi fisse sono file audio pre-generati (voice/<hash>.mp3, vedi tools/).
+     Le frasi fisse sono file audio pre-generati (voice/<hash>.mp3, vedi tools/), per lingua.
      Quelle non in catalogo (es. nomi dalle foto) usano la sintesi vocale del telefono. */
-  let voice = null;
+  const voices = { it: null, fr: null };
   let clipAudio = null;
   let clipSrc = null;
   let gen = 0;
   let chain = Promise.resolve();
   const clips = { have: new Set(), buf: new Map() };
-  const vkey = t => t.toLowerCase().normalize('NFC').replace(/[^\p{L}\p{N} ]+/gu, ' ').replace(/\s+/g, ' ').trim();
-  function vhash(t) {
+  const vkey = s => s.toLowerCase().normalize('NFC').replace(/[^\p{L}\p{N} ]+/gu, ' ').replace(/\s+/g, ' ').trim();
+  /* l'italiano mantiene gli hash storici; il francese ha il prefisso "fr " */
+  function vhash(text, l = 'it') {
     let x = 0x811c9dc5;
-    for (const ch of vkey(t)) { x ^= ch.codePointAt(0); x = Math.imul(x, 0x01000193) >>> 0; }
+    for (const ch of (l === 'it' ? '' : l + ' ') + vkey(text)) { x ^= ch.codePointAt(0); x = Math.imul(x, 0x01000193) >>> 0; }
     return x.toString(16).padStart(8, '0');
   }
   async function loadVoiceIndex() {
@@ -166,8 +307,11 @@ const App = (() => {
   }
   function pickVoice() {
     if (!('speechSynthesis' in window)) return;
-    const it = speechSynthesis.getVoices().filter(v => /^it/i.test(v.lang));
-    voice = it.find(v => /premium|enhanced|alice|federica|elsa|google/i.test(v.name)) || it[0] || null;
+    const all = speechSynthesis.getVoices();
+    for (const l of LANGS) {
+      const list = all.filter(v => v.lang.toLowerCase().startsWith(l));
+      voices[l] = list.find(v => /premium|enhanced|google|alice|federica|amelie|audrey/i.test(v.name)) || list[0] || null;
+    }
   }
   function stopVoice() {
     gen++;
@@ -192,12 +336,12 @@ const App = (() => {
       s.start();
     });
   }
-  function speakTTS(text, opts, my) {
+  function speakTTS(text, l, opts, my) {
     if (!('speechSynthesis' in window) || my !== gen) return Promise.resolve();
     return new Promise(res => {
       const u = new SpeechSynthesisUtterance(text);
-      u.lang = 'it-IT';
-      if (voice) u.voice = voice;
+      u.lang = l === 'fr' ? 'fr-FR' : 'it-IT';
+      if (voices[l]) u.voice = voices[l];
       u.rate = opts.rate || .95;
       u.pitch = 1.05;
       let done = false;
@@ -210,13 +354,14 @@ const App = (() => {
   function say(text, opts = {}) {
     if (!opts.queue) stopVoice();
     const my = gen;
+    const l = opts.lang || lang;
     const run = async () => {
       if (my !== gen) return;
-      const hsh = vhash(text);
+      const hsh = vhash(text, l);
       if (ac && clips.have.has(hsh)) {
         try { return await playFile(hsh, my); } catch (e) { /* file non disponibile: sintesi */ }
-      } else if (clips.have.size) console.warn('voce mancante:', text);
-      return speakTTS(text, opts, my);
+      } else if (clips.have.size) console.warn('voce mancante:', l, text);
+      return speakTTS(text, l, opts, my);
     };
     chain = (opts.queue ? chain : Promise.resolve()).then(run, run);
     return chain;
@@ -232,12 +377,12 @@ const App = (() => {
     });
   }
   function praise() {
-    if ((media.voices.bravo || []).length && Math.random() < .6) return playClip('bravo');
-    return say(pick(PRAISE));
+    if ((media.voices.bravo || []).length && Math.random() < .5) return playClip('bravo');
+    return say(pick(PRAISE[lang]));
   }
-  const retry = () => say(pick(RETRY));
+  const retry = () => say(pick(RETRY[lang]));
 
-  /* ---------- foto e voci registrate (IndexedDB) ---------- */
+  /* ---------- foto, voci registrate e disegni (IndexedDB) ---------- */
   const media = { voices: {}, photos: [], drawings: [] };
   const DB = {
     db: null,
@@ -276,6 +421,7 @@ const App = (() => {
   }
 
   /* ---------- effetti ---------- */
+  const GLITTER = ['#ffd700', '#fff4b0', '#ff9ad5', '#c9a7ff', '#9fe8ff', '#ffffff'];
   function confetti(n = 70) {
     const fx = document.getElementById('fx');
     const cols = ['#ff6fa8', '#ffd23f', '#4cd06b', '#3fb8ff', '#9b5cff', '#ff9f40'];
@@ -289,7 +435,6 @@ const App = (() => {
     }
   }
   /* brillantini: piccola esplosione di glitter nel punto toccato */
-  const GLITTER = ['#ffd700', '#fff4b0', '#ff9ad5', '#c9a7ff', '#9fe8ff', '#ffffff'];
   function glitter(x, y, n = 9) {
     const fx = document.getElementById('fx');
     for (let i = 0; i < n; i++) {
@@ -307,6 +452,17 @@ const App = (() => {
     const d = h('div', { class: 'float-emoji', style: `left:${x}px;top:${y}px` }, emoji);
     document.getElementById('fx').append(d);
     setTimeout(() => d.remove(), 1300);
+  }
+
+  /* personaggio con gli accessori dell'armadio; size in px */
+  function avatar(size, wear = state.wear) {
+    const box = h('span', { class: 'av', style: `font-size:${size}px` });
+    const it = slot => ITEMS.find(i => i.id === wear[slot]);
+    const aura = it('aura');
+    if (aura) box.append(h('span', { class: `acc aura aura-${aura.id}` }, aura.id === 'arcobaleno' ? aura.e : [1, 2, 3, 4].map(() => h('i', {}, aura.e))));
+    box.append(h('span', { class: 'base' }, char().e));
+    ['eyes', 'head', 'hand'].forEach(slot => { const i = it(slot); if (i) box.append(h('span', { class: `acc ${slot} acc-${i.id}` }, i.e)); });
+    return box;
   }
 
   /* ---------- schermate ---------- */
@@ -333,9 +489,9 @@ const App = (() => {
   function splash() {
     show('splash', 'splash', s => {
       s.append(
-        h('div', { class: 'hero' }, state.char ? char().e : '🌈'),
-        h('h1', {}, `Ciao ${NAME}!`),
-        h('button', { class: 'big-btn', onclick: start }, 'Giochiamo! ▶'),
+        h('div', { class: 'hero' }, state.char ? avatar(120) : '🌈'),
+        h('h1', {}, `${T.hello.fr}`), h('div', { class: 'sub' }, T.hello.it),
+        h('button', { class: 'big-btn', onclick: start }, `${FLAG.fr} ${FLAG.it} ▶`),
         h('div', { class: 'ver' }, `versione ${VERSION}`),
         ...[...Array(14)].map(() => h('span', {
           class: 'spark',
@@ -349,8 +505,9 @@ const App = (() => {
     unlockAudio();
     pickVoice();
     started = true;
+    lang = langMode() === 'alt' ? (Math.random() < .5 ? 'fr' : 'it') : langMode();
     if (isLocked()) return sleepScreen();
-    const greet = (media.voices.ciao || []).length ? playClip('ciao') : say(`Ciao ${NAME}! Giochiamo?`);
+    const greet = (media.voices.ciao || []).length ? playClip('ciao') : say(t('greet'));
     if (isBirthdayToday() && state.bdayShown !== new Date().getFullYear()) {
       stopVoice();
       return birthday(false);
@@ -368,30 +525,33 @@ const App = (() => {
       const endPress = () => clearTimeout(pressT);
       gear.addEventListener('pointerdown', startPress);
       ['pointerup', 'pointerleave', 'pointercancel'].forEach(ev => gear.addEventListener(ev, endPress));
-      gear.addEventListener('click', () => say('Questo è per papà!'));
+      gear.addEventListener('click', () => say(t('forDad')));
 
       s.append(h('div', { class: 'home-head' },
-        h('button', { class: 'avatar', onclick: () => { sfx.pop(); setup(false); } }, char().e),
-        h('h1', {}, `Ciao ${NAME}!`),
+        h('button', { class: 'avatar', onclick: () => { sfx.pop(); setup(false); } }, avatar(44)),
+        h('h1', {}, t('hello')),
+        h('div', { class: 'pill stars-pill' }, `⭐ ${state.stars}`),
         gear,
       ));
       const tiles = h('div', { class: 'tiles' });
       games.forEach((g, i) => {
         tiles.append(h('button', {
           class: `tile t${i + 1}` + (i === games.length - 1 && games.length % 2 ? ' wide' : ''),
-          onclick: () => { sfx.pop(); say(g.title); startGame(g); },
-        }, h('div', { class: 'ico' }, g.icon), h('div', { class: 'lbl' }, g.title)));
+          onclick: () => { sfx.pop(); say(tr(g.title)); startGame(g); },
+        }, h('div', { class: 'ico' }, g.icon), h('div', { class: 'lbl' }, g.title.fr), h('div', { class: 'lbl2' }, g.title.it)));
       });
-      tiles.append(h('button', {
-        class: 'tile talbum wide',
-        onclick: () => { sfx.pop(); album(); },
-      }, h('div', { class: 'ico' }, '📒'), h('div', { class: 'lbl' }, `Album di ${NAME}  ${state.stickers.length}/${STICKERS.length}`)));
+      const albumTile = h('button', { class: 'tile talbum', onclick: () => { sfx.pop(); album(); } },
+        h('div', { class: 'ico' }, '📒'), h('div', { class: 'lbl' }, `Album ${state.stickers.length}/${STICKERS.length}`));
+      const wardTile = h('button', { class: 'tile tward', onclick: () => { sfx.pop(); wardrobe(); } },
+        h('div', { class: 'ico' }, '👗'), h('div', { class: 'lbl' }, T.wardrobeTile.fr), h('div', { class: 'lbl2' }, T.wardrobeTile.it));
+      tiles.append(albumTile, wardTile);
       s.append(tiles);
-      const t = state.tut.home ? 0 : setTimeout(() => screenName === 'home' && intro('home', [
-        { text: 'Tocca un gioco per iniziare!', icon: '🎮', action: 'tap', at: () => tiles.children[0] },
-        { text: 'Qui trovi gli sticker che vinci giocando!', icon: '📒', action: 'tap', at: () => tiles.lastElementChild },
+      const tm = state.tut.home ? 0 : setTimeout(() => screenName === 'home' && intro('home', [
+        { text: t('tutGame'), icon: '🎮', action: 'tap', at: () => tiles.children[0] },
+        { text: t('tutAlbum'), icon: '📒', action: 'tap', at: () => albumTile },
+        { text: t('tutWardrobe'), icon: '👗', action: 'tap', at: () => wardTile },
       ]), 2600);
-      return () => { endPress(); clearTimeout(t); };
+      return () => { endPress(); clearTimeout(tm); };
     });
   }
 
@@ -402,15 +562,15 @@ const App = (() => {
       const charBtns = CHARS.map(c => h('button', {
         class: 'char-btn' + (c.id === selC ? ' sel' : ''),
         onclick: () => {
-          selC = c.id; sfx.pop(); say(c.name + '!');
+          selC = c.id; sfx.pop(); say(tr(c.name) + (lang === 'fr' ? ' !' : '!'));
           charBtns.forEach((b, i) => b.classList.toggle('sel', CHARS[i].id === selC));
           go.style.visibility = 'visible';
         },
-      }, c.e, h('span', {}, c.name)));
+      }, c.e, h('span', {}, tr(c.name))));
       const sw = COLORS.map(c => h('button', {
-        class: 'swatch' + (c.c === selCol ? ' sel' : ''), style: `background:${c.c}`, 'aria-label': c.n,
+        class: 'swatch' + (c.c === selCol ? ' sel' : ''), style: `background:${c.c}`, 'aria-label': c.n.it,
         onclick: () => {
-          selCol = c.c; sfx.tap(); say(c.n + '!'); applyTheme(c.c);
+          selCol = c.c; sfx.tap(); say(tr(c.n) + (lang === 'fr' ? ' !' : '!')); applyTheme(c.c);
           sw.forEach((b, i) => b.classList.toggle('sel', COLORS[i].c === selCol));
         },
       }));
@@ -418,19 +578,19 @@ const App = (() => {
         class: 'big-btn go', style: selC ? '' : 'visibility:hidden',
         onclick: () => {
           state.char = selC; state.color = selCol; save();
-          sfx.win(); say(`Evviva! Ciao ${char().name}!`);
+          sfx.win(); say(t('hiChar', tr(char().name)));
           home();
         },
-      }, 'Fatto! ✓');
+      }, t('done'));
       s.append(
         ...(first ? [] : [h('div', { class: 'topbar' }, h('button', { class: 'icon-btn', onclick: () => { applyTheme(state.color); home(); } }, '🏠'))]),
-        h('h2', {}, 'Scegli il tuo amico!'),
+        h('h2', {}, t('chooseFriend')),
         h('div', { class: 'char-grid' }, charBtns),
-        h('h2', {}, 'Scegli il tuo colore!'),
+        h('h2', {}, t('chooseColor')),
         h('div', { class: 'palette' }, sw),
         go,
       );
-      if (first) say(`Ciao ${NAME}! Scegli il tuo amico e il tuo colore preferito!`);
+      if (first) say(t('setupSay'));
     });
   }
 
@@ -439,19 +599,72 @@ const App = (() => {
       const done = state.stickers.length >= STICKERS.length;
       s.append(h('div', { class: 'topbar' },
         h('button', { class: 'icon-btn', onclick: home }, '🏠'),
-        h('div', { class: 'title' }, `Album di ${NAME}`),
+        h('div', { class: 'title' }, t('album')),
         h('div', { class: 'pill' }, `${state.stickers.length}/${STICKERS.length}`),
       ));
       s.append(h('div', { class: 'album-grid' }, STICKERS.map(st => h('button', {
         class: 'sticker' + (state.stickers.includes(st) ? '' : ' off') + (st === highlight ? ' new' : ''),
         onclick: ev => {
           if (state.stickers.includes(st)) { sfx.pop(); const r = ev.currentTarget.getBoundingClientRect(); floatAt(r.left + r.width / 2, r.top, st); }
-          else say('Questo lo vinci giocando!');
+          else say(t('albumLocked'));
         },
       }, st))));
-      if (done) s.append(h('button', { class: 'big-btn', style: 'margin:8px auto 0', onclick: diploma }, '🏅 Diploma'));
-      say(done ? 'Hai completato l\'album! Sei bravissima!' :
-        `Hai ${state.stickers.length} sticker. Gioca per vincerne altri!`);
+      if (done) s.append(h('button', { class: 'big-btn', style: 'margin:8px auto 0', onclick: diploma }, '🏅 ' + t('diplomaOf').replace(/ de$| di$/, '')));
+      say(done ? t('albumDone') : t('albumCount', state.stickers.length));
+    });
+  }
+
+  /* ---------- armadio ---------- */
+  function wardrobe() {
+    show('wardrobe', 'wardrobe', s => {
+      const starP = h('div', { class: 'pill stars-pill' }, `⭐ ${state.stars}`);
+      const stageAv = h('div', { class: 'ward-av' });
+      const grid = h('div', { class: 'ward-grid' });
+      s.append(h('div', { class: 'topbar' },
+        h('button', { class: 'icon-btn', onclick: home }, '🏠'),
+        h('div', { class: 'title' }, t('wardrobe')), starP), stageAv, grid);
+      const draw = () => {
+        stageAv.innerHTML = '';
+        stageAv.append(avatar(130));
+        grid.innerHTML = '';
+        ITEMS.forEach(it => {
+          const own = state.owned.includes(it.id);
+          const worn = state.wear[it.slot] === it.id;
+          grid.append(h('button', {
+            class: 'ward-item' + (own ? ' own' : '') + (worn ? ' worn' : ''),
+            onclick: ev => choose(it, ev.currentTarget),
+          }, h('span', { class: 'e' }, it.e), own ? (worn ? h('span', { class: 'tag' }, '✔') : null) : h('span', { class: 'price' }, `⭐${it.price}`)));
+        });
+      };
+      function choose(it, el) {
+        const r = el.getBoundingClientRect();
+        if (state.owned.includes(it.id)) {
+          if (state.wear[it.slot] === it.id) delete state.wear[it.slot]; else state.wear[it.slot] = it.id;
+          save(); sfx.pop(); glitter(r.left + r.width / 2, r.top + r.height / 2, 12);
+          say(tr(it.n) + (lang === 'fr' ? ' !' : '!'));
+          draw();
+          return;
+        }
+        if (state.stars < it.price) {
+          sfx.boing();
+          say(t('missing', it.price - state.stars));
+          return;
+        }
+        say(`${tr(it.n)}${lang === 'fr' ? ' !' : '!'} ${t('buyQ')}`);
+        const close = modal([h('div', { class: 'big' }, it.e), h('h2', {}, `⭐ ${it.price}`), h('div', { class: 'row' },
+          h('button', {
+            class: 'big-btn', style: 'background:#4cd06b;box-shadow:0 8px 0 #2f9a4a', onclick: () => {
+              close();
+              state.stars -= it.price; state.owned.push(it.id); state.wear[it.slot] = it.id; save();
+              starP.textContent = `⭐ ${state.stars}`;
+              sfx.win(); confetti(60); say(t('bought'));
+              draw();
+            },
+          }, '✔️'),
+          h('button', { class: 'big-btn', style: 'background:#ff6b6b;box-shadow:0 8px 0 #c94444', onclick: () => close() }, '✖️'))]);
+      }
+      draw();
+      say(t('wardrobeSay'));
     });
   }
 
@@ -459,22 +672,23 @@ const App = (() => {
   function reward() {
     const missing = STICKERS.filter(s => !state.stickers.includes(s));
     sfx.win(); confetti();
+    addStars(3);
     if (!missing.length) { praise(); return wait(1200); }
     const st = pick(missing);
     state.stickers.push(st); save();
     return new Promise(res => {
       const close = modal([
         h('div', { class: 'big' }, st),
-        h('h2', {}, 'Nuovo sticker!'),
+        h('h2', {}, t('newSticker')),
         h('div', { class: 'row' }, h('button', {
           class: 'big-btn', onclick: () => {
             close(); sfx.pop();
             if (state.stickers.length >= STICKERS.length && !state.diploma) { state.diploma = true; save(); diploma().then(res); }
             else res();
           },
-        }, 'Evviva!')),
+        }, t('yay'))),
       ]);
-      say('Evviva! Un nuovo sticker per il tuo album!');
+      say(t('newStickerSay'));
     });
   }
 
@@ -483,14 +697,14 @@ const App = (() => {
     const d = new Date();
     return new Promise(res => {
       const close = modal(h('div', { class: 'diploma' },
-        h('div', { style: 'font-size:70px' }, '🏅' + char().e),
-        h('h1', {}, 'Diploma di'),
+        h('div', { style: 'font-size:60px' }, '🏅', avatar(60)),
+        h('h1', {}, t('diplomaOf')),
         h('div', { class: 'name' }, `Super ${NAME}`),
-        h('p', {}, 'ha completato l\'album di sticker!'),
-        h('p', { style: 'font-size:15px;opacity:.7' }, d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' })),
-        h('button', { class: 'big-btn', onclick: () => { close(); res(); } }, 'Evviva!'),
+        h('p', {}, t('diplomaTxt')),
+        h('p', { style: 'font-size:15px;opacity:.7' }, d.toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'it-IT', { day: 'numeric', month: 'long', year: 'numeric' })),
+        h('button', { class: 'big-btn', onclick: () => { close(); res(); } }, t('yay')),
       ));
-      say(`Complimenti ${NAME}! Hai completato tutto l'album! Sei una Super ${NAME}!`);
+      say(t('diplomaSay'));
     });
   }
 
@@ -498,12 +712,15 @@ const App = (() => {
   function registerGame(g) { games.push(g); }
 
   function startGame(g) {
+    state.stats.games[g.id] = (state.stats.games[g.id] || 0) + 1;
+    save();
     show('game', 'game ' + (g.cls || ''), s => {
       const stage = h('div', { class: 'stage' });
       let help = null;
       const hud = h('div', { class: 'hud' },
         h('button', { class: 'icon-btn', onclick: () => { stopVoice(); home(); } }, '🏠'),
         h('button', { class: 'icon-btn', 'aria-label': 'Aiuto', onclick: () => help && help() }, '❓'),
+        h('div', { class: 'pill flag-pill' }, FLAG[lang]),
         h('div', { class: 'spacer' }));
       s.append(stage, hud);
       const addPill = txt => { const p = h('div', { class: 'pill' }, txt); hud.append(p); return p; };
@@ -523,29 +740,64 @@ const App = (() => {
   const isLocked = () => state.timerMin > 0 && usage().sec >= limitSec();
 
   function tick() {
-    if (document.hidden || !started || !state.timerMin) return;
-    if (['sleep', 'parent', 'splash'].includes(screenName)) return;
+    if (document.hidden || !started) return;
+    if (['sleep', 'parent', 'splash', 'story'].includes(screenName)) return;
+    const days = state.stats.days;
+    days[today()] = (days[today()] || 0) + 1;
+    if (!state.timerMin) { if (days[today()] % 10 === 0) save(); return; }
     const u = usage();
     u.sec++;
     if (u.sec % 5 === 0) save();
     const left = limitSec() - u.sec;
     if (left === 60 && !u.warned) {
       u.warned = true; save();
-      say(`Ancora un minuto e poi ${char().the} va a nanna!`, { queue: true });
+      say(t('minute', tr(char().the)), { queue: true });
     }
-    if (left <= 0) { save(); sleepScreen(); }
+    if (left <= 0) { save(); story(); }
+  }
+
+  /* storia della buonanotte, poi la schermata della nanna */
+  function story() {
+    const pages = STORIES[state.story % STORIES.length];
+    state.story++; save();
+    nextLang();
+    show('story', 'story', s => {
+      let i = 0, alive = true;
+      const scene = h('div', { class: 'story-scene' });
+      const text = h('p', { class: 'story-text' });
+      const dots = h('div', { class: 'story-dots' }, pages.map(() => h('i')));
+      const next = h('button', { class: 'big-btn story-next', onclick: () => { sfx.tap(); go(i + 1); } }, t('storyNext'));
+      s.append(h('div', { class: 'story-moon' }, '🌙'), scene, text, dots, next);
+      async function go(k) {
+        if (!alive) return;
+        if (k >= pages.length) { alive = false; sleepScreen(); return; }
+        i = k;
+        const p = pages[i];
+        scene.innerHTML = '';
+        p.s.split(' ').forEach((e, j) => scene.append(e === '{c}' ? avatar(84) : h('span', { style: `animation-delay:${j * .15}s` }, e)));
+        text.textContent = tr(p);
+        [...dots.children].forEach((d, j) => d.classList.toggle('on', j <= i));
+        const my = i;
+        await say(tr(p), { rate: .9 });
+        await wait(1500);
+        if (alive && i === my) go(i + 1);
+      }
+      go(0);
+      return () => { alive = false; };
+    });
   }
 
   function sleepScreen() {
     show('sleep', 'sleep', s => {
+      const c = char();
       s.append(
         h('div', { class: 'moon' }, '🌙'),
-        h('div', { class: 'sleeper' }, char().e, h('span', { class: 'z' }, '💤')),
-        h('p', {}, `${char().the[0].toUpperCase() + char().the.slice(1)} è stanco e va a nanna. Ci vediamo domani, ${NAME}!`),
+        h('div', { class: 'sleeper' }, avatar(110), h('span', { class: 'z' }, '💤')),
+        h('p', {}, t('sleepTxt', tr(c.the), tr(c.fem))),
         h('button', { class: 'parent-link', onclick: parentGate }, '🔒 Genitore'),
       );
       if ((media.voices.nanna || []).length) playClip('nanna');
-      else say(`${char().the} è stanco e va a nanna. Ci vediamo domani, ${NAME}! Buonanotte!`);
+      else say(t('sleepSay', tr(c.the), tr(c.fem)));
     });
   }
 
@@ -561,7 +813,6 @@ const App = (() => {
   function birthday(preview) {
     if (!preview) { state.bdayShown = new Date().getFullYear(); save(); }
     const age = ageAtBirthday();
-    const words = ['zero', 'una', 'due', 'tre', 'quattro', 'cinque', 'sei', 'sette', 'otto', 'nove', 'dieci'];
     show('bday', 'bday', s => {
       let blown = 0;
       const candles = h('div', { class: 'candles' });
@@ -571,12 +822,12 @@ const App = (() => {
           onclick: async () => {
             if (c.classList.contains('out')) return;
             c.classList.add('out'); blown++; sfx.puff();
-            say(blown === 1 ? 'una!' : words[blown] + '!');
+            say(numWord(blown, true) + (lang === 'fr' ? ' !' : '!'));
             if (blown === age) {
               await wait(900);
               const dur = birthdaySong();
               confetti(150);
-              say(`Tanti auguri ${NAME}! Oggi hai ${age} anni!`, { rate: .9 });
+              say(t('bdayWish', age), { rate: .9 });
               setTimeout(() => confetti(120), 2500);
               setTimeout(() => {
                 s.append(h('button', {
@@ -584,7 +835,7 @@ const App = (() => {
                     await reward();
                     if (!state.char) setup(true); else home();
                   },
-                }, 'Un regalo! 🎁'));
+                }, t('gift')));
               }, Math.min(dur * 1000, 6000));
             }
           },
@@ -592,16 +843,16 @@ const App = (() => {
         candles.append(c);
       }
       s.append(
-        h('h1', {}, `Buon compleanno ${NAME}! 🎉`),
-        h('p', {}, 'Tocca le candeline per soffiarle!'),
+        h('h1', {}, t('bdayTitle')),
+        h('p', {}, t('bdayHint')),
         h('div', { class: 'cake' }, h('div', { class: 'plate' }), h('div', { class: 'layer l1' }), h('div', { class: 'layer l2' }), candles),
       );
       confetti(80);
-      say(`Buon compleanno ${NAME}! Oggi compi ${age} anni! Contiamo le candeline e soffiamole tutte!`);
+      say(t('bdaySay', age));
     });
   }
 
-  /* ---------- area genitori ---------- */
+  /* ---------- area genitori (in italiano) ---------- */
   function pinPad(title, onDone, extra) {
     let code = '';
     const dots = h('div', { class: 'pin-dots' }, [0, 1, 2, 3].map(() => h('i')));
@@ -656,6 +907,45 @@ const App = (() => {
     }, forgot);
   }
 
+  /* pagella: riassunto leggibile per papà */
+  function reportSection(section) {
+    const st = state.stats;
+    const judge = obj => {
+      const good = [], weak = [];
+      Object.entries(obj).forEach(([k, [ok, ko]]) => {
+        if (ok + ko < 2) return;
+        if (ok / (ok + ko) >= .75) good.push(k); else weak.push(`${k} (${ko} err.)`);
+      });
+      return { good, weak };
+    };
+    const chips = (list, cls) => h('div', { class: 'chips' }, list.length ? list.map(x => h('span', { class: 'chip ' + cls }, x)) : h('span', { class: 'hint' }, '—'));
+    const L = judge(st.letters), N = judge(st.numbers);
+    const pct = ([ok, ko]) => (ok + ko ? `${Math.round(ok / (ok + ko) * 100)}% giuste (${ok + ko} risposte)` : 'ancora nessuna risposta');
+    const days = [];
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date(Date.now() - i * 864e5);
+      const k = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+      days.push([d.toLocaleDateString('it-IT', { weekday: 'short' }), Math.round((st.days[k] || 0) / 60)]);
+    }
+    const maxM = Math.max(10, ...days.map(d => d[1]));
+    const names = Object.fromEntries(games.map(g => [g.id, g.short]));
+    const fav = Object.entries(st.games).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([id, n]) => `${names[id] || id} (${n})`).join(', ');
+    return section('📊 Pagella di Lena', 'Si basa sulla prima risposta a ogni domanda.',
+      h('b', {}, 'Lettere che conosce bene'), chips(L.good, 'ok'),
+      h('b', {}, 'Lettere da ripassare'), chips(L.weak, 'ko'),
+      h('b', {}, 'Numeri che conosce bene'), chips(N.good, 'ok'),
+      h('b', {}, 'Numeri da ripassare'), chips(N.weak, 'ko'),
+      h('b', {}, 'Lingue'),
+      h('p', { class: 'hint' }, `🇫🇷 Francese: ${pct(st.langs.fr)}`), h('p', { class: 'hint' }, `🇮🇹 Italiano: ${pct(st.langs.it)}`),
+      h('b', {}, 'Educazione stradale (Lena Salta)'),
+      h('p', { class: 'hint' }, `Attraversamenti col verde: ${st.greens} · sulle strisce: ${st.zebra} · fermate col rosso o col treno: ${st.reds}`),
+      h('b', {}, 'Tempo di gioco, ultimi 7 giorni'),
+      h('div', { class: 'bars' }, days.map(([d, m]) => h('div', { class: 'bar' },
+        h('i', { style: `height:${Math.max(2, m / maxM * 100)}%` }), h('span', {}, `${m}′`), h('small', {}, d)))),
+      fav ? h('p', { class: 'hint' }, `Giochi preferiti: ${fav}`) : null,
+      h('p', { class: 'hint' }, `Stelle guadagnate da spendere: ${state.stars} · accessori: ${state.owned.length}/${ITEMS.length}`));
+  }
+
   function parentArea() {
     show('parent', 'parent', s => {
       let rec = null;
@@ -678,15 +968,20 @@ const App = (() => {
         const u = usage();
         const usedMin = Math.floor(u.sec / 60);
         scroll.append(section('⏰ Timer della nanna',
-          `Oggi ha giocato ${usedMin} min` + (state.timerMin ? ` su ${state.timerMin + u.extra}.` : '.') + ' Allo scadere l\'app si blocca fino a domani.',
+          `Oggi ha giocato ${usedMin} min` + (state.timerMin ? ` su ${state.timerMin + u.extra}.` : '.') + ' Allo scadere parte una storia della buonanotte e l\'app si blocca fino a domani.',
           opts([[0, 'Spento'], [10, '10 min'], [15, '15'], [20, '20'], [30, '30'], [45, '45'], [60, '60']], state.timerMin, v => { state.timerMin = v; save(); }),
           h('div', { class: 'opts', style: 'margin-top:10px' },
             h('button', { class: 'act', onclick: () => { u.extra += 10; save(); render(); } }, '+10 min oggi'),
-            h('button', { class: 'act ghost', onclick: () => { u.sec = 0; u.extra = 0; u.warned = false; save(); render(); } }, 'Azzera oggi')),
-        ));
+            h('button', { class: 'act ghost', onclick: () => { u.sec = 0; u.extra = 0; u.warned = false; save(); render(); } }, 'Azzera oggi'),
+            h('button', { class: 'act ghost', onclick: story }, 'Prova la storia'))));
 
-        const voices = section('🎙️ Le vostre voci',
-          'Registrate frasi per Lena: le sentirà al posto della voce del telefono. Restano solo su questo telefono.',
+        scroll.append(section('🗣️ Lingua dei giochi', 'Alternanza: un turno in francese e uno in italiano.',
+          opts([['alt', '🇫🇷🇮🇹 Alternanza'], ['fr', '🇫🇷 Solo francese'], ['it', '🇮🇹 Solo italiano']], langMode(), v => { state.langMode = v; save(); })));
+
+        scroll.append(reportSection(section));
+
+        const voicesSec = section('🎙️ Le vostre voci',
+          'Registrate frasi per Lena (in francese o in italiano): le sentirà al posto della voce del telefono. Restano solo su questo telefono.',
           VOICE_SLOTS.map(sl => {
             const list = media.voices[sl.id] || [];
             const recBtn = h('button', { class: 'act' }, '● Registra');
@@ -700,7 +995,7 @@ const App = (() => {
                 h('button', { class: 'act ghost', onclick: async () => { await DB.del(m.id); await reloadMedia(); render(); } }, '🗑'),
               ))));
           }));
-        scroll.append(voices);
+        scroll.append(voicesSec);
 
         const nameIn = h('input', { type: 'text', placeholder: 'Nome (es. Papà, Mahault, Nonna)', maxlength: '14' });
         const fileIn = h('input', { type: 'file', accept: 'image/*', style: 'display:none' });
@@ -734,18 +1029,21 @@ const App = (() => {
           )))));
 
         scroll.append(section('🎨 Personaggio e colore', null,
-          h('button', { class: 'act', onclick: () => setup(false) }, `Cambia (ora: ${char().e} ${char().name})`)));
+          h('button', { class: 'act', onclick: () => setup(false) }, `Cambia (ora: ${char().e} ${char().name.it})`)));
 
         scroll.append(section('🎂 Compleanno', `Il 18 gennaio l'app si apre con la festa (${ageAtBirthday()} candeline).`,
           h('button', { class: 'act', onclick: () => birthday(true) }, 'Prova la festa')));
 
         scroll.append(section('📒 Progressi', `Sticker: ${state.stickers.length}/${STICKERS.length}. Livelli: ` +
-          games.map(g => `${g.short || g.title} ${level(g.id)}`).join(', ') + `. Record Salta: ${state.hopBest}.`,
+          games.map(g => `${g.short} ${level(g.id)}`).join(', ') + `. Record Salta: ${state.hopBest}.`,
           h('div', { class: 'opts' },
+            h('button', { class: 'act ghost', onclick: () => { state.stars += 20; save(); render(); } }, '+20 ⭐ regalo'),
             h('button', {
               class: 'act ghost', onclick: () => {
-                if (!confirm('Azzerare sticker, livelli e record?')) return;
-                state.stickers = []; state.levels = {}; state.hopBest = 0; state.diploma = false; save(); render();
+                if (!confirm('Azzerare sticker, livelli, stelle, armadio e pagella?')) return;
+                const d = defaults();
+                Object.assign(state, { stickers: [], levels: {}, hopBest: 0, diploma: false, stars: 0, owned: [], wear: {}, stats: d.stats });
+                save(); render();
               },
             }, 'Azzera progressi'),
             h('button', { class: 'act ghost', onclick: () => { state.pin = null; save(); parentGate(); } }, 'Cambia PIN'))));
@@ -763,7 +1061,7 @@ const App = (() => {
         rec = r;
         r.ondataavailable = e => e.data.size && chunks.push(e.data);
         r.onstop = async () => {
-          stream.getTracks().forEach(t => t.stop());
+          stream.getTracks().forEach(tr0 => tr0.stop());
           clearInterval(iv); clearTimeout(auto);
           rec = null;
           const secs = Math.max(1, Math.round((Date.now() - t0) / 1000));
@@ -816,21 +1114,21 @@ const App = (() => {
      at/to: elemento, {x,y} o funzione che li restituisce (valutata al momento). */
   function tutorial(steps) {
     stopVoice();
-    document.querySelectorAll('.tut').forEach(t => t.remove());
+    document.querySelectorAll('.tut').forEach(x => x.remove());
     const ov = h('div', { class: 'tut' });
     const hand = h('div', { class: 'tut-hand' }, '👆');
-    const cap = h('div', { class: 'tut-cap' });
-    ov.append(cap, hand);
+    const capEl = h('div', { class: 'tut-cap' });
+    ov.append(capEl, hand);
     document.body.append(ov);
-    const pt = t => {
-      const v = typeof t === 'function' ? t() : t;
+    const pt = x => {
+      const v = typeof x === 'function' ? x() : x;
       if (v && v.getBoundingClientRect) {
         const r = v.getBoundingClientRect();
         if (r.width) return { x: r.left + r.width / 2, y: r.top + r.height / 2, el: v };
       } else if (v && 'x' in v) return v;
       return { x: innerWidth / 2, y: innerHeight / 2 };
     };
-    const T = (p, s = 1) => `translate(${p.x - 30}px, ${p.y - 8}px) scale(${s})`;
+    const TT = (p, s = 1) => `translate(${p.x - 30}px, ${p.y - 8}px) scale(${s})`;
     const ripple = p => {
       const r = h('div', { class: 'tut-ripple', style: `left:${p.x}px;top:${p.y}px` });
       ov.append(r);
@@ -849,16 +1147,16 @@ const App = (() => {
           ov.insertBefore(ghost, hand);
         }
         const dx = b.x - a.x, dy = b.y - a.y;
-        const opts = { duration: 1400, easing: 'ease-in-out' };
-        const an = hand.animate([{ transform: T(a, .9), opacity: 0 }, { transform: T(a, .9), opacity: 1, offset: .15 },
-          { transform: T(b, .9), opacity: 1, offset: .8 }, { transform: T(b, .9), opacity: 0 }], opts);
+        const o = { duration: 1400, easing: 'ease-in-out' };
+        const an = hand.animate([{ transform: TT(a, .9), opacity: 0 }, { transform: TT(a, .9), opacity: 1, offset: .15 },
+          { transform: TT(b, .9), opacity: 1, offset: .8 }, { transform: TT(b, .9), opacity: 0 }], o);
         if (ghost) ghost.animate([{ transform: 'none' }, { transform: 'none', offset: .15 },
-          { transform: `translate(${dx}px, ${dy}px)`, offset: .8 }, { transform: `translate(${dx}px, ${dy}px)` }], opts);
+          { transform: `translate(${dx}px, ${dy}px)`, offset: .8 }, { transform: `translate(${dx}px, ${dy}px)` }], o);
         await an.finished.catch(() => {});
         if (ghost) ghost.remove();
       } else {
-        hand.style.transform = T(a);
-        const an = hand.animate([{ transform: T(a, 1) }, { transform: T(a, .8), offset: .4 }, { transform: T(a, 1) }], { duration: 600 });
+        hand.style.transform = TT(a);
+        const an = hand.animate([{ transform: TT(a, 1) }, { transform: TT(a, .8), offset: .4 }, { transform: TT(a, 1) }], { duration: 600 });
         setTimeout(() => ripple(a), 240);
         await an.finished.catch(() => {});
         await wait(250);
@@ -868,9 +1166,9 @@ const App = (() => {
       for (const s of steps) {
         if (!ov.isConnected) return resolve();
         if (s.before) s.before();
-        cap.innerHTML = '';
-        cap.append(h('span', { class: 'ico' }, s.icon || '👆'), h('span', {}, s.text));
-        cap.classList.toggle('top', s.cap === 'top');
+        capEl.innerHTML = '';
+        capEl.append(h('span', { class: 'ico' }, s.icon || '👆'), h('span', {}, s.text));
+        capEl.classList.toggle('top', s.cap === 'top');
         const v = say(s.text);
         for (let i = 0; i < (s.reps || 2) && ov.isConnected; i++) await act(s);
         await v;
@@ -878,11 +1176,11 @@ const App = (() => {
       }
       if (!ov.isConnected) return resolve();
       hand.style.display = 'none';
-      cap.innerHTML = '';
-      cap.classList.remove('top');
-      cap.append(h('span', { class: 'ico' }, '⭐'), h('span', {}, 'Adesso prova tu!'));
-      say('Adesso prova tu!');
-      ov.append(h('button', { class: 'big-btn tut-go', onclick: () => { sfx.pop(); ov.remove(); resolve(); } }, 'Ho capito! 👍'));
+      capEl.innerHTML = '';
+      capEl.classList.remove('top');
+      capEl.append(h('span', { class: 'ico' }, '⭐'), h('span', {}, t('yourTurn')));
+      say(t('yourTurn'));
+      ov.append(h('button', { class: 'big-btn tut-go', onclick: () => { sfx.pop(); ov.remove(); resolve(); } }, t('gotIt')));
     });
   }
   /* tutorial solo la prima volta; risolve subito se già visto */
@@ -896,20 +1194,26 @@ const App = (() => {
 
   /* ---------- catalogo frasi (per generare i file audio, vedi tools/) ---------- */
   function phrases() {
-    const out = [...PRAISE, ...RETRY, `Ciao ${NAME}! Giochiamo?`, `Ciao ${NAME}! Scegli il tuo amico e il tuo colore preferito!`,
-      'Questo è per papà!', 'Questo lo vinci giocando!', 'Hai completato l\'album! Sei bravissima!',
-      'Evviva! Un nuovo sticker per il tuo album!', `Complimenti ${NAME}! Hai completato tutto l'album! Sei una Super ${NAME}!`,
-      'Adesso prova tu!', 'Tocca un gioco per iniziare!', 'Qui trovi gli sticker che vinci giocando!'];
-    CHARS.forEach(c => out.push(`${c.name}!`, `Evviva! Ciao ${c.name}!`, `Ancora un minuto e poi ${c.the} va a nanna!`,
-      `${c.the} è stanco e va a nanna. Ci vediamo domani, ${NAME}! Buonanotte!`));
-    COLORS.forEach(c => out.push(`${c.n}!`));
-    for (let n = 0; n < STICKERS.length; n++) out.push(`Hai ${n} sticker. Gioca per vincerne altri!`);
-    ['una', 'due', 'tre', 'quattro', 'cinque', 'sei', 'sette', 'otto', 'nove', 'dieci'].forEach(w => out.push(w));
-    for (let a = 1; a <= 10; a++) {
-      out.push(`Tanti auguri ${NAME}! Oggi hai ${a} anni!`,
-        `Buon compleanno ${NAME}! Oggi compi ${a} anni! Contiamo le candeline e soffiamole tutte!`);
+    const out = [];
+    const saved = lang;
+    for (const l of LANGS) {
+      lang = l;
+      const bang = l === 'fr' ? ' !' : '!';
+      const add = (...xs) => xs.forEach(x => out.push([l, x]));
+      add(...PRAISE[l], ...RETRY[l]);
+      ['greet', 'forDad', 'setupSay', 'albumDone', 'albumLocked', 'newStickerSay', 'diplomaSay', 'yourTurn',
+        'tutGame', 'tutAlbum', 'tutWardrobe', 'wardrobeSay', 'bought'].forEach(k => add(t(k)));
+      CHARS.forEach(c => add(tr(c.name) + bang, t('hiChar', tr(c.name)), t('minute', tr(c.the)), t('sleepSay', tr(c.the), tr(c.fem))));
+      COLORS.forEach(c => add(tr(c.n) + bang));
+      for (let n = 0; n < STICKERS.length; n++) add(t('albumCount', n));
+      for (let n = 1; n <= 10; n++) add(numWord(n, true) + bang);
+      for (let a = 1; a <= 10; a++) add(t('bdayWish', a), t('bdaySay', a));
+      ITEMS.forEach(it => add(tr(it.n) + bang, `${tr(it.n)}${bang} ${t('buyQ')}`));
+      for (let n = 1; n <= 30; n++) add(t('missing', n));
+      STORIES.flat().forEach(p => add(p[l]));
+      games.forEach(g => { add(g.title[l]); if (g.phrases) add(...g.phrases(l)); });
     }
-    games.forEach(g => { out.push(g.title); if (g.phrases) out.push(...g.phrases()); });
+    lang = saved;
     return out;
   }
 
@@ -939,9 +1243,11 @@ const App = (() => {
   }
 
   return {
-    NAME, CHARS, boot, h, say, stopVoice, sfx, praise, retry, reward, confetti, floatAt,
+    NAME, CHARS, NUM, FLAG, boot, h, say, stopVoice, sfx, praise, retry, reward, confetti, floatAt,
     rint, pick, shuffle, wait, level, setLevel, char, registerGame, home, media,
-    tutorial, intro, phrases, vhash, modal, saveDrawing, glitter,
+    tutorial, intro, phrases, vhash, modal, saveDrawing, glitter, avatar,
+    tr, t, nextLang, numWord, track, count, addStars,
+    get lang() { return lang; }, set lang(l) { lang = l; },
     get state() { return state; }, save,
   };
 })();

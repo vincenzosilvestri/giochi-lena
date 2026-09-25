@@ -1,4 +1,4 @@
-/* Forme e Colori — incastri da trascinare e sequenze da completare. */
+/* Forme e Colori / Formes et couleurs — incastri da trascinare e sequenze da completare. Bilingue FR/IT. */
 (() => {
   const { h, say, sfx, pick, shuffle, wait } = App;
 
@@ -11,36 +11,50 @@
     return `<polygon points="${p.join(' ')}"/>`;
   })();
   const SHAPES = {
-    cerchio: { f: 0, el: '<circle cx="50" cy="50" r="42"/>' },
-    quadrato: { f: 0, el: '<rect x="10" y="10" width="80" height="80" rx="8"/>' },
-    triangolo: { f: 0, el: '<polygon points="50,8 94,90 6,90"/>' },
-    stella: { f: 1, el: star },
-    cuore: { f: 0, el: '<path d="M50 90 C22 68 5 50 5 31 C5 17 16 7 29 7 C39 7 46 13 50 21 C54 13 61 7 71 7 C84 7 95 17 95 31 C95 50 78 68 50 90Z"/>' },
-    rombo: { f: 0, el: '<polygon points="50,4 94,50 50,96 6,50"/>' },
+    cerchio: { f: 0, fr: ['Cercle', 0], el: '<circle cx="50" cy="50" r="42"/>' },
+    quadrato: { f: 0, fr: ['Carré', 0], el: '<rect x="10" y="10" width="80" height="80" rx="8"/>' },
+    triangolo: { f: 0, fr: ['Triangle', 0], el: '<polygon points="50,8 94,90 6,90"/>' },
+    stella: { f: 1, fr: ['Étoile', 1], el: star },
+    cuore: { f: 0, fr: ['Cœur', 0], el: '<path d="M50 90 C22 68 5 50 5 31 C5 17 16 7 29 7 C39 7 46 13 50 21 C54 13 61 7 71 7 C84 7 95 17 95 31 C95 50 78 68 50 90Z"/>' },
+    rombo: { f: 0, fr: ['Losange', 0], el: '<polygon points="50,4 94,50 50,96 6,50"/>' },
   };
   const COLORS = [
-    { c: '#ff5a5a', m: 'rosso', f: 'rossa' }, { c: '#f5c400', m: 'giallo', f: 'gialla' },
-    { c: '#3cc45c', m: 'verde', f: 'verde' }, { c: '#4a6cff', m: 'blu', f: 'blu' },
-    { c: '#ff9f40', m: 'arancione', f: 'arancione' }, { c: '#9b5cff', m: 'viola', f: 'viola' },
-    { c: '#ff6fa8', m: 'rosa', f: 'rosa' },
+    { c: '#ff5a5a', m: 'rosso', f: 'rossa', fr: ['rouge', 'rouge'] }, { c: '#f5c400', m: 'giallo', f: 'gialla', fr: ['jaune', 'jaune'] },
+    { c: '#3cc45c', m: 'verde', f: 'verde', fr: ['vert', 'verte'] }, { c: '#4a6cff', m: 'blu', f: 'blu', fr: ['bleu', 'bleue'] },
+    { c: '#ff9f40', m: 'arancione', f: 'arancione', fr: ['orange', 'orange'] }, { c: '#9b5cff', m: 'viola', f: 'viola', fr: ['violet', 'violette'] },
+    { c: '#ff6fa8', m: 'rosa', f: 'rosa', fr: ['rose', 'rose'] },
   ];
   const LEVELS = [null, { n: 3, color: false }, { n: 4, color: false }, { n: 4, color: true }, { n: 5, color: true }];
   const PATTERNS = [null, ['AB'], ['AB', 'AAB'], ['AB', 'AAB', 'ABC', 'ABB'], ['AAB', 'ABC', 'ABB', 'AABB']];
   const ROUND = 3;
-  const TUT = ['Trascina la forma nel posto uguale!', 'Attenta: anche il colore deve essere uguale!',
-    'Guarda la fila: le forme si ripetono.', 'Tocca quella che viene dopo!'];
-
-  const name = it => `${it.shape[0].toUpperCase()}${it.shape.slice(1)} ${SHAPES[it.shape].f ? it.color.f : it.color.m}`;
+  const TX = {
+    it: {
+      tut: ['Trascina la forma nel posto uguale!', 'Attenta: anche il colore deve essere uguale!', 'Guarda la fila: le forme si ripetono.', 'Tocca quella che viene dopo!'],
+      putColor: 'Metti ogni forma al suo posto. Attenta ai colori!', put: 'Trascina ogni forma nel suo posto!',
+      lookColor: 'Guarda il colore!', noFit: 'Non entra! Prova un altro posto.', next: 'Cosa viene dopo?', nextShow: 'Cosa viene dopo? 🤔',
+      lookRow: 'Guarda bene la fila! Riprova.',
+    },
+    fr: {
+      tut: ['Fais glisser la forme à la bonne place !', 'Attention : la couleur aussi doit être pareille !', 'Regarde la file : les formes se répètent.', 'Touche celle qui vient après !'],
+      putColor: 'Mets chaque forme à sa place. Attention aux couleurs !', put: 'Fais glisser chaque forme à sa place !',
+      lookColor: 'Regarde la couleur !', noFit: 'Ça ne rentre pas ! Essaie une autre place.', next: "Qu'est-ce qui vient après ?", nextShow: 'Et après ? 🤔',
+      lookRow: 'Regarde bien la file ! Réessaie.',
+    },
+  };
+  const tx = () => TX[App.lang];
+  const name = (it, l = App.lang) => (l === 'fr'
+    ? `${SHAPES[it.shape].fr[0]} ${it.color.fr[SHAPES[it.shape].fr[1]]}`
+    : `${it.shape[0].toUpperCase()}${it.shape.slice(1)} ${SHAPES[it.shape].f ? it.color.f : it.color.m}`);
   function svg(shape, fill, stroke = 'none', dash = '') {
     return `<svg viewBox="-4 -4 108 108" width="100%" height="100%"><g fill="${fill}" stroke="${stroke}" stroke-width="5" stroke-dasharray="${dash}" stroke-linejoin="round">${SHAPES[shape].el}</g></svg>`;
   }
 
   App.registerGame({
-    id: 'forme', title: 'Forme e Colori', short: 'Forme', icon: '🔷',
-    phrases: () => {
-      const out = [...TUT, 'Metti ogni forma al suo posto. Attenta ai colori!', 'Trascina ogni forma nel suo posto!',
-        'Guarda il colore!', 'Non entra! Prova un altro posto.', 'Cosa viene dopo?', 'Guarda bene la fila! Riprova.'];
-      Object.keys(SHAPES).forEach(shape => COLORS.forEach(color => out.push(name({ shape, color }))));
+    id: 'forme', title: { fr: 'Formes et couleurs', it: 'Forme e Colori' }, short: 'Forme', icon: '🔷',
+    phrases: l => {
+      const T = TX[l];
+      const out = [...T.tut, T.putColor, T.put, T.lookColor, T.noFit, T.next, T.lookRow];
+      Object.keys(SHAPES).forEach(shape => COLORS.forEach(color => out.push(name({ shape, color }, l))));
       return out;
     },
     start({ stage, addPill, setHelp }) {
@@ -60,6 +74,7 @@
 
       async function roundDone() {
         done++;
+        App.addStars(2);
         pill.textContent = `⭐ ${done}/${ROUND}`;
         await App.praise();
         if (!alive) return;
@@ -75,6 +90,7 @@
       function next() {
         if (!alive) return;
         [...stage.children].forEach(c => c.remove());
+        App.nextLang();
         if (done === ROUND - 1) sequence(); else puzzle();
       }
 
@@ -168,7 +184,7 @@
             } else {
               if (near) {
                 sfx.boing();
-                say(L.color && near.ho.it.shape === it.shape ? 'Guarda il colore!' : 'Non entra! Prova un altro posto.');
+                say(L.color && near.ho.it.shape === it.shape ? tx().lookColor : tx().noFit);
               }
               p.classList.add('back');
               p.style.left = `${hx}px`; p.style.top = `${hy}px`;
@@ -179,9 +195,9 @@
         });
         const firstPiece = () => pieces.find(p => !p.el.dataset.done);
         const holeFor = () => { const fp = firstPiece(); return fp && holes.find(ho => ho.it === fp.it).el; };
-        const steps = [{ text: TUT[0], icon: '✋', action: 'drag', at: () => (firstPiece() || {}).el, to: holeFor, cap: 'top' }];
-        if (L.color) steps.push({ text: TUT[1], icon: '🎨', action: 'tap', at: holeFor, cap: 'top' });
-        ask(L.color ? 'Metti ogni forma al suo posto. Attenta ai colori!' : 'Trascina ogni forma nel suo posto!',
+        const steps = [{ text: tx().tut[0], icon: '✋', action: 'drag', at: () => (firstPiece() || {}).el, to: holeFor, cap: 'top' }];
+        if (L.color) steps.push({ text: tx().tut[1], icon: '🎨', action: 'tap', at: holeFor, cap: 'top' });
+        ask(L.color ? tx().putColor : tx().put,
           L.color ? 'forme-colori' : 'forme', steps);
       }
 
@@ -202,10 +218,12 @@
           .filter(Boolean).filter(u => u !== answer).slice(0, 2);
         const choices = h('div', { class: 'seq-choices' });
         let locked = false;
+        let first = true;
         shuffle([answer].concat(wrong)).forEach(u => {
           const b = h('button', { html: svg(u.shape, u.color.c) });
           b.onclick = async () => {
             if (locked) return;
+            if (first) { App.track(null, null, u === answer); first = false; }
             if (u === answer) {
               locked = true;
               row.querySelector('.q').innerHTML = svg(u.shape, u.color.c);
@@ -216,15 +234,15 @@
               sfx.boing();
               b.classList.add('shake');
               setTimeout(() => b.classList.remove('shake'), 500);
-              say('Guarda bene la fila! Riprova.');
+              say(tx().lookRow);
             }
           };
           choices.append(b);
         });
-        stage.append(h('div', { class: 'prompt' }, 'Cosa viene dopo? 🤔'), row, choices);
-        ask('Cosa viene dopo?', 'sequenze', [
-          { text: TUT[2], icon: '👀', action: 'swipe', at: () => row.firstElementChild, to: () => row.querySelector('.q') },
-          { text: TUT[3], icon: '❓', action: 'tap', at: () => choices.children[1], cap: 'top' },
+        stage.append(h('div', { class: 'prompt' }, tx().nextShow), row, choices);
+        ask(tx().next, 'sequenze', [
+          { text: tx().tut[2], icon: '👀', action: 'swipe', at: () => row.firstElementChild, to: () => row.querySelector('.q') },
+          { text: tx().tut[3], icon: '❓', action: 'tap', at: () => choices.children[1], cap: 'top' },
         ]);
       }
 

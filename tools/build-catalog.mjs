@@ -11,10 +11,10 @@ ctx.window = ctx;
 vm.createContext(ctx);
 for (const f of files) vm.runInContext(fs.readFileSync(path.join(root, f), 'utf8'), ctx, { filename: f });
 
-const list = vm.runInContext('App.phrases().map(t => [App.vhash(t), t])', ctx);
+const list = vm.runInContext('App.phrases().map(([l, t]) => [App.vhash(t, l), l, t])', ctx);
 const byHash = new Map();
-for (const [h, t] of list) if (!byHash.has(h)) byHash.set(h, t);
-const catalog = [...byHash].map(([h, text]) => ({ h, text }));
+for (const [h, lang, text] of list) if (!byHash.has(h)) byHash.set(h, { h, lang, text });
+const catalog = [...byHash.values()];
 fs.writeFileSync(path.join(root, 'voice/catalog.json'), JSON.stringify(catalog, null, 1));
 fs.writeFileSync(path.join(root, 'voice/index.json'), JSON.stringify(catalog.map(c => c.h)));
-console.log(`${catalog.length} frasi nel catalogo`);
+console.log(`${catalog.length} frasi nel catalogo (fr ${catalog.filter(c => c.lang === 'fr').length}, it ${catalog.filter(c => c.lang === 'it').length})`);

@@ -3,7 +3,7 @@ Uso: python tools/gen_voice.py [--force]   Richiede: pip install edge-tts"""
 import asyncio, json, os, sys
 import edge_tts
 
-VOICE, RATE, PITCH = 'it-IT-IsabellaNeural', '-6%', '+6Hz'
+VOICES = {'it': ('it-IT-IsabellaNeural', '-6%', '+6Hz'), 'fr': ('fr-FR-DeniseNeural', '-6%', '+4Hz')}
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'voice')
 
 async def one(sem, item, force):
@@ -13,7 +13,8 @@ async def one(sem, item, force):
     async with sem:
         for attempt in range(3):
             try:
-                await edge_tts.Communicate(item['text'], VOICE, rate=RATE, pitch=PITCH).save(path)
+                voice, rate, pitch = VOICES[item.get('lang', 'it')]
+                await edge_tts.Communicate(item['text'], voice, rate=rate, pitch=pitch).save(path)
                 return 1
             except Exception as e:
                 if attempt == 2:

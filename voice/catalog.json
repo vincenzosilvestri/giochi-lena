@@ -1,2238 +1,6427 @@
 [
  {
+  "h": "10bef57d",
+  "lang": "fr",
+  "text": "Bravo !"
+ },
+ {
+  "h": "29bbd5f5",
+  "lang": "fr",
+  "text": "Bravo Lena !"
+ },
+ {
+  "h": "f7ecd29d",
+  "lang": "fr",
+  "text": "Youpi !"
+ },
+ {
+  "h": "ad6660ae",
+  "lang": "fr",
+  "text": "Super !"
+ },
+ {
+  "h": "24effb73",
+  "lang": "fr",
+  "text": "Génial !"
+ },
+ {
+  "h": "88aedb18",
+  "lang": "fr",
+  "text": "Trop bien !"
+ },
+ {
+  "h": "43afa236",
+  "lang": "fr",
+  "text": "Parfait !"
+ },
+ {
+  "h": "aa51d95a",
+  "lang": "fr",
+  "text": "Bien joué !"
+ },
+ {
+  "h": "7cec22c3",
+  "lang": "fr",
+  "text": "Essaie encore !"
+ },
+ {
+  "h": "0612844d",
+  "lang": "fr",
+  "text": "Presque ! Réessaie."
+ },
+ {
+  "h": "4e0ed588",
+  "lang": "fr",
+  "text": "Encore une fois !"
+ },
+ {
+  "h": "1a6aec53",
+  "lang": "fr",
+  "text": "Coucou Lena ! On joue ?"
+ },
+ {
+  "h": "311ee3e8",
+  "lang": "fr",
+  "text": "Ça, c'est pour papa !"
+ },
+ {
+  "h": "4a974eb4",
+  "lang": "fr",
+  "text": "Coucou Lena ! Choisis ton ami et ta couleur préférée !"
+ },
+ {
+  "h": "c0323c9a",
+  "lang": "fr",
+  "text": "Tu as complété l'album ! Tu es super forte !"
+ },
+ {
+  "h": "caf80df6",
+  "lang": "fr",
+  "text": "Celui-là, tu le gagnes en jouant !"
+ },
+ {
+  "h": "0ce24f6d",
+  "lang": "fr",
+  "text": "Youpi ! Un nouvel autocollant pour ton album !"
+ },
+ {
+  "h": "886f68fc",
+  "lang": "fr",
+  "text": "Bravo Lena ! Tu as complété tout l'album ! Tu es une Super Lena !"
+ },
+ {
+  "h": "777939e1",
+  "lang": "fr",
+  "text": "À toi de jouer !"
+ },
+ {
+  "h": "98eb12a5",
+  "lang": "fr",
+  "text": "Touche un jeu pour commencer !"
+ },
+ {
+  "h": "4cac77b5",
+  "lang": "fr",
+  "text": "Ici, tu trouves les autocollants que tu gagnes !"
+ },
+ {
+  "h": "5f693c58",
+  "lang": "fr",
+  "text": "Ici, tu dépenses tes étoiles pour habiller ton ami !"
+ },
+ {
+  "h": "5c51adfe",
+  "lang": "fr",
+  "text": "Choisis des habits pour ton ami !"
+ },
+ {
+  "h": "cb94f7fc",
+  "lang": "fr",
+  "text": "Youpi ! C'est à toi !"
+ },
+ {
+  "h": "025c673f",
+  "lang": "fr",
+  "text": "Petit lapin !"
+ },
+ {
+  "h": "e6d5dbbf",
+  "lang": "fr",
+  "text": "Youpi ! Coucou Petit lapin !"
+ },
+ {
+  "h": "6ee4f19d",
+  "lang": "fr",
+  "text": "Encore une minute et le petit lapin va faire dodo !"
+ },
+ {
+  "h": "0aee1452",
+  "lang": "fr",
+  "text": "Le petit lapin est fatigué et va faire dodo. À demain, Lena ! Bonne nuit !"
+ },
+ {
+  "h": "f04460d9",
+  "lang": "fr",
+  "text": "Petit chat !"
+ },
+ {
+  "h": "06bfea59",
+  "lang": "fr",
+  "text": "Youpi ! Coucou Petit chat !"
+ },
+ {
+  "h": "3f301f87",
+  "lang": "fr",
+  "text": "Encore une minute et le petit chat va faire dodo !"
+ },
+ {
+  "h": "84348c22",
+  "lang": "fr",
+  "text": "Le petit chat est fatigué et va faire dodo. À demain, Lena ! Bonne nuit !"
+ },
+ {
+  "h": "f711fea9",
+  "lang": "fr",
+  "text": "Licorne !"
+ },
+ {
+  "h": "a8652b29",
+  "lang": "fr",
+  "text": "Youpi ! Coucou Licorne !"
+ },
+ {
+  "h": "ade2f483",
+  "lang": "fr",
+  "text": "Encore une minute et la licorne va faire dodo !"
+ },
+ {
+  "h": "a1845a99",
+  "lang": "fr",
+  "text": "La licorne est fatiguée et va faire dodo. À demain, Lena ! Bonne nuit !"
+ },
+ {
+  "h": "67b78b80",
+  "lang": "fr",
+  "text": "Petit chien !"
+ },
+ {
+  "h": "4c310000",
+  "lang": "fr",
+  "text": "Youpi ! Coucou Petit chien !"
+ },
+ {
+  "h": "ae1b85fa",
+  "lang": "fr",
+  "text": "Encore une minute et le petit chien va faire dodo !"
+ },
+ {
+  "h": "4c1ec4a5",
+  "lang": "fr",
+  "text": "Le petit chien est fatigué et va faire dodo. À demain, Lena ! Bonne nuit !"
+ },
+ {
+  "h": "10521bf0",
+  "lang": "fr",
+  "text": "Rose !"
+ },
+ {
+  "h": "a84a38eb",
+  "lang": "fr",
+  "text": "Rouge !"
+ },
+ {
+  "h": "ff8508a9",
+  "lang": "fr",
+  "text": "Orange !"
+ },
+ {
+  "h": "d8168c78",
+  "lang": "fr",
+  "text": "Jaune !"
+ },
+ {
+  "h": "66628fb0",
+  "lang": "fr",
+  "text": "Vert !"
+ },
+ {
+  "h": "268b97f8",
+  "lang": "fr",
+  "text": "Turquoise !"
+ },
+ {
+  "h": "0000aa4e",
+  "lang": "fr",
+  "text": "Bleu clair !"
+ },
+ {
+  "h": "293c35b7",
+  "lang": "fr",
+  "text": "Bleu !"
+ },
+ {
+  "h": "cd4e9378",
+  "lang": "fr",
+  "text": "Violet !"
+ },
+ {
+  "h": "2c320010",
+  "lang": "fr",
+  "text": "Lilas !"
+ },
+ {
+  "h": "8c028730",
+  "lang": "fr",
+  "text": "Tu as 0 autocollant. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "e534cb79",
+  "lang": "fr",
+  "text": "Tu as 1 autocollant. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "5d3263cd",
+  "lang": "fr",
+  "text": "Tu as 2 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "87424cc6",
+  "lang": "fr",
+  "text": "Tu as 3 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "6a15843b",
+  "lang": "fr",
+  "text": "Tu as 4 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "27e8860c",
+  "lang": "fr",
+  "text": "Tu as 5 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "82c1e831",
+  "lang": "fr",
+  "text": "Tu as 6 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "972dba4a",
+  "lang": "fr",
+  "text": "Tu as 7 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "4e3af9df",
+  "lang": "fr",
+  "text": "Tu as 8 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "d90cd720",
+  "lang": "fr",
+  "text": "Tu as 9 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "57d203e6",
+  "lang": "fr",
+  "text": "Tu as 10 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "e3b2e4ed",
+  "lang": "fr",
+  "text": "Tu as 11 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "aa1a5e48",
+  "lang": "fr",
+  "text": "Tu as 12 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "d31edf67",
+  "lang": "fr",
+  "text": "Tu as 13 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "4521dc6a",
+  "lang": "fr",
+  "text": "Tu as 14 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "1c9517d1",
+  "lang": "fr",
+  "text": "Tu as 15 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "b8ed752c",
+  "lang": "fr",
+  "text": "Tu as 16 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "af7e2ddb",
+  "lang": "fr",
+  "text": "Tu as 17 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "b5b337fe",
+  "lang": "fr",
+  "text": "Tu as 18 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "7a10efa5",
+  "lang": "fr",
+  "text": "Tu as 19 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "6d80ad81",
+  "lang": "fr",
+  "text": "Tu as 20 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "1601e2da",
+  "lang": "fr",
+  "text": "Tu as 21 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "907fe34b",
+  "lang": "fr",
+  "text": "Tu as 22 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "1357569c",
+  "lang": "fr",
+  "text": "Tu as 23 autocollants. Joue pour en gagner d'autres !"
+ },
+ {
+  "h": "72858173",
+  "lang": "fr",
+  "text": "une !"
+ },
+ {
+  "h": "4af656b5",
+  "lang": "fr",
+  "text": "deux !"
+ },
+ {
+  "h": "f4a05172",
+  "lang": "fr",
+  "text": "trois !"
+ },
+ {
+  "h": "6ef3b9f5",
+  "lang": "fr",
+  "text": "quatre !"
+ },
+ {
+  "h": "2e7d256a",
+  "lang": "fr",
+  "text": "cinq !"
+ },
+ {
+  "h": "fe1b16f9",
+  "lang": "fr",
+  "text": "six !"
+ },
+ {
+  "h": "dd30293b",
+  "lang": "fr",
+  "text": "sept !"
+ },
+ {
+  "h": "5cd34d11",
+  "lang": "fr",
+  "text": "huit !"
+ },
+ {
+  "h": "f2abaf8d",
+  "lang": "fr",
+  "text": "neuf !"
+ },
+ {
+  "h": "2c98ba54",
+  "lang": "fr",
+  "text": "dix !"
+ },
+ {
+  "h": "b062e86e",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Tu as 1 ans !"
+ },
+ {
+  "h": "d94aa92f",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Aujourd'hui tu as 1 ans ! Comptons les bougies et soufflons-les toutes !"
+ },
+ {
+  "h": "70e12caf",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Tu as 2 ans !"
+ },
+ {
+  "h": "a3997e64",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Aujourd'hui tu as 2 ans ! Comptons les bougies et soufflons-les toutes !"
+ },
+ {
+  "h": "15cfe788",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Tu as 3 ans !"
+ },
+ {
+  "h": "4fae80fd",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Aujourd'hui tu as 3 ans ! Comptons les bougies et soufflons-les toutes !"
+ },
+ {
+  "h": "deec0921",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Tu as 4 ans !"
+ },
+ {
+  "h": "ce6a3f3a",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Aujourd'hui tu as 4 ans ! Comptons les bougies et soufflons-les toutes !"
+ },
+ {
+  "h": "6189e4ba",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Tu as 5 ans !"
+ },
+ {
+  "h": "9f81e4cb",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Aujourd'hui tu as 5 ans ! Comptons les bougies et soufflons-les toutes !"
+ },
+ {
+  "h": "09140c3b",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Tu as 6 ans !"
+ },
+ {
+  "h": "38aa50a0",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Aujourd'hui tu as 6 ans ! Comptons les bougies et soufflons-les toutes !"
+ },
+ {
+  "h": "c4cc2cb4",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Tu as 7 ans !"
+ },
+ {
+  "h": "597b84f9",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Aujourd'hui tu as 7 ans ! Comptons les bougies et soufflons-les toutes !"
+ },
+ {
+  "h": "a63b744d",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Tu as 8 ans !"
+ },
+ {
+  "h": "d3db94d6",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Aujourd'hui tu as 8 ans ! Comptons les bougies et soufflons-les toutes !"
+ },
+ {
+  "h": "efe826c6",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Tu as 9 ans !"
+ },
+ {
+  "h": "68545e07",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Aujourd'hui tu as 9 ans ! Comptons les bougies et soufflons-les toutes !"
+ },
+ {
+  "h": "ab4895ea",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Tu as 10 ans !"
+ },
+ {
+  "h": "bd02ef3b",
+  "lang": "fr",
+  "text": "Joyeux anniversaire Lena ! Aujourd'hui tu as 10 ans ! Comptons les bougies et soufflons-les toutes !"
+ },
+ {
+  "h": "e454f742",
+  "lang": "fr",
+  "text": "La fleur !"
+ },
+ {
+  "h": "2a3684f1",
+  "lang": "fr",
+  "text": "La fleur ! Tu veux l'acheter ?"
+ },
+ {
+  "h": "8832e532",
+  "lang": "fr",
+  "text": "Le nœud !"
+ },
+ {
+  "h": "a5b8e241",
+  "lang": "fr",
+  "text": "Le nœud ! Tu veux l'acheter ?"
+ },
+ {
+  "h": "499034eb",
+  "lang": "fr",
+  "text": "Le chapeau de paille !"
+ },
+ {
+  "h": "50881a54",
+  "lang": "fr",
+  "text": "Le chapeau de paille ! Tu veux l'acheter ?"
+ },
+ {
+  "h": "49b701fc",
+  "lang": "fr",
+  "text": "Le chapeau magique !"
+ },
+ {
+  "h": "471e8087",
+  "lang": "fr",
+  "text": "Le chapeau magique ! Tu veux l'acheter ?"
+ },
+ {
+  "h": "5f4799d9",
+  "lang": "fr",
+  "text": "La couronne !"
+ },
+ {
+  "h": "c6284b7e",
+  "lang": "fr",
+  "text": "La couronne ! Tu veux l'acheter ?"
+ },
+ {
+  "h": "201a28e9",
+  "lang": "fr",
+  "text": "Les lunettes !"
+ },
+ {
+  "h": "4851366e",
+  "lang": "fr",
+  "text": "Les lunettes ! Tu veux l'acheter ?"
+ },
+ {
+  "h": "e72c08f8",
+  "lang": "fr",
+  "text": "Les lunettes de soleil !"
+ },
+ {
+  "h": "48a13b5b",
+  "lang": "fr",
+  "text": "Les lunettes de soleil ! Tu veux l'acheter ?"
+ },
+ {
+  "h": "dd434923",
+  "lang": "fr",
+  "text": "La sucette !"
+ },
+ {
+  "h": "acca48dc",
+  "lang": "fr",
+  "text": "La sucette ! Tu veux l'acheter ?"
+ },
+ {
+  "h": "17ec6148",
+  "lang": "fr",
+  "text": "Le ballon !"
+ },
+ {
+  "h": "07983e4b",
+  "lang": "fr",
+  "text": "Le ballon ! Tu veux l'acheter ?"
+ },
+ {
+  "h": "73d6d890",
+  "lang": "fr",
+  "text": "La baguette magique !"
+ },
+ {
+  "h": "39dcaa23",
+  "lang": "fr",
+  "text": "La baguette magique ! Tu veux l'acheter ?"
+ },
+ {
+  "h": "a0ad08c3",
+  "lang": "fr",
+  "text": "Les cœurs !"
+ },
+ {
+  "h": "e8c7f77c",
+  "lang": "fr",
+  "text": "Les cœurs ! Tu veux l'acheter ?"
+ },
+ {
+  "h": "c23c7907",
+  "lang": "fr",
+  "text": "Les papillons !"
+ },
+ {
+  "h": "02ebaf48",
+  "lang": "fr",
+  "text": "Les papillons ! Tu veux l'acheter ?"
+ },
+ {
+  "h": "ebed7862",
+  "lang": "fr",
+  "text": "Les paillettes !"
+ },
+ {
+  "h": "7ccf9b11",
+  "lang": "fr",
+  "text": "Les paillettes ! Tu veux l'acheter ?"
+ },
+ {
+  "h": "5ab02bbd",
+  "lang": "fr",
+  "text": "L'arc-en-ciel !"
+ },
+ {
+  "h": "6fa13fda",
+  "lang": "fr",
+  "text": "L'arc-en-ciel ! Tu veux l'acheter ?"
+ },
+ {
+  "h": "cd1c4064",
+  "lang": "fr",
+  "text": "Il te manque une étoile ! Joue pour en gagner."
+ },
+ {
+  "h": "3fa6826d",
+  "lang": "fr",
+  "text": "Il te manque 2 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "a23aa842",
+  "lang": "fr",
+  "text": "Il te manque 3 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "46303fab",
+  "lang": "fr",
+  "text": "Il te manque 4 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "1bb0df88",
+  "lang": "fr",
+  "text": "Il te manque 5 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "cbe19aa1",
+  "lang": "fr",
+  "text": "Il te manque 6 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "864112c6",
+  "lang": "fr",
+  "text": "Il te manque 7 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "5471f94f",
+  "lang": "fr",
+  "text": "Il te manque 8 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "a488b79c",
+  "lang": "fr",
+  "text": "Il te manque 9 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "a17f2fba",
+  "lang": "fr",
+  "text": "Il te manque 10 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "7a3f0d85",
+  "lang": "fr",
+  "text": "Il te manque 11 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "660d237c",
+  "lang": "fr",
+  "text": "Il te manque 12 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "1d7b732f",
+  "lang": "fr",
+  "text": "Il te manque 13 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "3777fcfe",
+  "lang": "fr",
+  "text": "Il te manque 14 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "a35f2159",
+  "lang": "fr",
+  "text": "Il te manque 15 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "ee66daa0",
+  "lang": "fr",
+  "text": "Il te manque 16 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "14977383",
+  "lang": "fr",
+  "text": "Il te manque 17 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "36c3a8a2",
+  "lang": "fr",
+  "text": "Il te manque 18 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "dd4e664d",
+  "lang": "fr",
+  "text": "Il te manque 19 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "c27eb18d",
+  "lang": "fr",
+  "text": "Il te manque 20 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "1c6e0ee2",
+  "lang": "fr",
+  "text": "Il te manque 21 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "5d27f937",
+  "lang": "fr",
+  "text": "Il te manque 22 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "34c9af24",
+  "lang": "fr",
+  "text": "Il te manque 23 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "26074d41",
+  "lang": "fr",
+  "text": "Il te manque 24 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "b1ac4466",
+  "lang": "fr",
+  "text": "Il te manque 25 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "00ed29cb",
+  "lang": "fr",
+  "text": "Il te manque 26 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "ffc169a8",
+  "lang": "fr",
+  "text": "Il te manque 27 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "9a237fc5",
+  "lang": "fr",
+  "text": "Il te manque 28 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "a14ea3fa",
+  "lang": "fr",
+  "text": "Il te manque 29 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "8bfd4294",
+  "lang": "fr",
+  "text": "Il te manque 30 étoiles ! Joue pour en gagner."
+ },
+ {
+  "h": "b4d82da1",
+  "lang": "fr",
+  "text": "Il était une fois, un soir, Lena et son ami qui regardaient le ciel."
+ },
+ {
+  "h": "96078ace",
+  "lang": "fr",
+  "text": "Tout à coup, une petite étoile est tombée dans le jardin !"
+ },
+ {
+  "h": "79770785",
+  "lang": "fr",
+  "text": "L'étoile était triste : elle voulait rentrer chez elle, dans le ciel."
+ },
+ {
+  "h": "4e0bd35f",
+  "lang": "fr",
+  "text": "Lena a eu une idée : un ballon ! L'étoile s'est envolée tout doucement."
+ },
+ {
+  "h": "c43a6544",
+  "lang": "fr",
+  "text": "Maintenant, chaque nuit, l'étoile brille rien que pour Lena. Bonne nuit !"
+ },
+ {
+  "h": "7b76459a",
+  "lang": "fr",
+  "text": "Au fond de la mer vivait un petit poisson qui avait peur du noir."
+ },
+ {
+  "h": "271dfb55",
+  "lang": "fr",
+  "text": "Chaque soir, il se cachait derrière un gros rocher."
+ },
+ {
+  "h": "f5c357f3",
+  "lang": "fr",
+  "text": "Un soir, une gentille pieuvre est arrivée avec une lanterne."
+ },
+ {
+  "h": "8a7bd399",
+  "lang": "fr",
+  "text": "Ensemble, ils ont découvert les coquillages qui brillent dans la nuit."
+ },
+ {
+  "h": "7fbb3922",
+  "lang": "fr",
+  "text": "Le petit poisson n'avait plus peur. Il s'est endormi en souriant. Bonne nuit !"
+ },
+ {
+  "h": "c22a4fa1",
+  "lang": "fr",
+  "text": "Il était une fois un petit nuage qui voulait dormir."
+ },
+ {
+  "h": "2bf427cc",
+  "lang": "fr",
+  "text": "Mais le vent le faisait voler partout : ici, là-bas, et encore plus loin !"
+ },
+ {
+  "h": "d0db438d",
+  "lang": "fr",
+  "text": "Alors la lune lui a dit : viens, je te garde une place près de moi."
+ },
+ {
+  "h": "f1172ced",
+  "lang": "fr",
+  "text": "Lena et son ami ont fait un bisou au petit nuage."
+ },
+ {
+  "h": "c49e31bc",
+  "lang": "fr",
+  "text": "Et le petit nuage a fait de beaux rêves tout doux. Bonne nuit !"
+ },
+ {
+  "h": "33b1fbbd",
+  "lang": "fr",
+  "text": "Lena saute"
+ },
+ {
+  "h": "cec7be67",
+  "lang": "fr",
+  "text": "Stop ! C'est rouge : attends le vert !"
+ },
+ {
+  "h": "2f741dbb",
+  "lang": "fr",
+  "text": "Arrête-toi ! Au rouge, on ne passe pas."
+ },
+ {
+  "h": "7c3e15b2",
+  "lang": "fr",
+  "text": "Rouge ! On attend le vert."
+ },
+ {
+  "h": "29d29245",
+  "lang": "fr",
+  "text": "Bravo ! Au vert, on passe !"
+ },
+ {
+  "h": "486a481e",
+  "lang": "fr",
+  "text": "Vert : on peut y aller !"
+ },
+ {
+  "h": "333bc626",
+  "lang": "fr",
+  "text": "Parfait, tu as attendu le vert !"
+ },
+ {
+  "h": "ede3f7d8",
+  "lang": "fr",
+  "text": "Super ! Tu as traversé en sécurité !"
+ },
+ {
+  "h": "354ab65f",
+  "lang": "fr",
+  "text": "Sur le passage piéton et au vert : bravo !"
+ },
+ {
+  "h": "3381f1a0",
+  "lang": "fr",
+  "text": "Le train arrive ! Attends !"
+ },
+ {
+  "h": "ae5a6fb7",
+  "lang": "fr",
+  "text": "Attention, le train ! On attend."
+ },
+ {
+  "h": "8c7bf731",
+  "lang": "fr",
+  "text": "Oh là là, le train ! Quand les lumières clignotent, on attend."
+ },
+ {
+  "h": "ce11b96b",
+  "lang": "fr",
+  "text": "Oups ! Attention aux voitures !"
+ },
+ {
+  "h": "e639bedd",
+  "lang": "fr",
+  "text": "Oups ! Regarde bien avant de sauter !"
+ },
+ {
+  "h": "5f504b89",
+  "lang": "fr",
+  "text": "Oups ! Le feu est passé au rouge : traverse quand il vient de passer au vert !"
+ },
+ {
+  "h": "0386a47e",
+  "lang": "fr",
+  "text": "Plouf ! Saute sur les troncs !"
+ },
+ {
+  "h": "b21f6cfa",
+  "lang": "fr",
+  "text": "Touche pour sauter. Au rouge on attend, au vert on passe !"
+ },
+ {
+  "h": "dd861ac3",
+  "lang": "fr",
+  "text": "Touche l'écran pour sauter en avant !"
+ },
+ {
+  "h": "ed48e73c",
+  "lang": "fr",
+  "text": "Glisse ton doigt sur le côté pour te déplacer."
+ },
+ {
+  "h": "b3e85b63",
+  "lang": "fr",
+  "text": "Feu rouge : arrête-toi et attends !"
+ },
+ {
+  "h": "33bf65ea",
+  "lang": "fr",
+  "text": "Feu vert : les voitures s'arrêtent et tu peux passer !"
+ },
+ {
+  "h": "1786c1c8",
+  "lang": "fr",
+  "text": "Attention aux rivières : saute sur les troncs !"
+ },
+ {
+  "h": "1a0295a3",
+  "lang": "fr",
+  "text": "Traverse sur les bandes blanches : c'est plus sûr et tu gagnes plus d'étoiles !"
+ },
+ {
+  "h": "b9fe2bfc",
+  "lang": "fr",
+  "text": "Quand les lumières rouges clignotent, le train arrive : attends sur l'herbe !"
+ },
+ {
+  "h": "4d1a4dd8",
+  "lang": "fr",
+  "text": "Bienvenue dans le monde des prés !"
+ },
+ {
+  "h": "ac936fc4",
+  "lang": "fr",
+  "text": "Bienvenue dans le monde de la neige !"
+ },
+ {
+  "h": "57e7760c",
+  "lang": "fr",
+  "text": "Bienvenue à la plage !"
+ },
+ {
+  "h": "405cc5ae",
+  "lang": "fr",
+  "text": "Bienvenue en ville, la nuit !"
+ },
+ {
+  "h": "ee62bb44",
+  "lang": "fr",
+  "text": "Compte avec Lena"
+ },
+ {
+  "h": "42a16926",
+  "lang": "fr",
+  "text": "Touche les objets pour les compter : un, deux, trois..."
+ },
+ {
+  "h": "15883fac",
+  "lang": "fr",
+  "text": "Puis touche le bon nombre en bas !"
+ },
+ {
+  "h": "36c461e8",
+  "lang": "fr",
+  "text": "Regarde le nombre : il te dit combien d'objets prendre."
+ },
+ {
+  "h": "0b5a879d",
+  "lang": "fr",
+  "text": "Touche les objets pour les mettre dans le panier !"
+ },
+ {
+  "h": "7e4becc4",
+  "lang": "fr",
+  "text": "un"
+ },
+ {
+  "h": "6d925f4a",
+  "lang": "fr",
+  "text": "Combien de pommes vois-tu ?"
+ },
+ {
+  "h": "17e51cd2",
+  "lang": "fr",
+  "text": "Essaie encore ! Touche les pommes pour les compter."
+ },
+ {
+  "h": "d11a5c61",
+  "lang": "fr",
+  "text": "Touche une pomme !"
+ },
+ {
+  "h": "f21d8ace",
+  "lang": "fr",
+  "text": "Touche 2 pommes !"
+ },
+ {
+  "h": "07c1acb3",
+  "lang": "fr",
+  "text": "Touche 3 pommes !"
+ },
+ {
+  "h": "b9bc5bfc",
+  "lang": "fr",
+  "text": "Touche 4 pommes !"
+ },
+ {
+  "h": "44783221",
+  "lang": "fr",
+  "text": "Touche 5 pommes !"
+ },
+ {
+  "h": "b73665ba",
+  "lang": "fr",
+  "text": "Touche 6 pommes !"
+ },
+ {
+  "h": "8f18898f",
+  "lang": "fr",
+  "text": "Touche 7 pommes !"
+ },
+ {
+  "h": "24c132a8",
+  "lang": "fr",
+  "text": "Touche 8 pommes !"
+ },
+ {
+  "h": "3f3ab8dd",
+  "lang": "fr",
+  "text": "Touche 9 pommes !"
+ },
+ {
+  "h": "fd7b0021",
+  "lang": "fr",
+  "text": "Touche 10 pommes !"
+ },
+ {
+  "h": "a344e428",
+  "lang": "fr",
+  "text": "Combien de fraises vois-tu ?"
+ },
+ {
+  "h": "187c7d3c",
+  "lang": "fr",
+  "text": "Essaie encore ! Touche les fraises pour les compter."
+ },
+ {
+  "h": "fbae7417",
+  "lang": "fr",
+  "text": "Touche une fraise !"
+ },
+ {
+  "h": "eaa32cd4",
+  "lang": "fr",
+  "text": "Touche 2 fraises !"
+ },
+ {
+  "h": "389c7edb",
+  "lang": "fr",
+  "text": "Touche 3 fraises !"
+ },
+ {
+  "h": "c773b4e6",
+  "lang": "fr",
+  "text": "Touche 4 fraises !"
+ },
+ {
+  "h": "3835967d",
+  "lang": "fr",
+  "text": "Touche 5 fraises !"
+ },
+ {
+  "h": "084e6648",
+  "lang": "fr",
+  "text": "Touche 6 fraises !"
+ },
+ {
+  "h": "d330e05f",
+  "lang": "fr",
+  "text": "Touche 7 fraises !"
+ },
+ {
+  "h": "1f831dca",
+  "lang": "fr",
+  "text": "Touche 8 fraises !"
+ },
+ {
+  "h": "c50ff0b1",
+  "lang": "fr",
+  "text": "Touche 9 fraises !"
+ },
+ {
+  "h": "779fe07d",
+  "lang": "fr",
+  "text": "Touche 10 fraises !"
+ },
+ {
+  "h": "fb29b608",
+  "lang": "fr",
+  "text": "Combien de étoiles vois-tu ?"
+ },
+ {
+  "h": "956cb2c4",
+  "lang": "fr",
+  "text": "Essaie encore ! Touche les étoiles pour les compter."
+ },
+ {
+  "h": "8bf37def",
+  "lang": "fr",
+  "text": "Touche une étoile !"
+ },
+ {
+  "h": "1985caec",
+  "lang": "fr",
+  "text": "Touche 2 étoiles !"
+ },
+ {
+  "h": "dd4f08bf",
+  "lang": "fr",
+  "text": "Touche 3 étoiles !"
+ },
+ {
+  "h": "0e1dbfa6",
+  "lang": "fr",
+  "text": "Touche 4 étoiles !"
+ },
+ {
+  "h": "d2a1de39",
+  "lang": "fr",
+  "text": "Touche 5 étoiles !"
+ },
+ {
+  "h": "c2d19770",
+  "lang": "fr",
+  "text": "Touche 6 étoiles !"
+ },
+ {
+  "h": "6f771a63",
+  "lang": "fr",
+  "text": "Touche 7 étoiles !"
+ },
+ {
+  "h": "daa7832a",
+  "lang": "fr",
+  "text": "Touche 8 étoiles !"
+ },
+ {
+  "h": "6509ac0d",
+  "lang": "fr",
+  "text": "Touche 9 étoiles !"
+ },
+ {
+  "h": "120c2839",
+  "lang": "fr",
+  "text": "Touche 10 étoiles !"
+ },
+ {
+  "h": "db7c1a61",
+  "lang": "fr",
+  "text": "Combien de poissons vois-tu ?"
+ },
+ {
+  "h": "35b747db",
+  "lang": "fr",
+  "text": "Essaie encore ! Touche les poissons pour les compter."
+ },
+ {
+  "h": "03a2f65b",
+  "lang": "fr",
+  "text": "Touche un poisson !"
+ },
+ {
+  "h": "0ed0a685",
+  "lang": "fr",
+  "text": "Touche 2 poissons !"
+ },
+ {
+  "h": "3d0a1eac",
+  "lang": "fr",
+  "text": "Touche 3 poissons !"
+ },
+ {
+  "h": "55110b73",
+  "lang": "fr",
+  "text": "Touche 4 poissons !"
+ },
+ {
+  "h": "3eb6ac9a",
+  "lang": "fr",
+  "text": "Touche 5 poissons !"
+ },
+ {
+  "h": "7e751be9",
+  "lang": "fr",
+  "text": "Touche 6 poissons !"
+ },
+ {
+  "h": "09791470",
+  "lang": "fr",
+  "text": "Touche 7 poissons !"
+ },
+ {
+  "h": "1d5f95e7",
+  "lang": "fr",
+  "text": "Touche 8 poissons !"
+ },
+ {
+  "h": "953eed6e",
+  "lang": "fr",
+  "text": "Touche 9 poissons !"
+ },
+ {
+  "h": "13092a9a",
+  "lang": "fr",
+  "text": "Touche 10 poissons !"
+ },
+ {
+  "h": "fdbcf24a",
+  "lang": "fr",
+  "text": "Combien de ballons vois-tu ?"
+ },
+ {
+  "h": "7668b70e",
+  "lang": "fr",
+  "text": "Essaie encore ! Touche les ballons pour les compter."
+ },
+ {
+  "h": "3ed55e68",
+  "lang": "fr",
+  "text": "Touche un ballon !"
+ },
+ {
+  "h": "7348dc82",
+  "lang": "fr",
+  "text": "Touche 2 ballons !"
+ },
+ {
+  "h": "364001f5",
+  "lang": "fr",
+  "text": "Touche 3 ballons !"
+ },
+ {
+  "h": "80eacafc",
+  "lang": "fr",
+  "text": "Touche 4 ballons !"
+ },
+ {
+  "h": "3634b9a7",
+  "lang": "fr",
+  "text": "Touche 5 ballons !"
+ },
+ {
+  "h": "f9d77236",
+  "lang": "fr",
+  "text": "Touche 6 ballons !"
+ },
+ {
+  "h": "abe75149",
+  "lang": "fr",
+  "text": "Touche 7 ballons !"
+ },
+ {
+  "h": "4626c9a0",
+  "lang": "fr",
+  "text": "Touche 8 ballons !"
+ },
+ {
+  "h": "0a58d5ab",
+  "lang": "fr",
+  "text": "Touche 9 ballons !"
+ },
+ {
+  "h": "759f03a7",
+  "lang": "fr",
+  "text": "Touche 10 ballons !"
+ },
+ {
+  "h": "cc9ee0bd",
+  "lang": "fr",
+  "text": "Combien de papillons vois-tu ?"
+ },
+ {
+  "h": "82ebcd8f",
+  "lang": "fr",
+  "text": "Essaie encore ! Touche les papillons pour les compter."
+ },
+ {
+  "h": "cc3dcb69",
+  "lang": "fr",
+  "text": "Touche un papillon !"
+ },
+ {
+  "h": "004fe2f1",
+  "lang": "fr",
+  "text": "Touche 2 papillons !"
+ },
+ {
+  "h": "9d297e02",
+  "lang": "fr",
+  "text": "Touche 3 papillons !"
+ },
+ {
+  "h": "85a1267f",
+  "lang": "fr",
+  "text": "Touche 4 papillons !"
+ },
+ {
+  "h": "164b0848",
+  "lang": "fr",
+  "text": "Touche 5 papillons !"
+ },
+ {
+  "h": "e7e5c3d5",
+  "lang": "fr",
+  "text": "Touche 6 papillons !"
+ },
+ {
+  "h": "0216e466",
+  "lang": "fr",
+  "text": "Touche 7 papillons !"
+ },
+ {
+  "h": "fde03e03",
+  "lang": "fr",
+  "text": "Touche 8 papillons !"
+ },
+ {
+  "h": "bb8cd87c",
+  "lang": "fr",
+  "text": "Touche 9 papillons !"
+ },
+ {
+  "h": "54276248",
+  "lang": "fr",
+  "text": "Touche 10 papillons !"
+ },
+ {
+  "h": "0be501b6",
+  "lang": "fr",
+  "text": "Combien de fleurs vois-tu ?"
+ },
+ {
+  "h": "b7fdd4da",
+  "lang": "fr",
+  "text": "Essaie encore ! Touche les fleurs pour les compter."
+ },
+ {
+  "h": "ed5192a9",
+  "lang": "fr",
+  "text": "Touche une fleur !"
+ },
+ {
+  "h": "1eee9b06",
+  "lang": "fr",
+  "text": "Touche 2 fleurs !"
+ },
+ {
+  "h": "b738012b",
+  "lang": "fr",
+  "text": "Touche 3 fleurs !"
+ },
+ {
+  "h": "18cea3a8",
+  "lang": "fr",
+  "text": "Touche 4 fleurs !"
+ },
+ {
+  "h": "d60688f5",
+  "lang": "fr",
+  "text": "Touche 5 fleurs !"
+ },
+ {
+  "h": "ebd34962",
+  "lang": "fr",
+  "text": "Touche 6 fleurs !"
+ },
+ {
+  "h": "48a56ad7",
+  "lang": "fr",
+  "text": "Touche 7 fleurs !"
+ },
+ {
+  "h": "000ac1b4",
+  "lang": "fr",
+  "text": "Touche 8 fleurs !"
+ },
+ {
+  "h": "1adca241",
+  "lang": "fr",
+  "text": "Touche 9 fleurs !"
+ },
+ {
+  "h": "8f0956f5",
+  "lang": "fr",
+  "text": "Touche 10 fleurs !"
+ },
+ {
+  "h": "874643d5",
+  "lang": "fr",
+  "text": "Combien de biscuits vois-tu ?"
+ },
+ {
+  "h": "20c65f3f",
+  "lang": "fr",
+  "text": "Essaie encore ! Touche les biscuits pour les compter."
+ },
+ {
+  "h": "b6a9954f",
+  "lang": "fr",
+  "text": "Touche un biscuit !"
+ },
+ {
+  "h": "adb148a1",
+  "lang": "fr",
+  "text": "Touche 2 biscuits !"
+ },
+ {
+  "h": "fd18d500",
+  "lang": "fr",
+  "text": "Touche 3 biscuits !"
+ },
+ {
+  "h": "202607b7",
+  "lang": "fr",
+  "text": "Touche 4 biscuits !"
+ },
+ {
+  "h": "c0b91706",
+  "lang": "fr",
+  "text": "Touche 5 biscuits !"
+ },
+ {
+  "h": "d320fbcd",
+  "lang": "fr",
+  "text": "Touche 6 biscuits !"
+ },
+ {
+  "h": "a1c0388c",
+  "lang": "fr",
+  "text": "Touche 7 biscuits !"
+ },
+ {
+  "h": "7c168503",
+  "lang": "fr",
+  "text": "Touche 8 biscuits !"
+ },
+ {
+  "h": "ed533172",
+  "lang": "fr",
+  "text": "Touche 9 biscuits !"
+ },
+ {
+  "h": "950b9506",
+  "lang": "fr",
+  "text": "Touche 10 biscuits !"
+ },
+ {
+  "h": "aaf94665",
+  "lang": "fr",
+  "text": "Combien de coccinelles vois-tu ?"
+ },
+ {
+  "h": "fd345513",
+  "lang": "fr",
+  "text": "Essaie encore ! Touche les coccinelles pour les compter."
+ },
+ {
+  "h": "206c7d34",
+  "lang": "fr",
+  "text": "Touche une coccinelle !"
+ },
+ {
+  "h": "6e1a04ed",
+  "lang": "fr",
+  "text": "Touche 2 coccinelles !"
+ },
+ {
+  "h": "a21555b2",
+  "lang": "fr",
+  "text": "Touche 3 coccinelles !"
+ },
+ {
+  "h": "8d173b87",
+  "lang": "fr",
+  "text": "Touche 4 coccinelles !"
+ },
+ {
+  "h": "609a2ab4",
+  "lang": "fr",
+  "text": "Touche 5 coccinelles !"
+ },
+ {
+  "h": "47f56bc1",
+  "lang": "fr",
+  "text": "Touche 6 coccinelles !"
+ },
+ {
+  "h": "45c41696",
+  "lang": "fr",
+  "text": "Touche 7 coccinelles !"
+ },
+ {
+  "h": "4cbec3fb",
+  "lang": "fr",
+  "text": "Touche 8 coccinelles !"
+ },
+ {
+  "h": "2de1e2e8",
+  "lang": "fr",
+  "text": "Touche 9 coccinelles !"
+ },
+ {
+  "h": "76df14b4",
+  "lang": "fr",
+  "text": "Touche 10 coccinelles !"
+ },
+ {
+  "h": "2bda5e10",
+  "lang": "fr",
+  "text": "Combien de voitures vois-tu ?"
+ },
+ {
+  "h": "46de3298",
+  "lang": "fr",
+  "text": "Essaie encore ! Touche les voitures pour les compter."
+ },
+ {
+  "h": "855599d3",
+  "lang": "fr",
+  "text": "Touche une voiture !"
+ },
+ {
+  "h": "e380dfe8",
+  "lang": "fr",
+  "text": "Touche 2 voitures !"
+ },
+ {
+  "h": "2d9becfd",
+  "lang": "fr",
+  "text": "Touche 3 voitures !"
+ },
+ {
+  "h": "953b192e",
+  "lang": "fr",
+  "text": "Touche 4 voitures !"
+ },
+ {
+  "h": "e364bd4b",
+  "lang": "fr",
+  "text": "Touche 5 voitures !"
+ },
+ {
+  "h": "ab5fccac",
+  "lang": "fr",
+  "text": "Touche 6 voitures !"
+ },
+ {
+  "h": "4fa821c1",
+  "lang": "fr",
+  "text": "Touche 7 voitures !"
+ },
+ {
+  "h": "ef08ffb2",
+  "lang": "fr",
+  "text": "Touche 8 voitures !"
+ },
+ {
+  "h": "69857a1f",
+  "lang": "fr",
+  "text": "Touche 9 voitures !"
+ },
+ {
+  "h": "b7b73b4b",
+  "lang": "fr",
+  "text": "Touche 10 voitures !"
+ },
+ {
+  "h": "05a54253",
+  "lang": "fr",
+  "text": "Combien de poussins vois-tu ?"
+ },
+ {
+  "h": "75881dc9",
+  "lang": "fr",
+  "text": "Essaie encore ! Touche les poussins pour les compter."
+ },
+ {
+  "h": "623bd511",
+  "lang": "fr",
+  "text": "Touche un poussin !"
+ },
+ {
+  "h": "5de218bf",
+  "lang": "fr",
+  "text": "Touche 2 poussins !"
+ },
+ {
+  "h": "a33a81ca",
+  "lang": "fr",
+  "text": "Touche 3 poussins !"
+ },
+ {
+  "h": "5cafda11",
+  "lang": "fr",
+  "text": "Touche 4 poussins !"
+ },
+ {
+  "h": "df748cac",
+  "lang": "fr",
+  "text": "Touche 5 poussins !"
+ },
+ {
+  "h": "393acb13",
+  "lang": "fr",
+  "text": "Touche 6 poussins !"
+ },
+ {
+  "h": "e4949f8e",
+  "lang": "fr",
+  "text": "Touche 7 poussins !"
+ },
+ {
+  "h": "78f34925",
+  "lang": "fr",
+  "text": "Touche 8 poussins !"
+ },
+ {
+  "h": "b77b06a0",
+  "lang": "fr",
+  "text": "Touche 9 poussins !"
+ },
+ {
+  "h": "b3c70aac",
+  "lang": "fr",
+  "text": "Touche 10 poussins !"
+ },
+ {
+  "h": "81f02a5d",
+  "lang": "fr",
+  "text": "Combien de bananes vois-tu ?"
+ },
+ {
+  "h": "eafb707b",
+  "lang": "fr",
+  "text": "Essaie encore ! Touche les bananes pour les compter."
+ },
+ {
+  "h": "755e350c",
+  "lang": "fr",
+  "text": "Touche une banane !"
+ },
+ {
+  "h": "664df9a5",
+  "lang": "fr",
+  "text": "Touche 2 bananes !"
+ },
+ {
+  "h": "3ba3342e",
+  "lang": "fr",
+  "text": "Touche 3 bananes !"
+ },
+ {
+  "h": "bc857b9f",
+  "lang": "fr",
+  "text": "Touche 4 bananes !"
+ },
+ {
+  "h": "41450ed0",
+  "lang": "fr",
+  "text": "Touche 5 bananes !"
+ },
+ {
+  "h": "34a762b1",
+  "lang": "fr",
+  "text": "Touche 6 bananes !"
+ },
+ {
+  "h": "eb3c16aa",
+  "lang": "fr",
+  "text": "Touche 7 bananes !"
+ },
+ {
+  "h": "2d2d0a4b",
+  "lang": "fr",
+  "text": "Touche 8 bananes !"
+ },
+ {
+  "h": "f457b99c",
+  "lang": "fr",
+  "text": "Touche 9 bananes !"
+ },
+ {
+  "h": "80af58d0",
+  "lang": "fr",
+  "text": "Touche 10 bananes !"
+ },
+ {
+  "h": "658ff445",
+  "lang": "fr",
+  "text": "Memory des animaux"
+ },
+ {
+  "h": "a42e488b",
+  "lang": "fr",
+  "text": "Touche une carte pour la retourner."
+ },
+ {
+  "h": "b797e85e",
+  "lang": "fr",
+  "text": "Puis cherche la carte pareille : si elles sont pareilles, elles restent retournées !"
+ },
+ {
+  "h": "80f8afeb",
+  "lang": "fr",
+  "text": "Retourne les cartes et trouve les paires !"
+ },
+ {
+  "h": "5daa0a27",
+  "lang": "fr",
+  "text": "Tu veux jouer avec les animaux ou avec la famille ?"
+ },
+ {
+  "h": "21427eb7",
+  "lang": "fr",
+  "text": "Vache ! Meuh !"
+ },
+ {
+  "h": "c4ca59f4",
+  "lang": "fr",
+  "text": "Chat ! Miaou !"
+ },
+ {
+  "h": "44489296",
+  "lang": "fr",
+  "text": "Chien ! Ouaf ouaf !"
+ },
+ {
+  "h": "c0df6aa5",
+  "lang": "fr",
+  "text": "Mouton ! Bêê !"
+ },
+ {
+  "h": "55772fcb",
+  "lang": "fr",
+  "text": "Cochon ! Groin groin !"
+ },
+ {
+  "h": "abebf326",
+  "lang": "fr",
+  "text": "Canard ! Coin coin !"
+ },
+ {
+  "h": "4a1f5eff",
+  "lang": "fr",
+  "text": "Coq ! Cocorico !"
+ },
+ {
+  "h": "f18f72c4",
+  "lang": "fr",
+  "text": "Lion ! Roaar !"
+ },
+ {
+  "h": "d170a4ff",
+  "lang": "fr",
+  "text": "Cheval ! Hiii !"
+ },
+ {
+  "h": "2a5e098b",
+  "lang": "fr",
+  "text": "Grenouille ! Croâ croâ !"
+ },
+ {
+  "h": "cb2610f3",
+  "lang": "fr",
+  "text": "Abeille ! Bzzz !"
+ },
+ {
+  "h": "e58161ca",
+  "lang": "fr",
+  "text": "Hibou ! Hou hou !"
+ },
+ {
+  "h": "ae43b7f0",
+  "lang": "fr",
+  "text": "Éléphant ! Pouuu !"
+ },
+ {
+  "h": "53aac436",
+  "lang": "fr",
+  "text": "Souris ! Couic couic !"
+ },
+ {
+  "h": "5e03a59a",
+  "lang": "fr",
+  "text": "Pêche les lettres"
+ },
+ {
+  "h": "c62f4be7",
+  "lang": "fr",
+  "text": "Écoute la lettre : tu la vois aussi ici, en haut."
+ },
+ {
+  "h": "0eb1a3ec",
+  "lang": "fr",
+  "text": "Puis touche le poisson avec la bonne lettre !"
+ },
+ {
+  "h": "a1933fae",
+  "lang": "fr",
+  "text": "On écrit un prénom ! Les lettres vont ici, dans l'ordre."
+ },
+ {
+  "h": "8cfb7814",
+  "lang": "fr",
+  "text": "Attrape les lettres une par une !"
+ },
+ {
+  "h": "ba9dcfe3",
+  "lang": "fr",
+  "text": "Attrape le A comme Abeille !"
+ },
+ {
+  "h": "4d96c390",
+  "lang": "fr",
+  "text": "Attrape le A comme Avion !"
+ },
+ {
+  "h": "3803422e",
+  "lang": "fr",
+  "text": "Attrape le B comme Ballon !"
+ },
+ {
+  "h": "cfb7c956",
+  "lang": "fr",
+  "text": "Attrape le B comme Baleine !"
+ },
+ {
+  "h": "92ff46e9",
+  "lang": "fr",
+  "text": "Attrape le C comme Chat !"
+ },
+ {
+  "h": "306a9b9e",
+  "lang": "fr",
+  "text": "Attrape le C comme Cœur !"
+ },
+ {
+  "h": "44d4265d",
+  "lang": "fr",
+  "text": "Attrape le D comme Dauphin !"
+ },
+ {
+  "h": "8198fe63",
+  "lang": "fr",
+  "text": "Attrape le D comme Dé !"
+ },
+ {
+  "h": "3fe222a9",
+  "lang": "fr",
+  "text": "Attrape le E comme Escargot !"
+ },
+ {
+  "h": "af7bb6ed",
+  "lang": "fr",
+  "text": "Attrape le E comme Enveloppe !"
+ },
+ {
+  "h": "702ec4e0",
+  "lang": "fr",
+  "text": "Attrape le F comme Fleur !"
+ },
+ {
+  "h": "efc0b6a0",
+  "lang": "fr",
+  "text": "Attrape le F comme Fraise !"
+ },
+ {
+  "h": "f9bdf5cb",
+  "lang": "fr",
+  "text": "Attrape le G comme Gâteau !"
+ },
+ {
+  "h": "f413e8e3",
+  "lang": "fr",
+  "text": "Attrape le G comme Girafe !"
+ },
+ {
+  "h": "2a7abc55",
+  "lang": "fr",
+  "text": "Attrape le I comme Igloo !"
+ },
+ {
+  "h": "a1f1a63a",
+  "lang": "fr",
+  "text": "Attrape le I comme Iguane !"
+ },
+ {
+  "h": "f87a228a",
+  "lang": "fr",
+  "text": "Attrape le L comme Lune !"
+ },
+ {
+  "h": "44d217ce",
+  "lang": "fr",
+  "text": "Attrape le L comme Lena !"
+ },
+ {
+  "h": "24ef47ae",
+  "lang": "fr",
+  "text": "Attrape le L comme Lion !"
+ },
+ {
+  "h": "44f9701e",
+  "lang": "fr",
+  "text": "Attrape le M comme Maison !"
+ },
+ {
+  "h": "9fcfe7f1",
+  "lang": "fr",
+  "text": "Attrape le M comme Mouton !"
+ },
+ {
+  "h": "21892cf6",
+  "lang": "fr",
+  "text": "Attrape le N comme Nuage !"
+ },
+ {
+  "h": "bf79a29f",
+  "lang": "fr",
+  "text": "Attrape le N comme Nez !"
+ },
+ {
+  "h": "ecbedae1",
+  "lang": "fr",
+  "text": "Attrape le O comme Oiseau !"
+ },
+ {
+  "h": "be001059",
+  "lang": "fr",
+  "text": "Attrape le O comme Orange !"
+ },
+ {
+  "h": "d761bc0e",
+  "lang": "fr",
+  "text": "Attrape le P comme Pomme !"
+ },
+ {
+  "h": "c9a7e910",
+  "lang": "fr",
+  "text": "Attrape le P comme Papa !"
+ },
+ {
+  "h": "85331c3b",
+  "lang": "fr",
+  "text": "Attrape le P comme Poisson !"
+ },
+ {
+  "h": "234e62e8",
+  "lang": "fr",
+  "text": "Attrape le R comme Renard !"
+ },
+ {
+  "h": "06be72b6",
+  "lang": "fr",
+  "text": "Attrape le R comme Robot !"
+ },
+ {
+  "h": "246d6d2b",
+  "lang": "fr",
+  "text": "Attrape le S comme Soleil !"
+ },
+ {
+  "h": "6c1c34b6",
+  "lang": "fr",
+  "text": "Attrape le S comme Serpent !"
+ },
+ {
+  "h": "2cebf0c5",
+  "lang": "fr",
+  "text": "Attrape le T comme Tortue !"
+ },
+ {
+  "h": "76763718",
+  "lang": "fr",
+  "text": "Attrape le T comme Tomate !"
+ },
+ {
+  "h": "183cf7e1",
+  "lang": "fr",
+  "text": "Attrape le U comme Usine !"
+ },
+ {
+  "h": "03c91c57",
+  "lang": "fr",
+  "text": "Attrape le V comme Vache !"
+ },
+ {
+  "h": "bf3d6b3e",
+  "lang": "fr",
+  "text": "Attrape le V comme Vélo !"
+ },
+ {
+  "h": "1b137d43",
+  "lang": "fr",
+  "text": "Attrape le Z comme Zèbre !"
+ },
+ {
+  "h": "374c58dc",
+  "lang": "fr",
+  "text": "Attrape le Z comme Zéro !"
+ },
+ {
+  "h": "fd2a483b",
+  "lang": "fr",
+  "text": "Moi, je suis le A !"
+ },
+ {
+  "h": "fcb7d9a1",
+  "lang": "fr",
+  "text": "D'abord le A !"
+ },
+ {
+  "h": "8275f0ae",
+  "lang": "fr",
+  "text": "Maintenant le A !"
+ },
+ {
+  "h": "a1ed0261",
+  "lang": "fr",
+  "text": "Encore le A !"
+ },
+ {
+  "h": "fe2a49ce",
+  "lang": "fr",
+  "text": "Moi, je suis le B !"
+ },
+ {
+  "h": "f9b7d4e8",
+  "lang": "fr",
+  "text": "D'abord le B !"
+ },
+ {
+  "h": "8175ef1b",
+  "lang": "fr",
+  "text": "Maintenant le B !"
+ },
+ {
+  "h": "9eecfda8",
+  "lang": "fr",
+  "text": "Encore le B !"
+ },
+ {
+  "h": "ff2a4b61",
+  "lang": "fr",
+  "text": "Moi, je suis le C !"
+ },
+ {
+  "h": "fab7d67b",
+  "lang": "fr",
+  "text": "D'abord le C !"
+ },
+ {
+  "h": "8075ed88",
+  "lang": "fr",
+  "text": "Maintenant le C !"
+ },
+ {
+  "h": "9fecff3b",
+  "lang": "fr",
+  "text": "Encore le C !"
+ },
+ {
+  "h": "002a4cf4",
+  "lang": "fr",
+  "text": "Moi, je suis le D !"
+ },
+ {
+  "h": "ffb7de5a",
+  "lang": "fr",
+  "text": "D'abord le D !"
+ },
+ {
+  "h": "8775f88d",
+  "lang": "fr",
+  "text": "Maintenant le D !"
+ },
+ {
+  "h": "a4ed071a",
+  "lang": "fr",
+  "text": "Encore le D !"
+ },
+ {
+  "h": "012a4e87",
+  "lang": "fr",
+  "text": "Moi, je suis le E !"
+ },
+ {
+  "h": "00b7dfed",
+  "lang": "fr",
+  "text": "D'abord le E !"
+ },
+ {
+  "h": "8675f6fa",
+  "lang": "fr",
+  "text": "Maintenant le E !"
+ },
+ {
+  "h": "a5ed08ad",
+  "lang": "fr",
+  "text": "Encore le E !"
+ },
+ {
+  "h": "022a501a",
+  "lang": "fr",
+  "text": "Moi, je suis le F !"
+ },
+ {
+  "h": "fdb7db34",
+  "lang": "fr",
+  "text": "D'abord le F !"
+ },
+ {
+  "h": "8575f567",
+  "lang": "fr",
+  "text": "Maintenant le F !"
+ },
+ {
+  "h": "a2ed03f4",
+  "lang": "fr",
+  "text": "Encore le F !"
+ },
+ {
+  "h": "032a51ad",
+  "lang": "fr",
+  "text": "Moi, je suis le G !"
+ },
+ {
+  "h": "feb7dcc7",
+  "lang": "fr",
+  "text": "D'abord le G !"
+ },
+ {
+  "h": "8475f3d4",
+  "lang": "fr",
+  "text": "Maintenant le G !"
+ },
+ {
+  "h": "a3ed0587",
+  "lang": "fr",
+  "text": "Encore le G !"
+ },
+ {
+  "h": "f42a3a10",
+  "lang": "fr",
+  "text": "Moi, je suis le H !"
+ },
+ {
+  "h": "f3b7cb76",
+  "lang": "fr",
+  "text": "D'abord le H !"
+ },
+ {
+  "h": "7b75e5a9",
+  "lang": "fr",
+  "text": "Maintenant le H !"
+ },
+ {
+  "h": "98ecf436",
+  "lang": "fr",
+  "text": "Encore le H !"
+ },
+ {
+  "h": "f52a3ba3",
+  "lang": "fr",
+  "text": "Moi, je suis le I !"
+ },
+ {
+  "h": "f4b7cd09",
+  "lang": "fr",
+  "text": "D'abord le I !"
+ },
+ {
+  "h": "7a75e416",
+  "lang": "fr",
+  "text": "Maintenant le I !"
+ },
+ {
+  "h": "99ecf5c9",
+  "lang": "fr",
+  "text": "Encore le I !"
+ },
+ {
+  "h": "f62a3d36",
+  "lang": "fr",
+  "text": "Moi, je suis le J !"
+ },
+ {
+  "h": "f1b7c850",
+  "lang": "fr",
+  "text": "D'abord le J !"
+ },
+ {
+  "h": "7975e283",
+  "lang": "fr",
+  "text": "Maintenant le J !"
+ },
+ {
+  "h": "96ecf110",
+  "lang": "fr",
+  "text": "Encore le J !"
+ },
+ {
+  "h": "f72a3ec9",
+  "lang": "fr",
+  "text": "Moi, je suis le K !"
+ },
+ {
+  "h": "f2b7c9e3",
+  "lang": "fr",
+  "text": "D'abord le K !"
+ },
+ {
+  "h": "7875e0f0",
+  "lang": "fr",
+  "text": "Maintenant le K !"
+ },
+ {
+  "h": "97ecf2a3",
+  "lang": "fr",
+  "text": "Encore le K !"
+ },
+ {
+  "h": "f82a405c",
+  "lang": "fr",
+  "text": "Moi, je suis le L !"
+ },
+ {
+  "h": "f7b7d1c2",
+  "lang": "fr",
+  "text": "D'abord le L !"
+ },
+ {
+  "h": "7f75ebf5",
+  "lang": "fr",
+  "text": "Maintenant le L !"
+ },
+ {
+  "h": "9cecfa82",
+  "lang": "fr",
+  "text": "Encore le L !"
+ },
+ {
+  "h": "f92a41ef",
+  "lang": "fr",
+  "text": "Moi, je suis le M !"
+ },
+ {
+  "h": "f8b7d355",
+  "lang": "fr",
+  "text": "D'abord le M !"
+ },
+ {
+  "h": "7e75ea62",
+  "lang": "fr",
+  "text": "Maintenant le M !"
+ },
+ {
+  "h": "9decfc15",
+  "lang": "fr",
+  "text": "Encore le M !"
+ },
+ {
+  "h": "fa2a4382",
+  "lang": "fr",
+  "text": "Moi, je suis le N !"
+ },
+ {
+  "h": "f5b7ce9c",
+  "lang": "fr",
+  "text": "D'abord le N !"
+ },
+ {
+  "h": "7d75e8cf",
+  "lang": "fr",
+  "text": "Maintenant le N !"
+ },
+ {
+  "h": "9aecf75c",
+  "lang": "fr",
+  "text": "Encore le N !"
+ },
+ {
+  "h": "fb2a4515",
+  "lang": "fr",
+  "text": "Moi, je suis le O !"
+ },
+ {
+  "h": "f6b7d02f",
+  "lang": "fr",
+  "text": "D'abord le O !"
+ },
+ {
+  "h": "7c75e73c",
+  "lang": "fr",
+  "text": "Maintenant le O !"
+ },
+ {
+  "h": "9becf8ef",
+  "lang": "fr",
+  "text": "Encore le O !"
+ },
+ {
+  "h": "ec2a2d78",
+  "lang": "fr",
+  "text": "Moi, je suis le P !"
+ },
+ {
+  "h": "ebb7bede",
+  "lang": "fr",
+  "text": "D'abord le P !"
+ },
+ {
+  "h": "7375d911",
+  "lang": "fr",
+  "text": "Maintenant le P !"
+ },
+ {
+  "h": "90ece79e",
+  "lang": "fr",
+  "text": "Encore le P !"
+ },
+ {
+  "h": "ed2a2f0b",
+  "lang": "fr",
+  "text": "Moi, je suis le Q !"
+ },
+ {
+  "h": "ecb7c071",
+  "lang": "fr",
+  "text": "D'abord le Q !"
+ },
+ {
+  "h": "7275d77e",
+  "lang": "fr",
+  "text": "Maintenant le Q !"
+ },
+ {
+  "h": "91ece931",
+  "lang": "fr",
+  "text": "Encore le Q !"
+ },
+ {
+  "h": "ee2a309e",
+  "lang": "fr",
+  "text": "Moi, je suis le R !"
+ },
+ {
+  "h": "e9b7bbb8",
+  "lang": "fr",
+  "text": "D'abord le R !"
+ },
+ {
+  "h": "7175d5eb",
+  "lang": "fr",
+  "text": "Maintenant le R !"
+ },
+ {
+  "h": "8eece478",
+  "lang": "fr",
+  "text": "Encore le R !"
+ },
+ {
+  "h": "ef2a3231",
+  "lang": "fr",
+  "text": "Moi, je suis le S !"
+ },
+ {
+  "h": "eab7bd4b",
+  "lang": "fr",
+  "text": "D'abord le S !"
+ },
+ {
+  "h": "7075d458",
+  "lang": "fr",
+  "text": "Maintenant le S !"
+ },
+ {
+  "h": "8fece60b",
+  "lang": "fr",
+  "text": "Encore le S !"
+ },
+ {
+  "h": "f02a33c4",
+  "lang": "fr",
+  "text": "Moi, je suis le T !"
+ },
+ {
+  "h": "efb7c52a",
+  "lang": "fr",
+  "text": "D'abord le T !"
+ },
+ {
+  "h": "7775df5d",
+  "lang": "fr",
+  "text": "Maintenant le T !"
+ },
+ {
+  "h": "94ecedea",
+  "lang": "fr",
+  "text": "Encore le T !"
+ },
+ {
+  "h": "f12a3557",
+  "lang": "fr",
+  "text": "Moi, je suis le U !"
+ },
+ {
+  "h": "f0b7c6bd",
+  "lang": "fr",
+  "text": "D'abord le U !"
+ },
+ {
+  "h": "7675ddca",
+  "lang": "fr",
+  "text": "Maintenant le U !"
+ },
+ {
+  "h": "95ecef7d",
+  "lang": "fr",
+  "text": "Encore le U !"
+ },
+ {
+  "h": "f22a36ea",
+  "lang": "fr",
+  "text": "Moi, je suis le V !"
+ },
+ {
+  "h": "edb7c204",
+  "lang": "fr",
+  "text": "D'abord le V !"
+ },
+ {
+  "h": "7575dc37",
+  "lang": "fr",
+  "text": "Maintenant le V !"
+ },
+ {
+  "h": "92eceac4",
+  "lang": "fr",
+  "text": "Encore le V !"
+ },
+ {
+  "h": "f32a387d",
+  "lang": "fr",
+  "text": "Moi, je suis le W !"
+ },
+ {
+  "h": "eeb7c397",
+  "lang": "fr",
+  "text": "D'abord le W !"
+ },
+ {
+  "h": "7475daa4",
+  "lang": "fr",
+  "text": "Maintenant le W !"
+ },
+ {
+  "h": "93ecec57",
+  "lang": "fr",
+  "text": "Encore le W !"
+ },
+ {
+  "h": "e42a20e0",
+  "lang": "fr",
+  "text": "Moi, je suis le X !"
+ },
+ {
+  "h": "e3b7b246",
+  "lang": "fr",
+  "text": "D'abord le X !"
+ },
+ {
+  "h": "6b75cc79",
+  "lang": "fr",
+  "text": "Maintenant le X !"
+ },
+ {
+  "h": "88ecdb06",
+  "lang": "fr",
+  "text": "Encore le X !"
+ },
+ {
+  "h": "e52a2273",
+  "lang": "fr",
+  "text": "Moi, je suis le Y !"
+ },
+ {
+  "h": "e4b7b3d9",
+  "lang": "fr",
+  "text": "D'abord le Y !"
+ },
+ {
+  "h": "6a75cae6",
+  "lang": "fr",
+  "text": "Maintenant le Y !"
+ },
+ {
+  "h": "89ecdc99",
+  "lang": "fr",
+  "text": "Encore le Y !"
+ },
+ {
+  "h": "e62a2406",
+  "lang": "fr",
+  "text": "Moi, je suis le Z !"
+ },
+ {
+  "h": "e1b7af20",
+  "lang": "fr",
+  "text": "D'abord le Z !"
+ },
+ {
+  "h": "6975c953",
+  "lang": "fr",
+  "text": "Maintenant le Z !"
+ },
+ {
+  "h": "86ecd7e0",
+  "lang": "fr",
+  "text": "Encore le Z !"
+ },
+ {
+  "h": "e51827ff",
+  "lang": "fr",
+  "text": "On écrit Lena ! Attrape le L !"
+ },
+ {
+  "h": "2e1cb36d",
+  "lang": "fr",
+  "text": "L, E, N, A. Lena ! Tu as écrit Lena !"
+ },
+ {
+  "h": "29747c5d",
+  "lang": "fr",
+  "text": "On écrit Papa ! Attrape le P !"
+ },
+ {
+  "h": "d491f93b",
+  "lang": "fr",
+  "text": "P, A, P, A. Papa ! Tu as écrit Papa !"
+ },
+ {
+  "h": "5d286e44",
+  "lang": "fr",
+  "text": "Formes et couleurs"
+ },
+ {
+  "h": "be7dd0a1",
+  "lang": "fr",
+  "text": "Fais glisser la forme à la bonne place !"
+ },
+ {
+  "h": "50a3cc75",
+  "lang": "fr",
+  "text": "Attention : la couleur aussi doit être pareille !"
+ },
+ {
+  "h": "4c061566",
+  "lang": "fr",
+  "text": "Regarde la file : les formes se répètent."
+ },
+ {
+  "h": "39d8b5d1",
+  "lang": "fr",
+  "text": "Touche celle qui vient après !"
+ },
+ {
+  "h": "3c2fa505",
+  "lang": "fr",
+  "text": "Mets chaque forme à sa place. Attention aux couleurs !"
+ },
+ {
+  "h": "c82df9dc",
+  "lang": "fr",
+  "text": "Fais glisser chaque forme à sa place !"
+ },
+ {
+  "h": "f0ebdefb",
+  "lang": "fr",
+  "text": "Regarde la couleur !"
+ },
+ {
+  "h": "eb6f4152",
+  "lang": "fr",
+  "text": "Ça ne rentre pas ! Essaie une autre place."
+ },
+ {
+  "h": "026dbb40",
+  "lang": "fr",
+  "text": "Qu'est-ce qui vient après ?"
+ },
+ {
+  "h": "693da773",
+  "lang": "fr",
+  "text": "Regarde bien la file ! Réessaie."
+ },
+ {
+  "h": "f4e1f22d",
+  "lang": "fr",
+  "text": "Cercle rouge"
+ },
+ {
+  "h": "7307772e",
+  "lang": "fr",
+  "text": "Cercle jaune"
+ },
+ {
+  "h": "9e7e591a",
+  "lang": "fr",
+  "text": "Cercle vert"
+ },
+ {
+  "h": "b8fb16d5",
+  "lang": "fr",
+  "text": "Cercle bleu"
+ },
+ {
+  "h": "e7fb7a63",
+  "lang": "fr",
+  "text": "Cercle orange"
+ },
+ {
+  "h": "6ec4e35a",
+  "lang": "fr",
+  "text": "Cercle violet"
+ },
+ {
+  "h": "2f9215ae",
+  "lang": "fr",
+  "text": "Cercle rose"
+ },
+ {
+  "h": "1a6b23b0",
+  "lang": "fr",
+  "text": "Carré rouge"
+ },
+ {
+  "h": "72f51da3",
+  "lang": "fr",
+  "text": "Carré jaune"
+ },
+ {
+  "h": "18ddb615",
+  "lang": "fr",
+  "text": "Carré vert"
+ },
+ {
+  "h": "31332a8a",
+  "lang": "fr",
+  "text": "Carré bleu"
+ },
+ {
+  "h": "976f4974",
+  "lang": "fr",
+  "text": "Carré orange"
+ },
+ {
+  "h": "3044607d",
+  "lang": "fr",
+  "text": "Carré violet"
+ },
+ {
+  "h": "85a83745",
+  "lang": "fr",
+  "text": "Carré rose"
+ },
+ {
+  "h": "76557b9d",
+  "lang": "fr",
+  "text": "Triangle rouge"
+ },
+ {
+  "h": "71112dfe",
+  "lang": "fr",
+  "text": "Triangle jaune"
+ },
+ {
+  "h": "d981378a",
+  "lang": "fr",
+  "text": "Triangle vert"
+ },
+ {
+  "h": "aec56045",
+  "lang": "fr",
+  "text": "Triangle bleu"
+ },
+ {
+  "h": "6d802b13",
+  "lang": "fr",
+  "text": "Triangle orange"
+ },
+ {
+  "h": "af7a5f6a",
+  "lang": "fr",
+  "text": "Triangle violet"
+ },
+ {
+  "h": "31480cbe",
+  "lang": "fr",
+  "text": "Triangle rose"
+ },
+ {
+  "h": "d5757853",
+  "lang": "fr",
+  "text": "Étoile rouge"
+ },
+ {
+  "h": "a5509150",
+  "lang": "fr",
+  "text": "Étoile jaune"
+ },
+ {
+  "h": "4ea90ae7",
+  "lang": "fr",
+  "text": "Étoile verte"
+ },
+ {
+  "h": "4e0372fe",
+  "lang": "fr",
+  "text": "Étoile bleue"
+ },
+ {
+  "h": "fb9602d1",
+  "lang": "fr",
+  "text": "Étoile orange"
+ },
+ {
+  "h": "d6cc572b",
+  "lang": "fr",
+  "text": "Étoile violette"
+ },
+ {
+  "h": "11b91fe8",
+  "lang": "fr",
+  "text": "Étoile rose"
+ },
+ {
+  "h": "23fa6354",
+  "lang": "fr",
+  "text": "Cœur rouge"
+ },
+ {
+  "h": "77a6ed9f",
+  "lang": "fr",
+  "text": "Cœur jaune"
+ },
+ {
+  "h": "e2521d19",
+  "lang": "fr",
+  "text": "Cœur vert"
+ },
+ {
+  "h": "7c98beae",
+  "lang": "fr",
+  "text": "Cœur bleu"
+ },
+ {
+  "h": "e3d88df0",
+  "lang": "fr",
+  "text": "Cœur orange"
+ },
+ {
+  "h": "b23cdaf1",
+  "lang": "fr",
+  "text": "Cœur violet"
+ },
+ {
+  "h": "68284541",
+  "lang": "fr",
+  "text": "Cœur rose"
+ },
+ {
+  "h": "a1b7ee42",
+  "lang": "fr",
+  "text": "Losange rouge"
+ },
+ {
+  "h": "96411f59",
+  "lang": "fr",
+  "text": "Losange jaune"
+ },
+ {
+  "h": "97a55f8f",
+  "lang": "fr",
+  "text": "Losange vert"
+ },
+ {
+  "h": "14e99c68",
+  "lang": "fr",
+  "text": "Losange bleu"
+ },
+ {
+  "h": "5310035e",
+  "lang": "fr",
+  "text": "Losange orange"
+ },
+ {
+  "h": "953cea6f",
+  "lang": "fr",
+  "text": "Losange violet"
+ },
+ {
+  "h": "ade4efcb",
+  "lang": "fr",
+  "text": "Losange rose"
+ },
+ {
+  "h": "c7c343ab",
+  "lang": "fr",
+  "text": "Colorie avec Lena"
+ },
+ {
+  "h": "5cd91b3e",
+  "lang": "fr",
+  "text": "Choisis une couleur ici en bas."
+ },
+ {
+  "h": "c6593681",
+  "lang": "fr",
+  "text": "Puis touche le dessin pour le colorier !"
+ },
+ {
+  "h": "424ccc91",
+  "lang": "fr",
+  "text": "Quand tu as fini, touche l'étoile !"
+ },
+ {
+  "h": "4ef7a787",
+  "lang": "fr",
+  "text": "Choisis un dessin à colorier !"
+ },
+ {
+  "h": "0ac957cd",
+  "lang": "fr",
+  "text": "Colorie encore un petit peu !"
+ },
+ {
+  "h": "003d2a71",
+  "lang": "fr",
+  "text": "Exactement ! Bravo !"
+ },
+ {
+  "h": "b740820c",
+  "lang": "fr",
+  "text": "Quel beau dessin ! Je le mets dans ta galerie."
+ },
+ {
+  "h": "ae983acf",
+  "lang": "fr",
+  "text": "Voici ta galerie !"
+ },
+ {
+  "h": "12ec58ae",
+  "lang": "fr",
+  "text": "Pas encore de dessin : colorions-en un !"
+ },
+ {
+  "h": "c85f3900",
+  "lang": "fr",
+  "text": "Tu veux recommencer ?"
+ },
+ {
+  "h": "f8667ffc",
+  "lang": "fr",
+  "text": "Marron !"
+ },
+ {
+  "h": "6f2c1e2e",
+  "lang": "fr",
+  "text": "Gris !"
+ },
+ {
+  "h": "5c31df33",
+  "lang": "fr",
+  "text": "Noir !"
+ },
+ {
+  "h": "822be387",
+  "lang": "fr",
+  "text": "Blanc !"
+ },
+ {
+  "h": "b27d8b3e",
+  "lang": "fr",
+  "text": "Arc-en-ciel magique !"
+ },
+ {
+  "h": "a04c473e",
+  "lang": "fr",
+  "text": "Paillettes dorées !"
+ },
+ {
+  "h": "5f7b4056",
+  "lang": "fr",
+  "text": "Paillettes roses !"
+ },
+ {
+  "h": "068fe7c6",
+  "lang": "fr",
+  "text": "Paillettes argentées !"
+ },
+ {
+  "h": "756befa7",
+  "lang": "fr",
+  "text": "Paillettes violettes !"
+ },
+ {
+  "h": "f79cdb98",
+  "lang": "fr",
+  "text": "Le soleil !"
+ },
+ {
+  "h": "bc1a9628",
+  "lang": "fr",
+  "text": "Colorie le ciel en bleu clair !"
+ },
+ {
+  "h": "d4d68118",
+  "lang": "fr",
+  "text": "Colorie l'herbe en vert !"
+ },
+ {
+  "h": "89a8d109",
+  "lang": "fr",
+  "text": "Colorie le soleil en jaune !"
+ },
+ {
+  "h": "a25c5ea3",
+  "lang": "fr",
+  "text": "La maison !"
+ },
+ {
+  "h": "fb4ae7a2",
+  "lang": "fr",
+  "text": "Colorie le toit en rouge !"
+ },
+ {
+  "h": "f4886b8f",
+  "lang": "fr",
+  "text": "Colorie la porte en marron !"
+ },
+ {
+  "h": "3b4a5698",
+  "lang": "fr",
+  "text": "Colorie la tige en vert !"
+ },
+ {
+  "h": "62e59d16",
+  "lang": "fr",
+  "text": "Colorie le pot en marron !"
+ },
+ {
+  "h": "75e0521a",
+  "lang": "fr",
+  "text": "Colorie le cœur de la fleur en jaune !"
+ },
+ {
+  "h": "61cbc849",
+  "lang": "fr",
+  "text": "Le papillon !"
+ },
+ {
+  "h": "6938f16b",
+  "lang": "fr",
+  "text": "Colorie le corps du papillon en noir !"
+ },
+ {
+  "h": "3b4f43bb",
+  "lang": "fr",
+  "text": "Le poisson !"
+ },
+ {
+  "h": "1a2a026b",
+  "lang": "fr",
+  "text": "Colorie la mer en bleu clair !"
+ },
+ {
+  "h": "575b1a68",
+  "lang": "fr",
+  "text": "Colorie le sable en jaune !"
+ },
+ {
+  "h": "d33f533a",
+  "lang": "fr",
+  "text": "Colorie l'algue en vert !"
+ },
+ {
+  "h": "700ae8db",
+  "lang": "fr",
+  "text": "Colorie le poisson en orange !"
+ },
+ {
+  "h": "d4b836de",
+  "lang": "fr",
+  "text": "Le chat !"
+ },
+ {
+  "h": "e0f49324",
+  "lang": "fr",
+  "text": "Colorie la queue en gris !"
+ },
+ {
+  "h": "1a8981dc",
+  "lang": "fr",
+  "text": "Colorie le chat en orange !"
+ },
+ {
+  "h": "f37e967c",
+  "lang": "fr",
+  "text": "Colorie le nez en rose !"
+ },
+ {
+  "h": "14483cec",
+  "lang": "fr",
+  "text": "La licorne !"
+ },
+ {
+  "h": "db256d51",
+  "lang": "fr",
+  "text": "Colorie la crinière en violet !"
+ },
+ {
+  "h": "2a6b7543",
+  "lang": "fr",
+  "text": "Colorie le museau en rose !"
+ },
+ {
+  "h": "f15dea10",
+  "lang": "fr",
+  "text": "Colorie la corne en jaune !"
+ },
+ {
+  "h": "cb471d74",
+  "lang": "fr",
+  "text": "La voiture !"
+ },
+ {
+  "h": "efd81f92",
+  "lang": "fr",
+  "text": "Colorie la route en gris !"
+ },
+ {
+  "h": "ffb08e44",
+  "lang": "fr",
+  "text": "Colorie la voiture en rouge !"
+ },
+ {
+  "h": "e725b089",
+  "lang": "fr",
+  "text": "Colorie la vitre en bleu clair !"
+ },
+ {
+  "h": "6e220d25",
+  "lang": "fr",
+  "text": "Colorie la roue en noir !"
+ },
+ {
+  "h": "0c4f6dad",
+  "lang": "fr",
+  "text": "Colorie le phare en jaune !"
+ },
+ {
+  "h": "1c44a00c",
+  "lang": "fr",
+  "text": "Le gâteau !"
+ },
+ {
+  "h": "af4c450e",
+  "lang": "fr",
+  "text": "Colorie l'assiette en gris !"
+ },
+ {
+  "h": "2528ba33",
+  "lang": "fr",
+  "text": "Colorie le glaçage en rose !"
+ },
+ {
+  "h": "1605a83c",
+  "lang": "fr",
+  "text": "Colorie la flamme en orange !"
+ },
+ {
+  "h": "37e08eb7",
+  "lang": "fr",
+  "text": "Colorie la première bande de l'arc-en-ciel en rouge !"
+ },
+ {
+  "h": "12ce7442",
+  "lang": "fr",
+  "text": "La glace !"
+ },
+ {
+  "h": "277c7b80",
+  "lang": "fr",
+  "text": "Colorie le cornet en marron !"
+ },
+ {
+  "h": "1900922b",
+  "lang": "fr",
+  "text": "Colorie la glace en rose !"
+ },
+ {
+  "h": "44df94c5",
+  "lang": "fr",
+  "text": "Colorie la cerise en rouge !"
+ },
+ {
+  "h": "36bcd0e2",
+  "lang": "fr",
+  "text": "Le petit lapin !"
+ },
+ {
+  "h": "aeccdba4",
+  "lang": "fr",
+  "text": "Colorie l'oreille en rose !"
+ },
+ {
+  "h": "35eb3166",
+  "lang": "fr",
+  "text": "Colorie la carotte en orange !"
+ },
+ {
   "h": "9cd95568",
+  "lang": "it",
   "text": "Bravissima!"
  },
  {
   "h": "a9582865",
+  "lang": "it",
   "text": "Brava Lena!"
  },
  {
   "h": "42a571ae",
+  "lang": "it",
   "text": "Evviva!"
  },
  {
   "h": "f77e01d4",
+  "lang": "it",
   "text": "Super!"
  },
  {
   "h": "c80e56c7",
+  "lang": "it",
   "text": "Fantastico!"
  },
  {
   "h": "6b179bb3",
+  "lang": "it",
   "text": "Che brava!"
  },
  {
   "h": "08d2570a",
+  "lang": "it",
   "text": "Grande Lena!"
  },
  {
   "h": "82728822",
+  "lang": "it",
   "text": "Perfetto!"
  },
  {
   "h": "1111804e",
+  "lang": "it",
   "text": "Riprova!"
  },
  {
   "h": "ed16bd5b",
+  "lang": "it",
   "text": "Quasi! Riprova."
  },
  {
   "h": "ddc680ab",
+  "lang": "it",
   "text": "Prova ancora!"
  },
  {
   "h": "5a2a0571",
+  "lang": "it",
   "text": "Ciao Lena! Giochiamo?"
  },
  {
-  "h": "63a2b53e",
-  "text": "Ciao Lena! Scegli il tuo amico e il tuo colore preferito!"
- },
- {
   "h": "0d2a6770",
+  "lang": "it",
   "text": "Questo è per papà!"
  },
  {
-  "h": "620485be",
-  "text": "Questo lo vinci giocando!"
+  "h": "63a2b53e",
+  "lang": "it",
+  "text": "Ciao Lena! Scegli il tuo amico e il tuo colore preferito!"
  },
  {
   "h": "b32dca26",
+  "lang": "it",
   "text": "Hai completato l'album! Sei bravissima!"
  },
  {
+  "h": "620485be",
+  "lang": "it",
+  "text": "Questo lo vinci giocando!"
+ },
+ {
   "h": "6a3670e6",
+  "lang": "it",
   "text": "Evviva! Un nuovo sticker per il tuo album!"
  },
  {
   "h": "7f23b3bb",
+  "lang": "it",
   "text": "Complimenti Lena! Hai completato tutto l'album! Sei una Super Lena!"
  },
  {
   "h": "51dae437",
+  "lang": "it",
   "text": "Adesso prova tu!"
  },
  {
   "h": "c5c574cf",
+  "lang": "it",
   "text": "Tocca un gioco per iniziare!"
  },
  {
   "h": "32c8a182",
+  "lang": "it",
   "text": "Qui trovi gli sticker che vinci giocando!"
  },
  {
+  "h": "4e761f20",
+  "lang": "it",
+  "text": "Qui spendi le stelle per vestire il tuo amico!"
+ },
+ {
+  "h": "87f88ad4",
+  "lang": "it",
+  "text": "Scegli i vestiti per il tuo amico!"
+ },
+ {
+  "h": "528bd47e",
+  "lang": "it",
+  "text": "Evviva! È tuo!"
+ },
+ {
   "h": "9e88ac7c",
+  "lang": "it",
   "text": "Coniglietto!"
  },
  {
   "h": "4ecb68cd",
+  "lang": "it",
   "text": "Evviva! Ciao Coniglietto!"
  },
  {
   "h": "259ecc21",
+  "lang": "it",
   "text": "Ancora un minuto e poi il coniglietto va a nanna!"
  },
  {
   "h": "f174ac86",
-  "text": "il coniglietto è stanco e va a nanna. Ci vediamo domani, Lena! Buonanotte!"
+  "lang": "it",
+  "text": "Il coniglietto è stanco e va a nanna. Ci vediamo domani, Lena! Buonanotte!"
  },
  {
   "h": "45776d93",
+  "lang": "it",
   "text": "Gattino!"
  },
  {
   "h": "819af6d6",
+  "lang": "it",
   "text": "Evviva! Ciao Gattino!"
  },
  {
   "h": "c0aae660",
+  "lang": "it",
   "text": "Ancora un minuto e poi il gattino va a nanna!"
  },
  {
   "h": "20816cf5",
-  "text": "il gattino è stanco e va a nanna. Ci vediamo domani, Lena! Buonanotte!"
+  "lang": "it",
+  "text": "Il gattino è stanco e va a nanna. Ci vediamo domani, Lena! Buonanotte!"
  },
  {
   "h": "e5746ea8",
+  "lang": "it",
   "text": "Unicorno!"
  },
  {
   "h": "e0fbe7cf",
+  "lang": "it",
   "text": "Evviva! Ciao Unicorno!"
  },
  {
   "h": "e6f329ac",
+  "lang": "it",
   "text": "Ancora un minuto e poi l'unicorno va a nanna!"
  },
  {
   "h": "760ddaed",
-  "text": "l'unicorno è stanco e va a nanna. Ci vediamo domani, Lena! Buonanotte!"
+  "lang": "it",
+  "text": "L'unicorno è stanco e va a nanna. Ci vediamo domani, Lena! Buonanotte!"
  },
  {
   "h": "ac483961",
+  "lang": "it",
   "text": "Cagnolino!"
  },
  {
   "h": "afeca5ac",
+  "lang": "it",
   "text": "Evviva! Ciao Cagnolino!"
  },
  {
   "h": "2935c9fa",
+  "lang": "it",
   "text": "Ancora un minuto e poi il cagnolino va a nanna!"
  },
  {
   "h": "0c43f973",
-  "text": "il cagnolino è stanco e va a nanna. Ci vediamo domani, Lena! Buonanotte!"
+  "lang": "it",
+  "text": "Il cagnolino è stanco e va a nanna. Ci vediamo domani, Lena! Buonanotte!"
  },
  {
   "h": "14421e52",
+  "lang": "it",
   "text": "Rosa!"
  },
  {
   "h": "21382c49",
+  "lang": "it",
   "text": "Rosso!"
  },
  {
   "h": "db834063",
+  "lang": "it",
   "text": "Arancione!"
  },
  {
   "h": "4db902d9",
+  "lang": "it",
   "text": "Giallo!"
  },
  {
   "h": "d2a54155",
+  "lang": "it",
   "text": "Verde!"
  },
  {
   "h": "14b305f2",
+  "lang": "it",
   "text": "Turchese!"
  },
  {
   "h": "8b952e18",
+  "lang": "it",
   "text": "Azzurro!"
  },
  {
   "h": "75c4477a",
+  "lang": "it",
   "text": "Blu!"
  },
  {
   "h": "740881a6",
+  "lang": "it",
   "text": "Viola!"
  },
  {
   "h": "cf625e35",
+  "lang": "it",
   "text": "Lilla!"
  },
  {
   "h": "5c01830e",
+  "lang": "it",
   "text": "Hai 0 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "90d2d6c7",
+  "lang": "it",
   "text": "Hai 1 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "fa326cc4",
+  "lang": "it",
   "text": "Hai 2 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "50efb895",
+  "lang": "it",
   "text": "Hai 3 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "6171c492",
+  "lang": "it",
   "text": "Hai 4 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "a8500bdb",
+  "lang": "it",
   "text": "Hai 5 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "08fa2488",
+  "lang": "it",
   "text": "Hai 6 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "9ad0d9a9",
+  "lang": "it",
   "text": "Hai 7 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "d44ad0e6",
+  "lang": "it",
   "text": "Hai 8 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "7109a35f",
+  "lang": "it",
   "text": "Hai 9 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "dae2be0b",
+  "lang": "it",
   "text": "Hai 10 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "10b82202",
+  "lang": "it",
   "text": "Hai 11 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "6322f499",
+  "lang": "it",
   "text": "Hai 12 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "47fcf138",
+  "lang": "it",
   "text": "Hai 13 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "767c32b7",
+  "lang": "it",
   "text": "Hai 14 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "9a4118fe",
+  "lang": "it",
   "text": "Hai 15 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "58089f05",
+  "lang": "it",
   "text": "Hai 16 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "fa6f0634",
+  "lang": "it",
   "text": "Hai 17 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "51dea0c3",
+  "lang": "it",
   "text": "Hai 18 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "0b74f15a",
+  "lang": "it",
   "text": "Hai 19 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "7f75c02e",
+  "lang": "it",
   "text": "Hai 20 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "0a7de867",
+  "lang": "it",
   "text": "Hai 21 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "27df6a64",
+  "lang": "it",
   "text": "Hai 22 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "4cdc5835",
+  "lang": "it",
   "text": "Hai 23 sticker. Gioca per vincerne altri!"
  },
  {
   "h": "57d4aae1",
-  "text": "una"
+  "lang": "it",
+  "text": "una!"
  },
  {
   "h": "e8311335",
-  "text": "due"
+  "lang": "it",
+  "text": "due!"
  },
  {
   "h": "981d9092",
-  "text": "tre"
+  "lang": "it",
+  "text": "tre!"
  },
  {
   "h": "9d76e531",
-  "text": "quattro"
+  "lang": "it",
+  "text": "quattro!"
  },
  {
   "h": "2519baf2",
-  "text": "cinque"
+  "lang": "it",
+  "text": "cinque!"
  },
  {
   "h": "c126ff24",
-  "text": "sei"
+  "lang": "it",
+  "text": "sei!"
  },
  {
   "h": "737e8b90",
-  "text": "sette"
+  "lang": "it",
+  "text": "sette!"
  },
  {
   "h": "1de82de3",
-  "text": "otto"
+  "lang": "it",
+  "text": "otto!"
  },
  {
   "h": "7d93dc93",
-  "text": "nove"
+  "lang": "it",
+  "text": "nove!"
  },
  {
   "h": "7ea4e38d",
-  "text": "dieci"
+  "lang": "it",
+  "text": "dieci!"
  },
  {
   "h": "1662972b",
+  "lang": "it",
   "text": "Tanti auguri Lena! Oggi hai 1 anni!"
  },
  {
   "h": "8609b7ae",
+  "lang": "it",
   "text": "Buon compleanno Lena! Oggi compi 1 anni! Contiamo le candeline e soffiamole tutte!"
  },
  {
   "h": "3c204b2c",
+  "lang": "it",
   "text": "Tanti auguri Lena! Oggi hai 2 anni!"
  },
  {
   "h": "b64b338f",
+  "lang": "it",
   "text": "Buon compleanno Lena! Oggi compi 2 anni! Contiamo le candeline e soffiamole tutte!"
  },
  {
   "h": "05baafbd",
+  "lang": "it",
   "text": "Tanti auguri Lena! Oggi hai 3 anni!"
  },
  {
   "h": "9dde3f48",
+  "lang": "it",
   "text": "Buon compleanno Lena! Oggi compi 3 anni! Contiamo le candeline e soffiamole tutte!"
  },
  {
   "h": "d2dee516",
+  "lang": "it",
   "text": "Tanti auguri Lena! Oggi hai 4 anni!"
  },
  {
   "h": "e03713f1",
+  "lang": "it",
   "text": "Buon compleanno Lena! Oggi compi 4 anni! Contiamo le candeline e soffiamole tutte!"
  },
  {
   "h": "4ed61c47",
+  "lang": "it",
   "text": "Tanti auguri Lena! Oggi hai 5 anni!"
  },
  {
   "h": "fe72c41a",
+  "lang": "it",
   "text": "Buon compleanno Lena! Oggi compi 5 anni! Contiamo le candeline e soffiamole tutte!"
  },
  {
   "h": "4d02e258",
+  "lang": "it",
   "text": "Tanti auguri Lena! Oggi hai 6 anni!"
  },
  {
   "h": "d69d20bb",
+  "lang": "it",
   "text": "Buon compleanno Lena! Oggi compi 6 anni! Contiamo le candeline e soffiamole tutte!"
  },
  {
   "h": "6915c669",
+  "lang": "it",
   "text": "Tanti auguri Lena! Oggi hai 7 anni!"
  },
  {
   "h": "34b8d0a4",
+  "lang": "it",
   "text": "Buon compleanno Lena! Oggi compi 7 anni! Contiamo le candeline e soffiamole tutte!"
  },
  {
   "h": "cbdabfa2",
+  "lang": "it",
   "text": "Tanti auguri Lena! Oggi hai 8 anni!"
  },
  {
   "h": "2c8fd49d",
+  "lang": "it",
   "text": "Buon compleanno Lena! Oggi compi 8 anni! Contiamo le candeline e soffiamole tutte!"
  },
  {
   "h": "9efc6163",
+  "lang": "it",
   "text": "Tanti auguri Lena! Oggi hai 9 anni!"
  },
  {
   "h": "5afe1766",
+  "lang": "it",
   "text": "Buon compleanno Lena! Oggi compi 9 anni! Contiamo le candeline e soffiamole tutte!"
  },
  {
   "h": "772f8e75",
+  "lang": "it",
   "text": "Tanti auguri Lena! Oggi hai 10 anni!"
  },
  {
   "h": "762970ca",
+  "lang": "it",
   "text": "Buon compleanno Lena! Oggi compi 10 anni! Contiamo le candeline e soffiamole tutte!"
  },
  {
+  "h": "5a7cd68f",
+  "lang": "it",
+  "text": "Il fiore!"
+ },
+ {
+  "h": "269c1678",
+  "lang": "it",
+  "text": "Il fiore! Lo vuoi comprare?"
+ },
+ {
+  "h": "118cb76d",
+  "lang": "it",
+  "text": "Il fiocco!"
+ },
+ {
+  "h": "8df7d146",
+  "lang": "it",
+  "text": "Il fiocco! Lo vuoi comprare?"
+ },
+ {
+  "h": "c9ad32a3",
+  "lang": "it",
+  "text": "Il cappello di paglia!"
+ },
+ {
+  "h": "353c0634",
+  "lang": "it",
+  "text": "Il cappello di paglia! Lo vuoi comprare?"
+ },
+ {
+  "h": "6560d234",
+  "lang": "it",
+  "text": "Il cappello magico!"
+ },
+ {
+  "h": "ec4ebe65",
+  "lang": "it",
+  "text": "Il cappello magico! Lo vuoi comprare?"
+ },
+ {
+  "h": "4cf11546",
+  "lang": "it",
+  "text": "La corona!"
+ },
+ {
+  "h": "2f8405d7",
+  "lang": "it",
+  "text": "La corona! Lo vuoi comprare?"
+ },
+ {
+  "h": "4f78b217",
+  "lang": "it",
+  "text": "Gli occhiali!"
+ },
+ {
+  "h": "01579ef0",
+  "lang": "it",
+  "text": "Gli occhiali! Lo vuoi comprare?"
+ },
+ {
+  "h": "0e2b6797",
+  "lang": "it",
+  "text": "Gli occhiali da sole!"
+ },
+ {
+  "h": "a2ca7770",
+  "lang": "it",
+  "text": "Gli occhiali da sole! Lo vuoi comprare?"
+ },
+ {
+  "h": "67617bf8",
+  "lang": "it",
+  "text": "Il lecca-lecca!"
+ },
+ {
+  "h": "20ffe701",
+  "lang": "it",
+  "text": "Il lecca-lecca! Lo vuoi comprare?"
+ },
+ {
+  "h": "8f70f1b1",
+  "lang": "it",
+  "text": "Il palloncino!"
+ },
+ {
+  "h": "d419aa62",
+  "lang": "it",
+  "text": "Il palloncino! Lo vuoi comprare?"
+ },
+ {
+  "h": "de28f4b5",
+  "lang": "it",
+  "text": "La bacchetta magica!"
+ },
+ {
+  "h": "4b3d039e",
+  "lang": "it",
+  "text": "La bacchetta magica! Lo vuoi comprare?"
+ },
+ {
+  "h": "36a48e04",
+  "lang": "it",
+  "text": "I cuori!"
+ },
+ {
+  "h": "a187b9f5",
+  "lang": "it",
+  "text": "I cuori! Lo vuoi comprare?"
+ },
+ {
+  "h": "39561085",
+  "lang": "it",
+  "text": "Le farfalle!"
+ },
+ {
+  "h": "f8e574ae",
+  "lang": "it",
+  "text": "Le farfalle! Lo vuoi comprare?"
+ },
+ {
+  "h": "6014de26",
+  "lang": "it",
+  "text": "I brillantini!"
+ },
+ {
+  "h": "c2b7af37",
+  "lang": "it",
+  "text": "I brillantini! Lo vuoi comprare?"
+ },
+ {
+  "h": "2b4c3689",
+  "lang": "it",
+  "text": "L'arcobaleno!"
+ },
+ {
+  "h": "d4e263aa",
+  "lang": "it",
+  "text": "L'arcobaleno! Lo vuoi comprare?"
+ },
+ {
+  "h": "0046f10f",
+  "lang": "it",
+  "text": "Ti manca una stella! Gioca per vincerla."
+ },
+ {
+  "h": "7e90cdf0",
+  "lang": "it",
+  "text": "Ti mancano 2 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "6de45e23",
+  "lang": "it",
+  "text": "Ti mancano 3 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "3fcf33e6",
+  "lang": "it",
+  "text": "Ti mancano 4 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "113a6329",
+  "lang": "it",
+  "text": "Ti mancano 5 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "81e52c54",
+  "lang": "it",
+  "text": "Ti mancano 6 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "84015117",
+  "lang": "it",
+  "text": "Ti mancano 7 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "5f25061a",
+  "lang": "it",
+  "text": "Ti mancano 8 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "5ce0a6bd",
+  "lang": "it",
+  "text": "Ti mancano 9 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "5fca9b29",
+  "lang": "it",
+  "text": "Ti mancano 10 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "8e5f6be6",
+  "lang": "it",
+  "text": "Ti mancano 11 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "d2918917",
+  "lang": "it",
+  "text": "Ti mancano 12 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "d0756454",
+  "lang": "it",
+  "text": "Ti mancano 13 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "02520985",
+  "lang": "it",
+  "text": "Ti mancano 14 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "14026ec2",
+  "lang": "it",
+  "text": "Ti mancano 15 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "bc749623",
+  "lang": "it",
+  "text": "Ti mancano 16 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "cd2105f0",
+  "lang": "it",
+  "text": "Ti mancano 17 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "90839961",
+  "lang": "it",
+  "text": "Ti mancano 18 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "79f0ce7e",
+  "lang": "it",
+  "text": "Ti mancano 19 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "255fe9b2",
+  "lang": "it",
+  "text": "Ti mancano 20 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "50d4ac35",
+  "lang": "it",
+  "text": "Ti mancano 21 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "785d0ca0",
+  "lang": "it",
+  "text": "Ti mancano 22 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "7f493853",
+  "lang": "it",
+  "text": "Ti mancano 23 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "d00fe7d6",
+  "lang": "it",
+  "text": "Ti mancano 24 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "d8752659",
+  "lang": "it",
+  "text": "Ti mancano 25 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "d0ad73c4",
+  "lang": "it",
+  "text": "Ti mancano 26 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "e0ba8c47",
+  "lang": "it",
+  "text": "Ti mancano 27 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "f6c6f7ca",
+  "lang": "it",
+  "text": "Ti mancano 28 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "3b9bbbed",
+  "lang": "it",
+  "text": "Ti mancano 29 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "d4d09503",
+  "lang": "it",
+  "text": "Ti mancano 30 stelle! Gioca per vincerle."
+ },
+ {
+  "h": "3d1ba3ac",
+  "lang": "it",
+  "text": "C'era una volta, una sera, Lena e il suo amico che guardavano il cielo."
+ },
+ {
+  "h": "8861bc0d",
+  "lang": "it",
+  "text": "A un tratto, una piccola stella è caduta in giardino!"
+ },
+ {
+  "h": "99244c3e",
+  "lang": "it",
+  "text": "La stella era triste: voleva tornare a casa, nel cielo."
+ },
+ {
+  "h": "bbaae15e",
+  "lang": "it",
+  "text": "Lena ha avuto un'idea: un palloncino! La stella è volata su, piano piano."
+ },
+ {
+  "h": "34963a28",
+  "lang": "it",
+  "text": "Adesso, ogni notte, la stella brilla solo per Lena. Buonanotte!"
+ },
+ {
+  "h": "d9bd6043",
+  "lang": "it",
+  "text": "In fondo al mare viveva un pesciolino che aveva paura del buio."
+ },
+ {
+  "h": "22e403ab",
+  "lang": "it",
+  "text": "Ogni sera si nascondeva dietro a un grande scoglio."
+ },
+ {
+  "h": "96370bf4",
+  "lang": "it",
+  "text": "Una sera è arrivata una polpessa gentile con una lanterna."
+ },
+ {
+  "h": "3c334061",
+  "lang": "it",
+  "text": "Insieme hanno scoperto le conchiglie che brillano nella notte."
+ },
+ {
+  "h": "cef091f8",
+  "lang": "it",
+  "text": "Il pesciolino non aveva più paura. Si è addormentato sorridendo. Buonanotte!"
+ },
+ {
+  "h": "1c5f29a3",
+  "lang": "it",
+  "text": "C'era una volta una nuvoletta che voleva dormire."
+ },
+ {
+  "h": "13209399",
+  "lang": "it",
+  "text": "Ma il vento la faceva volare dappertutto: di qua, di là, e ancora più lontano!"
+ },
+ {
+  "h": "cdc22c9f",
+  "lang": "it",
+  "text": "Allora la luna le ha detto: vieni, ti tengo un posto vicino a me."
+ },
+ {
+  "h": "b1eefeda",
+  "lang": "it",
+  "text": "Lena e il suo amico hanno dato un bacino alla nuvoletta."
+ },
+ {
+  "h": "0aff74c8",
+  "lang": "it",
+  "text": "E la nuvoletta ha fatto sogni belli e morbidi. Buonanotte!"
+ },
+ {
   "h": "480aac90",
+  "lang": "it",
   "text": "Lena Salta"
  },
  {
   "h": "d7039388",
+  "lang": "it",
   "text": "Stop! È rosso: aspetta il verde!"
  },
  {
   "h": "cb189110",
+  "lang": "it",
   "text": "Fermati! Col rosso non si passa."
  },
  {
   "h": "e0911e69",
+  "lang": "it",
   "text": "Rosso! Aspettiamo il verde."
  },
  {
   "h": "1284dcb3",
+  "lang": "it",
   "text": "Brava! Col verde si passa!"
  },
  {
   "h": "ad05be20",
+  "lang": "it",
   "text": "Verde: via libera!"
  },
  {
   "h": "09d9a7ca",
+  "lang": "it",
   "text": "Perfetto, hai aspettato il verde!"
  },
  {
   "h": "5c99357f",
+  "lang": "it",
   "text": "Super! Attraversamento sicuro!"
  },
  {
-  "h": "f73937f1",
-  "text": "Tocca lo schermo per saltare avanti!"
+  "h": "91bb4401",
+  "lang": "it",
+  "text": "Sulle strisce e col verde: bravissima!"
  },
  {
-  "h": "200592b9",
-  "text": "Striscia il dito di lato per spostarti."
+  "h": "8727367f",
+  "lang": "it",
+  "text": "Arriva il treno! Aspetta!"
  },
  {
-  "h": "938339e0",
-  "text": "Semaforo rosso: fermati e aspetta!"
+  "h": "6f7f1f30",
+  "lang": "it",
+  "text": "Attenta, il treno! Aspettiamo."
  },
  {
-  "h": "a96ce765",
-  "text": "Semaforo verde: le macchine si fermano e puoi passare!"
- },
- {
-  "h": "05ada735",
-  "text": "Attenzione ai fiumi: salta sui tronchi!"
+  "h": "00787f6c",
+  "lang": "it",
+  "text": "Ops, il treno! Quando le luci lampeggiano, si aspetta."
  },
  {
   "h": "ac90756c",
+  "lang": "it",
   "text": "Ops! Attenta alle macchine!"
  },
  {
   "h": "d0fdfa31",
+  "lang": "it",
   "text": "Ops! Guarda bene prima di saltare!"
  },
  {
-  "h": "0023b08a",
-  "text": "Tocca per saltare. Col rosso aspetta, col verde passa!"
- },
- {
-  "h": "8af86031",
-  "text": "Splash! Salta sui tronchi!"
- },
- {
   "h": "8c2d171c",
+  "lang": "it",
   "text": "Ops! Il semaforo è diventato rosso: attraversa quando è appena verde!"
  },
  {
+  "h": "8af86031",
+  "lang": "it",
+  "text": "Splash! Salta sui tronchi!"
+ },
+ {
+  "h": "0023b08a",
+  "lang": "it",
+  "text": "Tocca per saltare. Col rosso aspetta, col verde passa!"
+ },
+ {
+  "h": "f73937f1",
+  "lang": "it",
+  "text": "Tocca lo schermo per saltare avanti!"
+ },
+ {
+  "h": "200592b9",
+  "lang": "it",
+  "text": "Striscia il dito di lato per spostarti."
+ },
+ {
+  "h": "938339e0",
+  "lang": "it",
+  "text": "Semaforo rosso: fermati e aspetta!"
+ },
+ {
+  "h": "a96ce765",
+  "lang": "it",
+  "text": "Semaforo verde: le macchine si fermano e puoi passare!"
+ },
+ {
+  "h": "05ada735",
+  "lang": "it",
+  "text": "Attenzione ai fiumi: salta sui tronchi!"
+ },
+ {
+  "h": "59a2f84c",
+  "lang": "it",
+  "text": "Attraversa sulle strisce bianche: è più sicuro e vinci più stelle!"
+ },
+ {
+  "h": "dc9ec1f1",
+  "lang": "it",
+  "text": "Quando le luci rosse lampeggiano, arriva il treno: aspetta sul prato!"
+ },
+ {
+  "h": "35973331",
+  "lang": "it",
+  "text": "Benvenuta nel mondo dei prati!"
+ },
+ {
+  "h": "a329dce1",
+  "lang": "it",
+  "text": "Benvenuta nel mondo della neve!"
+ },
+ {
+  "h": "a4c0ec49",
+  "lang": "it",
+  "text": "Benvenuta al mare!"
+ },
+ {
+  "h": "de1428f2",
+  "lang": "it",
+  "text": "Benvenuta nella città di notte!"
+ },
+ {
   "h": "3e66f92a",
+  "lang": "it",
   "text": "Conta con Lena"
  },
  {
   "h": "29d4382c",
+  "lang": "it",
   "text": "Tocca le cose per contarle: uno, due, tre..."
  },
  {
   "h": "6902f205",
+  "lang": "it",
   "text": "Poi tocca il numero giusto qui sotto!"
  },
  {
   "h": "dd318e27",
+  "lang": "it",
   "text": "Guarda il numero: ti dice quante cose prendere."
  },
  {
   "h": "3f5c804f",
+  "lang": "it",
   "text": "Tocca le cose per metterle nel cestino!"
  },
  {
   "h": "51d4a16f",
+  "lang": "it",
   "text": "uno"
  },
  {
   "h": "5606b936",
+  "lang": "it",
   "text": "Quante mele vedi?"
  },
  {
   "h": "6e295ea1",
+  "lang": "it",
   "text": "Riprova! Tocca le mele per contarle."
  },
  {
   "h": "712c65b0",
+  "lang": "it",
   "text": "Tocca una mela!"
  },
  {
   "h": "53c89ef8",
+  "lang": "it",
   "text": "Tocca 2 mele!"
  },
  {
   "h": "b08f8209",
+  "lang": "it",
   "text": "Tocca 3 mele!"
  },
  {
   "h": "0302dc06",
+  "lang": "it",
   "text": "Tocca 4 mele!"
  },
  {
   "h": "70eef4d7",
+  "lang": "it",
   "text": "Tocca 5 mele!"
  },
  {
   "h": "899d78fc",
+  "lang": "it",
   "text": "Tocca 6 mele!"
  },
  {
   "h": "ddf4fe6d",
+  "lang": "it",
   "text": "Tocca 7 mele!"
  },
  {
   "h": "2a0ccf7a",
+  "lang": "it",
   "text": "Tocca 8 mele!"
  },
  {
   "h": "9a1c2c8b",
+  "lang": "it",
   "text": "Tocca 9 mele!"
  },
  {
   "h": "3de4af97",
+  "lang": "it",
   "text": "Tocca 10 mele!"
  },
  {
   "h": "2b173bf9",
+  "lang": "it",
   "text": "Quante fragole vedi?"
  },
  {
   "h": "7c81f246",
+  "lang": "it",
   "text": "Riprova! Tocca le fragole per contarle."
  },
  {
   "h": "7d9946a5",
+  "lang": "it",
   "text": "Tocca una fragola!"
  },
  {
   "h": "7770d135",
+  "lang": "it",
   "text": "Tocca 2 fragole!"
  },
  {
   "h": "aa4d32b6",
+  "lang": "it",
   "text": "Tocca 3 fragole!"
  },
  {
   "h": "0fc2e1d7",
+  "lang": "it",
   "text": "Tocca 4 fragole!"
  },
  {
   "h": "81761de8",
+  "lang": "it",
   "text": "Tocca 5 fragole!"
  },
  {
   "h": "30cf0f59",
+  "lang": "it",
   "text": "Tocca 6 fragole!"
  },
  {
   "h": "c759e43a",
+  "lang": "it",
   "text": "Tocca 7 fragole!"
  },
  {
   "h": "a03d09fb",
+  "lang": "it",
   "text": "Tocca 8 fragole!"
  },
  {
   "h": "7f6271dc",
+  "lang": "it",
   "text": "Tocca 9 fragole!"
  },
  {
   "h": "5f72e0a8",
+  "lang": "it",
   "text": "Tocca 10 fragole!"
  },
  {
   "h": "7ed15cf2",
+  "lang": "it",
   "text": "Quante stelle vedi?"
  },
  {
   "h": "94dac77d",
+  "lang": "it",
   "text": "Riprova! Tocca le stelle per contarle."
  },
  {
   "h": "c6e9650c",
+  "lang": "it",
   "text": "Tocca una stella!"
  },
  {
   "h": "0a44c634",
+  "lang": "it",
   "text": "Tocca 2 stelle!"
  },
  {
   "h": "ed803a21",
+  "lang": "it",
   "text": "Tocca 3 stelle!"
  },
  {
   "h": "e1659876",
+  "lang": "it",
   "text": "Tocca 4 stelle!"
  },
  {
   "h": "62fffc5b",
+  "lang": "it",
   "text": "Tocca 5 stelle!"
  },
  {
   "h": "1f79b3c0",
+  "lang": "it",
   "text": "Tocca 6 stelle!"
  },
  {
   "h": "6f05de0d",
+  "lang": "it",
   "text": "Tocca 7 stelle!"
  },
  {
   "h": "bcf41df2",
+  "lang": "it",
   "text": "Tocca 8 stelle!"
  },
  {
   "h": "e5dffa57",
+  "lang": "it",
   "text": "Tocca 9 stelle!"
  },
  {
   "h": "0587131b",
+  "lang": "it",
   "text": "Tocca 10 stelle!"
  },
  {
   "h": "d53f391b",
+  "lang": "it",
   "text": "Quanti pesci vedi?"
  },
  {
   "h": "0a6648f0",
+  "lang": "it",
   "text": "Riprova! Tocca i pesci per contarli."
  },
  {
   "h": "bbd834dc",
+  "lang": "it",
   "text": "Tocca un pesce!"
  },
  {
   "h": "326cd5fb",
+  "lang": "it",
   "text": "Tocca 2 pesci!"
  },
  {
   "h": "651dd56c",
+  "lang": "it",
   "text": "Tocca 3 pesci!"
  },
  {
   "h": "e166a1f5",
+  "lang": "it",
   "text": "Tocca 4 pesci!"
  },
  {
   "h": "ca8b8536",
+  "lang": "it",
   "text": "Tocca 5 pesci!"
  },
  {
   "h": "e18a6a2f",
+  "lang": "it",
   "text": "Tocca 6 pesci!"
  },
  {
   "h": "28149b30",
+  "lang": "it",
   "text": "Tocca 7 pesci!"
  },
  {
   "h": "fb17c759",
+  "lang": "it",
   "text": "Tocca 8 pesci!"
  },
  {
   "h": "9927411a",
+  "lang": "it",
   "text": "Tocca 9 pesci!"
  },
  {
   "h": "caadfff6",
+  "lang": "it",
   "text": "Tocca 10 pesci!"
  },
  {
   "h": "40d146d0",
+  "lang": "it",
   "text": "Quanti palloncini vedi?"
  },
  {
   "h": "cdd28b53",
+  "lang": "it",
   "text": "Riprova! Tocca i palloncini per contarli."
  },
  {
   "h": "bbe4118d",
+  "lang": "it",
   "text": "Tocca un palloncino!"
  },
  {
   "h": "827810d6",
+  "lang": "it",
   "text": "Tocca 2 palloncini!"
  },
  {
   "h": "3edf1d47",
+  "lang": "it",
   "text": "Tocca 3 palloncini!"
  },
  {
   "h": "9192dcd4",
+  "lang": "it",
   "text": "Tocca 4 palloncini!"
  },
  {
   "h": "fdce126d",
+  "lang": "it",
   "text": "Tocca 5 palloncini!"
  },
  {
   "h": "1067ae32",
+  "lang": "it",
   "text": "Tocca 6 palloncini!"
  },
  {
   "h": "12b95af3",
+  "lang": "it",
   "text": "Tocca 7 palloncini!"
  },
  {
   "h": "c429bb40",
+  "lang": "it",
   "text": "Tocca 8 palloncini!"
  },
  {
   "h": "f2410b09",
+  "lang": "it",
   "text": "Tocca 9 palloncini!"
  },
  {
   "h": "e868ed2d",
+  "lang": "it",
   "text": "Tocca 10 palloncini!"
  },
  {
   "h": "45992764",
+  "lang": "it",
   "text": "Quante farfalle vedi?"
  },
  {
   "h": "8b8c772f",
+  "lang": "it",
   "text": "Riprova! Tocca le farfalle per contarle."
  },
  {
   "h": "925a7fee",
+  "lang": "it",
   "text": "Tocca una farfalla!"
  },
  {
   "h": "ce28547e",
+  "lang": "it",
   "text": "Tocca 2 farfalle!"
  },
  {
   "h": "2eb326eb",
+  "lang": "it",
   "text": "Tocca 3 farfalle!"
  },
  {
   "h": "d3b80bc8",
+  "lang": "it",
   "text": "Tocca 4 farfalle!"
  },
  {
   "h": "50ac7ff5",
+  "lang": "it",
   "text": "Tocca 5 farfalle!"
  },
  {
   "h": "000f633a",
+  "lang": "it",
   "text": "Tocca 6 farfalle!"
  },
  {
   "h": "5199a947",
+  "lang": "it",
   "text": "Tocca 7 farfalle!"
  },
  {
   "h": "e86b7a94",
+  "lang": "it",
   "text": "Tocca 8 farfalle!"
  },
  {
   "h": "065bb721",
+  "lang": "it",
   "text": "Tocca 9 farfalle!"
  },
  {
   "h": "f52617b5",
+  "lang": "it",
   "text": "Tocca 10 farfalle!"
  },
  {
   "h": "ef222662",
+  "lang": "it",
   "text": "Quanti fiori vedi?"
  },
  {
   "h": "4762b6b5",
+  "lang": "it",
   "text": "Riprova! Tocca i fiori per contarli."
  },
  {
   "h": "17de48db",
+  "lang": "it",
   "text": "Tocca un fiore!"
  },
  {
   "h": "58a146d0",
+  "lang": "it",
   "text": "Tocca 2 fiori!"
  },
  {
   "h": "d6463d6b",
+  "lang": "it",
   "text": "Tocca 3 fiori!"
  },
  {
   "h": "96563cde",
+  "lang": "it",
   "text": "Tocca 4 fiori!"
  },
  {
   "h": "29aa6331",
+  "lang": "it",
   "text": "Tocca 5 fiori!"
  },
  {
   "h": "1d630dcc",
+  "lang": "it",
   "text": "Tocca 6 fiori!"
  },
  {
   "h": "5d5836d7",
+  "lang": "it",
   "text": "Tocca 7 fiori!"
  },
  {
   "h": "ccd80f4a",
+  "lang": "it",
   "text": "Tocca 8 fiori!"
  },
  {
   "h": "2b6857dd",
+  "lang": "it",
   "text": "Tocca 9 fiori!"
  },
  {
   "h": "fb1363f1",
+  "lang": "it",
   "text": "Tocca 10 fiori!"
  },
  {
   "h": "ef86c4b8",
+  "lang": "it",
   "text": "Quanti biscotti vedi?"
  },
  {
   "h": "5249dbeb",
+  "lang": "it",
   "text": "Riprova! Tocca i biscotti per contarli."
  },
  {
   "h": "10619fc5",
+  "lang": "it",
   "text": "Tocca un biscotto!"
  },
  {
   "h": "ee29067e",
+  "lang": "it",
   "text": "Tocca 2 biscotti!"
  },
  {
   "h": "df820eaf",
+  "lang": "it",
   "text": "Tocca 3 biscotti!"
  },
  {
   "h": "284b759c",
+  "lang": "it",
   "text": "Tocca 4 biscotti!"
  },
  {
   "h": "ad63c3ed",
+  "lang": "it",
   "text": "Tocca 5 biscotti!"
  },
  {
   "h": "0e5c6a5a",
+  "lang": "it",
   "text": "Tocca 6 biscotti!"
  },
  {
   "h": "d35a588b",
+  "lang": "it",
   "text": "Tocca 7 biscotti!"
  },
  {
   "h": "aebe1e28",
+  "lang": "it",
   "text": "Tocca 8 biscotti!"
  },
  {
   "h": "f3149ba9",
+  "lang": "it",
   "text": "Tocca 9 biscotti!"
  },
  {
   "h": "0c5195ad",
+  "lang": "it",
   "text": "Tocca 10 biscotti!"
  },
  {
   "h": "5e6a8abe",
+  "lang": "it",
   "text": "Quante coccinelle vedi?"
  },
  {
   "h": "4123a5a9",
+  "lang": "it",
   "text": "Riprova! Tocca le coccinelle per contarle."
  },
  {
   "h": "2eba3cd8",
+  "lang": "it",
   "text": "Tocca una coccinella!"
  },
  {
   "h": "7ed54a00",
+  "lang": "it",
   "text": "Tocca 2 coccinelle!"
  },
  {
   "h": "1473b0b9",
+  "lang": "it",
   "text": "Tocca 3 coccinelle!"
  },
  {
   "h": "5ec5046a",
+  "lang": "it",
   "text": "Tocca 4 coccinelle!"
  },
  {
   "h": "3922616b",
+  "lang": "it",
   "text": "Tocca 5 coccinelle!"
  },
  {
   "h": "793ae824",
+  "lang": "it",
   "text": "Tocca 6 coccinelle!"
  },
  {
   "h": "67e35fcd",
+  "lang": "it",
   "text": "Tocca 7 coccinelle!"
  },
  {
   "h": "b051802e",
+  "lang": "it",
   "text": "Tocca 8 coccinelle!"
  },
  {
   "h": "c4570b6f",
+  "lang": "it",
   "text": "Tocca 9 coccinelle!"
  },
  {
   "h": "f0690e2b",
+  "lang": "it",
   "text": "Tocca 10 coccinelle!"
  },
  {
   "h": "ccdda688",
+  "lang": "it",
   "text": "Quante macchinine vedi?"
  },
  {
   "h": "5143c113",
+  "lang": "it",
   "text": "Riprova! Tocca le macchinine per contarle."
  },
  {
   "h": "e516f872",
+  "lang": "it",
   "text": "Tocca una macchinina!"
  },
  {
   "h": "7ca25192",
+  "lang": "it",
   "text": "Tocca 2 macchinine!"
  },
  {
   "h": "ae9275a3",
+  "lang": "it",
   "text": "Tocca 3 macchinine!"
  },
  {
   "h": "1b66d7f0",
+  "lang": "it",
   "text": "Tocca 4 macchinine!"
  },
  {
   "h": "67bf9721",
+  "lang": "it",
   "text": "Tocca 5 macchinine!"
  },
  {
   "h": "27979726",
+  "lang": "it",
   "text": "Tocca 6 macchinine!"
  },
  {
   "h": "102b9247",
+  "lang": "it",
   "text": "Tocca 7 macchinine!"
  },
  {
   "h": "5d3cecd4",
+  "lang": "it",
   "text": "Tocca 8 macchinine!"
  },
  {
   "h": "8c3aeb45",
+  "lang": "it",
   "text": "Tocca 9 macchinine!"
  },
  {
   "h": "dac402e1",
+  "lang": "it",
   "text": "Tocca 10 macchinine!"
  },
  {
   "h": "d11d53b3",
+  "lang": "it",
   "text": "Quanti pulcini vedi?"
  },
  {
   "h": "f81ba8c8",
+  "lang": "it",
   "text": "Riprova! Tocca i pulcini per contarli."
  },
  {
   "h": "0dd4ca26",
+  "lang": "it",
   "text": "Tocca un pulcino!"
  },
  {
   "h": "6a1aea83",
+  "lang": "it",
   "text": "Tocca 2 pulcini!"
  },
  {
   "h": "0c740180",
+  "lang": "it",
   "text": "Tocca 3 pulcini!"
  },
  {
   "h": "042d0c25",
+  "lang": "it",
   "text": "Tocca 4 pulcini!"
  },
  {
   "h": "d5aee342",
+  "lang": "it",
   "text": "Tocca 5 pulcini!"
  },
  {
   "h": "74aaed37",
+  "lang": "it",
   "text": "Tocca 6 pulcini!"
  },
  {
   "h": "2ebf0bc4",
+  "lang": "it",
   "text": "Tocca 7 pulcini!"
  },
  {
   "h": "07546b79",
+  "lang": "it",
   "text": "Tocca 8 pulcini!"
  },
  {
   "h": "ac65e0f6",
+  "lang": "it",
   "text": "Tocca 9 pulcini!"
  },
  {
   "h": "eddc8102",
+  "lang": "it",
   "text": "Tocca 10 pulcini!"
  },
  {
   "h": "c54314de",
+  "lang": "it",
   "text": "Quante banane vedi?"
  },
  {
   "h": "dc195521",
+  "lang": "it",
   "text": "Riprova! Tocca le banane per contarle."
  },
  {
   "h": "af184b30",
+  "lang": "it",
   "text": "Tocca una banana!"
  },
  {
   "h": "3445be20",
+  "lang": "it",
   "text": "Tocca 2 banane!"
  },
  {
   "h": "1d3ac2e5",
+  "lang": "it",
   "text": "Tocca 3 banane!"
  },
  {
   "h": "8eb437fa",
+  "lang": "it",
   "text": "Tocca 4 banane!"
  },
  {
   "h": "41285f67",
+  "lang": "it",
   "text": "Tocca 5 banane!"
  },
  {
   "h": "0fa8a67c",
+  "lang": "it",
   "text": "Tocca 6 banane!"
  },
  {
   "h": "5e5e6ff1",
+  "lang": "it",
   "text": "Tocca 7 banane!"
  },
  {
   "h": "a178b496",
+  "lang": "it",
   "text": "Tocca 8 banane!"
  },
  {
   "h": "5197ac63",
+  "lang": "it",
   "text": "Tocca 9 banane!"
  },
  {
   "h": "39ebb727",
+  "lang": "it",
   "text": "Tocca 10 banane!"
  },
  {
   "h": "2a9b5e4e",
+  "lang": "it",
   "text": "Memory degli Animali"
  },
  {
   "h": "973ee6eb",
+  "lang": "it",
   "text": "Tocca una carta per girarla."
  },
  {
   "h": "7a84cfbe",
+  "lang": "it",
   "text": "Poi cerca quella uguale: se sono uguali restano girate!"
  },
  {
   "h": "493e9a83",
+  "lang": "it",
   "text": "Gira le carte e trova le coppie uguali!"
  },
  {
   "h": "4feb3ff3",
+  "lang": "it",
   "text": "Vuoi giocare con gli animali o con la famiglia?"
  },
  {
   "h": "29cc8770",
+  "lang": "it",
   "text": "Mucca! Muuu!"
  },
  {
   "h": "24beeaf0",
+  "lang": "it",
   "text": "Gatto! Miao!"
  },
  {
   "h": "ab2f1840",
+  "lang": "it",
   "text": "Cane! Bau bau!"
  },
  {
   "h": "27e3b24c",
+  "lang": "it",
   "text": "Pecora! Beee!"
  },
  {
   "h": "d4c99cb0",
+  "lang": "it",
   "text": "Maiale! Oink oink!"
  },
  {
   "h": "e92cd036",
+  "lang": "it",
   "text": "Anatra! Qua qua!"
  },
  {
   "h": "e642391d",
+  "lang": "it",
   "text": "Gallo! Chicchirichì!"
  },
  {
   "h": "1b051ebb",
+  "lang": "it",
   "text": "Leone! Roaar!"
  },
  {
   "h": "1594644e",
+  "lang": "it",
   "text": "Cavallo! Iiiiih!"
  },
  {
   "h": "ea7542bd",
+  "lang": "it",
   "text": "Rana! Cra cra!"
  },
  {
   "h": "4f7731a1",
+  "lang": "it",
   "text": "Ape! Bzzz!"
  },
  {
   "h": "88942c08",
+  "lang": "it",
   "text": "Gufo! Uh uh!"
  },
  {
   "h": "e19466d4",
+  "lang": "it",
   "text": "Elefante! Pruuu!"
  },
  {
   "h": "d74e91d9",
+  "lang": "it",
   "text": "Topo! Squit squit!"
  },
  {
   "h": "09dece25",
+  "lang": "it",
   "text": "Pesca le Lettere"
  },
  {
   "h": "505d0b6a",
+  "lang": "it",
   "text": "Ascolta la lettera: la vedi anche qui in alto."
  },
  {
   "h": "baec4801",
+  "lang": "it",
   "text": "Poi tocca il pesce con la lettera giusta!"
  },
  {
   "h": "221c3577",
+  "lang": "it",
   "text": "Scriviamo un nome! Le lettere vanno qui, in ordine."
  },
  {
   "h": "0c59e1ed",
+  "lang": "it",
   "text": "Pesca le lettere una alla volta!"
  },
  {
   "h": "5db7fcb0",
+  "lang": "it",
   "text": "Pesca la a di Ape!"
  },
  {
   "h": "b2a1fca7",
+  "lang": "it",
   "text": "Pesca la a di Arancia!"
  },
  {
   "h": "768bc38d",
+  "lang": "it",
   "text": "Pesca la bi di Balena!"
  },
  {
   "h": "7e17301b",
+  "lang": "it",
   "text": "Pesca la bi di Banana!"
  },
  {
   "h": "fb1e18c3",
+  "lang": "it",
   "text": "Pesca la ci di Casa!"
  },
  {
   "h": "52ed6b79",
+  "lang": "it",
   "text": "Pesca la ci di Cuore!"
  },
  {
   "h": "14bb009e",
+  "lang": "it",
   "text": "Pesca la di di Dado!"
  },
  {
   "h": "fb07a3eb",
+  "lang": "it",
   "text": "Pesca la di di Delfino!"
  },
  {
   "h": "c71e8a6e",
+  "lang": "it",
   "text": "Pesca la e di Elefante!"
  },
  {
   "h": "67c1e70a",
+  "lang": "it",
   "text": "Pesca la e di Erba!"
  },
  {
   "h": "616a1640",
+  "lang": "it",
   "text": "Pesca la effe di Fiore!"
  },
  {
   "h": "2d56df0d",
+  "lang": "it",
   "text": "Pesca la effe di Fragola!"
  },
  {
   "h": "52d20bdc",
+  "lang": "it",
   "text": "Pesca la gi di Gatto!"
  },
  {
   "h": "672bdc89",
+  "lang": "it",
   "text": "Pesca la gi di Gelato!"
  },
  {
   "h": "b3bf86ba",
+  "lang": "it",
   "text": "Pesca la i di Isola!"
  },
  {
   "h": "cf08685a",
+  "lang": "it",
   "text": "Pesca la i di Igloo!"
  },
  {
   "h": "c815e8d7",
+  "lang": "it",
   "text": "Pesca la elle di Luna!"
  },
  {
   "h": "b85db5c7",
+  "lang": "it",
   "text": "Pesca la elle di Lena!"
  },
  {
   "h": "69a7e782",
+  "lang": "it",
   "text": "Pesca la elle di Leone!"
  },
  {
   "h": "e35179d6",
+  "lang": "it",
   "text": "Pesca la emme di Mela!"
  },
  {
   "h": "f12e662e",
+  "lang": "it",
   "text": "Pesca la emme di Mucca!"
  },
  {
   "h": "2cc0d95d",
+  "lang": "it",
   "text": "Pesca la enne di Nave!"
  },
  {
   "h": "eebae049",
+  "lang": "it",
   "text": "Pesca la enne di Neve!"
  },
  {
   "h": "d20756d1",
+  "lang": "it",
   "text": "Pesca la o di Orso!"
  },
  {
   "h": "16d0b4f2",
+  "lang": "it",
   "text": "Pesca la o di Occhiali!"
  },
  {
   "h": "a9b5e038",
+  "lang": "it",
   "text": "Pesca la pi di Pesce!"
  },
  {
   "h": "fd4d2103",
+  "lang": "it",
   "text": "Pesca la pi di Papà!"
  },
  {
   "h": "6ca615ee",
+  "lang": "it",
   "text": "Pesca la pi di Palla!"
  },
  {
   "h": "68305e05",
+  "lang": "it",
   "text": "Pesca la erre di Rana!"
  },
  {
   "h": "f05dda65",
+  "lang": "it",
   "text": "Pesca la erre di Razzo!"
  },
  {
   "h": "bea42ee6",
+  "lang": "it",
   "text": "Pesca la esse di Sole!"
  },
  {
   "h": "0837ecea",
+  "lang": "it",
   "text": "Pesca la esse di Stella!"
  },
  {
   "h": "8ff6cfd8",
+  "lang": "it",
   "text": "Pesca la ti di Topo!"
  },
  {
   "h": "37d370ae",
+  "lang": "it",
   "text": "Pesca la ti di Torta!"
  },
  {
   "h": "9ce7635e",
+  "lang": "it",
   "text": "Pesca la u di Uva!"
  },
  {
   "h": "2b7aaec7",
+  "lang": "it",
   "text": "Pesca la u di Uovo!"
  },
  {
   "h": "38b0a5bc",
+  "lang": "it",
   "text": "Pesca la vu di Volpe!"
  },
  {
   "h": "bb5e375a",
+  "lang": "it",
   "text": "Pesca la vu di Vulcano!"
  },
  {
   "h": "59a71327",
+  "lang": "it",
   "text": "Pesca la zeta di Zebra!"
  },
  {
   "h": "342475ed",
+  "lang": "it",
   "text": "Pesca la zeta di Zucca!"
  },
  {
   "h": "a6b91b02",
+  "lang": "it",
   "text": "Io sono la a!"
  },
  {
   "h": "25562c80",
+  "lang": "it",
   "text": "Prima la a!"
  },
  {
   "h": "8a0d07d9",
+  "lang": "it",
   "text": "Ora la a!"
  },
  {
   "h": "e855028b",
+  "lang": "it",
   "text": "Ancora la a!"
  },
  {
   "h": "e8626472",
+  "lang": "it",
   "text": "Io sono la bi!"
  },
  {
   "h": "cfafa0f0",
+  "lang": "it",
   "text": "Prima la bi!"
  },
  {
   "h": "e27c2beb",
+  "lang": "it",
   "text": "Ora la bi!"
  },
  {
   "h": "c7d60755",
+  "lang": "it",
   "text": "Ancora la bi!"
  },
  {
   "h": "046051ef",
+  "lang": "it",
   "text": "Io sono la ci!"
  },
  {
   "h": "bbad42dd",
+  "lang": "it",
   "text": "Prima la ci!"
  },
  {
   "h": "067ea32e",
+  "lang": "it",
   "text": "Ora la ci!"
  },
  {
   "h": "bbd83308",
+  "lang": "it",
   "text": "Ancora la ci!"
  },
  {
   "h": "dc5dd460",
+  "lang": "it",
   "text": "Io sono la di!"
  },
  {
   "h": "dbb43102",
+  "lang": "it",
   "text": "Prima la di!"
  },
  {
   "h": "068b6f21",
+  "lang": "it",
   "text": "Ora la di!"
  },
  {
   "h": "a3da4bd7",
+  "lang": "it",
   "text": "Ancora la di!"
  },
  {
   "h": "a2b914b6",
+  "lang": "it",
   "text": "Io sono la e!"
  },
  {
   "h": "295632cc",
+  "lang": "it",
   "text": "Prima la e!"
  },
  {
   "h": "8e0d0e25",
+  "lang": "it",
   "text": "Ora la e!"
  },
  {
   "h": "ec5508d7",
+  "lang": "it",
   "text": "Ancora la e!"
  },
  {
   "h": "f0c7ba45",
+  "lang": "it",
   "text": "Io sono la effe!"
  },
  {
   "h": "14482f77",
+  "lang": "it",
   "text": "Prima la effe!"
  },
  {
   "h": "471ec378",
+  "lang": "it",
   "text": "Ora la effe!"
  },
  {
   "h": "c658200e",
+  "lang": "it",
   "text": "Ancora la effe!"
  },
  {
   "h": "fc574afb",
+  "lang": "it",
   "text": "Io sono la gi!"
  },
  {
   "h": "d3b66301",
+  "lang": "it",
   "text": "Prima la gi!"
  },
  {
   "h": "0e87aa22",
+  "lang": "it",
   "text": "Ora la gi!"
  },
  {
   "h": "c3e139fc",
+  "lang": "it",
   "text": "Ancora la gi!"
  },
  {
   "h": "4ccd20c3",
+  "lang": "it",
   "text": "Io sono la acca!"
  },
  {
   "h": "c646dbfd",
+  "lang": "it",
   "text": "Prima la acca!"
  },
  {
   "h": "84025602",
+  "lang": "it",
   "text": "Ora la acca!"
  },
  {
   "h": "5fb69a60",
+  "lang": "it",
   "text": "Ancora la acca!"
  },
  {
   "h": "aeb9279a",
+  "lang": "it",
   "text": "Io sono la i!"
  },
  {
   "h": "2d563918",
+  "lang": "it",
   "text": "Prima la i!"
  },
  {
   "h": "920d1471",
+  "lang": "it",
   "text": "Ora la i!"
  },
  {
   "h": "e054f5f3",
+  "lang": "it",
   "text": "Ancora la i!"
  },
  {
   "h": "e641bc85",
+  "lang": "it",
   "text": "Io sono la i lunga!"
  },
  {
   "h": "8ebeb59b",
+  "lang": "it",
   "text": "Prima la i lunga!"
  },
  {
   "h": "6001d3ba",
+  "lang": "it",
   "text": "Ora la i lunga!"
  },
  {
   "h": "92add75c",
+  "lang": "it",
   "text": "Ancora la i lunga!"
  },
  {
   "h": "2515c47a",
+  "lang": "it",
   "text": "Io sono la cappa!"
  },
  {
   "h": "487d7bc4",
+  "lang": "it",
   "text": "Prima la cappa!"
  },
  {
   "h": "1b031765",
+  "lang": "it",
   "text": "Ora la cappa!"
  },
  {
   "h": "78fa7f23",
+  "lang": "it",
   "text": "Ancora la cappa!"
  },
  {
   "h": "32da7e39",
+  "lang": "it",
   "text": "Io sono la elle!"
  },
  {
   "h": "c195ee93",
+  "lang": "it",
   "text": "Prima la elle!"
  },
  {
   "h": "c46ef8a0",
+  "lang": "it",
   "text": "Ora la elle!"
  },
  {
   "h": "f6358656",
+  "lang": "it",
   "text": "Ancora la elle!"
  },
  {
   "h": "9b5bfb73",
+  "lang": "it",
   "text": "Io sono la emme!"
  },
  {
   "h": "627afd8d",
+  "lang": "it",
   "text": "Prima la emme!"
  },
  {
   "h": "6c282bbe",
+  "lang": "it",
   "text": "Ora la emme!"
  },
  {
   "h": "95b5a8b4",
+  "lang": "it",
   "text": "Ancora la emme!"
  },
  {
   "h": "79c5b4d5",
+  "lang": "it",
   "text": "Io sono la enne!"
  },
  {
   "h": "cd2731e7",
+  "lang": "it",
   "text": "Prima la enne!"
  },
  {
   "h": "b0439b18",
+  "lang": "it",
   "text": "Ora la enne!"
  },
  {
   "h": "0d791d9e",
+  "lang": "it",
   "text": "Ancora la enne!"
  },
  {
   "h": "a8b91e28",
+  "lang": "it",
   "text": "Io sono la o!"
  },
  {
   "h": "3356428a",
+  "lang": "it",
   "text": "Prima la o!"
  },
  {
   "h": "940d1797",
+  "lang": "it",
   "text": "Ora la o!"
  },
  {
   "h": "e654ff65",
+  "lang": "it",
   "text": "Ancora la o!"
  },
  {
   "h": "e43fcbe4",
+  "lang": "it",
   "text": "Io sono la pi!"
  },
  {
   "h": "b3d2071e",
+  "lang": "it",
   "text": "Prima la pi!"
  },
  {
   "h": "0ea7fdcd",
+  "lang": "it",
   "text": "Ora la pi!"
  },
  {
   "h": "9bf85453",
+  "lang": "it",
   "text": "Ancora la pi!"
  },
  {
   "h": "f8603f0b",
+  "lang": "it",
   "text": "Io sono la cu!"
  },
  {
   "h": "bfad4929",
+  "lang": "it",
   "text": "Prima la cu!"
  },
  {
   "h": "f27e83b2",
+  "lang": "it",
   "text": "Ora la cu!"
  },
  {
   "h": "a7d8138c",
+  "lang": "it",
   "text": "Ancora la cu!"
  },
  {
   "h": "07f079ad",
+  "lang": "it",
   "text": "Io sono la erre!"
  },
  {
   "h": "b6313de7",
+  "lang": "it",
   "text": "Prima la erre!"
  },
  {
   "h": "b8f3fea0",
+  "lang": "it",
   "text": "Ora la erre!"
  },
  {
   "h": "9b55c396",
+  "lang": "it",
   "text": "Ancora la erre!"
  },
  {
   "h": "407c38b3",
+  "lang": "it",
   "text": "Io sono la esse!"
  },
  {
   "h": "26cf49cd",
+  "lang": "it",
   "text": "Prima la esse!"
  },
  {
   "h": "50546c52",
+  "lang": "it",
   "text": "Ora la esse!"
  },
  {
   "h": "1acb2638",
+  "lang": "it",
   "text": "Ancora la esse!"
  },
  {
   "h": "fc36f750",
+  "lang": "it",
   "text": "Io sono la ti!"
  },
  {
   "h": "bbdca112",
+  "lang": "it",
   "text": "Prima la ti!"
  },
  {
   "h": "e6b24c31",
+  "lang": "it",
   "text": "Ora la ti!"
  },
  {
   "h": "c4018da7",
+  "lang": "it",
   "text": "Ancora la ti!"
  },
  {
   "h": "92b8fb86",
+  "lang": "it",
   "text": "Io sono la u!"
  },
  {
   "h": "39564bfc",
+  "lang": "it",
   "text": "Prima la u!"
  },
  {
   "h": "9e0d2755",
+  "lang": "it",
   "text": "Ora la u!"
  },
  {
   "h": "fc552207",
+  "lang": "it",
   "text": "Ancora la u!"
  },
  {
   "h": "ec30cdf2",
+  "lang": "it",
   "text": "Io sono la vu!"
  },
  {
   "h": "bbe11e40",
+  "lang": "it",
   "text": "Prima la vu!"
  },
  {
   "h": "feadf4cb",
+  "lang": "it",
   "text": "Ora la vu!"
  },
  {
   "h": "bc07913d",
+  "lang": "it",
   "text": "Ancora la vu!"
  },
  {
   "h": "e98b7205",
+  "lang": "it",
   "text": "Io sono la doppia vu!"
  },
  {
   "h": "113a9473",
+  "lang": "it",
   "text": "Prima la doppia vu!"
  },
  {
   "h": "66f23246",
+  "lang": "it",
   "text": "Ora la doppia vu!"
  },
  {
   "h": "aefebaf8",
+  "lang": "it",
   "text": "Ancora la doppia vu!"
  },
  {
   "h": "b9ef5a18",
+  "lang": "it",
   "text": "Io sono la ics!"
  },
  {
   "h": "95b87e96",
+  "lang": "it",
   "text": "Prima la ics!"
  },
  {
   "h": "c611823f",
+  "lang": "it",
   "text": "Ora la ics!"
  },
  {
   "h": "ddff75f9",
+  "lang": "it",
   "text": "Ancora la ics!"
  },
  {
   "h": "34a9e8bb",
+  "lang": "it",
   "text": "Io sono la ipsilon!"
  },
  {
   "h": "ef7dd155",
+  "lang": "it",
   "text": "Prima la ipsilon!"
  },
  {
   "h": "a39d1510",
+  "lang": "it",
   "text": "Ora la ipsilon!"
  },
  {
   "h": "789fe1f6",
+  "lang": "it",
   "text": "Ancora la ipsilon!"
  },
  {
   "h": "86205585",
+  "lang": "it",
   "text": "Io sono la zeta!"
  },
  {
   "h": "5c6e2b0b",
+  "lang": "it",
   "text": "Prima la zeta!"
  },
  {
   "h": "46c43188",
+  "lang": "it",
   "text": "Ora la zeta!"
  },
  {
   "h": "bdc1bb72",
+  "lang": "it",
   "text": "Ancora la zeta!"
  },
  {
   "h": "dca67078",
+  "lang": "it",
   "text": "Adesso scriviamo Lena! Pesca la elle!"
  },
  {
   "h": "971bb0ef",
+  "lang": "it",
   "text": "elle, e, enne, a. Lena! Hai scritto Lena!"
  },
  {
   "h": "eb247b78",
+  "lang": "it",
   "text": "Adesso scriviamo Papà! Pesca la pi!"
  },
  {
   "h": "075f980b",
+  "lang": "it",
   "text": "pi, a, pi, a. Papà! Hai scritto Papà!"
  },
  {
   "h": "9274a5b5",
+  "lang": "it",
   "text": "Forme e Colori"
  },
  {
   "h": "ff631191",
+  "lang": "it",
   "text": "Trascina la forma nel posto uguale!"
  },
  {
   "h": "e4e0d8e2",
+  "lang": "it",
   "text": "Attenta: anche il colore deve essere uguale!"
  },
  {
   "h": "f390bc44",
+  "lang": "it",
   "text": "Guarda la fila: le forme si ripetono."
  },
  {
   "h": "aa75c320",
+  "lang": "it",
   "text": "Tocca quella che viene dopo!"
  },
  {
   "h": "5700026c",
+  "lang": "it",
   "text": "Metti ogni forma al suo posto. Attenta ai colori!"
  },
  {
   "h": "51f9b83d",
+  "lang": "it",
   "text": "Trascina ogni forma nel suo posto!"
  },
  {
   "h": "7c9276d4",
+  "lang": "it",
   "text": "Guarda il colore!"
  },
  {
   "h": "8a03ece2",
+  "lang": "it",
   "text": "Non entra! Prova un altro posto."
  },
  {
   "h": "41bad91a",
+  "lang": "it",
   "text": "Cosa viene dopo?"
  },
  {
   "h": "b34a35b1",
+  "lang": "it",
   "text": "Guarda bene la fila! Riprova."
  },
  {
   "h": "1cc07fb4",
+  "lang": "it",
   "text": "Cerchio rosso"
  },
  {
   "h": "0104d9ba",
+  "lang": "it",
   "text": "Cerchio giallo"
  },
  {
   "h": "e98cff50",
+  "lang": "it",
   "text": "Cerchio verde"
  },
  {
   "h": "a18d823b",
+  "lang": "it",
   "text": "Cerchio blu"
  },
  {
   "h": "fdc56846",
+  "lang": "it",
   "text": "Cerchio arancione"
  },
  {
   "h": "e5b8e7d7",
+  "lang": "it",
   "text": "Cerchio viola"
  },
  {
   "h": "b2293de9",
+  "lang": "it",
   "text": "Cerchio rosa"
  },
  {
   "h": "5284cfa0",
+  "lang": "it",
   "text": "Quadrato rosso"
  },
  {
   "h": "70e0d1ee",
+  "lang": "it",
   "text": "Quadrato giallo"
  },
  {
   "h": "2d10f9bc",
+  "lang": "it",
   "text": "Quadrato verde"
  },
  {
   "h": "e6f36907",
+  "lang": "it",
   "text": "Quadrato blu"
  },
  {
   "h": "3e3ce8f2",
+  "lang": "it",
   "text": "Quadrato arancione"
  },
  {
   "h": "24e2b85b",
+  "lang": "it",
   "text": "Quadrato viola"
  },
  {
   "h": "d5101f85",
+  "lang": "it",
   "text": "Quadrato rosa"
  },
  {
   "h": "6c300bb8",
+  "lang": "it",
   "text": "Triangolo rosso"
  },
  {
   "h": "46549776",
+  "lang": "it",
   "text": "Triangolo giallo"
  },
  {
   "h": "36488f54",
+  "lang": "it",
   "text": "Triangolo verde"
  },
  {
   "h": "bc2904ef",
+  "lang": "it",
   "text": "Triangolo blu"
  },
  {
   "h": "93e07c4a",
+  "lang": "it",
   "text": "Triangolo arancione"
  },
  {
   "h": "a89f5a83",
+  "lang": "it",
   "text": "Triangolo viola"
  },
  {
   "h": "7253e1fd",
+  "lang": "it",
   "text": "Triangolo rosa"
  },
  {
   "h": "79e98764",
+  "lang": "it",
   "text": "Stella rossa"
  },
  {
   "h": "4dbe8186",
+  "lang": "it",
   "text": "Stella gialla"
  },
  {
   "h": "cf7babce",
+  "lang": "it",
   "text": "Stella verde"
  },
  {
   "h": "792593dd",
+  "lang": "it",
   "text": "Stella blu"
  },
  {
   "h": "8178a518",
+  "lang": "it",
   "text": "Stella arancione"
  },
  {
   "h": "7119920d",
+  "lang": "it",
   "text": "Stella viola"
  },
  {
   "h": "fb4b6d97",
+  "lang": "it",
   "text": "Stella rosa"
  },
  {
   "h": "c2cdde15",
+  "lang": "it",
   "text": "Cuore rosso"
  },
  {
   "h": "1f2c9e7d",
+  "lang": "it",
   "text": "Cuore giallo"
  },
  {
   "h": "2eecea31",
+  "lang": "it",
   "text": "Cuore verde"
  },
  {
   "h": "11126b96",
+  "lang": "it",
   "text": "Cuore blu"
  },
  {
   "h": "8264ddcf",
+  "lang": "it",
   "text": "Cuore arancione"
  },
  {
   "h": "f8a1654a",
+  "lang": "it",
   "text": "Cuore viola"
  },
  {
   "h": "616f272e",
+  "lang": "it",
   "text": "Cuore rosa"
  },
  {
   "h": "f0f73fe0",
+  "lang": "it",
   "text": "Rombo rosso"
  },
  {
   "h": "f7c08d2e",
+  "lang": "it",
   "text": "Rombo giallo"
  },
  {
   "h": "cb8369fc",
+  "lang": "it",
   "text": "Rombo verde"
  },
  {
   "h": "9ff5af47",
+  "lang": "it",
   "text": "Rombo blu"
  },
  {
   "h": "1db12d32",
+  "lang": "it",
   "text": "Rombo arancione"
  },
  {
   "h": "aa0a069b",
+  "lang": "it",
   "text": "Rombo viola"
  },
  {
   "h": "d12b16c5",
+  "lang": "it",
   "text": "Rombo rosa"
  },
  {
   "h": "0a42f85f",
+  "lang": "it",
   "text": "Colora con Lena"
  },
  {
   "h": "a5099105",
+  "lang": "it",
   "text": "Scegli un colore qui sotto."
  },
  {
   "h": "e14e1297",
+  "lang": "it",
   "text": "Poi tocca il disegno per colorarlo!"
  },
  {
   "h": "d7962606",
+  "lang": "it",
   "text": "Quando hai finito, tocca la stella!"
  },
  {
   "h": "d4487dbe",
+  "lang": "it",
   "text": "Scegli un disegno da colorare!"
  },
  {
   "h": "be6dc97e",
+  "lang": "it",
   "text": "Colora ancora un pochino!"
  },
  {
   "h": "5a0b33ce",
+  "lang": "it",
   "text": "Esatto! Bravissima!"
  },
  {
   "h": "906c7242",
+  "lang": "it",
   "text": "Che bel disegno! L'ho messo nella tua galleria."
  },
  {
   "h": "6c3d129d",
+  "lang": "it",
   "text": "Ecco la tua galleria!"
  },
  {
   "h": "bbd26498",
+  "lang": "it",
   "text": "Ancora nessun disegno: coloriamone uno!"
  },
  {
   "h": "47f7ef15",
+  "lang": "it",
   "text": "Vuoi ricominciare?"
  },
  {
   "h": "2c15f9c9",
+  "lang": "it",
   "text": "Marrone!"
  },
  {
   "h": "be208024",
+  "lang": "it",
   "text": "Grigio!"
  },
  {
   "h": "47ce71bf",
+  "lang": "it",
   "text": "Nero!"
  },
  {
   "h": "8ca4a9fd",
+  "lang": "it",
   "text": "Bianco!"
  },
  {
   "h": "4b26ab1f",
+  "lang": "it",
   "text": "Arcobaleno magico!"
  },
  {
   "h": "ee2201f0",
+  "lang": "it",
   "text": "Glitter oro!"
  },
  {
   "h": "2f36d8c1",
+  "lang": "it",
   "text": "Glitter rosa!"
  },
  {
   "h": "42911cd0",
+  "lang": "it",
   "text": "Glitter argento!"
  },
  {
   "h": "dbeb6eff",
+  "lang": "it",
   "text": "Glitter viola!"
  },
  {
   "h": "5a98c795",
+  "lang": "it",
   "text": "Il sole!"
  },
  {
   "h": "d61b9136",
+  "lang": "it",
   "text": "Colora il cielo di azzurro!"
  },
  {
   "h": "243fdd2d",
+  "lang": "it",
   "text": "Colora il prato di verde!"
  },
  {
   "h": "2affdc34",
+  "lang": "it",
   "text": "Colora il sole di giallo!"
  },
  {
   "h": "e753c3f2",
+  "lang": "it",
   "text": "La casa!"
  },
  {
   "h": "d95cbc51",
+  "lang": "it",
   "text": "Colora il tetto di rosso!"
  },
  {
   "h": "cb2ed341",
+  "lang": "it",
   "text": "Colora la porta di marrone!"
  },
  {
-  "h": "5a7cd68f",
-  "text": "Il fiore!"
- },
- {
   "h": "d30b02e4",
+  "lang": "it",
   "text": "Colora lo stelo di verde!"
  },
  {
   "h": "6157e61c",
+  "lang": "it",
   "text": "Colora il vaso di marrone!"
  },
  {
   "h": "d96f24fa",
+  "lang": "it",
   "text": "Colora il centro del fiore di giallo!"
  },
  {
   "h": "95ca8825",
+  "lang": "it",
   "text": "La farfalla!"
  },
  {
   "h": "9da7bb65",
+  "lang": "it",
   "text": "Colora il corpo della farfalla di nero!"
  },
  {
   "h": "add3ef48",
+  "lang": "it",
   "text": "Il pesce!"
  },
  {
   "h": "5d891251",
+  "lang": "it",
   "text": "Colora il mare di azzurro!"
  },
  {
   "h": "c189cee5",
+  "lang": "it",
   "text": "Colora la sabbia di giallo!"
  },
  {
   "h": "5db8cbb9",
+  "lang": "it",
   "text": "Colora l'alga di verde!"
  },
  {
   "h": "282ff757",
+  "lang": "it",
   "text": "Colora il pesce di arancione!"
  },
  {
   "h": "e35a1769",
+  "lang": "it",
   "text": "Il gatto!"
  },
  {
   "h": "04526757",
+  "lang": "it",
   "text": "Colora la coda di grigio!"
  },
  {
   "h": "031e12dc",
+  "lang": "it",
   "text": "Colora il gatto di arancione!"
  },
  {
   "h": "4b59b151",
+  "lang": "it",
   "text": "Colora il naso di rosa!"
  },
  {
   "h": "c809f92c",
+  "lang": "it",
   "text": "L'unicorno!"
  },
  {
   "h": "5d2ad74f",
+  "lang": "it",
   "text": "Colora la criniera di viola!"
  },
  {
   "h": "92e96fd6",
+  "lang": "it",
   "text": "Colora il muso di rosa!"
  },
  {
   "h": "af54039e",
+  "lang": "it",
   "text": "Colora il corno di giallo!"
  },
  {
   "h": "3b2e4998",
+  "lang": "it",
   "text": "La macchina!"
  },
  {
   "h": "502cc07f",
+  "lang": "it",
   "text": "Colora la strada di grigio!"
  },
  {
   "h": "84c70ea5",
+  "lang": "it",
   "text": "Colora la macchina di rosso!"
  },
  {
   "h": "6d88d76b",
+  "lang": "it",
   "text": "Colora il finestrino di azzurro!"
  },
  {
   "h": "1b993070",
+  "lang": "it",
   "text": "Colora la ruota di nero!"
  },
  {
   "h": "8143cd67",
+  "lang": "it",
   "text": "Colora il faro di giallo!"
  },
  {
   "h": "f2e30668",
+  "lang": "it",
   "text": "La torta!"
  },
  {
   "h": "a938de1f",
+  "lang": "it",
   "text": "Colora il piatto di grigio!"
  },
  {
   "h": "eae6b687",
+  "lang": "it",
   "text": "Colora la glassa di rosa!"
  },
  {
   "h": "36b6c439",
+  "lang": "it",
   "text": "Colora la fiammella di arancione!"
  },
  {
-  "h": "2b4c3689",
-  "text": "L'arcobaleno!"
- },
- {
   "h": "d18bebad",
+  "lang": "it",
   "text": "Colora la prima striscia dell'arcobaleno di rosso!"
  },
  {
   "h": "1dded162",
+  "lang": "it",
   "text": "Il gelato!"
  },
  {
   "h": "4e65e19e",
+  "lang": "it",
   "text": "Colora il cono di marrone!"
  },
  {
   "h": "ea7aef4c",
+  "lang": "it",
   "text": "Colora il gelato di rosa!"
  },
  {
   "h": "b6990ade",
+  "lang": "it",
   "text": "Colora la ciliegina di rosso!"
  },
  {
   "h": "792c12a3",
+  "lang": "it",
   "text": "Il coniglietto!"
  },
  {
   "h": "c27fe605",
+  "lang": "it",
   "text": "Colora l'orecchio di rosa!"
  },
  {
   "h": "baf4d471",
+  "lang": "it",
   "text": "Colora la carota di arancione!"
  }
 ]
