@@ -520,3 +520,35 @@ button:active { transform: translateY(3px) scale(.98); }
 .bar { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 2px; font-size: 12px; }
 .bar i { width: 70%; background: var(--accent); border-radius: 6px 6px 2px 2px; display: block; }
 .bar small { color: #7a6d86; }
+
+/* ---------- Le due lingue ---------- */
+.tile.t7 { background: #dff3ff; }
+.lng-prompt { gap: 14px; font-size: 30px; }
+.lng-spk { font-size: 34px; background: var(--accent-soft); border-radius: 50%; width: 60px; height: 60px; display: grid; place-items: center; box-shadow: var(--shadow); }
+.lng-spk.big { width: 110px; height: 110px; font-size: 60px; animation: bounce 2s ease-in-out infinite; }
+.lng-grid {
+  position: absolute; left: 16px; right: 16px; top: calc(170px + var(--safe-top)); bottom: calc(30px + var(--safe-bottom));
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-content: center;
+}
+.lng-pic { aspect-ratio: 1; border-radius: 28px; background: #fff; box-shadow: var(--shadow); font-size: 76px; max-height: 42vh; }
+.lng-pic.ok { box-shadow: 0 0 0 6px #7ee08a, var(--shadow); animation: pop .5s ease; }
+.lng-mem {
+  position: absolute; left: 14px; right: 14px; top: calc(160px + var(--safe-top)); bottom: calc(20px + var(--safe-bottom));
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-content: center;
+}
+.lng-card { aspect-ratio: 3 / 4; }
+.lng-card .face { flex-direction: column; display: flex; align-items: center; justify-content: center; gap: 2px; border: 5px solid #fff; }
+.lng-card .face .e { font-size: 44px; }
+.lng-card .face .w { font-size: 15px; }
+.lng-card.fr .face { background: linear-gradient(180deg, #e6eeff, #fff); border-color: #2f5fd0; }
+.lng-card.it .face { background: linear-gradient(180deg, #e3f7e9, #fff); border-color: #1f9d55; }
+.lng-card.fr .back { background: linear-gradient(90deg, #2f5fd0 33%, #fff 33% 66%, #e63946 66%); }
+.lng-card.it .back { background: linear-gradient(90deg, #1f9d55 33%, #fff 33% 66%, #e63946 66%); }
+.flagdot { width: 44px; height: 30px; border-radius: 6px; display: inline-block; box-shadow: 0 2px 0 rgba(0, 0, 0, .15); }
+.flagdot.fr, .flagbtn.fr { background: linear-gradient(90deg, #2f5fd0 33.3%, #fff 33.3% 66.6%, #e63946 66.6%); }
+.flagdot.it, .flagbtn.it { background: linear-gradient(90deg, #1f9d55 33.3%, #fff 33.3% 66.6%, #e63946 66.6%); }
+.lng-which { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; padding-top: 40px; }
+.lng-which-pic { font-size: 80px; }
+.lng-flags { display: flex; gap: 22px; }
+.flagbtn { width: 140px; height: 96px; border-radius: 18px; border: 5px solid #fff; box-shadow: 0 7px 0 rgba(0, 0, 0, .18); }
+.flagbtn.ok { box-shadow: 0 0 0 6px #7ee08a, 0 7px 0 rgba(0, 0, 0, .18); animation: pop .5s ease; }

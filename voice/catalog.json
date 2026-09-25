@@ -3210,6 +3210,536 @@
   "text": "Colorie la carotte en orange !"
  },
  {
+  "h": "77762136",
+  "lang": "fr",
+  "text": "Les deux langues"
+ },
+ {
+  "h": "97e39113",
+  "lang": "fr",
+  "text": "Bravo ! C'était du français !"
+ },
+ {
+  "h": "de54205e",
+  "lang": "fr",
+  "text": "Écoute bien…"
+ },
+ {
+  "h": "3b2da3d8",
+  "lang": "fr",
+  "text": "Quelle langue as-tu entendue ?"
+ },
+ {
+  "h": "f3e0701b",
+  "lang": "fr",
+  "text": "Écoute le mot…"
+ },
+ {
+  "h": "7ae850fe",
+  "lang": "fr",
+  "text": "Puis touche la bonne image !"
+ },
+ {
+  "h": "f79e9dc9",
+  "lang": "fr",
+  "text": "Les cartes bleues parlent français, les vertes parlent italien."
+ },
+ {
+  "h": "1ea71400",
+  "lang": "fr",
+  "text": "Trouve la même image dans les deux langues !"
+ },
+ {
+  "h": "ba1efa2e",
+  "lang": "fr",
+  "text": "Écoute bien : tu peux réécouter ici."
+ },
+ {
+  "h": "d930b481",
+  "lang": "fr",
+  "text": "Puis touche le drapeau de la langue que tu as entendue !"
+ },
+ {
+  "h": "f1eefaa2",
+  "lang": "fr",
+  "text": "Bonjour !"
+ },
+ {
+  "h": "3c7c3729",
+  "lang": "fr",
+  "text": "Merci !"
+ },
+ {
+  "h": "27016f79",
+  "lang": "fr",
+  "text": "Bonne nuit !"
+ },
+ {
+  "h": "6eef10de",
+  "lang": "fr",
+  "text": "Je t'aime !"
+ },
+ {
+  "h": "a91a8a2e",
+  "lang": "fr",
+  "text": "Au revoir !"
+ },
+ {
+  "h": "8f6083d1",
+  "lang": "fr",
+  "text": "Bon appétit !"
+ },
+ {
+  "h": "ce0216e0",
+  "lang": "fr",
+  "text": "Où est le chat ?"
+ },
+ {
+  "h": "bf46d1dd",
+  "lang": "fr",
+  "text": "Chat !"
+ },
+ {
+  "h": "6fc4d344",
+  "lang": "fr",
+  "text": "Non, ça, c'est le chat !"
+ },
+ {
+  "h": "96ddb12f",
+  "lang": "fr",
+  "text": "Où est le chien ?"
+ },
+ {
+  "h": "666c32d4",
+  "lang": "fr",
+  "text": "Chien !"
+ },
+ {
+  "h": "d7cd3703",
+  "lang": "fr",
+  "text": "Non, ça, c'est le chien !"
+ },
+ {
+  "h": "80ee16e3",
+  "lang": "fr",
+  "text": "Où est la vache ?"
+ },
+ {
+  "h": "7181f9f4",
+  "lang": "fr",
+  "text": "Vache !"
+ },
+ {
+  "h": "d7c17c9f",
+  "lang": "fr",
+  "text": "Non, ça, c'est la vache !"
+ },
+ {
+  "h": "ebb7aba6",
+  "lang": "fr",
+  "text": "Où est le cochon ?"
+ },
+ {
+  "h": "54bd47ef",
+  "lang": "fr",
+  "text": "Cochon !"
+ },
+ {
+  "h": "0c2afa7a",
+  "lang": "fr",
+  "text": "Non, ça, c'est le cochon !"
+ },
+ {
+  "h": "d1123204",
+  "lang": "fr",
+  "text": "Où est le lapin ?"
+ },
+ {
+  "h": "2e7658e3",
+  "lang": "fr",
+  "text": "Lapin !"
+ },
+ {
+  "h": "2b93d8f8",
+  "lang": "fr",
+  "text": "Non, ça, c'est le lapin !"
+ },
+ {
+  "h": "94cc26d9",
+  "lang": "fr",
+  "text": "Où est le poisson ?"
+ },
+ {
+  "h": "7b2d0d7a",
+  "lang": "fr",
+  "text": "Poisson !"
+ },
+ {
+  "h": "12a18915",
+  "lang": "fr",
+  "text": "Non, ça, c'est le poisson !"
+ },
+ {
+  "h": "5588b99f",
+  "lang": "fr",
+  "text": "Où est l'oiseau ?"
+ },
+ {
+  "h": "27039ed1",
+  "lang": "fr",
+  "text": "Oiseau !"
+ },
+ {
+  "h": "50832b23",
+  "lang": "fr",
+  "text": "Non, ça, c'est l'oiseau !"
+ },
+ {
+  "h": "81b6de77",
+  "lang": "fr",
+  "text": "Où est le cheval ?"
+ },
+ {
+  "h": "c50a73fe",
+  "lang": "fr",
+  "text": "Cheval !"
+ },
+ {
+  "h": "0bad493b",
+  "lang": "fr",
+  "text": "Non, ça, c'est le cheval !"
+ },
+ {
+  "h": "686c35e0",
+  "lang": "fr",
+  "text": "Où est la pomme ?"
+ },
+ {
+  "h": "74fabdff",
+  "lang": "fr",
+  "text": "Pomme !"
+ },
+ {
+  "h": "15c0e40c",
+  "lang": "fr",
+  "text": "Non, ça, c'est la pomme !"
+ },
+ {
+  "h": "7180399b",
+  "lang": "fr",
+  "text": "Où est la banane ?"
+ },
+ {
+  "h": "8228128e",
+  "lang": "fr",
+  "text": "Banane !"
+ },
+ {
+  "h": "9d526857",
+  "lang": "fr",
+  "text": "Non, ça, c'est la banane !"
+ },
+ {
+  "h": "b5f35ba4",
+  "lang": "fr",
+  "text": "Où est la fraise ?"
+ },
+ {
+  "h": "74230919",
+  "lang": "fr",
+  "text": "Fraise !"
+ },
+ {
+  "h": "90b6b828",
+  "lang": "fr",
+  "text": "Non, ça, c'est la fraise !"
+ },
+ {
+  "h": "3dbe151a",
+  "lang": "fr",
+  "text": "Où est le gâteau ?"
+ },
+ {
+  "h": "338ffc83",
+  "lang": "fr",
+  "text": "Gâteau !"
+ },
+ {
+  "h": "707a8ff6",
+  "lang": "fr",
+  "text": "Non, ça, c'est le gâteau !"
+ },
+ {
+  "h": "7266a2c4",
+  "lang": "fr",
+  "text": "Où est la glace ?"
+ },
+ {
+  "h": "28f46c0f",
+  "lang": "fr",
+  "text": "Glace !"
+ },
+ {
+  "h": "691e1fd8",
+  "lang": "fr",
+  "text": "Non, ça, c'est la glace !"
+ },
+ {
+  "h": "378abfb2",
+  "lang": "fr",
+  "text": "Où est le pain ?"
+ },
+ {
+  "h": "dcab5397",
+  "lang": "fr",
+  "text": "Pain !"
+ },
+ {
+  "h": "7da53d06",
+  "lang": "fr",
+  "text": "Non, ça, c'est le pain !"
+ },
+ {
+  "h": "3c5854f5",
+  "lang": "fr",
+  "text": "Où est le fromage ?"
+ },
+ {
+  "h": "e1b492e6",
+  "lang": "fr",
+  "text": "Fromage !"
+ },
+ {
+  "h": "ba62faa1",
+  "lang": "fr",
+  "text": "Non, ça, c'est le fromage !"
+ },
+ {
+  "h": "98f70fa0",
+  "lang": "fr",
+  "text": "Où est le lait ?"
+ },
+ {
+  "h": "c3d69409",
+  "lang": "fr",
+  "text": "Lait !"
+ },
+ {
+  "h": "3e57926c",
+  "lang": "fr",
+  "text": "Non, ça, c'est le lait !"
+ },
+ {
+  "h": "e1ad9d5e",
+  "lang": "fr",
+  "text": "Où est le soleil ?"
+ },
+ {
+  "h": "e195daa7",
+  "lang": "fr",
+  "text": "Soleil !"
+ },
+ {
+  "h": "3bac274a",
+  "lang": "fr",
+  "text": "Non, ça, c'est le soleil !"
+ },
+ {
+  "h": "4f231eec",
+  "lang": "fr",
+  "text": "Où est la lune ?"
+ },
+ {
+  "h": "30b544a5",
+  "lang": "fr",
+  "text": "Lune !"
+ },
+ {
+  "h": "3696af50",
+  "lang": "fr",
+  "text": "Non, ça, c'est la lune !"
+ },
+ {
+  "h": "7252e87b",
+  "lang": "fr",
+  "text": "Où est l'étoile ?"
+ },
+ {
+  "h": "88af2909",
+  "lang": "fr",
+  "text": "Étoile !"
+ },
+ {
+  "h": "9e415157",
+  "lang": "fr",
+  "text": "Non, ça, c'est l'étoile !"
+ },
+ {
+  "h": "bd573cbc",
+  "lang": "fr",
+  "text": "Où est la fleur ?"
+ },
+ {
+  "h": "684d8723",
+  "lang": "fr",
+  "text": "Fleur !"
+ },
+ {
+  "h": "3ec20198",
+  "lang": "fr",
+  "text": "Non, ça, c'est la fleur !"
+ },
+ {
+  "h": "99bb7ecd",
+  "lang": "fr",
+  "text": "Où est l'arbre ?"
+ },
+ {
+  "h": "5d3b4de7",
+  "lang": "fr",
+  "text": "Arbre !"
+ },
+ {
+  "h": "fee0e4d9",
+  "lang": "fr",
+  "text": "Non, ça, c'est l'arbre !"
+ },
+ {
+  "h": "9e9fc2bd",
+  "lang": "fr",
+  "text": "Où est la maison ?"
+ },
+ {
+  "h": "eeb75a0c",
+  "lang": "fr",
+  "text": "Maison !"
+ },
+ {
+  "h": "ad26aa99",
+  "lang": "fr",
+  "text": "Non, ça, c'est la maison !"
+ },
+ {
+  "h": "d135eac2",
+  "lang": "fr",
+  "text": "Où est la voiture ?"
+ },
+ {
+  "h": "6c67cfb1",
+  "lang": "fr",
+  "text": "Voiture !"
+ },
+ {
+  "h": "107d4f66",
+  "lang": "fr",
+  "text": "Non, ça, c'est la voiture !"
+ },
+ {
+  "h": "7da53e2a",
+  "lang": "fr",
+  "text": "Où est le ballon ?"
+ },
+ {
+  "h": "f2479fff",
+  "lang": "fr",
+  "text": "Ballon !"
+ },
+ {
+  "h": "893cade6",
+  "lang": "fr",
+  "text": "Non, ça, c'est le ballon !"
+ },
+ {
+  "h": "1a64b924",
+  "lang": "fr",
+  "text": "Où est le livre ?"
+ },
+ {
+  "h": "909a3893",
+  "lang": "fr",
+  "text": "Livre !"
+ },
+ {
+  "h": "67f41090",
+  "lang": "fr",
+  "text": "Non, ça, c'est le livre !"
+ },
+ {
+  "h": "d60da171",
+  "lang": "fr",
+  "text": "Où est la chaussure ?"
+ },
+ {
+  "h": "2ee2c2ae",
+  "lang": "fr",
+  "text": "Chaussure !"
+ },
+ {
+  "h": "cd8ca3d5",
+  "lang": "fr",
+  "text": "Non, ça, c'est la chaussure !"
+ },
+ {
+  "h": "a4be5211",
+  "lang": "fr",
+  "text": "Où est le chapeau ?"
+ },
+ {
+  "h": "05819d36",
+  "lang": "fr",
+  "text": "Chapeau !"
+ },
+ {
+  "h": "b814acc5",
+  "lang": "fr",
+  "text": "Non, ça, c'est le chapeau !"
+ },
+ {
+  "h": "d851fefb",
+  "lang": "fr",
+  "text": "Où est le lit ?"
+ },
+ {
+  "h": "97a668d8",
+  "lang": "fr",
+  "text": "Lit !"
+ },
+ {
+  "h": "84cdc0df",
+  "lang": "fr",
+  "text": "Non, ça, c'est le lit !"
+ },
+ {
+  "h": "85b0eee9",
+  "lang": "fr",
+  "text": "Où est le parapluie ?"
+ },
+ {
+  "h": "4d94a3ae",
+  "lang": "fr",
+  "text": "Parapluie !"
+ },
+ {
+  "h": "9e40e5c5",
+  "lang": "fr",
+  "text": "Non, ça, c'est le parapluie !"
+ },
+ {
+  "h": "b60004a6",
+  "lang": "fr",
+  "text": "Où est le nuage ?"
+ },
+ {
+  "h": "f7e0e9f9",
+  "lang": "fr",
+  "text": "Nuage !"
+ },
+ {
+  "h": "3f5c15fa",
+  "lang": "fr",
+  "text": "Non, ça, c'est le nuage !"
+ },
+ {
   "h": "9cd95568",
   "lang": "it",
   "text": "Bravissima!"
@@ -6423,5 +6953,535 @@
   "h": "baf4d471",
   "lang": "it",
   "text": "Colora la carota di arancione!"
+ },
+ {
+  "h": "53b6d88e",
+  "lang": "it",
+  "text": "Le due lingue"
+ },
+ {
+  "h": "483711dc",
+  "lang": "it",
+  "text": "Brava! Era italiano!"
+ },
+ {
+  "h": "3b6cb1be",
+  "lang": "it",
+  "text": "Ascolta bene…"
+ },
+ {
+  "h": "3053c51b",
+  "lang": "it",
+  "text": "Che lingua hai sentito?"
+ },
+ {
+  "h": "d22c46f8",
+  "lang": "it",
+  "text": "Ascolta la parola…"
+ },
+ {
+  "h": "175ce461",
+  "lang": "it",
+  "text": "Poi tocca l'immagine giusta!"
+ },
+ {
+  "h": "301e1db7",
+  "lang": "it",
+  "text": "Le carte blu parlano francese, quelle verdi italiano."
+ },
+ {
+  "h": "7cf45af0",
+  "lang": "it",
+  "text": "Trova la stessa immagine nelle due lingue!"
+ },
+ {
+  "h": "f9d977a7",
+  "lang": "it",
+  "text": "Ascolta bene: puoi riascoltare qui."
+ },
+ {
+  "h": "b14e49a0",
+  "lang": "it",
+  "text": "Poi tocca la bandiera della lingua che hai sentito!"
+ },
+ {
+  "h": "79af0d3f",
+  "lang": "it",
+  "text": "Buongiorno!"
+ },
+ {
+  "h": "b757d55d",
+  "lang": "it",
+  "text": "Grazie!"
+ },
+ {
+  "h": "f34dfb66",
+  "lang": "it",
+  "text": "Buonanotte!"
+ },
+ {
+  "h": "a1c8bdae",
+  "lang": "it",
+  "text": "Ti voglio bene!"
+ },
+ {
+  "h": "9b82b405",
+  "lang": "it",
+  "text": "Arrivederci!"
+ },
+ {
+  "h": "3d475fe7",
+  "lang": "it",
+  "text": "Buon appetito!"
+ },
+ {
+  "h": "44164c26",
+  "lang": "it",
+  "text": "Dov'è il gatto?"
+ },
+ {
+  "h": "b7bc03ce",
+  "lang": "it",
+  "text": "Gatto!"
+ },
+ {
+  "h": "4a317c6e",
+  "lang": "it",
+  "text": "No, qui c'è il gatto!"
+ },
+ {
+  "h": "ecca7488",
+  "lang": "it",
+  "text": "Dov'è il cane?"
+ },
+ {
+  "h": "86f5bb00",
+  "lang": "it",
+  "text": "Cane!"
+ },
+ {
+  "h": "09a1d720",
+  "lang": "it",
+  "text": "No, qui c'è il cane!"
+ },
+ {
+  "h": "f0a63026",
+  "lang": "it",
+  "text": "Dov'è la mucca?"
+ },
+ {
+  "h": "4b8150c4",
+  "lang": "it",
+  "text": "Mucca!"
+ },
+ {
+  "h": "f127a3be",
+  "lang": "it",
+  "text": "No, qui c'è la mucca!"
+ },
+ {
+  "h": "2ca3c842",
+  "lang": "it",
+  "text": "Dov'è il maiale?"
+ },
+ {
+  "h": "3069a69a",
+  "lang": "it",
+  "text": "Maiale!"
+ },
+ {
+  "h": "c91851ba",
+  "lang": "it",
+  "text": "No, qui c'è il maiale!"
+ },
+ {
+  "h": "247bc4f1",
+  "lang": "it",
+  "text": "Dov'è il coniglio?"
+ },
+ {
+  "h": "1b6ceb39",
+  "lang": "it",
+  "text": "Coniglio!"
+ },
+ {
+  "h": "cca4e359",
+  "lang": "it",
+  "text": "No, qui c'è il coniglio!"
+ },
+ {
+  "h": "d88858e3",
+  "lang": "it",
+  "text": "Dov'è il pesce?"
+ },
+ {
+  "h": "20f3ff1b",
+  "lang": "it",
+  "text": "Pesce!"
+ },
+ {
+  "h": "dfa888bb",
+  "lang": "it",
+  "text": "No, qui c'è il pesce!"
+ },
+ {
+  "h": "d147db92",
+  "lang": "it",
+  "text": "Dov'è l'uccellino?"
+ },
+ {
+  "h": "ee7e8b77",
+  "lang": "it",
+  "text": "Uccellino!"
+ },
+ {
+  "h": "5ac1215a",
+  "lang": "it",
+  "text": "No, qui c'è l'uccellino!"
+ },
+ {
+  "h": "5c3bc2c1",
+  "lang": "it",
+  "text": "Dov'è il cavallo?"
+ },
+ {
+  "h": "ab55c749",
+  "lang": "it",
+  "text": "Cavallo!"
+ },
+ {
+  "h": "a9a181e9",
+  "lang": "it",
+  "text": "No, qui c'è il cavallo!"
+ },
+ {
+  "h": "ee65490e",
+  "lang": "it",
+  "text": "Dov'è la mela?"
+ },
+ {
+  "h": "91eae0d0",
+  "lang": "it",
+  "text": "Mela!"
+ },
+ {
+  "h": "ca7dfbe6",
+  "lang": "it",
+  "text": "No, qui c'è la mela!"
+ },
+ {
+  "h": "7a1d9ec2",
+  "lang": "it",
+  "text": "Dov'è la banana?"
+ },
+ {
+  "h": "d9889f50",
+  "lang": "it",
+  "text": "Banana!"
+ },
+ {
+  "h": "797a67da",
+  "lang": "it",
+  "text": "No, qui c'è la banana!"
+ },
+ {
+  "h": "d2a3fca7",
+  "lang": "it",
+  "text": "Dov'è la fragola?"
+ },
+ {
+  "h": "53abcf45",
+  "lang": "it",
+  "text": "Fragola!"
+ },
+ {
+  "h": "f0d4cb8f",
+  "lang": "it",
+  "text": "No, qui c'è la fragola!"
+ },
+ {
+  "h": "c394c81b",
+  "lang": "it",
+  "text": "Dov'è la torta?"
+ },
+ {
+  "h": "85682ff9",
+  "lang": "it",
+  "text": "Torta!"
+ },
+ {
+  "h": "0c27d0b3",
+  "lang": "it",
+  "text": "No, qui c'è la torta!"
+ },
+ {
+  "h": "ff79cf87",
+  "lang": "it",
+  "text": "Dov'è il gelato?"
+ },
+ {
+  "h": "a2f821ef",
+  "lang": "it",
+  "text": "Gelato!"
+ },
+ {
+  "h": "7897ec0f",
+  "lang": "it",
+  "text": "No, qui c'è il gelato!"
+ },
+ {
+  "h": "f7800493",
+  "lang": "it",
+  "text": "Dov'è il pane?"
+ },
+ {
+  "h": "6d4681ab",
+  "lang": "it",
+  "text": "Pane!"
+ },
+ {
+  "h": "d6a5e8cb",
+  "lang": "it",
+  "text": "No, qui c'è il pane!"
+ },
+ {
+  "h": "32f4826c",
+  "lang": "it",
+  "text": "Dov'è il formaggio?"
+ },
+ {
+  "h": "6cabf964",
+  "lang": "it",
+  "text": "Formaggio!"
+ },
+ {
+  "h": "2c01a404",
+  "lang": "it",
+  "text": "No, qui c'è il formaggio!"
+ },
+ {
+  "h": "a6c0c7b9",
+  "lang": "it",
+  "text": "Dov'è il latte?"
+ },
+ {
+  "h": "771012e1",
+  "lang": "it",
+  "text": "Latte!"
+ },
+ {
+  "h": "09858b81",
+  "lang": "it",
+  "text": "No, qui c'è il latte!"
+ },
+ {
+  "h": "d56c2624",
+  "lang": "it",
+  "text": "Dov'è il sole?"
+ },
+ {
+  "h": "df633b8c",
+  "lang": "it",
+  "text": "Sole!"
+ },
+ {
+  "h": "620dc4ac",
+  "lang": "it",
+  "text": "No, qui c'è il sole!"
+ },
+ {
+  "h": "e27a6521",
+  "lang": "it",
+  "text": "Dov'è la luna?"
+ },
+ {
+  "h": "05033d87",
+  "lang": "it",
+  "text": "Luna!"
+ },
+ {
+  "h": "75553559",
+  "lang": "it",
+  "text": "No, qui c'è la luna!"
+ },
+ {
+  "h": "8b1e9286",
+  "lang": "it",
+  "text": "Dov'è la stella?"
+ },
+ {
+  "h": "b1ec9e2c",
+  "lang": "it",
+  "text": "Stella!"
+ },
+ {
+  "h": "35ca021e",
+  "lang": "it",
+  "text": "No, qui c'è la stella!"
+ },
+ {
+  "h": "0b3757e0",
+  "lang": "it",
+  "text": "Dov'è il fiore?"
+ },
+ {
+  "h": "890d46b8",
+  "lang": "it",
+  "text": "Fiore!"
+ },
+ {
+  "h": "1b82bf58",
+  "lang": "it",
+  "text": "No, qui c'è il fiore!"
+ },
+ {
+  "h": "fcc14e35",
+  "lang": "it",
+  "text": "Dov'è l'albero?"
+ },
+ {
+  "h": "4aa231fa",
+  "lang": "it",
+  "text": "Albero!"
+ },
+ {
+  "h": "e8c6b1bd",
+  "lang": "it",
+  "text": "No, qui c'è l'albero!"
+ },
+ {
+  "h": "56b3417b",
+  "lang": "it",
+  "text": "Dov'è la casa?"
+ },
+ {
+  "h": "9f253efd",
+  "lang": "it",
+  "text": "Casa!"
+ },
+ {
+  "h": "e4659c93",
+  "lang": "it",
+  "text": "No, qui c'è la casa!"
+ },
+ {
+  "h": "4bfccd35",
+  "lang": "it",
+  "text": "Dov'è la macchina?"
+ },
+ {
+  "h": "375a02eb",
+  "lang": "it",
+  "text": "Macchina!"
+ },
+ {
+  "h": "defc274d",
+  "lang": "it",
+  "text": "No, qui c'è la macchina!"
+ },
+ {
+  "h": "d2265568",
+  "lang": "it",
+  "text": "Dov'è il palloncino?"
+ },
+ {
+  "h": "108b4ee0",
+  "lang": "it",
+  "text": "Palloncino!"
+ },
+ {
+  "h": "65b5c000",
+  "lang": "it",
+  "text": "No, qui c'è il palloncino!"
+ },
+ {
+  "h": "a856b227",
+  "lang": "it",
+  "text": "Dov'è il libro?"
+ },
+ {
+  "h": "43a5df0f",
+  "lang": "it",
+  "text": "Libro!"
+ },
+ {
+  "h": "d61ceaaf",
+  "lang": "it",
+  "text": "No, qui c'è il libro!"
+ },
+ {
+  "h": "5ee20339",
+  "lang": "it",
+  "text": "Dov'è la scarpa?"
+ },
+ {
+  "h": "4e623d2f",
+  "lang": "it",
+  "text": "Scarpa!"
+ },
+ {
+  "h": "030cc831",
+  "lang": "it",
+  "text": "No, qui c'è la scarpa!"
+ },
+ {
+  "h": "c9295509",
+  "lang": "it",
+  "text": "Dov'è il cappello?"
+ },
+ {
+  "h": "ef72c281",
+  "lang": "it",
+  "text": "Cappello!"
+ },
+ {
+  "h": "a0aabaa1",
+  "lang": "it",
+  "text": "No, qui c'è il cappello!"
+ },
+ {
+  "h": "f3de4c47",
+  "lang": "it",
+  "text": "Dov'è il letto?"
+ },
+ {
+  "h": "71b2b07f",
+  "lang": "it",
+  "text": "Letto!"
+ },
+ {
+  "h": "06a2921f",
+  "lang": "it",
+  "text": "No, qui c'è il letto!"
+ },
+ {
+  "h": "2daaa212",
+  "lang": "it",
+  "text": "Dov'è l'ombrello?"
+ },
+ {
+  "h": "f4134f59",
+  "lang": "it",
+  "text": "Ombrello!"
+ },
+ {
+  "h": "d268ecca",
+  "lang": "it",
+  "text": "No, qui c'è l'ombrello!"
+ },
+ {
+  "h": "95f6a9ce",
+  "lang": "it",
+  "text": "Dov'è la nuvola?"
+ },
+ {
+  "h": "dc638604",
+  "lang": "it",
+  "text": "Nuvola!"
+ },
+ {
+  "h": "95dd0076",
+  "lang": "it",
+  "text": "No, qui c'è la nuvola!"
  }
 ]
