@@ -552,3 +552,35 @@ button:active { transform: translateY(3px) scale(.98); }
 .lng-flags { display: flex; gap: 22px; }
 .flagbtn { width: 140px; height: 96px; border-radius: 18px; border: 5px solid #fff; box-shadow: 0 7px 0 rgba(0, 0, 0, .18); }
 .flagbtn.ok { box-shadow: 0 0 0 6px #7ee08a, 0 7px 0 rgba(0, 0, 0, .18); animation: pop .5s ease; }
+
+/* ---------- Home compatta: griglia 3×3 che sta sempre nello schermo ---------- */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+.home-head { gap: 8px; min-height: 62px; }
+.home-head .avatar { width: 58px; height: 58px; }
+.home-head h1 { font-size: clamp(20px, 6.4vw, 28px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.tiles {
+  grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 10px; align-content: stretch; margin: 12px 0 4px; overflow: visible;
+}
+.tile { min-height: 0; padding: 8px 4px; gap: 4px; border-radius: 22px; }
+.tile .ico { font-size: clamp(34px, 11vw, 52px); }
+.tile .lbl { font-size: clamp(12px, 3.7vw, 16px); line-height: 1.15; }
+.tile .lbl2 { font-size: clamp(10px, 2.9vw, 12px); line-height: 1.1; margin-top: 0; }
+/* caselle elastiche: se il telefono ingrandisce i testi crescono e la griglia scorre dall'alto (mai tagliata) */
+.tiles { grid-template-rows: none; grid-auto-rows: auto; align-content: safe center; overflow-y: auto; padding-bottom: 6px; }
+.tile { min-height: clamp(112px, 31vw, 150px); }
+.tile .ico { font-size: clamp(40px, 12vw, 58px); }
+.tile .lbl { font-size: clamp(13px, 3.9vw, 17px); overflow-wrap: anywhere; }
+.topbar .title { font-size: clamp(18px, 5.4vw, 24px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.col-tools .col-done { white-space: nowrap; font-size: clamp(16px, 5vw, 22px); padding: 10px 16px; }
+.bday h1 { font-size: clamp(24px, 7.5vw, 34px); }
+.bday p { font-size: clamp(16px, 5vw, 22px); }
+.prompt { max-width: calc(100% - 24px); }
+/* le righe riempiono lo spazio (fino a un massimo) ma non diventano mai più basse del contenuto */
+.tiles { flex: 1 1 auto; max-height: 640px; margin: auto 0; grid-auto-rows: minmax(min-content, 1fr); align-content: stretch; }
+.tile .ico { font-size: clamp(42px, 13vw, 64px); }
+.tile .lbl { font-size: clamp(14px, 4.2vw, 18px); }
+.tile .lbl2 { font-size: clamp(11px, 3.1vw, 13px); }
+.col-sw[aria-label="Bianco"]:not(.sel) { border-color: #d9d2e0; }
+.home-head h1 { white-space: normal; font-size: clamp(18px, 5.8vw, 26px); line-height: 1.05; overflow: visible; }
+.cake { margin-top: 44px; }

@@ -1,5 +1,5 @@
 /* Service worker: tutto in cache per giocare offline. Cambiare VERSION a ogni aggiornamento. */
-const VERSION = 'lena-v9';
+const VERSION = 'lena-v10';
 /* le voci stanno in una cache separata che sopravvive agli aggiornamenti (cambiarla solo se si rigenerano con altra voce) */
 const VOICE_CACHE = 'lena-voice-1';
 const FILES = [

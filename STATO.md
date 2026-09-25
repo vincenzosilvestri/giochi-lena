@@ -1,40 +1,33 @@
 # STATO — Giochi di Lena
-_Aggiornato: 25/09/2026 (sera)_
+_Aggiornato: 25/09/2026_
 
 ## Obiettivo
-PWA senza pubblicità con giochi educativi per Lena (5 anni il 18/01/2027), da usare dal telefono (Android papà, iPhone Mahault).
-Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vincenzosilvestri/giochi-lena` (GitHub Pages, branch main).
+PWA senza pubblicità con giochi educativi **bilingui FR/IT** per Lena (5 anni il 18/01/2027, prima lingua francese), da telefono (Android papà, iPhone Mahault).
+Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vincenzosilvestri/giochi-lena` (GitHub Pages, main). Versione online: **v9**.
 
 ## Fatto finora
-- 6 giochi: Lena Salta (semaforo: stop col rosso ✋, ✅ e contatore 🚦 col verde, sticker ogni 8), Conta, Memory (animali/foto famiglia), Pesca le Lettere (+ comporre il nome), Forme e Colori (incastri + sequenze), Colora con Lena (12 disegni SVG a zone, arcobaleno, 4 glitter, sfide, galleria).
-- Album 24 sticker + diploma, personaggio e colore a scelta, timer nanna con PIN, festa compleanno il 18 gennaio.
-- Menu papà: tieni premuto ⚙️ 1,5 s → PIN. Voci registrate, foto con nome, timer, galleria disegni (⬇️ condividi), prova festa.
-- Voce: frasi pre-generate con edge-tts in `voice/` (IT Isabella, FR Denise); fallback TTS del telefono per le frasi fuori catalogo (es. nomi delle foto).
-- Tutorial con manina 👆 alla prima apertura di Home e giochi, tasto ❓ per rivederlo.
-- Glitter: scia a ogni tocco, titolo luccicante, sticker lucidi. Su PC l'app è centrata (max 440px).
-- Aggiornamento automatico: SW network-first con `cache: 'no-cache'`, ricarica su controllerchange. Nota versione sulla schermata iniziale (ora **v9**).
-- Bug fixato: in Salta il personaggio spariva tornando indietro.
-- **v8 — bilingue FR/IT** (francese di Francia, voce fr-FR-DeniseNeural; alternanza un turno FR e uno IT, bandierina nel gioco; menu papà: Alternanza / Solo FR / Solo IT). 1285 frasi audio (~25 MB).
-- **v8 — arricchimenti:** Armadio (stelle ⭐ guadagnate nei giochi → 14 accessori per testa/occhi/mano/aura), Salta con 4 mondi (prato, neve, spiaggia, città di notte), treno con passaggio a livello, strisce pedonali (bonus), Pagella nel menu papà (lettere/numeri, lingue, strada, tempo 7 giorni), Storia della buonanotte (3 storie) allo scadere del timer.
-- **v9 — Le due lingue / Les deux langues** (7° gioco, `js/games/lingue.js`): «Où est… / Dov'è…» (4 immagini), Memory bilingue (carta FR ↔ carta IT, poi la parola nelle due lingue), «Quale lingua hai sentito?» (lingua casuale, bandierina nascosta). 30 parole.
+- 7 giochi (`js/games/`): Lena Salta (semaforo, strisce, treno con passaggio a livello, 4 mondi prato/neve/spiaggia/città di notte), Conta, Memory (animali/foto), Pesca le Lettere (+ comporre il nome), Forme e Colori, Colora (12 disegni, arcobaleno, 4 glitter, galleria), Le due lingue (Dov'è…, Memory FR↔IT, Quale lingua?).
+- Bilingue: alternanza un turno FR e uno IT con bandierina; menu papà: Alternanza / Solo FR / Solo IT. Menu papà in italiano.
+- Voci: 1497 frasi pre-generate con edge-tts (IT Isabella, FR Denise, ~28 MB) in `voice/`; fallback TTS del telefono per nomi delle foto.
+- Premi: stelle ⭐ → Armadio (14 accessori sul personaggio), album 24 sticker + diploma.
+- Menu papà (⚙️ premuto 1,5 s + PIN): timer nanna con storia della buonanotte (3 storie), lingua, Pagella (lettere/numeri, lingue, strada, tempo 7 giorni), voci registrate, foto, disegni, festa compleanno 18/01.
+- Tutorial con manina 👆 + tasto ❓; glitter ovunque; app centrata su PC; aggiornamento automatico (SW `no-cache` + reload) e numero versione in basso.
 
 ## Prossimi passi
-1. Feedback dall'uso reale di v8-v9 (bilingue, armadio, mondi/treno in Salta, pagella, storia, gioco delle due lingue).
-2. **Proposte in coda (giochi nuovi):**
-   - Scrivi con il dito (tracciare le lettere, consigliato), Pianoforte magico (+ ripeti la melodia), Il mio cucciolo (nutrire, lavare, nanna), Puzzle 4-9 pezzi con disegni e foto, Labirinti col dito, Primo inglese.
-3. Papà caricherà foto di famiglia e voci registrate dal menu papà (restano in IndexedDB sul telefono).
+1. Raccogliere feedback dall'uso reale di v8-v9 e sistemare.
+2. Proposte in coda: Scrivi con il dito (tracciare lettere, consigliato), Pianoforte magico (+ ripeti la melodia), Il mio cucciolo, Puzzle 4-9 pezzi con disegni/foto, Labirinti col dito, Primo inglese.
+3. Papà caricherà foto e voci registrate dal menu papà (restano in IndexedDB sul telefono).
 
 ## Decisioni / vincoli
-- Vanilla JS/HTML/CSS, nessun build step. Giochi registrati con `App.registerGame` in `js/games/*.js`.
-- Ogni rilascio: bump `VERSION` in `js/app.js` (numero mostrato) **e** in `sw.js` (`lena-vN`). Le voci stanno nella cache separata `VOICE_CACHE`.
-- Ogni testo è `{fr, it}` (o TX[lang] nei giochi); `App.nextLang()` a ogni nuovo turno. Ogni nuova frase va in `phrases(l)` del gioco, poi `node tools/build-catalog.mjs` + `python tools/gen_voice.py`. Hash voce IT senza prefisso, FR con prefisso "fr ".
-- Test Salta da un punto avanzato: `?hoprow=N` nell'URL.
+- Vanilla JS/HTML/CSS, nessun build step. Giochi con `App.registerGame`, script elencati in `index.html`, `sw.js` (FILES) e `tools/build-catalog.mjs`.
+- Ogni rilascio: bump `VERSION` in `js/app.js` **e** `lena-vN` in `sw.js`. Voci nella cache separata `VOICE_CACHE` (cambiarla solo se si cambia voce).
+- Testi `{fr, it}` / `TX[lang]`; `App.nextLang()` a ogni turno. Ogni nuova frase va in `phrases(l)`, poi `node tools/build-catalog.mjs` + `python tools/gen_voice.py`. Hash voce IT senza prefisso, FR con prefisso "fr ".
 - Pubblicare (commit + push) senza chiedere quando i test sono ok (autorizzato dall'utente).
-- Samsung blocca l'installazione come app ("app non sicura", probabile Blocco automatico): usare il collegamento sulla Home.
+- Samsung blocca l'installazione come app ("app non sicura"): usare il collegamento sulla Home.
 
 ## Aperto / da chiarire
-- Voce e glitter non ancora sentiti/visti da Claude su un telefono reale: verifica fatta solo in Chrome headless.
-- Mai testate su telefono le registrazioni vocali (MediaRecorder) e l'upload foto.
+- Verificato solo in Chrome headless, mai su telefono reale: voci (anche pronuncia FR di "le L"), glitter, registrazione voci, upload foto.
+- Non verificati in automatico: blocco del treno e bonus strisce in Salta, modalità «Quale lingua?» e fine del Memory bilingue.
 
 ## Come riprendere
-Test in locale: `python -m http.server 8765` e apri http://localhost:8765. Test headless: script CDP `drive.mjs` (era nella scratchpad, da ricreare se serve). Codice: `js/app.js` (nucleo) + `js/games/`.
+Locale: `python -m http.server 8765` → http://localhost:8765. Test headless: `node tools/drive.mjs steps.json <cartella_output>` (CDP su Chrome; `?hoprow=N` per partire avanti in Salta). Codice: `js/app.js` (nucleo) + `js/games/*.js`.

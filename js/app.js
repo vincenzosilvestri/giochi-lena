@@ -4,7 +4,7 @@ const App = (() => {
   const NAME = 'Lena';
   const BIRTH = { y: 2022, m: 0, d: 18 }; // 18 gennaio 2022
   const KEY = 'lena_v1';
-  const VERSION = '9 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
+  const VERSION = '10 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
   const LANGS = ['fr', 'it'];
   const FLAG = { fr: '🇫🇷', it: '🇮🇹' };
 
@@ -53,7 +53,7 @@ const App = (() => {
 
   /* testi dell'app (fr/it); le funzioni ricevono parametri */
   const T = {
-    hello: { fr: `Coucou ${NAME} !`, it: `Ciao ${NAME}!` },
+    hello: { fr: `Coucou ${NAME} !`, it: `Ciao ${NAME}!` },
     playBtn: { fr: 'On joue ! ▶', it: 'Giochiamo! ▶' },
     greet: { fr: `Coucou ${NAME} ! On joue ?`, it: `Ciao ${NAME}! Giochiamo?` },
     forDad: { fr: "Ça, c'est pour papa !", it: 'Questo è per papà!' },
@@ -528,7 +528,7 @@ const App = (() => {
       gear.addEventListener('click', () => say(t('forDad')));
 
       s.append(h('div', { class: 'home-head' },
-        h('button', { class: 'avatar', onclick: () => { sfx.pop(); setup(false); } }, avatar(44)),
+        h('button', { class: 'avatar', onclick: () => { sfx.pop(); setup(false); } }, avatar(36)),
         h('h1', {}, t('hello')),
         h('div', { class: 'pill stars-pill' }, `⭐ ${state.stars}`),
         gear,
@@ -536,7 +536,7 @@ const App = (() => {
       const tiles = h('div', { class: 'tiles' });
       games.forEach((g, i) => {
         tiles.append(h('button', {
-          class: `tile t${i + 1}` + (i === games.length - 1 && games.length % 2 ? ' wide' : ''),
+          class: `tile t${i + 1}`,
           onclick: () => { sfx.pop(); say(tr(g.title)); startGame(g); },
         }, h('div', { class: 'ico' }, g.icon), h('div', { class: 'lbl' }, g.title.fr), h('div', { class: 'lbl2' }, g.title.it)));
       });
