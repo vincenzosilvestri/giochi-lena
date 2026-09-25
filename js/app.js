@@ -3,6 +3,7 @@ const App = (() => {
   const NAME = 'Lena';
   const BIRTH = { y: 2022, m: 0, d: 27 }; // 27 gennaio 2022
   const KEY = 'lena_v1';
+  const VERSION = '3 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
 
   const CHARS = [
     { id: 'coniglio', e: '🐰', name: 'Coniglietto', the: 'il coniglietto' },
@@ -316,6 +317,7 @@ const App = (() => {
         h('div', { class: 'hero' }, state.char ? char().e : '🌈'),
         h('h1', {}, `Ciao ${NAME}!`),
         h('button', { class: 'big-btn', onclick: start }, 'Giochiamo! ▶'),
+        h('div', { class: 'ver' }, `versione ${VERSION}`),
       );
     });
   }
@@ -637,7 +639,8 @@ const App = (() => {
       const scroll = h('div', { class: 'scroll' });
       s.append(h('div', { class: 'topbar' },
         h('button', { class: 'icon-btn', onclick: () => (isLocked() ? sleepScreen() : home()) }, '🏠'),
-        h('div', { class: 'title' }, 'Area genitori')), scroll);
+        h('div', { class: 'title' }, 'Area genitori')), scroll,
+        h('div', { class: 'ver', style: 'position:static;text-align:center' }, `versione ${VERSION}`));
 
       const section = (title, hint, ...body) => h('section', {}, h('h3', {}, title), hint ? h('p', { class: 'hint' }, hint) : null, ...body);
       const opts = (list, cur, onPick) => {
