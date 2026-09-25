@@ -13,13 +13,34 @@
   const numWord = (n, fem) => (n === 1 ? (fem ? 'una' : 'uno') : NUM[n]);
   const MAX_BY_LEVEL = [5, 5, 6, 8, 10];
   const ROUND = 5;
+  const TUT = ['Tocca le cose per contarle: uno, due, tre...', 'Poi tocca il numero giusto qui sotto!',
+    'Guarda il numero: ti dice quante cose prendere.', 'Tocca le cose per metterle nel cestino!'];
 
   App.registerGame({
     id: 'conta', title: 'Conta con Lena', short: 'Conta', icon: '🔢',
-    start({ stage, addPill }) {
+    phrases: () => {
+      const out = [...TUT];
+      for (let n = 1; n <= 10; n++) out.push(numWord(n, 0), numWord(n, 1));
+      THINGS.forEach(t => {
+        out.push(`${t.f ? 'Quante' : 'Quanti'} ${t.p} vedi?`, `Riprova! Tocca ${t.f ? 'le' : 'i'} ${t.p} per contarl${t.f ? 'e' : 'i'}.`,
+          `Tocca ${t.f ? 'una' : 'un'} ${t.s}!`);
+        for (let n = 2; n <= 10; n++) out.push(`Tocca ${n} ${t.p}!`);
+      });
+      return out;
+    },
+    start({ stage, addPill, setHelp }) {
       let alive = true;
       let lv = App.level('conta');
       let good = 0;
+      let lastQ = '';
+      let lastSteps = [];
+      /* dice la domanda, preceduta dal tutorial la prima volta */
+      function ask(text, tutId, steps) {
+        lastQ = text;
+        lastSteps = steps;
+        App.intro(tutId, steps).then(() => alive && say(text));
+      }
+      setHelp(() => App.tutorial(lastSteps).then(() => alive && say(lastQ)));
       const pill = addPill(`⭐ 0/${ROUND}`);
       const prompt = h('div', { class: 'prompt' });
       const field = h('div', { class: 'conta-field' });
@@ -95,7 +116,10 @@
           };
           answers.append(b);
         });
-        say(`${q} ${t.p} vedi?`);
+        ask(`${q} ${t.p} vedi?`, 'conta', [
+          { text: TUT[0], icon: '👆', action: 'tap', at: () => field.querySelector('.conta-item'), cap: 'top' },
+          { text: TUT[1], icon: '🔢', action: 'tap', at: () => answers.children[1], cap: 'top' },
+        ]);
       }
 
       function touchN(t, max) {
@@ -117,7 +141,10 @@
           say(numWord(got, t.f));
           if (got === n) setTimeout(() => alive && success(), 600);
         });
-        say(n === 1 ? `Tocca ${t.f ? 'una' : 'un'} ${t.s}!` : `Tocca ${n} ${t.p}!`);
+        ask(n === 1 ? `Tocca ${t.f ? 'una' : 'un'} ${t.s}!` : `Tocca ${n} ${t.p}!`, 'conta2', [
+          { text: TUT[2], icon: '🔢', action: 'tap', at: () => prompt },
+          { text: TUT[3], icon: '🧺', action: 'tap', at: () => field.querySelector('.conta-item'), cap: 'top' },
+        ]);
       }
 
       function next() {

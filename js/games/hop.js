@@ -7,11 +7,21 @@
   const CARS = ['🚗', '🚕', '🚙', '🚓'];
   const MILESTONES = [25, 60, 100];
   const LIGHT = { green: 4, blink: 1.3, red: 4.5 };
+  const GREEN_REWARD = 8;
+  const STOP_SAYS = ['Stop! È rosso: aspetta il verde!', 'Fermati! Col rosso non si passa.', 'Rosso! Aspettiamo il verde.'];
+  const GREEN_SAYS = ['Brava! Col verde si passa!', 'Verde: via libera!', 'Perfetto, hai aspettato il verde!', 'Super! Attraversamento sicuro!'];
+  const INTRO = 'Tocca per saltare. Col rosso aspetta, col verde passa!';
+  const TUT_TEXT = ['Tocca lo schermo per saltare avanti!', 'Striscia il dito di lato per spostarti.',
+    'Semaforo rosso: fermati e aspetta!', 'Semaforo verde: le macchine si fermano e puoi passare!',
+    'Attenzione ai fiumi: salta sui tronchi!'];
+  const DIE_SAYS = ['Ops! Attenta alle macchine!', 'Ops! Guarda bene prima di saltare!'];
 
   App.registerGame({
     id: 'salta', title: 'Lena Salta', short: 'Salta', cls: 'hop',
     get icon() { return App.char().e; },
-    start({ stage, addPill }) {
+    phrases: () => [...STOP_SAYS, ...GREEN_SAYS, ...TUT_TEXT, ...DIE_SAYS, INTRO, 'Splash! Salta sui tronchi!',
+      'Ops! Il semaforo è diventato rosso: attraversa quando è appena verde!'],
+    start({ stage, addPill, setHelp }) {
       let alive = true;
       let paused = false;
       const canvas = h('canvas');
@@ -37,7 +47,9 @@
       let roadsMade = 0;
       let time = 0;
 
+      let forceLight = null;
       const lightState = L => {
+        if (forceLight) return forceLight;
         const tot = LIGHT.green + LIGHT.blink + LIGHT.red;
         const p = (time + L.offset) % tot;
         return p < LIGHT.green ? 'green' : p < LIGHT.green + LIGHT.blink ? 'blink' : 'red';
@@ -100,7 +112,14 @@
       let stars = 0;
       let queued = null;
       let greenFlag = false;
-      let lastPraise = -99;
+      let greens = 0;
+      let lastStop = -99;
+      const greenPill = addPill('🚦 0');
+      function sign(e) {
+        const d = h('div', { class: 'hop-sign' }, e);
+        stage.append(d);
+        setTimeout(() => d.remove(), 1150);
+      }
       let nextMs = 0;
       const milestone = n => (n < MILESTONES.length ? MILESTONES[n] : MILESTONES[MILESTONES.length - 1] + 50 * (n - MILESTONES.length + 1));
 
@@ -113,6 +132,13 @@
         const R = row(tr);
         if (R.t === 'grass' && R.trees.has(tx)) { sfx.tap(); return; }
         if (R.t === 'road' && carsStopped(R) && R.cars.some(c => tx + .8 > c.x + .05 && tx + .2 < c.x + c.len - .05)) { sfx.tap(); return; }
+        /* verifica semaforo: dal prato non si scende in strada col rosso */
+        if (R.t === 'road' && R.light && row(pl.row).t === 'grass' && lightState(R.light) === 'red') {
+          sfx.boing();
+          sign('✋');
+          if (time - lastStop > 3) { lastStop = time; say(pick(STOP_SAYS)); }
+          return;
+        }
         pl.fx = pl.x; pl.frow = pl.row;
         pl.x = tx; pl.row = tr; pl.t = 0; pl.log = null;
         sfx.hop();
@@ -128,10 +154,17 @@
             const y = rowY(pl.row);
             App.floatAt(stage.getBoundingClientRect().left + (pl.x + .5) * cell, stage.getBoundingClientRect().top + y, '⭐');
           }
-          if (greenFlag && time - lastPraise > 12) { lastPraise = time; say(`Brava ${App.NAME}! Col verde si passa!`); }
+          if (greenFlag && row(pl.row - 1).t === 'road') {
+            greens++;
+            greenPill.textContent = `🚦 ${greens}`;
+            sign('✅');
+            sfx.ding();
+            if (greens % GREEN_REWARD === 0) celebrate();
+            else say(pick(GREEN_SAYS));
+          }
           greenFlag = false;
         } else if (R.t === 'road') {
-          if (R.light && carsStopped(R) && row(pl.row - 1).t === 'grass') greenFlag = true;
+          if (R.light && row(pl.row - 1).t === 'grass') greenFlag = carsStopped(R);
         } else if (R.t === 'river') {
           const lg = R.logs.find(l => pl.x + .5 > l.x && pl.x + .5 < l.x + l.len);
           if (lg) pl.log = lg; else die('splash');
@@ -158,7 +191,7 @@
         if (kind === 'splash') { sfx.splash(); say('Splash! Salta sui tronchi!'); }
         else {
           sfx.puff();
-          say(R.light && lightState(R.light) === 'red' ? 'Ops! Col rosso si aspetta. Aspetta il verde!' : pick(['Ops! Attenta alle macchine!', 'Ops! Guarda bene prima di saltare!']));
+          say(R.light && lightState(R.light) === 'red' ? 'Ops! Il semaforo è diventato rosso: attraversa quando è appena verde!' : pick(DIE_SAYS));
         }
       }
 
@@ -321,7 +354,29 @@
       };
       window.addEventListener('keydown', onKey);
 
-      say(`Tocca per saltare avanti e striscia il dito per andare di lato. Quando il semaforo è verde, le macchine si fermano!`);
+      /* tutorial: col semaforo "forzato" per mostrare rosso e verde */
+      const visibleRow = test => {
+        for (let i = pl.row; i < pl.row + Math.ceil(H / cell) - 3; i++) if (test(row(i))) return i;
+        return -1;
+      };
+      function tutSteps() {
+        const li = visibleRow(R => R.post);
+        const ri = visibleRow(R => R.t === 'river');
+        const lightPt = () => ({ x: cell * .5, y: rowY(li) + cell * .15 });
+        const steps = [
+          { text: TUT_TEXT[0], icon: '👆', action: 'tap', at: { x: W / 2, y: H * .62 }, cap: 'top' },
+          { text: TUT_TEXT[1], icon: '👉', action: 'swipe', at: { x: W * .25, y: H * .62 }, to: { x: W * .75, y: H * .62 }, cap: 'top' },
+        ];
+        if (li >= 0) {
+          steps.push({ text: TUT_TEXT[2], icon: '🔴', action: 'tap', at: lightPt, cap: 'top', before: () => { forceLight = 'red'; } });
+          steps.push({ text: TUT_TEXT[3], icon: '🟢', action: 'tap', at: lightPt, cap: 'top', before: () => { forceLight = 'green'; } });
+        }
+        if (ri >= 0) steps.push({ text: TUT_TEXT[4], icon: '🪵', action: 'tap', at: () => ({ x: W / 2, y: rowY(ri) + cell / 2 }), cap: 'top' });
+        return steps;
+      }
+      const runTut = p => p.then(() => { forceLight = null; });
+      setHelp(() => runTut(App.tutorial(tutSteps())));
+      runTut(App.intro('salta', tutSteps())).then(ran => { if (!ran && alive) say(INTRO); });
 
       return () => {
         alive = false;

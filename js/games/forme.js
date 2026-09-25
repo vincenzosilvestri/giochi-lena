@@ -27,6 +27,8 @@
   const LEVELS = [null, { n: 3, color: false }, { n: 4, color: false }, { n: 4, color: true }, { n: 5, color: true }];
   const PATTERNS = [null, ['AB'], ['AB', 'AAB'], ['AB', 'AAB', 'ABC', 'ABB'], ['AAB', 'ABC', 'ABB', 'AABB']];
   const ROUND = 3;
+  const TUT = ['Trascina la forma nel posto uguale!', 'Attenta: anche il colore deve essere uguale!',
+    'Guarda la fila: le forme si ripetono.', 'Tocca quella che viene dopo!'];
 
   const name = it => `${it.shape[0].toUpperCase()}${it.shape.slice(1)} ${SHAPES[it.shape].f ? it.color.f : it.color.m}`;
   function svg(shape, fill, stroke = 'none', dash = '') {
@@ -35,8 +37,22 @@
 
   App.registerGame({
     id: 'forme', title: 'Forme e Colori', short: 'Forme', icon: '🔷',
-    start({ stage, addPill }) {
+    phrases: () => {
+      const out = [...TUT, 'Metti ogni forma al suo posto. Attenta ai colori!', 'Trascina ogni forma nel suo posto!',
+        'Guarda il colore!', 'Non entra! Prova un altro posto.', 'Cosa viene dopo?', 'Guarda bene la fila! Riprova.'];
+      Object.keys(SHAPES).forEach(shape => COLORS.forEach(color => out.push(name({ shape, color }))));
+      return out;
+    },
+    start({ stage, addPill, setHelp }) {
       let alive = true;
+      let lastQ = '';
+      let lastSteps = [];
+      function ask(text, tutId, steps) {
+        lastQ = text;
+        lastSteps = steps;
+        App.intro(tutId, steps).then(() => alive && say(text));
+      }
+      setHelp(() => App.tutorial(lastSteps).then(() => alive && say(lastQ)));
       let lv = App.level('forme');
       let done = 0;
       const pill = addPill(`⭐ 0/${ROUND}`);
@@ -94,6 +110,7 @@
         const perRow = items.length > 3 ? Math.ceil(items.length / 2) : items.length;
         const rowsN = Math.ceil(items.length / perRow);
         let left = items.length;
+        const pieces = [];
 
         shuffle(items).forEach((it, i) => {
           const row = Math.floor(i / perRow), col = i % perRow;
@@ -102,6 +119,7 @@
           const hy = tray.top - S.top + (tray.height / rowsN) * (row + .5) - 45;
           const p = h('div', { class: 'piece', style: `left:${hx}px;top:${hy}px`, html: svg(it.shape, it.color.c, '#fff', '') });
           stage.append(p);
+          pieces.push({ el: p, it });
           let ox = 0, oy = 0, dragging = false;
           p.addEventListener('pointerdown', e => {
             if (p.dataset.done) return;
@@ -159,7 +177,12 @@
           p.addEventListener('pointerup', drop);
           p.addEventListener('pointercancel', drop);
         });
-        say(L.color ? 'Metti ogni forma al suo posto. Attenta ai colori!' : 'Trascina ogni forma nel suo posto!');
+        const firstPiece = () => pieces.find(p => !p.el.dataset.done);
+        const holeFor = () => { const fp = firstPiece(); return fp && holes.find(ho => ho.it === fp.it).el; };
+        const steps = [{ text: TUT[0], icon: '✋', action: 'drag', at: () => (firstPiece() || {}).el, to: holeFor, cap: 'top' }];
+        if (L.color) steps.push({ text: TUT[1], icon: '🎨', action: 'tap', at: holeFor, cap: 'top' });
+        ask(L.color ? 'Metti ogni forma al suo posto. Attenta ai colori!' : 'Trascina ogni forma nel suo posto!',
+          L.color ? 'forme-colori' : 'forme', steps);
       }
 
       /* --- sequenze --- */
@@ -199,7 +222,10 @@
           choices.append(b);
         });
         stage.append(h('div', { class: 'prompt' }, 'Cosa viene dopo? 🤔'), row, choices);
-        say('Cosa viene dopo?');
+        ask('Cosa viene dopo?', 'sequenze', [
+          { text: TUT[2], icon: '👀', action: 'swipe', at: () => row.firstElementChild, to: () => row.querySelector('.q') },
+          { text: TUT[3], icon: '❓', action: 'tap', at: () => choices.children[1], cap: 'top' },
+        ]);
       }
 
       requestAnimationFrame(next);

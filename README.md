@@ -31,3 +31,16 @@ Dopo ogni modifica cambia `VERSION` in `sw.js` (es. `lena-v2`). Poi fai commit e
 
 ## Provare in locale
 `python -m http.server 8765`, poi apri http://localhost:8765
+
+## Voce
+Le frasi fisse sono file audio in `voice/`, generati con una voce neurale italiana (it-IT-IsabellaNeural). Le frasi che non sono nel catalogo, come i nomi delle foto, usano la voce del telefono.
+
+Se aggiungi o cambi una frase nel codice (ricordati di inserirla anche in `phrases()` del gioco):
+```
+node tools/build-catalog.mjs
+python tools/gen_voice.py        # richiede: pip install edge-tts
+```
+Se cambi voce, rigenera tutto con `--force` e aggiorna `VOICE_CACHE` in `sw.js`.
+
+## Tutorial
+La prima volta che si apre la Home e ogni gioco parte un tutorial con la manina animata. Il tasto ❓ lo fa rivedere.

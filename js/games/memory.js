@@ -10,13 +10,21 @@
   ];
   const PAIRS = [3, 3, 4, 6, 8];
   const COLS = { 3: 2, 4: 2, 6: 3, 8: 4 };
+  const TUT = ['Tocca una carta per girarla.', 'Poi cerca quella uguale: se sono uguali restano girate!',
+    'Gira le carte e trova le coppie uguali!'];
 
   App.registerGame({
     id: 'memory', title: 'Memory degli Animali', short: 'Memory', icon: '🃏',
-    start({ stage, addPill }) {
+    phrases: () => [...TUT, 'Vuoi giocare con gli animali o con la famiglia?', ...ANIMALS.map(a => `${a.n}! ${a.v}`)],
+    start({ stage, addPill, setHelp }) {
       let alive = true;
       let lv = App.level('memory');
       let deck = 'animali';
+      const steps = [
+        { text: TUT[0], icon: '👆', action: 'tap', at: () => grid.children[0] },
+        { text: TUT[1], icon: '🃏', action: 'tap', at: () => grid.children[grid.children.length - 1] },
+      ];
+      setHelp(() => App.tutorial(steps));
       const pill = addPill('');
       const grid = h('div', { class: 'mem-grid' });
 
@@ -98,7 +106,9 @@
           };
           grid.append(c);
         });
-        if (lv === 1 && deck === 'animali') say('Gira le carte e trova le coppie uguali!', { queue: true });
+        App.intro('memory', steps).then(ran => {
+          if (!ran && alive && lv === 1 && deck === 'animali') say(TUT[2], { queue: true });
+        });
       }
 
       requestAnimationFrame(chooseDeck);

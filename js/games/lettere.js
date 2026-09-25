@@ -23,6 +23,8 @@
   ];
   const FISH_COLORS = ['#ff7eb6', '#ffb341', '#7bd96b', '#b28dff', '#ff6b6b', '#4fd1c5', '#f6c945'];
   const ROUND = 6;
+  const TUT = ['Ascolta la lettera: la vedi anche qui in alto.', 'Poi tocca il pesce con la lettera giusta!',
+    'Scriviamo un nome! Le lettere vanno qui, in ordine.', 'Pesca le lettere una alla volta!'];
   const norm = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase().replace(/[^A-Z]/g, '');
 
   function familyWords() {
@@ -38,8 +40,27 @@
 
   App.registerGame({
     id: 'lettere', title: 'Pesca le Lettere', short: 'Lettere', icon: '🎣', cls: 'sea',
-    start({ stage, addPill }) {
+    phrases: () => {
+      const out = [...TUT];
+      Object.entries(WORDS).forEach(([L, list]) => list.forEach(([w]) => out.push(`Pesca la ${LETTER_NAME[L]} di ${w}!`)));
+      Object.values(LETTER_NAME).forEach(n => out.push(`Io sono la ${n}!`, `Prima la ${n}!`, `Ora la ${n}!`, `Ancora la ${n}!`));
+      [App.NAME, 'Papà'].forEach(shown => {
+        const word = norm(shown);
+        out.push(`Adesso scriviamo ${shown}! Pesca la ${LETTER_NAME[word[0]]}!`,
+          `${[...word].map(L => LETTER_NAME[L]).join(', ')}. ${shown}! Hai scritto ${shown}!`);
+      });
+      return out;
+    },
+    start({ stage, addPill, setHelp }) {
       let alive = true;
+      let lastQ = '';
+      let lastSteps = [];
+      function ask(text, tutId, steps) {
+        lastQ = text;
+        lastSteps = steps;
+        App.intro(tutId, steps).then(() => alive && say(text));
+      }
+      setHelp(() => App.tutorial(lastSteps).then(() => alive && say(lastQ)));
       let lv = App.level('lettere');
       let good = 0;
       let fish = [];
@@ -90,6 +111,7 @@
           const yy = f.y + Math.sin(f.t * 2) * 8;
           f.el.style.transform = `translate(${f.x}px, ${yy}px)`;
           f.el.firstElementChild.style.transform = f.dir < 0 ? 'scaleX(-1)' : '';
+          f.el.lastElementChild.style.marginLeft = f.dir < 0 ? '-12px' : '12px';
         }
         raf = requestAnimationFrame(loop);
       }
@@ -119,7 +141,10 @@
         prompt.innerHTML = '';
         prompt.append(h('span', { class: 'pic' }, pic), h('span', { class: 'word', html: `<b>${word[0]}</b>${word.slice(1)}` }));
         spawn(letters);
-        say(`Pesca la ${LETTER_NAME[T]} di ${word}!`);
+        ask(`Pesca la ${LETTER_NAME[T]} di ${word}!`, 'lettere', [
+          { text: TUT[0], icon: '👂', action: 'tap', at: () => prompt },
+          { text: TUT[1], icon: '🐟', action: 'tap', at: () => (fish.find(f => f.L === T && !f.caught) || {}).el },
+        ]);
 
         onCatch = async f => {
           if (f.caught) return;
@@ -155,7 +180,10 @@
         const uniq = [...new Set(word)];
         const extra = shuffle(Object.keys(WORDS).filter(x => !uniq.includes(x))).slice(0, 2);
         spawn(shuffle(uniq.concat(extra)));
-        say(`Adesso scriviamo ${shown}! Pesca la ${LETTER_NAME[word[0]]}!`);
+        ask(`Adesso scriviamo ${shown}! Pesca la ${LETTER_NAME[word[0]]}!`, 'compose', [
+          { text: TUT[2], icon: '✏️', action: 'tap', at: () => slots },
+          { text: TUT[3], icon: '🐟', action: 'tap', at: () => (fish.find(f => f.L === word[idx]) || {}).el },
+        ]);
 
         onCatch = async f => {
           if (f.caught) return;

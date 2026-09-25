@@ -62,7 +62,7 @@ const App = (() => {
   /* ---------- stato ---------- */
   const defaults = () => ({
     char: null, color: '#ff6fa8', stickers: [], levels: {}, timerMin: 20, pin: null,
-    usage: { day: '', sec: 0, extra: 0, warned: false }, bdayShown: 0, hopBest: 0, diploma: false,
+    usage: { day: '', sec: 0, extra: 0, warned: false }, bdayShown: 0, hopBest: 0, diploma: false, tut: {},
   });
   function load() {
     try { state = Object.assign(defaults(), JSON.parse(localStorage.getItem(KEY) || '{}')); }
@@ -94,6 +94,7 @@ const App = (() => {
   function unlockAudio() {
     if (!ac) { try { ac = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { ac = null; } }
     if (ac && ac.state === 'suspended') ac.resume();
+    try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch (e) { /* non supportato */ }
   }
   function tone(freq, dur, type = 'sine', vol = .2, when = 0, slideTo = 0) {
     if (!ac) return;
@@ -144,33 +145,80 @@ const App = (() => {
     return t;
   }
 
-  /* ---------- voce ---------- */
+  /* ---------- voce ----------
+     Le frasi fisse sono file audio pre-generati (voice/<hash>.mp3, vedi tools/).
+     Quelle non in catalogo (es. nomi dalle foto) usano la sintesi vocale del telefono. */
   let voice = null;
   let clipAudio = null;
+  let clipSrc = null;
+  let gen = 0;
+  let chain = Promise.resolve();
+  const clips = { have: new Set(), buf: new Map() };
+  const vkey = t => t.toLowerCase().normalize('NFC').replace(/[^\p{L}\p{N} ]+/gu, ' ').replace(/\s+/g, ' ').trim();
+  function vhash(t) {
+    let x = 0x811c9dc5;
+    for (const ch of vkey(t)) { x ^= ch.codePointAt(0); x = Math.imul(x, 0x01000193) >>> 0; }
+    return x.toString(16).padStart(8, '0');
+  }
+  async function loadVoiceIndex() {
+    try { clips.have = new Set(await (await fetch('voice/index.json')).json()); } catch (e) { clips.have = new Set(); }
+  }
   function pickVoice() {
     if (!('speechSynthesis' in window)) return;
     const it = speechSynthesis.getVoices().filter(v => /^it/i.test(v.lang));
-    voice = it.find(v => /alice|federica|elsa|google/i.test(v.name)) || it[0] || null;
+    voice = it.find(v => /premium|enhanced|alice|federica|elsa|google/i.test(v.name)) || it[0] || null;
   }
   function stopVoice() {
+    gen++;
     if ('speechSynthesis' in window) speechSynthesis.cancel();
     if (clipAudio) { clipAudio.pause(); clipAudio = null; }
+    if (clipSrc) { try { clipSrc.stop(); } catch (e) { /* già fermo */ } clipSrc = null; }
   }
-  function say(text, opts = {}) {
-    if (!('speechSynthesis' in window)) return Promise.resolve();
-    if (!opts.queue) stopVoice();
+  async function playFile(hsh, my) {
+    let b = clips.buf.get(hsh);
+    if (!b) {
+      const data = await (await fetch(`voice/${hsh}.mp3`)).arrayBuffer();
+      b = await ac.decodeAudioData(data);
+      clips.buf.set(hsh, b);
+    }
+    if (my !== gen) return;
+    await new Promise(res => {
+      const s = ac.createBufferSource();
+      s.buffer = b;
+      s.connect(ac.destination);
+      s.onended = () => { if (clipSrc === s) clipSrc = null; res(); };
+      clipSrc = s;
+      s.start();
+    });
+  }
+  function speakTTS(text, opts, my) {
+    if (!('speechSynthesis' in window) || my !== gen) return Promise.resolve();
     return new Promise(res => {
       const u = new SpeechSynthesisUtterance(text);
       u.lang = 'it-IT';
       if (voice) u.voice = voice;
       u.rate = opts.rate || .95;
-      u.pitch = opts.pitch || 1.15;
+      u.pitch = 1.05;
       let done = false;
       const end = () => { if (!done) { done = true; res(); } };
       u.onend = end; u.onerror = end;
       setTimeout(end, 1500 + text.length * 110);
       speechSynthesis.speak(u);
     });
+  }
+  function say(text, opts = {}) {
+    if (!opts.queue) stopVoice();
+    const my = gen;
+    const run = async () => {
+      if (my !== gen) return;
+      const hsh = vhash(text);
+      if (ac && clips.have.has(hsh)) {
+        try { return await playFile(hsh, my); } catch (e) { /* file non disponibile: sintesi */ }
+      } else if (clips.have.size) console.warn('voce mancante:', text);
+      return speakTTS(text, opts, my);
+    };
+    chain = (opts.queue ? chain : Promise.resolve()).then(run, run);
+    return chain;
   }
   function playClip(slot) {
     const list = media.voices[slot] || [];
@@ -182,9 +230,9 @@ const App = (() => {
       clipAudio.play().catch(res);
     });
   }
-  function praise(extra) {
+  function praise() {
     if ((media.voices.bravo || []).length && Math.random() < .6) return playClip('bravo');
-    return say(pick(PRAISE) + (extra ? ' ' + extra : ''));
+    return say(pick(PRAISE));
   }
   const retry = () => say(pick(RETRY));
 
@@ -246,7 +294,7 @@ const App = (() => {
   /* ---------- schermate ---------- */
   function show(name, cls, render) {
     if (cleanup) { try { cleanup(); } catch (e) { console.error(e); } cleanup = null; }
-    document.querySelectorAll('.modal-back').forEach(m => m.remove());
+    document.querySelectorAll('.modal-back, .tut').forEach(m => m.remove());
     const app = document.getElementById('app');
     app.innerHTML = '';
     const scr = h('div', { class: 'screen ' + cls });
@@ -314,7 +362,11 @@ const App = (() => {
         onclick: () => { sfx.pop(); album(); },
       }, h('div', { class: 'ico' }, '📒'), h('div', { class: 'lbl' }, `Album di ${NAME}  ${state.stickers.length}/${STICKERS.length}`)));
       s.append(tiles);
-      return endPress;
+      const t = state.tut.home ? 0 : setTimeout(() => screenName === 'home' && intro('home', [
+        { text: 'Tocca un gioco per iniziare!', icon: '🎮', action: 'tap', at: () => tiles.children[0] },
+        { text: 'Qui trovi gli sticker che vinci giocando!', icon: '📒', action: 'tap', at: () => tiles.lastElementChild },
+      ]), 2600);
+      return () => { endPress(); clearTimeout(t); };
     });
   }
 
@@ -423,12 +475,15 @@ const App = (() => {
   function startGame(g) {
     show('game', 'game ' + (g.cls || ''), s => {
       const stage = h('div', { class: 'stage' });
+      let help = null;
       const hud = h('div', { class: 'hud' },
         h('button', { class: 'icon-btn', onclick: () => { stopVoice(); home(); } }, '🏠'),
+        h('button', { class: 'icon-btn', 'aria-label': 'Aiuto', onclick: () => help && help() }, '❓'),
         h('div', { class: 'spacer' }));
       s.append(stage, hud);
       const addPill = txt => { const p = h('div', { class: 'pill' }, txt); hud.append(p); return p; };
-      const stopGame = g.start({ stage, hud, screen: s, addPill });
+      const setHelp = fn => { help = fn; };
+      const stopGame = g.start({ stage, hud, screen: s, addPill, setHelp });
       return () => { stopVoice(); if (stopGame) stopGame(); };
     });
   }
@@ -709,14 +764,115 @@ const App = (() => {
     });
   }
 
+  /* ---------- tutorial con la manina ----------
+     steps: [{ text, icon, action: 'tap'|'swipe'|'drag', at, to, cap: 'top' }]
+     at/to: elemento, {x,y} o funzione che li restituisce (valutata al momento). */
+  function tutorial(steps) {
+    stopVoice();
+    document.querySelectorAll('.tut').forEach(t => t.remove());
+    const ov = h('div', { class: 'tut' });
+    const hand = h('div', { class: 'tut-hand' }, '👆');
+    const cap = h('div', { class: 'tut-cap' });
+    ov.append(cap, hand);
+    document.body.append(ov);
+    const pt = t => {
+      const v = typeof t === 'function' ? t() : t;
+      if (v && v.getBoundingClientRect) {
+        const r = v.getBoundingClientRect();
+        if (r.width) return { x: r.left + r.width / 2, y: r.top + r.height / 2, el: v };
+      } else if (v && 'x' in v) return v;
+      return { x: innerWidth / 2, y: innerHeight / 2 };
+    };
+    const T = (p, s = 1) => `translate(${p.x - 30}px, ${p.y - 8}px) scale(${s})`;
+    const ripple = p => {
+      const r = h('div', { class: 'tut-ripple', style: `left:${p.x}px;top:${p.y}px` });
+      ov.append(r);
+      setTimeout(() => r.remove(), 700);
+    };
+    async function act(s) {
+      const a = pt(s.at);
+      if (s.action === 'swipe' || s.action === 'drag') {
+        const b = pt(s.to);
+        let ghost = null;
+        if (s.action === 'drag' && a.el) {
+          const r = a.el.getBoundingClientRect();
+          ghost = a.el.cloneNode(true);
+          ghost.classList.add('tut-ghost');
+          ghost.style.cssText = `position:fixed;left:${r.left}px;top:${r.top}px;width:${r.width}px;height:${r.height}px;margin:0`;
+          ov.insertBefore(ghost, hand);
+        }
+        const dx = b.x - a.x, dy = b.y - a.y;
+        const opts = { duration: 1400, easing: 'ease-in-out' };
+        const an = hand.animate([{ transform: T(a, .9), opacity: 0 }, { transform: T(a, .9), opacity: 1, offset: .15 },
+          { transform: T(b, .9), opacity: 1, offset: .8 }, { transform: T(b, .9), opacity: 0 }], opts);
+        if (ghost) ghost.animate([{ transform: 'none' }, { transform: 'none', offset: .15 },
+          { transform: `translate(${dx}px, ${dy}px)`, offset: .8 }, { transform: `translate(${dx}px, ${dy}px)` }], opts);
+        await an.finished.catch(() => {});
+        if (ghost) ghost.remove();
+      } else {
+        hand.style.transform = T(a);
+        const an = hand.animate([{ transform: T(a, 1) }, { transform: T(a, .8), offset: .4 }, { transform: T(a, 1) }], { duration: 600 });
+        setTimeout(() => ripple(a), 240);
+        await an.finished.catch(() => {});
+        await wait(250);
+      }
+    }
+    return new Promise(async resolve => {
+      for (const s of steps) {
+        if (!ov.isConnected) return resolve();
+        if (s.before) s.before();
+        cap.innerHTML = '';
+        cap.append(h('span', { class: 'ico' }, s.icon || '👆'), h('span', {}, s.text));
+        cap.classList.toggle('top', s.cap === 'top');
+        const v = say(s.text);
+        for (let i = 0; i < (s.reps || 2) && ov.isConnected; i++) await act(s);
+        await v;
+        await wait(250);
+      }
+      if (!ov.isConnected) return resolve();
+      hand.style.display = 'none';
+      cap.innerHTML = '';
+      cap.classList.remove('top');
+      cap.append(h('span', { class: 'ico' }, '⭐'), h('span', {}, 'Adesso prova tu!'));
+      say('Adesso prova tu!');
+      ov.append(h('button', { class: 'big-btn tut-go', onclick: () => { sfx.pop(); ov.remove(); resolve(); } }, 'Ho capito! 👍'));
+    });
+  }
+  /* tutorial solo la prima volta; risolve subito se già visto */
+  async function intro(id, steps) {
+    if (state.tut[id]) return false;
+    await tutorial(steps);
+    state.tut[id] = true;
+    save();
+    return true;
+  }
+
+  /* ---------- catalogo frasi (per generare i file audio, vedi tools/) ---------- */
+  function phrases() {
+    const out = [...PRAISE, ...RETRY, `Ciao ${NAME}! Giochiamo?`, `Ciao ${NAME}! Scegli il tuo amico e il tuo colore preferito!`,
+      'Questo è per papà!', 'Questo lo vinci giocando!', 'Hai completato l\'album! Sei bravissima!',
+      'Evviva! Un nuovo sticker per il tuo album!', `Complimenti ${NAME}! Hai completato tutto l'album! Sei una Super ${NAME}!`,
+      'Adesso prova tu!', 'Tocca un gioco per iniziare!', 'Qui trovi gli sticker che vinci giocando!'];
+    CHARS.forEach(c => out.push(`${c.name}!`, `Evviva! Ciao ${c.name}!`, `Ancora un minuto e poi ${c.the} va a nanna!`,
+      `${c.the} è stanco e va a nanna. Ci vediamo domani, ${NAME}! Buonanotte!`));
+    COLORS.forEach(c => out.push(`${c.n}!`));
+    for (let n = 0; n < STICKERS.length; n++) out.push(`Hai ${n} sticker. Gioca per vincerne altri!`);
+    ['una', 'due', 'tre', 'quattro', 'cinque', 'sei', 'sette', 'otto', 'nove', 'dieci'].forEach(w => out.push(w));
+    for (let a = 1; a <= 10; a++) {
+      out.push(`Tanti auguri ${NAME}! Oggi hai ${a} anni!`,
+        `Buon compleanno ${NAME}! Oggi compi ${a} anni! Contiamo le candeline e soffiamole tutte!`);
+    }
+    games.forEach(g => { out.push(g.title); if (g.phrases) out.push(...g.phrases()); });
+    return out;
+  }
+
   /* ---------- avvio ---------- */
   async function boot() {
     load();
     applyTheme(state.color);
     if ('speechSynthesis' in window) { pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
     if ('serviceWorker' in navigator && location.protocol !== 'file:') navigator.serviceWorker.register('sw.js').catch(() => {});
-    await DB.open();
-    await reloadMedia();
+    await Promise.all([DB.open().then(reloadMedia), loadVoiceIndex()]);
     setInterval(tick, 1000);
     document.addEventListener('visibilitychange', () => { if (document.hidden) { stopVoice(); save(); } });
     document.addEventListener('gesturestart', e => e.preventDefault());
@@ -726,6 +882,7 @@ const App = (() => {
   return {
     NAME, CHARS, boot, h, say, stopVoice, sfx, praise, retry, reward, confetti, floatAt,
     rint, pick, shuffle, wait, level, setLevel, char, registerGame, home, media,
+    tutorial, intro, phrases, vhash,
     get state() { return state; }, save,
   };
 })();
