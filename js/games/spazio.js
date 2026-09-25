@@ -7,11 +7,12 @@
     { e: '🐱', it: 'il gatto', fr: 'le chat', de: 'die Katze', en: 'the cat', es: 'el gato' },
   ];
   /* it: the / a (preposizione articolata), fr: the / de, de: accusativo, es: de */
+  /* surf = altezza (in frazione dell'immagine) del piano su cui si appoggia: sedile, materasso */
   const REF = [
-    { id: 'sedia', e: '🪑', pos: ['on', 'under', 'next'], it: ['la sedia', 'alla sedia'], fr: ['la chaise', 'de la chaise'], de: 'den Stuhl', en: 'the chair', es: 'de la silla' },
-    { id: 'letto', e: '🛏️', pos: ['on', 'under', 'next'], it: ['il letto', 'al letto'], fr: ['le lit', 'du lit'], de: 'das Bett', en: 'the bed', es: 'de la cama' },
-    { id: 'scatola', e: '📦', pos: ['in', 'on', 'next'], box: true, it: ['la scatola', 'alla scatola'], fr: ['la boîte', 'de la boîte'], de: 'die Kiste', en: 'the box', es: 'de la caja' },
-    { id: 'cestino', e: '🧺', pos: ['in', 'next'], box: true, it: ['il cestino', 'al cestino'], fr: ['le panier', 'du panier'], de: 'den Korb', en: 'the basket', es: 'del cesto' },
+    { id: 'sedia', e: '🪑', surf: .52, pos: ['on', 'under', 'next'], it: ['la sedia', 'alla sedia'], fr: ['la chaise', 'de la chaise'], de: 'den Stuhl', en: 'the chair', es: 'de la silla' },
+    { id: 'letto', e: '🛏️', surf: .5, pos: ['on', 'under', 'next'], it: ['il letto', 'al letto'], fr: ['le lit', 'du lit'], de: 'das Bett', en: 'the bed', es: 'de la cama' },
+    { id: 'scatola', e: '📦', surf: .2, pos: ['in', 'on', 'next'], box: true, it: ['la scatola', 'alla scatola'], fr: ['la boîte', 'de la boîte'], de: 'die Kiste', en: 'the box', es: 'de la caja' },
+    { id: 'cestino', e: '🧺', surf: .25, pos: ['in', 'next'], box: true, it: ['il cestino', 'al cestino'], fr: ['le panier', 'du panier'], de: 'den Korb', en: 'the basket', es: 'del cesto' },
   ];
   const PUT = {
     it: (o, r, p) => `Metti ${o.it} ${{ on: 'sopra ' + r.it[0], under: 'sotto ' + r.it[0], in: 'dentro ' + r.it[0], next: 'accanto ' + r.it[1] }[p]}!`,
@@ -25,7 +26,7 @@
       tut: ['Ascolta dove mettere il giocattolo…', 'Trascinalo con il dito nel posto giusto!'] },
     fr: { pos: { on: 'Dessus !', under: 'Dessous !', in: 'Dedans !', next: 'À côté !' }, no: 'Pas tout à fait ! Écoute encore.',
       tut: ['Écoute où mettre le jouet…', 'Fais-le glisser avec ton doigt à la bonne place !'] },
-    de: { pos: { on: 'Oben drauf!', under: 'Darunter!', in: 'Drinnen!', next: 'Daneben!' }, no: 'Nicht ganz! Hör nochmal zu.',
+    de: { pos: { on: 'Obendrauf!', under: 'Darunter!', in: 'Hinein!', next: 'Daneben!' }, no: 'Nicht ganz! Hör nochmal zu.',
       tut: ['Hör zu, wohin das Spielzeug soll…', 'Zieh es mit dem Finger an die richtige Stelle!'] },
     en: { pos: { on: 'On top!', under: 'Under!', in: 'Inside!', next: 'Next to it!' }, no: 'Not quite! Listen again.',
       tut: ['Listen to where the toy goes…', 'Drag it with your finger to the right place!'] },
@@ -60,7 +61,7 @@
         const l = App.nextLang(), T = TX[l];
         const allowed = LEVEL_POS[Math.min(lv, 3)];
         const choices = [];
-        REF.forEach(r => r.pos.forEach(p => { if (allowed.includes(p)) choices.push([r, p]); }));
+        REF.filter(r => lv > 1 || r.id === 'sedia').forEach(r => r.pos.forEach(p => { if (allowed.includes(p)) choices.push([r, p]); }));
         const [ref, pos] = pick(choices);
         const obj = pick(OBJ);
         const q = PUT[l](obj, ref, pos);
@@ -69,60 +70,64 @@
         const toy = h('div', { class: 'sp-toy' }, obj.e);
         const promptEl = h('button', { class: 'prompt sp-prompt', onclick: () => { sfx.tap(); say(q, { lang: l }); } }, '🔊 ', h('span', {}, obj.e), ' ➜ ', h('span', {}, ref.e));
         stage.append(promptEl, refEl, toy);
-        const S = stage.getBoundingClientRect();
-        const home0 = { x: S.width * .16, y: S.height * .8 };
+        let S = stage.getBoundingClientRect();
+        const homeAt = () => { S = stage.getBoundingClientRect(); return { x: S.width * .16, y: S.height * .8 }; };
         const placeToy = (x, y) => { toy.style.left = `${x}px`; toy.style.top = `${y}px`; };
-        placeToy(home0.x, home0.y);
+        const goHome = () => { const hp = homeAt(); placeToy(hp.x, hp.y); };
+        goHome();
 
         /* dove si trova il giocattolo rispetto all'oggetto */
         function where() {
           const R = refEl.getBoundingClientRect(), t = toy.getBoundingClientRect();
           const w = R.width, hh = R.height;
-          const L = R.left + w * .12, Rr = R.right - w * .12, Top = R.top + hh * .12, Bot = R.bottom - hh * .05;
+          const L = R.left + w * .15, Rr = R.right - w * .15, Top = R.top, Bot = R.bottom;
+          const surfY = Top + hh * ref.surf;
           const cx = t.left + t.width / 2, cy = t.top + t.height / 2;
           const inX = cx > L && cx < Rr;
-          if (ref.box && inX && cy > Top + (Bot - Top) * .25 && cy < Bot) return 'in';
-          if (inX && cy <= Top + (Bot - Top) * (ref.box ? .25 : .4) && cy > Top - hh * .9) return 'on';
-          if (!ref.box && inX && cy > Top + (Bot - Top) * .4 && cy < Bot + t.height * .6) return 'under';
-          if (!inX && Math.abs(cx - (L + Rr) / 2) < w * 1.25 && cy > Top - t.height * .3 && cy < Bot + t.height * .6) return 'next';
+          if (ref.box && inX && cy > surfY && cy < Bot + t.height * .2) return 'in';
+          if (inX && cy <= surfY + hh * .08 && cy > Top - hh * .9) return 'on';
+          if (!ref.box && inX && cy > surfY + hh * .08 && cy < Bot + t.height * .7) return 'under';
+          if (!inX && Math.abs(cx - (L + Rr) / 2) < w * 1.3 && cy > surfY - t.height * .3 && cy < Bot + t.height * .7) return 'next';
           return null;
         }
         function snap(p) {
           const R = refEl.getBoundingClientRect(), t = toy.getBoundingClientRect();
           const cx = R.left + R.width / 2 - S.left, tw = t.width, th = t.height;
           const spots = {
-            on: [cx - tw / 2, R.top - S.top + R.height * (ref.box ? .08 : .22) - th * .75],
-            under: [cx - tw / 2, R.bottom - S.top - th * .95],
-            in: [cx - tw / 2, R.top - S.top + R.height * .3],
+            on: [cx - tw / 2, R.top - S.top + R.height * ref.surf - th * .85],
+            under: [cx - tw / 2, R.bottom - S.top - th * .8],
+            in: [cx - tw / 2, R.top - S.top + R.height * ref.surf - th * .45],
             next: [R.right - S.left + 4, R.bottom - S.top - th],
           };
           toy.classList.add('back');
-          toy.classList.toggle('behind', p === 'under' || p === 'in');
+          toy.classList.toggle('behind', p === 'in');
+          toy.classList.toggle('small', p === 'under');
           placeToy(...spots[p]);
         }
 
-        let ox = 0, oy = 0, dragging = false, first = true, done = false;
+        let ox = 0, oy = 0, dragging = false, first = true, done = false, pid = null;
         toy.addEventListener('pointerdown', e => {
-          if (done) return;
+          if (done || dragging) return;
+          pid = e.pointerId;
           e.preventDefault();
-          toy.setPointerCapture(e.pointerId);
+          try { toy.setPointerCapture(e.pointerId); } catch (err) { /* dito non più attivo */ }
           const r = toy.getBoundingClientRect();
           ox = e.clientX - r.left; oy = e.clientY - r.top;
           dragging = true;
-          toy.classList.remove('back', 'behind');
+          toy.classList.remove('back', 'behind', 'small');
           toy.classList.add('drag');
           sfx.tap();
         });
         toy.addEventListener('pointermove', e => {
-          if (!dragging) return;
+          if (!dragging || e.pointerId !== pid) return;
           placeToy(e.clientX - S.left - ox, e.clientY - S.top - oy);
         });
-        const drop = async () => {
-          if (!dragging) return;
+        const drop = async e => {
+          if (!dragging || (e && e.pointerId !== pid)) return;
           dragging = false;
           toy.classList.remove('drag');
           const w = where();
-          if (!w) { toy.classList.add('back'); placeToy(home0.x, home0.y); return; }
+          if (!w) { toy.classList.add('back'); goHome(); return; }
           if (first) { App.track('spazio', null, w === pos); first = false; }
           if (w === pos) {
             done = true;
@@ -147,9 +152,8 @@
             round();
           } else {
             sfx.boing();
-            toy.classList.add('back');
-            placeToy(home0.x, home0.y);
-            say(T.no, { lang: l }).then(() => alive && say(q, { lang: l, queue: true }));
+            say(T.pos[w], { lang: l }).then(() => alive && say(T.no, { lang: l, queue: true })).then(() => alive && say(q, { lang: l, queue: true }));
+            setTimeout(() => { if (!alive || done) return; toy.classList.add('back'); goHome(); }, 900);
           }
         };
         toy.addEventListener('pointerup', drop);

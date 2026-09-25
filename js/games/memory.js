@@ -8,16 +8,16 @@
     { e: '🐑', it: ['Pecora', 'Beee!'], fr: ['Mouton', 'Bêê !'], de: ['Schaf', 'Mäh!'], en: ['Sheep', 'Baa!'], es: ['Oveja', '¡Bee!'] },
     { e: '🐷', it: ['Maiale', 'Oink oink!'], fr: ['Cochon', 'Groin groin !'], de: ['Schwein', 'Oink oink!'], en: ['Pig', 'Oink oink!'], es: ['Cerdo', '¡Oinc oinc!'] },
     { e: '🦆', it: ['Anatra', 'Qua qua!'], fr: ['Canard', 'Coin coin !'], de: ['Ente', 'Quak quak!'], en: ['Duck', 'Quack quack!'], es: ['Pato', '¡Cuac cuac!'] },
-    { e: '🐓', it: ['Gallo', 'Chicchirichì!'], fr: ['Coq', 'Cocorico !'], de: ['Hahn', 'Kikeriki!'], en: ['Rooster', 'Cock-a-doodle-doo!'], es: ['Gallo', '¡Quiquiriquí!'] },
+    { e: '🐓', it: ['Gallo', 'Chicchirichì!'], fr: ['Coq', 'Cocorico !'], de: ['Hahn', 'Kikeriki!'], en: ['Cockerel', 'Cock-a-doodle-doo!'], es: ['Gallo', '¡Quiquiriquí!'] },
     { e: '🦁', it: ['Leone', 'Roaar!'], fr: ['Lion', 'Roaar !'], de: ['Löwe', 'Roaar!'], en: ['Lion', 'Roar!'], es: ['León', '¡Grrr!'] },
-    { e: '🐴', it: ['Cavallo', 'Iiiiih!'], fr: ['Cheval', 'Hiii !'], de: ['Pferd', 'Wiehern!'], en: ['Horse', 'Neigh!'], es: ['Caballo', '¡Iiih!'] },
+    { e: '🐴', it: ['Cavallo', 'Iiiiih!'], fr: ['Cheval', 'Hiii !'], de: ['Pferd', 'Hüüü!'], en: ['Horse', 'Neigh!'], es: ['Caballo', '¡Iiih!'] },
     { e: '🐸', it: ['Rana', 'Cra cra!'], fr: ['Grenouille', 'Croâ croâ !'], de: ['Frosch', 'Quak!'], en: ['Frog', 'Ribbit!'], es: ['Rana', '¡Croac!'] },
     { e: '🐝', it: ['Ape', 'Bzzz!'], fr: ['Abeille', 'Bzzz !'], de: ['Biene', 'Summ summ!'], en: ['Bee', 'Buzz!'], es: ['Abeja', '¡Bzzz!'] },
     { e: '🦉', it: ['Gufo', 'Uh uh!'], fr: ['Hibou', 'Hou hou !'], de: ['Eule', 'Huhu!'], en: ['Owl', 'Hoo hoo!'], es: ['Búho', '¡Uh uh!'] },
     { e: '🐘', it: ['Elefante', 'Pruuu!'], fr: ['Éléphant', 'Pouuu !'], de: ['Elefant', 'Törööö!'], en: ['Elephant', 'Toot!'], es: ['Elefante', '¡Pruuu!'] },
     { e: '🐭', it: ['Topo', 'Squit squit!'], fr: ['Souris', 'Couic couic !'], de: ['Maus', 'Piep piep!'], en: ['Mouse', 'Squeak squeak!'], es: ['Ratón', '¡Iic iic!'] },
   ];
-  const PAIRS = [3, 3, 4, 6, 8];
+  const PAIRS = [3, 3, 4, 5, 6];
   const COLS = { 3: 2, 4: 2, 6: 3, 8: 4 };
   const TX = {
     it: { tut: ['Tocca una carta per girarla.', 'Poi cerca quella uguale: se sono uguali restano girate!', 'Gira le carte e trova le coppie uguali!'],
@@ -35,7 +35,7 @@
   const speakOf = (a, l) => `${App.excl(a[l][0], l)} ${a[l][1]}`;
 
   App.registerGame({
-    id: 'memory', title: { fr: 'Memory des animaux', it: 'Memory degli Animali', de: 'Tier-Memory', en: 'Animal memory', es: 'Memoria de animales' }, short: 'Memory', icon: '🃏',
+    id: 'memory', title: { fr: 'Memory des animaux', it: 'Memory degli animali', de: 'Tier-Memory', en: 'Animal memory', es: 'Memoria de animales' }, short: 'Memory', icon: '🃏',
     phrases: l => [...TX[l].tut, TX[l].which, ...ANIMALS.map(a => speakOf(a, l))],
     start({ stage, addPill, setHelp }) {
       let alive = true;
@@ -78,11 +78,15 @@
           items = shuffle(ANIMALS).slice(0, pairs).map(a => ({ key: a.e, e: a.e, n: a[l][0], speak: speakOf(a, l) }));
         }
         const cards = shuffle(items.concat(items));
-        const cols = COLS[pairs] || 2;
-        const rows = Math.ceil(cards.length / cols);
+        /* colonne scelte per avere le carte più grandi possibili (vale anche con 5 o 7 foto) */
         const r = grid.getBoundingClientRect();
         const gap = 10;
-        const s = Math.floor(Math.min((r.width - gap * (cols - 1)) / cols, (r.height - gap * (rows - 1)) / rows));
+        let cols = 2, s = 0;
+        for (let c = 2; c <= 5; c++) {
+          const rw = Math.ceil(cards.length / c);
+          const size = Math.floor(Math.min((r.width - gap * (c - 1)) / c, (r.height - gap * (rw - 1)) / rw));
+          if (size > s) { s = size; cols = c; }
+        }
         grid.style.gridTemplateColumns = `repeat(${cols}, ${s}px)`;
         grid.style.gridAutoRows = `${s}px`;
 
@@ -127,7 +131,9 @@
               }
             } else {
               App.track('memoria', null, false);
-              await wait(1200);
+              await wait(700);
+              sfx.boing();
+              await wait(900);
               a.c.classList.remove('up'); b.c.classList.remove('up');
               busy = false;
             }

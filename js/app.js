@@ -4,7 +4,7 @@ const App = (() => {
   const NAME = 'Lena';
   const BIRTH = { y: 2022, m: 0, d: 18 }; // 18 gennaio 2022
   const KEY = 'lena_v1';
-  const VERSION = '17 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
+  const VERSION = '18 · 26/09/2026'; // aggiornare insieme a VERSION in sw.js
   /* lingue disponibili; il genitore sceglie le 2 del bambino (state.langs) */
   const LANGS = ['fr', 'it', 'de', 'en', 'es'];
   const FLAG = { fr: '🇫🇷', it: '🇮🇹', de: '🇩🇪', en: '🇬🇧', es: '🇪🇸' };
@@ -126,9 +126,9 @@ const App = (() => {
     gift: { fr: 'Un cadeau ! 🎁', it: 'Un regalo! 🎁', de: 'Ein Geschenk! 🎁', en: 'A present! 🎁', es: '¡Un regalo! 🎁' },
     wardrobe: { fr: `L'armoire de ${NAME}`, it: `L'armadio di ${NAME}`, de: `${NAME}s Kleiderschrank`, en: `${NAME}'s wardrobe`, es: `El armario de ${NAME}` },
     wardrobeTile: { fr: 'Armoire', it: 'Armadio', de: 'Kleiderschrank', en: 'Wardrobe', es: 'Armario' },
-    wardrobeSay: { fr: 'Choisis des habits pour ton ami !', it: 'Scegli i vestiti per il tuo amico!', de: 'Such Kleider für deinen Freund aus!', en: 'Choose clothes for your friend!', es: '¡Elige ropa para tu amigo!' },
-    buyQ: { fr: "Tu veux l'acheter ?", it: 'Lo vuoi comprare?', de: 'Möchtest du es kaufen?', en: 'Do you want to buy it?', es: '¿Lo quieres comprar?' },
-    bought: { fr: "Youpi ! C'est à toi !", it: 'Evviva! È tuo!', de: 'Juhu! Es gehört dir!', en: "Hooray! It's yours!", es: '¡Bien! ¡Es tuyo!' },
+    wardrobeSay: { fr: 'Choisis des habits pour ton ami !', it: 'Scegli i vestiti per il tuo amico!', de: 'Such dir Kleider für deinen Freund aus!', en: 'Choose clothes for your friend!', es: '¡Elige ropa para tu amigo!' },
+    buyQ: { fr: 'Tu veux acheter ça ?', it: 'Vuoi comprare questo?', de: 'Möchtest du das kaufen?', en: 'Do you want to buy this?', es: '¿Quieres comprar esto?' },
+    bought: { fr: "Youpi ! C'est pour toi !", it: 'Evviva! Adesso è per te!', de: 'Juhu! Das gehört jetzt dir!', en: "Hooray! It's yours now!", es: '¡Bien! ¡Ahora es para ti!' },
     missing: {
       fr: n => (n === 1 ? 'Il te manque une étoile ! Joue pour en gagner.' : `Il te manque ${n} étoiles ! Joue pour en gagner.`),
       it: n => (n === 1 ? 'Ti manca una stella! Gioca per vincerla.' : `Ti mancano ${n} stelle! Gioca per vincerle.`),
@@ -136,7 +136,7 @@ const App = (() => {
       en: n => (n === 1 ? 'You need one more star! Play to win it.' : `You need ${n} more stars! Play to win them.`),
       es: n => (n === 1 ? '¡Te falta una estrella! Juega para ganarla.' : `¡Te faltan ${n} estrellas! Juega para ganarlas.`),
     },
-    storyNext: { fr: 'Suite ▶', it: 'Avanti ▶', de: 'Weiter ▶', en: 'Next ▶', es: 'Seguir ▶' },
+    storyNext: { fr: 'Suite ▶', it: 'Avanti ▶', de: 'Weiter ▶', en: 'Next ▶', es: 'Siguiente ▶' },
     breakTxt: {
       fr: "Pause ! Tu as beaucoup joué : bouge un peu et bois un verre d'eau.", it: "Pausa! Hai giocato tanto: muoviti un po' e bevi un bicchiere d'acqua.",
       de: 'Pause! Du hast viel gespielt: Beweg dich ein bisschen und trink ein Glas Wasser.', en: "Break time! You've played a lot: move around a bit and have a glass of water.",
@@ -171,12 +171,12 @@ const App = (() => {
     [
       { s: '🌊 🐟', fr: 'Au fond de la mer vivait un petit poisson qui avait peur du noir.', it: 'In fondo al mare viveva un pesciolino che aveva paura del buio.', de: 'Tief im Meer lebte ein kleiner Fisch, der Angst im Dunkeln hatte.', en: 'Deep in the sea lived a little fish who was afraid of the dark.', es: 'En el fondo del mar vivía un pececito que tenía miedo de la oscuridad.' },
       { s: '🐟 🌑', fr: 'Chaque soir, il se cachait derrière un gros rocher.', it: 'Ogni sera si nascondeva dietro a un grande scoglio.', de: 'Jeden Abend versteckte er sich hinter einem großen Felsen.', en: 'Every evening he hid behind a big rock.', es: 'Cada noche se escondía detrás de una gran roca.' },
-      { s: '🐙 💡', fr: 'Un soir, une gentille pieuvre est arrivée avec une lanterne.', it: 'Una sera è arrivata una polpessa gentile con una lanterna.', de: 'Eines Abends kam ein netter Tintenfisch mit einer Laterne.', en: 'One evening, a kind octopus came with a lantern.', es: 'Una noche llegó un pulpo amable con un farolillo.' },
+      { s: '🐙 💡', fr: 'Un soir, une gentille pieuvre est arrivée avec une lanterne.', it: 'Una sera è arrivato un polpo gentile con una lanterna.', de: 'Eines Abends kam ein netter Krake mit einer Laterne.', en: 'One evening, a kind octopus came with a lantern.', es: 'Una noche llegó un pulpo amable con un farolillo.' },
       { s: '🐟 🐙 🐚', fr: 'Ensemble, ils ont découvert les coquillages qui brillent dans la nuit.', it: 'Insieme hanno scoperto le conchiglie che brillano nella notte.', de: 'Zusammen entdeckten sie Muscheln, die in der Nacht leuchten.', en: 'Together they found shells that glow in the night.', es: 'Juntos descubrieron conchas que brillan en la noche.' },
       { s: '🐟 😴 💤', fr: "Le petit poisson n'avait plus peur. Il s'est endormi en souriant. Bonne nuit !", it: 'Il pesciolino non aveva più paura. Si è addormentato sorridendo. Buonanotte!', de: 'Der kleine Fisch hatte keine Angst mehr. Er schlief lächelnd ein. Gute Nacht!', en: 'The little fish was not afraid anymore. He fell asleep smiling. Good night!', es: 'El pececito ya no tenía miedo. Se durmió sonriendo. ¡Buenas noches!' },
     ],
     [
-      { s: '☁️ 🌤️', fr: 'Il était une fois un petit nuage qui voulait dormir.', it: 'C\'era una volta una nuvoletta che voleva dormire.', de: 'Es war einmal eine kleine Wolke, die schlafen wollte.', en: 'Once upon a time there was a little cloud who wanted to sleep.', es: 'Érase una vez una nubecita que quería dormir.' },
+      { s: '☁️ 🌤️', fr: 'Il était une fois un petit nuage qui voulait dormir.', it: 'C\'era una volta una nuvoletta che voleva dormire.', de: 'Es war einmal eine kleine Wolke, die schlafen wollte.', en: 'Once upon a time there was a little cloud that wanted to sleep.', es: 'Érase una vez una nubecita que quería dormir.' },
       { s: '☁️ 🌬️', fr: 'Mais le vent le faisait voler partout : ici, là-bas, et encore plus loin !', it: 'Ma il vento la faceva volare dappertutto: di qua, di là, e ancora più lontano!', de: 'Aber der Wind blies sie überall hin: hierhin, dorthin und noch weiter!', en: 'But the wind blew it everywhere: here, there and even further!', es: '¡Pero el viento la llevaba a todas partes: aquí, allá y todavía más lejos!' },
       { s: '☁️ 🌙', fr: 'Alors la lune lui a dit : viens, je te garde une place près de moi.', it: 'Allora la luna le ha detto: vieni, ti tengo un posto vicino a me.', de: 'Da sagte der Mond: Komm, ich halte dir einen Platz neben mir frei.', en: 'So the moon said: come, I saved you a place next to me.', es: 'Entonces la luna le dijo: ven, te guardo un sitio a mi lado.' },
       { s: '{c} ☁️ ⭐', fr: `${NAME} et son ami ont fait un bisou au petit nuage.`, it: `${NAME} e il suo amico hanno dato un bacino alla nuvoletta.`, de: `${NAME} und ihr Freund gaben der kleinen Wolke ein Küsschen.`, en: `${NAME} and her friend gave the little cloud a kiss.`, es: `${NAME} y su amigo le dieron un besito a la nubecita.` },
@@ -271,6 +271,8 @@ const App = (() => {
     try { state = Object.assign(defaults(), JSON.parse(localStorage.getItem(KEY) || '{}')); }
     catch (e) { state = defaults(); }
     state.stats = Object.assign(defaults().stats, state.stats);
+    /* lingue salvate: solo codici conosciuti, al massimo 2 */
+    if (Array.isArray(state.langs)) { state.langs = state.langs.filter(l => LANGS.includes(l)).slice(0, 2); if (!state.langs.length) state.langs = null; } else state.langs = null;
     /* storico: si tengono gli ultimi 200 giorni */
     const old = Date.now() - 200 * 864e5;
     Object.keys(state.hist).forEach(k => { const [y, m, d] = k.split('-').map(Number); if (new Date(y, m - 1, d).getTime() < old) delete state.hist[k]; });
@@ -288,7 +290,7 @@ const App = (() => {
       const e = s[cat][key] = s[cat][key] || [0, 0];
       e[ok ? 0 : 1]++;
     }
-    if (skill !== 'strada') (s.langs[lang] = s.langs[lang] || [0, 0])[ok ? 0 : 1]++;
+    if (['numeri', 'lettere', 'suoni', 'lingue', 'colori'].includes(skill)) (s.langs[lang] = s.langs[lang] || [0, 0])[ok ? 0 : 1]++;
     const day = state.hist[today()] = state.hist[today()] || {};
     const h0 = day[skill] = day[skill] || [0, 0];
     h0[ok ? 0 : 1]++;
@@ -348,7 +350,7 @@ const App = (() => {
   let ac = null;
   function unlockAudio() {
     if (!ac) { try { ac = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { ac = null; } }
-    if (ac && ac.state === 'suspended') ac.resume();
+    if (ac && ac.state !== 'running') ac.resume().catch(() => {});
     try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch (e) { /* non supportato */ }
   }
   function tone(freq, dur, type = 'sine', vol = .2, when = 0, slideTo = 0) {
@@ -413,7 +415,7 @@ const App = (() => {
     o.start(t0); o.stop(t0 + dur + .05);
   }
   function musicTick() {
-    if (!music.on || document.hidden || !ac) return;
+    if (!music.on || document.hidden || !ac || state.music === false || music.target === 0) return;
     const beat = music.night ? 1.1 : .8;
     if (music.step % 8 === 0) {
       music.chord = (music.chord + 1) % CHORDS.length;
@@ -440,7 +442,13 @@ const App = (() => {
     music.timer = setInterval(musicTick, 800);
   }
   /* voce sopra la musica: abbassa e poi rialza */
-  const duck = on => musicFade(on ? musicLevel() * .3 : musicLevel(), on ? .15 : .8);
+  /* voce sopra la musica: abbassa e poi rialza al livello della schermata (0 nella festa) */
+  let ducks = 0;
+  const musicTarget = () => (music.target == null ? musicLevel() : music.target);
+  function duck(on) {
+    ducks = Math.max(0, ducks + (on ? 1 : -1));
+    musicFade(ducks ? musicTarget() * .3 : musicTarget(), ducks ? .15 : .8);
+  }
 
   function birthdaySong() {
     const N = { G4: 392, A4: 440, B4: 494, C5: 523, D5: 587, E5: 659, F5: 698, G5: 784 };
@@ -474,29 +482,61 @@ const App = (() => {
   async function loadVoiceIndex() {
     const have = new Set();
     await Promise.all(pair().map(async l => {
-      try { (await (await fetch(`voice/index-${l}.json`)).json()).forEach(x => have.add(x)); } catch (e) { /* offline e mai scaricato */ }
+      const u = `voice/index-${l}.json`;
+      try {
+        const r = await fetch(u);
+        if (!r.ok) throw new Error(r.status);
+        const copy = r.clone();
+        (await r.json()).forEach(x => have.add(x));
+        if ('caches' in window) caches.open(VOICE_CACHE).then(c => c.put(u, copy)).catch(() => {});   // l'indice resta anche offline
+      } catch (e) {
+        try { const c = await caches.match(u); if (c) (await c.json()).forEach(x => have.add(x)); } catch (e2) { /* offline e mai scaricato */ }
+      }
     }));
     clips.have = have;
   }
   /* scarica in sottofondo le voci delle lingue scelte (restano offline nella cache delle voci) */
   const VOICE_CACHE = 'lena-voice-1';
   const voiceProgress = { done: 0, total: 0 };
-  let prefetching = false;
+  let prefetching = false, prefetchAgain = false;
   async function prefetchVoices() {
-    if (prefetching || !('caches' in window) || location.protocol === 'file:') return;
+    if (!('caches' in window) || location.protocol === 'file:') return;
+    if (prefetching) { prefetchAgain = true; return; }   // lingue cambiate durante il download: si riparte alla fine
     prefetching = true;
     try {
       const c = await caches.open(VOICE_CACHE);
       const list = [...clips.have];
       voiceProgress.total = list.length; voiceProgress.done = 0;
       for (let i = 0; i < list.length; i += 8) {
+        if (prefetchAgain) break;
         await Promise.all(list.slice(i, i + 8).map(async hsh => {
           const u = `voice/${hsh}.mp3`;
           if (!(await c.match(u))) { try { await c.add(u); } catch (e) { return; } }
           voiceProgress.done++;
         }));
+        progress('voc', voiceProgress.done, voiceProgress.total);
       }
-    } catch (e) { /* cache non disponibile: le voci si scaricano quando servono */ } finally { prefetching = false; }
+    } catch (e) { /* cache non disponibile: le voci si scaricano quando servono */ } finally {
+      prefetching = false;
+      progress('voc', 1, 1);
+      if (prefetchAgain) { prefetchAgain = false; prefetchVoices(); }
+    }
+  }
+  /* barra di download sulla schermata iniziale (grande) e in alto nelle altre (sottile):
+     aggiornamento dell'app (messaggi dal service worker) e voci */
+  const dl = {};
+  function progress(kind, done, total) {
+    dl[kind] = { done, total };
+    let el = document.getElementById('dl');
+    const rows = [['upd', '⬇️ Aggiornamento'], ['voc', '🔊 Voci']].filter(([k]) => dl[k] && dl[k].done < dl[k].total);
+    if (!rows.length) { if (el) el.remove(); return; }
+    if (!el) { el = document.createElement('div'); el.id = 'dl'; document.body.append(el); }
+    el.className = screenName === 'splash' ? 'big' : '';
+    el.innerHTML = '';
+    rows.forEach(([k, label]) => {
+      const pc = Math.floor(dl[k].done / Math.max(1, dl[k].total) * 100);
+      el.append(h('div', { class: 'dl-row' }, h('span', {}, `${label} ${pc}%`), h('i', {}, h('b', { style: `width:${pc}%` }))));
+    });
   }
   function pickVoice() {
     if (!('speechSynthesis' in window)) return;
@@ -506,18 +546,22 @@ const App = (() => {
       voices[l] = list.find(v => /premium|enhanced|google|alice|federica|amelie|audrey/i.test(v.name)) || list[0] || null;
     }
   }
+  let clipEnd = null;
   function stopVoice() {
     gen++;
     if ('speechSynthesis' in window) speechSynthesis.cancel();
     if (clipAudio) { clipAudio.pause(); clipAudio = null; }
+    if (clipEnd) { const f = clipEnd; clipEnd = null; f(); }   // la voce registrata interrotta non lascia il gioco in attesa
     if (clipSrc) { try { clipSrc.stop(); } catch (e) { /* già fermo */ } clipSrc = null; }
   }
   async function playFile(hsh, my) {
+    if (ac.state !== 'running') { await ac.resume().catch(() => {}); if (ac.state !== 'running') throw new Error('audio sospeso'); }
     let b = clips.buf.get(hsh);
     if (!b) {
       const data = await (await fetch(`voice/${hsh}.mp3`)).arrayBuffer();
       b = await ac.decodeAudioData(data);
       clips.buf.set(hsh, b);
+      if (clips.buf.size > 40) clips.buf.delete(clips.buf.keys().next().value);   // tiene in memoria solo le ultime 40 frasi
     }
     if (my !== gen) return;
     await new Promise(res => {
@@ -525,7 +569,10 @@ const App = (() => {
       s.buffer = b;
       s.connect(ac.destination);
       duck(true);
-      s.onended = () => { if (clipSrc === s) clipSrc = null; duck(false); res(); };
+      let done = false;
+      const end = () => { if (done) return; done = true; if (clipSrc === s) clipSrc = null; duck(false); res(); };
+      s.onended = end;
+      setTimeout(end, (b.duration + 1.5) * 1000);   // se l'audio si sospende, il gioco non resta bloccato
       clipSrc = s;
       s.start();
     });
@@ -541,7 +588,7 @@ const App = (() => {
       let done = false;
       const end = () => { if (!done) { done = true; duck(false); res(); } };
       u.onend = end; u.onerror = end;
-      setTimeout(end, 1500 + text.length * 110);
+      setTimeout(end, 1500 + text.length * 150);
       duck(true);
       speechSynthesis.speak(u);
     });
@@ -567,7 +614,9 @@ const App = (() => {
     stopVoice();
     clipAudio = new Audio(pick(list).url);
     return new Promise(res => {
-      const end = () => { duck(false); res(); };
+      let done = false;
+      const end = () => { if (done) return; done = true; if (clipEnd === end) clipEnd = null; duck(false); res(); };
+      clipEnd = end;
       clipAudio.onended = end; clipAudio.onerror = end;
       duck(true);
       clipAudio.play().catch(end);
@@ -585,19 +634,26 @@ const App = (() => {
     db: null,
     open() {
       return new Promise(res => {
-        if (!('indexedDB' in window)) return res();
-        const r = indexedDB.open('lena', 1);
-        r.onupgradeneeded = () => r.result.createObjectStore('media', { keyPath: 'id' });
-        r.onsuccess = () => { this.db = r.result; res(); };
-        r.onerror = () => res();
+        try {
+          if (!window.indexedDB) return res();
+          const r = indexedDB.open('lena', 1);
+          r.onupgradeneeded = () => r.result.createObjectStore('media', { keyPath: 'id' });
+          r.onsuccess = () => { this.db = r.result; res(); };
+          r.onerror = () => res();
+        } catch (e) { res(); }   // archivio bloccato (navigazione privata): l'app funziona senza foto e voci
       });
     },
     tx(mode, fn) {
       return new Promise(res => {
         if (!this.db) return res(null);
-        const req = fn(this.db.transaction('media', mode).objectStore('media'));
-        req.onsuccess = () => res(req.result);
-        req.onerror = () => res(null);
+        try {
+          const t = this.db.transaction('media', mode);
+          const req = fn(t.objectStore('media'));
+          let result = null;
+          req.onsuccess = () => { result = req.result; if (mode === 'readonly') res(result); };
+          t.oncomplete = () => res(result);
+          t.onabort = t.onerror = () => res(null);
+        } catch (e) { res(null); }
       });
     },
     all() { return this.tx('readonly', s => s.getAll()).then(r => r || []); },
@@ -722,14 +778,15 @@ const App = (() => {
   function show(name, cls, render) {
     if (pendingReload && (name === 'home' || name === 'splash')) { location.reload(); return; }
     if (cleanup) { try { cleanup(); } catch (e) { console.error(e); } cleanup = null; }
-    document.querySelectorAll('.modal-back, .tut').forEach(m => m.remove());
+    document.querySelectorAll('.modal-back, .tut').forEach(m => { m.dispatchEvent(new Event('gone')); m.remove(); });
     const app = document.getElementById('app');
     app.innerHTML = '';
     const scr = h('div', { class: 'screen ' + cls });
     app.append(scr);
     screenName = name;
     music.night = ['story', 'sleep', 'break', 'bday'].includes(name);
-    if (music.on) musicFade(name === 'bday' ? 0 : musicLevel());
+    music.target = name === 'bday' ? 0 : musicLevel();
+    if (music.on) musicFade(music.target);
     const c = render(scr);
     if (typeof c === 'function') cleanup = c;
   }
@@ -760,7 +817,8 @@ const App = (() => {
     pickVoice();
     started = true;
     startMusic();
-    lang = langMode() === 'alt' ? pick(pair()) : langMode();
+    const m0 = langMode();
+    lang = m0 === 'alt' || m0 === 'game' ? pick(pair()) : m0;
     if (!state.char && !state.langs) return langSetup();
     if (isLocked()) return sleepScreen();
     if (onBreak()) return breakScreen();
@@ -778,11 +836,12 @@ const App = (() => {
     show('home', 'home', s => {
       let pressT = null;
       const gear = h('button', { class: 'icon-btn gear', 'aria-label': 'Area genitori' }, '⚙️');
-      const startPress = () => { pressT = setTimeout(parentGate, 1500); };
+      let longFired = false;
+      const startPress = () => { longFired = false; pressT = setTimeout(() => { longFired = true; clearTimeout(tm); parentGate(); }, 1500); };
       const endPress = () => clearTimeout(pressT);
       gear.addEventListener('pointerdown', startPress);
       ['pointerup', 'pointerleave', 'pointercancel'].forEach(ev => gear.addEventListener(ev, endPress));
-      gear.addEventListener('click', () => say(t('forDad')));
+      gear.addEventListener('click', () => { if (!longFired) say(t('forDad')); });
 
       s.append(h('div', { class: 'home-head' },
         h('button', { class: 'avatar', onclick: () => { sfx.pop(); setup(false); } }, avatar(36)),
@@ -803,7 +862,7 @@ const App = (() => {
         h('div', { class: 'ico' }, '👗'), h('div', { class: 'lbl' }, T.wardrobeTile[pair()[0]]), pair()[1] ? h('div', { class: 'lbl2' }, T.wardrobeTile[pair()[1]]) : null);
       tiles.append(albumTile, wardTile);
       s.append(tiles);
-      const tm = state.tut.home ? 0 : setTimeout(() => screenName === 'home' && intro('home', [
+      var tm = state.tut.home ? 0 : setTimeout(() => screenName === 'home' && !document.querySelector('.modal-back') && intro('home', [
         { text: t('tutGame'), icon: '🎮', action: 'tap', at: () => tiles.children[0] },
         { text: t('tutAlbum'), icon: '📒', action: 'tap', at: () => albumTile },
         { text: t('tutWardrobe'), icon: '👗', action: 'tap', at: () => wardTile },
@@ -893,7 +952,9 @@ const App = (() => {
           }, h('span', { class: 'e' }, it.e), own ? (worn ? h('span', { class: 'tag' }, '✔') : null) : h('span', { class: 'price' }, `⭐${it.price}`)));
         });
       };
+      let calmUntil = 0;
       function choose(it, el) {
+        if (Date.now() < calmUntil) return;
         const r = el.getBoundingClientRect();
         if (state.owned.includes(it.id)) {
           if (state.wear[it.slot] === it.id) delete state.wear[it.slot]; else state.wear[it.slot] = it.id;
@@ -912,6 +973,8 @@ const App = (() => {
           h('button', {
             class: 'big-btn', style: 'background:#4cd06b;box-shadow:0 8px 0 #2f9a4a', onclick: () => {
               close();
+              calmUntil = Date.now() + 500;
+              if (state.owned.includes(it.id) || state.stars < it.price) return;
               state.stars -= it.price; state.owned.push(it.id); state.wear[it.slot] = it.id; save();
               starP.textContent = `⭐ ${state.stars}`;
               sfx.win(); confetti(60); say(t('bought'));
@@ -1003,7 +1066,7 @@ const App = (() => {
 
   function tick() {
     if (document.hidden || !started) return;
-    if (['sleep', 'parent', 'splash', 'story', 'break'].includes(screenName)) return;
+    if (['sleep', 'parent', 'splash', 'story', 'break', 'bday', 'langs', 'setup'].includes(screenName)) return;
     const days = state.stats.days;
     days[today()] = (days[today()] || 0) + 1;
     if (state.breakMin) {
@@ -1051,7 +1114,7 @@ const App = (() => {
   }
 
   /* storia della buonanotte, poi la schermata della nanna */
-  function story() {
+  function story(preview) {
     const pages = STORIES[state.story % STORIES.length];
     state.story++; save();
     nextLang();
@@ -1060,11 +1123,12 @@ const App = (() => {
       const scene = h('div', { class: 'story-scene' });
       const text = h('p', { class: 'story-text' });
       const dots = h('div', { class: 'story-dots' }, pages.map(() => h('i')));
-      const next = h('button', { class: 'big-btn story-next', onclick: () => { sfx.tap(); go(i + 1); } }, t('storyNext'));
+      let nextAt = 0;
+      const next = h('button', { class: 'big-btn story-next', onclick: () => { if (Date.now() < nextAt) return; nextAt = Date.now() + 700; sfx.tap(); go(i + 1); } }, t('storyNext'));
       s.append(h('div', { class: 'story-moon' }, '🌙'), scene, text, dots, next);
       async function go(k) {
         if (!alive) return;
-        if (k >= pages.length) { alive = false; sleepScreen(); return; }
+        if (k >= pages.length) { alive = false; if (preview === true) parentArea(); else sleepScreen(); return; }
         i = k;
         const p = pages[i];
         scene.innerHTML = '';
@@ -1105,7 +1169,7 @@ const App = (() => {
   }
 
   function birthday(preview) {
-    if (!preview) { state.bdayShown = new Date().getFullYear(); save(); }
+    /* la festa vale come "vista" solo quando si apre il regalo (vedi sotto) */
     const age = ageAtBirthday();
     show('bday', 'bday', s => {
       let blown = 0;
@@ -1126,8 +1190,8 @@ const App = (() => {
               setTimeout(() => {
                 s.append(h('button', {
                   class: 'big-btn', onclick: async () => {
-                    await reward();
-                    if (!state.char) setup(true); else home();
+                    if (!preview) { state.bdayShown = new Date().getFullYear(); save(); await reward(); }
+                    if (preview) parentArea(); else if (!state.char) setup(true); else home();
                   },
                 }, t('gift')));
               }, Math.min(dur * 1000, 6000));
@@ -1154,18 +1218,23 @@ const App = (() => {
     const upd = () => [...dots.children].forEach((d, i) => d.classList.toggle('on', i < code.length));
     const pad = h('div', { class: 'pin-pad' });
     const keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '✕', '0', '⌫'];
-    let close;
+    let close, busy = false;
     keys.forEach(k => pad.append(h('button', {
       onclick: () => {
         if (k === '✕') return close();
+        if (busy) return;
         if (k === '⌫') code = code.slice(0, -1);
         else if (code.length < 4) code += k;
         upd();
-        if (code.length === 4) setTimeout(() => {
-          const ok = onDone(code);
-          if (ok === false) { box.classList.add('shake'); setTimeout(() => box.classList.remove('shake'), 500); code = ''; upd(); }
-          else close();
-        }, 150);
+        if (code.length === 4) {
+          busy = true;
+          setTimeout(() => {
+            busy = false;
+            const ok = onDone(code);
+            if (ok === false) { box.classList.add('shake'); setTimeout(() => box.classList.remove('shake'), 500); code = ''; upd(); }
+            else close();
+          }, 150);
+        }
       },
     }, k)));
     box.append(pad);
@@ -1174,26 +1243,39 @@ const App = (() => {
     return () => close();
   }
 
+  /* domanda da adulti (moltiplicazione): serve prima di creare o azzerare il PIN, così non può farlo il bambino */
+  function mathGate(title, onOk) {
+    const a = rint(6, 9), b = rint(6, 9);
+    const input = h('input', { type: 'text', inputmode: 'numeric', autocomplete: 'off', maxlength: '3', class: 'math-in' });
+    let close;
+    const box = h('div', {});
+    const ok = h('button', {
+      class: 'big-btn', style: 'font-size:22px;padding:12px 28px', onclick: () => {
+        if (parseInt(input.value, 10) === a * b) { close(); onOk(); } else { input.value = ''; box.classList.add('shake'); setTimeout(() => box.classList.remove('shake'), 500); }
+      },
+    }, 'OK');
+    box.append(h('h2', { style: 'font-size:20px' }, title), h('p', { style: 'font-size:26px;margin:6px 0 12px' }, `${a} × ${b} = ?`), input,
+      h('div', { class: 'row', style: 'margin-top:14px' }, ok, h('button', { class: 'soft-btn', onclick: () => close() }, '✕')));
+    close = modal(box);
+    setTimeout(() => input.focus(), 100);
+  }
+
   function parentGate() {
     stopVoice();
     if (!state.pin) {
-      pinPad('Crea un PIN genitore (4 cifre)', code => {
+      mathGate('Area genitori: rispondi per creare il PIN', () => pinPad('Crea un PIN genitore (4 cifre)', code => {
         setTimeout(() => pinPad('Ripeti il PIN', c2 => {
           if (c2 !== code) return false;
           state.pin = code; save();
           setTimeout(parentArea, 50);
         }), 50);
-      });
+      }));
       return;
     }
-    const a = rint(6, 9), b = rint(6, 9);
     let closePad;
     const forgot = h('button', {
       class: 'soft-btn', style: 'margin-top:14px;font-size:15px',
-      onclick: () => {
-        const v = prompt(`PIN dimenticato? Quanto fa ${a} × ${b}?`);
-        if (v && parseInt(v, 10) === a * b) { state.pin = null; save(); closePad(); parentGate(); }
-      },
+      onclick: () => { closePad(); mathGate('PIN dimenticato? Rispondi per crearne uno nuovo', () => { state.pin = null; save(); parentGate(); }); },
     }, 'PIN dimenticato?');
     closePad = pinPad('PIN genitore', code => {
       if (code !== state.pin) return false;
@@ -1231,7 +1313,7 @@ const App = (() => {
     const hint = h('p', { class: 'hint' }, `Voci scaricate sul telefono: ${voiceProgress.done}/${voiceProgress.total || '…'}`);
     const upd = setInterval(() => { if (!hint.isConnected) return clearInterval(upd); hint.textContent = `Voci scaricate sul telefono: ${voiceProgress.done}/${voiceProgress.total || '…'}` + (prefetching ? ' (in corso)' : ''); }, 1000);
     return section('🗣️ Lingue del bambino', 'Scegli 1 o 2 lingue (tocca per selezionare). Il telefono scarica solo le voci di quelle scelte.',
-      langPicker(() => { if (state.langs && state.langs.length) { state.langMode = 'alt'; afterLangChange().then(render); } }),
+      langPicker(() => { if (state.langs && state.langs.length) { if (!['alt', 'game'].includes(state.langMode)) state.langMode = 'alt'; afterLangChange().then(render); } }),
       b ? h('p', { class: 'hint', style: 'margin-top:10px' }, 'Come usarle nei giochi:') : null,
       b ? opts([['alt', `${FLAG[a]}${FLAG[b]} A ogni turno`], ['game', '🎮 Una lingua per partita'], [a, `${FLAG[a]} Solo ${LANG_IT[a].toLowerCase()}`], [b, `${FLAG[b]} Solo ${LANG_IT[b].toLowerCase()}`]], langMode(), v => { state.langMode = v; save(); })
         : h('p', { class: 'hint' }, `Solo ${LANG_IT[a].toLowerCase()}: il gioco «Le due lingue» è nascosto.`),
@@ -1256,11 +1338,11 @@ const App = (() => {
 
   /* livelli e progressi: per ogni abilità livello, % giuste questa settimana vs precedente, ultime 8 settimane */
   function progressSection(section) {
-    const dayKey = ms => { const d = new Date(ms); return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`; };
+    const dayKey = n => { const d = new Date(); d.setDate(d.getDate() - n); return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`; };
     const week = (skill, w) => {
       let ok = 0, ko = 0;
       for (let i = 0; i < 7; i++) {
-        const e = (state.hist[dayKey(Date.now() - (w * 7 + i) * 864e5)] || {})[skill];
+        const e = (state.hist[dayKey(w * 7 + i)] || {})[skill];
         if (e) { ok += e[0]; ko += e[1]; }
       }
       return { ok, ko, n: ok + ko, p: ok + ko ? Math.round(ok / (ok + ko) * 100) : null };
@@ -1311,7 +1393,7 @@ const App = (() => {
     const pct = ([ok, ko]) => (ok + ko ? `${Math.round(ok / (ok + ko) * 100)}% giuste (${ok + ko} risposte)` : 'ancora nessuna risposta');
     const days = [];
     for (let i = 6; i >= 0; i--) {
-      const d = new Date(Date.now() - i * 864e5);
+      const d = new Date(); d.setDate(d.getDate() - i);
       const k = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
       days.push([d.toLocaleDateString('it-IT', { weekday: 'short' }), Math.round((st.days[k] || 0) / 60)]);
     }
@@ -1339,7 +1421,7 @@ const App = (() => {
       let rec = null;
       const scroll = h('div', { class: 'scroll' });
       s.append(h('div', { class: 'topbar' },
-        h('button', { class: 'icon-btn', onclick: () => (isLocked() ? sleepScreen() : home()) }, '🏠'),
+        h('button', { class: 'icon-btn', onclick: () => (isLocked() ? sleepScreen() : onBreak() ? breakScreen() : home()) }, '🏠'),
         h('div', { class: 'title' }, 'Area genitori')), scroll,
         h('div', { class: 'ver', style: 'position:static;text-align:center' }, `versione ${VERSION} · Illustrazioni: Microsoft Fluent Emoji (licenza MIT)`));
 
@@ -1361,7 +1443,7 @@ const App = (() => {
           h('div', { class: 'opts', style: 'margin-top:10px' },
             h('button', { class: 'act', onclick: () => { u.extra += 10; save(); render(); } }, '+10 min oggi'),
             h('button', { class: 'act ghost', onclick: () => { u.sec = 0; u.extra = 0; u.warned = false; save(); render(); } }, 'Azzera oggi'),
-            h('button', { class: 'act ghost', onclick: story }, 'Prova la storia')),
+            h('button', { class: 'act ghost', onclick: () => story(true) }, 'Prova la storia')),
           h('p', { class: 'hint', style: 'margin-top:12px' }, `Pausa di ${BREAK_MIN} minuti dopo ogni sessione di gioco:`),
           opts([[0, 'Mai'], [20, 'Ogni 20 min'], [30, 'Ogni 30 min']], state.breakMin, v => { state.breakMin = v; usage().sess = 0; save(); }),
           h('div', { class: 'opts', style: 'margin-top:10px' },
@@ -1380,7 +1462,7 @@ const App = (() => {
         scroll.append(reportSection(section));
 
         const voicesSec = section('🎙️ Le vostre voci',
-          'Registrate frasi per Lena (in francese o in italiano): le sentirà al posto della voce del telefono. Restano solo su questo telefono.',
+          'Registrate frasi per Lena, in una delle sue lingue: le sentirà al posto della voce del telefono. Restano solo su questo telefono.',
           VOICE_SLOTS.map(sl => {
             const list = media.voices[sl.id] || [];
             const recBtn = h('button', { class: 'act' }, '● Registra');
@@ -1402,6 +1484,7 @@ const App = (() => {
           const f = fileIn.files[0];
           if (!f) return;
           const blob = await resizePhoto(f);
+          if (!blob) { alert('Questa foto non si può leggere: prova con un\'altra (JPG o PNG).'); return; }
           await DB.put({ id: 'p' + Date.now(), kind: 'photo', name: nameIn.value.trim(), blob, created: Date.now() });
           await reloadMedia(); render();
         };
@@ -1449,11 +1532,13 @@ const App = (() => {
       }
 
       async function toggleRec(slot, btn) {
+        if (rec === 'starting') return;
         if (rec) { rec.stop(); return; }
         if (!navigator.mediaDevices || !window.MediaRecorder) { alert('Registrazione non supportata su questo browser.'); return; }
         let stream;
+        rec = 'starting';
         try { stream = await navigator.mediaDevices.getUserMedia({ audio: true }); }
-        catch (e) { alert('Serve il permesso per il microfono.'); return; }
+        catch (e) { rec = null; alert('Serve il permesso per il microfono.'); return; }
         const chunks = [];
         const r = new MediaRecorder(stream);
         const t0 = Date.now();
@@ -1496,6 +1581,7 @@ const App = (() => {
   function resizePhoto(file) {
     return new Promise(res => {
       const img = new Image();
+      img.onerror = () => { URL.revokeObjectURL(img.src); res(null); };
       img.onload = () => {
         const S = 360, m = Math.min(img.width, img.height);
         const c = document.createElement('canvas');
@@ -1515,6 +1601,7 @@ const App = (() => {
     stopVoice();
     document.querySelectorAll('.tut').forEach(x => x.remove());
     const ov = h('div', { class: 'tut' });
+    ov.addEventListener('gone', () => stopVoice());
     const hand = h('div', { class: 'tut-hand' }, '👆');
     const capEl = h('div', { class: 'tut-cap' });
     ov.append(capEl, hand);
@@ -1563,7 +1650,7 @@ const App = (() => {
     }
     return new Promise(async resolve => {
       for (const s of steps) {
-        if (!ov.isConnected) return resolve();
+        if (!ov.isConnected) return resolve(false);
         if (s.before) s.before();
         capEl.innerHTML = '';
         capEl.append(h('span', { class: 'mascot' }, avatar(46), h('i', {}, s.icon || '👆')), h('span', {}, s.text));
@@ -1573,19 +1660,20 @@ const App = (() => {
         await v;
         await wait(250);
       }
-      if (!ov.isConnected) return resolve();
+      if (!ov.isConnected) return resolve(false);
       hand.style.display = 'none';
       capEl.innerHTML = '';
       capEl.classList.remove('top');
       capEl.append(h('span', { class: 'ico' }, '⭐'), h('span', {}, t('yourTurn')));
       say(t('yourTurn'));
-      ov.append(h('button', { class: 'big-btn tut-go', onclick: () => { sfx.pop(); ov.remove(); resolve(); } }, t('gotIt')));
+      ov.append(h('button', { class: 'big-btn tut-go', onclick: () => { sfx.pop(); ov.remove(); resolve(true); } }, t('gotIt')));
     });
   }
   /* tutorial solo la prima volta; risolve subito se già visto */
   async function intro(id, steps) {
     if (state.tut[id]) return false;
-    await tutorial(steps);
+    const done = await tutorial(steps);
+    if (done === false) return true;   // interrotto: lo rivedrà la prossima volta
     state.tut[id] = true;
     save();
     return true;
@@ -1625,6 +1713,7 @@ const App = (() => {
       navigator.serviceWorker.register('sw.js').then(reg => {
         document.addEventListener('visibilitychange', () => { if (!document.hidden) reg.update().catch(() => {}); });
       }).catch(() => {});
+      navigator.serviceWorker.addEventListener('message', e => { if (e.data && e.data.type === 'dl') progress('upd', e.data.done, e.data.total); });
       let hadController = !!navigator.serviceWorker.controller;
       navigator.serviceWorker.addEventListener('controllerchange', () => {
         if (!hadController) { hadController = true; return; }
@@ -1632,14 +1721,25 @@ const App = (() => {
         else pendingReload = true;
       });
     }
-    document.addEventListener('pointerdown', e => { if (e.isPrimary !== false) glitter(e.clientX, e.clientY); }, { passive: true });
+    document.addEventListener('pointerdown', e => {
+      if (ac && ac.state !== 'running') ac.resume().catch(() => {});   // iOS: dopo una chiamata o Siri l'audio va ripreso
+      if (e.isPrimary !== false) glitter(e.clientX, e.clientY);
+    }, { passive: true });
+    if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {});
     document.body.classList.toggle('calm', !!state.calm);
-    await Promise.all([DB.open().then(reloadMedia), loadVoiceIndex(), loadEmoji()]);
+    await Promise.allSettled([DB.open().then(reloadMedia), loadVoiceIndex(), loadEmoji()]);
     new MutationObserver(ms => ms.forEach(m => (m.type === 'characterData' ? emojify(m.target) : m.addedNodes.forEach(emojify))))
       .observe(document.body, { childList: true, subtree: true, characterData: true });
     setTimeout(prefetchVoices, 4000);
     setInterval(tick, 1000);
-    document.addEventListener('visibilitychange', () => { if (document.hidden) { stopVoice(); save(); musicFade(0, .1); } else if (music.on) musicFade(musicLevel()); });
+    let hiddenAt = 0;
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) { hiddenAt = Date.now(); stopVoice(); save(); musicFade(0, .1); return; }
+      if (music.on) musicFade(musicTarget());
+      if (Date.now() - hiddenAt > 10 * 60e3 && state.usage) state.usage.sess = 0;   // dopo 10 minuti lontano la sessione riparte
+      if (screenName === 'sleep' && !isLocked()) splash();   // il giorno dopo la nanna è finita
+      if (screenName === 'break' && !onBreak()) home();
+    });
     document.addEventListener('gesturestart', e => e.preventDefault());
     splash();
   }

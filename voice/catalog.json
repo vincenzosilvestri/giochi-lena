@@ -115,9 +115,9 @@
   "text": "Choisis des habits pour ton ami !"
  },
  {
-  "h": "cb94f7fc",
+  "h": "81c66456",
   "lang": "fr",
-  "text": "Youpi ! C'est à toi !"
+  "text": "Youpi ! C'est pour toi !"
  },
  {
   "h": "137eb47a",
@@ -540,9 +540,9 @@
   "text": "La fleur !"
  },
  {
-  "h": "2a3684f1",
+  "h": "343ccd83",
   "lang": "fr",
-  "text": "La fleur ! Tu veux l'acheter ?"
+  "text": "La fleur ! Tu veux acheter ça ?"
  },
  {
   "h": "8832e532",
@@ -550,9 +550,9 @@
   "text": "Le nœud !"
  },
  {
-  "h": "a5b8e241",
+  "h": "666c69f3",
   "lang": "fr",
-  "text": "Le nœud ! Tu veux l'acheter ?"
+  "text": "Le nœud ! Tu veux acheter ça ?"
  },
  {
   "h": "499034eb",
@@ -560,9 +560,9 @@
   "text": "Le chapeau de paille !"
  },
  {
-  "h": "50881a54",
+  "h": "c4e420a4",
   "lang": "fr",
-  "text": "Le chapeau de paille ! Tu veux l'acheter ?"
+  "text": "Le chapeau de paille ! Tu veux acheter ça ?"
  },
  {
   "h": "49b701fc",
@@ -570,9 +570,9 @@
   "text": "Le chapeau magique !"
  },
  {
-  "h": "471e8087",
+  "h": "12c2e141",
   "lang": "fr",
-  "text": "Le chapeau magique ! Tu veux l'acheter ?"
+  "text": "Le chapeau magique ! Tu veux acheter ça ?"
  },
  {
   "h": "5f4799d9",
@@ -580,9 +580,9 @@
   "text": "La couronne !"
  },
  {
-  "h": "c6284b7e",
+  "h": "8a173836",
   "lang": "fr",
-  "text": "La couronne ! Tu veux l'acheter ?"
+  "text": "La couronne ! Tu veux acheter ça ?"
  },
  {
   "h": "201a28e9",
@@ -590,9 +590,9 @@
   "text": "Les lunettes !"
  },
  {
-  "h": "4851366e",
+  "h": "dcb52246",
   "lang": "fr",
-  "text": "Les lunettes ! Tu veux l'acheter ?"
+  "text": "Les lunettes ! Tu veux acheter ça ?"
  },
  {
   "h": "e72c08f8",
@@ -600,9 +600,9 @@
   "text": "Les lunettes de soleil !"
  },
  {
-  "h": "48a13b5b",
+  "h": "2434e67d",
   "lang": "fr",
-  "text": "Les lunettes de soleil ! Tu veux l'acheter ?"
+  "text": "Les lunettes de soleil ! Tu veux acheter ça ?"
  },
  {
   "h": "dd434923",
@@ -610,9 +610,9 @@
   "text": "La sucette !"
  },
  {
-  "h": "acca48dc",
+  "h": "5a8d150c",
   "lang": "fr",
-  "text": "La sucette ! Tu veux l'acheter ?"
+  "text": "La sucette ! Tu veux acheter ça ?"
  },
  {
   "h": "17ec6148",
@@ -620,9 +620,9 @@
   "text": "Le ballon !"
  },
  {
-  "h": "07983e4b",
+  "h": "d4d4abcd",
   "lang": "fr",
-  "text": "Le ballon ! Tu veux l'acheter ?"
+  "text": "Le ballon ! Tu veux acheter ça ?"
  },
  {
   "h": "73d6d890",
@@ -630,9 +630,9 @@
   "text": "La baguette magique !"
  },
  {
-  "h": "39dcaa23",
+  "h": "3fea5945",
   "lang": "fr",
-  "text": "La baguette magique ! Tu veux l'acheter ?"
+  "text": "La baguette magique ! Tu veux acheter ça ?"
  },
  {
   "h": "a0ad08c3",
@@ -640,9 +640,9 @@
   "text": "Les cœurs !"
  },
  {
-  "h": "e8c7f77c",
+  "h": "4ac2abac",
   "lang": "fr",
-  "text": "Les cœurs ! Tu veux l'acheter ?"
+  "text": "Les cœurs ! Tu veux acheter ça ?"
  },
  {
   "h": "c23c7907",
@@ -650,9 +650,9 @@
   "text": "Les papillons !"
  },
  {
-  "h": "02ebaf48",
+  "h": "8bac6c20",
   "lang": "fr",
-  "text": "Les papillons ! Tu veux l'acheter ?"
+  "text": "Les papillons ! Tu veux acheter ça ?"
  },
  {
   "h": "ebed7862",
@@ -660,9 +660,9 @@
   "text": "Les paillettes !"
  },
  {
-  "h": "7ccf9b11",
+  "h": "93f59523",
   "lang": "fr",
-  "text": "Les paillettes ! Tu veux l'acheter ?"
+  "text": "Les paillettes ! Tu veux acheter ça ?"
  },
  {
   "h": "5ab02bbd",
@@ -670,9 +670,9 @@
   "text": "L'arc-en-ciel !"
  },
  {
-  "h": "6fa13fda",
+  "h": "96d143ca",
   "lang": "fr",
-  "text": "L'arc-en-ciel ! Tu veux l'acheter ?"
+  "text": "L'arc-en-ciel ! Tu veux acheter ça ?"
  },
  {
   "h": "cd1c4064",
@@ -1015,9 +1015,9 @@
   "text": "Traverse sur les bandes blanches : c'est plus sûr et tu gagnes plus d'étoiles !"
  },
  {
-  "h": "b9fe2bfc",
+  "h": "ad6ab35e",
   "lang": "fr",
-  "text": "Quand les lumières rouges clignotent, le train arrive : attends sur l'herbe !"
+  "text": "Quand les lumières rouges clignotent, le train arrive : attends ici, avant les rails !"
  },
  {
   "h": "4d1a4dd8",
@@ -1190,9 +1190,9 @@
   "text": "Touche 10 fraises !"
  },
  {
-  "h": "fb29b608",
+  "h": "667be15b",
   "lang": "fr",
-  "text": "Combien de étoiles vois-tu ?"
+  "text": "Combien d'étoiles vois-tu ?"
  },
  {
   "h": "956cb2c4",
@@ -2370,724 +2370,714 @@
   "text": "Attrape les lettres une par une !"
  },
  {
-  "h": "ba9dcfe3",
+  "h": "c76780bf",
   "lang": "fr",
-  "text": "Attrape le A comme Abeille !"
+  "text": "Attrape la lettre A comme Abeille !"
  },
  {
-  "h": "4d96c390",
+  "h": "51018724",
   "lang": "fr",
-  "text": "Attrape le A comme Avion !"
+  "text": "Attrape la lettre A comme Avion !"
  },
  {
-  "h": "3803422e",
+  "h": "067100c2",
   "lang": "fr",
-  "text": "Attrape le B comme Ballon !"
+  "text": "Attrape la lettre B comme Ballon !"
  },
  {
-  "h": "cfb7c956",
+  "h": "6a1e8122",
   "lang": "fr",
-  "text": "Attrape le B comme Baleine !"
+  "text": "Attrape la lettre B comme Baleine !"
  },
  {
-  "h": "92ff46e9",
+  "h": "a49f4f94",
   "lang": "fr",
-  "text": "Attrape le C comme Chat !"
+  "text": "Attrape la lettre C comme Canard !"
  },
  {
-  "h": "306a9b9e",
+  "h": "8199f70a",
   "lang": "fr",
-  "text": "Attrape le C comme Cœur !"
+  "text": "Attrape la lettre C comme Cœur !"
  },
  {
-  "h": "44d4265d",
+  "h": "b65a3a19",
   "lang": "fr",
-  "text": "Attrape le D comme Dauphin !"
+  "text": "Attrape la lettre D comme Dauphin !"
  },
  {
-  "h": "8198fe63",
+  "h": "f3556467",
   "lang": "fr",
-  "text": "Attrape le D comme Dé !"
+  "text": "Attrape la lettre D comme Dé !"
  },
  {
-  "h": "3fe222a9",
+  "h": "e7831345",
   "lang": "fr",
-  "text": "Attrape le E comme Escargot !"
+  "text": "Attrape la lettre E comme Escargot !"
  },
  {
-  "h": "af7bb6ed",
+  "h": "6b945794",
   "lang": "fr",
-  "text": "Attrape le E comme Enveloppe !"
+  "text": "Attrape la lettre F comme Fleur !"
  },
  {
-  "h": "702ec4e0",
+  "h": "7e0ec16c",
   "lang": "fr",
-  "text": "Attrape le F comme Fleur !"
+  "text": "Attrape la lettre F comme Fraise !"
  },
  {
-  "h": "efc0b6a0",
+  "h": "0d6b54f7",
   "lang": "fr",
-  "text": "Attrape le F comme Fraise !"
+  "text": "Attrape la lettre G comme Gâteau !"
  },
  {
-  "h": "f9bdf5cb",
+  "h": "187403a7",
   "lang": "fr",
-  "text": "Attrape le G comme Gâteau !"
+  "text": "Attrape la lettre G comme Girafe !"
  },
  {
-  "h": "f413e8e3",
+  "h": "3dc395fe",
   "lang": "fr",
-  "text": "Attrape le G comme Girafe !"
+  "text": "Attrape la lettre I comme Iguane !"
  },
  {
-  "h": "2a7abc55",
+  "h": "a8837bd6",
   "lang": "fr",
-  "text": "Attrape le I comme Igloo !"
+  "text": "Attrape la lettre L comme Lune !"
  },
  {
-  "h": "a1f1a63a",
+  "h": "bf5581f2",
   "lang": "fr",
-  "text": "Attrape le I comme Iguane !"
+  "text": "Attrape la lettre L comme Lena !"
  },
  {
-  "h": "f87a228a",
+  "h": "dbae3472",
   "lang": "fr",
-  "text": "Attrape le L comme Lune !"
+  "text": "Attrape la lettre L comme Lion !"
  },
  {
-  "h": "44d217ce",
+  "h": "8f4b8972",
   "lang": "fr",
-  "text": "Attrape le L comme Lena !"
+  "text": "Attrape la lettre M comme Maison !"
  },
  {
-  "h": "24ef47ae",
+  "h": "fd9f4c9d",
   "lang": "fr",
-  "text": "Attrape le L comme Lion !"
+  "text": "Attrape la lettre M comme Mouton !"
  },
  {
-  "h": "44f9701e",
+  "h": "be0d015a",
   "lang": "fr",
-  "text": "Attrape le M comme Maison !"
+  "text": "Attrape la lettre N comme Nuage !"
  },
  {
-  "h": "9fcfe7f1",
+  "h": "acb8ecb3",
   "lang": "fr",
-  "text": "Attrape le M comme Mouton !"
+  "text": "Attrape la lettre N comme Nez !"
  },
  {
-  "h": "21892cf6",
+  "h": "e3bcbd9c",
   "lang": "fr",
-  "text": "Attrape le N comme Nuage !"
+  "text": "Attrape la lettre O comme Ours !"
  },
  {
-  "h": "bf79a29f",
+  "h": "245dfb35",
   "lang": "fr",
-  "text": "Attrape le N comme Nez !"
+  "text": "Attrape la lettre O comme Orange !"
  },
  {
-  "h": "ecbedae1",
+  "h": "40ee01aa",
   "lang": "fr",
-  "text": "Attrape le O comme Oiseau !"
+  "text": "Attrape la lettre P comme Pomme !"
  },
  {
-  "h": "be001059",
+  "h": "3cc8b524",
   "lang": "fr",
-  "text": "Attrape le O comme Orange !"
+  "text": "Attrape la lettre P comme Papa !"
  },
  {
-  "h": "d761bc0e",
+  "h": "32573a3f",
   "lang": "fr",
-  "text": "Attrape le P comme Pomme !"
+  "text": "Attrape la lettre P comme Poisson !"
  },
  {
-  "h": "c9a7e910",
+  "h": "ba19f624",
   "lang": "fr",
-  "text": "Attrape le P comme Papa !"
+  "text": "Attrape la lettre R comme Renard !"
  },
  {
-  "h": "85331c3b",
+  "h": "dc4a07ea",
   "lang": "fr",
-  "text": "Attrape le P comme Poisson !"
+  "text": "Attrape la lettre R comme Robot !"
  },
  {
-  "h": "234e62e8",
+  "h": "d8bb162f",
   "lang": "fr",
-  "text": "Attrape le R comme Renard !"
+  "text": "Attrape la lettre S comme Soleil !"
  },
  {
-  "h": "06be72b6",
+  "h": "48e4b432",
   "lang": "fr",
-  "text": "Attrape le R comme Robot !"
+  "text": "Attrape la lettre S comme Serpent !"
  },
  {
-  "h": "246d6d2b",
+  "h": "d19d0089",
   "lang": "fr",
-  "text": "Attrape le S comme Soleil !"
+  "text": "Attrape la lettre T comme Tortue !"
  },
  {
-  "h": "6c1c34b6",
+  "h": "a05c303c",
   "lang": "fr",
-  "text": "Attrape le S comme Serpent !"
+  "text": "Attrape la lettre T comme Tomate !"
  },
  {
-  "h": "2cebf0c5",
+  "h": "d381040d",
   "lang": "fr",
-  "text": "Attrape le T comme Tortue !"
+  "text": "Attrape la lettre U comme Usine !"
  },
  {
-  "h": "76763718",
+  "h": "a680542b",
   "lang": "fr",
-  "text": "Attrape le T comme Tomate !"
+  "text": "Attrape la lettre V comme Vache !"
  },
  {
-  "h": "183cf7e1",
+  "h": "5c3aad82",
   "lang": "fr",
-  "text": "Attrape le U comme Usine !"
+  "text": "Attrape la lettre V comme Vélo !"
  },
  {
-  "h": "03c91c57",
+  "h": "eb8463e7",
   "lang": "fr",
-  "text": "Attrape le V comme Vache !"
+  "text": "Attrape la lettre Z comme Zèbre !"
  },
  {
-  "h": "bf3d6b3e",
+  "h": "d0db67d8",
   "lang": "fr",
-  "text": "Attrape le V comme Vélo !"
+  "text": "Attrape la lettre Z comme Zéro !"
  },
  {
-  "h": "1b137d43",
+  "h": "8ac671c9",
   "lang": "fr",
-  "text": "Attrape le Z comme Zèbre !"
+  "text": "Moi, je suis la lettre A !"
  },
  {
-  "h": "374c58dc",
+  "h": "db4f723f",
   "lang": "fr",
-  "text": "Attrape le Z comme Zéro !"
+  "text": "D'abord la lettre A !"
  },
  {
-  "h": "fd2a483b",
+  "h": "eb78a6c2",
   "lang": "fr",
-  "text": "Moi, je suis le A !"
+  "text": "Maintenant la lettre A !"
  },
  {
-  "h": "fcb7d9a1",
+  "h": "d2c0bb7f",
   "lang": "fr",
-  "text": "D'abord le A !"
+  "text": "Encore la lettre A !"
  },
  {
-  "h": "8275f0ae",
+  "h": "87c66d10",
   "lang": "fr",
-  "text": "Maintenant le A !"
+  "text": "Moi, je suis la lettre B !"
  },
  {
-  "h": "a1ed0261",
+  "h": "dc4f73d2",
   "lang": "fr",
-  "text": "Encore le A !"
+  "text": "D'abord la lettre B !"
  },
  {
-  "h": "fe2a49ce",
+  "h": "ea78a52f",
   "lang": "fr",
-  "text": "Moi, je suis le B !"
+  "text": "Maintenant la lettre B !"
  },
  {
-  "h": "f9b7d4e8",
+  "h": "d3c0bd12",
   "lang": "fr",
-  "text": "D'abord le B !"
+  "text": "Encore la lettre B !"
  },
  {
-  "h": "8175ef1b",
+  "h": "88c66ea3",
   "lang": "fr",
-  "text": "Maintenant le B !"
+  "text": "Moi, je suis la lettre C !"
  },
  {
-  "h": "9eecfda8",
+  "h": "dd4f7565",
   "lang": "fr",
-  "text": "Encore le B !"
+  "text": "D'abord la lettre C !"
  },
  {
-  "h": "ff2a4b61",
+  "h": "e978a39c",
   "lang": "fr",
-  "text": "Moi, je suis le C !"
+  "text": "Maintenant la lettre C !"
  },
  {
-  "h": "fab7d67b",
+  "h": "d4c0bea5",
   "lang": "fr",
-  "text": "D'abord le C !"
+  "text": "Encore la lettre C !"
  },
  {
-  "h": "8075ed88",
+  "h": "8dc67682",
   "lang": "fr",
-  "text": "Maintenant le C !"
+  "text": "Moi, je suis la lettre D !"
  },
  {
-  "h": "9fecff3b",
+  "h": "d64f6a60",
   "lang": "fr",
-  "text": "Encore le C !"
+  "text": "D'abord la lettre D !"
  },
  {
-  "h": "002a4cf4",
+  "h": "e878a209",
   "lang": "fr",
-  "text": "Moi, je suis le D !"
+  "text": "Maintenant la lettre D !"
  },
  {
-  "h": "ffb7de5a",
+  "h": "cdc0b3a0",
   "lang": "fr",
-  "text": "D'abord le D !"
+  "text": "Encore la lettre D !"
  },
  {
-  "h": "8775f88d",
+  "h": "8ec67815",
   "lang": "fr",
-  "text": "Maintenant le D !"
+  "text": "Moi, je suis la lettre E !"
  },
  {
-  "h": "a4ed071a",
+  "h": "d74f6bf3",
   "lang": "fr",
-  "text": "Encore le D !"
+  "text": "D'abord la lettre E !"
  },
  {
-  "h": "012a4e87",
+  "h": "e778a076",
   "lang": "fr",
-  "text": "Moi, je suis le E !"
+  "text": "Maintenant la lettre E !"
  },
  {
-  "h": "00b7dfed",
+  "h": "cec0b533",
   "lang": "fr",
-  "text": "D'abord le E !"
+  "text": "Encore la lettre E !"
  },
  {
-  "h": "8675f6fa",
+  "h": "8bc6735c",
   "lang": "fr",
-  "text": "Maintenant le E !"
+  "text": "Moi, je suis la lettre F !"
  },
  {
-  "h": "a5ed08ad",
+  "h": "d84f6d86",
   "lang": "fr",
-  "text": "Encore le E !"
+  "text": "D'abord la lettre F !"
  },
  {
-  "h": "022a501a",
+  "h": "e6789ee3",
   "lang": "fr",
-  "text": "Moi, je suis le F !"
+  "text": "Maintenant la lettre F !"
  },
  {
-  "h": "fdb7db34",
+  "h": "cfc0b6c6",
   "lang": "fr",
-  "text": "D'abord le F !"
+  "text": "Encore la lettre F !"
  },
  {
-  "h": "8575f567",
+  "h": "8cc674ef",
   "lang": "fr",
-  "text": "Maintenant le F !"
+  "text": "Moi, je suis la lettre G !"
  },
  {
-  "h": "a2ed03f4",
+  "h": "d94f6f19",
   "lang": "fr",
-  "text": "Encore le F !"
+  "text": "D'abord la lettre G !"
  },
  {
-  "h": "032a51ad",
+  "h": "e5789d50",
   "lang": "fr",
-  "text": "Moi, je suis le G !"
+  "text": "Maintenant la lettre G !"
  },
  {
-  "h": "feb7dcc7",
+  "h": "d0c0b859",
   "lang": "fr",
-  "text": "D'abord le G !"
+  "text": "Encore la lettre G !"
  },
  {
-  "h": "8475f3d4",
+  "h": "91c67cce",
   "lang": "fr",
-  "text": "Maintenant le G !"
+  "text": "Moi, je suis la lettre H !"
  },
  {
-  "h": "a3ed0587",
+  "h": "e24f7d44",
   "lang": "fr",
-  "text": "Encore le G !"
+  "text": "D'abord la lettre H !"
  },
  {
-  "h": "f42a3a10",
+  "h": "f478b4ed",
   "lang": "fr",
-  "text": "Moi, je suis le H !"
+  "text": "Maintenant la lettre H !"
  },
  {
-  "h": "f3b7cb76",
+  "h": "d9c0c684",
   "lang": "fr",
-  "text": "D'abord le H !"
+  "text": "Encore la lettre H !"
  },
  {
-  "h": "7b75e5a9",
+  "h": "92c67e61",
   "lang": "fr",
-  "text": "Maintenant le H !"
+  "text": "Moi, je suis la lettre I !"
  },
  {
-  "h": "98ecf436",
+  "h": "e34f7ed7",
   "lang": "fr",
-  "text": "Encore le H !"
+  "text": "D'abord la lettre I !"
  },
  {
-  "h": "f52a3ba3",
+  "h": "f378b35a",
   "lang": "fr",
-  "text": "Moi, je suis le I !"
+  "text": "Maintenant la lettre I !"
  },
  {
-  "h": "f4b7cd09",
+  "h": "dac0c817",
   "lang": "fr",
-  "text": "D'abord le I !"
+  "text": "Encore la lettre I !"
  },
  {
-  "h": "7a75e416",
+  "h": "8fc679a8",
   "lang": "fr",
-  "text": "Maintenant le I !"
+  "text": "Moi, je suis la lettre J !"
  },
  {
-  "h": "99ecf5c9",
+  "h": "e44f806a",
   "lang": "fr",
-  "text": "Encore le I !"
+  "text": "D'abord la lettre J !"
  },
  {
-  "h": "f62a3d36",
+  "h": "f278b1c7",
   "lang": "fr",
-  "text": "Moi, je suis le J !"
+  "text": "Maintenant la lettre J !"
  },
  {
-  "h": "f1b7c850",
+  "h": "dbc0c9aa",
   "lang": "fr",
-  "text": "D'abord le J !"
+  "text": "Encore la lettre J !"
  },
  {
-  "h": "7975e283",
+  "h": "90c67b3b",
   "lang": "fr",
-  "text": "Maintenant le J !"
+  "text": "Moi, je suis la lettre K !"
  },
  {
-  "h": "96ecf110",
+  "h": "e54f81fd",
   "lang": "fr",
-  "text": "Encore le J !"
+  "text": "D'abord la lettre K !"
  },
  {
-  "h": "f72a3ec9",
+  "h": "f178b034",
   "lang": "fr",
-  "text": "Moi, je suis le K !"
+  "text": "Maintenant la lettre K !"
  },
  {
-  "h": "f2b7c9e3",
+  "h": "dcc0cb3d",
   "lang": "fr",
-  "text": "D'abord le K !"
+  "text": "Encore la lettre K !"
  },
  {
-  "h": "7875e0f0",
+  "h": "95c6831a",
   "lang": "fr",
-  "text": "Maintenant le K !"
+  "text": "Moi, je suis la lettre L !"
  },
  {
-  "h": "97ecf2a3",
+  "h": "de4f76f8",
   "lang": "fr",
-  "text": "Encore le K !"
+  "text": "D'abord la lettre L !"
  },
  {
-  "h": "f82a405c",
+  "h": "f078aea1",
   "lang": "fr",
-  "text": "Moi, je suis le L !"
+  "text": "Maintenant la lettre L !"
  },
  {
-  "h": "f7b7d1c2",
+  "h": "d5c0c038",
   "lang": "fr",
-  "text": "D'abord le L !"
+  "text": "Encore la lettre L !"
  },
  {
-  "h": "7f75ebf5",
+  "h": "96c684ad",
   "lang": "fr",
-  "text": "Maintenant le L !"
+  "text": "Moi, je suis la lettre M !"
  },
  {
-  "h": "9cecfa82",
+  "h": "df4f788b",
   "lang": "fr",
-  "text": "Encore le L !"
+  "text": "D'abord la lettre M !"
  },
  {
-  "h": "f92a41ef",
+  "h": "ef78ad0e",
   "lang": "fr",
-  "text": "Moi, je suis le M !"
+  "text": "Maintenant la lettre M !"
  },
  {
-  "h": "f8b7d355",
+  "h": "d6c0c1cb",
   "lang": "fr",
-  "text": "D'abord le M !"
+  "text": "Encore la lettre M !"
  },
  {
-  "h": "7e75ea62",
+  "h": "93c67ff4",
   "lang": "fr",
-  "text": "Maintenant le M !"
+  "text": "Moi, je suis la lettre N !"
  },
  {
-  "h": "9decfc15",
+  "h": "e04f7a1e",
   "lang": "fr",
-  "text": "Encore le M !"
+  "text": "D'abord la lettre N !"
  },
  {
-  "h": "fa2a4382",
+  "h": "ee78ab7b",
   "lang": "fr",
-  "text": "Moi, je suis le N !"
+  "text": "Maintenant la lettre N !"
  },
  {
-  "h": "f5b7ce9c",
+  "h": "d7c0c35e",
   "lang": "fr",
-  "text": "D'abord le N !"
+  "text": "Encore la lettre N !"
  },
  {
-  "h": "7d75e8cf",
+  "h": "94c68187",
   "lang": "fr",
-  "text": "Maintenant le N !"
+  "text": "Moi, je suis la lettre O !"
  },
  {
-  "h": "9aecf75c",
+  "h": "e14f7bb1",
   "lang": "fr",
-  "text": "Encore le N !"
+  "text": "D'abord la lettre O !"
  },
  {
-  "h": "fb2a4515",
+  "h": "ed78a9e8",
   "lang": "fr",
-  "text": "Moi, je suis le O !"
+  "text": "Maintenant la lettre O !"
  },
  {
-  "h": "f6b7d02f",
+  "h": "d8c0c4f1",
   "lang": "fr",
-  "text": "D'abord le O !"
+  "text": "Encore la lettre O !"
  },
  {
-  "h": "7c75e73c",
+  "h": "79c65706",
   "lang": "fr",
-  "text": "Maintenant le O !"
+  "text": "Moi, je suis la lettre P !"
  },
  {
-  "h": "9becf8ef",
+  "h": "ea4f89dc",
   "lang": "fr",
-  "text": "Encore le O !"
+  "text": "D'abord la lettre P !"
  },
  {
-  "h": "ec2a2d78",
+  "h": "dc788f25",
   "lang": "fr",
-  "text": "Moi, je suis le P !"
+  "text": "Maintenant la lettre P !"
  },
  {
-  "h": "ebb7bede",
+  "h": "e1c0d31c",
   "lang": "fr",
-  "text": "D'abord le P !"
+  "text": "Encore la lettre P !"
  },
  {
-  "h": "7375d911",
+  "h": "7ac65899",
   "lang": "fr",
-  "text": "Maintenant le P !"
+  "text": "Moi, je suis la lettre Q !"
  },
  {
-  "h": "90ece79e",
+  "h": "eb4f8b6f",
   "lang": "fr",
-  "text": "Encore le P !"
+  "text": "D'abord la lettre Q !"
  },
  {
-  "h": "ed2a2f0b",
+  "h": "db788d92",
   "lang": "fr",
-  "text": "Moi, je suis le Q !"
+  "text": "Maintenant la lettre Q !"
  },
  {
-  "h": "ecb7c071",
+  "h": "e2c0d4af",
   "lang": "fr",
-  "text": "D'abord le Q !"
+  "text": "Encore la lettre Q !"
  },
  {
-  "h": "7275d77e",
+  "h": "77c653e0",
   "lang": "fr",
-  "text": "Maintenant le Q !"
+  "text": "Moi, je suis la lettre R !"
  },
  {
-  "h": "91ece931",
+  "h": "ec4f8d02",
   "lang": "fr",
-  "text": "Encore le Q !"
+  "text": "D'abord la lettre R !"
  },
  {
-  "h": "ee2a309e",
+  "h": "da788bff",
   "lang": "fr",
-  "text": "Moi, je suis le R !"
+  "text": "Maintenant la lettre R !"
  },
  {
-  "h": "e9b7bbb8",
+  "h": "e3c0d642",
   "lang": "fr",
-  "text": "D'abord le R !"
+  "text": "Encore la lettre R !"
  },
  {
-  "h": "7175d5eb",
+  "h": "78c65573",
   "lang": "fr",
-  "text": "Maintenant le R !"
+  "text": "Moi, je suis la lettre S !"
  },
  {
-  "h": "8eece478",
+  "h": "ed4f8e95",
   "lang": "fr",
-  "text": "Encore le R !"
+  "text": "D'abord la lettre S !"
  },
  {
-  "h": "ef2a3231",
+  "h": "d9788a6c",
   "lang": "fr",
-  "text": "Moi, je suis le S !"
+  "text": "Maintenant la lettre S !"
  },
  {
-  "h": "eab7bd4b",
+  "h": "e4c0d7d5",
   "lang": "fr",
-  "text": "D'abord le S !"
+  "text": "Encore la lettre S !"
  },
  {
-  "h": "7075d458",
+  "h": "7dc65d52",
   "lang": "fr",
-  "text": "Maintenant le S !"
+  "text": "Moi, je suis la lettre T !"
  },
  {
-  "h": "8fece60b",
+  "h": "e64f8390",
   "lang": "fr",
-  "text": "Encore le S !"
+  "text": "D'abord la lettre T !"
  },
  {
-  "h": "f02a33c4",
+  "h": "d87888d9",
   "lang": "fr",
-  "text": "Moi, je suis le T !"
+  "text": "Maintenant la lettre T !"
  },
  {
-  "h": "efb7c52a",
+  "h": "ddc0ccd0",
   "lang": "fr",
-  "text": "D'abord le T !"
+  "text": "Encore la lettre T !"
  },
  {
-  "h": "7775df5d",
+  "h": "7ec65ee5",
   "lang": "fr",
-  "text": "Maintenant le T !"
+  "text": "Moi, je suis la lettre U !"
  },
  {
-  "h": "94ecedea",
+  "h": "e74f8523",
   "lang": "fr",
-  "text": "Encore le T !"
+  "text": "D'abord la lettre U !"
  },
  {
-  "h": "f12a3557",
+  "h": "d7788746",
   "lang": "fr",
-  "text": "Moi, je suis le U !"
+  "text": "Maintenant la lettre U !"
  },
  {
-  "h": "f0b7c6bd",
+  "h": "dec0ce63",
   "lang": "fr",
-  "text": "D'abord le U !"
+  "text": "Encore la lettre U !"
  },
  {
-  "h": "7675ddca",
+  "h": "7bc65a2c",
   "lang": "fr",
-  "text": "Maintenant le U !"
+  "text": "Moi, je suis la lettre V !"
  },
  {
-  "h": "95ecef7d",
+  "h": "e84f86b6",
   "lang": "fr",
-  "text": "Encore le U !"
+  "text": "D'abord la lettre V !"
  },
  {
-  "h": "f22a36ea",
+  "h": "d67885b3",
   "lang": "fr",
-  "text": "Moi, je suis le V !"
+  "text": "Maintenant la lettre V !"
  },
  {
-  "h": "edb7c204",
+  "h": "dfc0cff6",
   "lang": "fr",
-  "text": "D'abord le V !"
+  "text": "Encore la lettre V !"
  },
  {
-  "h": "7575dc37",
+  "h": "7cc65bbf",
   "lang": "fr",
-  "text": "Maintenant le V !"
+  "text": "Moi, je suis la lettre W !"
  },
  {
-  "h": "92eceac4",
+  "h": "e94f8849",
   "lang": "fr",
-  "text": "Encore le V !"
+  "text": "D'abord la lettre W !"
  },
  {
-  "h": "f32a387d",
+  "h": "d5788420",
   "lang": "fr",
-  "text": "Moi, je suis le W !"
+  "text": "Maintenant la lettre W !"
  },
  {
-  "h": "eeb7c397",
+  "h": "e0c0d189",
   "lang": "fr",
-  "text": "D'abord le W !"
+  "text": "Encore la lettre W !"
  },
  {
-  "h": "7475daa4",
+  "h": "81c6639e",
   "lang": "fr",
-  "text": "Maintenant le W !"
+  "text": "Moi, je suis la lettre X !"
  },
  {
-  "h": "93ecec57",
+  "h": "f24f9674",
   "lang": "fr",
-  "text": "Encore le W !"
+  "text": "D'abord la lettre X !"
  },
  {
-  "h": "e42a20e0",
+  "h": "e4789bbd",
   "lang": "fr",
-  "text": "Moi, je suis le X !"
+  "text": "Maintenant la lettre X !"
  },
  {
-  "h": "e3b7b246",
+  "h": "e9c0dfb4",
   "lang": "fr",
-  "text": "D'abord le X !"
+  "text": "Encore la lettre X !"
  },
  {
-  "h": "6b75cc79",
+  "h": "82c66531",
   "lang": "fr",
-  "text": "Maintenant le X !"
+  "text": "Moi, je suis la lettre Y !"
  },
  {
-  "h": "88ecdb06",
+  "h": "f34f9807",
   "lang": "fr",
-  "text": "Encore le X !"
+  "text": "D'abord la lettre Y !"
  },
  {
-  "h": "e52a2273",
+  "h": "e3789a2a",
   "lang": "fr",
-  "text": "Moi, je suis le Y !"
+  "text": "Maintenant la lettre Y !"
  },
  {
-  "h": "e4b7b3d9",
+  "h": "eac0e147",
   "lang": "fr",
-  "text": "D'abord le Y !"
+  "text": "Encore la lettre Y !"
  },
  {
-  "h": "6a75cae6",
+  "h": "7fc66078",
   "lang": "fr",
-  "text": "Maintenant le Y !"
+  "text": "Moi, je suis la lettre Z !"
  },
  {
-  "h": "89ecdc99",
+  "h": "f44f999a",
   "lang": "fr",
-  "text": "Encore le Y !"
+  "text": "D'abord la lettre Z !"
  },
  {
-  "h": "e62a2406",
+  "h": "e2789897",
   "lang": "fr",
-  "text": "Moi, je suis le Z !"
+  "text": "Maintenant la lettre Z !"
  },
  {
-  "h": "e1b7af20",
+  "h": "ebc0e2da",
   "lang": "fr",
-  "text": "D'abord le Z !"
+  "text": "Encore la lettre Z !"
  },
  {
-  "h": "6975c953",
+  "h": "7d462923",
   "lang": "fr",
-  "text": "Maintenant le Z !"
- },
- {
-  "h": "86ecd7e0",
-  "lang": "fr",
-  "text": "Encore le Z !"
- },
- {
-  "h": "e51827ff",
-  "lang": "fr",
-  "text": "On écrit Lena ! Attrape le L !"
+  "text": "On écrit Lena ! Attrape la lettre L !"
  },
  {
   "h": "2e1cb36d",
@@ -3095,9 +3085,9 @@
   "text": "L, E, N, A. Lena ! Tu as écrit Lena !"
  },
  {
-  "h": "29747c5d",
+  "h": "a2383089",
   "lang": "fr",
-  "text": "On écrit Papa ! Attrape le P !"
+  "text": "On écrit Papa ! Attrape la lettre P !"
  },
  {
   "h": "d491f93b",
@@ -3120,9 +3110,9 @@
   "text": "Attention : la couleur aussi doit être pareille !"
  },
  {
-  "h": "4c061566",
+  "h": "69476d3c",
   "lang": "fr",
-  "text": "Regarde la file : les formes se répètent."
+  "text": "Regarde la suite : les formes se répètent."
  },
  {
   "h": "39d8b5d1",
@@ -3155,9 +3145,9 @@
   "text": "Qu'est-ce qui vient après ?"
  },
  {
-  "h": "693da773",
+  "h": "ab09427d",
   "lang": "fr",
-  "text": "Regarde bien la file ! Réessaie."
+  "text": "Regarde bien la suite ! Réessaie."
  },
  {
   "h": "f4e1f22d",
@@ -3710,9 +3700,9 @@
   "text": "Touche ce qui rime : ça finit avec le même son !"
  },
  {
-  "h": "475593cc",
+  "h": "4af320a5",
   "lang": "fr",
-  "text": "Combien de syllabes dans chat ? Tape dans tes mains !"
+  "text": "Combien de syllabes dans le mot chat ? Tape dans tes mains !"
  },
  {
   "h": "bf46d1dd",
@@ -3720,9 +3710,9 @@
   "text": "chat !"
  },
  {
-  "h": "a1c1f38c",
+  "h": "63b7e8ff",
   "lang": "fr",
-  "text": "Combien de syllabes dans pomme ? Tape dans tes mains !"
+  "text": "Combien de syllabes dans le mot pomme ? Tape dans tes mains !"
  },
  {
   "h": "74fabdff",
@@ -3730,9 +3720,9 @@
   "text": "pomme !"
  },
  {
-  "h": "0d65c459",
+  "h": "6a586950",
   "lang": "fr",
-  "text": "Combien de syllabes dans maison ? Tape dans tes mains !"
+  "text": "Combien de syllabes dans le mot maison ? Tape dans tes mains !"
  },
  {
   "h": "83d070fc",
@@ -3745,9 +3735,9 @@
   "text": "Maison !"
  },
  {
-  "h": "a5ec14cc",
+  "h": "07f94033",
   "lang": "fr",
-  "text": "Combien de syllabes dans lapin ? Tape dans tes mains !"
+  "text": "Combien de syllabes dans le mot lapin ? Tape dans tes mains !"
  },
  {
   "h": "64ebc17b",
@@ -3760,9 +3750,9 @@
   "text": "Lapin !"
  },
  {
-  "h": "6b04feea",
+  "h": "36fd9f77",
   "lang": "fr",
-  "text": "Combien de syllabes dans soleil ? Tape dans tes mains !"
+  "text": "Combien de syllabes dans le mot soleil ? Tape dans tes mains !"
  },
  {
   "h": "39718d49",
@@ -3775,9 +3765,9 @@
   "text": "Soleil !"
  },
  {
-  "h": "6f445d5b",
+  "h": "0e840896",
   "lang": "fr",
-  "text": "Combien de syllabes dans banane ? Tape dans tes mains !"
+  "text": "Combien de syllabes dans le mot banane ? Tape dans tes mains !"
  },
  {
   "h": "abbba952",
@@ -3790,14 +3780,14 @@
   "text": "Banane !"
  },
  {
-  "h": "fe4664ff",
+  "h": "88a9964a",
   "lang": "fr",
-  "text": "Combien de syllabes dans papillon ? Tape dans tes mains !"
+  "text": "Combien de syllabes dans le mot papillon ? Tape dans tes mains !"
  },
  {
-  "h": "50fcd914",
+  "h": "4ebcb579",
   "lang": "fr",
-  "text": "pa, pi, llon !"
+  "text": "pa, pi, yon !"
  },
  {
   "h": "af7b357e",
@@ -3805,9 +3795,9 @@
   "text": "Papillon !"
  },
  {
-  "h": "75d1fb3b",
+  "h": "a969e3ee",
   "lang": "fr",
-  "text": "Combien de syllabes dans éléphant ? Tape dans tes mains !"
+  "text": "Combien de syllabes dans le mot éléphant ? Tape dans tes mains !"
  },
  {
   "h": "ce4db914",
@@ -3820,14 +3810,14 @@
   "text": "Éléphant !"
  },
  {
-  "h": "78d716af",
+  "h": "64d9c39e",
   "lang": "fr",
-  "text": "Combien de syllabes dans coccinelle ? Tape dans tes mains !"
+  "text": "Combien de syllabes dans le mot coccinelle ? Tape dans tes mains !"
  },
  {
-  "h": "c21131ae",
+  "h": "4a826fbe",
   "lang": "fr",
-  "text": "coc, ci, nelle !"
+  "text": "coc, si, nelle !"
  },
  {
   "h": "63864ab6",
@@ -3835,9 +3825,9 @@
   "text": "Coccinelle !"
  },
  {
-  "h": "9b32ff82",
+  "h": "29d854c5",
   "lang": "fr",
-  "text": "Combien de syllabes dans crocodile ? Tape dans tes mains !"
+  "text": "Combien de syllabes dans le mot crocodile ? Tape dans tes mains !"
  },
  {
   "h": "8711a32d",
@@ -3850,14 +3840,14 @@
   "text": "Crocodile !"
  },
  {
-  "h": "9f8eca5d",
+  "h": "5d70dfda",
   "lang": "fr",
-  "text": "Combien de syllabes dans hélicoptère ? Tape dans tes mains !"
+  "text": "Combien de syllabes dans le mot hélicoptère ? Tape dans tes mains !"
  },
  {
-  "h": "e5ebd3b2",
+  "h": "0152b784",
   "lang": "fr",
-  "text": "hé, li, cop, tère !"
+  "text": "é, li, cop, tère !"
  },
  {
   "h": "3d38491e",
@@ -3873,6 +3863,16 @@
   "h": "08e089d6",
   "lang": "fr",
   "text": "Bateau, gâteau ! Ça rime !"
+ },
+ {
+  "h": "ffabf298",
+  "lang": "fr",
+  "text": "Qu'est-ce qui rime avec gâteau ?"
+ },
+ {
+  "h": "7b40ed5a",
+  "lang": "fr",
+  "text": "Gâteau, bateau ! Ça rime !"
  },
  {
   "h": "f516a5a7",
@@ -3895,6 +3895,16 @@
   "text": "Lapin, sapin ! Ça rime !"
  },
  {
+  "h": "f4e2e9ab",
+  "lang": "fr",
+  "text": "Qu'est-ce qui rime avec sapin ?"
+ },
+ {
+  "h": "cf7221af",
+  "lang": "fr",
+  "text": "Sapin, lapin ! Ça rime !"
+ },
+ {
   "h": "f0e4046a",
   "lang": "fr",
   "text": "Sapin !"
@@ -3908,6 +3918,16 @@
   "h": "f00dde34",
   "lang": "fr",
   "text": "Soleil, abeille ! Ça rime !"
+ },
+ {
+  "h": "730a9a98",
+  "lang": "fr",
+  "text": "Qu'est-ce qui rime avec abeille ?"
+ },
+ {
+  "h": "9363a338",
+  "lang": "fr",
+  "text": "Abeille, soleil ! Ça rime !"
  },
  {
   "h": "2edb7049",
@@ -3925,29 +3945,49 @@
   "text": "Chat, rat ! Ça rime !"
  },
  {
+  "h": "6f1a0bc7",
+  "lang": "fr",
+  "text": "Qu'est-ce qui rime avec rat ?"
+ },
+ {
+  "h": "1c0bd307",
+  "lang": "fr",
+  "text": "Rat, chat ! Ça rime !"
+ },
+ {
   "h": "644aa096",
   "lang": "fr",
   "text": "Rat !"
  },
  {
-  "h": "d7574271",
+  "h": "e714ccd1",
   "lang": "fr",
-  "text": "Qu'est-ce qui rime avec main ?"
+  "text": "Qu'est-ce qui rime avec nez ?"
  },
  {
-  "h": "aecacbad",
+  "h": "9a8ec9d4",
   "lang": "fr",
-  "text": "Main, pain ! Ça rime !"
+  "text": "Nez, dé ! Ça rime !"
  },
  {
-  "h": "d8aeb6f2",
+  "h": "14413ebb",
   "lang": "fr",
-  "text": "Main !"
+  "text": "Qu'est-ce qui rime avec dé ?"
  },
  {
-  "h": "dcab5397",
+  "h": "e8b59652",
   "lang": "fr",
-  "text": "Pain !"
+  "text": "Dé, nez ! Ça rime !"
+ },
+ {
+  "h": "bc80cc64",
+  "lang": "fr",
+  "text": "Nez !"
+ },
+ {
+  "h": "0127ea24",
+  "lang": "fr",
+  "text": "Dé !"
  },
  {
   "h": "95fc1757",
@@ -3958,6 +3998,16 @@
   "h": "83580270",
   "lang": "fr",
   "text": "Poisson, hérisson ! Ça rime !"
+ },
+ {
+  "h": "337ee3e9",
+  "lang": "fr",
+  "text": "Qu'est-ce qui rime avec hérisson ?"
+ },
+ {
+  "h": "3cc959d6",
+  "lang": "fr",
+  "text": "Hérisson, poisson ! Ça rime !"
  },
  {
   "h": "7b2d0d7a",
@@ -4035,9 +4085,9 @@
   "text": "Écris le chiffre neuf !"
  },
  {
-  "h": "e28be896",
+  "h": "b3f05594",
   "lang": "fr",
-  "text": "Écris le A ! Suis les points."
+  "text": "Écris la lettre A ! Suis les points."
  },
  {
   "h": "6a4c4b46",
@@ -4045,9 +4095,9 @@
   "text": "A !"
  },
  {
-  "h": "df3f82d3",
+  "h": "e4eaa825",
   "lang": "fr",
-  "text": "Écris le B ! Suis les points."
+  "text": "Écris la lettre B ! Suis les points."
  },
  {
   "h": "694c49b3",
@@ -4055,9 +4105,9 @@
   "text": "B !"
  },
  {
-  "h": "014c9440",
+  "h": "9055250a",
   "lang": "fr",
-  "text": "Écris le C ! Suis les points."
+  "text": "Écris la lettre C ! Suis les points."
  },
  {
   "h": "684c4820",
@@ -4065,9 +4115,9 @@
   "text": "C !"
  },
  {
-  "h": "04f35c9d",
+  "h": "43d558fb",
   "lang": "fr",
-  "text": "Écris le D ! Suis les points."
+  "text": "Écris la lettre D ! Suis les points."
  },
  {
   "h": "6f4c5325",
@@ -4075,9 +4125,9 @@
   "text": "D !"
  },
  {
-  "h": "26512e22",
+  "h": "ca1087a8",
   "lang": "fr",
-  "text": "Écris le E ! Suis les points."
+  "text": "Écris la lettre E ! Suis les points."
  },
  {
   "h": "6e4c5192",
@@ -4085,9 +4135,9 @@
   "text": "E !"
  },
  {
-  "h": "c1fc897f",
+  "h": "01c8ce09",
   "lang": "fr",
-  "text": "Écris le F ! Suis les points."
+  "text": "Écris la lettre F ! Suis les points."
  },
  {
   "h": "6d4c4fff",
@@ -4095,9 +4145,9 @@
   "text": "F !"
  },
  {
-  "h": "e2e1372c",
+  "h": "584a519e",
   "lang": "fr",
-  "text": "Écris le G ! Suis les points."
+  "text": "Écris la lettre G ! Suis les points."
  },
  {
   "h": "6c4c4e6c",
@@ -4105,9 +4155,9 @@
   "text": "G !"
  },
  {
-  "h": "e86ab299",
+  "h": "dcc90f6f",
   "lang": "fr",
-  "text": "Écris le H ! Suis les points."
+  "text": "Écris la lettre H ! Suis les points."
  },
  {
   "h": "734c5971",
@@ -4115,9 +4165,9 @@
   "text": "H !"
  },
  {
-  "h": "ccac272e",
+  "h": "dce7cc9c",
   "lang": "fr",
-  "text": "Écris le I ! Suis les points."
+  "text": "Écris la lettre I ! Suis les points."
  },
  {
   "h": "724c57de",
@@ -4125,9 +4175,9 @@
   "text": "I !"
  },
  {
-  "h": "bfbff9cb",
+  "h": "6f9afa0d",
   "lang": "fr",
-  "text": "Écris le J ! Suis les points."
+  "text": "Écris la lettre J ! Suis les points."
  },
  {
   "h": "714c564b",
@@ -4135,9 +4185,9 @@
   "text": "J !"
  },
  {
-  "h": "60069838",
+  "h": "f92c9492",
   "lang": "fr",
-  "text": "Écris le K ! Suis les points."
+  "text": "Écris la lettre K ! Suis les points."
  },
  {
   "h": "704c54b8",
@@ -4145,9 +4195,9 @@
   "text": "K !"
  },
  {
-  "h": "0e6df575",
+  "h": "11024843",
   "lang": "fr",
-  "text": "Écris le L ! Suis les points."
+  "text": "Écris la lettre L ! Suis les points."
  },
  {
   "h": "774c5fbd",
@@ -4155,9 +4205,9 @@
   "text": "L !"
  },
  {
-  "h": "3646541a",
+  "h": "0d057930",
   "lang": "fr",
-  "text": "Écris le M ! Suis les points."
+  "text": "Écris la lettre M ! Suis les points."
  },
  {
   "h": "764c5e2a",
@@ -4165,9 +4215,9 @@
   "text": "M !"
  },
  {
-  "h": "989c9a77",
+  "h": "37660bf1",
   "lang": "fr",
-  "text": "Écris le N ! Suis les points."
+  "text": "Écris la lettre N ! Suis les points."
  },
  {
   "h": "754c5c97",
@@ -4175,9 +4225,9 @@
   "text": "N !"
  },
  {
-  "h": "03eb8d64",
+  "h": "64f0d786",
   "lang": "fr",
-  "text": "Écris le O ! Suis les points."
+  "text": "Écris la lettre O ! Suis les points."
  },
  {
   "h": "744c5b04",
@@ -4185,9 +4235,9 @@
   "text": "O !"
  },
  {
-  "h": "62e2dc51",
+  "h": "cbbb7697",
   "lang": "fr",
-  "text": "Écris le P ! Suis les points."
+  "text": "Écris la lettre P ! Suis les points."
  },
  {
   "h": "7b4c6609",
@@ -4195,9 +4245,9 @@
   "text": "P !"
  },
  {
-  "h": "00175866",
+  "h": "d885e404",
   "lang": "fr",
-  "text": "Écris le Q ! Suis les points."
+  "text": "Écris la lettre Q ! Suis les points."
  },
  {
   "h": "7a4c6476",
@@ -4205,9 +4255,9 @@
   "text": "Q !"
  },
  {
-  "h": "d1d9aa23",
+  "h": "22e66f95",
   "lang": "fr",
-  "text": "Écris le R ! Suis les points."
+  "text": "Écris la lettre R ! Suis les points."
  },
  {
   "h": "794c62e3",
@@ -4215,9 +4265,9 @@
   "text": "R !"
  },
  {
-  "h": "ddab2d10",
+  "h": "a6ae8a3a",
   "lang": "fr",
-  "text": "Écris le S ! Suis les points."
+  "text": "Écris la lettre S ! Suis les points."
  },
  {
   "h": "784c6150",
@@ -4225,9 +4275,9 @@
   "text": "S !"
  },
  {
-  "h": "cd72e8ed",
+  "h": "ab8ec9eb",
   "lang": "fr",
-  "text": "Écris le T ! Suis les points."
+  "text": "Écris la lettre T ! Suis les points."
  },
  {
   "h": "7f4c6c55",
@@ -4235,9 +4285,9 @@
   "text": "T !"
  },
  {
-  "h": "a159db72",
+  "h": "2c6440d8",
   "lang": "fr",
-  "text": "Écris le U ! Suis les points."
+  "text": "Écris la lettre U ! Suis les points."
  },
  {
   "h": "7e4c6ac2",
@@ -4245,9 +4295,9 @@
   "text": "U !"
  },
  {
-  "h": "49d0fccf",
+  "h": "9ebcb339",
   "lang": "fr",
-  "text": "Écris le V ! Suis les points."
+  "text": "Écris la lettre V ! Suis les points."
  },
  {
   "h": "7d4c692f",
@@ -4255,9 +4305,9 @@
   "text": "V !"
  },
  {
-  "h": "d5df49fc",
+  "h": "40947b4e",
   "lang": "fr",
-  "text": "Écris le W ! Suis les points."
+  "text": "Écris la lettre W ! Suis les points."
  },
  {
   "h": "7c4c679c",
@@ -4265,9 +4315,9 @@
   "text": "W !"
  },
  {
-  "h": "8bf4aee9",
+  "h": "fc78c21f",
   "lang": "fr",
-  "text": "Écris le X ! Suis les points."
+  "text": "Écris la lettre X ! Suis les points."
  },
  {
   "h": "834c72a1",
@@ -4275,9 +4325,9 @@
   "text": "X !"
  },
  {
-  "h": "b3e73efe",
+  "h": "e49e24cc",
   "lang": "fr",
-  "text": "Écris le Y ! Suis les points."
+  "text": "Écris la lettre Y ! Suis les points."
  },
  {
   "h": "824c710e",
@@ -4285,9 +4335,9 @@
   "text": "Y !"
  },
  {
-  "h": "bcc4c45b",
+  "h": "ccbeeebd",
   "lang": "fr",
-  "text": "Écris le Z ! Suis les points."
+  "text": "Écris la lettre Z ! Suis les points."
  },
  {
   "h": "814c6f7b",
@@ -4740,6 +4790,11 @@
   "text": "Où est le pain ?"
  },
  {
+  "h": "dcab5397",
+  "lang": "fr",
+  "text": "Pain !"
+ },
+ {
   "h": "7da53d06",
   "lang": "fr",
   "text": "Non, ça, c'est le pain !"
@@ -5090,9 +5145,9 @@
   "text": "Scegli i vestiti per il tuo amico!"
  },
  {
-  "h": "528bd47e",
+  "h": "f36be5f1",
   "lang": "it",
-  "text": "Evviva! È tuo!"
+  "text": "Evviva! Adesso è per te!"
  },
  {
   "h": "804a0c33",
@@ -5515,9 +5570,9 @@
   "text": "Il fiore!"
  },
  {
-  "h": "269c1678",
+  "h": "76635fc6",
   "lang": "it",
-  "text": "Il fiore! Lo vuoi comprare?"
+  "text": "Il fiore! Vuoi comprare questo?"
  },
  {
   "h": "118cb76d",
@@ -5525,9 +5580,9 @@
   "text": "Il fiocco!"
  },
  {
-  "h": "8df7d146",
+  "h": "acfda290",
   "lang": "it",
-  "text": "Il fiocco! Lo vuoi comprare?"
+  "text": "Il fiocco! Vuoi comprare questo?"
  },
  {
   "h": "c9ad32a3",
@@ -5535,9 +5590,9 @@
   "text": "Il cappello di paglia!"
  },
  {
-  "h": "353c0634",
+  "h": "7df606e2",
   "lang": "it",
-  "text": "Il cappello di paglia! Lo vuoi comprare?"
+  "text": "Il cappello di paglia! Vuoi comprare questo?"
  },
  {
   "h": "6560d234",
@@ -5545,9 +5600,9 @@
   "text": "Il cappello magico!"
  },
  {
-  "h": "ec4ebe65",
+  "h": "46996c9f",
   "lang": "it",
-  "text": "Il cappello magico! Lo vuoi comprare?"
+  "text": "Il cappello magico! Vuoi comprare questo?"
  },
  {
   "h": "4cf11546",
@@ -5555,9 +5610,9 @@
   "text": "La corona!"
  },
  {
-  "h": "2f8405d7",
+  "h": "3cba6ebd",
   "lang": "it",
-  "text": "La corona! Lo vuoi comprare?"
+  "text": "La corona! Vuoi comprare questo?"
  },
  {
   "h": "4f78b217",
@@ -5565,9 +5620,9 @@
   "text": "Gli occhiali!"
  },
  {
-  "h": "01579ef0",
+  "h": "bc08f86e",
   "lang": "it",
-  "text": "Gli occhiali! Lo vuoi comprare?"
+  "text": "Gli occhiali! Vuoi comprare questo?"
  },
  {
   "h": "0e2b6797",
@@ -5575,9 +5630,9 @@
   "text": "Gli occhiali da sole!"
  },
  {
-  "h": "a2ca7770",
+  "h": "edf0d8ee",
   "lang": "it",
-  "text": "Gli occhiali da sole! Lo vuoi comprare?"
+  "text": "Gli occhiali da sole! Vuoi comprare questo?"
  },
  {
   "h": "67617bf8",
@@ -5585,9 +5640,9 @@
   "text": "Il lecca-lecca!"
  },
  {
-  "h": "20ffe701",
+  "h": "a3df38bb",
   "lang": "it",
-  "text": "Il lecca-lecca! Lo vuoi comprare?"
+  "text": "Il lecca-lecca! Vuoi comprare questo?"
  },
  {
   "h": "8f70f1b1",
@@ -5595,9 +5650,9 @@
   "text": "Il palloncino!"
  },
  {
-  "h": "d419aa62",
+  "h": "e59f7b8c",
   "lang": "it",
-  "text": "Il palloncino! Lo vuoi comprare?"
+  "text": "Il palloncino! Vuoi comprare questo?"
  },
  {
   "h": "de28f4b5",
@@ -5605,9 +5660,9 @@
   "text": "La bacchetta magica!"
  },
  {
-  "h": "4b3d039e",
+  "h": "933c9dd8",
   "lang": "it",
-  "text": "La bacchetta magica! Lo vuoi comprare?"
+  "text": "La bacchetta magica! Vuoi comprare questo?"
  },
  {
   "h": "36a48e04",
@@ -5615,9 +5670,9 @@
   "text": "I cuori!"
  },
  {
-  "h": "a187b9f5",
+  "h": "a04689ef",
   "lang": "it",
-  "text": "I cuori! Lo vuoi comprare?"
+  "text": "I cuori! Vuoi comprare questo?"
  },
  {
   "h": "39561085",
@@ -5625,9 +5680,9 @@
   "text": "Le farfalle!"
  },
  {
-  "h": "f8e574ae",
+  "h": "6969afa8",
   "lang": "it",
-  "text": "Le farfalle! Lo vuoi comprare?"
+  "text": "Le farfalle! Vuoi comprare questo?"
  },
  {
   "h": "6014de26",
@@ -5635,9 +5690,9 @@
   "text": "I brillantini!"
  },
  {
-  "h": "c2b7af37",
+  "h": "d4e3899d",
   "lang": "it",
-  "text": "I brillantini! Lo vuoi comprare?"
+  "text": "I brillantini! Vuoi comprare questo?"
  },
  {
   "h": "2b4c3689",
@@ -5645,9 +5700,9 @@
   "text": "L'arcobaleno!"
  },
  {
-  "h": "d4e263aa",
+  "h": "3d218ec4",
   "lang": "it",
-  "text": "L'arcobaleno! Lo vuoi comprare?"
+  "text": "L'arcobaleno! Vuoi comprare questo?"
  },
  {
   "h": "0046f10f",
@@ -5835,9 +5890,9 @@
   "text": "Ogni sera si nascondeva dietro a un grande scoglio."
  },
  {
-  "h": "96370bf4",
+  "h": "a169024c",
   "lang": "it",
-  "text": "Una sera è arrivata una polpessa gentile con una lanterna."
+  "text": "Una sera è arrivato un polpo gentile con una lanterna."
  },
  {
   "h": "3c334061",
@@ -5945,9 +6000,9 @@
   "text": "Ops! Guarda bene prima di saltare!"
  },
  {
-  "h": "8c2d171c",
+  "h": "2452113e",
   "lang": "it",
-  "text": "Ops! Il semaforo è diventato rosso: attraversa quando è appena verde!"
+  "text": "Ops! Il semaforo è diventato rosso: attraversa quando è appena diventato verde!"
  },
  {
   "h": "8af86031",
@@ -5990,9 +6045,9 @@
   "text": "Attraversa sulle strisce bianche: è più sicuro e vinci più stelle!"
  },
  {
-  "h": "dc9ec1f1",
+  "h": "0b557d2a",
   "lang": "it",
-  "text": "Quando le luci rosse lampeggiano, arriva il treno: aspetta sul prato!"
+  "text": "Quando le luci rosse lampeggiano, arriva il treno: aspetta qui, prima dei binari!"
  },
  {
   "h": "35973331",
@@ -7227,7 +7282,7 @@
  {
   "h": "2a9b5e4e",
   "lang": "it",
-  "text": "Memory degli Animali"
+  "text": "Memory degli animali"
  },
  {
   "h": "973ee6eb",
@@ -7420,9 +7475,9 @@
   "text": "Pesca la i di Isola!"
  },
  {
-  "h": "cf08685a",
+  "h": "76e2c10b",
   "lang": "it",
-  "text": "Pesca la i di Igloo!"
+  "text": "Pesca la i di Insalata!"
  },
  {
   "h": "c815e8d7",
@@ -8690,9 +8745,9 @@
   "text": "Tocca la cosa che fa rima: finisce con lo stesso suono!"
  },
  {
-  "h": "95764383",
+  "h": "f7025205",
   "lang": "it",
-  "text": "Quante sillabe ha sole? Batti le mani!"
+  "text": "Quante sillabe ha la parola sole? Batti le mani!"
  },
  {
   "h": "c98f9fba",
@@ -8705,9 +8760,9 @@
   "text": "Sole!"
  },
  {
-  "h": "418cffae",
+  "h": "f2685038",
   "lang": "it",
-  "text": "Quante sillabe ha casa? Batti le mani!"
+  "text": "Quante sillabe ha la parola casa? Batti le mani!"
  },
  {
   "h": "fa1b03eb",
@@ -8720,9 +8775,9 @@
   "text": "Casa!"
  },
  {
-  "h": "fbff4073",
+  "h": "4e9a8b55",
   "lang": "it",
-  "text": "Quante sillabe ha mela? Batti le mani!"
+  "text": "Quante sillabe ha la parola mela? Batti le mani!"
  },
  {
   "h": "6c84779e",
@@ -8735,9 +8790,9 @@
   "text": "Mela!"
  },
  {
-  "h": "d9512987",
+  "h": "3343d1bd",
   "lang": "it",
-  "text": "Quante sillabe ha gatto? Batti le mani!"
+  "text": "Quante sillabe ha la parola gatto? Batti le mani!"
  },
  {
   "h": "435ad4e8",
@@ -8750,9 +8805,9 @@
   "text": "Gatto!"
  },
  {
-  "h": "85c0b095",
+  "h": "b6af94ff",
   "lang": "it",
-  "text": "Quante sillabe ha fiore? Batti le mani!"
+  "text": "Quante sillabe ha la parola fiore? Batti le mani!"
  },
  {
   "h": "bd04a54e",
@@ -8765,9 +8820,9 @@
   "text": "Fiore!"
  },
  {
-  "h": "cf24d63f",
+  "h": "360485dd",
   "lang": "it",
-  "text": "Quante sillabe ha re? Batti le mani!"
+  "text": "Quante sillabe ha la parola re? Batti le mani!"
  },
  {
   "h": "58547550",
@@ -8775,9 +8830,9 @@
   "text": "re!"
  },
  {
-  "h": "23fdc162",
+  "h": "77123c34",
   "lang": "it",
-  "text": "Quante sillabe ha tè? Batti le mani!"
+  "text": "Quante sillabe ha la parola tè? Batti le mani!"
  },
  {
   "h": "c1447d11",
@@ -8785,9 +8840,9 @@
   "text": "tè!"
  },
  {
-  "h": "814c22df",
+  "h": "f30d26e5",
   "lang": "it",
-  "text": "Quante sillabe ha banana? Batti le mani!"
+  "text": "Quante sillabe ha la parola banana? Batti le mani!"
  },
  {
   "h": "df6a744e",
@@ -8800,9 +8855,9 @@
   "text": "Banana!"
  },
  {
-  "h": "448eb21d",
+  "h": "4fc8af73",
   "lang": "it",
-  "text": "Quante sillabe ha farfalla? Batti le mani!"
+  "text": "Quante sillabe ha la parola farfalla? Batti le mani!"
  },
  {
   "h": "277c48ac",
@@ -8815,9 +8870,9 @@
   "text": "Farfalla!"
  },
  {
-  "h": "fedc1ebc",
+  "h": "b2cd07ce",
   "lang": "it",
-  "text": "Quante sillabe ha elefante? Batti le mani!"
+  "text": "Quante sillabe ha la parola elefante? Batti le mani!"
  },
  {
   "h": "3c8f406d",
@@ -8830,9 +8885,9 @@
   "text": "Elefante!"
  },
  {
-  "h": "45a45967",
+  "h": "4938aaa5",
   "lang": "it",
-  "text": "Quante sillabe ha palloncino? Batti le mani!"
+  "text": "Quante sillabe ha la parola palloncino? Batti le mani!"
  },
  {
   "h": "a2e059d8",
@@ -8845,9 +8900,9 @@
   "text": "Palloncino!"
  },
  {
-  "h": "65e0cab7",
+  "h": "83d2dd11",
   "lang": "it",
-  "text": "Quante sillabe ha tartaruga? Batti le mani!"
+  "text": "Quante sillabe ha la parola tartaruga? Batti le mani!"
  },
  {
   "h": "0eca9df8",
@@ -8870,6 +8925,16 @@
   "text": "Gatto, piatto! Fanno rima!"
  },
  {
+  "h": "4d0da26a",
+  "lang": "it",
+  "text": "Cosa fa rima con piatto?"
+ },
+ {
+  "h": "9583e53c",
+  "lang": "it",
+  "text": "Piatto, gatto! Fanno rima!"
+ },
+ {
   "h": "f8002f32",
   "lang": "it",
   "text": "Piatto!"
@@ -8883,6 +8948,16 @@
   "h": "e424d553",
   "lang": "it",
   "text": "Cane, pane! Fanno rima!"
+ },
+ {
+  "h": "eb801613",
+  "lang": "it",
+  "text": "Cosa fa rima con pane?"
+ },
+ {
+  "h": "5eef8829",
+  "lang": "it",
+  "text": "Pane, cane! Fanno rima!"
  },
  {
   "h": "86f5bb00",
@@ -8905,6 +8980,16 @@
   "text": "Fiore, cuore! Fanno rima!"
  },
  {
+  "h": "edd8e48b",
+  "lang": "it",
+  "text": "Cosa fa rima con cuore?"
+ },
+ {
+  "h": "e6136f69",
+  "lang": "it",
+  "text": "Cuore, fiore! Fanno rima!"
+ },
+ {
   "h": "e181ab53",
   "lang": "it",
   "text": "Cuore!"
@@ -8918,6 +9003,16 @@
   "h": "40bb9820",
   "lang": "it",
   "text": "Torta, porta! Fanno rima!"
+ },
+ {
+  "h": "af38e43d",
+  "lang": "it",
+  "text": "Cosa fa rima con porta?"
+ },
+ {
+  "h": "c8859280",
+  "lang": "it",
+  "text": "Porta, torta! Fanno rima!"
  },
  {
   "h": "85682ff9",
@@ -8940,6 +9035,16 @@
   "text": "Nave, chiave! Fanno rima!"
  },
  {
+  "h": "fd2fde09",
+  "lang": "it",
+  "text": "Cosa fa rima con chiave?"
+ },
+ {
+  "h": "4515a92c",
+  "lang": "it",
+  "text": "Chiave, nave! Fanno rima!"
+ },
+ {
   "h": "ad0004b5",
   "lang": "it",
   "text": "Nave!"
@@ -8958,6 +9063,16 @@
   "h": "d26d644b",
   "lang": "it",
   "text": "Mela, candela! Fanno rima!"
+ },
+ {
+  "h": "7e47d359",
+  "lang": "it",
+  "text": "Cosa fa rima con candela?"
+ },
+ {
+  "h": "1c77fb23",
+  "lang": "it",
+  "text": "Candela, mela! Fanno rima!"
  },
  {
   "h": "a9f03851",
@@ -9030,9 +9145,9 @@
   "text": "Scrivi il numero nove!"
  },
  {
-  "h": "620b9cb0",
+  "h": "e497ca0f",
   "lang": "it",
-  "text": "Scrivi la a! Segui i puntini."
+  "text": "Scrivi la lettera a! Segui i puntini."
  },
  {
   "h": "e40c292c",
@@ -9040,9 +9155,9 @@
   "text": "a!"
  },
  {
-  "h": "5adf9f32",
+  "h": "4dcb70f7",
   "lang": "it",
-  "text": "Scrivi la bi! Segui i puntini."
+  "text": "Scrivi la lettera bi! Segui i puntini."
  },
  {
   "h": "442bb364",
@@ -9050,9 +9165,9 @@
   "text": "bi!"
  },
  {
-  "h": "be41a5a3",
+  "h": "1cd2fe46",
   "lang": "it",
-  "text": "Scrivi la ci! Segui i puntini."
+  "text": "Scrivi la lettera ci! Segui i puntini."
  },
  {
   "h": "6029a0e1",
@@ -9060,9 +9175,9 @@
   "text": "ci!"
  },
  {
-  "h": "520ab068",
+  "h": "017a907d",
   "lang": "it",
-  "text": "Scrivi la di! Segui i puntini."
+  "text": "Scrivi la lettera di! Segui i puntini."
  },
  {
   "h": "601cd4ee",
@@ -9070,9 +9185,9 @@
   "text": "di!"
  },
  {
-  "h": "a64d740c",
+  "h": "67690bf3",
   "lang": "it",
-  "text": "Scrivi la e! Segui i puntini."
+  "text": "Scrivi la lettera e! Segui i puntini."
  },
  {
   "h": "e00c22e0",
@@ -9080,9 +9195,9 @@
   "text": "e!"
  },
  {
-  "h": "57167b45",
+  "h": "8f125bd4",
   "lang": "it",
-  "text": "Scrivi la effe! Segui i puntini."
+  "text": "Scrivi la lettera effe! Segui i puntini."
  },
  {
   "h": "402c40db",
@@ -9090,9 +9205,9 @@
   "text": "effe!"
  },
  {
-  "h": "8579e117",
+  "h": "76b6d012",
   "lang": "it",
-  "text": "Scrivi la gi! Segui i puntini."
+  "text": "Scrivi la lettera gi! Segui i puntini."
  },
  {
   "h": "482080bd",
@@ -9100,9 +9215,9 @@
   "text": "gi!"
  },
  {
-  "h": "f0740bff",
+  "h": "c443f472",
   "lang": "it",
-  "text": "Scrivi la acca! Segui i puntini."
+  "text": "Scrivi la lettera acca! Segui i puntini."
  },
  {
   "h": "56201d21",
@@ -9110,9 +9225,9 @@
   "text": "acca!"
  },
  {
-  "h": "1ec33c58",
+  "h": "d469db37",
   "lang": "it",
-  "text": "Scrivi la i! Segui i puntini."
+  "text": "Scrivi la lettera i! Segui i puntini."
  },
  {
   "h": "ec0c35c4",
@@ -9120,9 +9235,9 @@
   "text": "i!"
  },
  {
-  "h": "1ffe464f",
+  "h": "74c291ec",
   "lang": "it",
-  "text": "Scrivi la i lunga! Segui i puntini."
+  "text": "Scrivi la lettera i lunga! Segui i puntini."
  },
  {
   "h": "3d258b07",
@@ -9130,9 +9245,9 @@
   "text": "i lunga!"
  },
  {
-  "h": "68ba3844",
+  "h": "a9083e47",
   "lang": "it",
-  "text": "Scrivi la cappa! Segui i puntini."
+  "text": "Scrivi la lettera cappa! Segui i puntini."
  },
  {
   "h": "9f3083d0",
@@ -9140,9 +9255,9 @@
   "text": "cappa!"
  },
  {
-  "h": "b780c67d",
+  "h": "c3497400",
   "lang": "it",
-  "text": "Scrivi la elle! Segui i puntini."
+  "text": "Scrivi la lettera elle! Segui i puntini."
  },
  {
   "h": "cd9aa447",
@@ -9150,9 +9265,9 @@
   "text": "elle!"
  },
  {
-  "h": "0fb18f83",
+  "h": "dba4f502",
   "lang": "it",
-  "text": "Scrivi la emme! Segui i puntini."
+  "text": "Scrivi la lettera emme! Segui i puntini."
  },
  {
   "h": "1e7da251",
@@ -9160,9 +9275,9 @@
   "text": "emme!"
  },
  {
-  "h": "defec2b5",
+  "h": "c8f10734",
   "lang": "it",
-  "text": "Scrivi la enne! Segui i puntini."
+  "text": "Scrivi la lettera enne! Segui i puntini."
  },
  {
   "h": "8929d6ab",
@@ -9170,9 +9285,9 @@
   "text": "enne!"
  },
  {
-  "h": "49b794b6",
+  "h": "63379d4d",
   "lang": "it",
-  "text": "Scrivi la o! Segui i puntini."
+  "text": "Scrivi la lettera o! Segui i puntini."
  },
  {
   "h": "ea0c329e",
@@ -9180,9 +9295,9 @@
   "text": "o!"
  },
  {
-  "h": "40155b64",
+  "h": "c14fcc81",
   "lang": "it",
-  "text": "Scrivi la pi! Segui i puntini."
+  "text": "Scrivi la lettera pi! Segui i puntini."
  },
  {
   "h": "484e4bf2",
@@ -9190,9 +9305,9 @@
   "text": "pi!"
  },
  {
-  "h": "5f7210d7",
+  "h": "733563b2",
   "lang": "it",
-  "text": "Scrivi la cu! Segui i puntini."
+  "text": "Scrivi la lettera cu! Segui i puntini."
  },
  {
   "h": "4c298165",
@@ -9200,9 +9315,9 @@
   "text": "cu!"
  },
  {
-  "h": "d80fb57d",
+  "h": "2e45ae6c",
   "lang": "it",
-  "text": "Scrivi la erre! Segui i puntini."
+  "text": "Scrivi la lettera erre! Segui i puntini."
  },
  {
   "h": "3b6a7beb",
@@ -9210,9 +9325,9 @@
   "text": "erre!"
  },
  {
-  "h": "d6e7d46f",
+  "h": "55373fc2",
   "lang": "it",
-  "text": "Scrivi la esse! Segui i puntini."
+  "text": "Scrivi la lettera esse! Segui i puntini."
  },
  {
   "h": "ac0887d1",
@@ -9220,9 +9335,9 @@
   "text": "esse!"
  },
  {
-  "h": "10bf1fd8",
+  "h": "d53f08ad",
   "lang": "it",
-  "text": "Scrivi la ti! Segui i puntini."
+  "text": "Scrivi la lettera ti! Segui i puntini."
  },
  {
   "h": "404544fe",
@@ -9230,9 +9345,9 @@
   "text": "ti!"
  },
  {
-  "h": "26d60f5c",
+  "h": "a8a13503",
   "lang": "it",
-  "text": "Scrivi la u! Segui i puntini."
+  "text": "Scrivi la lettera u! Segui i puntini."
  },
  {
   "h": "f00c3c10",
@@ -9240,9 +9355,9 @@
   "text": "u!"
  },
  {
-  "h": "db039622",
+  "h": "409de187",
   "lang": "it",
-  "text": "Scrivi la vu! Segui i puntini."
+  "text": "Scrivi la lettera vu! Segui i puntini."
  },
  {
   "h": "5849e7f4",
@@ -9250,9 +9365,9 @@
   "text": "vu!"
  },
  {
-  "h": "1a11eaf3",
+  "h": "79c6d26c",
   "lang": "it",
-  "text": "Scrivi la doppia vu! Segui i puntini."
+  "text": "Scrivi la lettera doppia vu! Segui i puntini."
  },
  {
   "h": "4ffd9f2f",
@@ -9260,9 +9375,9 @@
   "text": "doppia vu!"
  },
  {
-  "h": "d88396d6",
+  "h": "2f586925",
   "lang": "it",
-  "text": "Scrivi la ics! Segui i puntini."
+  "text": "Scrivi la lettera ics! Segui i puntini."
  },
  {
   "h": "88e11b22",
@@ -9270,9 +9385,9 @@
   "text": "ics!"
  },
  {
-  "h": "fed55b3d",
+  "h": "72f4e7ea",
   "lang": "it",
-  "text": "Scrivi la ipsilon! Segui i puntini."
+  "text": "Scrivi la lettera ipsilon! Segui i puntini."
  },
  {
   "h": "de08c9d9",
@@ -9280,9 +9395,9 @@
   "text": "ipsilon!"
  },
  {
-  "h": "89f38a35",
+  "h": "c1ff61e4",
   "lang": "it",
-  "text": "Scrivi la zeta! Segui i puntini."
+  "text": "Scrivi la lettera zeta! Segui i puntini."
  },
  {
   "h": "657428bf",
@@ -9570,9 +9685,9 @@
   "text": "Dov'è il gatto?"
  },
  {
-  "h": "4a317c6e",
+  "h": "41ff7469",
   "lang": "it",
-  "text": "No, qui c'è il gatto!"
+  "text": "No, hai toccato il gatto!"
  },
  {
   "h": "ecca7488",
@@ -9580,9 +9695,9 @@
   "text": "Dov'è il cane?"
  },
  {
-  "h": "09a1d720",
+  "h": "477b82cd",
   "lang": "it",
-  "text": "No, qui c'è il cane!"
+  "text": "No, hai toccato il cane!"
  },
  {
   "h": "f0a63026",
@@ -9595,9 +9710,9 @@
   "text": "Mucca!"
  },
  {
-  "h": "f127a3be",
+  "h": "ae03121d",
   "lang": "it",
-  "text": "No, qui c'è la mucca!"
+  "text": "No, hai toccato la mucca!"
  },
  {
   "h": "2ca3c842",
@@ -9610,9 +9725,9 @@
   "text": "Maiale!"
  },
  {
-  "h": "c91851ba",
+  "h": "a28b5fbb",
   "lang": "it",
-  "text": "No, qui c'è il maiale!"
+  "text": "No, hai toccato il maiale!"
  },
  {
   "h": "247bc4f1",
@@ -9625,9 +9740,9 @@
   "text": "Coniglio!"
  },
  {
-  "h": "cca4e359",
+  "h": "1685f7a0",
   "lang": "it",
-  "text": "No, qui c'è il coniglio!"
+  "text": "No, hai toccato il coniglio!"
  },
  {
   "h": "d88858e3",
@@ -9640,9 +9755,9 @@
   "text": "Pesce!"
  },
  {
-  "h": "dfa888bb",
+  "h": "0c794c48",
   "lang": "it",
-  "text": "No, qui c'è il pesce!"
+  "text": "No, hai toccato il pesce!"
  },
  {
   "h": "d147db92",
@@ -9655,9 +9770,9 @@
   "text": "Uccellino!"
  },
  {
-  "h": "5ac1215a",
+  "h": "64a8a02b",
   "lang": "it",
-  "text": "No, qui c'è l'uccellino!"
+  "text": "No, hai toccato l'uccellino!"
  },
  {
   "h": "5c3bc2c1",
@@ -9670,9 +9785,9 @@
   "text": "Cavallo!"
  },
  {
-  "h": "a9a181e9",
+  "h": "649ed412",
   "lang": "it",
-  "text": "No, qui c'è il cavallo!"
+  "text": "No, hai toccato il cavallo!"
  },
  {
   "h": "ee65490e",
@@ -9680,9 +9795,9 @@
   "text": "Dov'è la mela?"
  },
  {
-  "h": "ca7dfbe6",
+  "h": "fb3a940f",
   "lang": "it",
-  "text": "No, qui c'è la mela!"
+  "text": "No, hai toccato la mela!"
  },
  {
   "h": "7a1d9ec2",
@@ -9690,9 +9805,9 @@
   "text": "Dov'è la banana?"
  },
  {
-  "h": "797a67da",
+  "h": "9db67047",
   "lang": "it",
-  "text": "No, qui c'è la banana!"
+  "text": "No, hai toccato la banana!"
  },
  {
   "h": "d2a3fca7",
@@ -9705,9 +9820,9 @@
   "text": "Fragola!"
  },
  {
-  "h": "f0d4cb8f",
+  "h": "9cf97098",
   "lang": "it",
-  "text": "No, qui c'è la fragola!"
+  "text": "No, hai toccato la fragola!"
  },
  {
   "h": "c394c81b",
@@ -9715,9 +9830,9 @@
   "text": "Dov'è la torta?"
  },
  {
-  "h": "0c27d0b3",
+  "h": "51886368",
   "lang": "it",
-  "text": "No, qui c'è la torta!"
+  "text": "No, hai toccato la torta!"
  },
  {
   "h": "ff79cf87",
@@ -9730,9 +9845,9 @@
   "text": "Gelato!"
  },
  {
-  "h": "7897ec0f",
+  "h": "1c303862",
   "lang": "it",
-  "text": "No, qui c'è il gelato!"
+  "text": "No, hai toccato il gelato!"
  },
  {
   "h": "f7800493",
@@ -9740,9 +9855,9 @@
   "text": "Dov'è il pane?"
  },
  {
-  "h": "d6a5e8cb",
+  "h": "9557ab8e",
   "lang": "it",
-  "text": "No, qui c'è il pane!"
+  "text": "No, hai toccato il pane!"
  },
  {
   "h": "32f4826c",
@@ -9755,9 +9870,9 @@
   "text": "Formaggio!"
  },
  {
-  "h": "2c01a404",
+  "h": "904abeeb",
   "lang": "it",
-  "text": "No, qui c'è il formaggio!"
+  "text": "No, hai toccato il formaggio!"
  },
  {
   "h": "a6c0c7b9",
@@ -9770,9 +9885,9 @@
   "text": "Latte!"
  },
  {
-  "h": "09858b81",
+  "h": "ce4a3916",
   "lang": "it",
-  "text": "No, qui c'è il latte!"
+  "text": "No, hai toccato il latte!"
  },
  {
   "h": "d56c2624",
@@ -9780,9 +9895,9 @@
   "text": "Dov'è il sole?"
  },
  {
-  "h": "620dc4ac",
+  "h": "416c1695",
   "lang": "it",
-  "text": "No, qui c'è il sole!"
+  "text": "No, hai toccato il sole!"
  },
  {
   "h": "e27a6521",
@@ -9795,9 +9910,9 @@
   "text": "Luna!"
  },
  {
-  "h": "75553559",
+  "h": "286da900",
   "lang": "it",
-  "text": "No, qui c'è la luna!"
+  "text": "No, hai toccato la luna!"
  },
  {
   "h": "8b1e9286",
@@ -9810,9 +9925,9 @@
   "text": "Stella!"
  },
  {
-  "h": "35ca021e",
+  "h": "5fab4fa3",
   "lang": "it",
-  "text": "No, qui c'è la stella!"
+  "text": "No, hai toccato la stella!"
  },
  {
   "h": "0b3757e0",
@@ -9820,9 +9935,9 @@
   "text": "Dov'è il fiore?"
  },
  {
-  "h": "1b82bf58",
+  "h": "b922338f",
   "lang": "it",
-  "text": "No, qui c'è il fiore!"
+  "text": "No, hai toccato il fiore!"
  },
  {
   "h": "fcc14e35",
@@ -9835,9 +9950,9 @@
   "text": "Albero!"
  },
  {
-  "h": "e8c6b1bd",
+  "h": "4cebab2e",
   "lang": "it",
-  "text": "No, qui c'è l'albero!"
+  "text": "No, hai toccato l'albero!"
  },
  {
   "h": "56b3417b",
@@ -9845,9 +9960,9 @@
   "text": "Dov'è la casa?"
  },
  {
-  "h": "e4659c93",
+  "h": "ce2712f2",
   "lang": "it",
-  "text": "No, qui c'è la casa!"
+  "text": "No, hai toccato la casa!"
  },
  {
   "h": "4bfccd35",
@@ -9860,9 +9975,9 @@
   "text": "Macchina!"
  },
  {
-  "h": "defc274d",
+  "h": "23a78898",
   "lang": "it",
-  "text": "No, qui c'è la macchina!"
+  "text": "No, hai toccato la macchina!"
  },
  {
   "h": "d2265568",
@@ -9870,9 +9985,9 @@
   "text": "Dov'è il palloncino?"
  },
  {
-  "h": "65b5c000",
+  "h": "2f31c8b1",
   "lang": "it",
-  "text": "No, qui c'è il palloncino!"
+  "text": "No, hai toccato il palloncino!"
  },
  {
   "h": "a856b227",
@@ -9885,9 +10000,9 @@
   "text": "Libro!"
  },
  {
-  "h": "d61ceaaf",
+  "h": "c5aca7c0",
   "lang": "it",
-  "text": "No, qui c'è il libro!"
+  "text": "No, hai toccato il libro!"
  },
  {
   "h": "5ee20339",
@@ -9900,9 +10015,9 @@
   "text": "Scarpa!"
  },
  {
-  "h": "030cc831",
+  "h": "7236d900",
   "lang": "it",
-  "text": "No, qui c'è la scarpa!"
+  "text": "No, hai toccato la scarpa!"
  },
  {
   "h": "c9295509",
@@ -9915,9 +10030,9 @@
   "text": "Cappello!"
  },
  {
-  "h": "a0aabaa1",
+  "h": "d412aba0",
   "lang": "it",
-  "text": "No, qui c'è il cappello!"
+  "text": "No, hai toccato il cappello!"
  },
  {
   "h": "f3de4c47",
@@ -9930,9 +10045,9 @@
   "text": "Letto!"
  },
  {
-  "h": "06a2921f",
+  "h": "63d82d7c",
   "lang": "it",
-  "text": "No, qui c'è il letto!"
+  "text": "No, hai toccato il letto!"
  },
  {
   "h": "2daaa212",
@@ -9945,9 +10060,9 @@
   "text": "Ombrello!"
  },
  {
-  "h": "d268ecca",
+  "h": "f00f2c95",
   "lang": "it",
-  "text": "No, qui c'è l'ombrello!"
+  "text": "No, hai toccato l'ombrello!"
  },
  {
   "h": "95f6a9ce",
@@ -9960,9 +10075,9 @@
   "text": "Nuvola!"
  },
  {
-  "h": "95dd0076",
+  "h": "aac59927",
   "lang": "it",
-  "text": "No, qui c'è la nuvola!"
+  "text": "No, hai toccato la nuvola!"
  },
  {
   "h": "1411e6cd",
@@ -10075,14 +10190,14 @@
   "text": "Hier gibst du deine Sterne aus, um deinen Freund anzuziehen!"
  },
  {
-  "h": "23866abb",
+  "h": "2bca9b18",
   "lang": "de",
-  "text": "Such Kleider für deinen Freund aus!"
+  "text": "Such dir Kleider für deinen Freund aus!"
  },
  {
-  "h": "43cff413",
+  "h": "c7a58706",
   "lang": "de",
-  "text": "Juhu! Es gehört dir!"
+  "text": "Juhu! Das gehört jetzt dir!"
  },
  {
   "h": "452d5e43",
@@ -10505,9 +10620,9 @@
   "text": "Die Blume!"
  },
  {
-  "h": "192448fc",
+  "h": "8248d29c",
   "lang": "de",
-  "text": "Die Blume! Möchtest du es kaufen?"
+  "text": "Die Blume! Möchtest du das kaufen?"
  },
  {
   "h": "8f4e8e39",
@@ -10515,9 +10630,9 @@
   "text": "Die Schleife!"
  },
  {
-  "h": "a3263ed6",
+  "h": "67276a8a",
   "lang": "de",
-  "text": "Die Schleife! Möchtest du es kaufen?"
+  "text": "Die Schleife! Möchtest du das kaufen?"
  },
  {
   "h": "75302876",
@@ -10525,9 +10640,9 @@
   "text": "Der Strohhut!"
  },
  {
-  "h": "426d25f1",
+  "h": "2425d42b",
   "lang": "de",
-  "text": "Der Strohhut! Möchtest du es kaufen?"
+  "text": "Der Strohhut! Möchtest du das kaufen?"
  },
  {
   "h": "f3d171cf",
@@ -10535,9 +10650,9 @@
   "text": "Der Zauberhut!"
  },
  {
-  "h": "68f8c1d0",
+  "h": "c2b6a438",
   "lang": "de",
-  "text": "Der Zauberhut! Möchtest du es kaufen?"
+  "text": "Der Zauberhut! Möchtest du das kaufen?"
  },
  {
   "h": "372d4dab",
@@ -10545,9 +10660,9 @@
   "text": "Die Krone!"
  },
  {
-  "h": "1ff2abfc",
+  "h": "392eab9c",
   "lang": "de",
-  "text": "Die Krone! Möchtest du es kaufen?"
+  "text": "Die Krone! Möchtest du das kaufen?"
  },
  {
   "h": "64b3df86",
@@ -10555,9 +10670,9 @@
   "text": "Die Brille!"
  },
  {
-  "h": "4fa8f161",
+  "h": "7171c47b",
   "lang": "de",
-  "text": "Die Brille! Möchtest du es kaufen?"
+  "text": "Die Brille! Möchtest du das kaufen?"
  },
  {
   "h": "f113a2eb",
@@ -10565,9 +10680,9 @@
   "text": "Die Sonnenbrille!"
  },
  {
-  "h": "31c8ce3c",
+  "h": "a3b312dc",
   "lang": "de",
-  "text": "Die Sonnenbrille! Möchtest du es kaufen?"
+  "text": "Die Sonnenbrille! Möchtest du das kaufen?"
  },
  {
   "h": "1b797849",
@@ -10575,9 +10690,9 @@
   "text": "Der Lutscher!"
  },
  {
-  "h": "00796f86",
+  "h": "8489ee9a",
   "lang": "de",
-  "text": "Der Lutscher! Möchtest du es kaufen?"
+  "text": "Der Lutscher! Möchtest du das kaufen?"
  },
  {
   "h": "4d551bd6",
@@ -10585,9 +10700,9 @@
   "text": "Der Luftballon!"
  },
  {
-  "h": "3d7ec151",
+  "h": "cbc3ec0b",
   "lang": "de",
-  "text": "Der Luftballon! Möchtest du es kaufen?"
+  "text": "Der Luftballon! Möchtest du das kaufen?"
  },
  {
   "h": "725d3bca",
@@ -10595,9 +10710,9 @@
   "text": "Der Zauberstab!"
  },
  {
-  "h": "60a8ae85",
+  "h": "3777a627",
   "lang": "de",
-  "text": "Der Zauberstab! Möchtest du es kaufen?"
+  "text": "Der Zauberstab! Möchtest du das kaufen?"
  },
  {
   "h": "c12d3018",
@@ -10605,9 +10720,9 @@
   "text": "Die Herzen!"
  },
  {
-  "h": "3cff3a6f",
+  "h": "f5bab0a5",
   "lang": "de",
-  "text": "Die Herzen! Möchtest du es kaufen?"
+  "text": "Die Herzen! Möchtest du das kaufen?"
  },
  {
   "h": "ae507896",
@@ -10615,9 +10730,9 @@
   "text": "Die Schmetterlinge!"
  },
  {
-  "h": "7984f111",
+  "h": "d7e87acb",
   "lang": "de",
-  "text": "Die Schmetterlinge! Möchtest du es kaufen?"
+  "text": "Die Schmetterlinge! Möchtest du das kaufen?"
  },
  {
   "h": "4f058d86",
@@ -10625,9 +10740,9 @@
   "text": "Der Glitzer!"
  },
  {
-  "h": "3488af61",
+  "h": "bda9de7b",
   "lang": "de",
-  "text": "Der Glitzer! Möchtest du es kaufen?"
+  "text": "Der Glitzer! Möchtest du das kaufen?"
  },
  {
   "h": "5d160277",
@@ -10635,9 +10750,9 @@
   "text": "Der Regenbogen!"
  },
  {
-  "h": "2a2cfc58",
+  "h": "500dce50",
   "lang": "de",
-  "text": "Der Regenbogen! Möchtest du es kaufen?"
+  "text": "Der Regenbogen! Möchtest du das kaufen?"
  },
  {
   "h": "a1029da2",
@@ -10825,9 +10940,9 @@
   "text": "Jeden Abend versteckte er sich hinter einem großen Felsen."
  },
  {
-  "h": "f481ef9b",
+  "h": "ee668990",
   "lang": "de",
-  "text": "Eines Abends kam ein netter Tintenfisch mit einer Laterne."
+  "text": "Eines Abends kam ein netter Krake mit einer Laterne."
  },
  {
   "h": "00566b3b",
@@ -10890,9 +11005,9 @@
   "text": "Super! Bei Grün darf man gehen!"
  },
  {
-  "h": "49db2465",
+  "h": "76dc2d60",
   "lang": "de",
-  "text": "Grün: Freie Fahrt!"
+  "text": "Grün: Jetzt darfst du gehen!"
  },
  {
   "h": "c11f4a76",
@@ -10980,9 +11095,9 @@
   "text": "Geh über den Zebrastreifen: Das ist sicherer und du bekommst mehr Sterne!"
  },
  {
-  "h": "3a4e5630",
+  "h": "bad36905",
   "lang": "de",
-  "text": "Wenn die roten Lichter blinken, kommt der Zug: Warte auf der Wiese!"
+  "text": "Wenn die roten Lichter blinken, kommt der Zug: Warte hier, vor den Schienen!"
  },
  {
   "h": "0888ed0a",
@@ -12275,9 +12390,9 @@
   "text": "Löwe! Roaar!"
  },
  {
-  "h": "5f4c944d",
+  "h": "38966f03",
   "lang": "de",
-  "text": "Pferd! Wiehern!"
+  "text": "Pferd! Hüüü!"
  },
  {
   "h": "ce001933",
@@ -12505,9 +12620,9 @@
   "text": "Fang das U wie Ufo!"
  },
  {
-  "h": "c1958040",
+  "h": "e4250fa6",
   "lang": "de",
-  "text": "Fang das V wie Vogel!"
+  "text": "Fang das V wie Vase!"
  },
  {
   "h": "0a8ee0c0",
@@ -13140,9 +13255,9 @@
   "text": "Blauer Kreis"
  },
  {
-  "h": "53252a6e",
+  "h": "b3e307b9",
   "lang": "de",
-  "text": "Oranger Kreis"
+  "text": "Orangefarbener Kreis"
  },
  {
   "h": "8486c506",
@@ -13175,9 +13290,9 @@
   "text": "Blaues Quadrat"
  },
  {
-  "h": "29bb5acf",
+  "h": "0e143864",
   "lang": "de",
-  "text": "Oranges Quadrat"
+  "text": "Orangefarbenes Quadrat"
  },
  {
   "h": "40f3fc0c",
@@ -13210,9 +13325,9 @@
   "text": "Blaues Dreieck"
  },
  {
-  "h": "8765d5a8",
+  "h": "513c056b",
   "lang": "de",
-  "text": "Oranges Dreieck"
+  "text": "Orangefarbenes Dreieck"
  },
  {
   "h": "f141edd3",
@@ -13245,9 +13360,9 @@
   "text": "Blauer Stern"
  },
  {
-  "h": "ce12dd58",
+  "h": "5801bf87",
   "lang": "de",
-  "text": "Oranger Stern"
+  "text": "Orangefarbener Stern"
  },
  {
   "h": "5c451ae0",
@@ -13280,9 +13395,9 @@
   "text": "Blaues Herz"
  },
  {
-  "h": "b68995b8",
+  "h": "10dc0479",
   "lang": "de",
-  "text": "Oranges Herz"
+  "text": "Orangefarbenes Herz"
  },
  {
   "h": "4733c831",
@@ -13315,9 +13430,9 @@
   "text": "Blaue Raute"
  },
  {
-  "h": "0d4ef1bb",
+  "h": "29042dc6",
   "lang": "de",
-  "text": "Orange Raute"
+  "text": "Orangefarbene Raute"
  },
  {
   "h": "9939af1d",
@@ -13545,9 +13660,9 @@
   "text": "Male die Mähne lila an!"
  },
  {
-  "h": "b8acf8ee",
+  "h": "cc6d26b0",
   "lang": "de",
-  "text": "Male die Schnauze rosa an!"
+  "text": "Male das Maul rosa an!"
  },
  {
   "h": "4999b8c5",
@@ -13670,9 +13785,9 @@
   "text": "Tippe auf das, was sich reimt: Es endet mit dem gleichen Klang!"
  },
  {
-  "h": "e4919409",
+  "h": "e46916b1",
   "lang": "de",
-  "text": "Wie viele Silben hat Ball? Klatsch mit!"
+  "text": "Wie viele Silben hat das Wort Ball? Klatsch mit!"
  },
  {
   "h": "a996c4b7",
@@ -13680,9 +13795,9 @@
   "text": "Ball!"
  },
  {
-  "h": "14dbc093",
+  "h": "671b238b",
   "lang": "de",
-  "text": "Wie viele Silben hat Haus? Klatsch mit!"
+  "text": "Wie viele Silben hat das Wort Haus? Klatsch mit!"
  },
  {
   "h": "982f4a6d",
@@ -13690,9 +13805,9 @@
   "text": "Haus!"
  },
  {
-  "h": "50d84564",
+  "h": "4fd0a4cc",
   "lang": "de",
-  "text": "Wie viele Silben hat Apfel? Klatsch mit!"
+  "text": "Wie viele Silben hat das Wort Apfel? Klatsch mit!"
  },
  {
   "h": "652d3ce0",
@@ -13705,9 +13820,9 @@
   "text": "Apfel!"
  },
  {
-  "h": "2157df51",
+  "h": "83dd4ba9",
   "lang": "de",
-  "text": "Wie viele Silben hat Katze? Klatsch mit!"
+  "text": "Wie viele Silben hat das Wort Katze? Klatsch mit!"
  },
  {
   "h": "da8621a3",
@@ -13720,9 +13835,9 @@
   "text": "Katze!"
  },
  {
-  "h": "76b82a05",
+  "h": "2207e0ad",
   "lang": "de",
-  "text": "Wie viele Silben hat Sonne? Klatsch mit!"
+  "text": "Wie viele Silben hat das Wort Sonne? Klatsch mit!"
  },
  {
   "h": "3f26cc6f",
@@ -13735,9 +13850,9 @@
   "text": "Sonne!"
  },
  {
-  "h": "33f67c59",
+  "h": "e5ca9501",
   "lang": "de",
-  "text": "Wie viele Silben hat Banane? Klatsch mit!"
+  "text": "Wie viele Silben hat das Wort Banane? Klatsch mit!"
  },
  {
   "h": "a3945dfd",
@@ -13750,9 +13865,9 @@
   "text": "Banane!"
  },
  {
-  "h": "5100e3c7",
+  "h": "e106371f",
   "lang": "de",
-  "text": "Wie viele Silben hat Elefant? Klatsch mit!"
+  "text": "Wie viele Silben hat das Wort Elefant? Klatsch mit!"
  },
  {
   "h": "9c128df3",
@@ -13765,9 +13880,9 @@
   "text": "Elefant!"
  },
  {
-  "h": "8254247b",
+  "h": "c1766523",
   "lang": "de",
-  "text": "Wie viele Silben hat Schmetterling? Klatsch mit!"
+  "text": "Wie viele Silben hat das Wort Schmetterling? Klatsch mit!"
  },
  {
   "h": "18177c8b",
@@ -13780,9 +13895,9 @@
   "text": "Schmetterling!"
  },
  {
-  "h": "15a83861",
+  "h": "9f5505a9",
   "lang": "de",
-  "text": "Wie viele Silben hat Krokodil? Klatsch mit!"
+  "text": "Wie viele Silben hat das Wort Krokodil? Klatsch mit!"
  },
  {
   "h": "302d1c6b",
@@ -13795,9 +13910,9 @@
   "text": "Krokodil!"
  },
  {
-  "h": "845e1562",
+  "h": "67fdab6a",
   "lang": "de",
-  "text": "Wie viele Silben hat Hubschrauber? Klatsch mit!"
+  "text": "Wie viele Silben hat das Wort Hubschrauber? Klatsch mit!"
  },
  {
   "h": "e0450eac",
@@ -13810,9 +13925,9 @@
   "text": "Hubschrauber!"
  },
  {
-  "h": "7454a549",
+  "h": "8b27a3a1",
   "lang": "de",
-  "text": "Wie viele Silben hat Schokolade? Klatsch mit!"
+  "text": "Wie viele Silben hat das Wort Schokolade? Klatsch mit!"
  },
  {
   "h": "82a3c503",
@@ -13835,6 +13950,16 @@
   "text": "Maus, Haus! Das reimt sich!"
  },
  {
+  "h": "af6178b8",
+  "lang": "de",
+  "text": "Was reimt sich auf Haus?"
+ },
+ {
+  "h": "cc4d3acf",
+  "lang": "de",
+  "text": "Haus, Maus! Das reimt sich!"
+ },
+ {
   "h": "029c8624",
   "lang": "de",
   "text": "Maus!"
@@ -13848,6 +13973,16 @@
   "h": "4777eaba",
   "lang": "de",
   "text": "Hase, Nase! Das reimt sich!"
+ },
+ {
+  "h": "680dbc0e",
+  "lang": "de",
+  "text": "Was reimt sich auf Nase?"
+ },
+ {
+  "h": "10bbe1e2",
+  "lang": "de",
+  "text": "Nase, Hase! Das reimt sich!"
  },
  {
   "h": "762904b9",
@@ -13870,6 +14005,16 @@
   "text": "Kuh, Schuh! Das reimt sich!"
  },
  {
+  "h": "f5139dfa",
+  "lang": "de",
+  "text": "Was reimt sich auf Schuh?"
+ },
+ {
+  "h": "18aee5f3",
+  "lang": "de",
+  "text": "Schuh, Kuh! Das reimt sich!"
+ },
+ {
   "h": "3253bd0a",
   "lang": "de",
   "text": "Kuh!"
@@ -13890,6 +14035,16 @@
   "text": "Katze, Tatze! Das reimt sich!"
  },
  {
+  "h": "49941935",
+  "lang": "de",
+  "text": "Was reimt sich auf Tatze?"
+ },
+ {
+  "h": "985f57e1",
+  "lang": "de",
+  "text": "Tatze, Katze! Das reimt sich!"
+ },
+ {
   "h": "110fa1ca",
   "lang": "de",
   "text": "Tatze!"
@@ -13903,6 +14058,16 @@
   "h": "32df51c8",
   "lang": "de",
   "text": "Igel, Spiegel! Das reimt sich!"
+ },
+ {
+  "h": "975136f2",
+  "lang": "de",
+  "text": "Was reimt sich auf Spiegel?"
+ },
+ {
+  "h": "6e3d0ce6",
+  "lang": "de",
+  "text": "Spiegel, Igel! Das reimt sich!"
  },
  {
   "h": "a13a7a67",
@@ -14260,9 +14425,9 @@
   "text": "Zieh es mit dem Finger an die richtige Stelle!"
  },
  {
-  "h": "877b55d2",
+  "h": "32c1836a",
   "lang": "de",
-  "text": "Oben drauf!"
+  "text": "Obendrauf!"
  },
  {
   "h": "6b836d8d",
@@ -14270,9 +14435,9 @@
   "text": "Darunter!"
  },
  {
-  "h": "a52542d8",
+  "h": "d77cd48f",
   "lang": "de",
-  "text": "Drinnen!"
+  "text": "Hinein!"
  },
  {
   "h": "e1441459",
@@ -15040,9 +15205,9 @@
   "text": "Choose clothes for your friend!"
  },
  {
-  "h": "2fdec0f0",
+  "h": "e85b54a8",
   "lang": "en",
-  "text": "Hooray! It's yours!"
+  "text": "Hooray! It's yours now!"
  },
  {
   "h": "06fd0eba",
@@ -15465,9 +15630,9 @@
   "text": "The flower!"
  },
  {
-  "h": "3b34ce4a",
+  "h": "ac7af9d7",
   "lang": "en",
-  "text": "The flower! Do you want to buy it?"
+  "text": "The flower! Do you want to buy this?"
  },
  {
   "h": "9138305d",
@@ -15475,9 +15640,9 @@
   "text": "The bow!"
  },
  {
-  "h": "c85a4bf7",
+  "h": "ae379ffa",
   "lang": "en",
-  "text": "The bow! Do you want to buy it?"
+  "text": "The bow! Do you want to buy this?"
  },
  {
   "h": "f9ba8e5b",
@@ -15485,9 +15650,9 @@
   "text": "The straw hat!"
  },
  {
-  "h": "5c6ea365",
+  "h": "88e27c3c",
   "lang": "en",
-  "text": "The straw hat! Do you want to buy it?"
+  "text": "The straw hat! Do you want to buy this?"
  },
  {
   "h": "364e56d7",
@@ -15495,9 +15660,9 @@
   "text": "The magic hat!"
  },
  {
-  "h": "df78dbb9",
+  "h": "f7b0eac0",
   "lang": "en",
-  "text": "The magic hat! Do you want to buy it?"
+  "text": "The magic hat! Do you want to buy this?"
  },
  {
   "h": "a67557ba",
@@ -15505,9 +15670,9 @@
   "text": "The crown!"
  },
  {
-  "h": "88dc0edc",
+  "h": "6d6cf73d",
   "lang": "en",
-  "text": "The crown! Do you want to buy it?"
+  "text": "The crown! Do you want to buy this?"
  },
  {
   "h": "82b0de51",
@@ -15515,9 +15680,9 @@
   "text": "The glasses!"
  },
  {
-  "h": "b03a1e33",
+  "h": "4ff8ffe6",
   "lang": "en",
-  "text": "The glasses! Do you want to buy it?"
+  "text": "The glasses! Do you want to buy this?"
  },
  {
   "h": "115bb489",
@@ -15525,9 +15690,9 @@
   "text": "The sunglasses!"
  },
  {
-  "h": "1cb91b5b",
+  "h": "26bb517e",
   "lang": "en",
-  "text": "The sunglasses! Do you want to buy it?"
+  "text": "The sunglasses! Do you want to buy this?"
  },
  {
   "h": "6df4f6cc",
@@ -15535,9 +15700,9 @@
   "text": "The lollipop!"
  },
  {
-  "h": "873a8766",
+  "h": "571e3fb3",
   "lang": "en",
-  "text": "The lollipop! Do you want to buy it?"
+  "text": "The lollipop! Do you want to buy this?"
  },
  {
   "h": "5ea0d672",
@@ -15545,9 +15710,9 @@
   "text": "The balloon!"
  },
  {
-  "h": "14bb8784",
+  "h": "91c27475",
   "lang": "en",
-  "text": "The balloon! Do you want to buy it?"
+  "text": "The balloon! Do you want to buy this?"
  },
  {
   "h": "dc41c29c",
@@ -15555,9 +15720,9 @@
   "text": "The magic wand!"
  },
  {
-  "h": "91730df6",
+  "h": "67ebc523",
   "lang": "en",
-  "text": "The magic wand! Do you want to buy it?"
+  "text": "The magic wand! Do you want to buy this?"
  },
  {
   "h": "ab23cb52",
@@ -15565,9 +15730,9 @@
   "text": "The hearts!"
  },
  {
-  "h": "59e8bb64",
+  "h": "e4647a55",
   "lang": "en",
-  "text": "The hearts! Do you want to buy it?"
+  "text": "The hearts! Do you want to buy this?"
  },
  {
   "h": "b6506cde",
@@ -15575,9 +15740,9 @@
   "text": "The butterflies!"
  },
  {
-  "h": "63f8b2f8",
+  "h": "ed19d6d9",
   "lang": "en",
-  "text": "The butterflies! Do you want to buy it?"
+  "text": "The butterflies! Do you want to buy this?"
  },
  {
   "h": "1377bf54",
@@ -15585,9 +15750,9 @@
   "text": "The glitter!"
  },
  {
-  "h": "a9d1a75e",
+  "h": "bfb8cddb",
   "lang": "en",
-  "text": "The glitter! Do you want to buy it?"
+  "text": "The glitter! Do you want to buy this?"
  },
  {
   "h": "ebf6a5f3",
@@ -15595,9 +15760,9 @@
   "text": "The rainbow!"
  },
  {
-  "h": "425bb04d",
+  "h": "5f7c96f4",
   "lang": "en",
-  "text": "The rainbow! Do you want to buy it?"
+  "text": "The rainbow! Do you want to buy this?"
  },
  {
   "h": "1b821052",
@@ -15800,9 +15965,9 @@
   "text": "The little fish was not afraid anymore. He fell asleep smiling. Good night!"
  },
  {
-  "h": "60c3f033",
+  "h": "e11a746e",
   "lang": "en",
-  "text": "Once upon a time there was a little cloud who wanted to sleep."
+  "text": "Once upon a time there was a little cloud that wanted to sleep."
  },
  {
   "h": "334cfcda",
@@ -15940,9 +16105,9 @@
   "text": "Cross on the white stripes: it's safer and you win more stars!"
  },
  {
-  "h": "743dc230",
+  "h": "21bfde22",
   "lang": "en",
-  "text": "When the red lights flash, the train is coming: wait on the grass!"
+  "text": "When the red lights flash, the train is coming: wait here, before the tracks!"
  },
  {
   "h": "5a056069",
@@ -17225,9 +17390,9 @@
   "text": "Duck! Quack quack!"
  },
  {
-  "h": "54607728",
+  "h": "333d860a",
   "lang": "en",
-  "text": "Rooster! Cock-a-doodle-doo!"
+  "text": "Cockerel! Cock-a-doodle-doo!"
  },
  {
   "h": "9ac23eac",
@@ -17360,14 +17525,14 @@
   "text": "Catch the letter G, like Grapes!"
  },
  {
-  "h": "16d48be6",
+  "h": "a68e4723",
   "lang": "en",
-  "text": "Catch the letter I, like Igloo!"
+  "text": "Catch the letter I, like Iguana!"
  },
  {
-  "h": "3f68384d",
+  "h": "48884fb4",
   "lang": "en",
-  "text": "Catch the letter I, like Ice cream!"
+  "text": "Catch the letter I, like Insect!"
  },
  {
   "h": "ec7240d1",
@@ -17405,9 +17570,9 @@
   "text": "Catch the letter N, like Nut!"
  },
  {
-  "h": "f386597c",
+  "h": "ac39a88f",
   "lang": "en",
-  "text": "Catch the letter O, like Owl!"
+  "text": "Catch the letter O, like Octopus!"
  },
  {
   "h": "1ca04ff4",
@@ -18500,9 +18665,9 @@
   "text": "Colour the mane purple!"
  },
  {
-  "h": "14568a8a",
+  "h": "7cbdd4e6",
   "lang": "en",
-  "text": "Colour the snout pink!"
+  "text": "Colour the muzzle pink!"
  },
  {
   "h": "8d777122",
@@ -18625,9 +18790,9 @@
   "text": "Tap the thing that rhymes: it ends with the same sound!"
  },
  {
-  "h": "ef3609a4",
+  "h": "c1301ced",
   "lang": "en",
-  "text": "How many syllables in cat? Clap along!"
+  "text": "How many syllables in the word cat? Clap along!"
  },
  {
   "h": "b0481252",
@@ -18635,9 +18800,9 @@
   "text": "cat!"
  },
  {
-  "h": "c4b1a74e",
+  "h": "382723ff",
   "lang": "en",
-  "text": "How many syllables in sun? Clap along!"
+  "text": "How many syllables in the word sun? Clap along!"
  },
  {
   "h": "d8e897f8",
@@ -18645,9 +18810,9 @@
   "text": "sun!"
  },
  {
-  "h": "a1e12b1c",
+  "h": "0b7f7479",
   "lang": "en",
-  "text": "How many syllables in house? Clap along!"
+  "text": "How many syllables in the word house? Clap along!"
  },
  {
   "h": "2a65867e",
@@ -18655,9 +18820,9 @@
   "text": "house!"
  },
  {
-  "h": "b8898b38",
+  "h": "0cdc4bf5",
   "lang": "en",
-  "text": "How many syllables in apple? Clap along!"
+  "text": "How many syllables in the word apple? Clap along!"
  },
  {
   "h": "3dc0da94",
@@ -18670,9 +18835,9 @@
   "text": "Apple!"
  },
  {
-  "h": "db6ed612",
+  "h": "f97694fd",
   "lang": "en",
-  "text": "How many syllables in rabbit? Clap along!"
+  "text": "How many syllables in the word rabbit? Clap along!"
  },
  {
   "h": "ff40adf0",
@@ -18685,9 +18850,9 @@
   "text": "Rabbit!"
  },
  {
-  "h": "2a5ae751",
+  "h": "be7de3ba",
   "lang": "en",
-  "text": "How many syllables in monkey? Clap along!"
+  "text": "How many syllables in the word monkey? Clap along!"
  },
  {
   "h": "891784ab",
@@ -18700,9 +18865,9 @@
   "text": "Monkey!"
  },
  {
-  "h": "fde99dc1",
+  "h": "db018db2",
   "lang": "en",
-  "text": "How many syllables in banana? Clap along!"
+  "text": "How many syllables in the word banana? Clap along!"
  },
  {
   "h": "663daf69",
@@ -18715,9 +18880,9 @@
   "text": "Banana!"
  },
  {
-  "h": "9b6b2a11",
+  "h": "29f547fc",
   "lang": "en",
-  "text": "How many syllables in butterfly? Clap along!"
+  "text": "How many syllables in the word butterfly? Clap along!"
  },
  {
   "h": "3d96d5ef",
@@ -18730,14 +18895,14 @@
   "text": "Butterfly!"
  },
  {
-  "h": "f85f96fd",
+  "h": "b49a799e",
   "lang": "en",
-  "text": "How many syllables in elephant? Clap along!"
+  "text": "How many syllables in the word elephant? Clap along!"
  },
  {
-  "h": "7484e3c1",
+  "h": "fdfd895b",
   "lang": "en",
-  "text": "el, e, phant!"
+  "text": "el, uh, fant!"
  },
  {
   "h": "961b83e7",
@@ -18745,14 +18910,14 @@
   "text": "Elephant!"
  },
  {
-  "h": "08bf33a8",
+  "h": "178d4601",
   "lang": "en",
-  "text": "How many syllables in crocodile? Clap along!"
+  "text": "How many syllables in the word crocodile? Clap along!"
  },
  {
-  "h": "c1552570",
+  "h": "9324e9a3",
   "lang": "en",
-  "text": "croc, o, dile!"
+  "text": "crock, uh, dial!"
  },
  {
   "h": "4113a396",
@@ -18760,14 +18925,14 @@
   "text": "Crocodile!"
  },
  {
-  "h": "b3b977d9",
+  "h": "b39e8652",
   "lang": "en",
-  "text": "How many syllables in helicopter? Clap along!"
+  "text": "How many syllables in the word helicopter? Clap along!"
  },
  {
-  "h": "4be4e5ad",
+  "h": "e9f8adb5",
   "lang": "en",
-  "text": "hel, i, cop, ter!"
+  "text": "hel, ih, cop, ter!"
  },
  {
   "h": "e39099cb",
@@ -18775,14 +18940,14 @@
   "text": "Helicopter!"
  },
  {
-  "h": "f5474304",
+  "h": "73ee8a67",
   "lang": "en",
-  "text": "How many syllables in watermelon? Clap along!"
+  "text": "How many syllables in the word watermelon? Clap along!"
  },
  {
-  "h": "250e28e0",
+  "h": "da97c046",
   "lang": "en",
-  "text": "wa, ter, mel, on!"
+  "text": "wor, ter, mel, un!"
  },
  {
   "h": "20dd62b0",
@@ -18800,6 +18965,16 @@
   "text": "Cat, hat! They rhyme!"
  },
  {
+  "h": "af072d39",
+  "lang": "en",
+  "text": "What rhymes with hat?"
+ },
+ {
+  "h": "5f854a28",
+  "lang": "en",
+  "text": "Hat, cat! They rhyme!"
+ },
+ {
   "h": "c3fee997",
   "lang": "en",
   "text": "Hat!"
@@ -18813,6 +18988,16 @@
   "h": "d1e34e8f",
   "lang": "en",
   "text": "Dog, frog! They rhyme!"
+ },
+ {
+  "h": "58c4ece2",
+  "lang": "en",
+  "text": "What rhymes with frog?"
+ },
+ {
+  "h": "2f9ec8bb",
+  "lang": "en",
+  "text": "Frog, dog! They rhyme!"
  },
  {
   "h": "79b3e93c",
@@ -18835,6 +19020,16 @@
   "text": "Bee, tree! They rhyme!"
  },
  {
+  "h": "9b3cf95c",
+  "lang": "en",
+  "text": "What rhymes with tree?"
+ },
+ {
+  "h": "a4d70e3f",
+  "lang": "en",
+  "text": "Tree, bee! They rhyme!"
+ },
+ {
   "h": "34fbe592",
   "lang": "en",
   "text": "Bee!"
@@ -18853,6 +19048,16 @@
   "h": "e91defc7",
   "lang": "en",
   "text": "Moon, spoon! They rhyme!"
+ },
+ {
+  "h": "48222da1",
+  "lang": "en",
+  "text": "What rhymes with spoon?"
+ },
+ {
+  "h": "28d73a7d",
+  "lang": "en",
+  "text": "Spoon, moon! They rhyme!"
  },
  {
   "h": "f4bca40b",
@@ -18875,6 +19080,16 @@
   "text": "Car, star! They rhyme!"
  },
  {
+  "h": "2aae1f74",
+  "lang": "en",
+  "text": "What rhymes with star?"
+ },
+ {
+  "h": "aa38db99",
+  "lang": "en",
+  "text": "Star, car! They rhyme!"
+ },
+ {
   "h": "aa4808e0",
   "lang": "en",
   "text": "Car!"
@@ -18895,6 +19110,16 @@
   "text": "Mouse, house! They rhyme!"
  },
  {
+  "h": "3d5c9030",
+  "lang": "en",
+  "text": "What rhymes with house?"
+ },
+ {
+  "h": "b73833a2",
+  "lang": "en",
+  "text": "House, mouse! They rhyme!"
+ },
+ {
   "h": "47e60c05",
   "lang": "en",
   "text": "Mouse!"
@@ -18908,6 +19133,16 @@
   "h": "6654acbb",
   "lang": "en",
   "text": "Cake, snake! They rhyme!"
+ },
+ {
+  "h": "8c08dbf4",
+  "lang": "en",
+  "text": "What rhymes with snake?"
+ },
+ {
+  "h": "b040997b",
+  "lang": "en",
+  "text": "Snake, cake! They rhyme!"
  },
  {
   "h": "c8a423fa",
@@ -20020,9 +20255,9 @@
   "text": "¡Elige ropa para tu amigo!"
  },
  {
-  "h": "7df0385a",
+  "h": "4f6f8877",
   "lang": "es",
-  "text": "¡Bien! ¡Es tuyo!"
+  "text": "¡Bien! ¡Ahora es para ti!"
  },
  {
   "h": "c3f222fd",
@@ -20445,9 +20680,9 @@
   "text": "¡La flor!"
  },
  {
-  "h": "10d96062",
+  "h": "cc1497f2",
   "lang": "es",
-  "text": "¡La flor! ¿Lo quieres comprar?"
+  "text": "¡La flor! ¿Quieres comprar esto?"
  },
  {
   "h": "48da15be",
@@ -20455,9 +20690,9 @@
   "text": "¡El lazo!"
  },
  {
-  "h": "11d859c1",
+  "h": "35e52c55",
   "lang": "es",
-  "text": "¡El lazo! ¿Lo quieres comprar?"
+  "text": "¡El lazo! ¿Quieres comprar esto?"
  },
  {
   "h": "f7edbd56",
@@ -20465,9 +20700,9 @@
   "text": "¡El sombrero de paja!"
  },
  {
-  "h": "4fb1da39",
+  "h": "81f1535d",
   "lang": "es",
-  "text": "¡El sombrero de paja! ¿Lo quieres comprar?"
+  "text": "¡El sombrero de paja! ¿Quieres comprar esto?"
  },
  {
   "h": "480222e3",
@@ -20475,9 +20710,9 @@
   "text": "¡El sombrero mágico!"
  },
  {
-  "h": "5d66fbe2",
+  "h": "e5445f72",
   "lang": "es",
-  "text": "¡El sombrero mágico! ¿Lo quieres comprar?"
+  "text": "¡El sombrero mágico! ¿Quieres comprar esto?"
  },
  {
   "h": "71693f44",
@@ -20485,9 +20720,9 @@
   "text": "¡La corona!"
  },
  {
-  "h": "4226f027",
+  "h": "6ccdc2ef",
   "lang": "es",
-  "text": "¡La corona! ¿Lo quieres comprar?"
+  "text": "¡La corona! ¿Quieres comprar esto?"
  },
  {
   "h": "6de3df8b",
@@ -20495,9 +20730,9 @@
   "text": "¡Las gafas!"
  },
  {
-  "h": "ca509b2a",
+  "h": "965930ea",
   "lang": "es",
-  "text": "¡Las gafas! ¿Lo quieres comprar?"
+  "text": "¡Las gafas! ¿Quieres comprar esto?"
  },
  {
   "h": "a0d6f040",
@@ -20505,9 +20740,9 @@
   "text": "¡Las gafas de sol!"
  },
  {
-  "h": "3227b383",
+  "h": "9d848923",
   "lang": "es",
-  "text": "¡Las gafas de sol! ¿Lo quieres comprar?"
+  "text": "¡Las gafas de sol! ¿Quieres comprar esto?"
  },
  {
   "h": "59e0aafa",
@@ -20515,9 +20750,9 @@
   "text": "¡La piruleta!"
  },
  {
-  "h": "d523707d",
+  "h": "f6e58809",
   "lang": "es",
-  "text": "¡La piruleta! ¿Lo quieres comprar?"
+  "text": "¡La piruleta! ¿Quieres comprar esto?"
  },
  {
   "h": "aac6b409",
@@ -20525,9 +20760,9 @@
   "text": "¡El globo!"
  },
  {
-  "h": "41932788",
+  "h": "82a4938c",
   "lang": "es",
-  "text": "¡El globo! ¿Lo quieres comprar?"
+  "text": "¡El globo! ¿Quieres comprar esto?"
  },
  {
   "h": "a08bd63b",
@@ -20535,9 +20770,9 @@
   "text": "¡La varita mágica!"
  },
  {
-  "h": "6d73a7da",
+  "h": "b82325da",
   "lang": "es",
-  "text": "¡La varita mágica! ¿Lo quieres comprar?"
+  "text": "¡La varita mágica! ¿Quieres comprar esto?"
  },
  {
   "h": "9ad5ffb5",
@@ -20545,9 +20780,9 @@
   "text": "¡Los corazones!"
  },
  {
-  "h": "157cd604",
+  "h": "e7087520",
   "lang": "es",
-  "text": "¡Los corazones! ¿Lo quieres comprar?"
+  "text": "¡Los corazones! ¿Quieres comprar esto?"
  },
  {
   "h": "dc4ae742",
@@ -20555,9 +20790,9 @@
   "text": "¡Las mariposas!"
  },
  {
-  "h": "53b1f305",
+  "h": "9e414ac1",
   "lang": "es",
-  "text": "¡Las mariposas! ¿Lo quieres comprar?"
+  "text": "¡Las mariposas! ¿Quieres comprar esto?"
  },
  {
   "h": "c2f0b94c",
@@ -20565,9 +20800,9 @@
   "text": "¡La purpurina!"
  },
  {
-  "h": "c624ad4f",
+  "h": "aa0ec9c7",
   "lang": "es",
-  "text": "¡La purpurina! ¿Lo quieres comprar?"
+  "text": "¡La purpurina! ¿Quieres comprar esto?"
  },
  {
   "h": "d62c9d6c",
@@ -20575,9 +20810,9 @@
   "text": "¡El arcoíris!"
  },
  {
-  "h": "6464616f",
+  "h": "b651d667",
   "lang": "es",
-  "text": "¡El arcoíris! ¿Lo quieres comprar?"
+  "text": "¡El arcoíris! ¿Quieres comprar esto?"
  },
  {
   "h": "c6cc83d6",
@@ -20920,9 +21155,9 @@
   "text": "¡Cruza por las rayas blancas: es más seguro y ganas más estrellas!"
  },
  {
-  "h": "0dd028d0",
+  "h": "3873b4fa",
   "lang": "es",
-  "text": "Cuando las luces rojas parpadean, viene el tren: ¡espera en la hierba!"
+  "text": "Cuando las luces rojas parpadean, viene el tren: ¡espera aquí, antes de las vías!"
  },
  {
   "h": "aa5bc848",
@@ -20960,9 +21195,9 @@
   "text": "¡Luego toca el número correcto abajo!"
  },
  {
-  "h": "88bd8086",
+  "h": "394b39d1",
   "lang": "es",
-  "text": "Mira el número: te dice cuántas cosas coger."
+  "text": "Mira el número: te dice cuántas cosas tomar."
  },
  {
   "h": "be5e678d",
@@ -22345,14 +22580,14 @@
   "text": "¡Pesca la G de Globo!"
  },
  {
-  "h": "2a71f94c",
-  "lang": "es",
-  "text": "¡Pesca la I de Iglú!"
- },
- {
   "h": "1f8d2731",
   "lang": "es",
   "text": "¡Pesca la I de Isla!"
+ },
+ {
+  "h": "259ad3d9",
+  "lang": "es",
+  "text": "¡Pesca la I de Iguana!"
  },
  {
   "h": "fd59b903",
@@ -23615,9 +23850,9 @@
   "text": "¡Toca lo que rima: termina con el mismo sonido!"
  },
  {
-  "h": "46e1522e",
+  "h": "5fbc733e",
   "lang": "es",
-  "text": "¿Cuántas sílabas tiene sol? ¡Da palmadas!"
+  "text": "¿Cuántas sílabas tiene la palabra sol? ¡Da palmadas!"
  },
  {
   "h": "1a13bf2b",
@@ -23625,9 +23860,9 @@
   "text": "¡sol!"
  },
  {
-  "h": "514cdebb",
+  "h": "9f5a94eb",
   "lang": "es",
-  "text": "¿Cuántas sílabas tiene pez? ¡Da palmadas!"
+  "text": "¿Cuántas sílabas tiene la palabra pez? ¡Da palmadas!"
  },
  {
   "h": "760f00a2",
@@ -23635,9 +23870,9 @@
   "text": "¡pez!"
  },
  {
-  "h": "8127b9d3",
+  "h": "9c2b5743",
   "lang": "es",
-  "text": "¿Cuántas sílabas tiene flor? ¡Da palmadas!"
+  "text": "¿Cuántas sílabas tiene la palabra flor? ¡Da palmadas!"
  },
  {
   "h": "4cf64d88",
@@ -23645,9 +23880,9 @@
   "text": "¡flor!"
  },
  {
-  "h": "be975d90",
+  "h": "579f0540",
   "lang": "es",
-  "text": "¿Cuántas sílabas tiene casa? ¡Da palmadas!"
+  "text": "¿Cuántas sílabas tiene la palabra casa? ¡Da palmadas!"
  },
  {
   "h": "ec7a7e75",
@@ -23660,9 +23895,9 @@
   "text": "¡Casa!"
  },
  {
-  "h": "b1d947ed",
+  "h": "407e35dd",
   "lang": "es",
-  "text": "¿Cuántas sílabas tiene gato? ¡Da palmadas!"
+  "text": "¿Cuántas sílabas tiene la palabra gato? ¡Da palmadas!"
  },
  {
   "h": "18e9b3dc",
@@ -23675,9 +23910,9 @@
   "text": "¡Gato!"
  },
  {
-  "h": "2e0b7516",
+  "h": "87956e06",
   "lang": "es",
-  "text": "¿Cuántas sílabas tiene luna? ¡Da palmadas!"
+  "text": "¿Cuántas sílabas tiene la palabra luna? ¡Da palmadas!"
  },
  {
   "h": "4f3375a1",
@@ -23690,9 +23925,9 @@
   "text": "¡Luna!"
  },
  {
-  "h": "d02d6be1",
+  "h": "4de9a431",
   "lang": "es",
-  "text": "¿Cuántas sílabas tiene pelota? ¡Da palmadas!"
+  "text": "¿Cuántas sílabas tiene la palabra pelota? ¡Da palmadas!"
  },
  {
   "h": "634382a0",
@@ -23705,9 +23940,9 @@
   "text": "¡Pelota!"
  },
  {
-  "h": "a939774b",
+  "h": "405b69bb",
   "lang": "es",
-  "text": "¿Cuántas sílabas tiene plátano? ¡Da palmadas!"
+  "text": "¿Cuántas sílabas tiene la palabra plátano? ¡Da palmadas!"
  },
  {
   "h": "6d2f1794",
@@ -23720,9 +23955,9 @@
   "text": "¡Plátano!"
  },
  {
-  "h": "b3a55644",
+  "h": "9da06314",
   "lang": "es",
-  "text": "¿Cuántas sílabas tiene manzana? ¡Da palmadas!"
+  "text": "¿Cuántas sílabas tiene la palabra manzana? ¡Da palmadas!"
  },
  {
   "h": "26f38cd3",
@@ -23735,9 +23970,9 @@
   "text": "¡Manzana!"
  },
  {
-  "h": "65669d52",
+  "h": "f7386f82",
   "lang": "es",
-  "text": "¿Cuántas sílabas tiene mariposa? ¡Da palmadas!"
+  "text": "¿Cuántas sílabas tiene la palabra mariposa? ¡Da palmadas!"
  },
  {
   "h": "5766c9f5",
@@ -23750,9 +23985,9 @@
   "text": "¡Mariposa!"
  },
  {
-  "h": "6fb94b42",
+  "h": "2c217772",
   "lang": "es",
-  "text": "¿Cuántas sílabas tiene elefante? ¡Da palmadas!"
+  "text": "¿Cuántas sílabas tiene la palabra elefante? ¡Da palmadas!"
  },
  {
   "h": "7b4e22b7",
@@ -23765,9 +24000,9 @@
   "text": "¡Elefante!"
  },
  {
-  "h": "5bf93494",
+  "h": "1d6c90e4",
   "lang": "es",
-  "text": "¿Cuántas sílabas tiene cocodrilo? ¡Da palmadas!"
+  "text": "¿Cuántas sílabas tiene la palabra cocodrilo? ¡Da palmadas!"
  },
  {
   "h": "94445a0d",
@@ -23790,6 +24025,16 @@
   "text": "¡Gato, pato! ¡Riman!"
  },
  {
+  "h": "6520c147",
+  "lang": "es",
+  "text": "¿Qué rima con pato?"
+ },
+ {
+  "h": "8a47efb9",
+  "lang": "es",
+  "text": "¡Pato, gato! ¡Riman!"
+ },
+ {
   "h": "145952a9",
   "lang": "es",
   "text": "¡Pato!"
@@ -23803,6 +24048,16 @@
   "h": "43e8bde9",
   "lang": "es",
   "text": "¡Ratón, camión! ¡Riman!"
+ },
+ {
+  "h": "229b7096",
+  "lang": "es",
+  "text": "¿Qué rima con camión?"
+ },
+ {
+  "h": "e61e9461",
+  "lang": "es",
+  "text": "¡Camión, ratón! ¡Riman!"
  },
  {
   "h": "cdace04b",
@@ -23825,6 +24080,16 @@
   "text": "¡Abeja, oveja! ¡Riman!"
  },
  {
+  "h": "70ba9c1a",
+  "lang": "es",
+  "text": "¿Qué rima con oveja?"
+ },
+ {
+  "h": "f78b49f4",
+  "lang": "es",
+  "text": "¡Oveja, abeja! ¡Riman!"
+ },
+ {
   "h": "1e02fdbe",
   "lang": "es",
   "text": "¡Abeja!"
@@ -23845,6 +24110,16 @@
   "text": "¡Flor, tractor! ¡Riman!"
  },
  {
+  "h": "2ced0680",
+  "lang": "es",
+  "text": "¿Qué rima con tractor?"
+ },
+ {
+  "h": "649e843a",
+  "lang": "es",
+  "text": "¡Tractor, flor! ¡Riman!"
+ },
+ {
   "h": "52423ae2",
   "lang": "es",
   "text": "¡Tractor!"
@@ -23860,6 +24135,16 @@
   "text": "¡Sol, farol! ¡Riman!"
  },
  {
+  "h": "b7368905",
+  "lang": "es",
+  "text": "¿Qué rima con farol?"
+ },
+ {
+  "h": "f951fa4e",
+  "lang": "es",
+  "text": "¡Farol, sol! ¡Riman!"
+ },
+ {
   "h": "9cddb2f3",
   "lang": "es",
   "text": "¡Farol!"
@@ -23873,6 +24158,16 @@
   "h": "929950ce",
   "lang": "es",
   "text": "¡Pera, escalera! ¡Riman!"
+ },
+ {
+  "h": "d0adcc1b",
+  "lang": "es",
+  "text": "¿Qué rima con escalera?"
+ },
+ {
+  "h": "b8865d8e",
+  "lang": "es",
+  "text": "¡Escalera, pera! ¡Riman!"
  },
  {
   "h": "ccb20641",

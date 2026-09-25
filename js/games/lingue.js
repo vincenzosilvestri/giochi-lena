@@ -52,7 +52,7 @@
       tutWhich: ['Écoute bien : tu peux réécouter ici.', 'Puis touche le drapeau de la langue que tu as entendue !'],
     },
     it: {
-      where: w => `Dov'è ${w.it[0]}?`, word: w => `${w.it[1]}!`, no: w => `No, qui c'è ${w.it[0]}!`,
+      where: w => `Dov'è ${w.it[0]}?`, word: w => `${w.it[1]}!`, no: w => `No, hai toccato ${w.it[0]}!`,
       wasLang: 'Brava! Era italiano!', listen: 'Ascolta bene…',
       tutFind: ['Ascolta la parola…', "Poi tocca l'immagine giusta!"],
       tutMem: ['Ogni lingua ha il suo colore di carta.', 'Trova la stessa immagine nelle due lingue!'],
@@ -81,6 +81,17 @@
     },
   };
   const ROUND = 6;
+  /* parole uguali o quasi nelle due lingue (Luna/Luna, Gatto/Gato): non servono per "quale lingua?" */
+  const plain = x => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  function dist(a, b) {
+    const d = [...Array(b.length + 1).keys()];
+    for (let i = 1; i <= a.length; i++) {
+      let prev = d[0]; d[0] = i;
+      for (let j = 1; j <= b.length; j++) { const t = d[j]; d[j] = Math.min(d[j] + 1, d[j - 1] + 1, prev + (a[i - 1] === b[j - 1] ? 0 : 1)); prev = t; }
+    }
+    return d[b.length];
+  }
+  const tooSimilar = (w, A, B) => dist(plain(w[A][1]), plain(w[B][1])) <= 1;
   const flagBtn = l => h('button', { class: `flagbtn ${l}`, 'aria-label': l });
 
   App.registerGame({
@@ -141,6 +152,9 @@
               sfx.ding();
               await say(T.word(w), { lang: l });
               if (!alive) return;
+              const other = l === A ? B : A;
+              await say(TX[other].word(w), { lang: other });
+              if (!alive) return;
               await App.praise();
               const r = b.getBoundingClientRect();
               if (alive) success(r.left + r.width / 2, r.top);
@@ -188,7 +202,6 @@
               await wait(700);
               a.c.classList.add('match'); b.c.classList.add('match');
               sfx.ding();
-              App.track('lingue', null, true);
               /* il ponte: la parola nelle due lingue */
               await say(TX[A].word(a.cd.w), { lang: A });
               await say(TX[B].word(a.cd.w), { lang: B, queue: true });
@@ -201,7 +214,6 @@
                 if (alive) success(innerWidth / 2, innerHeight / 2);
               }
             } else {
-              App.track('lingue', null, false);
               await wait(1300);
               a.c.classList.remove('up'); b.c.classList.remove('up');
               busy = false;
@@ -210,6 +222,16 @@
           grid.append(c);
         });
         stage.append(h('div', { class: 'prompt lng-prompt' }, h('span', { class: `flagdot ${A}` }), '↔', h('span', { class: `flagdot ${B}` })), grid);
+        /* carte (3:4) il più grandi possibile senza uscire dallo schermo */
+        const gr = grid.getBoundingClientRect();
+        let best = { c: 3, w: 0 };
+        for (let c = 3; c <= 5; c++) {
+          const rw = Math.ceil(cards.length / c);
+          const w0 = Math.min((gr.width - 10 * (c - 1)) / c, ((gr.height - 10 * (rw - 1)) / rw) * .75);
+          if (w0 > best.w) best = { c, w: w0 };
+        }
+        grid.style.gridTemplateColumns = `repeat(${best.c}, ${Math.floor(best.w)}px)`;
+        grid.style.justifyContent = 'center';
         replay = () => {};
         lastSteps = [
           { text: T.tutMem[0], icon: '🃏', action: 'tap', at: () => grid.querySelector(`.lng-card.${A}`), cap: 'top' },
@@ -219,18 +241,22 @@
       }
 
       /* 3) Quale lingua? — lingua casuale (non alternata), bandierina in alto nascosta */
+      let lastWhich = null;
       function which() {
-        const l = pick([A, B]);
+        const l = lastWhich && Math.random() < .7 ? (lastWhich === A ? B : A) : pick([A, B]);
+        lastWhich = l;
         App.lang = l;
         if (flagPill) flagPill.textContent = '❓';
-        const w = pick(WORDS);
+        const w = pick(WORDS.filter(x => !tooSimilar(x, A, B)));
         const phrase = Math.random() < .35 ? pick(GREET[l]) : TX[l].word(w);
         const showE = GREET[l].includes(phrase) ? '💬' : w.e;
         const spk = h('button', { class: 'lng-spk big', onclick: () => { sfx.tap(); say(phrase, { lang: l }); } }, '🔊');
-        let first = true;
+        let first = true, locked = false;
         const choose = async (lc, btn) => {
+          if (locked) return;
           if (first) { App.track('lingue', null, lc === l); first = false; }
           if (lc === l) {
+            locked = true;
             sfx.ding();
             btn.classList.add('ok');
             if (flagPill) flagPill.textContent = App.FLAG[l];
@@ -248,7 +274,7 @@
         fa.onclick = () => choose(A, fa);
         fb.onclick = () => choose(B, fb);
         stage.append(h('div', { class: 'lng-which' }, spk, h('div', { class: 'lng-which-pic' }, showE), h('div', { class: 'lng-flags' }, fa, fb)));
-        replay = () => say(phrase, { lang: l });
+        replay = () => { App.lang = l; say(phrase, { lang: l }); };
         /* spiegazioni in una lingua a caso: non devono suggerire la risposta */
         const tl = pick([A, B]);
         lastSteps = [

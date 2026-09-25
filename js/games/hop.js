@@ -1,5 +1,5 @@
 /* Lena Salta / Lena saute — attraversa prati, strade (semaforo e strisce), binari (passaggio a livello) e fiumi.
-   Quattro mondi che cambiano con la distanza. Niente game over: si riparte dall'ultimo prato. Bilingue FR/IT. */
+   Quattro mondi che cambiano con la distanza. Niente game over: si riparte dall'ultimo prato. In 5 lingue. */
 (() => {
   const { h, say, sfx, rint, pick } = App;
   const COLS = 9;
@@ -31,14 +31,14 @@
       trainStop: ['Arriva il treno! Aspetta!', 'Attenta, il treno! Aspettiamo.'],
       trainDie: 'Ops, il treno! Quando le luci lampeggiano, si aspetta.',
       die: ['Ops! Attenta alle macchine!', 'Ops! Guarda bene prima di saltare!'],
-      dieRed: 'Ops! Il semaforo è diventato rosso: attraversa quando è appena verde!',
+      dieRed: 'Ops! Il semaforo è diventato rosso: attraversa quando è appena diventato verde!',
       splash: 'Splash! Salta sui tronchi!',
       intro: 'Tocca per saltare. Col rosso aspetta, col verde passa!',
       tut: ['Tocca lo schermo per saltare avanti!', 'Striscia il dito di lato per spostarti.',
         'Semaforo rosso: fermati e aspetta!', 'Semaforo verde: le macchine si fermano e puoi passare!',
         'Attenzione ai fiumi: salta sui tronchi!'],
       tutZebra: 'Attraversa sulle strisce bianche: è più sicuro e vinci più stelle!',
-      tutTrain: 'Quando le luci rosse lampeggiano, arriva il treno: aspetta sul prato!',
+      tutTrain: 'Quando le luci rosse lampeggiano, arriva il treno: aspetta qui, prima dei binari!',
     },
     fr: {
       stop: ["Stop ! C'est rouge : attends le vert !", 'Arrête-toi ! Au rouge, on ne passe pas.', 'Rouge ! On attend le vert.'],
@@ -54,13 +54,13 @@
         'Feu rouge : arrête-toi et attends !', "Feu vert : les voitures s'arrêtent et tu peux passer !",
         'Attention aux rivières : saute sur les troncs !'],
       tutZebra: "Traverse sur les bandes blanches : c'est plus sûr et tu gagnes plus d'étoiles !",
-      tutTrain: "Quand les lumières rouges clignotent, le train arrive : attends sur l'herbe !",
+      tutTrain: 'Quand les lumières rouges clignotent, le train arrive : attends ici, avant les rails !',
     },
   };
   Object.assign(TX, {
     de: {
       stop: ['Stopp! Es ist Rot: Warte auf Grün!', 'Halt! Bei Rot geht man nicht.', 'Rot! Wir warten auf Grün.'],
-      green: ['Super! Bei Grün darf man gehen!', 'Grün: Freie Fahrt!', 'Prima, du hast auf Grün gewartet!', 'Klasse! Sicher über die Straße!'],
+      green: ['Super! Bei Grün darf man gehen!', 'Grün: Jetzt darfst du gehen!', 'Prima, du hast auf Grün gewartet!', 'Klasse! Sicher über die Straße!'],
       zebra: 'Auf dem Zebrastreifen und bei Grün: super!',
       trainStop: ['Der Zug kommt! Warte!', 'Achtung, der Zug! Wir warten.'],
       trainDie: 'Oje, der Zug! Wenn die Lichter blinken, warten wir.',
@@ -72,7 +72,7 @@
         'Rote Ampel: Bleib stehen und warte!', 'Grüne Ampel: Die Autos halten an und du darfst gehen!',
         'Achtung am Fluss: Spring auf die Baumstämme!'],
       tutZebra: 'Geh über den Zebrastreifen: Das ist sicherer und du bekommst mehr Sterne!',
-      tutTrain: 'Wenn die roten Lichter blinken, kommt der Zug: Warte auf der Wiese!',
+      tutTrain: 'Wenn die roten Lichter blinken, kommt der Zug: Warte hier, vor den Schienen!',
     },
     en: {
       stop: ["Stop! It's red: wait for green!", "Stop! We don't cross on red.", "Red! Let's wait for green."],
@@ -88,7 +88,7 @@
         'Red light: stop and wait!', 'Green light: the cars stop and you can cross!',
         'Watch out for rivers: jump on the logs!'],
       tutZebra: "Cross on the white stripes: it's safer and you win more stars!",
-      tutTrain: 'When the red lights flash, the train is coming: wait on the grass!',
+      tutTrain: 'When the red lights flash, the train is coming: wait here, before the tracks!',
     },
     es: {
       stop: ['¡Alto! Está en rojo: ¡espera al verde!', '¡Para! Con el rojo no se pasa.', '¡Rojo! Esperamos al verde.'],
@@ -104,7 +104,7 @@
         'Semáforo en rojo: ¡para y espera!', 'Semáforo en verde: ¡los coches se paran y puedes pasar!',
         'Cuidado con los ríos: ¡salta sobre los troncos!'],
       tutZebra: '¡Cruza por las rayas blancas: es más seguro y ganas más estrellas!',
-      tutTrain: 'Cuando las luces rojas parpadean, viene el tren: ¡espera en la hierba!',
+      tutTrain: 'Cuando las luces rojas parpadean, viene el tren: ¡espera aquí, antes de las vías!',
     },
   });
   const tx = () => TX[App.lang];
@@ -121,7 +121,10 @@
     },
     start({ stage, addPill, setHelp }) {
       let alive = true;
-      let paused = false;
+      let holds = 0;
+      const hold = () => { holds++; };
+      const release = () => { holds = Math.max(0, holds - 1); };
+      const isPaused = () => holds > 0 || document.hidden;
       const canvas = h('canvas');
       const hint = h('div', { class: 'hop-hint' }, '👆 ⬆️   👉 ↔️');
       stage.append(canvas, hint);
@@ -129,12 +132,13 @@
       const starPill = addPill('⭐ 0');
       const distPill = addPill('🏁 0');
 
-      let W = 0, H = 0, cell = 0, dpr = 1;
+      let W = 0, H = 0, cell = 0, dpr = 1, ox = 0;
       function resize() {
         dpr = Math.min(window.devicePixelRatio || 1, 2);
         W = stage.clientWidth; H = stage.clientHeight;
         canvas.width = W * dpr; canvas.height = H * dpr;
-        cell = W / COLS;
+        cell = Math.min(W / COLS, H / 11);
+        ox = (W - cell * COLS) / 2;   // in orizzontale il campo resta centrato
       }
       resize();
       window.addEventListener('resize', resize);
@@ -155,6 +159,7 @@
         return p < LIGHT.green ? 'green' : p < LIGHT.green + LIGHT.blink ? 'blink' : 'red';
       };
       const carsStopped = row => row.light && lightState(row.light) !== 'red';
+      const onZebra = c => c.x + c.len > ZEBRA[0] - .05 && c.x < ZEBRA[ZEBRA.length - 1] + 1.05;
       /* treno: fase nel ciclo; pericolo = luci che lampeggiano o treno che passa */
       const trainDur = (COLS + TRAIN.len + 6) / TRAIN.speed;
       const trainPhase = R => (time + R.train.offset) % R.train.period;
@@ -173,7 +178,7 @@
           plan.push({ t: 'rail' });
         } else if (i < 10 || r < .68) {
           const lanes = rint(1, Math.min(3, 1 + Math.floor(i / 15)));
-          const light = roadsMade < 3 || Math.random() < .5 ? { offset: Math.random() * 10 } : null;
+          const light = roadsMade < 3 || i < 40 || Math.random() < .5 ? { offset: Math.random() * 10 } : null;
           roadsMade++;
           if (light) plan[plan.length - 1].post = light;
           for (let k = 0; k < lanes; k++) plan.push({ t: 'road', light });
@@ -198,7 +203,7 @@
         }
         if (p.t === 'rail') return { t: 'rail', dir, train: { offset: Math.random() * 8, period: rint(7, 10) }, warned: false };
         if (p.t === 'road') {
-          const speed = 1.3 + Math.min(i / 50, 1.8) + Math.random() * .5;
+          const speed = 1.2 + Math.min(i / 80, 1.2) + Math.random() * .3;
           const n = rint(2, 3);
           const off = Math.random() * SPAN;
           const cars = [...Array(n).keys()].map(k => {
@@ -237,6 +242,7 @@
       let zebraOk = false;
       let greens = 0;
       let lastStop = -99;
+      let lastStopKey = '';
       let curWorld = worldIdx(pl.row);
       let nextMs = 0;
       const greenPill = addPill('🚦 0');
@@ -246,10 +252,10 @@
         stage.append(d);
         setTimeout(() => d.remove(), 1150);
       }
-      const screenPt = (x, y) => { const b = stage.getBoundingClientRect(); return { x: b.left + x, y: b.top + y }; };
+      const screenPt = (x, y) => { const b = stage.getBoundingClientRect(); return { x: b.left + ox + x, y: b.top + y }; };
 
       function hop(dc, dr) {
-        if (paused || pl.dead) return;
+        if (isPaused() || pl.dead) return;
         if (pl.t < 1) { queued = [dc, dr]; return; }
         const tr = pl.row + dr;
         const tx0 = Math.round(pl.x) + dc;
@@ -261,16 +267,18 @@
         /* verifiche: dal prato non si scende in strada col rosso, né sui binari quando arriva il treno */
         const redStop = R.t === 'road' && R.light && from.t === 'grass' && lightState(R.light) === 'red';
         const trainStop = R.t === 'rail' && from.t === 'grass' && trainDanger(R);
+        if (R.t === 'road' && R.light && from.t === 'grass' && carsStopped(R) && R.cars.some(onZebra)) { sfx.tap(); return; }
         if (redStop || trainStop) {
           sfx.boing();
           sign('✋');
-          App.count('reds');
-          App.track('strada', null, false);
+          const key = `${tr}:${Math.floor(time / 10)}`;
+          if (key !== lastStopKey) { lastStopKey = key; App.count('reds'); }
           if (time - lastStop > 3) { lastStop = time; speak(T => pick(trainStop ? T.trainStop : T.stop)); }
           return;
         }
         pl.fx = pl.x; pl.frow = pl.row;
         pl.x = tx0; pl.row = tr; pl.t = 0; pl.log = null;
+        if (dr < 0) greenFlag = false;
         sfx.hop();
         if (hint.style.opacity !== '0') hint.style.opacity = '0';
       }
@@ -284,13 +292,13 @@
             const p = screenPt((pl.x + .5) * cell, rowY(pl.row));
             App.addStars(1, p.x, p.y);
           }
-          if (greenFlag && row(pl.row - 1).t === 'road') {
+          if (greenFlag && row(pl.row - 1).t === 'road' && pl.frow === pl.row - 1) {
             greens++;
             App.count('greens');
             App.track('strada', null, true);
             greenPill.textContent = `🚦 ${greens}`;
             sfx.ding();
-            const p = screenPt(W / 2, H * .38);
+            const p = screenPt(COLS * cell / 2, H * .38);
             if (zebraOk) {
               sign('🦓');
               App.count('zebra');
@@ -305,7 +313,7 @@
           }
           greenFlag = false;
         } else if (R.t === 'road') {
-          if (R.light && row(pl.row - 1).t === 'grass') { greenFlag = carsStopped(R); zebraOk = ZEBRA.includes(pl.x); }
+          if (R.light && row(pl.row - 1).t === 'grass' && pl.frow === pl.row - 1) { greenFlag = lightState(R.light) === 'green'; zebraOk = ZEBRA.includes(pl.x); }
           else if (!ZEBRA.includes(pl.x)) zebraOk = false;
         } else if (R.t === 'river') {
           const lg = R.logs.find(l => pl.x + .5 > l.x && pl.x + .5 < l.x + l.len);
@@ -320,7 +328,7 @@
           if (w !== curWorld) {
             curWorld = w;
             sign(WORLDS[w].sign);
-            const p = screenPt(W / 2, H * .38);
+            const p = screenPt(COLS * cell / 2, H * .38);
             App.glitter(p.x, p.y, 24);
             speak(() => WORLDS[w].hello[App.lang]);
           }
@@ -328,13 +336,14 @@
       }
 
       async function celebrate() {
-        paused = true;
+        hold();
         await App.reward();
-        paused = false;
+        release();
       }
 
       function die(kind) {
-        if (pl.dead || pl.inv > 0) return;
+        if (pl.dead || (pl.inv > 0 && kind !== 'splash')) return;
+        queued = null;
         const R = row(pl.row);
         pl.dead = .9;
         pl.deathIco = kind === 'splash' ? '💦' : '💫';
@@ -353,15 +362,20 @@
         pl.x = pl.fx = lastSafe.x;
         pl.t = 1; pl.inv = 1.5;
         greenFlag = false;
+        queued = null;
       }
 
       /* ---------- aggiornamento ---------- */
       function update(dt) {
+        if (!cell) return;
         time += dt;
         const first = Math.floor(cam) - 1, lastR = Math.floor(cam) + Math.ceil(H / cell) + 3;
         for (let i = Math.max(0, first); i <= lastR; i++) {
           const R = row(i);
-          if (R.t === 'road' && !carsStopped(R)) R.cars.forEach(c => move(c, R, dt));
+          if (R.t === 'road') {
+            const stopped = carsStopped(R);
+            R.cars.forEach(c => { if (!stopped) move(c, R, dt); else if (R.light && onZebra(c)) move(c, R, dt * 1.6); });
+          }
           if (R.t === 'river') R.logs.forEach(l => move(l, R, dt));
           if (R.t === 'rail') {
             const passing = trainX(R) != null;
@@ -371,7 +385,7 @@
           }
         }
         maybeTrainTutorial();
-        if (paused) return;
+        if (isPaused()) return;
         if (pl.dead) {
           pl.dead -= dt;
           if (pl.dead <= 0) respawn();
@@ -440,7 +454,7 @@
       /* passaggio a livello: croce di Sant'Andrea + due luci rosse che lampeggiano quando arriva il treno */
       function drawCrossing(R, cx, cy) {
         const danger = trainDanger(R);
-        const blink = Math.floor((time + (paused ? performance.now() / 1000 : 0)) * 3) % 2;
+        const blink = Math.floor((time + (isPaused() ? performance.now() / 1000 : 0)) * 3) % 2;
         ctx.fillStyle = '#555'; ctx.fillRect(cx - 2, cy - cell * .5, 4, cell * .9);
         ctx.lineCap = 'round';
         ctx.strokeStyle = '#fff'; ctx.lineWidth = 5;
@@ -455,15 +469,18 @@
       }
 
       function draw() {
+        if (!cell) return;
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, W, H);
+        ctx.translate(ox, 0);
         const first = Math.floor(cam) - 1, lastR = Math.floor(cam) + Math.ceil(H / cell) + 2;
         for (let i = lastR; i >= first; i--) {
           const R = row(i), y = rowY(i), w = world(i);
           if (R.t === 'grass') {
             ctx.fillStyle = w.grass[((i % 2) + 2) % 2];
-            ctx.fillRect(0, y, W, cell + 1);
+            ctx.fillRect(-ox, y, W, cell + 1);
           } else if (R.t === 'road') {
-            ctx.fillStyle = w.road; ctx.fillRect(0, y, W, cell + 1);
+            ctx.fillStyle = w.road; ctx.fillRect(-ox, y, W, cell + 1);
             if (row(i + 1).t === 'road') {
               ctx.fillStyle = 'rgba(255,255,255,.7)';
               for (let x = 0; x < W; x += cell) ctx.fillRect(x + cell * .2, y - 2, cell * .5, 4);
@@ -471,22 +488,22 @@
             if (R.light) {
               ctx.fillStyle = 'rgba(255,255,255,.85)';
               for (let k = 0; k < 6; k++) ctx.fillRect(ZEBRA[0] * cell + k * cell * .5 + cell * .1, y + 3, cell * .28, cell - 6);
-              if (carsStopped(R)) { ctx.fillStyle = 'rgba(61,255,110,.12)'; ctx.fillRect(0, y, W, cell); }
+              if (carsStopped(R)) { ctx.fillStyle = 'rgba(61,255,110,.12)'; ctx.fillRect(-ox, y, W, cell); }
             }
           } else if (R.t === 'rail') {
-            ctx.fillStyle = '#b9a58a'; ctx.fillRect(0, y, W, cell + 1);
+            ctx.fillStyle = '#b9a58a'; ctx.fillRect(-ox, y, W, cell + 1);
             ctx.fillStyle = '#6b4a2e';
             for (let x = 0; x < W; x += cell * .5) ctx.fillRect(x + 2, y + cell * .15, cell * .18, cell * .7);
             ctx.fillStyle = '#7d828c';
-            ctx.fillRect(0, y + cell * .28, W, 4); ctx.fillRect(0, y + cell * .66, W, 4);
+            ctx.fillRect(-ox, y + cell * .28, W, 4); ctx.fillRect(-ox, y + cell * .66, W, 4);
           } else {
-            ctx.fillStyle = w.water; ctx.fillRect(0, y, W, cell + 1);
+            ctx.fillStyle = w.water; ctx.fillRect(-ox, y, W, cell + 1);
             ctx.strokeStyle = 'rgba(255,255,255,.35)'; ctx.lineWidth = 2;
             for (let x = ((time * 20 * R.dir) % cell + cell) % cell - cell; x < W; x += cell) {
               ctx.beginPath(); ctx.arc(x + cell / 2, y + cell * .55, cell * .18, Math.PI * 1.1, Math.PI * 1.9); ctx.stroke();
             }
           }
-          if (w.night) { ctx.fillStyle = 'rgba(15,15,60,.38)'; ctx.fillRect(0, y, W, cell + 1); }
+          if (w.night) { ctx.fillStyle = 'rgba(15,15,60,.38)'; ctx.fillRect(-ox, y, W, cell + 1); }
         }
         for (let i = lastR; i >= first; i--) {
           const R = row(i), y = rowY(i), cy = y + cell / 2, w = world(i);
@@ -542,7 +559,7 @@
       function loop(now) {
         const dt = Math.min(.05, (now - lastT) / 1000);
         lastT = now;
-        if (!paused) update(dt);
+        if (!isPaused()) update(dt);
         drawnPlayer = false;
         draw();
         raf = requestAnimationFrame(loop);
@@ -579,19 +596,19 @@
         const ri = visibleRow(R => R.t === 'river');
         const lightPt = () => sp(cell * .5, rowY(li) + cell * .15)();
         const steps = [
-          { text: T.tut[0], icon: '👆', action: 'tap', at: sp(W / 2, H * .62), cap: 'top' },
-          { text: T.tut[1], icon: '👉', action: 'swipe', at: sp(W * .25, H * .62), to: sp(W * .75, H * .62), cap: 'top' },
+          { text: T.tut[0], icon: '👆', action: 'tap', at: sp(COLS * cell / 2, H * .62), cap: 'top' },
+          { text: T.tut[1], icon: '👉', action: 'swipe', at: sp(COLS * cell * .25, H * .62), to: sp(COLS * cell * .75, H * .62), cap: 'top' },
         ];
         if (li >= 0) {
           steps.push({ text: T.tut[2], icon: '🔴', action: 'tap', at: lightPt, cap: 'top', before: () => { forceLight = 'red'; } });
           steps.push({ text: T.tut[3], icon: '🟢', action: 'tap', at: lightPt, cap: 'top', before: () => { forceLight = 'green'; } });
           steps.push(zebraStep(li));
         }
-        if (ri >= 0) steps.push({ text: T.tut[4], icon: '🪵', action: 'tap', at: () => sp(W / 2, rowY(ri) + cell / 2)(), cap: 'top' });
+        if (ri >= 0) steps.push({ text: T.tut[4], icon: '🪵', action: 'tap', at: () => sp(COLS * cell / 2, rowY(ri) + cell / 2)(), cap: 'top' });
         return steps;
       }
       const runTut = p => p.then(r => { forceLight = null; return r; });
-      setHelp(() => runTut(App.tutorial(tutSteps())));
+      setHelp(() => { hold(); return runTut(App.tutorial(tutSteps())).then(r => { release(); return r; }); });
       App.nextLang();
       (async () => {
         const ran = await runTut(App.intro('salta', tutSteps()));
@@ -610,12 +627,12 @@
           const RR = row(i);
           if (RR.t !== 'rail') continue;
           trainTutDone = true;
-          paused = true;
+          hold();
           const P = RR.train.period, target = P - TRAIN.warn + .2;
           RR.train.offset = ((target - time) % P + P) % P;
           App.nextLang();
           App.intro('treno', [{ text: tx().tutTrain, icon: '🚂', action: 'tap', at: () => sp(cell * .5, rowY(i - 1) + cell * .25)(), cap: 'top' }])
-            .then(() => { paused = false; });
+            .then(() => { release(); });
           return;
         }
       }

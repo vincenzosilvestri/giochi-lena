@@ -717,3 +717,21 @@ button { transition: transform .1s ease, box-shadow .1s ease; }
 @keyframes screenIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 .modal { animation: pop .35s ease; }
 body.calm .tiles .tile, body.calm .screen { animation: none; }
+
+/* ---------- Barra di aggiornamento / download voci ---------- */
+#dl { position: fixed; left: 0; right: 0; top: 0; z-index: 70; padding: calc(4px + var(--safe-top)) 10px 4px; pointer-events: none; display: flex; flex-direction: column; gap: 4px; }
+#dl .dl-row span { display: none; }
+#dl .dl-row i { display: block; height: 4px; border-radius: 4px; background: rgba(0, 0, 0, .08); overflow: hidden; }
+#dl .dl-row b { display: block; height: 100%; background: var(--accent); transition: width .3s ease; }
+#dl.big { top: auto; bottom: calc(46px + var(--safe-bottom)); left: 50%; right: auto; transform: translateX(-50%); width: min(80%, 320px); background: #fff; border-radius: 18px; padding: 10px 14px; box-shadow: var(--shadow); gap: 8px; }
+#dl.big .dl-row span { display: block; font-size: 15px; margin-bottom: 4px; }
+#dl.big .dl-row i { height: 10px; }
+/* candeline: area di tocco più grande per le dita piccole */
+.candle { position: relative; }
+.candle::before { content: ""; position: absolute; left: -16px; right: -16px; top: -40px; bottom: -10px; }
+.math-in { font: inherit; font-size: 28px; width: 120px; text-align: center; padding: 8px; border-radius: 14px; border: 3px solid #ddd; }
+
+/* ---------- Correzioni revisione ---------- */
+.seq-row { flex-wrap: nowrap; }
+.seq-row .it, .seq-row .q { width: var(--it, 58px); height: var(--it, 58px); flex: none; }
+.sp-toy.small { transform: scale(.82); transform-origin: 50% 100%; }

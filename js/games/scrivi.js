@@ -14,7 +14,7 @@
     D: [[[26, 10], [26, 90]], [[26, 10], [40, 10], ...arc(40, 50, 40, -90, 90, 18), [26, 90]]],
     E: [[[72, 10], [28, 10], [28, 90], [72, 90]], [[28, 50], [62, 50]]],
     F: [[[72, 10], [28, 10], [28, 90]], [[28, 50], [62, 50]]],
-    G: [[...arc(52, 50, 38, -40, -345, 22)], [[58, 56], [88, 56], [88, 82]]],
+    G: [arc(52, 50, 38, -40, -360, 22), [[90, 50], [62, 50]]],
     H: [[[25, 10], [25, 90]], [[75, 10], [75, 90]], [[25, 50], [75, 50]]],
     I: [[[50, 10], [50, 90]]],
     J: [[[66, 10], [66, 66], ...arc(46, 66, 20, 0, 180)]],
@@ -38,12 +38,12 @@
     1: [[[34, 26], [54, 10], [54, 90]]],
     2: [[[28, 28], [36, 14], [52, 10], [68, 16], [72, 30], [64, 46], [26, 90], [76, 90]]],
     3: [[[28, 18], [48, 10], [66, 16], [68, 32], [50, 46], [70, 58], [70, 78], [52, 90], [28, 84]]],
-    4: [[[62, 90], [62, 10], [20, 64], [80, 64]]],
+    4: [[[56, 10], [20, 64], [80, 64]], [[62, 30], [62, 90]]],
     5: [[[72, 10], [32, 10], [28, 46], [48, 40], [68, 48], [74, 66], [66, 84], [48, 90], [28, 84]]],
     6: [[[70, 16], [54, 10], [36, 18], [26, 40], [26, 66], [36, 86], [54, 90], [70, 80], [74, 64], [64, 50], [48, 48], [32, 56], [26, 66]]],
     7: [[[22, 10], [78, 10], [40, 90]]],
-    8: [[[50, 48], [34, 40], [30, 26], [38, 14], [50, 10], [62, 14], [70, 26], [66, 40], [50, 48], [32, 58], [26, 74], [34, 88], [50, 90], [66, 88], [74, 74], [68, 58], [50, 48]]],
-    9: [[[72, 36], [64, 50], [48, 54], [32, 46], [28, 30], [36, 16], [52, 10], [68, 16], [72, 32], [72, 60], [64, 84], [46, 90], [30, 84]]],
+    8: [[[64, 16], [50, 10], [36, 16], [32, 28], [40, 40], [50, 48], [62, 58], [70, 72], [62, 86], [50, 90], [38, 86], [30, 72], [38, 58], [50, 48], [60, 40], [68, 28], [64, 16]]],
+    9: [[[70, 22], [60, 12], [48, 10], [34, 16], [28, 30], [32, 46], [48, 54], [64, 48], [72, 32], [72, 60], [64, 84], [46, 90], [30, 84]]],
   };
   const LETTER_IT = {
     A: 'a', B: 'bi', C: 'ci', D: 'di', E: 'e', F: 'effe', G: 'gi', H: 'acca', I: 'i', J: 'i lunga', K: 'cappa',
@@ -53,11 +53,11 @@
   const isDigit = c => /[0-9]/.test(c);
   const TX = {
     it: {
-      letter: c => `Scrivi la ${LETTER_IT[c]}! Segui i puntini.`, digit: w => `Scrivi il numero ${w}!`,
+      letter: c => `Scrivi la lettera ${LETTER_IT[c]}! Segui i puntini.`, digit: w => `Scrivi il numero ${w}!`,
       doneL: c => `${LETTER_IT[c]}!`, tut: 'Parti dal pallino verde e segui la strada col dito!',
     },
     fr: {
-      letter: c => `Écris le ${c} ! Suis les points.`, digit: w => `Écris le chiffre ${w} !`,
+      letter: c => `Écris la lettre ${c} ! Suis les points.`, digit: w => `Écris le chiffre ${w} !`,
       doneL: c => `${c} !`, tut: 'Pars du point vert et suis le chemin avec ton doigt !',
     },
     de: {
@@ -137,7 +137,7 @@
         const svg = board.querySelector('svg');
         const ink = svg.querySelector('.wr-ink'), doneG = svg.querySelector('.wr-done');
         const startDot = svg.querySelector('.wr-start'), num = svg.querySelector('.wr-num'), hint = svg.querySelector('.wr-hint');
-        let si = 0, idx = 0, trail = [], drawing = false, strayed = false, finished = false;
+        let si = 0, idx = 0, trail = [], drawing = false, strayed = false, finished = false, pid = null;
         const setStart = () => {
           const [x, y] = strokes[si][0];
           startDot.setAttribute('cx', x); startDot.setAttribute('cy', y);
@@ -162,17 +162,18 @@
         };
         const near = (p, q, tol) => Math.hypot(p[0] - q[0], p[1] - q[1]) < tol;
         svg.addEventListener('pointerdown', e => {
-          if (finished) return;
+          if (finished || drawing) return;
           e.preventDefault();
-          svg.setPointerCapture(e.pointerId);
+          try { svg.setPointerCapture(e.pointerId); } catch (err) { /* dito non più attivo */ }
           const p = toBox(e);
           const s = strokes[si];
           if (idx === 0 && !near(p, s[0], 16)) { sfx.tap(); startDot.classList.remove('pulse'); void startDot.offsetWidth; startDot.classList.add('pulse'); return; }
           drawing = true;
+          pid = e.pointerId;
           trail = trail.length ? trail : [s[0]];
         });
         svg.addEventListener('pointermove', e => {
-          if (!drawing || finished) return;
+          if (!drawing || finished || e.pointerId !== pid) return;
           const p = toBox(e);
           const s = strokes[si];
           /* avanza sui punti di controllo nell'ordine (può saltarne al massimo 2) */
@@ -183,10 +184,10 @@
           if (off > 26 && !strayed) { strayed = true; }
           trail.push(off < 20 ? p : s[idx]);
           ink.setAttribute('points', poly(trail));
-          if (Math.random() < .12) { const r = svg.getBoundingClientRect(); App.glitter(e.clientX, e.clientY, 3); void r; }
+          if (Math.random() < .12) App.glitter(e.clientX, e.clientY, 3);
           if (idx >= s.length - 1) strokeDone();
         });
-        const lift = () => { drawing = false; };
+        const lift = e => { if (e.pointerId === pid) drawing = false; };
         svg.addEventListener('pointerup', lift);
         svg.addEventListener('pointercancel', lift);
 

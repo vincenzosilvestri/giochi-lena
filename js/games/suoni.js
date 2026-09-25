@@ -19,7 +19,7 @@
     it: [[['🐱', 'gatto'], ['🍽️', 'piatto']], [['🐶', 'cane'], ['🍞', 'pane']], [['🌸', 'fiore'], ['❤️', 'cuore']],
       [['🎂', 'torta'], ['🚪', 'porta']], [['🚢', 'nave'], ['🔑', 'chiave']], [['🍎', 'mela'], ['🕯️', 'candela']]],
     fr: [[['⛵', 'bateau'], ['🎂', 'gâteau']], [['🐰', 'lapin'], ['🌲', 'sapin']], [['☀️', 'soleil'], ['🐝', 'abeille']],
-      [['🐱', 'chat'], ['🐀', 'rat']], [['✋', 'main'], ['🍞', 'pain']], [['🐟', 'poisson'], ['🦔', 'hérisson']]],
+      [['🐱', 'chat'], ['🐀', 'rat']], [['👃', 'nez'], ['🎲', 'dé']], [['🐟', 'poisson'], ['🦔', 'hérisson']]],
     de: [[['🐭', 'Maus'], ['🏠', 'Haus']], [['🐰', 'Hase'], ['👃', 'Nase']], [['🐮', 'Kuh'], ['👟', 'Schuh']],
       [['🐱', 'Katze'], ['🐾', 'Tatze']], [['🦔', 'Igel'], ['🪞', 'Spiegel']]],
     en: [[['🐱', 'cat'], ['🎩', 'hat']], [['🐶', 'dog'], ['🐸', 'frog']], [['🐝', 'bee'], ['🌳', 'tree']],
@@ -28,35 +28,41 @@
       [['🌸', 'flor'], ['🚜', 'tractor']], [['☀️', 'sol'], ['🏮', 'farol']], [['🍐', 'pera'], ['🪜', 'escalera']]],
   };
   const word = s => s.replace(/-/g, '');
+  /* come vanno pronunciate le sillabe dette da sole (la voce sbaglierebbe "llon", "e" inglese…); sullo schermo resta la grafia vera */
+  const SPOKEN = {
+    fr: { 'pa-pi-llon': 'pa-pi-yon', 'coc-ci-nelle': 'coc-si-nelle', 'hé-li-cop-tère': 'é-li-cop-tère' },
+    en: { 'el-e-phant': 'el-uh-fant', 'hel-i-cop-ter': 'hel-ih-cop-ter', 'croc-o-dile': 'crock-uh-dial', 'wa-ter-mel-on': 'wor-ter-mel-un' },
+  };
+  const spk = (s, l) => (SPOKEN[l] && SPOKEN[l][s]) || s;
   const parts = s => s.split('-');
   const cap = s => s[0].toUpperCase() + s.slice(1);
   const TX = {
     it: {
-      howMany: w => `Quante sillabe ha ${w}? Batti le mani!`, syl: s => `${parts(s).join(', ')}!`,
+      howMany: w => `Quante sillabe ha la parola ${w}? Batti le mani!`, syl: s => `${parts(s).join(', ')}!`,
       rhymeQ: w => `Cosa fa rima con ${w}?`, rhymeOk: (a, b) => `${cap(a)}, ${b}! Fanno rima!`,
       tutSyl: ['Tocca la parola: la senti divisa in sillabe.', 'Poi tocca quanti battiti di mani!'],
       tutRhyme: ['Ascolta la parola…', 'Tocca la cosa che fa rima: finisce con lo stesso suono!'],
     },
     fr: {
-      howMany: w => `Combien de syllabes dans ${w} ? Tape dans tes mains !`, syl: s => `${parts(s).join(', ')} !`,
+      howMany: w => `Combien de syllabes dans le mot ${w} ? Tape dans tes mains !`, syl: s => `${parts(s).join(', ')} !`,
       rhymeQ: w => `Qu'est-ce qui rime avec ${w} ?`, rhymeOk: (a, b) => `${cap(a)}, ${b} ! Ça rime !`,
       tutSyl: ['Touche le mot : tu l\'entends coupé en syllabes.', 'Puis touche combien de fois tu tapes dans tes mains !'],
       tutRhyme: ['Écoute le mot…', 'Touche ce qui rime : ça finit avec le même son !'],
     },
     de: {
-      howMany: w => `Wie viele Silben hat ${w}? Klatsch mit!`, syl: s => `${parts(s).join(', ')}!`,
+      howMany: w => `Wie viele Silben hat das Wort ${w}? Klatsch mit!`, syl: s => `${parts(s).join(', ')}!`,
       rhymeQ: w => `Was reimt sich auf ${w}?`, rhymeOk: (a, b) => `${a}, ${b}! Das reimt sich!`,
       tutSyl: ['Tippe auf das Wort: Du hörst es in Silben geteilt.', 'Dann tippe, wie oft du klatschst!'],
       tutRhyme: ['Hör dir das Wort an…', 'Tippe auf das, was sich reimt: Es endet mit dem gleichen Klang!'],
     },
     en: {
-      howMany: w => `How many syllables in ${w}? Clap along!`, syl: s => `${parts(s).join(', ')}!`,
+      howMany: w => `How many syllables in the word ${w}? Clap along!`, syl: s => `${parts(s).join(', ')}!`,
       rhymeQ: w => `What rhymes with ${w}?`, rhymeOk: (a, b) => `${cap(a)}, ${b}! They rhyme!`,
       tutSyl: ['Tap the word: you hear it split into syllables.', 'Then tap how many claps!'],
       tutRhyme: ['Listen to the word…', 'Tap the thing that rhymes: it ends with the same sound!'],
     },
     es: {
-      howMany: w => `¿Cuántas sílabas tiene ${w}? ¡Da palmadas!`, syl: s => `¡${parts(s).join(', ')}!`,
+      howMany: w => `¿Cuántas sílabas tiene la palabra ${w}? ¡Da palmadas!`, syl: s => `¡${parts(s).join(', ')}!`,
       rhymeQ: w => `¿Qué rima con ${w}?`, rhymeOk: (a, b) => `¡${cap(a)}, ${b}! ¡Riman!`,
       tutSyl: ['Toca la palabra: la oyes dividida en sílabas.', '¡Luego toca cuántas palmadas!'],
       tutRhyme: ['Escucha la palabra…', '¡Toca lo que rima: termina con el mismo sonido!'],
@@ -71,8 +77,8 @@
     phrases: l => {
       const T = TX[l];
       const out = [...T.tutSyl, ...T.tutRhyme];
-      SYL[l].forEach(([, s]) => out.push(T.howMany(word(s)), T.syl(s), App.excl(cap(word(s)), l)));
-      RHYME[l].forEach(([a, b]) => out.push(T.rhymeQ(a[1]), T.rhymeOk(a[1], b[1]), App.excl(cap(a[1]), l), App.excl(cap(b[1]), l)));
+      SYL[l].forEach(([, s]) => out.push(T.howMany(word(s)), T.syl(spk(s, l)), App.excl(cap(word(s)), l)));
+      RHYME[l].forEach(([a, b]) => out.push(T.rhymeQ(a[1]), T.rhymeOk(a[1], b[1]), T.rhymeQ(b[1]), T.rhymeOk(b[1], a[1]), App.excl(cap(a[1]), l), App.excl(cap(b[1]), l)));
       return out;
     },
     start({ stage, addPill, setHelp }) {
@@ -114,7 +120,7 @@
         async function spell() {
           sfx.tap();
           const ch = [...chips.children];
-          say(T.syl(s), { lang: l, rate: .8 });
+          say(T.syl(spk(s, l)), { lang: l, rate: .8 });
           for (let i = 0; i < ch.length; i++) {
             ch[i].classList.add('on'); clapTone();
             await wait(520);
@@ -131,10 +137,11 @@
             if (first) { App.track('suoni', null, k === n); first = false; }
             if (k === n) {
               answers.querySelectorAll('button').forEach(x => { x.disabled = true; });
+              card.onclick = null;
               b.classList.add('ok');
               sfx.ding();
               [...chips.children].forEach(c => c.classList.add('on'));
-              await say(T.syl(s), { lang: l, rate: .8 });
+              await say(T.syl(spk(s, l)), { lang: l, rate: .8 });
               const r = b.getBoundingClientRect();
               if (alive) success(r.left + r.width / 2, r.top);
             } else {

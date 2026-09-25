@@ -29,7 +29,7 @@
         'Guarda il numero: ti dice quante cose prendere.', 'Tocca le cose per metterle nel cestino!'],
     },
     fr: {
-      how: w => `Combien de ${w.p} vois-tu ?`, howShort: () => 'Combien de',
+      how: w => `Combien ${/^[aeiouyéèêh]/i.test(w.p) ? "d'" : 'de '}${w.p} vois-tu ?`, howShort: () => 'Combien de',
       retry: w => `Essaie encore ! Touche les ${w.p} pour les compter.`,
       touch1: w => `Touche ${w.f ? 'une' : 'un'} ${w.s} !`, touchN: (n, w) => `Touche ${n} ${w.p} !`, touchShort: 'Touche',
       tut: ['Touche les objets pour les compter : un, deux, trois...', 'Puis touche le bon nombre en bas !',
@@ -54,7 +54,7 @@
       retry: w => `¡Inténtalo otra vez! Toca ${w.f ? 'las' : 'los'} ${w.p} para contar${w.f ? 'las' : 'los'}.`,
       touch1: w => `¡Toca ${w.f ? 'una' : 'un'} ${w.s}!`, touchN: (n, w) => `¡Toca ${n} ${w.p}!`, touchShort: 'Toca',
       tut: ['Toca las cosas para contarlas: uno, dos, tres...', '¡Luego toca el número correcto abajo!',
-        'Mira el número: te dice cuántas cosas coger.', '¡Toca las cosas para ponerlas en la cesta!'],
+        'Mira el número: te dice cuántas cosas tomar.', '¡Toca las cosas para ponerlas en la cesta!'],
     },
   };
   /* addizioni e sottrazioni entro 10 (numeri detti come parole) */
@@ -151,7 +151,7 @@
         prompt.append(`${T.howShort(w)} `, h('span', { class: 'pic' }, th.e), ' ?');
         let counted = 0;
         let first = true;
-        place(n, th, b => {
+        const items = place(n, th, b => {
           if (b.classList.contains('done')) return;
           counted++;
           b.classList.add('done');
@@ -160,7 +160,9 @@
           say(App.numWord(counted, w.f));
         });
         const opts = new Set([n]);
-        while (opts.size < 3) { const v = rint(1, Math.max(max, 4)); if (v !== n) opts.add(v); }
+        /* dal livello 3 le risposte sbagliate sono vicine a quella giusta: non si indovina a colpo d'occhio */
+        const near = [n - 2, n - 1, n + 1, n + 2].filter(v => v >= 1 && v <= Math.max(max, 4));
+        while (opts.size < 3) { const v = lv >= 3 && near.length ? pick(near) : rint(1, Math.max(max, 4)); if (v !== n) opts.add(v); }
         let locked = false;
         [...opts].sort((a, b) => a - b).forEach(v => {
           const b = h('button', {}, String(v));
@@ -176,6 +178,9 @@
               sfx.boing();
               b.classList.add('shake');
               setTimeout(() => b.classList.add('gone'), 450);
+              /* si riconta da capo */
+              counted = 0;
+              items.forEach(it => { it.classList.remove('done'); const nn = it.querySelector('.n'); if (nn) nn.remove(); });
               say(T.retry(w));
             }
           };
@@ -206,7 +211,6 @@
           sfx.pop();
           say(App.numWord(got, w.f));
           if (got === n) {
-            App.track('numeri', n, true);
             const br = basket.getBoundingClientRect();
             setTimeout(() => alive && success(br.left + br.width / 2, br.top), 600);
           }
@@ -235,7 +239,7 @@
           const btn = h('button', {}, String(v));
           btn.onclick = async () => {
             if (locked) return;
-            if (first) { App.track('numeri', `${a}${minus ? '−' : '+'}${b}`, v === c); first = false; }
+            if (first) { App.track('numeri', null, v === c); first = false; }
             if (v === c) {
               locked = true;
               btn.classList.add('ok');

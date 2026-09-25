@@ -1,4 +1,4 @@
-/* Colora con Lena / Colorie avec Lena — disegni a zone: scegli un colore e tocca una zona per riempirla. Bilingue FR/IT. */
+/* Colora con Lena / Colorie avec Lena — disegni a zone: scegli un colore e tocca una zona per riempirla. In 5 lingue. */
 (() => {
   const { h, say, sfx, pick, wait } = App;
 
@@ -240,7 +240,7 @@
       'il cielo': 'den Himmel', 'il prato': 'das Gras', 'il sole': 'die Sonne', 'il tetto': 'das Dach', 'la porta': 'die Tür', 'lo stelo': 'den Stiel',
       'il vaso': 'den Topf', 'il centro del fiore': 'die Mitte der Blume', 'il corpo della farfalla': 'den Körper des Schmetterlings', 'il mare': 'das Meer',
       'la sabbia': 'den Sand', "l'alga": 'die Alge', 'il pesce': 'den Fisch', 'la coda': 'den Schwanz', 'il gatto': 'die Katze', 'il naso': 'die Nase',
-      'la criniera': 'die Mähne', 'il muso': 'die Schnauze', 'il corno': 'das Horn', 'la strada': 'die Straße', 'la macchina': 'das Auto',
+      'la criniera': 'die Mähne', 'il muso': 'das Maul', 'il corno': 'das Horn', 'la strada': 'die Straße', 'la macchina': 'das Auto',
       'il finestrino': 'das Fenster', 'la ruota': 'das Rad', 'il faro': 'den Scheinwerfer', 'il piatto': 'den Teller', 'la glassa': 'die Glasur',
       'la fiammella': 'die Flamme', "la prima striscia dell'arcobaleno": 'den ersten Streifen des Regenbogens', 'il cono': 'die Waffel',
       'il gelato': 'das Eis', 'la ciliegina': 'die Kirsche', "l'orecchio": 'das Ohr', 'la carota': 'die Karotte',
@@ -249,7 +249,7 @@
       'il cielo': 'the sky', 'il prato': 'the grass', 'il sole': 'the sun', 'il tetto': 'the roof', 'la porta': 'the door', 'lo stelo': 'the stem',
       'il vaso': 'the pot', 'il centro del fiore': 'the middle of the flower', 'il corpo della farfalla': "the butterfly's body", 'il mare': 'the sea',
       'la sabbia': 'the sand', "l'alga": 'the seaweed', 'il pesce': 'the fish', 'la coda': 'the tail', 'il gatto': 'the cat', 'il naso': 'the nose',
-      'la criniera': 'the mane', 'il muso': 'the snout', 'il corno': 'the horn', 'la strada': 'the road', 'la macchina': 'the car',
+      'la criniera': 'the mane', 'il muso': 'the muzzle', 'il corno': 'the horn', 'la strada': 'the road', 'la macchina': 'the car',
       'il finestrino': 'the window', 'la ruota': 'the wheel', 'il faro': 'the headlight', 'il piatto': 'the plate', 'la glassa': 'the icing',
       'la fiammella': 'the flame', "la prima striscia dell'arcobaleno": 'the first stripe of the rainbow', 'il cono': 'the cone',
       'il gelato': 'the ice cream', 'la ciliegina': 'the cherry', "l'orecchio": 'the ear', 'la carota': 'the carrot',
@@ -307,7 +307,9 @@
         c.toBlob(b => res(b), 'image/png');
       };
       img.onerror = () => res(null);
-      const s = new XMLSerializer().serializeToString(svgEl);
+      const cl = svgEl.cloneNode(true);
+      cl.setAttribute('width', '600'); cl.setAttribute('height', '600');
+      const s = new XMLSerializer().serializeToString(cl);
       img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(s);
     });
   }
@@ -332,6 +334,13 @@
       const st = App.state;
       st.paint = st.paint || {};
       setHelp(() => App.tutorial(lastSteps));
+      /* colori salvati di un disegno (vecchio formato: array; nuovo: {n, f}); scartati se il disegno è cambiato */
+      const zonesOf = dr => (dr.svg().match(/class="r"/g) || []).length;
+      function fillsOf(dr, n = zonesOf(dr)) {
+        const v = st.paint[dr.id];
+        const f = Array.isArray(v) ? v : v && v.f;
+        return f && f.length === n ? f : null;
+      }
       const pill = addPill('');
       pill.style.display = 'none';
 
@@ -342,11 +351,12 @@
         pill.style.display = 'none';
         const grid = h('div', { class: 'col-picker' });
         DRAWINGS.forEach(dr => {
-          const started = st.paint[dr.id] && st.paint[dr.id].some(f => f !== '#ffffff');
+          const pf = fillsOf(dr);
+          const started = pf && pf.some(f => f !== '#ffffff');
           const b = h('button', { class: 'col-thumb', html: svgOf(dr) });
           if (started) {
             const svg = b.querySelector('svg');
-            svg.querySelectorAll('.r').forEach((el, i) => { if (st.paint[dr.id][i]) el.setAttribute('fill', st.paint[dr.id][i]); });
+            svg.querySelectorAll('.r').forEach((el, i) => { if (pf[i]) el.setAttribute('fill', pf[i]); });
           }
           b.onclick = () => { sfx.pop(); color(dr); };
           grid.append(b);
@@ -381,9 +391,9 @@
         const board = h('div', { class: 'col-board', html: svgOf(dr) });
         const svg = board.querySelector('svg');
         const regions = [...svg.querySelectorAll('.r')];
-        const saved = st.paint[dr.id] || [];
+        const saved = fillsOf(dr, regions.length) || [];
         regions.forEach((el, i) => { if (saved[i]) el.setAttribute('fill', saved[i]); });
-        const persist = () => { st.paint[dr.id] = regions.map(el => el.getAttribute('fill')); App.save(); };
+        const persist = () => { st.paint[dr.id] = { n: regions.length, f: regions.map(el => el.getAttribute('fill')) }; App.save(); };
 
         let challenge = null;
         const cands = regions.filter(el => el.dataset.q && el.getAttribute('fill') === '#ffffff');
@@ -443,11 +453,15 @@
           h('button', { class: 'icon-btn', 'aria-label': 'Disegni', onclick: () => { sfx.pop(); picker(); } }, '🎨'),
           h('button', { class: 'big-btn col-done', onclick: finish }, tx().done));
 
+        let finishing = false;
         async function finish() {
+          if (finishing) return;
           const colored = regions.filter(el => el.getAttribute('fill') !== '#ffffff').length;
           if (colored < 3) { sfx.boing(); say(tx().more); return; }
+          finishing = true;
           const blob = await toPng(svg);
-          if (blob) await App.saveDrawing(blob, dr.name);
+          if (!blob) { finishing = false; sfx.boing(); return; }
+          await App.saveDrawing(blob, dr.name);
           delete st.paint[dr.id];
           st.colorDone = (st.colorDone || 0) + 1;
           App.save();

@@ -12,17 +12,17 @@
     it: {
       A: [['Ape', '🐝'], ['Arancia', '🍊']], B: [['Balena', '🐳'], ['Banana', '🍌']], C: [['Casa', '🏠'], ['Cuore', '❤️']],
       D: [['Dado', '🎲'], ['Delfino', '🐬']], E: [['Elefante', '🐘'], ['Erba', '🌿']], F: [['Fiore', '🌸'], ['Fragola', '🍓']],
-      G: [['Gatto', '🐱'], ['Gelato', '🍦']], I: [['Isola', '🏝️'], ['Igloo', '🧊']], L: [['Luna', '🌙'], ['Lena', '👧'], ['Leone', '🦁']],
+      G: [['Gatto', '🐱'], ['Gelato', '🍦']], I: [['Isola', '🏝️'], ['Insalata', '🥗']], L: [['Luna', '🌙'], ['Lena', '👧'], ['Leone', '🦁']],
       M: [['Mela', '🍎'], ['Mucca', '🐮']], N: [['Nave', '🚢'], ['Neve', '❄️']], O: [['Orso', '🐻'], ['Occhiali', '👓']],
       P: [['Pesce', '🐟'], ['Papà', '👨'], ['Palla', '⚽']], R: [['Rana', '🐸'], ['Razzo', '🚀']], S: [['Sole', '☀️'], ['Stella', '⭐']],
       T: [['Topo', '🐭'], ['Torta', '🎂']], U: [['Uva', '🍇'], ['Uovo', '🥚']], V: [['Volpe', '🦊'], ['Vulcano', '🌋']],
       Z: [['Zebra', '🦓'], ['Zucca', '🎃']],
     },
     fr: {
-      A: [['Abeille', '🐝'], ['Avion', '✈️']], B: [['Ballon', '🎈'], ['Baleine', '🐳']], C: [['Chat', '🐱'], ['Cœur', '❤️']],
-      D: [['Dauphin', '🐬'], ['Dé', '🎲']], E: [['Escargot', '🐌'], ['Enveloppe', '✉️']], F: [['Fleur', '🌸'], ['Fraise', '🍓']],
-      G: [['Gâteau', '🎂'], ['Girafe', '🦒']], I: [['Igloo', '🧊'], ['Iguane', '🦎']], L: [['Lune', '🌙'], ['Lena', '👧'], ['Lion', '🦁']],
-      M: [['Maison', '🏠'], ['Mouton', '🐑']], N: [['Nuage', '☁️'], ['Nez', '👃']], O: [['Oiseau', '🐦'], ['Orange', '🍊']],
+      A: [['Abeille', '🐝'], ['Avion', '✈️']], B: [['Ballon', '🎈'], ['Baleine', '🐳']], C: [['Canard', '🦆'], ['Cœur', '❤️']],
+      D: [['Dauphin', '🐬'], ['Dé', '🎲']], E: [['Escargot', '🐌']], F: [['Fleur', '🌸'], ['Fraise', '🍓']],
+      G: [['Gâteau', '🎂'], ['Girafe', '🦒']], I: [['Iguane', '🦎']], L: [['Lune', '🌙'], ['Lena', '👧'], ['Lion', '🦁']],
+      M: [['Maison', '🏠'], ['Mouton', '🐑']], N: [['Nuage', '☁️'], ['Nez', '👃']], O: [['Ours', '🐻'], ['Orange', '🍊']],
       P: [['Pomme', '🍎'], ['Papa', '👨'], ['Poisson', '🐟']], R: [['Renard', '🦊'], ['Robot', '🤖']], S: [['Soleil', '☀️'], ['Serpent', '🐍']],
       T: [['Tortue', '🐢'], ['Tomate', '🍅']], U: [['Usine', '🏭']], V: [['Vache', '🐮'], ['Vélo', '🚲']],
       Z: [['Zèbre', '🦓'], ['Zéro', '0️⃣']],
@@ -33,14 +33,14 @@
       G: [['Giraffe', '🦒'], ['Gurke', '🥒']], I: [['Igel', '🦔'], ['Insel', '🏝️']], L: [['Löwe', '🦁'], ['Lena', '👧'], ['Löffel', '🥄']],
       M: [['Maus', '🐭'], ['Mond', '🌙']], N: [['Nase', '👃'], ['Nashorn', '🦏']], O: [['Orange', '🍊'], ['Ohr', '👂']],
       P: [['Papa', '👨'], ['Pinguin', '🐧']], R: [['Rakete', '🚀'], ['Regenbogen', '🌈']], S: [['Sonne', '☀️'], ['Schaf', '🐑']],
-      T: [['Tiger', '🐯'], ['Tomate', '🍅']], U: [['Uhr', '⏰'], ['Ufo', '🛸']], V: [['Vogel', '🐦'], ['Vulkan', '🌋']],
+      T: [['Tiger', '🐯'], ['Tomate', '🍅']], U: [['Uhr', '⏰'], ['Ufo', '🛸']], V: [['Vase', '🏺'], ['Vulkan', '🌋']],
       Z: [['Zebra', '🦓'], ['Zug', '🚆']],
     },
     en: {
       A: [['Apple', '🍎'], ['Ant', '🐜']], B: [['Ball', '⚽'], ['Banana', '🍌']], C: [['Cat', '🐱'], ['Cake', '🎂']],
       D: [['Dog', '🐶'], ['Duck', '🦆']], E: [['Egg', '🥚'], ['Elephant', '🐘']], F: [['Fish', '🐟'], ['Frog', '🐸']],
-      G: [['Giraffe', '🦒'], ['Grapes', '🍇']], I: [['Igloo', '🧊'], ['Ice cream', '🍦']], L: [['Lion', '🦁'], ['Lena', '👧'], ['Lemon', '🍋']],
-      M: [['Moon', '🌙'], ['Mouse', '🐭']], N: [['Nose', '👃'], ['Nut', '🥜']], O: [['Owl', '🦉'], ['Orange', '🍊']],
+      G: [['Giraffe', '🦒'], ['Grapes', '🍇']], I: [['Iguana', '🦎'], ['Insect', '🐛']], L: [['Lion', '🦁'], ['Lena', '👧'], ['Lemon', '🍋']],
+      M: [['Moon', '🌙'], ['Mouse', '🐭']], N: [['Nose', '👃'], ['Nut', '🥜']], O: [['Octopus', '🐙'], ['Orange', '🍊']],
       P: [['Pig', '🐷'], ['Penguin', '🐧']], R: [['Rabbit', '🐰'], ['Rainbow', '🌈']], S: [['Sun', '☀️'], ['Star', '⭐']],
       T: [['Tiger', '🐯'], ['Train', '🚆']], U: [['Umbrella', '☂️'], ['Unicorn', '🦄']], V: [['Van', '🚐'], ['Violin', '🎻']],
       Z: [['Zebra', '🦓']],
@@ -48,7 +48,7 @@
     es: {
       A: [['Abeja', '🐝'], ['Avión', '✈️']], B: [['Ballena', '🐳'], ['Barco', '⛵']], C: [['Casa', '🏠'], ['Conejo', '🐰']],
       D: [['Dado', '🎲'], ['Delfín', '🐬']], E: [['Elefante', '🐘'], ['Estrella', '⭐']], F: [['Fresa', '🍓'], ['Flor', '🌸']],
-      G: [['Gato', '🐱'], ['Globo', '🎈']], I: [['Iglú', '🧊'], ['Isla', '🏝️']], L: [['León', '🦁'], ['Lena', '👧'], ['Luna', '🌙']],
+      G: [['Gato', '🐱'], ['Globo', '🎈']], I: [['Isla', '🏝️'], ['Iguana', '🦎']], L: [['León', '🦁'], ['Lena', '👧'], ['Luna', '🌙']],
       M: [['Manzana', '🍎'], ['Mariposa', '🦋']], N: [['Nube', '☁️'], ['Nariz', '👃']], O: [['Oso', '🐻'], ['Oveja', '🐑']],
       P: [['Papá', '👨'], ['Pez', '🐟']], R: [['Ratón', '🐭'], ['Rana', '🐸']], S: [['Sol', '☀️'], ['Serpiente', '🐍']],
       T: [['Tortuga', '🐢'], ['Tren', '🚆']], U: [['Uva', '🍇'], ['Unicornio', '🦄']], V: [['Vaca', '🐮'], ['Volcán', '🌋']],
@@ -66,9 +66,9 @@
         'Scriviamo un nome! Le lettere vanno qui, in ordine.', 'Pesca le lettere una alla volta!'],
     },
     fr: {
-      find: (L, w) => `Attrape le ${L} comme ${w} !`, iam: L => `Moi, je suis le ${L} !`,
-      write: (n, L) => `On écrit ${n} ! Attrape le ${L} !`, first: L => `D'abord le ${L} !`,
-      now: L => `Maintenant le ${L} !`, again: L => `Encore le ${L} !`,
+      find: (L, w) => `Attrape la lettre ${L} comme ${w} !`, iam: L => `Moi, je suis la lettre ${L} !`,
+      write: (n, L) => `On écrit ${n} ! Attrape la lettre ${L} !`, first: L => `D'abord la lettre ${L} !`,
+      now: L => `Maintenant la lettre ${L} !`, again: L => `Encore la lettre ${L} !`,
       spelled: (w, n) => `${[...w].join(', ')}. ${n} ! Tu as écrit ${n} !`,
       tut: ['Écoute la lettre : tu la vois aussi ici, en haut.', 'Puis touche le poisson avec la bonne lettre !',
         'On écrit un prénom ! Les lettres vont ici, dans l\'ordre.', 'Attrape les lettres une par une !'],
@@ -157,17 +157,19 @@
       function spawn(letters) {
         fish.forEach(f => f.el.remove());
         const W = stage.clientWidth, H = stage.clientHeight;
-        const top = H * .3, bottom = H * .88 - 74;
-        const lanes = shuffle([...Array(letters.length).keys()]);
+        const nLanes = Math.max(1, Math.min(letters.length, 5, Math.floor((H * .58 - 74) / 80) + 1));
+        const laneOrder = shuffle([...Array(nLanes).keys()]);
+        const laneDir = laneOrder.map(() => (Math.random() < .5 ? -1 : 1));
+        const laneSpeed = laneOrder.map(() => rint(28, 45) + lv * 8);
         fish = letters.map((L, i) => {
+          const lane = i % nLanes, second = i >= nLanes;
           const el = h('button', { class: 'fish', style: 'background:none;padding:0', html: fishSVG(pick(FISH_COLORS)) },
             h('span', { class: 'letter' }, L));
-          const dir = Math.random() < .5 ? -1 : 1;
           const f = {
-            el, L, dir,
-            x: rint(0, Math.max(0, W - 110)),
-            y: top + (bottom - top) * (lanes[i] / Math.max(1, letters.length - 1)),
-            speed: rint(35, 60) + lv * 8, boost: 0, t: Math.random() * 6,
+            el, L, dir: laneDir[lane],
+            x: second ? ((W + 130) / 2 + rint(0, 40)) % (W + 130) - 120 : rint(0, Math.max(0, W - 110)),
+            lanePos: laneOrder[lane] / Math.max(1, nLanes - 1),
+            speed: laneSpeed[lane], boost: 0, t: Math.random() * 6,
           };
           el.addEventListener('pointerdown', e => { e.preventDefault(); onCatch && onCatch(f); });
           stage.append(el);
@@ -183,10 +185,11 @@
           if (f.caught) continue;
           f.t += dt;
           f.boost = Math.max(0, f.boost - dt);
-          f.x += f.dir * f.speed * (f.boost ? 3 : 1) * dt;
+          f.x += f.dir * f.speed * (f.boost ? 1.8 : 1) * dt;
           if (f.x > W + 20) f.x = -120;
           if (f.x < -130) f.x = W + 10;
-          const yy = f.y + Math.sin(f.t * 2) * 8;
+          const Hh = stage.clientHeight;
+          const yy = Hh * .3 + (Hh * .88 - 74 - Hh * .3) * f.lanePos + Math.sin(f.t * 2) * 8;
           f.el.style.transform = `translate(${f.x}px, ${yy}px)`;
           f.el.firstElementChild.style.transform = f.dir < 0 ? 'scaleX(-1)' : '';
           f.el.lastElementChild.style.marginLeft = f.dir < 0 ? '-12px' : '12px';
@@ -218,7 +221,7 @@
         const letters = shuffle([TL, TL].concat(pref.concat(others).filter((x, i, a) => a.indexOf(x) === i).slice(0, cnt - 2)));
 
         prompt.innerHTML = '';
-        prompt.append(h('span', { class: 'pic' }, pic), h('span', { class: 'word', html: `<b>${word[0]}</b>${word.slice(1)}` }));
+        prompt.append(h('span', { class: 'pic' }, pic), h('span', { class: 'word' }, h('b', {}, word[0]), word.slice(1)));
         spawn(letters);
         ask(T.find(TL, word), 'lettere', [
           { text: T.tut[0], icon: '👂', action: 'tap', at: () => prompt },

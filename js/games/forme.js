@@ -21,7 +21,7 @@
   const COLORS = [
     { c: '#ff5a5a', m: 'rosso', f: 'rossa', fr: ['rouge', 'rouge'], de: { m: 'Roter', f: 'Rote', n: 'Rotes' }, en: 'Red', es: ['rojo', 'roja'] }, { c: '#f5c400', m: 'giallo', f: 'gialla', fr: ['jaune', 'jaune'], de: { m: 'Gelber', f: 'Gelbe', n: 'Gelbes' }, en: 'Yellow', es: ['amarillo', 'amarilla'] },
     { c: '#3cc45c', m: 'verde', f: 'verde', fr: ['vert', 'verte'], de: { m: 'Grüner', f: 'Grüne', n: 'Grünes' }, en: 'Green', es: ['verde', 'verde'] }, { c: '#4a6cff', m: 'blu', f: 'blu', fr: ['bleu', 'bleue'], de: { m: 'Blauer', f: 'Blaue', n: 'Blaues' }, en: 'Blue', es: ['azul', 'azul'] },
-    { c: '#ff9f40', m: 'arancione', f: 'arancione', fr: ['orange', 'orange'], de: { m: 'Oranger', f: 'Orange', n: 'Oranges' }, en: 'Orange', es: ['naranja', 'naranja'] }, { c: '#9b5cff', m: 'viola', f: 'viola', fr: ['violet', 'violette'], de: { m: 'Lila', f: 'Lila', n: 'Lila' }, en: 'Purple', es: ['morado', 'morada'] },
+    { c: '#ff9f40', m: 'arancione', f: 'arancione', fr: ['orange', 'orange'], de: { m: 'Orangefarbener', f: 'Orangefarbene', n: 'Orangefarbenes' }, en: 'Orange', es: ['naranja', 'naranja'] }, { c: '#9b5cff', m: 'viola', f: 'viola', fr: ['violet', 'violette'], de: { m: 'Lila', f: 'Lila', n: 'Lila' }, en: 'Purple', es: ['morado', 'morada'] },
     { c: '#ff6fa8', m: 'rosa', f: 'rosa', fr: ['rose', 'rose'], de: { m: 'Rosa', f: 'Rosa', n: 'Rosa' }, en: 'Pink', es: ['rosa', 'rosa'] },
   ];
   const LEVELS = [null, { n: 3, color: false }, { n: 4, color: false }, { n: 4, color: true }, { n: 5, color: true }];
@@ -35,10 +35,10 @@
       lookRow: 'Guarda bene la fila! Riprova.',
     },
     fr: {
-      tut: ['Fais glisser la forme à la bonne place !', 'Attention : la couleur aussi doit être pareille !', 'Regarde la file : les formes se répètent.', 'Touche celle qui vient après !'],
+      tut: ['Fais glisser la forme à la bonne place !', 'Attention : la couleur aussi doit être pareille !', 'Regarde la suite : les formes se répètent.', 'Touche celle qui vient après !'],
       putColor: 'Mets chaque forme à sa place. Attention aux couleurs !', put: 'Fais glisser chaque forme à sa place !',
       lookColor: 'Regarde la couleur !', noFit: 'Ça ne rentre pas ! Essaie une autre place.', next: "Qu'est-ce qui vient après ?", nextShow: 'Et après ? 🤔',
-      lookRow: 'Regarde bien la file ! Réessaie.',
+      lookRow: 'Regarde bien la suite ! Réessaie.',
     },
   };
   Object.assign(TX, {
@@ -124,14 +124,16 @@
       function puzzle() {
         const L = LEVELS[Math.min(lv, LEVELS.length - 1)];
         const shapes = shuffle(Object.keys(SHAPES));
+        const WARM = ['#ff5a5a', '#ff6fa8', '#ff9f40'];
+        const distinct = () => { let warm = 0; return shuffle(COLORS).filter(c => !WARM.includes(c.c) || warm++ === 0); };
         let items;
         if (L.color) {
           const twin = shapes[0];
-          const cols = shuffle(COLORS);
+          const cols = distinct();
           items = [{ shape: twin, color: cols[0] }, { shape: twin, color: cols[1] }]
             .concat(shapes.slice(1, L.n - 1).map((s, i) => ({ shape: s, color: cols[i + 2] })));
         } else {
-          const cols = shuffle(COLORS);
+          const cols = distinct();
           items = shapes.slice(0, L.n).map((s, i) => ({ shape: s, color: cols[i] }));
         }
         items.forEach((it, i) => { it.id = i; });
@@ -151,22 +153,24 @@
         const tray = stage.querySelector('.tray').getBoundingClientRect();
         const perRow = items.length > 3 ? Math.ceil(items.length / 2) : items.length;
         const rowsN = Math.ceil(items.length / perRow);
+        const P = Math.floor(Math.max(56, Math.min(90, tray.height / rowsN - 8, tray.width / perRow - 8)));
         let left = items.length;
         const pieces = [];
 
         shuffle(items).forEach((it, i) => {
           const row = Math.floor(i / perRow), col = i % perRow;
           const inRow = Math.min(perRow, items.length - row * perRow);
-          const hx = tray.left - S.left + (tray.width / inRow) * (col + .5) - 45;
-          const hy = tray.top - S.top + (tray.height / rowsN) * (row + .5) - 45;
-          const p = h('div', { class: 'piece', style: `left:${hx}px;top:${hy}px`, html: svg(it.shape, it.color.c, '#fff', '') });
+          const hx = tray.left - S.left + (tray.width / inRow) * (col + .5) - P / 2;
+          const hy = tray.top - S.top + (tray.height / rowsN) * (row + .5) - P / 2;
+          const p = h('div', { class: 'piece', style: `left:${hx}px;top:${hy}px;width:${P}px;height:${P}px`, html: svg(it.shape, it.color.c, '#fff', '') });
           stage.append(p);
           pieces.push({ el: p, it });
-          let ox = 0, oy = 0, dragging = false;
+          let ox = 0, oy = 0, dragging = false, pid = null;
           p.addEventListener('pointerdown', e => {
-            if (p.dataset.done) return;
+            if (p.dataset.done || dragging) return;
+            pid = e.pointerId;
             e.preventDefault();
-            p.setPointerCapture(e.pointerId);
+            try { p.setPointerCapture(e.pointerId); } catch (err) { /* dito non più attivo */ }
             p.classList.remove('back');
             p.classList.add('drag');
             const r = p.getBoundingClientRect();
@@ -176,12 +180,12 @@
             say(name(it));
           });
           p.addEventListener('pointermove', e => {
-            if (!dragging) return;
+            if (!dragging || e.pointerId !== pid) return;
             p.style.left = `${e.clientX - S.left - ox}px`;
             p.style.top = `${e.clientY - S.top - oy}px`;
           });
-          const drop = () => {
-            if (!dragging) return;
+          const drop = e => {
+            if (!dragging || (e && e.pointerId !== pid)) return;
             dragging = false;
             p.classList.remove('drag');
             const r = p.getBoundingClientRect();
@@ -201,8 +205,8 @@
               target.filled = true;
               p.dataset.done = '1';
               p.classList.add('back');
-              p.style.left = `${hr.left - S.left + (hr.width - 90) / 2}px`;
-              p.style.top = `${hr.top - S.top + (hr.height - 90) / 2}px`;
+              p.style.left = `${hr.left - S.left + (hr.width - P) / 2}px`;
+              p.style.top = `${hr.top - S.top + (hr.height - P) / 2}px`;
               sfx.ding();
               App.track('logica', null, true);
               App.floatAt(hr.left + hr.width / 2, hr.top, '✨');
@@ -242,6 +246,8 @@
         const seq = [...Array(len + 1).keys()].map(i => unit[pat[i % pat.length]]);
         const answer = seq.pop();
         const row = h('div', { class: 'seq-row' }, seq.map(u => h('div', { class: 'it', html: svg(u.shape, u.color.c) })), h('div', { class: 'q' }, '?'));
+        const itemSize = Math.floor(Math.min(58, (stage.clientWidth - 24 - 6 * seq.length) / (seq.length + 1)));
+        row.style.setProperty('--it', `${itemSize}px`);
         const wrong = [unit[kinds.find(k => unit[k] !== answer)] || null, { shape: answer.shape, color: cols[kinds.length] }, { shape: shp.find(s => s !== answer.shape), color: answer.color }]
           .filter(Boolean).filter(u => u !== answer).slice(0, 2);
         const choices = h('div', { class: 'seq-choices' });

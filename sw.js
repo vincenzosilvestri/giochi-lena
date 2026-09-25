@@ -1,48 +1,70 @@
 /* Service worker: tutto in cache per giocare offline. Cambiare VERSION a ogni aggiornamento. */
-const VERSION = 'lena-v17';
-/* le voci stanno in una cache separata che sopravvive agli aggiornamenti (cambiarla solo se si rigenerano con altra voce) */
+const VERSION = 'lena-v18';
+/* voci ed emoji stanno in cache separate che sopravvivono agli aggiornamenti */
 const VOICE_CACHE = 'lena-voice-1';
+const EMOJI_CACHE = 'lena-emoji-1';
 const FILES = [
   './', 'index.html', 'manifest.webmanifest', 'css/style.css', 'js/app.js',
   'js/games/hop.js', 'js/games/conta.js', 'js/games/memory.js', 'js/games/lettere.js', 'js/games/forme.js', 'js/games/colora.js', 'js/games/suoni.js', 'js/games/scrivi.js', 'js/games/spazio.js', 'js/games/lingue.js',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png', 'icons/icon-maskable-512.png',
 ];
 
+/* avanzamento dell'aggiornamento verso l'app (barra sulla schermata iniziale) */
+async function tell(done, total) {
+  const list = await self.clients.matchAll({ includeUncontrolled: true, type: 'window' });
+  list.forEach(c => c.postMessage({ type: 'dl', done, total }));
+}
+
 self.addEventListener('install', e => {
   e.waitUntil((async () => {
     const c = await caches.open(VERSION);
-    await c.addAll(FILES.map(f => new Request(f, { cache: 'no-cache' })));
+    const ec = await caches.open(EMOJI_CACHE);
+    let emoji = [];
+    try { emoji = await (await fetch('emoji/index.json', { cache: 'no-cache' })).json(); } catch (err) { /* offline */ }
+    const todo = [];
+    for (const f of emoji) if (!(await ec.match(`emoji/${f}`))) todo.push(f);
+    const total = FILES.length + todo.length;
+    await tell(0, total);
+    for (let i = 0; i < FILES.length; i += 5) {
+      await Promise.all(FILES.slice(i, i + 5).map(f => c.add(new Request(f, { cache: 'no-cache' }))));
+      await tell(Math.min(FILES.length, i + 5), total);
+    }
+    await ec.put('emoji/index.json', new Response(JSON.stringify(emoji), { headers: { 'Content-Type': 'application/json' } }));
+    for (let i = 0; i < todo.length; i += 20) {
+      await Promise.all(todo.slice(i, i + 20).map(f => ec.add(`emoji/${f}`).catch(() => {})));
+      await tell(FILES.length + Math.min(todo.length, i + 20), total);
+    }
+    await tell(total, total);
     /* le voci non si scaricano qui: le scarica l'app, solo per le lingue scelte dal genitore */
-    /* immagini delle emoji (poche MB): servono subito e offline */
-    try {
-      const list = await (await fetch('emoji/index.json', { cache: 'no-cache' })).json();
-      await c.add(new Request('emoji/index.json', { cache: 'no-cache' }));
-      for (let i = 0; i < list.length; i += 20) await Promise.all(list.slice(i, i + 20).map(f => c.add(`emoji/${f}`).catch(() => {})));
-    } catch (err) { /* offline durante l'installazione */ }
     await self.skipWaiting();
   })());
 });
 
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys()
-    .then(keys => Promise.all(keys.filter(k => k !== VERSION && k !== VOICE_CACHE).map(k => caches.delete(k))))
+    .then(keys => Promise.all(keys.filter(k => ![VERSION, VOICE_CACHE, EMOJI_CACHE].includes(k)).map(k => caches.delete(k))))
     .then(() => self.clients.claim()));
 });
 
-/* rete prima (così gli aggiornamenti arrivano subito), cache se offline; le voci non cambiano: cache prima */
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
-  if (/\/voice\/[0-9a-f]{8}\.mp3$/.test(e.request.url)) {
-    e.respondWith(caches.match(e.request).then(r => r || fetch(e.request)));
+  const url = e.request.url;
+  /* voci ed emoji non cambiano mai: prima la cache */
+  if (/\/voice\/[0-9a-f]{8}\.mp3$/.test(url) || /\/emoji\/[^/]+\.(png|svg)$/.test(url)) {
+    e.respondWith(caches.match(e.request).then(r => r || fetch(e.request).then(res => {
+      if (res.ok && /\/emoji\//.test(url)) { const copy = res.clone(); caches.open(EMOJI_CACHE).then(cc => cc.put(e.request, copy)); }
+      return res;
+    })));
     return;
   }
+  /* il resto: prima la rete (aggiornamenti subito), la cache se offline; si salvano solo risposte valide */
   e.respondWith(
     fetch(e.request, { cache: 'no-cache' })
       .then(r => {
-        const copy = r.clone();
-        caches.open(VERSION).then(c => c.put(e.request, copy));
+        if (r.ok) { const copy = r.clone(); caches.open(VERSION).then(cc => cc.put(e.request, copy)); }
         return r;
       })
-      .catch(() => caches.match(e.request, { ignoreSearch: true }).then(r => r || caches.match('index.html'))),
+      .catch(() => caches.match(e.request, { ignoreSearch: true })
+        .then(r => r || (e.request.mode === 'navigate' ? caches.match('index.html') : Response.error()))),
   );
 });
