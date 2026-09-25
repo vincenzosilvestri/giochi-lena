@@ -411,10 +411,14 @@
         ctx.save();
         ctx.translate(x, y);
         if (flip) ctx.scale(-1, 1);
-        ctx.font = `${size}px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif`;
-        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-        ctx.fillStyle = '#000';
-        ctx.fillText(e, 0, 0);
+        const im = App.emojiImage(e);
+        if (im) ctx.drawImage(im, -size / 2, -size / 2, size, size);
+        else {
+          ctx.font = `${size}px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif`;
+          ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+          ctx.fillStyle = '#000';
+          ctx.fillText(e, 0, 0);
+        }
         ctx.restore();
       }
       function rrect(x, y, w, hh, r) {

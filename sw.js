@@ -1,5 +1,5 @@
 /* Service worker: tutto in cache per giocare offline. Cambiare VERSION a ogni aggiornamento. */
-const VERSION = 'lena-v13';
+const VERSION = 'lena-v14';
 /* le voci stanno in una cache separata che sopravvive agli aggiornamenti (cambiarla solo se si rigenerano con altra voce) */
 const VOICE_CACHE = 'lena-voice-1';
 const FILES = [
@@ -13,6 +13,12 @@ self.addEventListener('install', e => {
     const c = await caches.open(VERSION);
     await c.addAll(FILES.map(f => new Request(f, { cache: 'no-cache' })));
     /* le voci non si scaricano qui: le scarica l'app, solo per le lingue scelte dal genitore */
+    /* immagini delle emoji (poche MB): servono subito e offline */
+    try {
+      const list = await (await fetch('emoji/index.json', { cache: 'no-cache' })).json();
+      await c.add(new Request('emoji/index.json', { cache: 'no-cache' }));
+      for (let i = 0; i < list.length; i += 20) await Promise.all(list.slice(i, i + 20).map(f => c.add(`emoji/${f}`).catch(() => {})));
+    } catch (err) { /* offline durante l'installazione */ }
     await self.skipWaiting();
   })());
 });

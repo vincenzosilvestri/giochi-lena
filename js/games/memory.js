@@ -57,7 +57,7 @@
           h('button', { class: 'tile t1', onclick: () => { deck = 'animali'; box.remove(); sfx.pop(); board(true); } },
             h('div', { class: 'ico' }, '🐮🐷'), h('div', { class: 'lbl' }, tx().animals)),
           h('button', { class: 'tile t3', onclick: () => { deck = 'famiglia'; box.remove(); sfx.pop(); board(true); } },
-            h('div', { class: 'ico' }, '👨‍👩‍👧'), h('div', { class: 'lbl' }, tx().family)));
+            h('div', { class: 'ico' }, '🫂'), h('div', { class: 'lbl' }, tx().family)));
         stage.append(box);
         say(tx().which);
       }

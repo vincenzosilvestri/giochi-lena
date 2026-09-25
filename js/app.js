@@ -4,7 +4,7 @@ const App = (() => {
   const NAME = 'Lena';
   const BIRTH = { y: 2022, m: 0, d: 18 }; // 18 gennaio 2022
   const KEY = 'lena_v1';
-  const VERSION = '13 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
+  const VERSION = '14 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
   /* lingue disponibili; il genitore sceglie le 2 del bambino (state.langs) */
   const LANGS = ['fr', 'it', 'de', 'en', 'es'];
   const FLAG = { fr: '🇫🇷', it: '🇮🇹', de: '🇩🇪', en: '🇬🇧', es: '🇪🇸' };
@@ -576,6 +576,59 @@ const App = (() => {
     const d = h('div', { class: 'float-emoji', style: `left:${x}px;top:${y}px` }, emoji);
     document.getElementById('fx').append(d);
     setTimeout(() => d.remove(), 1300);
+  }
+
+  /* ---------- emoji incluse nell'app (Fluent Emoji 3D di Microsoft, licenza MIT; bandiere disegnate a mano) ----------
+     Ogni emoji scritta nel DOM viene sostituita da <img class="emo">: stesso aspetto su ogni telefono. */
+  const EMOJI_RE = /\p{RI}\p{RI}|[#*0-9]️?⃣|\p{Extended_Pictographic}(?:️|\p{EMod})?(?:‍\p{Extended_Pictographic}(?:️|\p{EMod})?)*/gu;
+  const emo = { files: new Map(), imgs: new Map() };
+  const ekey = e => [...e].filter(c => c !== '️').map(c => c.codePointAt(0).toString(16)).join('-');
+  async function loadEmoji() {
+    try { (await (await fetch('emoji/index.json')).json()).forEach(f => emo.files.set(f.replace(/\.(png|svg)$/, ''), f)); } catch (e) { /* senza indice restano le emoji del sistema */ }
+  }
+  function emojifyText(t) {
+    const p = t.parentNode;
+    if (!p || /^(SCRIPT|STYLE|TEXTAREA|INPUT|TITLE)$/.test(p.nodeName) || p.closest && p.closest('svg')) return;
+    const txt = t.nodeValue;
+    EMOJI_RE.lastIndex = 0;
+    if (!EMOJI_RE.test(txt)) return;
+    EMOJI_RE.lastIndex = 0;
+    const frag = document.createDocumentFragment();
+    let last = 0, changed = false;
+    for (const m of txt.matchAll(EMOJI_RE)) {
+      const f = emo.files.get(ekey(m[0]));
+      if (!f) continue;
+      if (m.index > last) frag.append(txt.slice(last, m.index));
+      const img = document.createElement('img');
+      img.className = 'emo'; img.src = `emoji/${f}`; img.alt = m[0]; img.draggable = false;
+      frag.append(img);
+      last = m.index + m[0].length;
+      changed = true;
+    }
+    if (!changed) return;
+    if (last < txt.length) frag.append(txt.slice(last));
+    p.replaceChild(frag, t);
+  }
+  function emojify(node) {
+    if (!emo.files.size || !node) return;
+    if (node.nodeType === 3) return emojifyText(node);
+    if (node.nodeType !== 1 || node.nodeName === 'svg') return;
+    const w = document.createTreeWalker(node, NodeFilter.SHOW_TEXT);
+    const list = [];
+    for (let n = w.nextNode(); n; n = w.nextNode()) list.push(n);
+    list.forEach(emojifyText);
+  }
+  /* per il canvas (Lena Salta): immagine dell'emoji se disponibile e caricata */
+  function emojiImage(e) {
+    const k = ekey(e);
+    let im = emo.imgs.get(k);
+    if (!im) {
+      const f = emo.files.get(k);
+      if (!f) return null;
+      im = new Image(); im.src = `emoji/${f}`;
+      emo.imgs.set(k, im);
+    }
+    return im.complete && im.naturalWidth ? im : null;
   }
 
   /* personaggio con gli accessori dell'armadio; size in px */
@@ -1173,7 +1226,7 @@ const App = (() => {
       s.append(h('div', { class: 'topbar' },
         h('button', { class: 'icon-btn', onclick: () => (isLocked() ? sleepScreen() : home()) }, '🏠'),
         h('div', { class: 'title' }, 'Area genitori')), scroll,
-        h('div', { class: 'ver', style: 'position:static;text-align:center' }, `versione ${VERSION}`));
+        h('div', { class: 'ver', style: 'position:static;text-align:center' }, `versione ${VERSION} · Illustrazioni: Microsoft Fluent Emoji (licenza MIT)`));
 
       const section = (title, hint, ...body) => h('section', {}, h('h3', {}, title), hint ? h('p', { class: 'hint' }, hint) : null, ...body);
       const opts = (list, cur, onPick) => {
@@ -1454,7 +1507,9 @@ const App = (() => {
       });
     }
     document.addEventListener('pointerdown', e => { if (e.isPrimary !== false) glitter(e.clientX, e.clientY); }, { passive: true });
-    await Promise.all([DB.open().then(reloadMedia), loadVoiceIndex()]);
+    await Promise.all([DB.open().then(reloadMedia), loadVoiceIndex(), loadEmoji()]);
+    new MutationObserver(ms => ms.forEach(m => (m.type === 'characterData' ? emojify(m.target) : m.addedNodes.forEach(emojify))))
+      .observe(document.body, { childList: true, subtree: true, characterData: true });
     setTimeout(prefetchVoices, 4000);
     setInterval(tick, 1000);
     document.addEventListener('visibilitychange', () => { if (document.hidden) { stopVoice(); save(); } });
@@ -1465,7 +1520,7 @@ const App = (() => {
   return {
     NAME, CHARS, NUM, FLAG, LANGS, LANG_NAME, pair, excl, boot, h, say, stopVoice, sfx, praise, retry, reward, confetti, floatAt,
     rint, pick, shuffle, wait, level, setLevel, char, registerGame, home, media,
-    tutorial, intro, phrases, vhash, modal, saveDrawing, glitter, avatar,
+    tutorial, intro, phrases, vhash, modal, saveDrawing, glitter, avatar, emojiImage,
     tr, t, nextLang, numWord, track, count, addStars, levelUp,
     get lang() { return lang; }, set lang(l) { lang = l; },
     get state() { return state; }, save,

@@ -3,7 +3,7 @@ _Aggiornato: 25/09/2026_
 
 ## Obiettivo
 PWA senza pubblicità con giochi educativi **multilingua** (1 o 2 lingue a scelta tra FR/IT/DE/EN/ES) per Lena (FR+IT, 5 anni il 18/01/2027, prima lingua francese), da telefono (Android papà, iPhone Mahault).
-Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vincenzosilvestri/giochi-lena` (GitHub Pages, main). Versione online: **v13**.
+Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vincenzosilvestri/giochi-lena` (GitHub Pages, main). Versione online: **v14**.
 
 ## Fatto finora
 - 9 giochi (`js/games/`): **Suoni e sillabe** (v13: batti le sillabe + rime, 5 lingue), **Scrivi con il dito** (v13: tracciato di lettere A-Z e cifre 0-9 nel verso giusto, livelli nome→vocali→tutto), Lena Salta (semaforo, strisce, treno con passaggio a livello, 4 mondi prato/neve/spiaggia/città di notte), Conta, Memory (animali/foto), Pesca le Lettere (+ comporre il nome), Forme e Colori, Colora (12 disegni, arcobaleno, 4 glitter, galleria), Le due lingue (Dov'è…, Memory FR↔IT, Quale lingua?).
@@ -12,12 +12,13 @@ Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vinc
 - Premi: stelle ⭐ → Armadio (14 accessori sul personaggio), album 24 sticker + diploma.
 - Menu papà (⚙️ premuto 1,5 s + PIN): timer nanna con storia della buonanotte (3 storie), lingua, Pagella (lettere/numeri, lingue, strada, tempo 7 giorni), voci registrate, foto, disegni, festa compleanno 18/01.
 - **v11 — Livelli e statistiche:** badge 🏅 nei giochi con livelli (Conta 1-4, Lettere 1-3, Memory 1-4, Forme 1-4, Due lingue 1-3; Strada da record distanza), festa + voce al passaggio di livello. Storico giornaliero per abilità (`state.hist`, 200 giorni) e registro livelli (`state.levelLog`). Menu papà: tabella «Livelli e progressi» (livello, % giuste 7 giorni, tendenza vs settimana prima, 8 settimane, ultimi livelli). API: `App.track(skill, key, ok)`, `App.levelUp(game, n)`.
+- **v14 — Grafica coerente:** tutte le emoji sono immagini incluse (Microsoft Fluent Emoji 3D, MIT, 219 immagini ~4 MB in `emoji/`, bandiere SVG fatte a mano); sostituzione automatica nel DOM (MutationObserver) e nel canvas di Salta (`App.emojiImage`). Strumenti: `tools/scan-emoji.mjs` + `tools/fetch_emoji.py`.
 - Tutorial con manina 👆 + tasto ❓; glitter ovunque; app centrata su PC; aggiornamento automatico (SW `no-cache` + reload) e numero versione in basso.
 
 ## Prossimi passi
 _Roadmap completa (ricerca concorrenti, pedagogia, store) in `ROADMAP.md`._
 1. Raccogliere feedback e statistiche dall'uso reale (tabella «Livelli e progressi»).
-2. Prossimo (ROADMAP): set di illustrazioni incluso (Twemoji/Noto) → mascotte, Conta +/−, sopra/sotto, lingua per partita, timer 2×30 → preparazione store (profili, voci Azure, Android TWA).
+2. Prossimo (ROADMAP): mascotte, Conta +/−, sopra/sotto, lingua per partita, timer 2×30 → preparazione store (profili, voci Azure, Android TWA).
 3. Papà caricherà foto e voci registrate dal menu papà (restano in IndexedDB sul telefono).
 
 ## Decisioni / vincoli

@@ -46,3 +46,11 @@ Se cambi voce, rigenera tutto con `--force` e aggiorna `VOICE_CACHE` in `sw.js`.
 
 ## Tutorial
 La prima volta che si apre la Home e ogni gioco parte un tutorial con la manina animata. Il tasto ❓ lo fa rivedere.
+
+## Illustrazioni
+Le emoji sono immagini incluse in `emoji/`: **Microsoft Fluent Emoji 3D** (licenza MIT, https://github.com/microsoft/fluentui-emoji); bandiere disegnate a mano in SVG. L'app sostituisce da sola ogni emoji scritta nel codice con la sua immagine.
+Se aggiungi emoji nuove nel codice:
+```
+node tools/scan-emoji.mjs
+python tools/fetch_emoji.py
+```

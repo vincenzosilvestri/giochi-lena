@@ -671,3 +671,7 @@ html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 .wr-hint { fill: #ffd23f; stroke: #fff; stroke-width: 1.5; pointer-events: none; transition: opacity .2s; }
 .wr-complete .wr-done polyline { animation: glowStroke 1s ease; }
 @keyframes glowStroke { 50% { stroke: #ffd23f; stroke-width: 14; } }
+
+/* ---------- Emoji incluse (immagini) ---------- */
+img.emo { width: 1em; height: 1em; vertical-align: -0.14em; object-fit: contain; pointer-events: none; -webkit-user-drag: none; }
+.tile .ico img.emo, .hero img.emo, .card .face img.emo { filter: drop-shadow(0 3px 2px rgba(0, 0, 0, .12)); }
