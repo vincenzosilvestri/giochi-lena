@@ -45,8 +45,8 @@ Cosa rende premium le app migliori (Khan Academy Kids, Pok Pok, Sago Mini):
 
 1. ✅ (v14, Fluent Emoji 3D) **Un solo set di illustrazioni incluso nell'app** — sostituire le emoji di sistema con Twemoji (CC-BY) o Noto Emoji (OFL): stesso aspetto su Android e iPhone, licenza chiara. Primo passo facile e ad alto impatto.
 2. ✅ (v15, il personaggio del bambino parla nei tutorial) **Mascotte bilingue** — un personaggio guida (es. una volpe o un gufo) che sostituisce la manina nei tutorial, con animazioni quando è ferma (respira, sbatte le palpebre).
-3. **Suoni e musica** — effetti più morbidi (campionati, non bip sintetici), musica di sottofondo leggera disattivabile.
-4. **Transizioni e animazioni** fra le schermate, per esempio il personaggio che saltella in Home.
+3. ✅ (v17, musica generata) **Suoni e musica** — effetti più morbidi (campionati, non bip sintetici), musica di sottofondo leggera disattivabile.
+4. ✅ (v17) **Transizioni e animazioni** fra le schermate, per esempio il personaggio che saltella in Home.
 5. ✅ (v15) **Interruttore "effetti calmi"** nel menu genitori — meno glitter e coriandoli per i momenti tranquilli (le famiglie apprezzano la calma).
 6. **Mappa del mondo** 🗺️ (sforzo alto) — una mappa con isole al posto della griglia di giochi: dà un filo narrativo come Toca o Khan Kids.
 7. **Gioco libero** — una scena esplorabile senza obiettivi (la casa del personaggio con l'armadio), da affiancare ai quiz.

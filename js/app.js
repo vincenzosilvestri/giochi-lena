@@ -4,7 +4,7 @@ const App = (() => {
   const NAME = 'Lena';
   const BIRTH = { y: 2022, m: 0, d: 18 }; // 18 gennaio 2022
   const KEY = 'lena_v1';
-  const VERSION = '16 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
+  const VERSION = '17 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
   /* lingue disponibili; il genitore sceglie le 2 del bambino (state.langs) */
   const LANGS = ['fr', 'it', 'de', 'en', 'es'];
   const FLAG = { fr: '🇫🇷', it: '🇮🇹', de: '🇩🇪', en: '🇬🇧', es: '🇪🇸' };
@@ -264,7 +264,7 @@ const App = (() => {
   const defaults = () => ({
     char: null, color: '#ff6fa8', stickers: [], levels: {}, timerMin: 20, pin: null,
     usage: { day: '', sec: 0, extra: 0, warned: false }, bdayShown: 0, hopBest: 0, diploma: false, tut: {},
-    langMode: 'alt', langs: null, breakMin: 0, calm: false, stars: 0, owned: [], wear: {}, story: 0, hist: {}, levelLog: [],
+    langMode: 'alt', langs: null, breakMin: 0, calm: false, music: true, stars: 0, owned: [], wear: {}, story: 0, hist: {}, levelLog: [],
     stats: { letters: {}, numbers: {}, langs: { fr: [0, 0], it: [0, 0] }, greens: 0, reds: 0, zebra: 0, days: {}, games: {} },
   });
   function load() {
@@ -325,7 +325,7 @@ const App = (() => {
     state.stars += n;
     save();
     if (x != null) floatAt(x, y, n > 1 ? `+${n}⭐` : '⭐');
-    document.querySelectorAll('.stars-pill').forEach(p => { p.textContent = `⭐ ${state.stars}`; });
+    document.querySelectorAll('.stars-pill').forEach(p => { p.textContent = `⭐ ${state.stars}`; p.classList.remove('bump'); void p.offsetWidth; p.classList.add('bump'); });
   }
 
   /* ---------- tema ---------- */
@@ -390,6 +390,58 @@ const App = (() => {
     bell: () => { tone(988, .18, 'square', .06); tone(988, .18, 'square', .06, .3); },
     train: () => { noise(1.4, .2); tone(440, .5, 'sawtooth', .06); tone(554, .5, 'sawtooth', .05, .05); },
   };
+  /* musica di sottofondo: melodia pentatonica generata al momento, morbida e lenta;
+     si abbassa quando parla la voce e diventa "notturna" nella storia e nella nanna */
+  const music = { out: null, timer: 0, step: 0, chord: 0, last: 2, on: false, night: false };
+  const CHORDS = [[130.8, 164.8, 196], [110, 130.8, 164.8], [87.3, 110, 130.8], [98, 123.5, 146.8]];
+  const PENTA = [261.6, 293.7, 329.6, 392, 440, 523.3, 587.3];
+  function musicOut() {
+    if (!ac) return null;
+    if (!music.out) { music.out = ac.createGain(); music.out.gain.value = 0; music.out.connect(ac.destination); }
+    return music.out;
+  }
+  function mnote(freq, dur, vol, type = 'sine', when = 0) {
+    const out = musicOut();
+    if (!out) return;
+    const t0 = ac.currentTime + when;
+    const o = ac.createOscillator(), g = ac.createGain();
+    o.type = type; o.frequency.value = freq;
+    g.gain.setValueAtTime(.0001, t0);
+    g.gain.exponentialRampToValueAtTime(vol, t0 + Math.min(.25, dur / 3));
+    g.gain.exponentialRampToValueAtTime(.0001, t0 + dur);
+    o.connect(g).connect(out);
+    o.start(t0); o.stop(t0 + dur + .05);
+  }
+  function musicTick() {
+    if (!music.on || document.hidden || !ac) return;
+    const beat = music.night ? 1.1 : .8;
+    if (music.step % 8 === 0) {
+      music.chord = (music.chord + 1) % CHORDS.length;
+      CHORDS[music.chord].forEach(f => mnote(f, beat * 7.5, music.night ? .022 : .03, 'triangle'));
+    }
+    if (Math.random() < (music.night ? .35 : .55)) {
+      music.last = Math.max(0, Math.min(PENTA.length - 1, music.last + [-2, -1, -1, 1, 1, 2][Math.floor(Math.random() * 6)]));
+      mnote(PENTA[music.last] / (music.night ? 2 : 1), beat * 1.6, music.night ? .03 : .045, 'sine');
+    }
+    music.step++;
+  }
+  const musicLevel = () => (state.music === false ? 0 : state.calm ? .6 : 1);
+  function musicFade(v, sec = .6) {
+    const out = musicOut();
+    if (!out) return;
+    out.gain.cancelScheduledValues(ac.currentTime);
+    out.gain.setTargetAtTime(v, ac.currentTime, sec / 3);
+  }
+  function startMusic() {
+    if (!ac || music.on) return;
+    music.on = true;
+    musicFade(musicLevel());
+    clearInterval(music.timer);
+    music.timer = setInterval(musicTick, 800);
+  }
+  /* voce sopra la musica: abbassa e poi rialza */
+  const duck = on => musicFade(on ? musicLevel() * .3 : musicLevel(), on ? .15 : .8);
+
   function birthdaySong() {
     const N = { G4: 392, A4: 440, B4: 494, C5: 523, D5: 587, E5: 659, F5: 698, G5: 784 };
     const song = [['G4', .75], ['G4', .25], ['A4', 1], ['G4', 1], ['C5', 1], ['B4', 2],
@@ -472,7 +524,8 @@ const App = (() => {
       const s = ac.createBufferSource();
       s.buffer = b;
       s.connect(ac.destination);
-      s.onended = () => { if (clipSrc === s) clipSrc = null; res(); };
+      duck(true);
+      s.onended = () => { if (clipSrc === s) clipSrc = null; duck(false); res(); };
       clipSrc = s;
       s.start();
     });
@@ -486,9 +539,10 @@ const App = (() => {
       u.rate = opts.rate || .95;
       u.pitch = 1.05;
       let done = false;
-      const end = () => { if (!done) { done = true; res(); } };
+      const end = () => { if (!done) { done = true; duck(false); res(); } };
       u.onend = end; u.onerror = end;
       setTimeout(end, 1500 + text.length * 110);
+      duck(true);
       speechSynthesis.speak(u);
     });
   }
@@ -513,8 +567,10 @@ const App = (() => {
     stopVoice();
     clipAudio = new Audio(pick(list).url);
     return new Promise(res => {
-      clipAudio.onended = res; clipAudio.onerror = res;
-      clipAudio.play().catch(res);
+      const end = () => { duck(false); res(); };
+      clipAudio.onended = end; clipAudio.onerror = end;
+      duck(true);
+      clipAudio.play().catch(end);
     });
   }
   function praise() {
@@ -672,6 +728,8 @@ const App = (() => {
     const scr = h('div', { class: 'screen ' + cls });
     app.append(scr);
     screenName = name;
+    music.night = ['story', 'sleep', 'break', 'bday'].includes(name);
+    if (music.on) musicFade(name === 'bday' ? 0 : musicLevel());
     const c = render(scr);
     if (typeof c === 'function') cleanup = c;
   }
@@ -701,6 +759,7 @@ const App = (() => {
     unlockAudio();
     pickVoice();
     started = true;
+    startMusic();
     lang = langMode() === 'alt' ? pick(pair()) : langMode();
     if (!state.char && !state.langs) return langSetup();
     if (isLocked()) return sleepScreen();
@@ -734,7 +793,7 @@ const App = (() => {
       const tiles = h('div', { class: 'tiles' });
       games.filter(g => !(g.needs2 && pair().length < 2)).forEach((g, i) => {
         tiles.append(h('button', {
-          class: `tile t${i + 1}`,
+          class: `tile t${i + 1}`, style: `animation-delay:${i * 45}ms`,
           onclick: () => { sfx.pop(); say(tr(g.title)); startGame(g); },
         }, h('div', { class: 'ico' }, g.icon), h('div', { class: 'lbl' }, g.title[pair()[0]]), pair()[1] ? h('div', { class: 'lbl2' }, g.title[pair()[1]]) : null));
       });
@@ -1309,6 +1368,9 @@ const App = (() => {
             h('button', { class: 'act ghost', onclick: () => { state.timerMin = 60; state.breakMin = 30; save(); render(); } }, 'Consiglio pediatri 3-6-9-12: 2 × 30 min'),
             onBreak() ? h('button', { class: 'act ghost', onclick: () => { usage().breakUntil = 0; save(); render(); } }, 'Termina la pausa') : null)));
 
+        scroll.append(section('🎵 Musica di sottofondo', 'Una melodia leggera che si abbassa quando parla la voce.',
+          opts([[true, '🎵 Accesa'], [false, '🔇 Spenta']], state.music !== false, v => { state.music = v; save(); if (v) startMusic(); musicFade(musicLevel()); })));
+
         scroll.append(section('✨ Effetti', 'Brillantini a ogni tocco e coriandoli, oppure una versione più calma.',
           opts([[false, '✨ Brillantini e coriandoli'], [true, '🌙 Calmi']], !!state.calm, v => { state.calm = v; save(); document.body.classList.toggle('calm', v); })));
 
@@ -1577,7 +1639,7 @@ const App = (() => {
       .observe(document.body, { childList: true, subtree: true, characterData: true });
     setTimeout(prefetchVoices, 4000);
     setInterval(tick, 1000);
-    document.addEventListener('visibilitychange', () => { if (document.hidden) { stopVoice(); save(); } });
+    document.addEventListener('visibilitychange', () => { if (document.hidden) { stopVoice(); save(); musicFade(0, .1); } else if (music.on) musicFade(musicLevel()); });
     document.addEventListener('gesturestart', e => e.preventDefault());
     splash();
   }
