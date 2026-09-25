@@ -27,8 +27,35 @@
       T: [['Tortue', '🐢'], ['Tomate', '🍅']], U: [['Usine', '🏭']], V: [['Vache', '🐮'], ['Vélo', '🚲']],
       Z: [['Zèbre', '🦓'], ['Zéro', '0️⃣']],
     },
+    de: {
+      A: [['Affe', '🐒'], ['Apfel', '🍎']], B: [['Ball', '⚽'], ['Banane', '🍌']], C: [['Clown', '🤡'], ['Computer', '💻']],
+      D: [['Delfin', '🐬'], ['Dino', '🦕']], E: [['Elefant', '🐘'], ['Ente', '🦆']], F: [['Fisch', '🐟'], ['Frosch', '🐸']],
+      G: [['Giraffe', '🦒'], ['Gurke', '🥒']], I: [['Igel', '🦔'], ['Insel', '🏝️']], L: [['Löwe', '🦁'], ['Lena', '👧'], ['Löffel', '🥄']],
+      M: [['Maus', '🐭'], ['Mond', '🌙']], N: [['Nase', '👃'], ['Nashorn', '🦏']], O: [['Orange', '🍊'], ['Ohr', '👂']],
+      P: [['Papa', '👨'], ['Pinguin', '🐧']], R: [['Rakete', '🚀'], ['Regenbogen', '🌈']], S: [['Sonne', '☀️'], ['Schaf', '🐑']],
+      T: [['Tiger', '🐯'], ['Tomate', '🍅']], U: [['Uhr', '⏰'], ['Ufo', '🛸']], V: [['Vogel', '🐦'], ['Vulkan', '🌋']],
+      Z: [['Zebra', '🦓'], ['Zug', '🚆']],
+    },
+    en: {
+      A: [['Apple', '🍎'], ['Ant', '🐜']], B: [['Ball', '⚽'], ['Banana', '🍌']], C: [['Cat', '🐱'], ['Cake', '🎂']],
+      D: [['Dog', '🐶'], ['Duck', '🦆']], E: [['Egg', '🥚'], ['Elephant', '🐘']], F: [['Fish', '🐟'], ['Frog', '🐸']],
+      G: [['Giraffe', '🦒'], ['Grapes', '🍇']], I: [['Igloo', '🧊'], ['Ice cream', '🍦']], L: [['Lion', '🦁'], ['Lena', '👧'], ['Lemon', '🍋']],
+      M: [['Moon', '🌙'], ['Mouse', '🐭']], N: [['Nose', '👃'], ['Nut', '🥜']], O: [['Owl', '🦉'], ['Orange', '🍊']],
+      P: [['Pig', '🐷'], ['Penguin', '🐧']], R: [['Rabbit', '🐰'], ['Rainbow', '🌈']], S: [['Sun', '☀️'], ['Star', '⭐']],
+      T: [['Tiger', '🐯'], ['Train', '🚆']], U: [['Umbrella', '☂️'], ['Unicorn', '🦄']], V: [['Van', '🚐'], ['Violin', '🎻']],
+      Z: [['Zebra', '🦓']],
+    },
+    es: {
+      A: [['Abeja', '🐝'], ['Avión', '✈️']], B: [['Ballena', '🐳'], ['Barco', '⛵']], C: [['Casa', '🏠'], ['Conejo', '🐰']],
+      D: [['Dado', '🎲'], ['Delfín', '🐬']], E: [['Elefante', '🐘'], ['Estrella', '⭐']], F: [['Fresa', '🍓'], ['Flor', '🌸']],
+      G: [['Gato', '🐱'], ['Globo', '🎈']], I: [['Iglú', '🧊'], ['Isla', '🏝️']], L: [['León', '🦁'], ['Lena', '👧'], ['Luna', '🌙']],
+      M: [['Manzana', '🍎'], ['Mariposa', '🦋']], N: [['Nube', '☁️'], ['Nariz', '👃']], O: [['Oso', '🐻'], ['Oveja', '🐑']],
+      P: [['Papá', '👨'], ['Pez', '🐟']], R: [['Ratón', '🐭'], ['Rana', '🐸']], S: [['Sol', '☀️'], ['Serpiente', '🐍']],
+      T: [['Tortuga', '🐢'], ['Tren', '🚆']], U: [['Uva', '🍇'], ['Unicornio', '🦄']], V: [['Vaca', '🐮'], ['Volcán', '🌋']],
+      Z: [['Zapato', '👟'], ['Zorro', '🦊']],
+    },
   };
-  const DAD = { it: 'Papà', fr: 'Papa' };
+  const DAD = { it: 'Papà', fr: 'Papa', de: 'Papa', en: 'Daddy', es: 'Papá' };
   const TX = {
     it: {
       find: (L, w) => `Pesca la ${ln(L, 'it')} di ${w}!`, iam: L => `Io sono la ${ln(L, 'it')}!`,
@@ -45,6 +72,30 @@
       spelled: (w, n) => `${[...w].join(', ')}. ${n} ! Tu as écrit ${n} !`,
       tut: ['Écoute la lettre : tu la vois aussi ici, en haut.', 'Puis touche le poisson avec la bonne lettre !',
         'On écrit un prénom ! Les lettres vont ici, dans l\'ordre.', 'Attrape les lettres une par une !'],
+    },
+    de: {
+      find: (L, w) => `Fang das ${L} wie ${w}!`, iam: L => `Ich bin das ${L}!`,
+      write: (n, L) => `Wir schreiben ${n}! Fang das ${L}!`, first: L => `Zuerst das ${L}!`,
+      now: L => `Jetzt das ${L}!`, again: L => `Noch einmal das ${L}!`,
+      spelled: (w, n) => `${[...w].join(', ')}. ${n}! Du hast ${n} geschrieben!`,
+      tut: ['Hör dir den Buchstaben an: Du siehst ihn auch hier oben.', 'Dann tippe auf den Fisch mit dem richtigen Buchstaben!',
+        'Wir schreiben einen Namen! Die Buchstaben kommen hierhin, der Reihe nach.', 'Fang die Buchstaben einen nach dem anderen!'],
+    },
+    en: {
+      find: (L, w) => `Catch the letter ${L}, like ${w}!`, iam: L => `I'm the letter ${L}!`,
+      write: (n, L) => `Let's write ${n}! Catch the letter ${L}!`, first: L => `First the letter ${L}!`,
+      now: L => `Now the letter ${L}!`, again: L => `The letter ${L} again!`,
+      spelled: (w, n) => `${[...w].join(', ')}. ${n}! You wrote ${n}!`,
+      tut: ['Listen to the letter: you can see it up here too.', 'Then tap the fish with the right letter!',
+        "Let's write a name! The letters go here, in order.", 'Catch the letters one at a time!'],
+    },
+    es: {
+      find: (L, w) => `¡Pesca la ${L} de ${w}!`, iam: L => `¡Yo soy la ${L}!`,
+      write: (n, L) => `¡Vamos a escribir ${n}! ¡Pesca la ${L}!`, first: L => `¡Primero la ${L}!`,
+      now: L => `¡Ahora la ${L}!`, again: L => `¡Otra vez la ${L}!`,
+      spelled: (w, n) => `${[...w].join(', ')}. ¡${n}! ¡Has escrito ${n}!`,
+      tut: ['Escucha la letra: también la ves aquí arriba.', '¡Luego toca el pez con la letra correcta!',
+        '¡Vamos a escribir un nombre! Las letras van aquí, en orden.', '¡Pesca las letras una a una!'],
     },
   };
   const POOLS = [
@@ -69,7 +120,7 @@
   }
 
   App.registerGame({
-    id: 'lettere', title: { fr: 'Pêche les lettres', it: 'Pesca le Lettere' }, short: 'Lettere', icon: '🎣', cls: 'sea',
+    id: 'lettere', title: { fr: 'Pêche les lettres', it: 'Pesca le Lettere', de: 'Buchstaben angeln', en: 'Letter fishing', es: 'Pesca las letras' }, short: 'Lettere', icon: '🎣', cls: 'sea',
     phrases: l => {
       const T = TX[l];
       const out = [...T.tut];

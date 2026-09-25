@@ -15,13 +15,13 @@
   const HEAD_ACC = { fiore: '🌸', fiocco: '🎀', paglia: '👒', cilindro: '🎩', corona: '👑' };
   const WORLDS = [
     { grass: ['#8fdc6a', '#84d35f'], trees: ['🌳'], road: '#5b5d6b', water: '#4fb4f0', log: ['#9a6a3a', '#b8844f'], sign: '🌳',
-      hello: { fr: 'Bienvenue dans le monde des prés !', it: 'Benvenuta nel mondo dei prati!' } },
+      hello: { fr: 'Bienvenue dans le monde des prés !', it: 'Benvenuta nel mondo dei prati!', de: 'Willkommen in der Wiesenwelt!', en: 'Welcome to the meadow world!', es: '¡Bienvenida al mundo de los prados!' } },
     { grass: ['#f2f8ff', '#e3eefa'], trees: ['🌲', '🌲', '⛄'], road: '#6b7080', water: '#8fd0f5', log: ['#e8f6ff', '#ffffff'], sign: '❄️',
-      hello: { fr: 'Bienvenue dans le monde de la neige !', it: 'Benvenuta nel mondo della neve!' } },
+      hello: { fr: 'Bienvenue dans le monde de la neige !', it: 'Benvenuta nel mondo della neve!', de: 'Willkommen in der Schneewelt!', en: 'Welcome to the snow world!', es: '¡Bienvenida al mundo de la nieve!' } },
     { grass: ['#f7e3a1', '#f0d88a'], trees: ['🌴', '🌴', '🐚', '🦀'], road: '#6b6b73', water: '#2fa6e0', log: ['#e07a5f', '#f2a488'], sign: '🏖️',
-      hello: { fr: 'Bienvenue à la plage !', it: 'Benvenuta al mare!' } },
+      hello: { fr: 'Bienvenue à la plage !', it: 'Benvenuta al mare!', de: 'Willkommen am Strand!', en: 'Welcome to the beach!', es: '¡Bienvenida a la playa!' } },
     { grass: ['#8d93a8', '#848a9e'], trees: ['🌳', '🏠', '🌳'], road: '#3b3d4a', water: '#2c5f96', log: ['#9a6a3a', '#b8844f'], sign: '🌃', night: true,
-      hello: { fr: 'Bienvenue en ville, la nuit !', it: 'Benvenuta nella città di notte!' } },
+      hello: { fr: 'Bienvenue en ville, la nuit !', it: 'Benvenuta nella città di notte!', de: 'Willkommen in der Stadt bei Nacht!', en: 'Welcome to the city at night!', es: '¡Bienvenida a la ciudad de noche!' } },
   ];
   const TX = {
     it: {
@@ -57,12 +57,62 @@
       tutTrain: "Quand les lumières rouges clignotent, le train arrive : attends sur l'herbe !",
     },
   };
+  Object.assign(TX, {
+    de: {
+      stop: ['Stopp! Es ist Rot: Warte auf Grün!', 'Halt! Bei Rot geht man nicht.', 'Rot! Wir warten auf Grün.'],
+      green: ['Super! Bei Grün darf man gehen!', 'Grün: Freie Fahrt!', 'Prima, du hast auf Grün gewartet!', 'Klasse! Sicher über die Straße!'],
+      zebra: 'Auf dem Zebrastreifen und bei Grün: super!',
+      trainStop: ['Der Zug kommt! Warte!', 'Achtung, der Zug! Wir warten.'],
+      trainDie: 'Oje, der Zug! Wenn die Lichter blinken, warten wir.',
+      die: ['Hoppla! Pass auf die Autos auf!', 'Hoppla! Schau gut, bevor du springst!'],
+      dieRed: 'Hoppla! Die Ampel ist rot geworden: Geh los, wenn sie gerade grün geworden ist!',
+      splash: 'Platsch! Spring auf die Baumstämme!',
+      intro: 'Tippe zum Springen. Bei Rot warten, bei Grün gehen!',
+      tut: ['Tippe auf den Bildschirm, um nach vorne zu springen!', 'Wisch mit dem Finger zur Seite, um dich zu bewegen.',
+        'Rote Ampel: Bleib stehen und warte!', 'Grüne Ampel: Die Autos halten an und du darfst gehen!',
+        'Achtung am Fluss: Spring auf die Baumstämme!'],
+      tutZebra: 'Geh über den Zebrastreifen: Das ist sicherer und du bekommst mehr Sterne!',
+      tutTrain: 'Wenn die roten Lichter blinken, kommt der Zug: Warte auf der Wiese!',
+    },
+    en: {
+      stop: ["Stop! It's red: wait for green!", "Stop! We don't cross on red.", "Red! Let's wait for green."],
+      green: ['Well done! Green means go!', 'Green: off you go!', 'Perfect, you waited for green!', 'Super! You crossed safely!'],
+      zebra: 'On the zebra crossing and on green: brilliant!',
+      trainStop: ['The train is coming! Wait!', "Careful, the train! Let's wait."],
+      trainDie: 'Oh no, the train! When the lights flash, we wait.',
+      die: ['Oops! Watch out for the cars!', 'Oops! Look carefully before you jump!'],
+      dieRed: 'Oops! The light turned red: cross when it has just turned green!',
+      splash: 'Splash! Jump on the logs!',
+      intro: 'Tap to jump. Wait on red, go on green!',
+      tut: ['Tap the screen to jump forward!', 'Swipe your finger to the side to move.',
+        'Red light: stop and wait!', 'Green light: the cars stop and you can cross!',
+        'Watch out for rivers: jump on the logs!'],
+      tutZebra: "Cross on the white stripes: it's safer and you win more stars!",
+      tutTrain: 'When the red lights flash, the train is coming: wait on the grass!',
+    },
+    es: {
+      stop: ['¡Alto! Está en rojo: ¡espera al verde!', '¡Para! Con el rojo no se pasa.', '¡Rojo! Esperamos al verde.'],
+      green: ['¡Muy bien! ¡Con el verde se pasa!', 'Verde: ¡adelante!', '¡Perfecto, has esperado al verde!', '¡Súper! ¡Has cruzado con cuidado!'],
+      zebra: '¡En el paso de cebra y con el verde: muy bien!',
+      trainStop: ['¡Viene el tren! ¡Espera!', '¡Cuidado, el tren! Esperamos.'],
+      trainDie: '¡Ay, el tren! Cuando las luces parpadean, se espera.',
+      die: ['¡Uy! ¡Cuidado con los coches!', '¡Uy! ¡Mira bien antes de saltar!'],
+      dieRed: '¡Uy! El semáforo se ha puesto en rojo: ¡cruza cuando acaba de ponerse en verde!',
+      splash: '¡Plaf! ¡Salta sobre los troncos!',
+      intro: 'Toca para saltar. ¡Con el rojo esperas, con el verde pasas!',
+      tut: ['¡Toca la pantalla para saltar hacia delante!', 'Desliza el dedo hacia un lado para moverte.',
+        'Semáforo en rojo: ¡para y espera!', 'Semáforo en verde: ¡los coches se paran y puedes pasar!',
+        'Cuidado con los ríos: ¡salta sobre los troncos!'],
+      tutZebra: '¡Cruza por las rayas blancas: es más seguro y ganas más estrellas!',
+      tutTrain: 'Cuando las luces rojas parpadean, viene el tren: ¡espera en la hierba!',
+    },
+  });
   const tx = () => TX[App.lang];
   /* ogni frase detta cambia lingua (alternanza) */
   const speak = f => { App.nextLang(); say(f(tx())); };
 
   App.registerGame({
-    id: 'salta', title: { fr: 'Lena saute', it: 'Lena Salta' }, short: 'Salta', cls: 'hop',
+    id: 'salta', title: { fr: 'Lena saute', it: 'Lena Salta', de: 'Lena springt', en: 'Lena hops', es: 'Lena salta' }, short: 'Salta', cls: 'hop',
     get icon() { return App.char().e; },
     phrases: l => {
       const T = TX[l];

@@ -52,6 +52,7 @@ Cosa rende premium le app migliori (Khan Academy Kids, Pok Pok, Sago Mini):
 7. **Gioco libero** — una scena esplorabile senza obiettivi (la casa del personaggio con l'armadio), da affiancare ai quiz.
 
 ## Fase C — Verso gli store
+0. ~~Lingue a scelta (1 o 2 tra FR/IT/DE/EN/ES)~~ ✅ fatto in v12.
 1. **Profili bambino** — nome, data di nascita, lingue (poi anche altre coppie, per esempio FR/EN o IT/EN: l'architettura con `LANGS` lo permette). Più profili per famiglia.
 2. **Frasi audio senza nome** — riscrivere le 81 frasi con "Lena" in forma neutra; il nome solo scritto, o registrato dal genitore.
 3. **Voci con licenza** — generare le stesse voci (Isabella, Denise) tramite **Azure Neural TTS** ufficiale: circa 100.000 caratteri, rientra nel piano gratuito da 500.000 al mese. Serve una API key Azure.

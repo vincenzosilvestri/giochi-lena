@@ -3,7 +3,13 @@ Uso: python tools/gen_voice.py [--force]   Richiede: pip install edge-tts"""
 import asyncio, json, os, sys
 import edge_tts
 
-VOICES = {'it': ('it-IT-IsabellaNeural', '-6%', '+6Hz'), 'fr': ('fr-FR-DeniseNeural', '-6%', '+4Hz')}
+VOICES = {
+    'it': ('it-IT-IsabellaNeural', '-6%', '+6Hz'),
+    'fr': ('fr-FR-DeniseNeural', '-6%', '+4Hz'),
+    'de': ('de-DE-KatjaNeural', '-6%', '+4Hz'),
+    'en': ('en-GB-SoniaNeural', '-6%', '+4Hz'),
+    'es': ('es-ES-ElviraNeural', '-6%', '+4Hz'),
+}
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'voice')
 
 async def one(sem, item, force):

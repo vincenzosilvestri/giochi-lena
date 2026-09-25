@@ -1,53 +1,94 @@
-/* Les deux langues / Le due lingue — praticare francese e italiano insieme:
-   "Dov'è…?" (ascolta e trova), Memory bilingue (carta FR ↔ carta IT) e "Quale lingua hai sentito?". */
+/* Le due lingue — praticare insieme le 2 lingue scelte per il bambino:
+   "Dov'è…?" (ascolta e trova), Memory bilingue (carta lingua A ↔ carta lingua B) e "Quale lingua hai sentito?".
+   Nascosto se il bambino ha una sola lingua (needs2). */
 (() => {
   const { h, say, sfx, pick, shuffle, wait } = App;
-  /* parola: [francese con articolo, parola sola] / [italiano con articolo, parola sola] */
+  /* per ogni lingua: [con articolo, parola sola] */
   const WORDS = [
-    ['🐱', ['le chat', 'Chat'], ['il gatto', 'Gatto']], ['🐶', ['le chien', 'Chien'], ['il cane', 'Cane']],
-    ['🐮', ['la vache', 'Vache'], ['la mucca', 'Mucca']], ['🐷', ['le cochon', 'Cochon'], ['il maiale', 'Maiale']],
-    ['🐰', ['le lapin', 'Lapin'], ['il coniglio', 'Coniglio']], ['🐟', ['le poisson', 'Poisson'], ['il pesce', 'Pesce']],
-    ['🐦', ["l'oiseau", 'Oiseau'], ["l'uccellino", 'Uccellino']], ['🐴', ['le cheval', 'Cheval'], ['il cavallo', 'Cavallo']],
-    ['🍎', ['la pomme', 'Pomme'], ['la mela', 'Mela']], ['🍌', ['la banane', 'Banane'], ['la banana', 'Banana']],
-    ['🍓', ['la fraise', 'Fraise'], ['la fragola', 'Fragola']], ['🎂', ['le gâteau', 'Gâteau'], ['la torta', 'Torta']],
-    ['🍦', ['la glace', 'Glace'], ['il gelato', 'Gelato']], ['🍞', ['le pain', 'Pain'], ['il pane', 'Pane']],
-    ['🧀', ['le fromage', 'Fromage'], ['il formaggio', 'Formaggio']], ['🥛', ['le lait', 'Lait'], ['il latte', 'Latte']],
-    ['☀️', ['le soleil', 'Soleil'], ['il sole', 'Sole']], ['🌙', ['la lune', 'Lune'], ['la luna', 'Luna']],
-    ['⭐', ["l'étoile", 'Étoile'], ['la stella', 'Stella']], ['🌸', ['la fleur', 'Fleur'], ['il fiore', 'Fiore']],
-    ['🌳', ["l'arbre", 'Arbre'], ["l'albero", 'Albero']], ['🏠', ['la maison', 'Maison'], ['la casa', 'Casa']],
-    ['🚗', ['la voiture', 'Voiture'], ['la macchina', 'Macchina']], ['🎈', ['le ballon', 'Ballon'], ['il palloncino', 'Palloncino']],
-    ['📖', ['le livre', 'Livre'], ['il libro', 'Libro']], ['👟', ['la chaussure', 'Chaussure'], ['la scarpa', 'Scarpa']],
-    ['🎩', ['le chapeau', 'Chapeau'], ['il cappello', 'Cappello']], ['🛏️', ['le lit', 'Lit'], ['il letto', 'Letto']],
-    ['☂️', ['le parapluie', 'Parapluie'], ["l'ombrello", 'Ombrello']], ['☁️', ['le nuage', 'Nuage'], ['la nuvola', 'Nuvola']],
-  ].map(([e, fr, it]) => ({ e, fr, it }));
+    ['🐱', ['le chat', 'Chat'], ['il gatto', 'Gatto'], ['die Katze', 'Katze'], ['the cat', 'Cat'], ['el gato', 'Gato']],
+    ['🐶', ['le chien', 'Chien'], ['il cane', 'Cane'], ['der Hund', 'Hund'], ['the dog', 'Dog'], ['el perro', 'Perro']],
+    ['🐮', ['la vache', 'Vache'], ['la mucca', 'Mucca'], ['die Kuh', 'Kuh'], ['the cow', 'Cow'], ['la vaca', 'Vaca']],
+    ['🐷', ['le cochon', 'Cochon'], ['il maiale', 'Maiale'], ['das Schwein', 'Schwein'], ['the pig', 'Pig'], ['el cerdo', 'Cerdo']],
+    ['🐰', ['le lapin', 'Lapin'], ['il coniglio', 'Coniglio'], ['der Hase', 'Hase'], ['the rabbit', 'Rabbit'], ['el conejo', 'Conejo']],
+    ['🐟', ['le poisson', 'Poisson'], ['il pesce', 'Pesce'], ['der Fisch', 'Fisch'], ['the fish', 'Fish'], ['el pez', 'Pez']],
+    ['🐦', ["l'oiseau", 'Oiseau'], ["l'uccellino", 'Uccellino'], ['der Vogel', 'Vogel'], ['the bird', 'Bird'], ['el pájaro', 'Pájaro']],
+    ['🐴', ['le cheval', 'Cheval'], ['il cavallo', 'Cavallo'], ['das Pferd', 'Pferd'], ['the horse', 'Horse'], ['el caballo', 'Caballo']],
+    ['🍎', ['la pomme', 'Pomme'], ['la mela', 'Mela'], ['der Apfel', 'Apfel'], ['the apple', 'Apple'], ['la manzana', 'Manzana']],
+    ['🍌', ['la banane', 'Banane'], ['la banana', 'Banana'], ['die Banane', 'Banane'], ['the banana', 'Banana'], ['el plátano', 'Plátano']],
+    ['🍓', ['la fraise', 'Fraise'], ['la fragola', 'Fragola'], ['die Erdbeere', 'Erdbeere'], ['the strawberry', 'Strawberry'], ['la fresa', 'Fresa']],
+    ['🎂', ['le gâteau', 'Gâteau'], ['la torta', 'Torta'], ['der Kuchen', 'Kuchen'], ['the cake', 'Cake'], ['la tarta', 'Tarta']],
+    ['🍦', ['la glace', 'Glace'], ['il gelato', 'Gelato'], ['das Eis', 'Eis'], ['the ice cream', 'Ice cream'], ['el helado', 'Helado']],
+    ['🍞', ['le pain', 'Pain'], ['il pane', 'Pane'], ['das Brot', 'Brot'], ['the bread', 'Bread'], ['el pan', 'Pan']],
+    ['🧀', ['le fromage', 'Fromage'], ['il formaggio', 'Formaggio'], ['der Käse', 'Käse'], ['the cheese', 'Cheese'], ['el queso', 'Queso']],
+    ['🥛', ['le lait', 'Lait'], ['il latte', 'Latte'], ['die Milch', 'Milch'], ['the milk', 'Milk'], ['la leche', 'Leche']],
+    ['☀️', ['le soleil', 'Soleil'], ['il sole', 'Sole'], ['die Sonne', 'Sonne'], ['the sun', 'Sun'], ['el sol', 'Sol']],
+    ['🌙', ['la lune', 'Lune'], ['la luna', 'Luna'], ['der Mond', 'Mond'], ['the moon', 'Moon'], ['la luna', 'Luna']],
+    ['⭐', ["l'étoile", 'Étoile'], ['la stella', 'Stella'], ['der Stern', 'Stern'], ['the star', 'Star'], ['la estrella', 'Estrella']],
+    ['🌸', ['la fleur', 'Fleur'], ['il fiore', 'Fiore'], ['die Blume', 'Blume'], ['the flower', 'Flower'], ['la flor', 'Flor']],
+    ['🌳', ["l'arbre", 'Arbre'], ["l'albero", 'Albero'], ['der Baum', 'Baum'], ['the tree', 'Tree'], ['el árbol', 'Árbol']],
+    ['🏠', ['la maison', 'Maison'], ['la casa', 'Casa'], ['das Haus', 'Haus'], ['the house', 'House'], ['la casa', 'Casa']],
+    ['🚗', ['la voiture', 'Voiture'], ['la macchina', 'Macchina'], ['das Auto', 'Auto'], ['the car', 'Car'], ['el coche', 'Coche']],
+    ['🎈', ['le ballon', 'Ballon'], ['il palloncino', 'Palloncino'], ['der Luftballon', 'Luftballon'], ['the balloon', 'Balloon'], ['el globo', 'Globo']],
+    ['📖', ['le livre', 'Livre'], ['il libro', 'Libro'], ['das Buch', 'Buch'], ['the book', 'Book'], ['el libro', 'Libro']],
+    ['👟', ['la chaussure', 'Chaussure'], ['la scarpa', 'Scarpa'], ['der Schuh', 'Schuh'], ['the shoe', 'Shoe'], ['el zapato', 'Zapato']],
+    ['🎩', ['le chapeau', 'Chapeau'], ['il cappello', 'Cappello'], ['der Hut', 'Hut'], ['the hat', 'Hat'], ['el sombrero', 'Sombrero']],
+    ['🛏️', ['le lit', 'Lit'], ['il letto', 'Letto'], ['das Bett', 'Bett'], ['the bed', 'Bed'], ['la cama', 'Cama']],
+    ['☂️', ['le parapluie', 'Parapluie'], ["l'ombrello", 'Ombrello'], ['der Regenschirm', 'Regenschirm'], ['the umbrella', 'Umbrella'], ['el paraguas', 'Paraguas']],
+    ['☁️', ['le nuage', 'Nuage'], ['la nuvola', 'Nuvola'], ['die Wolke', 'Wolke'], ['the cloud', 'Cloud'], ['la nube', 'Nube']],
+  ].map(([e, fr, it, de, en, es]) => ({ e, fr, it, de, en, es }));
   const GREET = {
     fr: ['Bonjour !', 'Merci !', 'Bonne nuit !', "Je t'aime !", 'Au revoir !', 'Bon appétit !'],
     it: ['Buongiorno!', 'Grazie!', 'Buonanotte!', 'Ti voglio bene!', 'Arrivederci!', 'Buon appetito!'],
+    de: ['Guten Morgen!', 'Danke!', 'Gute Nacht!', 'Ich hab dich lieb!', 'Tschüss!', 'Guten Appetit!'],
+    en: ['Good morning!', 'Thank you!', 'Good night!', 'I love you!', 'Goodbye!', 'Enjoy your meal!'],
+    es: ['¡Buenos días!', '¡Gracias!', '¡Buenas noches!', '¡Te quiero!', '¡Adiós!', '¡Buen provecho!'],
   };
   const TX = {
     fr: {
       where: w => `Où est ${w.fr[0]} ?`, word: w => `${w.fr[1]} !`, no: w => `Non, ça, c'est ${w.fr[0]} !`,
-      wasLang: 'Bravo ! C\'était du français !', listen: 'Écoute bien…', which: 'Quelle langue as-tu entendue ?',
-      tutFind: ['Écoute le mot…', "Puis touche la bonne image !"],
-      tutMem: ['Les cartes bleues parlent français, les vertes parlent italien.', 'Trouve la même image dans les deux langues !'],
+      wasLang: "Bravo ! C'était du français !", listen: 'Écoute bien…',
+      tutFind: ['Écoute le mot…', 'Puis touche la bonne image !'],
+      tutMem: ['Chaque langue a sa couleur de carte.', 'Trouve la même image dans les deux langues !'],
       tutWhich: ['Écoute bien : tu peux réécouter ici.', 'Puis touche le drapeau de la langue que tu as entendue !'],
     },
     it: {
       where: w => `Dov'è ${w.it[0]}?`, word: w => `${w.it[1]}!`, no: w => `No, qui c'è ${w.it[0]}!`,
-      wasLang: 'Brava! Era italiano!', listen: 'Ascolta bene…', which: 'Che lingua hai sentito?',
+      wasLang: 'Brava! Era italiano!', listen: 'Ascolta bene…',
       tutFind: ['Ascolta la parola…', "Poi tocca l'immagine giusta!"],
-      tutMem: ['Le carte blu parlano francese, quelle verdi italiano.', 'Trova la stessa immagine nelle due lingue!'],
+      tutMem: ['Ogni lingua ha il suo colore di carta.', 'Trova la stessa immagine nelle due lingue!'],
       tutWhich: ['Ascolta bene: puoi riascoltare qui.', 'Poi tocca la bandiera della lingua che hai sentito!'],
+    },
+    de: {
+      where: w => `Wo ist ${w.de[0]}?`, word: w => `${w.de[1]}!`, no: w => `Nein, das ist ${w.de[0]}!`,
+      wasLang: 'Super! Das war Deutsch!', listen: 'Hör gut zu…',
+      tutFind: ['Hör dir das Wort an…', 'Dann tippe auf das richtige Bild!'],
+      tutMem: ['Jede Sprache hat ihre eigene Kartenfarbe.', 'Finde das gleiche Bild in beiden Sprachen!'],
+      tutWhich: ['Hör gut zu: Hier kannst du es nochmal hören.', 'Dann tippe auf die Flagge der Sprache, die du gehört hast!'],
+    },
+    en: {
+      where: w => `Where is ${w.en[0]}?`, word: w => `${w.en[1]}!`, no: w => `No, that's ${w.en[0]}!`,
+      wasLang: 'Well done! That was English!', listen: 'Listen carefully…',
+      tutFind: ['Listen to the word…', 'Then tap the right picture!'],
+      tutMem: ['Each language has its own card colour.', 'Find the same picture in both languages!'],
+      tutWhich: ['Listen carefully: you can listen again here.', 'Then tap the flag of the language you heard!'],
+    },
+    es: {
+      where: w => `¿Dónde está ${w.es[0]}?`, word: w => `¡${w.es[1]}!`, no: w => `¡No, eso es ${w.es[0]}!`,
+      wasLang: '¡Muy bien! ¡Era español!', listen: 'Escucha bien…',
+      tutFind: ['Escucha la palabra…', '¡Luego toca la imagen correcta!'],
+      tutMem: ['Cada idioma tiene su propio color de carta.', '¡Encuentra la misma imagen en los dos idiomas!'],
+      tutWhich: ['Escucha bien: aquí puedes volver a escucharlo.', '¡Luego toca la bandera del idioma que has oído!'],
     },
   };
   const ROUND = 6;
-  const flagBtn = (l, extra = {}) => h('button', Object.assign({ class: `flagbtn ${l}`, 'aria-label': l }, extra));
+  const flagBtn = l => h('button', { class: `flagbtn ${l}`, 'aria-label': l });
 
   App.registerGame({
-    id: 'lingue', title: { fr: 'Les deux langues', it: 'Le due lingue' }, short: 'Lingue', icon: '🌍',
+    id: 'lingue', needs2: true, short: 'Lingue', icon: '🌍',
+    title: { fr: 'Les deux langues', it: 'Le due lingue', de: 'Zwei Sprachen', en: 'Two languages', es: 'Los dos idiomas' },
     phrases: l => {
       const T = TX[l];
-      const out = [T.wasLang, T.listen, T.which, ...T.tutFind, ...T.tutMem, ...T.tutWhich, ...GREET[l]];
+      const out = [T.wasLang, T.listen, ...T.tutFind, ...T.tutMem, ...T.tutWhich, ...GREET[l]];
       WORDS.forEach(w => out.push(T.where(w), T.word(w), T.no(w)));
       return out;
     },
@@ -58,6 +99,7 @@
       let lv = App.level('lingue');
       let lastSteps = [];
       let replay = () => {};
+      const [A, B] = App.pair();
       const pill = addPill(`⭐ 0/${ROUND}`);
       const flagPill = hud.querySelector('.flag-pill');
       stage.style.background = 'linear-gradient(180deg,#e8f1ff 0%,#fff 45%,#eafbef 100%)';
@@ -87,7 +129,7 @@
         const w = pick(opts);
         const q = T.where(w);
         const grid = h('div', { class: 'lng-grid' });
-        const spk = h('button', { class: 'lng-spk', onclick: () => { sfx.tap(); say(q); } }, '🔊');
+        const spk = h('button', { class: 'lng-spk', onclick: () => { sfx.tap(); say(q, { lang: l }); } }, '🔊');
         let first = true;
         opts.forEach(o => {
           const b = h('button', { class: 'lng-pic' }, o.e);
@@ -97,7 +139,7 @@
               grid.querySelectorAll('button').forEach(x => { x.disabled = true; });
               b.classList.add('ok');
               sfx.ding();
-              await say(T.word(w));
+              await say(T.word(w), { lang: l });
               if (!alive) return;
               await App.praise();
               const r = b.getBoundingClientRect();
@@ -106,25 +148,25 @@
               sfx.boing();
               b.classList.add('shake');
               setTimeout(() => b.classList.remove('shake'), 500);
-              say(T.no(o)).then(() => alive && say(q, { queue: true }));
+              say(T.no(o), { lang: l }).then(() => alive && say(q, { queue: true, lang: l }));
             }
           };
           grid.append(b);
         });
         stage.append(h('div', { class: 'prompt lng-prompt' }, spk, h('span', {}, '🔎')), grid);
-        replay = () => say(q);
+        replay = () => say(q, { lang: l });
         lastSteps = [
           { text: T.tutFind[0], icon: '👂', action: 'tap', at: () => spk, cap: 'top' },
-          { text: T.tutFind[1], icon: '👆', action: 'tap', at: () => grid.children[[...opts].indexOf(w)], cap: 'top' },
+          { text: T.tutFind[1], icon: '👆', action: 'tap', at: () => grid.children[opts.indexOf(w)], cap: 'top' },
         ];
-        App.intro('lingue-trova', lastSteps).then(() => alive && say(q));
+        App.intro('lingue-trova', lastSteps).then(() => alive && say(q, { lang: l }));
       }
 
-      /* 2) Memory bilingue — carta francese + carta italiana con la stessa immagine */
+      /* 2) Memory bilingue — carta nella lingua A + carta nella lingua B con la stessa immagine */
       function memory() {
         const T = tx();
         const pairs = shuffle(WORDS).slice(0, [3, 4, 5][lv - 1] || 5);
-        const cards = shuffle(pairs.flatMap(w => [{ w, l: 'fr' }, { w, l: 'it' }]));
+        const cards = shuffle(pairs.flatMap(w => [{ w, l: A }, { w, l: B }]));
         const grid = h('div', { class: 'lng-mem' });
         let open = [], busy = false, found = 0;
         cards.forEach(cd => {
@@ -148,8 +190,8 @@
               sfx.ding();
               App.track('lingue', null, true);
               /* il ponte: la parola nelle due lingue */
-              await say(TX.fr.word(a.cd.w), { lang: 'fr' });
-              await say(TX.it.word(a.cd.w), { lang: 'it', queue: true });
+              await say(TX[A].word(a.cd.w), { lang: A });
+              await say(TX[B].word(a.cd.w), { lang: B, queue: true });
               const r = b.c.getBoundingClientRect();
               App.addStars(1, r.left + r.width / 2, r.top);
               found++;
@@ -159,6 +201,7 @@
                 if (alive) success(innerWidth / 2, innerHeight / 2);
               }
             } else {
+              App.track('lingue', null, false);
               await wait(1300);
               a.c.classList.remove('up'); b.c.classList.remove('up');
               busy = false;
@@ -166,25 +209,24 @@
           };
           grid.append(c);
         });
-        stage.append(h('div', { class: 'prompt lng-prompt' }, h('span', { class: 'flagdot fr' }), '↔', h('span', { class: 'flagdot it' })), grid);
+        stage.append(h('div', { class: 'prompt lng-prompt' }, h('span', { class: `flagdot ${A}` }), '↔', h('span', { class: `flagdot ${B}` })), grid);
         replay = () => {};
         lastSteps = [
-          { text: T.tutMem[0], icon: '🃏', action: 'tap', at: () => grid.querySelector('.lng-card.fr'), cap: 'top' },
-          { text: T.tutMem[1], icon: '🔁', action: 'tap', at: () => grid.querySelector('.lng-card.it'), cap: 'top' },
+          { text: T.tutMem[0], icon: '🃏', action: 'tap', at: () => grid.querySelector(`.lng-card.${A}`), cap: 'top' },
+          { text: T.tutMem[1], icon: '🔁', action: 'tap', at: () => grid.querySelector(`.lng-card.${B}`), cap: 'top' },
         ];
         App.intro('lingue-memory', lastSteps);
       }
 
-      /* 3) Quale lingua? — la lingua è casuale (non alternata) e la bandierina in alto si nasconde */
+      /* 3) Quale lingua? — lingua casuale (non alternata), bandierina in alto nascosta */
       function which() {
-        const l = Math.random() < .5 ? 'fr' : 'it';
+        const l = pick([A, B]);
         App.lang = l;
         if (flagPill) flagPill.textContent = '❓';
         const w = pick(WORDS);
         const phrase = Math.random() < .35 ? pick(GREET[l]) : TX[l].word(w);
         const showE = GREET[l].includes(phrase) ? '💬' : w.e;
         const spk = h('button', { class: 'lng-spk big', onclick: () => { sfx.tap(); say(phrase, { lang: l }); } }, '🔊');
-        const pic = h('div', { class: 'lng-which-pic' }, showE);
         let first = true;
         const choose = async (lc, btn) => {
           if (first) { App.track('lingue', null, lc === l); first = false; }
@@ -202,16 +244,16 @@
             say(TX[l].listen, { lang: l }).then(() => alive && say(phrase, { queue: true, lang: l }));
           }
         };
-        const fr = flagBtn('fr'), it = flagBtn('it');
-        fr.onclick = () => choose('fr', fr);
-        it.onclick = () => choose('it', it);
-        stage.append(h('div', { class: 'lng-which' }, spk, pic, h('div', { class: 'lng-flags' }, fr, it)));
+        const fa = flagBtn(A), fb = flagBtn(B);
+        fa.onclick = () => choose(A, fa);
+        fb.onclick = () => choose(B, fb);
+        stage.append(h('div', { class: 'lng-which' }, spk, h('div', { class: 'lng-which-pic' }, showE), h('div', { class: 'lng-flags' }, fa, fb)));
         replay = () => say(phrase, { lang: l });
         /* spiegazioni in una lingua a caso: non devono suggerire la risposta */
-        const tl = Math.random() < .5 ? 'fr' : 'it';
+        const tl = pick([A, B]);
         lastSteps = [
           { text: TX[tl].tutWhich[0], icon: '🔊', action: 'tap', at: () => spk, cap: 'top', before: () => { App.lang = tl; } },
-          { text: TX[tl].tutWhich[1], icon: '🏳️', action: 'tap', at: () => fr, cap: 'top' },
+          { text: TX[tl].tutWhich[1], icon: '🏳️', action: 'tap', at: () => fa, cap: 'top' },
         ];
         App.intro('lingue-quale', lastSteps).then(() => {
           App.lang = l;

@@ -11,18 +11,18 @@
     return `<polygon points="${p.join(' ')}"/>`;
   })();
   const SHAPES = {
-    cerchio: { f: 0, fr: ['Cercle', 0], el: '<circle cx="50" cy="50" r="42"/>' },
-    quadrato: { f: 0, fr: ['Carré', 0], el: '<rect x="10" y="10" width="80" height="80" rx="8"/>' },
-    triangolo: { f: 0, fr: ['Triangle', 0], el: '<polygon points="50,8 94,90 6,90"/>' },
-    stella: { f: 1, fr: ['Étoile', 1], el: star },
-    cuore: { f: 0, fr: ['Cœur', 0], el: '<path d="M50 90 C22 68 5 50 5 31 C5 17 16 7 29 7 C39 7 46 13 50 21 C54 13 61 7 71 7 C84 7 95 17 95 31 C95 50 78 68 50 90Z"/>' },
-    rombo: { f: 0, fr: ['Losange', 0], el: '<polygon points="50,4 94,50 50,96 6,50"/>' },
+    cerchio: { f: 0, fr: ['Cercle', 0], de: ['Kreis', 'm'], en: 'circle', es: ['Círculo', 0], el: '<circle cx="50" cy="50" r="42"/>' },
+    quadrato: { f: 0, fr: ['Carré', 0], de: ['Quadrat', 'n'], en: 'square', es: ['Cuadrado', 0], el: '<rect x="10" y="10" width="80" height="80" rx="8"/>' },
+    triangolo: { f: 0, fr: ['Triangle', 0], de: ['Dreieck', 'n'], en: 'triangle', es: ['Triángulo', 0], el: '<polygon points="50,8 94,90 6,90"/>' },
+    stella: { f: 1, fr: ['Étoile', 1], de: ['Stern', 'm'], en: 'star', es: ['Estrella', 1], el: star },
+    cuore: { f: 0, fr: ['Cœur', 0], de: ['Herz', 'n'], en: 'heart', es: ['Corazón', 0], el: '<path d="M50 90 C22 68 5 50 5 31 C5 17 16 7 29 7 C39 7 46 13 50 21 C54 13 61 7 71 7 C84 7 95 17 95 31 C95 50 78 68 50 90Z"/>' },
+    rombo: { f: 0, fr: ['Losange', 0], de: ['Raute', 'f'], en: 'diamond', es: ['Rombo', 0], el: '<polygon points="50,4 94,50 50,96 6,50"/>' },
   };
   const COLORS = [
-    { c: '#ff5a5a', m: 'rosso', f: 'rossa', fr: ['rouge', 'rouge'] }, { c: '#f5c400', m: 'giallo', f: 'gialla', fr: ['jaune', 'jaune'] },
-    { c: '#3cc45c', m: 'verde', f: 'verde', fr: ['vert', 'verte'] }, { c: '#4a6cff', m: 'blu', f: 'blu', fr: ['bleu', 'bleue'] },
-    { c: '#ff9f40', m: 'arancione', f: 'arancione', fr: ['orange', 'orange'] }, { c: '#9b5cff', m: 'viola', f: 'viola', fr: ['violet', 'violette'] },
-    { c: '#ff6fa8', m: 'rosa', f: 'rosa', fr: ['rose', 'rose'] },
+    { c: '#ff5a5a', m: 'rosso', f: 'rossa', fr: ['rouge', 'rouge'], de: { m: 'Roter', f: 'Rote', n: 'Rotes' }, en: 'Red', es: ['rojo', 'roja'] }, { c: '#f5c400', m: 'giallo', f: 'gialla', fr: ['jaune', 'jaune'], de: { m: 'Gelber', f: 'Gelbe', n: 'Gelbes' }, en: 'Yellow', es: ['amarillo', 'amarilla'] },
+    { c: '#3cc45c', m: 'verde', f: 'verde', fr: ['vert', 'verte'], de: { m: 'Grüner', f: 'Grüne', n: 'Grünes' }, en: 'Green', es: ['verde', 'verde'] }, { c: '#4a6cff', m: 'blu', f: 'blu', fr: ['bleu', 'bleue'], de: { m: 'Blauer', f: 'Blaue', n: 'Blaues' }, en: 'Blue', es: ['azul', 'azul'] },
+    { c: '#ff9f40', m: 'arancione', f: 'arancione', fr: ['orange', 'orange'], de: { m: 'Oranger', f: 'Orange', n: 'Oranges' }, en: 'Orange', es: ['naranja', 'naranja'] }, { c: '#9b5cff', m: 'viola', f: 'viola', fr: ['violet', 'violette'], de: { m: 'Lila', f: 'Lila', n: 'Lila' }, en: 'Purple', es: ['morado', 'morada'] },
+    { c: '#ff6fa8', m: 'rosa', f: 'rosa', fr: ['rose', 'rose'], de: { m: 'Rosa', f: 'Rosa', n: 'Rosa' }, en: 'Pink', es: ['rosa', 'rosa'] },
   ];
   const LEVELS = [null, { n: 3, color: false }, { n: 4, color: false }, { n: 4, color: true }, { n: 5, color: true }];
   const PATTERNS = [null, ['AB'], ['AB', 'AAB'], ['AB', 'AAB', 'ABC', 'ABB'], ['AAB', 'ABC', 'ABB', 'AABB']];
@@ -41,16 +41,42 @@
       lookRow: 'Regarde bien la file ! Réessaie.',
     },
   };
+  Object.assign(TX, {
+    de: {
+      tut: ['Zieh die Form an den passenden Platz!', 'Achtung: Auch die Farbe muss gleich sein!', 'Schau dir die Reihe an: Die Formen wiederholen sich.', 'Tippe auf die, die als Nächstes kommt!'],
+      putColor: 'Leg jede Form an ihren Platz. Achte auf die Farben!', put: 'Zieh jede Form an ihren Platz!',
+      lookColor: 'Schau dir die Farbe an!', noFit: 'Das passt nicht! Probier einen anderen Platz.', next: 'Was kommt als Nächstes?', nextShow: 'Was kommt dann? 🤔',
+      lookRow: 'Schau dir die Reihe genau an! Versuch es nochmal.',
+    },
+    en: {
+      tut: ['Drag the shape to the matching place!', 'Careful: the colour must match too!', 'Look at the row: the shapes repeat.', 'Tap the one that comes next!'],
+      putColor: 'Put each shape in its place. Watch the colours!', put: 'Drag each shape to its place!',
+      lookColor: 'Look at the colour!', noFit: "It doesn't fit! Try another place.", next: 'What comes next?', nextShow: 'What comes next? 🤔',
+      lookRow: 'Look carefully at the row! Try again.',
+    },
+    es: {
+      tut: ['¡Arrastra la forma a su sitio!', 'Cuidado: ¡el color también tiene que ser igual!', 'Mira la fila: las formas se repiten.', '¡Toca la que viene después!'],
+      putColor: 'Pon cada forma en su sitio. ¡Fíjate en los colores!', put: '¡Arrastra cada forma a su sitio!',
+      lookColor: '¡Mira el color!', noFit: '¡No cabe! Prueba otro sitio.', next: '¿Qué viene después?', nextShow: '¿Y después? 🤔',
+      lookRow: '¡Mira bien la fila! Inténtalo otra vez.',
+    },
+  });
   const tx = () => TX[App.lang];
-  const name = (it, l = App.lang) => (l === 'fr'
-    ? `${SHAPES[it.shape].fr[0]} ${it.color.fr[SHAPES[it.shape].fr[1]]}`
-    : `${it.shape[0].toUpperCase()}${it.shape.slice(1)} ${SHAPES[it.shape].f ? it.color.f : it.color.m}`);
+  /* nome di forma + colore, con l'accordo di genere di ogni lingua */
+  const name = (it, l = App.lang) => {
+    const S = SHAPES[it.shape], C = it.color;
+    if (l === 'fr') return `${S.fr[0]} ${C.fr[S.fr[1]]}`;
+    if (l === 'de') return `${C.de[S.de[1]]} ${S.de[0]}`;
+    if (l === 'en') return `${C.en} ${S.en}`;
+    if (l === 'es') return `${S.es[0]} ${C.es[S.es[1]]}`;
+    return `${it.shape[0].toUpperCase()}${it.shape.slice(1)} ${S.f ? C.f : C.m}`;
+  };
   function svg(shape, fill, stroke = 'none', dash = '') {
     return `<svg viewBox="-4 -4 108 108" width="100%" height="100%"><g fill="${fill}" stroke="${stroke}" stroke-width="5" stroke-dasharray="${dash}" stroke-linejoin="round">${SHAPES[shape].el}</g></svg>`;
   }
 
   App.registerGame({
-    id: 'forme', title: { fr: 'Formes et couleurs', it: 'Forme e Colori' }, short: 'Forme', icon: '🔷',
+    id: 'forme', title: { fr: 'Formes et couleurs', it: 'Forme e Colori', de: 'Formen und Farben', en: 'Shapes and colours', es: 'Formas y colores' }, short: 'Forme', icon: '🔷',
     phrases: l => {
       const T = TX[l];
       const out = [...T.tut, T.putColor, T.put, T.lookColor, T.noFit, T.next, T.lookRow];

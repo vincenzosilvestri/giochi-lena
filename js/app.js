@@ -4,41 +4,53 @@ const App = (() => {
   const NAME = 'Lena';
   const BIRTH = { y: 2022, m: 0, d: 18 }; // 18 gennaio 2022
   const KEY = 'lena_v1';
-  const VERSION = '11 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
-  const LANGS = ['fr', 'it'];
-  const FLAG = { fr: '🇫🇷', it: '🇮🇹' };
+  const VERSION = '12 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
+  /* lingue disponibili; il genitore sceglie le 2 del bambino (state.langs) */
+  const LANGS = ['fr', 'it', 'de', 'en', 'es'];
+  const FLAG = { fr: '🇫🇷', it: '🇮🇹', de: '🇩🇪', en: '🇬🇧', es: '🇪🇸' };
+  const LANG_NAME = { fr: 'Français', it: 'Italiano', de: 'Deutsch', en: 'English', es: 'Español' };
+  const LANG_IT = { fr: 'Francese', it: 'Italiano', de: 'Tedesco', en: 'Inglese', es: 'Spagnolo' };
+  const TTS_CODE = { fr: 'fr-FR', it: 'it-IT', de: 'de-DE', en: 'en-GB', es: 'es-ES' };
+  const LOCALE = TTS_CODE;
+  /* punto esclamativo secondo la lingua: "Bravo !", "¡Bien!", "Super!" */
+  const excl = (s, l = lang) => (l === 'fr' ? `${s} !` : l === 'es' ? `¡${s}!` : `${s}!`);
 
   const CHARS = [
-    { id: 'coniglio', e: '🐰', name: { it: 'Coniglietto', fr: 'Petit lapin' }, the: { it: 'il coniglietto', fr: 'le petit lapin' }, fem: { it: 0, fr: 0 } },
-    { id: 'gatto', e: '🐱', name: { it: 'Gattino', fr: 'Petit chat' }, the: { it: 'il gattino', fr: 'le petit chat' }, fem: { it: 0, fr: 0 } },
-    { id: 'unicorno', e: '🦄', name: { it: 'Unicorno', fr: 'Licorne' }, the: { it: "l'unicorno", fr: 'la licorne' }, fem: { it: 0, fr: 1 } },
-    { id: 'cane', e: '🐶', name: { it: 'Cagnolino', fr: 'Petit chien' }, the: { it: 'il cagnolino', fr: 'le petit chien' }, fem: { it: 0, fr: 0 } },
+    { id: 'coniglio', e: '🐰', name: { it: 'Coniglietto', fr: 'Petit lapin', de: 'Häschen', en: 'Bunny', es: 'Conejito' }, the: { it: 'il coniglietto', fr: 'le petit lapin', de: 'das Häschen', en: 'the bunny', es: 'el conejito' }, fem: {} },
+    { id: 'gatto', e: '🐱', name: { it: 'Gattino', fr: 'Petit chat', de: 'Kätzchen', en: 'Kitten', es: 'Gatito' }, the: { it: 'il gattino', fr: 'le petit chat', de: 'das Kätzchen', en: 'the kitten', es: 'el gatito' }, fem: {} },
+    { id: 'unicorno', e: '🦄', name: { it: 'Unicorno', fr: 'Licorne', de: 'Einhorn', en: 'Unicorn', es: 'Unicornio' }, the: { it: "l'unicorno", fr: 'la licorne', de: 'das Einhorn', en: 'the unicorn', es: 'el unicornio' }, fem: { fr: 1 } },
+    { id: 'cane', e: '🐶', name: { it: 'Cagnolino', fr: 'Petit chien', de: 'Hündchen', en: 'Puppy', es: 'Perrito' }, the: { it: 'il cagnolino', fr: 'le petit chien', de: 'das Hündchen', en: 'the puppy', es: 'el perrito' }, fem: {} },
   ];
   const COLORS = [
-    { c: '#ff6fa8', n: { it: 'Rosa', fr: 'Rose' } }, { c: '#ff5a5a', n: { it: 'Rosso', fr: 'Rouge' } },
-    { c: '#ff9f40', n: { it: 'Arancione', fr: 'Orange' } }, { c: '#f5c400', n: { it: 'Giallo', fr: 'Jaune' } },
-    { c: '#3cc45c', n: { it: 'Verde', fr: 'Vert' } }, { c: '#2ed3c6', n: { it: 'Turchese', fr: 'Turquoise' } },
-    { c: '#3fb0ff', n: { it: 'Azzurro', fr: 'Bleu clair' } }, { c: '#4a6cff', n: { it: 'Blu', fr: 'Bleu' } },
-    { c: '#9b5cff', n: { it: 'Viola', fr: 'Violet' } }, { c: '#d17de8', n: { it: 'Lilla', fr: 'Lilas' } },
+    { c: '#ff6fa8', n: { it: 'Rosa', fr: 'Rose', de: 'Rosa', en: 'Pink', es: 'Rosa' } },
+    { c: '#ff5a5a', n: { it: 'Rosso', fr: 'Rouge', de: 'Rot', en: 'Red', es: 'Rojo' } },
+    { c: '#ff9f40', n: { it: 'Arancione', fr: 'Orange', de: 'Orange', en: 'Orange', es: 'Naranja' } },
+    { c: '#f5c400', n: { it: 'Giallo', fr: 'Jaune', de: 'Gelb', en: 'Yellow', es: 'Amarillo' } },
+    { c: '#3cc45c', n: { it: 'Verde', fr: 'Vert', de: 'Grün', en: 'Green', es: 'Verde' } },
+    { c: '#2ed3c6', n: { it: 'Turchese', fr: 'Turquoise', de: 'Türkis', en: 'Turquoise', es: 'Turquesa' } },
+    { c: '#3fb0ff', n: { it: 'Azzurro', fr: 'Bleu clair', de: 'Hellblau', en: 'Light blue', es: 'Azul claro' } },
+    { c: '#4a6cff', n: { it: 'Blu', fr: 'Bleu', de: 'Blau', en: 'Blue', es: 'Azul' } },
+    { c: '#9b5cff', n: { it: 'Viola', fr: 'Violet', de: 'Lila', en: 'Purple', es: 'Morado' } },
+    { c: '#d17de8', n: { it: 'Lilla', fr: 'Lilas', de: 'Flieder', en: 'Lilac', es: 'Lila' } },
   ];
   const STICKERS = ['🦄', '🌈', '🍦', '🎈', '🦋', '🌸', '⭐', '🐞', '🍓', '🐬', '🦊', '🐼',
     '🧁', '🎀', '🐙', '🌻', '🍭', '🐢', '🦜', '🏰', '👑', '🚀', '🐳', '🍉'];
   /* armadio: accessori comprati con le stelle, uno per zona */
   const ITEMS = [
-    { id: 'fiore', e: '🌸', slot: 'head', price: 5, n: { fr: 'La fleur', it: 'Il fiore' } },
-    { id: 'fiocco', e: '🎀', slot: 'head', price: 8, n: { fr: 'Le nœud', it: 'Il fiocco' } },
-    { id: 'paglia', e: '👒', slot: 'head', price: 10, n: { fr: 'Le chapeau de paille', it: 'Il cappello di paglia' } },
-    { id: 'cilindro', e: '🎩', slot: 'head', price: 12, n: { fr: 'Le chapeau magique', it: 'Il cappello magico' } },
-    { id: 'corona', e: '👑', slot: 'head', price: 15, n: { fr: 'La couronne', it: 'La corona' } },
-    { id: 'occhiali', e: '👓', slot: 'eyes', price: 6, n: { fr: 'Les lunettes', it: 'Gli occhiali' } },
-    { id: 'sole', e: '🕶️', slot: 'eyes', price: 10, n: { fr: 'Les lunettes de soleil', it: 'Gli occhiali da sole' } },
-    { id: 'lecca', e: '🍭', slot: 'hand', price: 5, n: { fr: 'La sucette', it: 'Il lecca-lecca' } },
-    { id: 'palloncino', e: '🎈', slot: 'hand', price: 6, n: { fr: 'Le ballon', it: 'Il palloncino' } },
-    { id: 'bacchetta', e: '🪄', slot: 'hand', price: 20, n: { fr: 'La baguette magique', it: 'La bacchetta magica' } },
-    { id: 'cuori', e: '💖', slot: 'aura', price: 12, n: { fr: 'Les cœurs', it: 'I cuori' } },
-    { id: 'farfalle', e: '🦋', slot: 'aura', price: 18, n: { fr: 'Les papillons', it: 'Le farfalle' } },
-    { id: 'brillantini', e: '✨', slot: 'aura', price: 25, n: { fr: 'Les paillettes', it: 'I brillantini' } },
-    { id: 'arcobaleno', e: '🌈', slot: 'aura', price: 30, n: { fr: "L'arc-en-ciel", it: "L'arcobaleno" } },
+    { id: 'fiore', e: '🌸', slot: 'head', price: 5, n: { fr: 'La fleur', it: 'Il fiore', de: 'Die Blume', en: 'The flower', es: 'La flor' } },
+    { id: 'fiocco', e: '🎀', slot: 'head', price: 8, n: { fr: 'Le nœud', it: 'Il fiocco', de: 'Die Schleife', en: 'The bow', es: 'El lazo' } },
+    { id: 'paglia', e: '👒', slot: 'head', price: 10, n: { fr: 'Le chapeau de paille', it: 'Il cappello di paglia', de: 'Der Strohhut', en: 'The straw hat', es: 'El sombrero de paja' } },
+    { id: 'cilindro', e: '🎩', slot: 'head', price: 12, n: { fr: 'Le chapeau magique', it: 'Il cappello magico', de: 'Der Zauberhut', en: 'The magic hat', es: 'El sombrero mágico' } },
+    { id: 'corona', e: '👑', slot: 'head', price: 15, n: { fr: 'La couronne', it: 'La corona', de: 'Die Krone', en: 'The crown', es: 'La corona' } },
+    { id: 'occhiali', e: '👓', slot: 'eyes', price: 6, n: { fr: 'Les lunettes', it: 'Gli occhiali', de: 'Die Brille', en: 'The glasses', es: 'Las gafas' } },
+    { id: 'sole', e: '🕶️', slot: 'eyes', price: 10, n: { fr: 'Les lunettes de soleil', it: 'Gli occhiali da sole', de: 'Die Sonnenbrille', en: 'The sunglasses', es: 'Las gafas de sol' } },
+    { id: 'lecca', e: '🍭', slot: 'hand', price: 5, n: { fr: 'La sucette', it: 'Il lecca-lecca', de: 'Der Lutscher', en: 'The lollipop', es: 'La piruleta' } },
+    { id: 'palloncino', e: '🎈', slot: 'hand', price: 6, n: { fr: 'Le ballon', it: 'Il palloncino', de: 'Der Luftballon', en: 'The balloon', es: 'El globo' } },
+    { id: 'bacchetta', e: '🪄', slot: 'hand', price: 20, n: { fr: 'La baguette magique', it: 'La bacchetta magica', de: 'Der Zauberstab', en: 'The magic wand', es: 'La varita mágica' } },
+    { id: 'cuori', e: '💖', slot: 'aura', price: 12, n: { fr: 'Les cœurs', it: 'I cuori', de: 'Die Herzen', en: 'The hearts', es: 'Los corazones' } },
+    { id: 'farfalle', e: '🦋', slot: 'aura', price: 18, n: { fr: 'Les papillons', it: 'Le farfalle', de: 'Die Schmetterlinge', en: 'The butterflies', es: 'Las mariposas' } },
+    { id: 'brillantini', e: '✨', slot: 'aura', price: 25, n: { fr: 'Les paillettes', it: 'I brillantini', de: 'Der Glitzer', en: 'The glitter', es: 'La purpurina' } },
+    { id: 'arcobaleno', e: '🌈', slot: 'aura', price: 30, n: { fr: "L'arc-en-ciel", it: "L'arcobaleno", de: 'Der Regenbogen', en: 'The rainbow', es: 'El arcoíris' } },
   ];
   const VOICE_SLOTS = [
     { id: 'ciao', label: 'Saluto all\'apertura', hint: 'es. «Ciao amore, giochiamo?» / «Coucou ma chérie !»', max: 3 },
@@ -48,80 +60,120 @@ const App = (() => {
   const NUM = {
     it: ['zero', 'uno', 'due', 'tre', 'quattro', 'cinque', 'sei', 'sette', 'otto', 'nove', 'dieci'],
     fr: ['zéro', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix'],
+    de: ['null', 'eins', 'zwei', 'drei', 'vier', 'fünf', 'sechs', 'sieben', 'acht', 'neun', 'zehn'],
+    en: ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'],
+    es: ['cero', 'uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve', 'diez'],
   };
-  const numWord = (n, fem, l = lang) => (n === 1 ? (l === 'fr' ? (fem ? 'une' : 'un') : (fem ? 'una' : 'uno')) : NUM[l][n]);
+  /* numero contato ad alta voce: "une" per una cosa femminile in fr/it/es */
+  const numWord = (n, fem, l = lang) => {
+    if (n !== 1) return NUM[l][n];
+    if (l === 'fr') return fem ? 'une' : 'un';
+    if (l === 'it' || l === 'es') return fem ? 'una' : 'uno';
+    return NUM[l][1];
+  };
 
-  /* testi dell'app (fr/it); le funzioni ricevono parametri */
+  /* testi dell'app per lingua; le funzioni ricevono parametri */
   const T = {
-    hello: { fr: `Coucou ${NAME} !`, it: `Ciao ${NAME}!` },
-    playBtn: { fr: 'On joue ! ▶', it: 'Giochiamo! ▶' },
-    greet: { fr: `Coucou ${NAME} ! On joue ?`, it: `Ciao ${NAME}! Giochiamo?` },
-    forDad: { fr: "Ça, c'est pour papa !", it: 'Questo è per papà!' },
-    chooseFriend: { fr: 'Choisis ton ami !', it: 'Scegli il tuo amico!' },
-    chooseColor: { fr: 'Choisis ta couleur !', it: 'Scegli il tuo colore!' },
-    done: { fr: "C'est fait ! ✓", it: 'Fatto! ✓' },
-    setupSay: { fr: `Coucou ${NAME} ! Choisis ton ami et ta couleur préférée !`, it: `Ciao ${NAME}! Scegli il tuo amico e il tuo colore preferito!` },
-    hiChar: { fr: n => `Youpi ! Coucou ${n} !`, it: n => `Evviva! Ciao ${n}!` },
-    album: { fr: `L'album de ${NAME}`, it: `Album di ${NAME}` },
-    albumDone: { fr: "Tu as complété l'album ! Tu es super forte !", it: "Hai completato l'album! Sei bravissima!" },
-    albumCount: { fr: n => (n <= 1 ? `Tu as ${n} autocollant. Joue pour en gagner d'autres !` : `Tu as ${n} autocollants. Joue pour en gagner d'autres !`), it: n => `Hai ${n} sticker. Gioca per vincerne altri!` },
-    albumLocked: { fr: 'Celui-là, tu le gagnes en jouant !', it: 'Questo lo vinci giocando!' },
-    newSticker: { fr: 'Nouvel autocollant !', it: 'Nuovo sticker!' },
-    newStickerSay: { fr: 'Youpi ! Un nouvel autocollant pour ton album !', it: 'Evviva! Un nuovo sticker per il tuo album!' },
-    yay: { fr: 'Youpi !', it: 'Evviva!' },
-    diplomaOf: { fr: 'Diplôme de', it: 'Diploma di' },
-    diplomaTxt: { fr: "a complété l'album d'autocollants !", it: "ha completato l'album di sticker!" },
-    diplomaSay: { fr: `Bravo ${NAME} ! Tu as complété tout l'album ! Tu es une Super ${NAME} !`, it: `Complimenti ${NAME}! Hai completato tutto l'album! Sei una Super ${NAME}!` },
-    yourTurn: { fr: 'À toi de jouer !', it: 'Adesso prova tu!' },
-    gotIt: { fr: "J'ai compris ! 👍", it: 'Ho capito! 👍' },
-    tutGame: { fr: 'Touche un jeu pour commencer !', it: 'Tocca un gioco per iniziare!' },
-    tutAlbum: { fr: 'Ici, tu trouves les autocollants que tu gagnes !', it: 'Qui trovi gli sticker che vinci giocando!' },
-    tutWardrobe: { fr: 'Ici, tu dépenses tes étoiles pour habiller ton ami !', it: 'Qui spendi le stelle per vestire il tuo amico!' },
-    minute: { fr: c => `Encore une minute et ${c} va faire dodo !`, it: c => `Ancora un minuto e poi ${c} va a nanna!` },
-    sleepTxt: { fr: (c, f) => `${cap(c)} est fatigué${f ? 'e' : ''} et va faire dodo. À demain, ${NAME} !`, it: c => `${cap(c)} è stanco e va a nanna. Ci vediamo domani, ${NAME}!` },
-    sleepSay: { fr: (c, f) => `${cap(c)} est fatigué${f ? 'e' : ''} et va faire dodo. À demain, ${NAME} ! Bonne nuit !`, it: c => `${cap(c)} è stanco e va a nanna. Ci vediamo domani, ${NAME}! Buonanotte!` },
-    bdayTitle: { fr: `Joyeux anniversaire ${NAME} ! 🎉`, it: `Buon compleanno ${NAME}! 🎉` },
-    bdayHint: { fr: 'Touche les bougies pour les souffler !', it: 'Tocca le candeline per soffiarle!' },
-    bdaySay: { fr: a => `Joyeux anniversaire ${NAME} ! Aujourd'hui tu as ${a} ans ! Comptons les bougies et soufflons-les toutes !`, it: a => `Buon compleanno ${NAME}! Oggi compi ${a} anni! Contiamo le candeline e soffiamole tutte!` },
-    bdayWish: { fr: a => `Joyeux anniversaire ${NAME} ! Tu as ${a} ans !`, it: a => `Tanti auguri ${NAME}! Oggi hai ${a} anni!` },
-    gift: { fr: 'Un cadeau ! 🎁', it: 'Un regalo! 🎁' },
-    wardrobe: { fr: `L'armoire de ${NAME}`, it: `L'armadio di ${NAME}` },
-    wardrobeTile: { fr: 'Armoire', it: 'Armadio' },
-    wardrobeSay: { fr: 'Choisis des habits pour ton ami !', it: 'Scegli i vestiti per il tuo amico!' },
-    buyQ: { fr: "Tu veux l'acheter ?", it: 'Lo vuoi comprare?' },
-    bought: { fr: "Youpi ! C'est à toi !", it: 'Evviva! È tuo!' },
-    missing: { fr: n => (n === 1 ? 'Il te manque une étoile ! Joue pour en gagner.' : `Il te manque ${n} étoiles ! Joue pour en gagner.`), it: n => (n === 1 ? 'Ti manca una stella! Gioca per vincerla.' : `Ti mancano ${n} stelle! Gioca per vincerle.`) },
-    storyNext: { fr: 'Suite ▶', it: 'Avanti ▶' },
-    newLevel: { fr: 'Bravo ! Nouveau niveau !', it: 'Brava! Nuovo livello!' },
+    hello: { fr: `Coucou ${NAME} !`, it: `Ciao ${NAME}!`, de: `Hallo ${NAME}!`, en: `Hi ${NAME}!`, es: `¡Hola ${NAME}!` },
+    greet: { fr: `Coucou ${NAME} ! On joue ?`, it: `Ciao ${NAME}! Giochiamo?`, de: `Hallo ${NAME}! Wollen wir spielen?`, en: `Hi ${NAME}! Shall we play?`, es: `¡Hola ${NAME}! ¿Jugamos?` },
+    forDad: { fr: "Ça, c'est pour papa !", it: 'Questo è per papà!', de: 'Das ist für Papa!', en: 'This one is for Daddy!', es: '¡Esto es para papá!' },
+    chooseFriend: { fr: 'Choisis ton ami !', it: 'Scegli il tuo amico!', de: 'Wähle deinen Freund!', en: 'Choose your friend!', es: '¡Elige a tu amigo!' },
+    chooseColor: { fr: 'Choisis ta couleur !', it: 'Scegli il tuo colore!', de: 'Wähle deine Farbe!', en: 'Choose your colour!', es: '¡Elige tu color!' },
+    done: { fr: "C'est fait ! ✓", it: 'Fatto! ✓', de: 'Fertig! ✓', en: 'Done! ✓', es: '¡Listo! ✓' },
+    setupSay: { fr: `Coucou ${NAME} ! Choisis ton ami et ta couleur préférée !`, it: `Ciao ${NAME}! Scegli il tuo amico e il tuo colore preferito!`, de: `Hallo ${NAME}! Wähle deinen Freund und deine Lieblingsfarbe!`, en: `Hi ${NAME}! Choose your friend and your favourite colour!`, es: `¡Hola ${NAME}! ¡Elige a tu amigo y tu color favorito!` },
+    hiChar: { fr: n => `Youpi ! Coucou ${n} !`, it: n => `Evviva! Ciao ${n}!`, de: n => `Juhu! Hallo ${n}!`, en: n => `Hooray! Hi ${n}!`, es: n => `¡Bien! ¡Hola ${n}!` },
+    album: { fr: `L'album de ${NAME}`, it: `Album di ${NAME}`, de: `${NAME}s Album`, en: `${NAME}'s album`, es: `El álbum de ${NAME}` },
+    albumDone: { fr: "Tu as complété l'album ! Tu es super forte !", it: "Hai completato l'album! Sei bravissima!", de: 'Dein Album ist voll! Du bist super!', en: "You've finished the album! You're amazing!", es: '¡Has completado el álbum! ¡Eres genial!' },
+    albumCount: {
+      fr: n => (n <= 1 ? `Tu as ${n} autocollant. Joue pour en gagner d'autres !` : `Tu as ${n} autocollants. Joue pour en gagner d'autres !`),
+      it: n => `Hai ${n} sticker. Gioca per vincerne altri!`,
+      de: n => `Du hast ${n} Sticker. Spiel weiter, um mehr zu gewinnen!`,
+      en: n => (n === 1 ? 'You have 1 sticker. Play to win more!' : `You have ${n} stickers. Play to win more!`),
+      es: n => (n === 1 ? 'Tienes 1 pegatina. ¡Juega para ganar más!' : `Tienes ${n} pegatinas. ¡Juega para ganar más!`),
+    },
+    albumLocked: { fr: 'Celui-là, tu le gagnes en jouant !', it: 'Questo lo vinci giocando!', de: 'Den gewinnst du beim Spielen!', en: 'You win this one by playing!', es: '¡Esta la ganas jugando!' },
+    newSticker: { fr: 'Nouvel autocollant !', it: 'Nuovo sticker!', de: 'Neuer Sticker!', en: 'New sticker!', es: '¡Nueva pegatina!' },
+    newStickerSay: { fr: 'Youpi ! Un nouvel autocollant pour ton album !', it: 'Evviva! Un nuovo sticker per il tuo album!', de: 'Juhu! Ein neuer Sticker für dein Album!', en: 'Hooray! A new sticker for your album!', es: '¡Bien! ¡Una pegatina nueva para tu álbum!' },
+    yay: { fr: 'Youpi !', it: 'Evviva!', de: 'Juhu!', en: 'Hooray!', es: '¡Bien!' },
+    diplomaOf: { fr: 'Diplôme de', it: 'Diploma di', de: 'Urkunde für', en: 'Certificate for', es: 'Diploma de' },
+    diplomaBtn: { fr: 'Diplôme', it: 'Diploma', de: 'Urkunde', en: 'Certificate', es: 'Diploma' },
+    diplomaTxt: { fr: "a complété l'album d'autocollants !", it: "ha completato l'album di sticker!", de: 'hat das Stickeralbum vollgemacht!', en: 'has completed the sticker album!', es: '¡ha completado el álbum de pegatinas!' },
+    diplomaSay: { fr: `Bravo ${NAME} ! Tu as complété tout l'album ! Tu es une Super ${NAME} !`, it: `Complimenti ${NAME}! Hai completato tutto l'album! Sei una Super ${NAME}!`, de: `Bravo ${NAME}! Dein ganzes Album ist voll! Du bist eine Super-${NAME}!`, en: `Well done ${NAME}! You finished the whole album! You're a Super ${NAME}!`, es: `¡Bravo ${NAME}! ¡Has completado todo el álbum! ¡Eres una Súper ${NAME}!` },
+    yourTurn: { fr: 'À toi de jouer !', it: 'Adesso prova tu!', de: 'Jetzt bist du dran!', en: "Now it's your turn!", es: '¡Ahora te toca a ti!' },
+    gotIt: { fr: "J'ai compris ! 👍", it: 'Ho capito! 👍', de: 'Verstanden! 👍', en: 'Got it! 👍', es: '¡Entendido! 👍' },
+    tutGame: { fr: 'Touche un jeu pour commencer !', it: 'Tocca un gioco per iniziare!', de: 'Tippe auf ein Spiel, um anzufangen!', en: 'Tap a game to start!', es: '¡Toca un juego para empezar!' },
+    tutAlbum: { fr: 'Ici, tu trouves les autocollants que tu gagnes !', it: 'Qui trovi gli sticker che vinci giocando!', de: 'Hier findest du die Sticker, die du gewinnst!', en: 'Here you find the stickers you win!', es: '¡Aquí encuentras las pegatinas que ganas!' },
+    tutWardrobe: { fr: 'Ici, tu dépenses tes étoiles pour habiller ton ami !', it: 'Qui spendi le stelle per vestire il tuo amico!', de: 'Hier gibst du deine Sterne aus, um deinen Freund anzuziehen!', en: 'Here you spend your stars to dress up your friend!', es: '¡Aquí gastas tus estrellas para vestir a tu amigo!' },
+    minute: { fr: c => `Encore une minute et ${c} va faire dodo !`, it: c => `Ancora un minuto e poi ${c} va a nanna!`, de: c => `Noch eine Minute, dann geht ${c} schlafen!`, en: c => `One more minute and then ${c} goes to sleep!`, es: c => `¡Un minuto más y ${c} se va a dormir!` },
+    sleepTxt: {
+      fr: (c, f) => `${cap(c)} est fatigué${f ? 'e' : ''} et va faire dodo. À demain, ${NAME} !`, it: c => `${cap(c)} è stanco e va a nanna. Ci vediamo domani, ${NAME}!`,
+      de: c => `${cap(c)} ist müde und geht schlafen. Bis morgen, ${NAME}!`, en: c => `${cap(c)} is tired and going to sleep. See you tomorrow, ${NAME}!`,
+      es: c => `${cap(c)} está cansado y se va a dormir. ¡Hasta mañana, ${NAME}!`,
+    },
+    sleepSay: {
+      fr: (c, f) => `${cap(c)} est fatigué${f ? 'e' : ''} et va faire dodo. À demain, ${NAME} ! Bonne nuit !`, it: c => `${cap(c)} è stanco e va a nanna. Ci vediamo domani, ${NAME}! Buonanotte!`,
+      de: c => `${cap(c)} ist müde und geht schlafen. Bis morgen, ${NAME}! Gute Nacht!`, en: c => `${cap(c)} is tired and going to sleep. See you tomorrow, ${NAME}! Good night!`,
+      es: c => `${cap(c)} está cansado y se va a dormir. ¡Hasta mañana, ${NAME}! ¡Buenas noches!`,
+    },
+    bdayTitle: { fr: `Joyeux anniversaire ${NAME} ! 🎉`, it: `Buon compleanno ${NAME}! 🎉`, de: `Alles Gute zum Geburtstag, ${NAME}! 🎉`, en: `Happy birthday, ${NAME}! 🎉`, es: `¡Feliz cumpleaños, ${NAME}! 🎉` },
+    bdayHint: { fr: 'Touche les bougies pour les souffler !', it: 'Tocca le candeline per soffiarle!', de: 'Tippe auf die Kerzen, um sie auszupusten!', en: 'Tap the candles to blow them out!', es: '¡Toca las velas para soplarlas!' },
+    bdaySay: {
+      fr: a => `Joyeux anniversaire ${NAME} ! Aujourd'hui tu as ${a} ans ! Comptons les bougies et soufflons-les toutes !`, it: a => `Buon compleanno ${NAME}! Oggi compi ${a} anni! Contiamo le candeline e soffiamole tutte!`,
+      de: a => `Alles Gute zum Geburtstag, ${NAME}! Heute wirst du ${a}! Zählen wir die Kerzen und pusten wir sie alle aus!`, en: a => `Happy birthday, ${NAME}! Today you are ${a}! Let's count the candles and blow them all out!`,
+      es: a => `¡Feliz cumpleaños, ${NAME}! ¡Hoy cumples ${a} años! ¡Contemos las velas y soplémoslas todas!`,
+    },
+    bdayWish: { fr: a => `Joyeux anniversaire ${NAME} ! Tu as ${a} ans !`, it: a => `Tanti auguri ${NAME}! Oggi hai ${a} anni!`, de: a => `Alles Gute, ${NAME}! Du bist jetzt ${a}!`, en: a => `Happy birthday, ${NAME}! You are ${a}!`, es: a => `¡Feliz cumpleaños, ${NAME}! ¡Tienes ${a} años!` },
+    gift: { fr: 'Un cadeau ! 🎁', it: 'Un regalo! 🎁', de: 'Ein Geschenk! 🎁', en: 'A present! 🎁', es: '¡Un regalo! 🎁' },
+    wardrobe: { fr: `L'armoire de ${NAME}`, it: `L'armadio di ${NAME}`, de: `${NAME}s Kleiderschrank`, en: `${NAME}'s wardrobe`, es: `El armario de ${NAME}` },
+    wardrobeTile: { fr: 'Armoire', it: 'Armadio', de: 'Kleiderschrank', en: 'Wardrobe', es: 'Armario' },
+    wardrobeSay: { fr: 'Choisis des habits pour ton ami !', it: 'Scegli i vestiti per il tuo amico!', de: 'Such Kleider für deinen Freund aus!', en: 'Choose clothes for your friend!', es: '¡Elige ropa para tu amigo!' },
+    buyQ: { fr: "Tu veux l'acheter ?", it: 'Lo vuoi comprare?', de: 'Möchtest du es kaufen?', en: 'Do you want to buy it?', es: '¿Lo quieres comprar?' },
+    bought: { fr: "Youpi ! C'est à toi !", it: 'Evviva! È tuo!', de: 'Juhu! Es gehört dir!', en: "Hooray! It's yours!", es: '¡Bien! ¡Es tuyo!' },
+    missing: {
+      fr: n => (n === 1 ? 'Il te manque une étoile ! Joue pour en gagner.' : `Il te manque ${n} étoiles ! Joue pour en gagner.`),
+      it: n => (n === 1 ? 'Ti manca una stella! Gioca per vincerla.' : `Ti mancano ${n} stelle! Gioca per vincerle.`),
+      de: n => (n === 1 ? 'Dir fehlt noch ein Stern! Spiel, um ihn zu gewinnen.' : `Dir fehlen noch ${n} Sterne! Spiel, um sie zu gewinnen.`),
+      en: n => (n === 1 ? 'You need one more star! Play to win it.' : `You need ${n} more stars! Play to win them.`),
+      es: n => (n === 1 ? '¡Te falta una estrella! Juega para ganarla.' : `¡Te faltan ${n} estrellas! Juega para ganarlas.`),
+    },
+    storyNext: { fr: 'Suite ▶', it: 'Avanti ▶', de: 'Weiter ▶', en: 'Next ▶', es: 'Seguir ▶' },
+    newLevel: { fr: 'Bravo ! Nouveau niveau !', it: 'Brava! Nuovo livello!', de: 'Super! Neues Level!', en: 'Well done! New level!', es: '¡Muy bien! ¡Nuevo nivel!' },
   };
   const PRAISE = {
     fr: ['Bravo !', `Bravo ${NAME} !`, 'Youpi !', 'Super !', 'Génial !', 'Trop bien !', 'Parfait !', 'Bien joué !'],
     it: ['Bravissima!', `Brava ${NAME}!`, 'Evviva!', 'Super!', 'Fantastico!', 'Che brava!', `Grande ${NAME}!`, 'Perfetto!'],
+    de: ['Super!', `Toll, ${NAME}!`, 'Juhu!', 'Prima!', 'Klasse!', 'Sehr gut!', 'Perfekt!', 'Gut gemacht!'],
+    en: ['Well done!', `Great job, ${NAME}!`, 'Hooray!', 'Super!', 'Fantastic!', 'Brilliant!', 'Perfect!', 'Amazing!'],
+    es: ['¡Muy bien!', `¡Bravo, ${NAME}!`, '¡Bien!', '¡Súper!', '¡Fantástico!', '¡Genial!', '¡Perfecto!', '¡Qué bien!'],
   };
-  const RETRY = { fr: ['Essaie encore !', 'Presque ! Réessaie.', 'Encore une fois !'], it: ['Riprova!', 'Quasi! Riprova.', 'Prova ancora!'] };
+  const RETRY = {
+    fr: ['Essaie encore !', 'Presque ! Réessaie.', 'Encore une fois !'], it: ['Riprova!', 'Quasi! Riprova.', 'Prova ancora!'],
+    de: ['Versuch es nochmal!', 'Fast! Nochmal.', 'Noch einmal!'], en: ['Try again!', 'Almost! Try again.', 'Have another go!'],
+    es: ['¡Inténtalo otra vez!', '¡Casi! Otra vez.', '¡Prueba otra vez!'],
+  };
 
-  /* storie della buonanotte: {c} = personaggio di Lena nella scena */
+  /* storie della buonanotte: {c} = personaggio del bambino nella scena */
   const STORIES = [
     [
-      { s: '🌙 🏡 {c}', fr: `Il était une fois, un soir, ${NAME} et son ami qui regardaient le ciel.`, it: `C'era una volta, una sera, ${NAME} e il suo amico che guardavano il cielo.` },
-      { s: '✨ ⭐ 🌷', fr: 'Tout à coup, une petite étoile est tombée dans le jardin !', it: 'A un tratto, una piccola stella è caduta in giardino!' },
-      { s: '⭐ 💧', fr: "L'étoile était triste : elle voulait rentrer chez elle, dans le ciel.", it: 'La stella era triste: voleva tornare a casa, nel cielo.' },
-      { s: '{c} 🎈 ⭐', fr: `${NAME} a eu une idée : un ballon ! L'étoile s'est envolée tout doucement.`, it: `${NAME} ha avuto un'idea: un palloncino! La stella è volata su, piano piano.` },
-      { s: '🌌 ⭐ 💖', fr: `Maintenant, chaque nuit, l'étoile brille rien que pour ${NAME}. Bonne nuit !`, it: `Adesso, ogni notte, la stella brilla solo per ${NAME}. Buonanotte!` },
+      { s: '🌙 🏡 {c}', fr: `Il était une fois, un soir, ${NAME} et son ami qui regardaient le ciel.`, it: `C'era una volta, una sera, ${NAME} e il suo amico che guardavano il cielo.`, de: `Es war einmal an einem Abend: ${NAME} und ihr Freund schauten in den Himmel.`, en: `Once upon a time, one evening, ${NAME} and her friend were looking at the sky.`, es: `Érase una vez, una noche, ${NAME} y su amigo miraban el cielo.` },
+      { s: '✨ ⭐ 🌷', fr: 'Tout à coup, une petite étoile est tombée dans le jardin !', it: 'A un tratto, una piccola stella è caduta in giardino!', de: 'Plötzlich fiel ein kleiner Stern in den Garten!', en: 'Suddenly, a little star fell into the garden!', es: '¡De repente, una estrellita cayó en el jardín!' },
+      { s: '⭐ 💧', fr: "L'étoile était triste : elle voulait rentrer chez elle, dans le ciel.", it: 'La stella era triste: voleva tornare a casa, nel cielo.', de: 'Der Stern war traurig: Er wollte nach Hause, in den Himmel.', en: 'The star was sad: it wanted to go home, up in the sky.', es: 'La estrella estaba triste: quería volver a casa, al cielo.' },
+      { s: '{c} 🎈 ⭐', fr: `${NAME} a eu une idée : un ballon ! L'étoile s'est envolée tout doucement.`, it: `${NAME} ha avuto un'idea: un palloncino! La stella è volata su, piano piano.`, de: `${NAME} hatte eine Idee: ein Luftballon! Der Stern flog ganz langsam nach oben.`, en: `${NAME} had an idea: a balloon! The star floated up, slowly, slowly.`, es: `${NAME} tuvo una idea: ¡un globo! La estrella subió despacito.` },
+      { s: '🌌 ⭐ 💖', fr: `Maintenant, chaque nuit, l'étoile brille rien que pour ${NAME}. Bonne nuit !`, it: `Adesso, ogni notte, la stella brilla solo per ${NAME}. Buonanotte!`, de: `Jetzt leuchtet der Stern jede Nacht nur für ${NAME}. Gute Nacht!`, en: `Now, every night, the star shines just for ${NAME}. Good night!`, es: `Ahora, cada noche, la estrella brilla solo para ${NAME}. ¡Buenas noches!` },
     ],
     [
-      { s: '🌊 🐟', fr: 'Au fond de la mer vivait un petit poisson qui avait peur du noir.', it: 'In fondo al mare viveva un pesciolino che aveva paura del buio.' },
-      { s: '🐟 🌑', fr: 'Chaque soir, il se cachait derrière un gros rocher.', it: 'Ogni sera si nascondeva dietro a un grande scoglio.' },
-      { s: '🐙 💡', fr: 'Un soir, une gentille pieuvre est arrivée avec une lanterne.', it: 'Una sera è arrivata una polpessa gentile con una lanterna.' },
-      { s: '🐟 🐙 🐚', fr: 'Ensemble, ils ont découvert les coquillages qui brillent dans la nuit.', it: 'Insieme hanno scoperto le conchiglie che brillano nella notte.' },
-      { s: '🐟 😴 💤', fr: "Le petit poisson n'avait plus peur. Il s'est endormi en souriant. Bonne nuit !", it: 'Il pesciolino non aveva più paura. Si è addormentato sorridendo. Buonanotte!' },
+      { s: '🌊 🐟', fr: 'Au fond de la mer vivait un petit poisson qui avait peur du noir.', it: 'In fondo al mare viveva un pesciolino che aveva paura del buio.', de: 'Tief im Meer lebte ein kleiner Fisch, der Angst im Dunkeln hatte.', en: 'Deep in the sea lived a little fish who was afraid of the dark.', es: 'En el fondo del mar vivía un pececito que tenía miedo de la oscuridad.' },
+      { s: '🐟 🌑', fr: 'Chaque soir, il se cachait derrière un gros rocher.', it: 'Ogni sera si nascondeva dietro a un grande scoglio.', de: 'Jeden Abend versteckte er sich hinter einem großen Felsen.', en: 'Every evening he hid behind a big rock.', es: 'Cada noche se escondía detrás de una gran roca.' },
+      { s: '🐙 💡', fr: 'Un soir, une gentille pieuvre est arrivée avec une lanterne.', it: 'Una sera è arrivata una polpessa gentile con una lanterna.', de: 'Eines Abends kam ein netter Tintenfisch mit einer Laterne.', en: 'One evening, a kind octopus came with a lantern.', es: 'Una noche llegó un pulpo amable con un farolillo.' },
+      { s: '🐟 🐙 🐚', fr: 'Ensemble, ils ont découvert les coquillages qui brillent dans la nuit.', it: 'Insieme hanno scoperto le conchiglie che brillano nella notte.', de: 'Zusammen entdeckten sie Muscheln, die in der Nacht leuchten.', en: 'Together they found shells that glow in the night.', es: 'Juntos descubrieron conchas que brillan en la noche.' },
+      { s: '🐟 😴 💤', fr: "Le petit poisson n'avait plus peur. Il s'est endormi en souriant. Bonne nuit !", it: 'Il pesciolino non aveva più paura. Si è addormentato sorridendo. Buonanotte!', de: 'Der kleine Fisch hatte keine Angst mehr. Er schlief lächelnd ein. Gute Nacht!', en: 'The little fish was not afraid anymore. He fell asleep smiling. Good night!', es: 'El pececito ya no tenía miedo. Se durmió sonriendo. ¡Buenas noches!' },
     ],
     [
-      { s: '☁️ 🌤️', fr: 'Il était une fois un petit nuage qui voulait dormir.', it: 'C\'era una volta una nuvoletta che voleva dormire.' },
-      { s: '☁️ 🌬️', fr: 'Mais le vent le faisait voler partout : ici, là-bas, et encore plus loin !', it: 'Ma il vento la faceva volare dappertutto: di qua, di là, e ancora più lontano!' },
-      { s: '☁️ 🌙', fr: 'Alors la lune lui a dit : viens, je te garde une place près de moi.', it: 'Allora la luna le ha detto: vieni, ti tengo un posto vicino a me.' },
-      { s: '{c} ☁️ ⭐', fr: `${NAME} et son ami ont fait un bisou au petit nuage.`, it: `${NAME} e il suo amico hanno dato un bacino alla nuvoletta.` },
-      { s: '🌙 ☁️ 💤', fr: 'Et le petit nuage a fait de beaux rêves tout doux. Bonne nuit !', it: 'E la nuvoletta ha fatto sogni belli e morbidi. Buonanotte!' },
+      { s: '☁️ 🌤️', fr: 'Il était une fois un petit nuage qui voulait dormir.', it: 'C\'era una volta una nuvoletta che voleva dormire.', de: 'Es war einmal eine kleine Wolke, die schlafen wollte.', en: 'Once upon a time there was a little cloud who wanted to sleep.', es: 'Érase una vez una nubecita que quería dormir.' },
+      { s: '☁️ 🌬️', fr: 'Mais le vent le faisait voler partout : ici, là-bas, et encore plus loin !', it: 'Ma il vento la faceva volare dappertutto: di qua, di là, e ancora più lontano!', de: 'Aber der Wind blies sie überall hin: hierhin, dorthin und noch weiter!', en: 'But the wind blew it everywhere: here, there and even further!', es: '¡Pero el viento la llevaba a todas partes: aquí, allá y todavía más lejos!' },
+      { s: '☁️ 🌙', fr: 'Alors la lune lui a dit : viens, je te garde une place près de moi.', it: 'Allora la luna le ha detto: vieni, ti tengo un posto vicino a me.', de: 'Da sagte der Mond: Komm, ich halte dir einen Platz neben mir frei.', en: 'So the moon said: come, I saved you a place next to me.', es: 'Entonces la luna le dijo: ven, te guardo un sitio a mi lado.' },
+      { s: '{c} ☁️ ⭐', fr: `${NAME} et son ami ont fait un bisou au petit nuage.`, it: `${NAME} e il suo amico hanno dato un bacino alla nuvoletta.`, de: `${NAME} und ihr Freund gaben der kleinen Wolke ein Küsschen.`, en: `${NAME} and her friend gave the little cloud a kiss.`, es: `${NAME} y su amigo le dieron un besito a la nubecita.` },
+      { s: '🌙 ☁️ 💤', fr: 'Et le petit nuage a fait de beaux rêves tout doux. Bonne nuit !', it: 'E la nuvoletta ha fatto sogni belli e morbidi. Buonanotte!', de: 'Und die kleine Wolke hatte schöne, weiche Träume. Gute Nacht!', en: 'And the little cloud had lovely, soft dreams. Good night!', es: 'Y la nubecita tuvo sueños bonitos y suaves. ¡Buenas noches!' },
     ],
   ];
 
@@ -174,13 +226,22 @@ const App = (() => {
 
   /* ---------- lingue ---------- */
   /* tr({fr, it}) → testo nella lingua corrente; t('chiave', ...args) → testo dell'app */
-  const tr = o => (o == null ? '' : typeof o === 'string' ? o : (o[lang] ?? o.it));
+  const tr = o => (o == null ? '' : typeof o === 'string' ? o : (o[lang] ?? o.en ?? o.it));
   function t(key, ...args) { const v = tr(T[key]); return typeof v === 'function' ? v(...args) : v; }
-  const langMode = () => state.langMode || 'alt';
-  /* nuovo turno: in alternanza cambia lingua */
+  /* coppia di lingue del bambino (default francese + italiano) */
+  /* lingue del bambino: 1 o 2 (default francese + italiano) */
+  const pair = () => (state.langs && state.langs.length ? state.langs : ['fr', 'it']);
+  const langMode = () => {
+    if (pair().length === 1) return pair()[0];
+    const m = state.langMode || 'alt';
+    return m === 'alt' || pair().includes(m) ? m : 'alt';
+  };
+  /* nuovo turno: in alternanza cambia lingua dentro la coppia */
   function nextLang() {
     const m = langMode();
-    lang = m === 'alt' ? (lang === 'fr' ? 'it' : 'fr') : m;
+    const [a, b] = pair();
+    lang = m === 'alt' ? (lang === a ? b : a) : m;
+    if (!lang) lang = a;
     document.querySelectorAll('.flag-pill').forEach(p => {
       p.textContent = FLAG[lang];
       p.classList.remove('flip'); void p.offsetWidth; p.classList.add('flip');
@@ -192,7 +253,7 @@ const App = (() => {
   const defaults = () => ({
     char: null, color: '#ff6fa8', stickers: [], levels: {}, timerMin: 20, pin: null,
     usage: { day: '', sec: 0, extra: 0, warned: false }, bdayShown: 0, hopBest: 0, diploma: false, tut: {},
-    langMode: 'alt', stars: 0, owned: [], wear: {}, story: 0, hist: {}, levelLog: [],
+    langMode: 'alt', langs: null, stars: 0, owned: [], wear: {}, story: 0, hist: {}, levelLog: [],
     stats: { letters: {}, numbers: {}, langs: { fr: [0, 0], it: [0, 0] }, greens: 0, reds: 0, zebra: 0, days: {}, games: {} },
   });
   function load() {
@@ -216,7 +277,7 @@ const App = (() => {
       const e = s[cat][key] = s[cat][key] || [0, 0];
       e[ok ? 0 : 1]++;
     }
-    if (skill !== 'strada') s.langs[lang][ok ? 0 : 1]++;
+    if (skill !== 'strada') (s.langs[lang] = s.langs[lang] || [0, 0])[ok ? 0 : 1]++;
     const day = state.hist[today()] = state.hist[today()] || {};
     const h0 = day[skill] = day[skill] || [0, 0];
     h0[ok ? 0 : 1]++;
@@ -338,8 +399,33 @@ const App = (() => {
     for (const ch of (l === 'it' ? '' : l + ' ') + vkey(text)) { x ^= ch.codePointAt(0); x = Math.imul(x, 0x01000193) >>> 0; }
     return x.toString(16).padStart(8, '0');
   }
+  /* indice delle voci solo per le 2 lingue scelte */
   async function loadVoiceIndex() {
-    try { clips.have = new Set(await (await fetch('voice/index.json')).json()); } catch (e) { clips.have = new Set(); }
+    const have = new Set();
+    await Promise.all(pair().map(async l => {
+      try { (await (await fetch(`voice/index-${l}.json`)).json()).forEach(x => have.add(x)); } catch (e) { /* offline e mai scaricato */ }
+    }));
+    clips.have = have;
+  }
+  /* scarica in sottofondo le voci delle lingue scelte (restano offline nella cache delle voci) */
+  const VOICE_CACHE = 'lena-voice-1';
+  const voiceProgress = { done: 0, total: 0 };
+  let prefetching = false;
+  async function prefetchVoices() {
+    if (prefetching || !('caches' in window) || location.protocol === 'file:') return;
+    prefetching = true;
+    try {
+      const c = await caches.open(VOICE_CACHE);
+      const list = [...clips.have];
+      voiceProgress.total = list.length; voiceProgress.done = 0;
+      for (let i = 0; i < list.length; i += 8) {
+        await Promise.all(list.slice(i, i + 8).map(async hsh => {
+          const u = `voice/${hsh}.mp3`;
+          if (!(await c.match(u))) { try { await c.add(u); } catch (e) { return; } }
+          voiceProgress.done++;
+        }));
+      }
+    } catch (e) { /* cache non disponibile: le voci si scaricano quando servono */ } finally { prefetching = false; }
   }
   function pickVoice() {
     if (!('speechSynthesis' in window)) return;
@@ -376,7 +462,7 @@ const App = (() => {
     if (!('speechSynthesis' in window) || my !== gen) return Promise.resolve();
     return new Promise(res => {
       const u = new SpeechSynthesisUtterance(text);
-      u.lang = l === 'fr' ? 'fr-FR' : 'it-IT';
+      u.lang = TTS_CODE[l];
       if (voices[l]) u.voice = voices[l];
       u.rate = opts.rate || .95;
       u.pitch = 1.05;
@@ -526,8 +612,8 @@ const App = (() => {
     show('splash', 'splash', s => {
       s.append(
         h('div', { class: 'hero' }, state.char ? avatar(120) : '🌈'),
-        h('h1', {}, `${T.hello.fr}`), h('div', { class: 'sub' }, T.hello.it),
-        h('button', { class: 'big-btn', onclick: start }, `${FLAG.fr} ${FLAG.it} ▶`),
+        h('h1', {}, T.hello[pair()[0]]), pair()[1] ? h('div', { class: 'sub' }, T.hello[pair()[1]]) : null,
+        h('button', { class: 'big-btn', onclick: start }, `${pair().map(l => FLAG[l]).join(' ')} ▶`),
         h('div', { class: 'ver' }, `versione ${VERSION}`),
         ...[...Array(14)].map(() => h('span', {
           class: 'spark',
@@ -541,7 +627,8 @@ const App = (() => {
     unlockAudio();
     pickVoice();
     started = true;
-    lang = langMode() === 'alt' ? (Math.random() < .5 ? 'fr' : 'it') : langMode();
+    lang = langMode() === 'alt' ? pick(pair()) : langMode();
+    if (!state.char && !state.langs) return langSetup();
     if (isLocked()) return sleepScreen();
     const greet = (media.voices.ciao || []).length ? playClip('ciao') : say(t('greet'));
     if (isBirthdayToday() && state.bdayShown !== new Date().getFullYear()) {
@@ -570,16 +657,16 @@ const App = (() => {
         gear,
       ));
       const tiles = h('div', { class: 'tiles' });
-      games.forEach((g, i) => {
+      games.filter(g => !(g.needs2 && pair().length < 2)).forEach((g, i) => {
         tiles.append(h('button', {
           class: `tile t${i + 1}`,
           onclick: () => { sfx.pop(); say(tr(g.title)); startGame(g); },
-        }, h('div', { class: 'ico' }, g.icon), h('div', { class: 'lbl' }, g.title.fr), h('div', { class: 'lbl2' }, g.title.it)));
+        }, h('div', { class: 'ico' }, g.icon), h('div', { class: 'lbl' }, g.title[pair()[0]]), pair()[1] ? h('div', { class: 'lbl2' }, g.title[pair()[1]]) : null));
       });
       const albumTile = h('button', { class: 'tile talbum', onclick: () => { sfx.pop(); album(); } },
         h('div', { class: 'ico' }, '📒'), h('div', { class: 'lbl' }, `Album ${state.stickers.length}/${STICKERS.length}`));
       const wardTile = h('button', { class: 'tile tward', onclick: () => { sfx.pop(); wardrobe(); } },
-        h('div', { class: 'ico' }, '👗'), h('div', { class: 'lbl' }, T.wardrobeTile.fr), h('div', { class: 'lbl2' }, T.wardrobeTile.it));
+        h('div', { class: 'ico' }, '👗'), h('div', { class: 'lbl' }, T.wardrobeTile[pair()[0]]), pair()[1] ? h('div', { class: 'lbl2' }, T.wardrobeTile[pair()[1]]) : null);
       tiles.append(albumTile, wardTile);
       s.append(tiles);
       const tm = state.tut.home ? 0 : setTimeout(() => screenName === 'home' && intro('home', [
@@ -598,7 +685,7 @@ const App = (() => {
       const charBtns = CHARS.map(c => h('button', {
         class: 'char-btn' + (c.id === selC ? ' sel' : ''),
         onclick: () => {
-          selC = c.id; sfx.pop(); say(tr(c.name) + (lang === 'fr' ? ' !' : '!'));
+          selC = c.id; sfx.pop(); say(excl(tr(c.name)));
           charBtns.forEach((b, i) => b.classList.toggle('sel', CHARS[i].id === selC));
           go.style.visibility = 'visible';
         },
@@ -606,7 +693,7 @@ const App = (() => {
       const sw = COLORS.map(c => h('button', {
         class: 'swatch' + (c.c === selCol ? ' sel' : ''), style: `background:${c.c}`, 'aria-label': c.n.it,
         onclick: () => {
-          selCol = c.c; sfx.tap(); say(tr(c.n) + (lang === 'fr' ? ' !' : '!')); applyTheme(c.c);
+          selCol = c.c; sfx.tap(); say(excl(tr(c.n))); applyTheme(c.c);
           sw.forEach((b, i) => b.classList.toggle('sel', COLORS[i].c === selCol));
         },
       }));
@@ -645,7 +732,7 @@ const App = (() => {
           else say(t('albumLocked'));
         },
       }, st))));
-      if (done) s.append(h('button', { class: 'big-btn', style: 'margin:8px auto 0', onclick: diploma }, '🏅 ' + t('diplomaOf').replace(/ de$| di$/, '')));
+      if (done) s.append(h('button', { class: 'big-btn', style: 'margin:8px auto 0', onclick: diploma }, '🏅 ' + t('diplomaBtn')));
       say(done ? t('albumDone') : t('albumCount', state.stickers.length));
     });
   }
@@ -677,7 +764,7 @@ const App = (() => {
         if (state.owned.includes(it.id)) {
           if (state.wear[it.slot] === it.id) delete state.wear[it.slot]; else state.wear[it.slot] = it.id;
           save(); sfx.pop(); glitter(r.left + r.width / 2, r.top + r.height / 2, 12);
-          say(tr(it.n) + (lang === 'fr' ? ' !' : '!'));
+          say(excl(tr(it.n)));
           draw();
           return;
         }
@@ -686,7 +773,7 @@ const App = (() => {
           say(t('missing', it.price - state.stars));
           return;
         }
-        say(`${tr(it.n)}${lang === 'fr' ? ' !' : '!'} ${t('buyQ')}`);
+        say(`${excl(tr(it.n))} ${t('buyQ')}`);
         const close = modal([h('div', { class: 'big' }, it.e), h('h2', {}, `⭐ ${it.price}`), h('div', { class: 'row' },
           h('button', {
             class: 'big-btn', style: 'background:#4cd06b;box-shadow:0 8px 0 #2f9a4a', onclick: () => {
@@ -737,7 +824,7 @@ const App = (() => {
         h('h1', {}, t('diplomaOf')),
         h('div', { class: 'name' }, `Super ${NAME}`),
         h('p', {}, t('diplomaTxt')),
-        h('p', { style: 'font-size:15px;opacity:.7' }, d.toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'it-IT', { day: 'numeric', month: 'long', year: 'numeric' })),
+        h('p', { style: 'font-size:15px;opacity:.7' }, d.toLocaleDateString(LOCALE[lang], { day: 'numeric', month: 'long', year: 'numeric' })),
         h('button', { class: 'big-btn', onclick: () => { close(); res(); } }, t('yay')),
       ));
       say(t('diplomaSay'));
@@ -859,7 +946,7 @@ const App = (() => {
           onclick: async () => {
             if (c.classList.contains('out')) return;
             c.classList.add('out'); blown++; sfx.puff();
-            say(numWord(blown, true) + (lang === 'fr' ? ' !' : '!'));
+            say(excl(numWord(blown, true)));
             if (blown === age) {
               await wait(900);
               const dur = birthdaySong();
@@ -944,6 +1031,59 @@ const App = (() => {
     }, forgot);
   }
 
+  /* scelta delle 2 lingue: chip per le 5 lingue, la terza scelta sostituisce la più vecchia */
+  function langPicker(onChange) {
+    const wrap = h('div', { class: 'lang-pick' });
+    const draw = () => {
+      wrap.innerHTML = '';
+      LANGS.forEach(l => wrap.append(h('button', {
+        class: 'lang-chip' + ((state.langs || []).includes(l) ? ' sel' : ''),
+        onclick: () => {
+          let cur = (state.langs || []).filter(x => x !== l);
+          if (cur.length === (state.langs || []).length) cur = cur.concat(l).slice(-2); // aggiunta
+          state.langs = cur.length ? cur : null;
+          save(); draw(); onChange && onChange();
+        },
+      }, h('span', { class: 'fl' }, FLAG[l]), h('span', {}, LANG_NAME[l]))));
+    };
+    draw();
+    return wrap;
+  }
+  async function afterLangChange() {
+    const [a] = pair();
+    lang = a;
+    await loadVoiceIndex();
+    prefetchVoices();
+  }
+  function langSection(section, opts, render) {
+    if (!state.langs) { state.langs = pair().slice(); save(); }
+    const [a, b] = pair();
+    const hint = h('p', { class: 'hint' }, `Voci scaricate sul telefono: ${voiceProgress.done}/${voiceProgress.total || '…'}`);
+    const upd = setInterval(() => { if (!hint.isConnected) return clearInterval(upd); hint.textContent = `Voci scaricate sul telefono: ${voiceProgress.done}/${voiceProgress.total || '…'}` + (prefetching ? ' (in corso)' : ''); }, 1000);
+    return section('🗣️ Lingue del bambino', 'Scegli 1 o 2 lingue (tocca per selezionare). Il telefono scarica solo le voci di quelle scelte.',
+      langPicker(() => { if (state.langs && state.langs.length) { state.langMode = 'alt'; afterLangChange().then(render); } }),
+      b ? h('p', { class: 'hint', style: 'margin-top:10px' }, 'Come usarle nei giochi:') : null,
+      b ? opts([['alt', `${FLAG[a]}${FLAG[b]} Alternanza`], [a, `${FLAG[a]} Solo ${LANG_IT[a].toLowerCase()}`], [b, `${FLAG[b]} Solo ${LANG_IT[b].toLowerCase()}`]], langMode(), v => { state.langMode = v; save(); })
+        : h('p', { class: 'hint' }, `Solo ${LANG_IT[a].toLowerCase()}: il gioco «Le due lingue» è nascosto.`),
+      hint);
+  }
+  /* primo avvio: il genitore sceglie le lingue del bambino */
+  function langSetup() {
+    show('langs', 'setup langs', s => {
+      const ok = h('button', {
+        class: 'big-btn go', style: 'visibility:hidden',
+        onclick: async () => { sfx.win(); await afterLangChange(); setup(true); },
+      }, 'OK ✓');
+      const check = () => { ok.style.visibility = state.langs && state.langs.length ? 'visible' : 'hidden'; };
+      s.append(
+        h('h2', {}, '🗣️'),
+        h('h2', {}, 'Lingue del bambino · Languages'),
+        h('p', { class: 'hint', style: 'text-align:center' }, 'Scegli 1 o 2 lingue che parla · Choose 1 or 2 languages your child speaks'),
+        langPicker(() => { sfx.tap(); check(); }),
+        ok);
+    });
+  }
+
   /* livelli e progressi: per ogni abilità livello, % giuste questa settimana vs precedente, ultime 8 settimane */
   function progressSection(section) {
     const dayKey = ms => { const d = new Date(ms); return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`; };
@@ -1014,7 +1154,7 @@ const App = (() => {
       h('b', {}, 'Numeri che conosce bene'), chips(N.good, 'ok'),
       h('b', {}, 'Numeri da ripassare'), chips(N.weak, 'ko'),
       h('b', {}, 'Lingue'),
-      h('p', { class: 'hint' }, `🇫🇷 Francese: ${pct(st.langs.fr)}`), h('p', { class: 'hint' }, `🇮🇹 Italiano: ${pct(st.langs.it)}`),
+      pair().map(l => h('p', { class: 'hint' }, `${FLAG[l]} ${LANG_IT[l]}: ${pct(st.langs[l] || [0, 0])}`)),
       h('b', {}, 'Educazione stradale (Lena Salta)'),
       h('p', { class: 'hint' }, `Attraversamenti col verde: ${st.greens} · sulle strisce: ${st.zebra} · fermate col rosso o col treno: ${st.reds}`),
       h('b', {}, 'Tempo di gioco, ultimi 7 giorni'),
@@ -1053,8 +1193,7 @@ const App = (() => {
             h('button', { class: 'act ghost', onclick: () => { u.sec = 0; u.extra = 0; u.warned = false; save(); render(); } }, 'Azzera oggi'),
             h('button', { class: 'act ghost', onclick: story }, 'Prova la storia'))));
 
-        scroll.append(section('🗣️ Lingua dei giochi', 'Alternanza: un turno in francese e uno in italiano.',
-          opts([['alt', '🇫🇷🇮🇹 Alternanza'], ['fr', '🇫🇷 Solo francese'], ['it', '🇮🇹 Solo italiano']], langMode(), v => { state.langMode = v; save(); })));
+        scroll.append(langSection(section, opts, render));
 
         scroll.append(progressSection(section));
         scroll.append(reportSection(section));
@@ -1277,17 +1416,16 @@ const App = (() => {
     const saved = lang;
     for (const l of LANGS) {
       lang = l;
-      const bang = l === 'fr' ? ' !' : '!';
       const add = (...xs) => xs.forEach(x => out.push([l, x]));
       add(...PRAISE[l], ...RETRY[l]);
       ['greet', 'forDad', 'setupSay', 'albumDone', 'albumLocked', 'newStickerSay', 'diplomaSay', 'yourTurn',
         'tutGame', 'tutAlbum', 'tutWardrobe', 'wardrobeSay', 'bought', 'newLevel'].forEach(k => add(t(k)));
-      CHARS.forEach(c => add(tr(c.name) + bang, t('hiChar', tr(c.name)), t('minute', tr(c.the)), t('sleepSay', tr(c.the), tr(c.fem))));
-      COLORS.forEach(c => add(tr(c.n) + bang));
+      CHARS.forEach(c => add(excl(tr(c.name)), t('hiChar', tr(c.name)), t('minute', tr(c.the)), t('sleepSay', tr(c.the), tr(c.fem))));
+      COLORS.forEach(c => add(excl(tr(c.n))));
       for (let n = 0; n < STICKERS.length; n++) add(t('albumCount', n));
-      for (let n = 1; n <= 10; n++) add(numWord(n, true) + bang);
+      for (let n = 1; n <= 10; n++) add(excl(numWord(n, true)));
       for (let a = 1; a <= 10; a++) add(t('bdayWish', a), t('bdaySay', a));
-      ITEMS.forEach(it => add(tr(it.n) + bang, `${tr(it.n)}${bang} ${t('buyQ')}`));
+      ITEMS.forEach(it => add(excl(tr(it.n)), `${excl(tr(it.n))} ${t('buyQ')}`));
       for (let n = 1; n <= 30; n++) add(t('missing', n));
       STORIES.flat().forEach(p => add(p[l]));
       games.forEach(g => { add(g.title[l]); if (g.phrases) add(...g.phrases(l)); });
@@ -1315,6 +1453,7 @@ const App = (() => {
     }
     document.addEventListener('pointerdown', e => { if (e.isPrimary !== false) glitter(e.clientX, e.clientY); }, { passive: true });
     await Promise.all([DB.open().then(reloadMedia), loadVoiceIndex()]);
+    setTimeout(prefetchVoices, 4000);
     setInterval(tick, 1000);
     document.addEventListener('visibilitychange', () => { if (document.hidden) { stopVoice(); save(); } });
     document.addEventListener('gesturestart', e => e.preventDefault());
@@ -1322,7 +1461,7 @@ const App = (() => {
   }
 
   return {
-    NAME, CHARS, NUM, FLAG, boot, h, say, stopVoice, sfx, praise, retry, reward, confetti, floatAt,
+    NAME, CHARS, NUM, FLAG, LANGS, LANG_NAME, pair, excl, boot, h, say, stopVoice, sfx, praise, retry, reward, confetti, floatAt,
     rint, pick, shuffle, wait, level, setLevel, char, registerGame, home, media,
     tutorial, intro, phrases, vhash, modal, saveDrawing, glitter, avatar,
     tr, t, nextLang, numWord, track, count, addStars, levelUp,

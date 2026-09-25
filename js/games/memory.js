@@ -2,20 +2,20 @@
 (() => {
   const { h, say, sfx, shuffle, wait } = App;
   const ANIMALS = [
-    { e: '🐮', it: ['Mucca', 'Muuu!'], fr: ['Vache', 'Meuh !'] },
-    { e: '🐱', it: ['Gatto', 'Miao!'], fr: ['Chat', 'Miaou !'] },
-    { e: '🐶', it: ['Cane', 'Bau bau!'], fr: ['Chien', 'Ouaf ouaf !'] },
-    { e: '🐑', it: ['Pecora', 'Beee!'], fr: ['Mouton', 'Bêê !'] },
-    { e: '🐷', it: ['Maiale', 'Oink oink!'], fr: ['Cochon', 'Groin groin !'] },
-    { e: '🦆', it: ['Anatra', 'Qua qua!'], fr: ['Canard', 'Coin coin !'] },
-    { e: '🐓', it: ['Gallo', 'Chicchirichì!'], fr: ['Coq', 'Cocorico !'] },
-    { e: '🦁', it: ['Leone', 'Roaar!'], fr: ['Lion', 'Roaar !'] },
-    { e: '🐴', it: ['Cavallo', 'Iiiiih!'], fr: ['Cheval', 'Hiii !'] },
-    { e: '🐸', it: ['Rana', 'Cra cra!'], fr: ['Grenouille', 'Croâ croâ !'] },
-    { e: '🐝', it: ['Ape', 'Bzzz!'], fr: ['Abeille', 'Bzzz !'] },
-    { e: '🦉', it: ['Gufo', 'Uh uh!'], fr: ['Hibou', 'Hou hou !'] },
-    { e: '🐘', it: ['Elefante', 'Pruuu!'], fr: ['Éléphant', 'Pouuu !'] },
-    { e: '🐭', it: ['Topo', 'Squit squit!'], fr: ['Souris', 'Couic couic !'] },
+    { e: '🐮', it: ['Mucca', 'Muuu!'], fr: ['Vache', 'Meuh !'], de: ['Kuh', 'Muh!'], en: ['Cow', 'Moo!'], es: ['Vaca', '¡Muu!'] },
+    { e: '🐱', it: ['Gatto', 'Miao!'], fr: ['Chat', 'Miaou !'], de: ['Katze', 'Miau!'], en: ['Cat', 'Meow!'], es: ['Gato', '¡Miau!'] },
+    { e: '🐶', it: ['Cane', 'Bau bau!'], fr: ['Chien', 'Ouaf ouaf !'], de: ['Hund', 'Wau wau!'], en: ['Dog', 'Woof woof!'], es: ['Perro', '¡Guau guau!'] },
+    { e: '🐑', it: ['Pecora', 'Beee!'], fr: ['Mouton', 'Bêê !'], de: ['Schaf', 'Mäh!'], en: ['Sheep', 'Baa!'], es: ['Oveja', '¡Bee!'] },
+    { e: '🐷', it: ['Maiale', 'Oink oink!'], fr: ['Cochon', 'Groin groin !'], de: ['Schwein', 'Oink oink!'], en: ['Pig', 'Oink oink!'], es: ['Cerdo', '¡Oinc oinc!'] },
+    { e: '🦆', it: ['Anatra', 'Qua qua!'], fr: ['Canard', 'Coin coin !'], de: ['Ente', 'Quak quak!'], en: ['Duck', 'Quack quack!'], es: ['Pato', '¡Cuac cuac!'] },
+    { e: '🐓', it: ['Gallo', 'Chicchirichì!'], fr: ['Coq', 'Cocorico !'], de: ['Hahn', 'Kikeriki!'], en: ['Rooster', 'Cock-a-doodle-doo!'], es: ['Gallo', '¡Quiquiriquí!'] },
+    { e: '🦁', it: ['Leone', 'Roaar!'], fr: ['Lion', 'Roaar !'], de: ['Löwe', 'Roaar!'], en: ['Lion', 'Roar!'], es: ['León', '¡Grrr!'] },
+    { e: '🐴', it: ['Cavallo', 'Iiiiih!'], fr: ['Cheval', 'Hiii !'], de: ['Pferd', 'Wiehern!'], en: ['Horse', 'Neigh!'], es: ['Caballo', '¡Iiih!'] },
+    { e: '🐸', it: ['Rana', 'Cra cra!'], fr: ['Grenouille', 'Croâ croâ !'], de: ['Frosch', 'Quak!'], en: ['Frog', 'Ribbit!'], es: ['Rana', '¡Croac!'] },
+    { e: '🐝', it: ['Ape', 'Bzzz!'], fr: ['Abeille', 'Bzzz !'], de: ['Biene', 'Summ summ!'], en: ['Bee', 'Buzz!'], es: ['Abeja', '¡Bzzz!'] },
+    { e: '🦉', it: ['Gufo', 'Uh uh!'], fr: ['Hibou', 'Hou hou !'], de: ['Eule', 'Huhu!'], en: ['Owl', 'Hoo hoo!'], es: ['Búho', '¡Uh uh!'] },
+    { e: '🐘', it: ['Elefante', 'Pruuu!'], fr: ['Éléphant', 'Pouuu !'], de: ['Elefant', 'Törööö!'], en: ['Elephant', 'Toot!'], es: ['Elefante', '¡Pruuu!'] },
+    { e: '🐭', it: ['Topo', 'Squit squit!'], fr: ['Souris', 'Couic couic !'], de: ['Maus', 'Piep piep!'], en: ['Mouse', 'Squeak squeak!'], es: ['Ratón', '¡Iic iic!'] },
   ];
   const PAIRS = [3, 3, 4, 6, 8];
   const COLS = { 3: 2, 4: 2, 6: 3, 8: 4 };
@@ -24,12 +24,18 @@
       which: 'Vuoi giocare con gli animali o con la famiglia?', animals: 'Animali', family: 'Famiglia' },
     fr: { tut: ['Touche une carte pour la retourner.', 'Puis cherche la carte pareille : si elles sont pareilles, elles restent retournées !', 'Retourne les cartes et trouve les paires !'],
       which: 'Tu veux jouer avec les animaux ou avec la famille ?', animals: 'Animaux', family: 'Famille' },
+    de: { tut: ['Tippe auf eine Karte, um sie umzudrehen.', 'Dann such die gleiche Karte: Wenn sie gleich sind, bleiben sie offen!', 'Dreh die Karten um und finde die Paare!'],
+      which: 'Möchtest du mit den Tieren oder mit der Familie spielen?', animals: 'Tiere', family: 'Familie' },
+    en: { tut: ['Tap a card to turn it over.', 'Then look for the matching card: if they match, they stay face up!', 'Turn over the cards and find the pairs!'],
+      which: 'Do you want to play with the animals or with the family?', animals: 'Animals', family: 'Family' },
+    es: { tut: ['Toca una carta para darle la vuelta.', 'Luego busca la carta igual: ¡si son iguales, se quedan boca arriba!', '¡Da la vuelta a las cartas y encuentra las parejas!'],
+      which: '¿Quieres jugar con los animales o con la familia?', animals: 'Animales', family: 'Familia' },
   };
   const tx = () => TX[App.lang];
-  const speakOf = (a, l) => `${a[l][0]}${l === 'fr' ? ' !' : '!'} ${a[l][1]}`;
+  const speakOf = (a, l) => `${App.excl(a[l][0], l)} ${a[l][1]}`;
 
   App.registerGame({
-    id: 'memory', title: { fr: 'Memory des animaux', it: 'Memory degli Animali' }, short: 'Memory', icon: '🃏',
+    id: 'memory', title: { fr: 'Memory des animaux', it: 'Memory degli Animali', de: 'Tier-Memory', en: 'Animal memory', es: 'Memoria de animales' }, short: 'Memory', icon: '🃏',
     phrases: l => [...TX[l].tut, TX[l].which, ...ANIMALS.map(a => speakOf(a, l))],
     start({ stage, addPill, setHelp }) {
       let alive = true;
@@ -67,7 +73,7 @@
         if (deck === 'famiglia') {
           const photos = shuffle(App.media.photos);
           pairs = Math.min(pairs, photos.length);
-          items = photos.slice(0, pairs).map(p => ({ key: p.id, img: p.url, n: p.name, speak: p.name ? p.name + (l === 'fr' ? ' !' : '!') : '' }));
+          items = photos.slice(0, pairs).map(p => ({ key: p.id, img: p.url, n: p.name, speak: p.name ? App.excl(p.name, l) : '' }));
         } else {
           items = shuffle(ANIMALS).slice(0, pairs).map(a => ({ key: a.e, e: a.e, n: a[l][0], speak: speakOf(a, l) }));
         }

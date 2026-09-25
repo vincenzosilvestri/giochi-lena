@@ -2,22 +2,24 @@
 (() => {
   const { h, say, sfx, rint, pick, shuffle, wait } = App;
   /* s/p = singolare/plurale, f = femminile (per lingua) */
+  /* s/p = singolare/plurale, f = femminile, g = genere tedesco (m/f/n) */
   const THINGS = [
-    { e: '🍎', it: { s: 'mela', p: 'mele', f: 1 }, fr: { s: 'pomme', p: 'pommes', f: 1 } },
-    { e: '🍓', it: { s: 'fragola', p: 'fragole', f: 1 }, fr: { s: 'fraise', p: 'fraises', f: 1 } },
-    { e: '⭐', it: { s: 'stella', p: 'stelle', f: 1 }, fr: { s: 'étoile', p: 'étoiles', f: 1 } },
-    { e: '🐟', it: { s: 'pesce', p: 'pesci', f: 0 }, fr: { s: 'poisson', p: 'poissons', f: 0 } },
-    { e: '🎈', it: { s: 'palloncino', p: 'palloncini', f: 0 }, fr: { s: 'ballon', p: 'ballons', f: 0 } },
-    { e: '🦋', it: { s: 'farfalla', p: 'farfalle', f: 1 }, fr: { s: 'papillon', p: 'papillons', f: 0 } },
-    { e: '🌸', it: { s: 'fiore', p: 'fiori', f: 0 }, fr: { s: 'fleur', p: 'fleurs', f: 1 } },
-    { e: '🍪', it: { s: 'biscotto', p: 'biscotti', f: 0 }, fr: { s: 'biscuit', p: 'biscuits', f: 0 } },
-    { e: '🐞', it: { s: 'coccinella', p: 'coccinelle', f: 1 }, fr: { s: 'coccinelle', p: 'coccinelles', f: 1 } },
-    { e: '🚗', it: { s: 'macchinina', p: 'macchinine', f: 1 }, fr: { s: 'voiture', p: 'voitures', f: 1 } },
-    { e: '🐥', it: { s: 'pulcino', p: 'pulcini', f: 0 }, fr: { s: 'poussin', p: 'poussins', f: 0 } },
-    { e: '🍌', it: { s: 'banana', p: 'banane', f: 1 }, fr: { s: 'banane', p: 'bananes', f: 1 } },
+    { e: '🍎', it: { s: 'mela', p: 'mele', f: 1 }, fr: { s: 'pomme', p: 'pommes', f: 1 }, de: { s: 'Apfel', p: 'Äpfel', g: 'm' }, en: { s: 'apple', p: 'apples' }, es: { s: 'manzana', p: 'manzanas', f: 1 } },
+    { e: '🍓', it: { s: 'fragola', p: 'fragole', f: 1 }, fr: { s: 'fraise', p: 'fraises', f: 1 }, de: { s: 'Erdbeere', p: 'Erdbeeren', g: 'f' }, en: { s: 'strawberry', p: 'strawberries' }, es: { s: 'fresa', p: 'fresas', f: 1 } },
+    { e: '⭐', it: { s: 'stella', p: 'stelle', f: 1 }, fr: { s: 'étoile', p: 'étoiles', f: 1 }, de: { s: 'Stern', p: 'Sterne', g: 'm' }, en: { s: 'star', p: 'stars' }, es: { s: 'estrella', p: 'estrellas', f: 1 } },
+    { e: '🐟', it: { s: 'pesce', p: 'pesci', f: 0 }, fr: { s: 'poisson', p: 'poissons', f: 0 }, de: { s: 'Fisch', p: 'Fische', g: 'm' }, en: { s: 'fish', p: 'fish' }, es: { s: 'pez', p: 'peces', f: 0 } },
+    { e: '🎈', it: { s: 'palloncino', p: 'palloncini', f: 0 }, fr: { s: 'ballon', p: 'ballons', f: 0 }, de: { s: 'Luftballon', p: 'Luftballons', g: 'm' }, en: { s: 'balloon', p: 'balloons' }, es: { s: 'globo', p: 'globos', f: 0 } },
+    { e: '🦋', it: { s: 'farfalla', p: 'farfalle', f: 1 }, fr: { s: 'papillon', p: 'papillons', f: 0 }, de: { s: 'Schmetterling', p: 'Schmetterlinge', g: 'm' }, en: { s: 'butterfly', p: 'butterflies' }, es: { s: 'mariposa', p: 'mariposas', f: 1 } },
+    { e: '🌸', it: { s: 'fiore', p: 'fiori', f: 0 }, fr: { s: 'fleur', p: 'fleurs', f: 1 }, de: { s: 'Blume', p: 'Blumen', g: 'f' }, en: { s: 'flower', p: 'flowers' }, es: { s: 'flor', p: 'flores', f: 1 } },
+    { e: '🍪', it: { s: 'biscotto', p: 'biscotti', f: 0 }, fr: { s: 'biscuit', p: 'biscuits', f: 0 }, de: { s: 'Keks', p: 'Kekse', g: 'm' }, en: { s: 'biscuit', p: 'biscuits' }, es: { s: 'galleta', p: 'galletas', f: 1 } },
+    { e: '🐞', it: { s: 'coccinella', p: 'coccinelle', f: 1 }, fr: { s: 'coccinelle', p: 'coccinelles', f: 1 }, de: { s: 'Marienkäfer', p: 'Marienkäfer', g: 'm' }, en: { s: 'ladybird', p: 'ladybirds' }, es: { s: 'mariquita', p: 'mariquitas', f: 1 } },
+    { e: '🚗', it: { s: 'macchinina', p: 'macchinine', f: 1 }, fr: { s: 'voiture', p: 'voitures', f: 1 }, de: { s: 'Auto', p: 'Autos', g: 'n' }, en: { s: 'car', p: 'cars' }, es: { s: 'coche', p: 'coches', f: 0 } },
+    { e: '🐥', it: { s: 'pulcino', p: 'pulcini', f: 0 }, fr: { s: 'poussin', p: 'poussins', f: 0 }, de: { s: 'Küken', p: 'Küken', g: 'n' }, en: { s: 'chick', p: 'chicks' }, es: { s: 'pollito', p: 'pollitos', f: 0 } },
+    { e: '🍌', it: { s: 'banana', p: 'banane', f: 1 }, fr: { s: 'banane', p: 'bananes', f: 1 }, de: { s: 'Banane', p: 'Bananen', g: 'f' }, en: { s: 'banana', p: 'bananas' }, es: { s: 'plátano', p: 'plátanos', f: 0 } },
   ];
   const MAX_BY_LEVEL = [5, 5, 6, 8, 10];
   const ROUND = 5;
+  const DE_EIN = { m: 'einen', f: 'eine', n: 'ein' };
   const TX = {
     it: {
       how: w => `${w.f ? 'Quante' : 'Quanti'} ${w.p} vedi?`, howShort: w => (w.f ? 'Quante' : 'Quanti'),
@@ -33,15 +35,36 @@
       tut: ['Touche les objets pour les compter : un, deux, trois...', 'Puis touche le bon nombre en bas !',
         "Regarde le nombre : il te dit combien d'objets prendre.", 'Touche les objets pour les mettre dans le panier !'],
     },
+    de: {
+      how: w => `Wie viele ${w.p} siehst du?`, howShort: () => 'Wie viele',
+      retry: w => `Versuch es nochmal! Tippe auf die ${w.p}, um sie zu zählen.`,
+      touch1: w => `Tippe auf ${DE_EIN[w.g]} ${w.s}!`, touchN: (n, w) => `Tippe auf ${n} ${w.p}!`, touchShort: 'Tippe auf',
+      tut: ['Tippe auf die Dinge, um sie zu zählen: eins, zwei, drei...', 'Dann tippe unten auf die richtige Zahl!',
+        'Schau dir die Zahl an: Sie sagt dir, wie viele Dinge du nehmen sollst.', 'Tippe auf die Dinge, um sie in den Korb zu legen!'],
+    },
+    en: {
+      how: w => `How many ${w.p} can you see?`, howShort: () => 'How many',
+      retry: w => `Try again! Tap the ${w.p} to count them.`,
+      touch1: w => `Tap one ${w.s}!`, touchN: (n, w) => `Tap ${n} ${w.p}!`, touchShort: 'Tap',
+      tut: ['Tap the things to count them: one, two, three...', 'Then tap the right number below!',
+        'Look at the number: it tells you how many things to take.', 'Tap the things to put them in the basket!'],
+    },
+    es: {
+      how: w => `¿Cuánt${w.f ? 'as' : 'os'} ${w.p} ves?`, howShort: w => `¿Cuánt${w.f ? 'as' : 'os'}`,
+      retry: w => `¡Inténtalo otra vez! Toca ${w.f ? 'las' : 'los'} ${w.p} para contar${w.f ? 'las' : 'los'}.`,
+      touch1: w => `¡Toca ${w.f ? 'una' : 'un'} ${w.s}!`, touchN: (n, w) => `¡Toca ${n} ${w.p}!`, touchShort: 'Toca',
+      tut: ['Toca las cosas para contarlas: uno, dos, tres...', '¡Luego toca el número correcto abajo!',
+        'Mira el número: te dice cuántas cosas coger.', '¡Toca las cosas para ponerlas en la cesta!'],
+    },
   };
   const tx = () => TX[App.lang];
 
   App.registerGame({
-    id: 'conta', title: { fr: 'Compte avec Lena', it: 'Conta con Lena' }, short: 'Conta', icon: '🔢',
+    id: 'conta', title: { fr: 'Compte avec Lena', it: 'Conta con Lena', de: 'Zähl mit Lena', en: 'Count with Lena', es: 'Cuenta con Lena' }, short: 'Conta', icon: '🔢',
     phrases: l => {
-      const T = TX[l], bang = l === 'fr' ? ' !' : '!';
+      const T = TX[l];
       const out = [...T.tut];
-      for (let n = 1; n <= 10; n++) out.push(App.numWord(n, 0, l), App.numWord(n, 1, l), App.numWord(n, 0, l) + bang, App.numWord(n, 1, l) + bang);
+      for (let n = 1; n <= 10; n++) out.push(App.numWord(n, 0, l), App.numWord(n, 1, l));
       THINGS.forEach(th => {
         const w = th[l];
         out.push(T.how(w), T.retry(w), T.touch1(w));

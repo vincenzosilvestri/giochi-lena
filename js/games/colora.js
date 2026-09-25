@@ -209,10 +209,88 @@
       ch: (q, c) => `Colorie ${Q_FR[q] || q} en ${(PAL_FR[c] || c).toLowerCase()} !`,
     },
   };
+  /* altre lingue: colori, disegni e zone (tedesco all'accusativo: "Male den Himmel blau an!") */
+  const PAL_T = {
+    fr: PAL_FR,
+    de: {
+      Rosso: 'Rot', Arancione: 'Orange', Giallo: 'Gelb', Verde: 'Grün', Azzurro: 'Hellblau', Blu: 'Blau', Viola: 'Lila', Rosa: 'Rosa',
+      Marrone: 'Braun', Grigio: 'Grau', Nero: 'Schwarz', Bianco: 'Weiß', 'Arcobaleno magico': 'Zauberregenbogen',
+      'Glitter oro': 'Goldglitzer', 'Glitter rosa': 'Rosa Glitzer', 'Glitter argento': 'Silberglitzer', 'Glitter viola': 'Lila Glitzer',
+    },
+    en: {
+      Rosso: 'Red', Arancione: 'Orange', Giallo: 'Yellow', Verde: 'Green', Azzurro: 'Light blue', Blu: 'Blue', Viola: 'Purple', Rosa: 'Pink',
+      Marrone: 'Brown', Grigio: 'Grey', Nero: 'Black', Bianco: 'White', 'Arcobaleno magico': 'Magic rainbow',
+      'Glitter oro': 'Gold glitter', 'Glitter rosa': 'Pink glitter', 'Glitter argento': 'Silver glitter', 'Glitter viola': 'Purple glitter',
+    },
+    es: {
+      Rosso: 'Rojo', Arancione: 'Naranja', Giallo: 'Amarillo', Verde: 'Verde', Azzurro: 'Azul claro', Blu: 'Azul', Viola: 'Morado', Rosa: 'Rosa',
+      Marrone: 'Marrón', Grigio: 'Gris', Nero: 'Negro', Bianco: 'Blanco', 'Arcobaleno magico': 'Arcoíris mágico',
+      'Glitter oro': 'Purpurina dorada', 'Glitter rosa': 'Purpurina rosa', 'Glitter argento': 'Purpurina plateada', 'Glitter viola': 'Purpurina morada',
+    },
+  };
+  const DR_T = {
+    fr: DR_FR,
+    de: { sole: 'Die Sonne', casa: 'Das Haus', fiore: 'Die Blume', farfalla: 'Der Schmetterling', pesce: 'Der Fisch', gatto: 'Die Katze', unicorno: 'Das Einhorn', macchina: 'Das Auto', torta: 'Der Kuchen', arcobaleno: 'Der Regenbogen', gelato: 'Das Eis', coniglio: 'Das Häschen' },
+    en: { sole: 'The sun', casa: 'The house', fiore: 'The flower', farfalla: 'The butterfly', pesce: 'The fish', gatto: 'The cat', unicorno: 'The unicorn', macchina: 'The car', torta: 'The cake', arcobaleno: 'The rainbow', gelato: 'The ice cream', coniglio: 'The bunny' },
+    es: { sole: 'El sol', casa: 'La casa', fiore: 'La flor', farfalla: 'La mariposa', pesce: 'El pez', gatto: 'El gato', unicorno: 'El unicornio', macchina: 'El coche', torta: 'La tarta', arcobaleno: 'El arcoíris', gelato: 'El helado', coniglio: 'El conejito' },
+  };
+  const Q_T = {
+    fr: Q_FR,
+    de: {
+      'il cielo': 'den Himmel', 'il prato': 'das Gras', 'il sole': 'die Sonne', 'il tetto': 'das Dach', 'la porta': 'die Tür', 'lo stelo': 'den Stiel',
+      'il vaso': 'den Topf', 'il centro del fiore': 'die Mitte der Blume', 'il corpo della farfalla': 'den Körper des Schmetterlings', 'il mare': 'das Meer',
+      'la sabbia': 'den Sand', "l'alga": 'die Alge', 'il pesce': 'den Fisch', 'la coda': 'den Schwanz', 'il gatto': 'die Katze', 'il naso': 'die Nase',
+      'la criniera': 'die Mähne', 'il muso': 'die Schnauze', 'il corno': 'das Horn', 'la strada': 'die Straße', 'la macchina': 'das Auto',
+      'il finestrino': 'das Fenster', 'la ruota': 'das Rad', 'il faro': 'den Scheinwerfer', 'il piatto': 'den Teller', 'la glassa': 'die Glasur',
+      'la fiammella': 'die Flamme', "la prima striscia dell'arcobaleno": 'den ersten Streifen des Regenbogens', 'il cono': 'die Waffel',
+      'il gelato': 'das Eis', 'la ciliegina': 'die Kirsche', "l'orecchio": 'das Ohr', 'la carota': 'die Karotte',
+    },
+    en: {
+      'il cielo': 'the sky', 'il prato': 'the grass', 'il sole': 'the sun', 'il tetto': 'the roof', 'la porta': 'the door', 'lo stelo': 'the stem',
+      'il vaso': 'the pot', 'il centro del fiore': 'the middle of the flower', 'il corpo della farfalla': "the butterfly's body", 'il mare': 'the sea',
+      'la sabbia': 'the sand', "l'alga": 'the seaweed', 'il pesce': 'the fish', 'la coda': 'the tail', 'il gatto': 'the cat', 'il naso': 'the nose',
+      'la criniera': 'the mane', 'il muso': 'the snout', 'il corno': 'the horn', 'la strada': 'the road', 'la macchina': 'the car',
+      'il finestrino': 'the window', 'la ruota': 'the wheel', 'il faro': 'the headlight', 'il piatto': 'the plate', 'la glassa': 'the icing',
+      'la fiammella': 'the flame', "la prima striscia dell'arcobaleno": 'the first stripe of the rainbow', 'il cono': 'the cone',
+      'il gelato': 'the ice cream', 'la ciliegina': 'the cherry', "l'orecchio": 'the ear', 'la carota': 'the carrot',
+    },
+    es: {
+      'il cielo': 'el cielo', 'il prato': 'la hierba', 'il sole': 'el sol', 'il tetto': 'el tejado', 'la porta': 'la puerta', 'lo stelo': 'el tallo',
+      'il vaso': 'la maceta', 'il centro del fiore': 'el centro de la flor', 'il corpo della farfalla': 'el cuerpo de la mariposa', 'il mare': 'el mar',
+      'la sabbia': 'la arena', "l'alga": 'el alga', 'il pesce': 'el pez', 'la coda': 'la cola', 'il gatto': 'el gato', 'il naso': 'la nariz',
+      'la criniera': 'la crin', 'il muso': 'el hocico', 'il corno': 'el cuerno', 'la strada': 'la carretera', 'la macchina': 'el coche',
+      'il finestrino': 'la ventanilla', 'la ruota': 'la rueda', 'il faro': 'el faro', 'il piatto': 'el plato', 'la glassa': 'el glaseado',
+      'la fiammella': 'la llama', "la prima striscia dell'arcobaleno": 'la primera franja del arcoíris', 'il cono': 'el cucurucho',
+      'il gelato': 'el helado', 'la ciliegina': 'la cereza', "l'orecchio": 'la oreja', 'la carota': 'la zanahoria',
+    },
+  };
+  const colorLow = (c, l) => (PAL_T[l][c] || c).toLowerCase();
+  Object.assign(TX, {
+    de: {
+      tut: ['Wähle unten eine Farbe.', 'Dann tippe auf das Bild, um es anzumalen!', 'Wenn du fertig bist, tippe auf den Stern!'],
+      choose: 'Wähle ein Bild zum Ausmalen!', chooseShow: 'Wähle ein Bild! 🖍️', galBtn: '🖼️ Meine Galerie', galTitle: '🖼️ Lenas Galerie',
+      colorBtn: '🖍️ Ausmalen', more: 'Mal noch ein bisschen weiter!', exact: 'Genau! Super!', saved: 'Was für ein schönes Bild! Ich lege es in deine Galerie.',
+      gal: 'Hier ist deine Galerie!', galEmpty: 'Noch kein Bild: Malen wir eins aus!', restart: 'Möchtest du neu anfangen?', done: 'Fertig! ⭐',
+      ch: (q, c) => `Male ${Q_T.de[q] || q} ${colorLow(c, 'de')} an!`,
+    },
+    en: {
+      tut: ['Choose a colour down here.', 'Then tap the picture to colour it!', "When you're done, tap the star!"],
+      choose: 'Choose a picture to colour!', chooseShow: 'Choose a picture! 🖍️', galBtn: '🖼️ My gallery', galTitle: "🖼️ Lena's gallery",
+      colorBtn: '🖍️ Colour', more: 'Colour a little bit more!', exact: 'Exactly! Well done!', saved: "What a lovely picture! I've put it in your gallery.",
+      gal: "Here's your gallery!", galEmpty: "No pictures yet: let's colour one!", restart: 'Do you want to start again?', done: 'Done! ⭐',
+      ch: (q, c) => `Colour ${Q_T.en[q] || q} ${colorLow(c, 'en')}!`,
+    },
+    es: {
+      tut: ['Elige un color aquí abajo.', '¡Luego toca el dibujo para colorearlo!', '¡Cuando termines, toca la estrella!'],
+      choose: '¡Elige un dibujo para colorear!', chooseShow: '¡Elige un dibujo! 🖍️', galBtn: '🖼️ Mi galería', galTitle: '🖼️ La galería de Lena',
+      colorBtn: '🖍️ Colorear', more: '¡Colorea un poquito más!', exact: '¡Exacto! ¡Muy bien!', saved: '¡Qué dibujo tan bonito! Lo guardo en tu galería.',
+      gal: '¡Aquí está tu galería!', galEmpty: 'Todavía no hay dibujos: ¡coloreemos uno!', restart: '¿Quieres empezar de nuevo?', done: '¡Listo! ⭐',
+      ch: (q, c) => `¡Colorea ${Q_T.es[q] || q} de ${colorLow(c, 'es')}!`,
+    },
+  });
   const tx = () => TX[App.lang];
-  const pn = (p, l = App.lang) => (l === 'fr' ? PAL_FR[p.n] || p.n : p.n);
-  const dn = (dr, l = App.lang) => (l === 'fr' ? DR_FR[dr.id] : dr.name);
-  const bang = (l = App.lang) => (l === 'fr' ? ' !' : '!');
+  const pn = (p, l = App.lang) => (l === 'it' ? p.n : PAL_T[l][p.n] || p.n);
+  const dn = (dr, l = App.lang) => (l === 'it' ? dr.name : DR_T[l][dr.id]);
   const svgOf = dr => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">${DEFS}` +
     `<g stroke="#2b2b2b" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">${dr.svg()}</g></svg>`;
 
@@ -235,13 +313,13 @@
   }
 
   App.registerGame({
-    id: 'colora', title: { fr: 'Colorie avec Lena', it: 'Colora con Lena' }, short: 'Colora', icon: '🖍️',
+    id: 'colora', title: { fr: 'Colorie avec Lena', it: 'Colora con Lena', de: 'Mal mit Lena', en: 'Colour with Lena', es: 'Colorea con Lena' }, short: 'Colora', icon: '🖍️',
     phrases: l => {
       const T = TX[l];
       const out = [...T.tut, T.choose, T.more, T.exact, T.saved, T.gal, T.galEmpty, T.restart];
-      PAL.forEach(p => out.push(pn(p, l) + bang(l)));
+      PAL.forEach(p => out.push(App.excl(pn(p, l), l)));
       DRAWINGS.forEach(dr => {
-        out.push(dn(dr, l) + bang(l));
+        out.push(App.excl(dn(dr, l), l));
         const tmp = dr.svg().matchAll(/data-q="([^"]+)" data-c="([^"]+)"/g);
         for (const m of tmp) out.push(T.ch(m[1].replace(/&#39;/g, "'"), m[2]));
       });
@@ -297,7 +375,7 @@
       function color(dr) {
         stage.innerHTML = '';
         App.nextLang();
-        say(dn(dr) + bang());
+        say(App.excl(dn(dr)));
         let cur = PAL[0];
         const undo = [];
         const board = h('div', { class: 'col-board', html: svgOf(dr) });
@@ -320,7 +398,7 @@
             class: 'col-sw' + (p.gl ? ' glitter-sw' : '') + (p === cur ? ' sel' : ''), 'aria-label': p.n,
             style: p.rb ? `background:linear-gradient(180deg,${RB.join(',')})` : p.gl ? `--g1:${p.gl.bg[0]};--g2:${p.gl.bg[1]};--g3:${p.gl.bg[2]}` : `background:${p.c}`,
             onclick: () => {
-              cur = p; sfx.tap(); say(pn(p) + bang());
+              cur = p; sfx.tap(); say(App.excl(pn(p)));
               swatches.forEach(s => s.classList.toggle('sel', s === b));
             },
           });

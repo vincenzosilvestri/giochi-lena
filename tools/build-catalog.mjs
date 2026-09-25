@@ -17,4 +17,6 @@ for (const [h, lang, text] of list) if (!byHash.has(h)) byHash.set(h, { h, lang,
 const catalog = [...byHash.values()];
 fs.writeFileSync(path.join(root, 'voice/catalog.json'), JSON.stringify(catalog, null, 1));
 fs.writeFileSync(path.join(root, 'voice/index.json'), JSON.stringify(catalog.map(c => c.h)));
-console.log(`${catalog.length} frasi nel catalogo (fr ${catalog.filter(c => c.lang === 'fr').length}, it ${catalog.filter(c => c.lang === 'it').length})`);
+/* un indice per lingua: il telefono scarica solo le voci delle lingue scelte */
+for (const l of [...new Set(catalog.map(c => c.lang))]) fs.writeFileSync(path.join(root, `voice/index-${l}.json`), JSON.stringify(catalog.filter(c => c.lang === l).map(c => c.h)));
+console.log(`${catalog.length} frasi nel catalogo`, Object.entries(catalog.reduce((a, c) => ((a[c.lang] = (a[c.lang] || 0) + 1), a), {})).map(([k, v]) => `${k} ${v}`).join(', '));

@@ -607,3 +607,25 @@ html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 .spark i.none { background: #e3dcea; }
 .lvl-log { margin: 4px 0 0; padding-left: 18px; font-size: 14px; }
 @media (max-width: 380px) { .prog-row { grid-template-columns: 1.4fr .9fr .8fr 1fr; } .prog-row .spark, .prog-row.head > :last-child { display: none; } }
+
+/* ---------- 5 lingue: bandiere e scelta ---------- */
+.flagdot.de, .flagbtn.de, .lng-card.de .back { background: linear-gradient(180deg, #000 33.3%, #dd0000 33.3% 66.6%, #ffce00 66.6%); }
+.flagdot.es, .flagbtn.es, .lng-card.es .back { background: linear-gradient(180deg, #c60b1e 25%, #ffc400 25% 75%, #c60b1e 75%); }
+.flagdot.en, .flagbtn.en, .lng-card.en .back {
+  background: #012169 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30' preserveAspectRatio='none'%3E%3CclipPath id='t'%3E%3Cpath d='M30,15h30v15zv15h-30zh-30v-15zv-15h30z'/%3E%3C/clipPath%3E%3Cpath d='M0,0v30h60v-30z' fill='%23012169'/%3E%3Cpath d='M0,0L60,30M60,0L0,30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0,0L60,30M60,0L0,30' clip-path='url(%23t)' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30,0v30M0,15h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30,0v30M0,15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+.lng-card.fr .back { background: linear-gradient(90deg, #2f5fd0 33%, #fff 33% 66%, #e63946 66%); }
+.lng-card.de .face { background: linear-gradient(180deg, #fff6d6, #fff); border-color: #222; }
+.lng-card.en .face { background: linear-gradient(180deg, #e3e8f7, #fff); border-color: #012169; }
+.lng-card.es .face { background: linear-gradient(180deg, #fff1cc, #fff); border-color: #c60b1e; }
+.lang-pick { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 8px 0; }
+.lang-chip {
+  display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 16px; background: #fff;
+  box-shadow: var(--shadow); font-size: 18px; border: 4px solid transparent; text-align: left;
+}
+.lang-chip .fl { font-size: 30px; }
+.lang-chip.sel { border-color: var(--accent); background: var(--accent-soft); }
+.parent .lang-chip { background: #f7f4fa; box-shadow: none; font-size: 16px; }
+.parent .lang-chip.sel { background: var(--accent-soft); }
+.langs { justify-content: center; }
+.langs h2 { text-align: center; }
