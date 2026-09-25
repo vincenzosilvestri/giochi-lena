@@ -3,12 +3,12 @@ _Aggiornato: 25/09/2026_
 
 ## Obiettivo
 PWA senza pubblicità con giochi educativi **multilingua** (1 o 2 lingue a scelta tra FR/IT/DE/EN/ES) per Lena (FR+IT, 5 anni il 18/01/2027, prima lingua francese), da telefono (Android papà, iPhone Mahault).
-Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vincenzosilvestri/giochi-lena` (GitHub Pages, main). Versione online: **v12**.
+Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vincenzosilvestri/giochi-lena` (GitHub Pages, main). Versione online: **v13**.
 
 ## Fatto finora
-- 7 giochi (`js/games/`): Lena Salta (semaforo, strisce, treno con passaggio a livello, 4 mondi prato/neve/spiaggia/città di notte), Conta, Memory (animali/foto), Pesca le Lettere (+ comporre il nome), Forme e Colori, Colora (12 disegni, arcobaleno, 4 glitter, galleria), Le due lingue (Dov'è…, Memory FR↔IT, Quale lingua?).
+- 9 giochi (`js/games/`): **Suoni e sillabe** (v13: batti le sillabe + rime, 5 lingue), **Scrivi con il dito** (v13: tracciato di lettere A-Z e cifre 0-9 nel verso giusto, livelli nome→vocali→tutto), Lena Salta (semaforo, strisce, treno con passaggio a livello, 4 mondi prato/neve/spiaggia/città di notte), Conta, Memory (animali/foto), Pesca le Lettere (+ comporre il nome), Forme e Colori, Colora (12 disegni, arcobaleno, 4 glitter, galleria), Le due lingue (Dov'è…, Memory FR↔IT, Quale lingua?).
 - **v12 — Multilingua:** 5 lingue (fr, it, de, en-GB, es-ES); il genitore sceglie 1 o 2 lingue al primo avvio o nel menu papà («Lingue del bambino»); con 2 lingue alternanza o una sola; con 1 lingua «Le due lingue» è nascosto (`needs2`). Default FR+IT (Lena). Menu papà in italiano.
-- Voci: 3738 frasi pre-generate con edge-tts (IT Isabella, FR Denise, DE Katja, EN Sonia, ES Elvira; 69 MB sul server) in `voice/`; `voice/index-<lingua>.json` per lingua: l'app scarica in sottofondo solo le voci delle lingue scelte (cache `lena-voice-1`). Fallback TTS del telefono per nomi delle foto.
+- Voci: 4304 frasi pre-generate con edge-tts (IT Isabella, FR Denise, DE Katja, EN Sonia, ES Elvira; 69 MB sul server) in `voice/`; `voice/index-<lingua>.json` per lingua: l'app scarica in sottofondo solo le voci delle lingue scelte (cache `lena-voice-1`). Fallback TTS del telefono per nomi delle foto.
 - Premi: stelle ⭐ → Armadio (14 accessori sul personaggio), album 24 sticker + diploma.
 - Menu papà (⚙️ premuto 1,5 s + PIN): timer nanna con storia della buonanotte (3 storie), lingua, Pagella (lettere/numeri, lingue, strada, tempo 7 giorni), voci registrate, foto, disegni, festa compleanno 18/01.
 - **v11 — Livelli e statistiche:** badge 🏅 nei giochi con livelli (Conta 1-4, Lettere 1-3, Memory 1-4, Forme 1-4, Due lingue 1-3; Strada da record distanza), festa + voce al passaggio di livello. Storico giornaliero per abilità (`state.hist`, 200 giorni) e registro livelli (`state.levelLog`). Menu papà: tabella «Livelli e progressi» (livello, % giuste 7 giorni, tendenza vs settimana prima, 8 settimane, ultimi livelli). API: `App.track(skill, key, ok)`, `App.levelUp(game, n)`.
@@ -17,7 +17,7 @@ Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vinc
 ## Prossimi passi
 _Roadmap completa (ricerca concorrenti, pedagogia, store) in `ROADMAP.md`._
 1. Raccogliere feedback e statistiche dall'uso reale (tabella «Livelli e progressi»).
-2. Ordine consigliato (ROADMAP): Suoni e sillabe + Scrivi con il dito (in 5 lingue) → set di illustrazioni incluso (Twemoji/Noto) → mascotte, Conta +/−, sopra/sotto, lingua per partita, timer 2×30 → preparazione store (profili, voci Azure, Android TWA).
+2. Prossimo (ROADMAP): set di illustrazioni incluso (Twemoji/Noto) → mascotte, Conta +/−, sopra/sotto, lingua per partita, timer 2×30 → preparazione store (profili, voci Azure, Android TWA).
 3. Papà caricherà foto e voci registrate dal menu papà (restano in IndexedDB sul telefono).
 
 ## Decisioni / vincoli

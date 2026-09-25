@@ -25,8 +25,8 @@ _Ricerca del 25/09/2026: concorrenti, pedagogia 5-6 anni, requisiti store. Stato
 - mancano coscienza fonologica, pre-scrittura e piccole addizioni.
 
 ## Fase A — Per Lena, subito (valore educativo alto, sforzo medio-basso)
-1. **Suoni e sillabe** 🥁 (gioco nuovo) — battere le mani per ogni sillaba, trovare le rime, riconoscere il suono iniziale. Una lingua per partita. È il buco più grosso rispetto ai programmi di *grande section* (FR) e dell'ultimo anno dell'infanzia (IT).
-2. **Scrivi con il dito** ✏️ (già proposto) — tracciare lettere, cifre e il proprio nome, con correzione gentile e scia di glitter.
+1. ✅ (v13) **Suoni e sillabe** 🥁 (gioco nuovo) — battere le mani per ogni sillaba, trovare le rime, riconoscere il suono iniziale. Una lingua per partita. È il buco più grosso rispetto ai programmi di *grande section* (FR) e dell'ultimo anno dell'infanzia (IT).
+2. ✅ (v13) **Scrivi con il dito** ✏️ (già proposto) — tracciare lettere, cifre e il proprio nome, con correzione gentile e scia di glitter.
 3. **Conta +/−** — nel gioco dei numeri: aggiungere e togliere oggetti entro 10 ("3 mele, ne arrivano 2: quante sono?").
 4. **Sopra, sotto, dentro, fuori** 🧸 — mini-gioco di orientamento nello spazio ("metti l'orsetto sotto il tavolo"), in FR e IT.
 5. **Lingua coerente** — opzione "una lingua per partita" (più prevedibile) accanto all'alternanza a ogni turno; opzione "storia della buonanotte sempre in italiano" per dare più spazio alla lingua meno parlata.

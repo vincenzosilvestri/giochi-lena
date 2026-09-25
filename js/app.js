@@ -4,7 +4,7 @@ const App = (() => {
   const NAME = 'Lena';
   const BIRTH = { y: 2022, m: 0, d: 18 }; // 18 gennaio 2022
   const KEY = 'lena_v1';
-  const VERSION = '12 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
+  const VERSION = '13 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
   /* lingue disponibili; il genitore sceglie le 2 del bambino (state.langs) */
   const LANGS = ['fr', 'it', 'de', 'en', 'es'];
   const FLAG = { fr: '🇫🇷', it: '🇮🇹', de: '🇩🇪', en: '🇬🇧', es: '🇪🇸' };
@@ -183,6 +183,8 @@ const App = (() => {
     { id: 'lettere', name: 'Lettere', icon: '🔤', game: 'lettere', max: 3 },
     { id: 'memoria', name: 'Memoria', icon: '🃏', game: 'memory', max: 4 },
     { id: 'logica', name: 'Forme e logica', icon: '🔷', game: 'forme', max: 4 },
+    { id: 'suoni', name: 'Suoni e sillabe', icon: '🥁', game: 'suoni', max: 3 },
+    { id: 'scrittura', name: 'Scrittura', icon: '✏️', game: 'scrivi', max: 3 },
     { id: 'lingue', name: 'Due lingue', icon: '🌍', game: 'lingue', max: 3 },
     { id: 'colori', name: 'Colori', icon: '🖍️', game: 'colora', max: 0 },
     { id: 'strada', name: 'Educazione stradale', icon: '🚦', game: 'salta', max: 4 },

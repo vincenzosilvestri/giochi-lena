@@ -629,3 +629,45 @@ html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 .parent .lang-chip.sel { background: var(--accent-soft); }
 .langs { justify-content: center; }
 .langs h2 { text-align: center; }
+
+/* ---------- Suoni e sillabe ---------- */
+.tile.t8 { background: #ffe9d6; } .tile.t9 { background: #e0f7ee; }
+.syl-card, .rhy-target {
+  position: absolute; left: 50%; top: calc(84px + var(--safe-top)); transform: translateX(-50%);
+  background: #fff; border-radius: 28px; box-shadow: var(--shadow); padding: 14px 22px;
+  display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 200px;
+}
+.syl-card:active, .rhy-target:active { transform: translateX(-50%) translateY(3px); }
+.syl-card .e, .rhy-target .e { font-size: clamp(64px, 20vw, 92px); line-height: 1.1; }
+.syl-card .w, .rhy-target .w { font-size: 28px; }
+.syl-chips { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.syl-chips span { background: #f1ecf5; border-radius: 12px; padding: 6px 12px; font-size: 22px; transition: background .2s; }
+.syl-chips span.on { background: var(--accent); color: #fff; animation: pop .3s ease; }
+.syl-answers { position: absolute; left: 14px; right: 14px; bottom: calc(26px + var(--safe-bottom)); display: grid; grid-template-columns: repeat(auto-fit, minmax(64px, 1fr)); gap: 10px; }
+.syl-answers button { background: #fff; border-radius: 22px; box-shadow: var(--shadow); padding: 10px 4px; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.syl-answers button b { font-size: 34px; }
+.syl-answers button span { font-size: 15px; letter-spacing: -3px; }
+.syl-answers button.ok, .rhy-opt.ok { box-shadow: 0 0 0 5px #7ee08a, var(--shadow); animation: pop .4s ease; }
+.rhy-eq { position: absolute; left: 0; right: 0; top: 50%; text-align: center; font-size: 26px; opacity: .55; }
+.rhy-opts { position: absolute; left: 14px; right: 14px; bottom: calc(36px + var(--safe-bottom)); display: flex; gap: 12px; justify-content: center; }
+.rhy-opt { flex: 1; max-width: 130px; background: #fff; border-radius: 24px; box-shadow: var(--shadow); padding: 12px 6px; display: flex; flex-direction: column; align-items: center; }
+.rhy-opt .e { font-size: clamp(44px, 14vw, 60px); }
+.rhy-opt .w { font-size: 17px; }
+
+/* ---------- Scrivi con il dito ---------- */
+.wr-prompt b { font-size: 40px; color: var(--accent-dark); }
+.wr-board {
+  position: absolute; left: 50%; transform: translateX(-50%); top: calc(150px + var(--safe-top));
+  width: min(calc(100% - 24px), calc(100vh - 230px)); aspect-ratio: 1; background: #fff; border-radius: 28px; box-shadow: var(--shadow); touch-action: none;
+}
+.wr-board svg { display: block; touch-action: none; }
+.wr-guide polyline { fill: none; stroke: #ece6f2; stroke-width: 15; stroke-linecap: round; stroke-linejoin: round; }
+.wr-dots circle { fill: #c9bfd6; }
+.wr-done polyline, .wr-ink { fill: none; stroke: var(--accent); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+.wr-ink { opacity: .85; }
+.wr-start { fill: #3cc45c; stroke: #fff; stroke-width: 2; }
+.wr-start.pulse { animation: pop .5s ease; transform-box: fill-box; transform-origin: center; }
+.wr-num { fill: #fff; font-size: 8px; font-weight: 900; pointer-events: none; }
+.wr-hint { fill: #ffd23f; stroke: #fff; stroke-width: 1.5; pointer-events: none; transition: opacity .2s; }
+.wr-complete .wr-done polyline { animation: glowStroke 1s ease; }
+@keyframes glowStroke { 50% { stroke: #ffd23f; stroke-width: 14; } }
