@@ -8,7 +8,7 @@ Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vinc
 ## Fatto finora
 - 7 giochi (`js/games/`): Lena Salta (semaforo, strisce, treno con passaggio a livello, 4 mondi prato/neve/spiaggia/città di notte), Conta, Memory (animali/foto), Pesca le Lettere (+ comporre il nome), Forme e Colori, Colora (12 disegni, arcobaleno, 4 glitter, galleria), Le due lingue (Dov'è…, Memory FR↔IT, Quale lingua?).
 - Bilingue: alternanza un turno FR e uno IT con bandierina; menu papà: Alternanza / Solo FR / Solo IT. Menu papà in italiano.
-- Voci: 1497 frasi pre-generate con edge-tts (IT Isabella, FR Denise, ~28 MB) in `voice/`; fallback TTS del telefono per nomi delle foto.
+- Voci: 1499 frasi pre-generate con edge-tts (IT Isabella, FR Denise, ~28 MB) in `voice/`; fallback TTS del telefono per nomi delle foto.
 - Premi: stelle ⭐ → Armadio (14 accessori sul personaggio), album 24 sticker + diploma.
 - Menu papà (⚙️ premuto 1,5 s + PIN): timer nanna con storia della buonanotte (3 storie), lingua, Pagella (lettere/numeri, lingue, strada, tempo 7 giorni), voci registrate, foto, disegni, festa compleanno 18/01.
 - **v11 — Livelli e statistiche:** badge 🏅 nei giochi con livelli (Conta 1-4, Lettere 1-3, Memory 1-4, Forme 1-4, Due lingue 1-3; Strada da record distanza), festa + voce al passaggio di livello. Storico giornaliero per abilità (`state.hist`, 200 giorni) e registro livelli (`state.levelLog`). Menu papà: tabella «Livelli e progressi» (livello, % giuste 7 giorni, tendenza vs settimana prima, 8 settimane, ultimi livelli). API: `App.track(skill, key, ok)`, `App.levelUp(game, n)`.
@@ -16,8 +16,8 @@ Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vinc
 
 ## Prossimi passi
 _Roadmap completa (ricerca concorrenti, pedagogia, store) in `ROADMAP.md`._
-1. Raccogliere feedback dall'uso reale di v8-v9 e sistemare.
-2. Proposte in coda: Scrivi con il dito (tracciare lettere, consigliato), Pianoforte magico (+ ripeti la melodia), Il mio cucciolo, Puzzle 4-9 pezzi con disegni/foto, Labirinti col dito, Primo inglese.
+1. Raccogliere feedback e statistiche dall'uso reale (tabella «Livelli e progressi»).
+2. Ordine consigliato (ROADMAP): Suoni e sillabe + Scrivi con il dito → set di illustrazioni incluso (Twemoji/Noto) → mascotte, Conta +/−, sopra/sotto, lingua per partita, timer 2×30 → preparazione store (profili, voci Azure, Android TWA).
 3. Papà caricherà foto e voci registrate dal menu papà (restano in IndexedDB sul telefono).
 
 ## Decisioni / vincoli
