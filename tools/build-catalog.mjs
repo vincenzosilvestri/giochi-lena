@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, '$1')), '..');
-const files = ['js/app.js', 'js/games/hop.js', 'js/games/conta.js', 'js/games/memory.js', 'js/games/lettere.js', 'js/games/forme.js', 'js/games/colora.js', 'js/games/suoni.js', 'js/games/scrivi.js', 'js/games/lingue.js'];
+const files = ['js/app.js', 'js/games/hop.js', 'js/games/conta.js', 'js/games/memory.js', 'js/games/lettere.js', 'js/games/forme.js', 'js/games/colora.js', 'js/games/suoni.js', 'js/games/scrivi.js', 'js/games/spazio.js', 'js/games/lingue.js'];
 const ctx = { console, setTimeout, clearTimeout, setInterval, performance: { now: () => 0 }, requestAnimationFrame: () => 0, navigator: {} };
 ctx.window = ctx;
 vm.createContext(ctx);

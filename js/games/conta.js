@@ -57,6 +57,20 @@
         'Mira el número: te dice cuántas cosas coger.', '¡Toca las cosas para ponerlas en la cesta!'],
     },
   };
+  /* addizioni e sottrazioni entro 10 (numeri detti come parole) */
+  const N = (l, x) => App.NUM[l][x];
+  const ARITH = {
+    it: { q: (a, b, m) => `${N('it', a)} ${m ? 'meno' : 'più'} ${N('it', b)}?`, ans: (a, b, c, m) => `${N('it', a)} ${m ? 'meno' : 'più'} ${N('it', b)} fa ${N('it', c)}!`,
+      tut: ['Guarda: alcune cose arrivano, altre vanno via. Contale!', 'Poi tocca il numero giusto!'] },
+    fr: { q: (a, b, m) => `${N('fr', a)} ${m ? 'moins' : 'plus'} ${N('fr', b)} ?`, ans: (a, b, c, m) => `${N('fr', a)} ${m ? 'moins' : 'plus'} ${N('fr', b)}, ça fait ${N('fr', c)} !`,
+      tut: ["Regarde : des objets arrivent, d'autres s'en vont. Compte-les !", 'Puis touche le bon nombre !'] },
+    de: { q: (a, b, m) => `${N('de', a)} ${m ? 'minus' : 'plus'} ${N('de', b)}?`, ans: (a, b, c, m) => `${N('de', a)} ${m ? 'minus' : 'plus'} ${N('de', b)} ist ${N('de', c)}!`,
+      tut: ['Schau: Manche Dinge kommen dazu, andere gehen weg. Zähl sie!', 'Dann tippe auf die richtige Zahl!'] },
+    en: { q: (a, b, m) => `${N('en', a)} ${m ? 'take away' : 'plus'} ${N('en', b)}?`, ans: (a, b, c, m) => `${N('en', a)} ${m ? 'take away' : 'plus'} ${N('en', b)} ${m ? 'leaves' : 'makes'} ${N('en', c)}!`,
+      tut: ['Look: some things arrive, some go away. Count them!', 'Then tap the right number!'] },
+    es: { q: (a, b, m) => `¿${N('es', a)} ${m ? 'menos' : 'más'} ${N('es', b)}?`, ans: (a, b, c, m) => `¡${N('es', a)} ${m ? 'menos' : 'más'} ${N('es', b)} son ${N('es', c)}!`,
+      tut: ['Mira: unas cosas llegan y otras se van. ¡Cuéntalas!', '¡Luego toca el número correcto!'] },
+  };
   const tx = () => TX[App.lang];
 
   App.registerGame({
@@ -70,6 +84,10 @@
         out.push(T.how(w), T.retry(w), T.touch1(w));
         for (let n = 2; n <= 10; n++) out.push(T.touchN(n, w));
       });
+      const A = ARITH[l];
+      out.push(...A.tut);
+      for (let a = 1; a <= 5; a++) for (let b = 1; b <= Math.min(5, 10 - a); b++) out.push(A.q(a, b, 0), A.ans(a, b, a + b, 0));
+      for (let a = 3; a <= 7; a++) for (let b = 1; b < a; b++) out.push(A.q(a, b, 1), A.ans(a, b, a - b, 1));
       return out;
     },
     start({ stage, addPill, setHelp }) {
@@ -198,6 +216,47 @@
         ]);
       }
 
+      /* 3) "tre più due?" / "cinque meno due?": le cose arrivano o vanno via davanti ai suoi occhi */
+      function arith(th) {
+        const l = App.lang, A = ARITH[l];
+        const minus = lv >= 4 && Math.random() < .5;
+        let a, b, c;
+        if (minus) { a = rint(3, 7); b = rint(1, a - 1); c = a - b; } else { a = rint(1, 5); b = rint(1, Math.min(5, 10 - a)); c = a + b; }
+        prompt.innerHTML = '';
+        prompt.append(h('span', { class: 'pic' }, th.e), h('b', { class: 'eq' }, `${a} ${minus ? '−' : '+'} ${b} = ?`));
+        const items = place(minus ? a : a + b, th, () => {});
+        if (!minus) items.slice(a).forEach((it, i) => { it.classList.add('arrive'); it.style.animationDelay = `${.9 + i * .25}s`; });
+        else setTimeout(() => items.slice(0, b).forEach((it, i) => setTimeout(() => { it.classList.add('leave'); sfx.pop(); }, i * 250)), 1400);
+        const opts = new Set([c]);
+        while (opts.size < 3) { const v = rint(Math.max(0, c - 3), Math.min(10, c + 3)); if (v !== c) opts.add(v); }
+        let first = true, locked = false;
+        [...opts].sort((x, y) => x - y).forEach(v => {
+          const btn = h('button', {}, String(v));
+          btn.onclick = async () => {
+            if (locked) return;
+            if (first) { App.track('numeri', `${a}${minus ? '−' : '+'}${b}`, v === c); first = false; }
+            if (v === c) {
+              locked = true;
+              btn.classList.add('ok');
+              sfx.ding();
+              await say(A.ans(a, b, c, minus), { lang: l });
+              const r = btn.getBoundingClientRect();
+              if (alive) success(r.left + r.width / 2, r.top);
+            } else {
+              sfx.boing();
+              btn.classList.add('shake');
+              setTimeout(() => btn.classList.add('gone'), 450);
+              say(A.q(a, b, minus), { lang: l });
+            }
+          };
+          answers.append(btn);
+        });
+        ask(A.q(a, b, minus), 'conta3', [
+          { text: A.tut[0], icon: '➕', action: 'tap', at: () => field, cap: 'top' },
+          { text: A.tut[1], icon: '🔢', action: 'tap', at: () => answers.children[1], cap: 'top' },
+        ]);
+      }
+
       function next() {
         if (!alive) return;
         App.nextLang();
@@ -205,7 +264,9 @@
         answers.innerHTML = '';
         const max = MAX_BY_LEVEL[Math.min(lv, MAX_BY_LEVEL.length - 1)];
         const th = pick(THINGS);
-        if (lv >= 2 && Math.random() < .5) touchN(th, max);
+        const r = Math.random();
+        if (lv >= 2 && r < .3) arith(th);
+        else if (lv >= 2 && r < .65) touchN(th, max);
         else askHowMany(th, max);
       }
 

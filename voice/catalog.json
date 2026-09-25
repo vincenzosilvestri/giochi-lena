@@ -125,6 +125,16 @@
   "text": "Bravo ! Nouveau niveau !"
  },
  {
+  "h": "2e8c5834",
+  "lang": "fr",
+  "text": "Pause ! Tu as beaucoup joué : bouge un peu et bois un verre d'eau."
+ },
+ {
+  "h": "2da8fd5f",
+  "lang": "fr",
+  "text": "La pause est finie. On rejoue un peu ?"
+ },
+ {
   "h": "025c673f",
   "lang": "fr",
   "text": "Petit lapin !"
@@ -1778,6 +1788,466 @@
   "h": "80af58d0",
   "lang": "fr",
   "text": "Touche 10 bananes !"
+ },
+ {
+  "h": "ae71da5a",
+  "lang": "fr",
+  "text": "Regarde : des objets arrivent, d'autres s'en vont. Compte-les !"
+ },
+ {
+  "h": "d29d087f",
+  "lang": "fr",
+  "text": "Puis touche le bon nombre !"
+ },
+ {
+  "h": "62abae67",
+  "lang": "fr",
+  "text": "un plus un ?"
+ },
+ {
+  "h": "85e63303",
+  "lang": "fr",
+  "text": "un plus un, ça fait deux !"
+ },
+ {
+  "h": "b7ebcda2",
+  "lang": "fr",
+  "text": "un plus deux ?"
+ },
+ {
+  "h": "0fa5df81",
+  "lang": "fr",
+  "text": "un plus deux, ça fait trois !"
+ },
+ {
+  "h": "5bb5a1bf",
+  "lang": "fr",
+  "text": "un plus trois ?"
+ },
+ {
+  "h": "8acf47c7",
+  "lang": "fr",
+  "text": "un plus trois, ça fait quatre !"
+ },
+ {
+  "h": "1b65b4ca",
+  "lang": "fr",
+  "text": "un plus quatre ?"
+ },
+ {
+  "h": "681e82af",
+  "lang": "fr",
+  "text": "un plus quatre, ça fait cinq !"
+ },
+ {
+  "h": "b1e297cd",
+  "lang": "fr",
+  "text": "un plus cinq ?"
+ },
+ {
+  "h": "b9b68501",
+  "lang": "fr",
+  "text": "un plus cinq, ça fait six !"
+ },
+ {
+  "h": "34baa50e",
+  "lang": "fr",
+  "text": "deux plus un ?"
+ },
+ {
+  "h": "dc1db625",
+  "lang": "fr",
+  "text": "deux plus un, ça fait trois !"
+ },
+ {
+  "h": "134c8eb3",
+  "lang": "fr",
+  "text": "deux plus deux ?"
+ },
+ {
+  "h": "4a78b2b3",
+  "lang": "fr",
+  "text": "deux plus deux, ça fait quatre !"
+ },
+ {
+  "h": "15726388",
+  "lang": "fr",
+  "text": "deux plus trois ?"
+ },
+ {
+  "h": "186b91a9",
+  "lang": "fr",
+  "text": "deux plus trois, ça fait cinq !"
+ },
+ {
+  "h": "2a1c9d1f",
+  "lang": "fr",
+  "text": "deux plus quatre ?"
+ },
+ {
+  "h": "e8a643ff",
+  "lang": "fr",
+  "text": "deux plus quatre, ça fait six !"
+ },
+ {
+  "h": "74f3a7d0",
+  "lang": "fr",
+  "text": "deux plus cinq ?"
+ },
+ {
+  "h": "c1375158",
+  "lang": "fr",
+  "text": "deux plus cinq, ça fait sept !"
+ },
+ {
+  "h": "c827e8cd",
+  "lang": "fr",
+  "text": "trois plus un ?"
+ },
+ {
+  "h": "d927c3cd",
+  "lang": "fr",
+  "text": "trois plus un, ça fait quatre !"
+ },
+ {
+  "h": "c8282bdc",
+  "lang": "fr",
+  "text": "trois plus deux ?"
+ },
+ {
+  "h": "0a7697f5",
+  "lang": "fr",
+  "text": "trois plus deux, ça fait cinq !"
+ },
+ {
+  "h": "3160fe21",
+  "lang": "fr",
+  "text": "trois plus trois ?"
+ },
+ {
+  "h": "a661b5dd",
+  "lang": "fr",
+  "text": "trois plus trois, ça fait six !"
+ },
+ {
+  "h": "c7819b48",
+  "lang": "fr",
+  "text": "trois plus quatre ?"
+ },
+ {
+  "h": "f9ed4b10",
+  "lang": "fr",
+  "text": "trois plus quatre, ça fait sept !"
+ },
+ {
+  "h": "cd67ab87",
+  "lang": "fr",
+  "text": "trois plus cinq ?"
+ },
+ {
+  "h": "d919aa3f",
+  "lang": "fr",
+  "text": "trois plus cinq, ça fait huit !"
+ },
+ {
+  "h": "d33fb04e",
+  "lang": "fr",
+  "text": "quatre plus un ?"
+ },
+ {
+  "h": "d994196b",
+  "lang": "fr",
+  "text": "quatre plus un, ça fait cinq !"
+ },
+ {
+  "h": "7daa61f3",
+  "lang": "fr",
+  "text": "quatre plus deux ?"
+ },
+ {
+  "h": "20120d6b",
+  "lang": "fr",
+  "text": "quatre plus deux, ça fait six !"
+ },
+ {
+  "h": "1d607fc8",
+  "lang": "fr",
+  "text": "quatre plus trois ?"
+ },
+ {
+  "h": "4ff93990",
+  "lang": "fr",
+  "text": "quatre plus trois, ça fait sept !"
+ },
+ {
+  "h": "fa47b35f",
+  "lang": "fr",
+  "text": "quatre plus quatre ?"
+ },
+ {
+  "h": "36b57537",
+  "lang": "fr",
+  "text": "quatre plus quatre, ça fait huit !"
+ },
+ {
+  "h": "f89e3010",
+  "lang": "fr",
+  "text": "quatre plus cinq ?"
+ },
+ {
+  "h": "155d8d9a",
+  "lang": "fr",
+  "text": "quatre plus cinq, ça fait neuf !"
+ },
+ {
+  "h": "77ece685",
+  "lang": "fr",
+  "text": "cinq plus un ?"
+ },
+ {
+  "h": "eeebe229",
+  "lang": "fr",
+  "text": "cinq plus un, ça fait six !"
+ },
+ {
+  "h": "0b842094",
+  "lang": "fr",
+  "text": "cinq plus deux ?"
+ },
+ {
+  "h": "45fdf8cc",
+  "lang": "fr",
+  "text": "cinq plus deux, ça fait sept !"
+ },
+ {
+  "h": "fd6f17f9",
+  "lang": "fr",
+  "text": "cinq plus trois ?"
+ },
+ {
+  "h": "f556b2c5",
+  "lang": "fr",
+  "text": "cinq plus trois, ça fait huit !"
+ },
+ {
+  "h": "024e7990",
+  "lang": "fr",
+  "text": "cinq plus quatre ?"
+ },
+ {
+  "h": "4ffb4b1a",
+  "lang": "fr",
+  "text": "cinq plus quatre, ça fait neuf !"
+ },
+ {
+  "h": "6e09c8af",
+  "lang": "fr",
+  "text": "cinq plus cinq ?"
+ },
+ {
+  "h": "9c98616e",
+  "lang": "fr",
+  "text": "cinq plus cinq, ça fait dix !"
+ },
+ {
+  "h": "9c942af5",
+  "lang": "fr",
+  "text": "trois moins un ?"
+ },
+ {
+  "h": "74ff7935",
+  "lang": "fr",
+  "text": "trois moins un, ça fait deux !"
+ },
+ {
+  "h": "ed0bb164",
+  "lang": "fr",
+  "text": "trois moins deux ?"
+ },
+ {
+  "h": "81f80577",
+  "lang": "fr",
+  "text": "trois moins deux, ça fait un !"
+ },
+ {
+  "h": "57681664",
+  "lang": "fr",
+  "text": "quatre moins un ?"
+ },
+ {
+  "h": "d596a8af",
+  "lang": "fr",
+  "text": "quatre moins un, ça fait trois !"
+ },
+ {
+  "h": "15fc3d55",
+  "lang": "fr",
+  "text": "quatre moins deux ?"
+ },
+ {
+  "h": "a5e2b895",
+  "lang": "fr",
+  "text": "quatre moins deux, ça fait deux !"
+ },
+ {
+  "h": "d3246f92",
+  "lang": "fr",
+  "text": "quatre moins trois ?"
+ },
+ {
+  "h": "dd5d6f3d",
+  "lang": "fr",
+  "text": "quatre moins trois, ça fait un !"
+ },
+ {
+  "h": "24ce3c8d",
+  "lang": "fr",
+  "text": "cinq moins un ?"
+ },
+ {
+  "h": "2860770d",
+  "lang": "fr",
+  "text": "cinq moins un, ça fait quatre !"
+ },
+ {
+  "h": "ce54b89c",
+  "lang": "fr",
+  "text": "cinq moins deux ?"
+ },
+ {
+  "h": "9aa653f7",
+  "lang": "fr",
+  "text": "cinq moins deux, ça fait trois !"
+ },
+ {
+  "h": "53466ee1",
+  "lang": "fr",
+  "text": "cinq moins trois ?"
+ },
+ {
+  "h": "35515e99",
+  "lang": "fr",
+  "text": "cinq moins trois, ça fait deux !"
+ },
+ {
+  "h": "bee58908",
+  "lang": "fr",
+  "text": "cinq moins quatre ?"
+ },
+ {
+  "h": "7b72829b",
+  "lang": "fr",
+  "text": "cinq moins quatre, ça fait un !"
+ },
+ {
+  "h": "e9d4d668",
+  "lang": "fr",
+  "text": "six moins un ?"
+ },
+ {
+  "h": "9fa01e89",
+  "lang": "fr",
+  "text": "six moins un, ça fait cinq !"
+ },
+ {
+  "h": "59510111",
+  "lang": "fr",
+  "text": "six moins deux ?"
+ },
+ {
+  "h": "85205229",
+  "lang": "fr",
+  "text": "six moins deux, ça fait quatre !"
+ },
+ {
+  "h": "7df288fe",
+  "lang": "fr",
+  "text": "six moins trois ?"
+ },
+ {
+  "h": "ee38b4d5",
+  "lang": "fr",
+  "text": "six moins trois, ça fait trois !"
+ },
+ {
+  "h": "a4ccd421",
+  "lang": "fr",
+  "text": "six moins quatre ?"
+ },
+ {
+  "h": "5084b459",
+  "lang": "fr",
+  "text": "six moins quatre, ça fait deux !"
+ },
+ {
+  "h": "74b10c36",
+  "lang": "fr",
+  "text": "six moins cinq ?"
+ },
+ {
+  "h": "d0a49371",
+  "lang": "fr",
+  "text": "six moins cinq, ça fait un !"
+ },
+ {
+  "h": "5b43714e",
+  "lang": "fr",
+  "text": "sept moins un ?"
+ },
+ {
+  "h": "d49381ea",
+  "lang": "fr",
+  "text": "sept moins un, ça fait six !"
+ },
+ {
+  "h": "932e8af3",
+  "lang": "fr",
+  "text": "sept moins deux ?"
+ },
+ {
+  "h": "9d6da6c4",
+  "lang": "fr",
+  "text": "sept moins deux, ça fait cinq !"
+ },
+ {
+  "h": "fc6d0ac8",
+  "lang": "fr",
+  "text": "sept moins trois ?"
+ },
+ {
+  "h": "c9a32da6",
+  "lang": "fr",
+  "text": "sept moins trois, ça fait quatre !"
+ },
+ {
+  "h": "1b06845f",
+  "lang": "fr",
+  "text": "sept moins quatre ?"
+ },
+ {
+  "h": "a30798e0",
+  "lang": "fr",
+  "text": "sept moins quatre, ça fait trois !"
+ },
+ {
+  "h": "0e225910",
+  "lang": "fr",
+  "text": "sept moins cinq ?"
+ },
+ {
+  "h": "0e4bfd86",
+  "lang": "fr",
+  "text": "sept moins cinq, ça fait deux !"
+ },
+ {
+  "h": "05dc4d87",
+  "lang": "fr",
+  "text": "sept moins six ?"
+ },
+ {
+  "h": "d38efe1e",
+  "lang": "fr",
+  "text": "sept moins six, ça fait un !"
  },
  {
   "h": "658ff445",
@@ -3825,6 +4295,211 @@
   "text": "Z !"
  },
  {
+  "h": "b4943270",
+  "lang": "fr",
+  "text": "Dessus ou dessous ?"
+ },
+ {
+  "h": "07f76868",
+  "lang": "fr",
+  "text": "Pas tout à fait ! Écoute encore."
+ },
+ {
+  "h": "01d88691",
+  "lang": "fr",
+  "text": "Écoute où mettre le jouet…"
+ },
+ {
+  "h": "fca571cf",
+  "lang": "fr",
+  "text": "Fais-le glisser avec ton doigt à la bonne place !"
+ },
+ {
+  "h": "de06e256",
+  "lang": "fr",
+  "text": "Dessus !"
+ },
+ {
+  "h": "921d0d93",
+  "lang": "fr",
+  "text": "Dessous !"
+ },
+ {
+  "h": "71351bb8",
+  "lang": "fr",
+  "text": "Dedans !"
+ },
+ {
+  "h": "a47e33cb",
+  "lang": "fr",
+  "text": "À côté !"
+ },
+ {
+  "h": "30ed2660",
+  "lang": "fr",
+  "text": "Mets l'ourson sur la chaise !"
+ },
+ {
+  "h": "6df44b00",
+  "lang": "fr",
+  "text": "Mets l'ourson sous la chaise !"
+ },
+ {
+  "h": "eb5518ad",
+  "lang": "fr",
+  "text": "Mets l'ourson à côté de la chaise !"
+ },
+ {
+  "h": "4a0d8532",
+  "lang": "fr",
+  "text": "Mets l'ourson sur le lit !"
+ },
+ {
+  "h": "b763a352",
+  "lang": "fr",
+  "text": "Mets l'ourson sous le lit !"
+ },
+ {
+  "h": "885d5e44",
+  "lang": "fr",
+  "text": "Mets l'ourson à côté du lit !"
+ },
+ {
+  "h": "e2a04bed",
+  "lang": "fr",
+  "text": "Mets l'ourson dans la boîte !"
+ },
+ {
+  "h": "3fce4e13",
+  "lang": "fr",
+  "text": "Mets l'ourson sur la boîte !"
+ },
+ {
+  "h": "4b9ff80c",
+  "lang": "fr",
+  "text": "Mets l'ourson à côté de la boîte !"
+ },
+ {
+  "h": "55627d3a",
+  "lang": "fr",
+  "text": "Mets l'ourson dans le panier !"
+ },
+ {
+  "h": "7c2e15ce",
+  "lang": "fr",
+  "text": "Mets l'ourson à côté du panier !"
+ },
+ {
+  "h": "1e376c87",
+  "lang": "fr",
+  "text": "Mets le ballon sur la chaise !"
+ },
+ {
+  "h": "ca6f1e89",
+  "lang": "fr",
+  "text": "Mets le ballon sous la chaise !"
+ },
+ {
+  "h": "c07a5c7e",
+  "lang": "fr",
+  "text": "Mets le ballon à côté de la chaise !"
+ },
+ {
+  "h": "d7df5ce3",
+  "lang": "fr",
+  "text": "Mets le ballon sur le lit !"
+ },
+ {
+  "h": "d5b9fb49",
+  "lang": "fr",
+  "text": "Mets le ballon sous le lit !"
+ },
+ {
+  "h": "a4b92277",
+  "lang": "fr",
+  "text": "Mets le ballon à côté du lit !"
+ },
+ {
+  "h": "5f65b36e",
+  "lang": "fr",
+  "text": "Mets le ballon dans la boîte !"
+ },
+ {
+  "h": "8fe64d16",
+  "lang": "fr",
+  "text": "Mets le ballon sur la boîte !"
+ },
+ {
+  "h": "2a227c61",
+  "lang": "fr",
+  "text": "Mets le ballon à côté de la boîte !"
+ },
+ {
+  "h": "bf2061fb",
+  "lang": "fr",
+  "text": "Mets le ballon dans le panier !"
+ },
+ {
+  "h": "9101c4cf",
+  "lang": "fr",
+  "text": "Mets le ballon à côté du panier !"
+ },
+ {
+  "h": "ae0df3ed",
+  "lang": "fr",
+  "text": "Mets le chat sur la chaise !"
+ },
+ {
+  "h": "fe4cbc0f",
+  "lang": "fr",
+  "text": "Mets le chat sous la chaise !"
+ },
+ {
+  "h": "9ecbc4b0",
+  "lang": "fr",
+  "text": "Mets le chat à côté de la chaise !"
+ },
+ {
+  "h": "140b3525",
+  "lang": "fr",
+  "text": "Mets le chat sur le lit !"
+ },
+ {
+  "h": "67f9f05b",
+  "lang": "fr",
+  "text": "Mets le chat sous le lit !"
+ },
+ {
+  "h": "cd9f1dc9",
+  "lang": "fr",
+  "text": "Mets le chat à côté du lit !"
+ },
+ {
+  "h": "f25f0028",
+  "lang": "fr",
+  "text": "Mets le chat dans la boîte !"
+ },
+ {
+  "h": "40166c4c",
+  "lang": "fr",
+  "text": "Mets le chat sur la boîte !"
+ },
+ {
+  "h": "38539683",
+  "lang": "fr",
+  "text": "Mets le chat à côté de la boîte !"
+ },
+ {
+  "h": "0e0b625d",
+  "lang": "fr",
+  "text": "Mets le chat dans le panier !"
+ },
+ {
+  "h": "bee3405d",
+  "lang": "fr",
+  "text": "Mets le chat à côté du panier !"
+ },
+ {
   "h": "77762136",
   "lang": "fr",
   "text": "Les deux langues"
@@ -4423,6 +5098,16 @@
   "h": "804a0c33",
   "lang": "it",
   "text": "Brava! Nuovo livello!"
+ },
+ {
+  "h": "3442a96f",
+  "lang": "it",
+  "text": "Pausa! Hai giocato tanto: muoviti un po' e bevi un bicchiere d'acqua."
+ },
+ {
+  "h": "69ed23cd",
+  "lang": "it",
+  "text": "La pausa è finita. Giochiamo ancora un po'?"
  },
  {
   "h": "9e88ac7c",
@@ -6078,6 +6763,466 @@
   "h": "39ebb727",
   "lang": "it",
   "text": "Tocca 10 banane!"
+ },
+ {
+  "h": "8fd41299",
+  "lang": "it",
+  "text": "Guarda: alcune cose arrivano, altre vanno via. Contale!"
+ },
+ {
+  "h": "b4a2b90b",
+  "lang": "it",
+  "text": "Poi tocca il numero giusto!"
+ },
+ {
+  "h": "7c50bcb9",
+  "lang": "it",
+  "text": "uno più uno?"
+ },
+ {
+  "h": "783f9a74",
+  "lang": "it",
+  "text": "uno più uno fa due!"
+ },
+ {
+  "h": "bc9070b7",
+  "lang": "it",
+  "text": "uno più due?"
+ },
+ {
+  "h": "e362e455",
+  "lang": "it",
+  "text": "uno più due fa tre!"
+ },
+ {
+  "h": "0f246c88",
+  "lang": "it",
+  "text": "uno più tre?"
+ },
+ {
+  "h": "c41851cb",
+  "lang": "it",
+  "text": "uno più tre fa quattro!"
+ },
+ {
+  "h": "23401533",
+  "lang": "it",
+  "text": "uno più quattro?"
+ },
+ {
+  "h": "8088d53f",
+  "lang": "it",
+  "text": "uno più quattro fa cinque!"
+ },
+ {
+  "h": "f4cd1270",
+  "lang": "it",
+  "text": "uno più cinque?"
+ },
+ {
+  "h": "7cc3f78a",
+  "lang": "it",
+  "text": "uno più cinque fa sei!"
+ },
+ {
+  "h": "4c8a4c37",
+  "lang": "it",
+  "text": "due più uno?"
+ },
+ {
+  "h": "b9bf1ad5",
+  "lang": "it",
+  "text": "due più uno fa tre!"
+ },
+ {
+  "h": "92fdb7fd",
+  "lang": "it",
+  "text": "due più due?"
+ },
+ {
+  "h": "e96d0058",
+  "lang": "it",
+  "text": "due più due fa quattro!"
+ },
+ {
+  "h": "e5739eba",
+  "lang": "it",
+  "text": "due più tre?"
+ },
+ {
+  "h": "d8862d86",
+  "lang": "it",
+  "text": "due più tre fa cinque!"
+ },
+ {
+  "h": "5e1a3a89",
+  "lang": "it",
+  "text": "due più quattro?"
+ },
+ {
+  "h": "4221a475",
+  "lang": "it",
+  "text": "due più quattro fa sei!"
+ },
+ {
+  "h": "4d18a40a",
+  "lang": "it",
+  "text": "due più cinque?"
+ },
+ {
+  "h": "1f57ef34",
+  "lang": "it",
+  "text": "due più cinque fa sette!"
+ },
+ {
+  "h": "9bd476fc",
+  "lang": "it",
+  "text": "tre più uno?"
+ },
+ {
+  "h": "43d5f3ff",
+  "lang": "it",
+  "text": "tre più uno fa quattro!"
+ },
+ {
+  "h": "f686c802",
+  "lang": "it",
+  "text": "tre più due?"
+ },
+ {
+  "h": "c76ebc4e",
+  "lang": "it",
+  "text": "tre più due fa cinque!"
+ },
+ {
+  "h": "0915e1e5",
+  "lang": "it",
+  "text": "tre più tre?"
+ },
+ {
+  "h": "495374e9",
+  "lang": "it",
+  "text": "tre più tre fa sei!"
+ },
+ {
+  "h": "34fce7f2",
+  "lang": "it",
+  "text": "tre più quattro?"
+ },
+ {
+  "h": "ce19372c",
+  "lang": "it",
+  "text": "tre più quattro fa sette!"
+ },
+ {
+  "h": "38de6403",
+  "lang": "it",
+  "text": "tre più cinque?"
+ },
+ {
+  "h": "008056c2",
+  "lang": "it",
+  "text": "tre più cinque fa otto!"
+ },
+ {
+  "h": "fd5741fb",
+  "lang": "it",
+  "text": "quattro più uno?"
+ },
+ {
+  "h": "61714d67",
+  "lang": "it",
+  "text": "quattro più uno fa cinque!"
+ },
+ {
+  "h": "a6554561",
+  "lang": "it",
+  "text": "quattro più due?"
+ },
+ {
+  "h": "3038334d",
+  "lang": "it",
+  "text": "quattro più due fa sei!"
+ },
+ {
+  "h": "43dac846",
+  "lang": "it",
+  "text": "quattro più tre?"
+ },
+ {
+  "h": "81e825f0",
+  "lang": "it",
+  "text": "quattro più tre fa sette!"
+ },
+ {
+  "h": "338aed55",
+  "lang": "it",
+  "text": "quattro più quattro?"
+ },
+ {
+  "h": "1f745820",
+  "lang": "it",
+  "text": "quattro più quattro fa otto!"
+ },
+ {
+  "h": "a5feaf66",
+  "lang": "it",
+  "text": "quattro più cinque?"
+ },
+ {
+  "h": "97e5d193",
+  "lang": "it",
+  "text": "quattro più cinque fa nove!"
+ },
+ {
+  "h": "bba511dc",
+  "lang": "it",
+  "text": "cinque più uno?"
+ },
+ {
+  "h": "d62f597e",
+  "lang": "it",
+  "text": "cinque più uno fa sei!"
+ },
+ {
+  "h": "18d1cbe2",
+  "lang": "it",
+  "text": "cinque più due?"
+ },
+ {
+  "h": "da0f3d1c",
+  "lang": "it",
+  "text": "cinque più due fa sette!"
+ },
+ {
+  "h": "28e67cc5",
+  "lang": "it",
+  "text": "cinque più tre?"
+ },
+ {
+  "h": "aec0fc90",
+  "lang": "it",
+  "text": "cinque più tre fa otto!"
+ },
+ {
+  "h": "7a801cd2",
+  "lang": "it",
+  "text": "cinque più quattro?"
+ },
+ {
+  "h": "67a26137",
+  "lang": "it",
+  "text": "cinque più quattro fa nove!"
+ },
+ {
+  "h": "04ec4463",
+  "lang": "it",
+  "text": "cinque più cinque?"
+ },
+ {
+  "h": "991bd61e",
+  "lang": "it",
+  "text": "cinque più cinque fa dieci!"
+ },
+ {
+  "h": "9dcbda2b",
+  "lang": "it",
+  "text": "tre meno uno?"
+ },
+ {
+  "h": "1ed8a18e",
+  "lang": "it",
+  "text": "tre meno uno fa due!"
+ },
+ {
+  "h": "e2148ed1",
+  "lang": "it",
+  "text": "tre meno due?"
+ },
+ {
+  "h": "37085876",
+  "lang": "it",
+  "text": "tre meno due fa uno!"
+ },
+ {
+  "h": "3d0e0eae",
+  "lang": "it",
+  "text": "quattro meno uno?"
+ },
+ {
+  "h": "af25e14a",
+  "lang": "it",
+  "text": "quattro meno uno fa tre!"
+ },
+ {
+  "h": "a643d5f4",
+  "lang": "it",
+  "text": "quattro meno due?"
+ },
+ {
+  "h": "ff471433",
+  "lang": "it",
+  "text": "quattro meno due fa due!"
+ },
+ {
+  "h": "d64e2bdb",
+  "lang": "it",
+  "text": "quattro meno tre?"
+ },
+ {
+  "h": "587228a8",
+  "lang": "it",
+  "text": "quattro meno tre fa uno!"
+ },
+ {
+  "h": "3c1a628b",
+  "lang": "it",
+  "text": "cinque meno uno?"
+ },
+ {
+  "h": "ba8c8cd6",
+  "lang": "it",
+  "text": "cinque meno uno fa quattro!"
+ },
+ {
+  "h": "80631731",
+  "lang": "it",
+  "text": "cinque meno due?"
+ },
+ {
+  "h": "11d611a3",
+  "lang": "it",
+  "text": "cinque meno due fa tre!"
+ },
+ {
+  "h": "c2edff76",
+  "lang": "it",
+  "text": "cinque meno tre?"
+ },
+ {
+  "h": "156c0285",
+  "lang": "it",
+  "text": "cinque meno tre fa due!"
+ },
+ {
+  "h": "e027a065",
+  "lang": "it",
+  "text": "cinque meno quattro?"
+ },
+ {
+  "h": "57f73f22",
+  "lang": "it",
+  "text": "cinque meno quattro fa uno!"
+ },
+ {
+  "h": "bb47db51",
+  "lang": "it",
+  "text": "sei meno uno?"
+ },
+ {
+  "h": "102c6399",
+  "lang": "it",
+  "text": "sei meno uno fa cinque!"
+ },
+ {
+  "h": "706599af",
+  "lang": "it",
+  "text": "sei meno due?"
+ },
+ {
+  "h": "1fd41d7a",
+  "lang": "it",
+  "text": "sei meno due fa quattro!"
+ },
+ {
+  "h": "1df43020",
+  "lang": "it",
+  "text": "sei meno tre?"
+ },
+ {
+  "h": "2b9da7f8",
+  "lang": "it",
+  "text": "sei meno tre fa tre!"
+ },
+ {
+  "h": "3f088c3b",
+  "lang": "it",
+  "text": "sei meno quattro?"
+ },
+ {
+  "h": "5e91ee5e",
+  "lang": "it",
+  "text": "sei meno quattro fa due!"
+ },
+ {
+  "h": "be308518",
+  "lang": "it",
+  "text": "sei meno cinque?"
+ },
+ {
+  "h": "585430f1",
+  "lang": "it",
+  "text": "sei meno cinque fa uno!"
+ },
+ {
+  "h": "88c5311d",
+  "lang": "it",
+  "text": "sette meno uno?"
+ },
+ {
+  "h": "1e6daf81",
+  "lang": "it",
+  "text": "sette meno uno fa sei!"
+ },
+ {
+  "h": "2de2d64b",
+  "lang": "it",
+  "text": "sette meno due?"
+ },
+ {
+  "h": "f175cc37",
+  "lang": "it",
+  "text": "sette meno due fa cinque!"
+ },
+ {
+  "h": "fb5c8464",
+  "lang": "it",
+  "text": "sette meno tre?"
+ },
+ {
+  "h": "8efdcba7",
+  "lang": "it",
+  "text": "sette meno tre fa quattro!"
+ },
+ {
+  "h": "08230fff",
+  "lang": "it",
+  "text": "sette meno quattro?"
+ },
+ {
+  "h": "bde7082d",
+  "lang": "it",
+  "text": "sette meno quattro fa tre!"
+ },
+ {
+  "h": "1db6745c",
+  "lang": "it",
+  "text": "sette meno cinque?"
+ },
+ {
+  "h": "bef2982b",
+  "lang": "it",
+  "text": "sette meno cinque fa due!"
+ },
+ {
+  "h": "600f981e",
+  "lang": "it",
+  "text": "sette meno sei?"
+ },
+ {
+  "h": "bb2db717",
+  "lang": "it",
+  "text": "sette meno sei fa uno!"
  },
  {
   "h": "2a9b5e4e",
@@ -8145,6 +9290,211 @@
   "text": "zeta!"
  },
  {
+  "h": "059618e6",
+  "lang": "it",
+  "text": "Sopra o sotto?"
+ },
+ {
+  "h": "86ac401e",
+  "lang": "it",
+  "text": "Non proprio! Ascolta di nuovo."
+ },
+ {
+  "h": "a7f40a52",
+  "lang": "it",
+  "text": "Ascolta dove mettere il giocattolo…"
+ },
+ {
+  "h": "ea644d97",
+  "lang": "it",
+  "text": "Trascinalo con il dito nel posto giusto!"
+ },
+ {
+  "h": "24554efc",
+  "lang": "it",
+  "text": "Sopra!"
+ },
+ {
+  "h": "75d1f728",
+  "lang": "it",
+  "text": "Sotto!"
+ },
+ {
+  "h": "1d745e6b",
+  "lang": "it",
+  "text": "Dentro!"
+ },
+ {
+  "h": "c76081ec",
+  "lang": "it",
+  "text": "Accanto!"
+ },
+ {
+  "h": "63897e64",
+  "lang": "it",
+  "text": "Metti l'orsetto sopra la sedia!"
+ },
+ {
+  "h": "37b2a4fc",
+  "lang": "it",
+  "text": "Metti l'orsetto sotto la sedia!"
+ },
+ {
+  "h": "fa900b09",
+  "lang": "it",
+  "text": "Metti l'orsetto accanto alla sedia!"
+ },
+ {
+  "h": "2b7926e0",
+  "lang": "it",
+  "text": "Metti l'orsetto sopra il letto!"
+ },
+ {
+  "h": "36d633f8",
+  "lang": "it",
+  "text": "Metti l'orsetto sotto il letto!"
+ },
+ {
+  "h": "37220098",
+  "lang": "it",
+  "text": "Metti l'orsetto accanto al letto!"
+ },
+ {
+  "h": "c67d8de2",
+  "lang": "it",
+  "text": "Metti l'orsetto dentro la scatola!"
+ },
+ {
+  "h": "68502761",
+  "lang": "it",
+  "text": "Metti l'orsetto sopra la scatola!"
+ },
+ {
+  "h": "d724cb40",
+  "lang": "it",
+  "text": "Metti l'orsetto accanto alla scatola!"
+ },
+ {
+  "h": "c47f46e6",
+  "lang": "it",
+  "text": "Metti l'orsetto dentro il cestino!"
+ },
+ {
+  "h": "db464d19",
+  "lang": "it",
+  "text": "Metti l'orsetto accanto al cestino!"
+ },
+ {
+  "h": "308c1c31",
+  "lang": "it",
+  "text": "Metti la palla sopra la sedia!"
+ },
+ {
+  "h": "613d423d",
+  "lang": "it",
+  "text": "Metti la palla sotto la sedia!"
+ },
+ {
+  "h": "8cec00d4",
+  "lang": "it",
+  "text": "Metti la palla accanto alla sedia!"
+ },
+ {
+  "h": "f9908add",
+  "lang": "it",
+  "text": "Metti la palla sopra il letto!"
+ },
+ {
+  "h": "270401d1",
+  "lang": "it",
+  "text": "Metti la palla sotto il letto!"
+ },
+ {
+  "h": "53a97915",
+  "lang": "it",
+  "text": "Metti la palla accanto al letto!"
+ },
+ {
+  "h": "dbb4d329",
+  "lang": "it",
+  "text": "Metti la palla dentro la scatola!"
+ },
+ {
+  "h": "e74b8e78",
+  "lang": "it",
+  "text": "Metti la palla sopra la scatola!"
+ },
+ {
+  "h": "a3285af1",
+  "lang": "it",
+  "text": "Metti la palla accanto alla scatola!"
+ },
+ {
+  "h": "c66a4bb9",
+  "lang": "it",
+  "text": "Metti la palla dentro il cestino!"
+ },
+ {
+  "h": "fa5150a8",
+  "lang": "it",
+  "text": "Metti la palla accanto al cestino!"
+ },
+ {
+  "h": "28cc0576",
+  "lang": "it",
+  "text": "Metti il gatto sopra la sedia!"
+ },
+ {
+  "h": "08ad1a86",
+  "lang": "it",
+  "text": "Metti il gatto sotto la sedia!"
+ },
+ {
+  "h": "fd1b8fef",
+  "lang": "it",
+  "text": "Metti il gatto accanto alla sedia!"
+ },
+ {
+  "h": "e31e3a22",
+  "lang": "it",
+  "text": "Metti il gatto sopra il letto!"
+ },
+ {
+  "h": "48179592",
+  "lang": "it",
+  "text": "Metti il gatto sotto il letto!"
+ },
+ {
+  "h": "2313bcfe",
+  "lang": "it",
+  "text": "Metti il gatto accanto al letto!"
+ },
+ {
+  "h": "8b1f2c00",
+  "lang": "it",
+  "text": "Metti il gatto dentro la scatola!"
+ },
+ {
+  "h": "2dfc9f8b",
+  "lang": "it",
+  "text": "Metti il gatto sopra la scatola!"
+ },
+ {
+  "h": "0deb6d5e",
+  "lang": "it",
+  "text": "Metti il gatto accanto alla scatola!"
+ },
+ {
+  "h": "686e03e8",
+  "lang": "it",
+  "text": "Metti il gatto dentro il cestino!"
+ },
+ {
+  "h": "a886a15b",
+  "lang": "it",
+  "text": "Metti il gatto accanto al cestino!"
+ },
+ {
   "h": "53b6d88e",
   "lang": "it",
   "text": "Le due lingue"
@@ -8738,6 +10088,16 @@
   "h": "452d5e43",
   "lang": "de",
   "text": "Super! Neues Level!"
+ },
+ {
+  "h": "c0ed38a6",
+  "lang": "de",
+  "text": "Pause! Du hast viel gespielt: Beweg dich ein bisschen und trink ein Glas Wasser."
+ },
+ {
+  "h": "9058bd72",
+  "lang": "de",
+  "text": "Die Pause ist vorbei. Spielen wir noch ein bisschen?"
  },
  {
   "h": "6ce9ef83",
@@ -10388,6 +11748,466 @@
   "h": "e8d4877c",
   "lang": "de",
   "text": "Tippe auf 10 Bananen!"
+ },
+ {
+  "h": "91ae7dfc",
+  "lang": "de",
+  "text": "Schau: Manche Dinge kommen dazu, andere gehen weg. Zähl sie!"
+ },
+ {
+  "h": "fad7ad23",
+  "lang": "de",
+  "text": "Dann tippe auf die richtige Zahl!"
+ },
+ {
+  "h": "da47c77a",
+  "lang": "de",
+  "text": "eins plus eins?"
+ },
+ {
+  "h": "221be487",
+  "lang": "de",
+  "text": "eins plus eins ist zwei!"
+ },
+ {
+  "h": "b050683e",
+  "lang": "de",
+  "text": "eins plus zwei?"
+ },
+ {
+  "h": "8247d8da",
+  "lang": "de",
+  "text": "eins plus zwei ist drei!"
+ },
+ {
+  "h": "aac7fceb",
+  "lang": "de",
+  "text": "eins plus drei?"
+ },
+ {
+  "h": "0f14923f",
+  "lang": "de",
+  "text": "eins plus drei ist vier!"
+ },
+ {
+  "h": "730e5eb5",
+  "lang": "de",
+  "text": "eins plus vier?"
+ },
+ {
+  "h": "97d48195",
+  "lang": "de",
+  "text": "eins plus vier ist fünf!"
+ },
+ {
+  "h": "8977f239",
+  "lang": "de",
+  "text": "eins plus fünf?"
+ },
+ {
+  "h": "ec3168b5",
+  "lang": "de",
+  "text": "eins plus fünf ist sechs!"
+ },
+ {
+  "h": "8a23a656",
+  "lang": "de",
+  "text": "zwei plus eins?"
+ },
+ {
+  "h": "48b70f02",
+  "lang": "de",
+  "text": "zwei plus eins ist drei!"
+ },
+ {
+  "h": "cd6cf31a",
+  "lang": "de",
+  "text": "zwei plus zwei?"
+ },
+ {
+  "h": "489125f8",
+  "lang": "de",
+  "text": "zwei plus zwei ist vier!"
+ },
+ {
+  "h": "2daf43c7",
+  "lang": "de",
+  "text": "zwei plus drei?"
+ },
+ {
+  "h": "5c7de1f3",
+  "lang": "de",
+  "text": "zwei plus drei ist fünf!"
+ },
+ {
+  "h": "716935a1",
+  "lang": "de",
+  "text": "zwei plus vier?"
+ },
+ {
+  "h": "c6f4addd",
+  "lang": "de",
+  "text": "zwei plus vier ist sechs!"
+ },
+ {
+  "h": "4d704a05",
+  "lang": "de",
+  "text": "zwei plus fünf?"
+ },
+ {
+  "h": "519f2a9f",
+  "lang": "de",
+  "text": "zwei plus fünf ist sieben!"
+ },
+ {
+  "h": "87573f77",
+  "lang": "de",
+  "text": "drei plus eins?"
+ },
+ {
+  "h": "d52cadcb",
+  "lang": "de",
+  "text": "drei plus eins ist vier!"
+ },
+ {
+  "h": "3c9f31c3",
+  "lang": "de",
+  "text": "drei plus zwei?"
+ },
+ {
+  "h": "be45d6af",
+  "lang": "de",
+  "text": "drei plus zwei ist fünf!"
+ },
+ {
+  "h": "6e4f1142",
+  "lang": "de",
+  "text": "drei plus drei?"
+ },
+ {
+  "h": "5c4e7e32",
+  "lang": "de",
+  "text": "drei plus drei ist sechs!"
+ },
+ {
+  "h": "3f8a33e4",
+  "lang": "de",
+  "text": "drei plus vier?"
+ },
+ {
+  "h": "7eda9c88",
+  "lang": "de",
+  "text": "drei plus vier ist sieben!"
+ },
+ {
+  "h": "367f0e94",
+  "lang": "de",
+  "text": "drei plus fünf?"
+ },
+ {
+  "h": "a36804f4",
+  "lang": "de",
+  "text": "drei plus fünf ist acht!"
+ },
+ {
+  "h": "51d5ce1d",
+  "lang": "de",
+  "text": "vier plus eins?"
+ },
+ {
+  "h": "b44ddb1d",
+  "lang": "de",
+  "text": "vier plus eins ist fünf!"
+ },
+ {
+  "h": "2877e4d1",
+  "lang": "de",
+  "text": "vier plus zwei?"
+ },
+ {
+  "h": "ccf1cb0d",
+  "lang": "de",
+  "text": "vier plus zwei ist sechs!"
+ },
+ {
+  "h": "2bafd384",
+  "lang": "de",
+  "text": "vier plus drei?"
+ },
+ {
+  "h": "271a30a8",
+  "lang": "de",
+  "text": "vier plus drei ist sieben!"
+ },
+ {
+  "h": "35e50922",
+  "lang": "de",
+  "text": "vier plus vier?"
+ },
+ {
+  "h": "84d21b66",
+  "lang": "de",
+  "text": "vier plus vier ist acht!"
+ },
+ {
+  "h": "5c81ca46",
+  "lang": "de",
+  "text": "vier plus fünf?"
+ },
+ {
+  "h": "98f64cc4",
+  "lang": "de",
+  "text": "vier plus fünf ist neun!"
+ },
+ {
+  "h": "113656fd",
+  "lang": "de",
+  "text": "fünf plus eins?"
+ },
+ {
+  "h": "5771f9e9",
+  "lang": "de",
+  "text": "fünf plus eins ist sechs!"
+ },
+ {
+  "h": "012522b1",
+  "lang": "de",
+  "text": "fünf plus zwei?"
+ },
+ {
+  "h": "f84fcf73",
+  "lang": "de",
+  "text": "fünf plus zwei ist sieben!"
+ },
+ {
+  "h": "eb0ec964",
+  "lang": "de",
+  "text": "fünf plus drei?"
+ },
+ {
+  "h": "dc6521c4",
+  "lang": "de",
+  "text": "fünf plus drei ist acht!"
+ },
+ {
+  "h": "f5459202",
+  "lang": "de",
+  "text": "fünf plus vier?"
+ },
+ {
+  "h": "f137d8d0",
+  "lang": "de",
+  "text": "fünf plus vier ist neun!"
+ },
+ {
+  "h": "0019a226",
+  "lang": "de",
+  "text": "fünf plus fünf?"
+ },
+ {
+  "h": "7fb92be9",
+  "lang": "de",
+  "text": "fünf plus fünf ist zehn!"
+ },
+ {
+  "h": "b032e0cf",
+  "lang": "de",
+  "text": "drei minus eins?"
+ },
+ {
+  "h": "41d0e2f4",
+  "lang": "de",
+  "text": "drei minus eins ist zwei!"
+ },
+ {
+  "h": "5e3bc63b",
+  "lang": "de",
+  "text": "drei minus zwei?"
+ },
+ {
+  "h": "9401f3ec",
+  "lang": "de",
+  "text": "drei minus zwei ist eins!"
+ },
+ {
+  "h": "db02a965",
+  "lang": "de",
+  "text": "vier minus eins?"
+ },
+ {
+  "h": "d1f5e447",
+  "lang": "de",
+  "text": "vier minus eins ist drei!"
+ },
+ {
+  "h": "792c68f9",
+  "lang": "de",
+  "text": "vier minus zwei?"
+ },
+ {
+  "h": "96bb604e",
+  "lang": "de",
+  "text": "vier minus zwei ist zwei!"
+ },
+ {
+  "h": "4ff55edc",
+  "lang": "de",
+  "text": "vier minus drei?"
+ },
+ {
+  "h": "3472d81d",
+  "lang": "de",
+  "text": "vier minus drei ist eins!"
+ },
+ {
+  "h": "4c72b1c5",
+  "lang": "de",
+  "text": "fünf minus eins?"
+ },
+ {
+  "h": "24ff7501",
+  "lang": "de",
+  "text": "fünf minus eins ist vier!"
+ },
+ {
+  "h": "e8220859",
+  "lang": "de",
+  "text": "fünf minus zwei?"
+ },
+ {
+  "h": "72d701bb",
+  "lang": "de",
+  "text": "fünf minus zwei ist drei!"
+ },
+ {
+  "h": "dab21c3c",
+  "lang": "de",
+  "text": "fünf minus drei?"
+ },
+ {
+  "h": "1317d3b1",
+  "lang": "de",
+  "text": "fünf minus drei ist zwei!"
+ },
+ {
+  "h": "6dfb313a",
+  "lang": "de",
+  "text": "fünf minus vier?"
+ },
+ {
+  "h": "ad25b70b",
+  "lang": "de",
+  "text": "fünf minus vier ist eins!"
+ },
+ {
+  "h": "53600b93",
+  "lang": "de",
+  "text": "sechs minus eins?"
+ },
+ {
+  "h": "447f28ff",
+  "lang": "de",
+  "text": "sechs minus eins ist fünf!"
+ },
+ {
+  "h": "8f8a122f",
+  "lang": "de",
+  "text": "sechs minus zwei?"
+ },
+ {
+  "h": "23ff9473",
+  "lang": "de",
+  "text": "sechs minus zwei ist vier!"
+ },
+ {
+  "h": "63a4ab8e",
+  "lang": "de",
+  "text": "sechs minus drei?"
+ },
+ {
+  "h": "b219326a",
+  "lang": "de",
+  "text": "sechs minus drei ist drei!"
+ },
+ {
+  "h": "d34b3ab0",
+  "lang": "de",
+  "text": "sechs minus vier?"
+ },
+ {
+  "h": "91ff97b5",
+  "lang": "de",
+  "text": "sechs minus vier ist zwei!"
+ },
+ {
+  "h": "b5fc8d00",
+  "lang": "de",
+  "text": "sechs minus fünf?"
+ },
+ {
+  "h": "5dcd3a21",
+  "lang": "de",
+  "text": "sechs minus fünf ist eins!"
+ },
+ {
+  "h": "7a787463",
+  "lang": "de",
+  "text": "sieben minus eins?"
+ },
+ {
+  "h": "e8563c37",
+  "lang": "de",
+  "text": "sieben minus eins ist sechs!"
+ },
+ {
+  "h": "b3a3065f",
+  "lang": "de",
+  "text": "sieben minus zwei?"
+ },
+ {
+  "h": "3318c3cb",
+  "lang": "de",
+  "text": "sieben minus zwei ist fünf!"
+ },
+ {
+  "h": "eee4025e",
+  "lang": "de",
+  "text": "sieben minus drei?"
+ },
+ {
+  "h": "fbe4225c",
+  "lang": "de",
+  "text": "sieben minus drei ist vier!"
+ },
+ {
+  "h": "b4db5ca0",
+  "lang": "de",
+  "text": "sieben minus vier?"
+ },
+ {
+  "h": "1038cda8",
+  "lang": "de",
+  "text": "sieben minus vier ist drei!"
+ },
+ {
+  "h": "980e9490",
+  "lang": "de",
+  "text": "sieben minus fünf?"
+ },
+ {
+  "h": "ca506a15",
+  "lang": "de",
+  "text": "sieben minus fünf ist zwei!"
+ },
+ {
+  "h": "e67748e2",
+  "lang": "de",
+  "text": "sieben minus sechs?"
+ },
+ {
+  "h": "57b5c793",
+  "lang": "de",
+  "text": "sieben minus sechs ist eins!"
  },
  {
   "h": "4e35cb05",
@@ -12420,6 +14240,211 @@
   "text": "Z!"
  },
  {
+  "h": "ad132a86",
+  "lang": "de",
+  "text": "Oben oder unten?"
+ },
+ {
+  "h": "e278dccf",
+  "lang": "de",
+  "text": "Nicht ganz! Hör nochmal zu."
+ },
+ {
+  "h": "0caf6ece",
+  "lang": "de",
+  "text": "Hör zu, wohin das Spielzeug soll…"
+ },
+ {
+  "h": "73d76886",
+  "lang": "de",
+  "text": "Zieh es mit dem Finger an die richtige Stelle!"
+ },
+ {
+  "h": "877b55d2",
+  "lang": "de",
+  "text": "Oben drauf!"
+ },
+ {
+  "h": "6b836d8d",
+  "lang": "de",
+  "text": "Darunter!"
+ },
+ {
+  "h": "a52542d8",
+  "lang": "de",
+  "text": "Drinnen!"
+ },
+ {
+  "h": "e1441459",
+  "lang": "de",
+  "text": "Daneben!"
+ },
+ {
+  "h": "e3fea87e",
+  "lang": "de",
+  "text": "Leg den Teddy auf den Stuhl!"
+ },
+ {
+  "h": "10158c54",
+  "lang": "de",
+  "text": "Leg den Teddy unter den Stuhl!"
+ },
+ {
+  "h": "5b2e78d0",
+  "lang": "de",
+  "text": "Leg den Teddy neben den Stuhl!"
+ },
+ {
+  "h": "93741bc0",
+  "lang": "de",
+  "text": "Leg den Teddy auf das Bett!"
+ },
+ {
+  "h": "65fdea12",
+  "lang": "de",
+  "text": "Leg den Teddy unter das Bett!"
+ },
+ {
+  "h": "20b87416",
+  "lang": "de",
+  "text": "Leg den Teddy neben das Bett!"
+ },
+ {
+  "h": "b6d94282",
+  "lang": "de",
+  "text": "Leg den Teddy in die Kiste!"
+ },
+ {
+  "h": "c03acf8b",
+  "lang": "de",
+  "text": "Leg den Teddy auf die Kiste!"
+ },
+ {
+  "h": "737fe6e5",
+  "lang": "de",
+  "text": "Leg den Teddy neben die Kiste!"
+ },
+ {
+  "h": "afaf2e9d",
+  "lang": "de",
+  "text": "Leg den Teddy in den Korb!"
+ },
+ {
+  "h": "dfba1ba4",
+  "lang": "de",
+  "text": "Leg den Teddy neben den Korb!"
+ },
+ {
+  "h": "237d038b",
+  "lang": "de",
+  "text": "Leg den Ball auf den Stuhl!"
+ },
+ {
+  "h": "efab45c9",
+  "lang": "de",
+  "text": "Leg den Ball unter den Stuhl!"
+ },
+ {
+  "h": "897baa09",
+  "lang": "de",
+  "text": "Leg den Ball neben den Stuhl!"
+ },
+ {
+  "h": "069228bb",
+  "lang": "de",
+  "text": "Leg den Ball auf das Bett!"
+ },
+ {
+  "h": "2be22185",
+  "lang": "de",
+  "text": "Leg den Ball unter das Bett!"
+ },
+ {
+  "h": "706eeac5",
+  "lang": "de",
+  "text": "Leg den Ball neben das Bett!"
+ },
+ {
+  "h": "5ed7dc55",
+  "lang": "de",
+  "text": "Leg den Ball in die Kiste!"
+ },
+ {
+  "h": "34ccb5e6",
+  "lang": "de",
+  "text": "Leg den Ball auf die Kiste!"
+ },
+ {
+  "h": "5a302544",
+  "lang": "de",
+  "text": "Leg den Ball neben die Kiste!"
+ },
+ {
+  "h": "26a86014",
+  "lang": "de",
+  "text": "Leg den Ball in den Korb!"
+ },
+ {
+  "h": "7d4dc9d7",
+  "lang": "de",
+  "text": "Leg den Ball neben den Korb!"
+ },
+ {
+  "h": "bb39c870",
+  "lang": "de",
+  "text": "Leg die Katze auf den Stuhl!"
+ },
+ {
+  "h": "6a03e09a",
+  "lang": "de",
+  "text": "Leg die Katze unter den Stuhl!"
+ },
+ {
+  "h": "d69ae792",
+  "lang": "de",
+  "text": "Leg die Katze neben den Stuhl!"
+ },
+ {
+  "h": "b39b22b6",
+  "lang": "de",
+  "text": "Leg die Katze auf das Bett!"
+ },
+ {
+  "h": "005e78e4",
+  "lang": "de",
+  "text": "Leg die Katze unter das Bett!"
+ },
+ {
+  "h": "81b142dc",
+  "lang": "de",
+  "text": "Leg die Katze neben das Bett!"
+ },
+ {
+  "h": "08f154e0",
+  "lang": "de",
+  "text": "Leg die Katze in die Kiste!"
+ },
+ {
+  "h": "a74c2585",
+  "lang": "de",
+  "text": "Leg die Katze auf die Kiste!"
+ },
+ {
+  "h": "04080eaf",
+  "lang": "de",
+  "text": "Leg die Katze neben die Kiste!"
+ },
+ {
+  "h": "26fbf28b",
+  "lang": "de",
+  "text": "Leg die Katze in den Korb!"
+ },
+ {
+  "h": "baf71cde",
+  "lang": "de",
+  "text": "Leg die Katze neben den Korb!"
+ },
+ {
   "h": "003f344f",
   "lang": "de",
   "text": "Zwei Sprachen"
@@ -13023,6 +15048,16 @@
   "h": "06fd0eba",
   "lang": "en",
   "text": "Well done! New level!"
+ },
+ {
+  "h": "8ef6ea47",
+  "lang": "en",
+  "text": "Break time! You've played a lot: move around a bit and have a glass of water."
+ },
+ {
+  "h": "ce9938b9",
+  "lang": "en",
+  "text": "Break is over. Shall we play a little more?"
  },
  {
   "h": "f400c236",
@@ -14673,6 +16708,466 @@
   "h": "8fce1b3a",
   "lang": "en",
   "text": "Tap 10 bananas!"
+ },
+ {
+  "h": "e83e1484",
+  "lang": "en",
+  "text": "Look: some things arrive, some go away. Count them!"
+ },
+ {
+  "h": "17c9bb26",
+  "lang": "en",
+  "text": "Then tap the right number!"
+ },
+ {
+  "h": "98a5e7da",
+  "lang": "en",
+  "text": "one plus one?"
+ },
+ {
+  "h": "5a377c67",
+  "lang": "en",
+  "text": "one plus one makes two!"
+ },
+ {
+  "h": "41af05a0",
+  "lang": "en",
+  "text": "one plus two?"
+ },
+ {
+  "h": "c237fecf",
+  "lang": "en",
+  "text": "one plus two makes three!"
+ },
+ {
+  "h": "6db79c82",
+  "lang": "en",
+  "text": "one plus three?"
+ },
+ {
+  "h": "d5018f63",
+  "lang": "en",
+  "text": "one plus three makes four!"
+ },
+ {
+  "h": "ebfbf202",
+  "lang": "en",
+  "text": "one plus four?"
+ },
+ {
+  "h": "8ec2c647",
+  "lang": "en",
+  "text": "one plus four makes five!"
+ },
+ {
+  "h": "c414bdca",
+  "lang": "en",
+  "text": "one plus five?"
+ },
+ {
+  "h": "498be64d",
+  "lang": "en",
+  "text": "one plus five makes six!"
+ },
+ {
+  "h": "8d42c830",
+  "lang": "en",
+  "text": "two plus one?"
+ },
+ {
+  "h": "1e2a753f",
+  "lang": "en",
+  "text": "two plus one makes three!"
+ },
+ {
+  "h": "65cf9766",
+  "lang": "en",
+  "text": "two plus two?"
+ },
+ {
+  "h": "399e50a7",
+  "lang": "en",
+  "text": "two plus two makes four!"
+ },
+ {
+  "h": "ab2dd1c4",
+  "lang": "en",
+  "text": "two plus three?"
+ },
+ {
+  "h": "cb2a65fd",
+  "lang": "en",
+  "text": "two plus three makes five!"
+ },
+ {
+  "h": "0d845510",
+  "lang": "en",
+  "text": "two plus four?"
+ },
+ {
+  "h": "427db51f",
+  "lang": "en",
+  "text": "two plus four makes six!"
+ },
+ {
+  "h": "bbb55c54",
+  "lang": "en",
+  "text": "two plus five?"
+ },
+ {
+  "h": "d6362066",
+  "lang": "en",
+  "text": "two plus five makes seven!"
+ },
+ {
+  "h": "f6cede42",
+  "lang": "en",
+  "text": "three plus one?"
+ },
+ {
+  "h": "d17c4523",
+  "lang": "en",
+  "text": "three plus one makes four!"
+ },
+ {
+  "h": "e2d156d8",
+  "lang": "en",
+  "text": "three plus two?"
+ },
+ {
+  "h": "1327cb41",
+  "lang": "en",
+  "text": "three plus two makes five!"
+ },
+ {
+  "h": "f7447c5a",
+  "lang": "en",
+  "text": "three plus three?"
+ },
+ {
+  "h": "62451b7d",
+  "lang": "en",
+  "text": "three plus three makes six!"
+ },
+ {
+  "h": "d5f2782a",
+  "lang": "en",
+  "text": "three plus four?"
+ },
+ {
+  "h": "71a41b10",
+  "lang": "en",
+  "text": "three plus four makes seven!"
+ },
+ {
+  "h": "8e0b1192",
+  "lang": "en",
+  "text": "three plus five?"
+ },
+ {
+  "h": "3b805352",
+  "lang": "en",
+  "text": "three plus five makes eight!"
+ },
+ {
+  "h": "1e5952ca",
+  "lang": "en",
+  "text": "four plus one?"
+ },
+ {
+  "h": "99dae86f",
+  "lang": "en",
+  "text": "four plus one makes five!"
+ },
+ {
+  "h": "6cb787d0",
+  "lang": "en",
+  "text": "four plus two?"
+ },
+ {
+  "h": "498f7edf",
+  "lang": "en",
+  "text": "four plus two makes six!"
+ },
+ {
+  "h": "e85ff832",
+  "lang": "en",
+  "text": "four plus three?"
+ },
+ {
+  "h": "67461da8",
+  "lang": "en",
+  "text": "four plus three makes seven!"
+ },
+ {
+  "h": "b0a66bd2",
+  "lang": "en",
+  "text": "four plus four?"
+ },
+ {
+  "h": "8af98c92",
+  "lang": "en",
+  "text": "four plus four makes eight!"
+ },
+ {
+  "h": "a8bf69fa",
+  "lang": "en",
+  "text": "four plus five?"
+ },
+ {
+  "h": "fa6e786f",
+  "lang": "en",
+  "text": "four plus five makes nine!"
+ },
+ {
+  "h": "84cc4532",
+  "lang": "en",
+  "text": "five plus one?"
+ },
+ {
+  "h": "b0592d75",
+  "lang": "en",
+  "text": "five plus one makes six!"
+ },
+ {
+  "h": "4df4d908",
+  "lang": "en",
+  "text": "five plus two?"
+ },
+ {
+  "h": "66d09e9a",
+  "lang": "en",
+  "text": "five plus two makes seven!"
+ },
+ {
+  "h": "9a60744a",
+  "lang": "en",
+  "text": "five plus three?"
+ },
+ {
+  "h": "0b52efca",
+  "lang": "en",
+  "text": "five plus three makes eight!"
+ },
+ {
+  "h": "3140977a",
+  "lang": "en",
+  "text": "five plus four?"
+ },
+ {
+  "h": "0c8d5cef",
+  "lang": "en",
+  "text": "five plus four makes nine!"
+ },
+ {
+  "h": "09596342",
+  "lang": "en",
+  "text": "five plus five?"
+ },
+ {
+  "h": "3bb837ee",
+  "lang": "en",
+  "text": "five plus five makes ten!"
+ },
+ {
+  "h": "74e92755",
+  "lang": "en",
+  "text": "three take away one?"
+ },
+ {
+  "h": "93e2bcf5",
+  "lang": "en",
+  "text": "three take away one leaves two!"
+ },
+ {
+  "h": "6a0a45ff",
+  "lang": "en",
+  "text": "three take away two?"
+ },
+ {
+  "h": "09c499b1",
+  "lang": "en",
+  "text": "three take away two leaves one!"
+ },
+ {
+  "h": "c77728dd",
+  "lang": "en",
+  "text": "four take away one?"
+ },
+ {
+  "h": "bee59097",
+  "lang": "en",
+  "text": "four take away one leaves three!"
+ },
+ {
+  "h": "39dd0f57",
+  "lang": "en",
+  "text": "four take away two?"
+ },
+ {
+  "h": "d21aaaa3",
+  "lang": "en",
+  "text": "four take away two leaves two!"
+ },
+ {
+  "h": "9f73d3cd",
+  "lang": "en",
+  "text": "four take away three?"
+ },
+ {
+  "h": "7d333a33",
+  "lang": "en",
+  "text": "four take away three leaves one!"
+ },
+ {
+  "h": "0bce5b65",
+  "lang": "en",
+  "text": "five take away one?"
+ },
+ {
+  "h": "2c4ff199",
+  "lang": "en",
+  "text": "five take away one leaves four!"
+ },
+ {
+  "h": "de15954f",
+  "lang": "en",
+  "text": "five take away two?"
+ },
+ {
+  "h": "7b306c81",
+  "lang": "en",
+  "text": "five take away two leaves three!"
+ },
+ {
+  "h": "8ee8a385",
+  "lang": "en",
+  "text": "five take away three?"
+ },
+ {
+  "h": "692bbec5",
+  "lang": "en",
+  "text": "five take away three leaves two!"
+ },
+ {
+  "h": "3bf0ac73",
+  "lang": "en",
+  "text": "five take away four?"
+ },
+ {
+  "h": "55af8e25",
+  "lang": "en",
+  "text": "five take away four leaves one!"
+ },
+ {
+  "h": "c68316dd",
+  "lang": "en",
+  "text": "six take away one?"
+ },
+ {
+  "h": "f27bf6a1",
+  "lang": "en",
+  "text": "six take away one leaves five!"
+ },
+ {
+  "h": "38e8fd57",
+  "lang": "en",
+  "text": "six take away two?"
+ },
+ {
+  "h": "412c74bf",
+  "lang": "en",
+  "text": "six take away two leaves four!"
+ },
+ {
+  "h": "c6c471cd",
+  "lang": "en",
+  "text": "six take away three?"
+ },
+ {
+  "h": "d7d8da67",
+  "lang": "en",
+  "text": "six take away three leaves three!"
+ },
+ {
+  "h": "8b0367ab",
+  "lang": "en",
+  "text": "six take away four?"
+ },
+ {
+  "h": "1b325377",
+  "lang": "en",
+  "text": "six take away four leaves two!"
+ },
+ {
+  "h": "b053b0cf",
+  "lang": "en",
+  "text": "six take away five?"
+ },
+ {
+  "h": "5e293be1",
+  "lang": "en",
+  "text": "six take away five leaves one!"
+ },
+ {
+  "h": "03160478",
+  "lang": "en",
+  "text": "seven take away one?"
+ },
+ {
+  "h": "394cf4f4",
+  "lang": "en",
+  "text": "seven take away one leaves six!"
+ },
+ {
+  "h": "1dfccabe",
+  "lang": "en",
+  "text": "seven take away two?"
+ },
+ {
+  "h": "fa4c391a",
+  "lang": "en",
+  "text": "seven take away two leaves five!"
+ },
+ {
+  "h": "38131e1c",
+  "lang": "en",
+  "text": "seven take away three?"
+ },
+ {
+  "h": "9f67f164",
+  "lang": "en",
+  "text": "seven take away three leaves four!"
+ },
+ {
+  "h": "e7564f78",
+  "lang": "en",
+  "text": "seven take away four?"
+ },
+ {
+  "h": "50f38a2c",
+  "lang": "en",
+  "text": "seven take away four leaves three!"
+ },
+ {
+  "h": "7587245c",
+  "lang": "en",
+  "text": "seven take away five?"
+ },
+ {
+  "h": "9eac3282",
+  "lang": "en",
+  "text": "seven take away five leaves two!"
+ },
+ {
+  "h": "297343e4",
+  "lang": "en",
+  "text": "seven take away six?"
+ },
+ {
+  "h": "06dc8704",
+  "lang": "en",
+  "text": "seven take away six leaves one!"
  },
  {
   "h": "6d8d8789",
@@ -16750,6 +19245,211 @@
   "text": "Z!"
  },
  {
+  "h": "2308283a",
+  "lang": "en",
+  "text": "On or under?"
+ },
+ {
+  "h": "cacc1604",
+  "lang": "en",
+  "text": "Not quite! Listen again."
+ },
+ {
+  "h": "c4f22e60",
+  "lang": "en",
+  "text": "Listen to where the toy goes…"
+ },
+ {
+  "h": "6646f986",
+  "lang": "en",
+  "text": "Drag it with your finger to the right place!"
+ },
+ {
+  "h": "cf7d3e0c",
+  "lang": "en",
+  "text": "On top!"
+ },
+ {
+  "h": "7edeb308",
+  "lang": "en",
+  "text": "Under!"
+ },
+ {
+  "h": "8ea5f08a",
+  "lang": "en",
+  "text": "Inside!"
+ },
+ {
+  "h": "71c36e45",
+  "lang": "en",
+  "text": "Next to it!"
+ },
+ {
+  "h": "fd734f9d",
+  "lang": "en",
+  "text": "Put the teddy on the chair!"
+ },
+ {
+  "h": "ec554af2",
+  "lang": "en",
+  "text": "Put the teddy under the chair!"
+ },
+ {
+  "h": "54ee2e4a",
+  "lang": "en",
+  "text": "Put the teddy next to the chair!"
+ },
+ {
+  "h": "b7b48227",
+  "lang": "en",
+  "text": "Put the teddy on the bed!"
+ },
+ {
+  "h": "b2b17a94",
+  "lang": "en",
+  "text": "Put the teddy under the bed!"
+ },
+ {
+  "h": "362dd8ac",
+  "lang": "en",
+  "text": "Put the teddy next to the bed!"
+ },
+ {
+  "h": "97c05883",
+  "lang": "en",
+  "text": "Put the teddy in the box!"
+ },
+ {
+  "h": "9fc366e9",
+  "lang": "en",
+  "text": "Put the teddy on the box!"
+ },
+ {
+  "h": "56460ff2",
+  "lang": "en",
+  "text": "Put the teddy next to the box!"
+ },
+ {
+  "h": "35738a4c",
+  "lang": "en",
+  "text": "Put the teddy in the basket!"
+ },
+ {
+  "h": "5e178453",
+  "lang": "en",
+  "text": "Put the teddy next to the basket!"
+ },
+ {
+  "h": "67056eb0",
+  "lang": "en",
+  "text": "Put the ball on the chair!"
+ },
+ {
+  "h": "0a1c2a4d",
+  "lang": "en",
+  "text": "Put the ball under the chair!"
+ },
+ {
+  "h": "77eb05f1",
+  "lang": "en",
+  "text": "Put the ball next to the chair!"
+ },
+ {
+  "h": "d1921596",
+  "lang": "en",
+  "text": "Put the ball on the bed!"
+ },
+ {
+  "h": "06f05377",
+  "lang": "en",
+  "text": "Put the ball under the bed!"
+ },
+ {
+  "h": "1640f41b",
+  "lang": "en",
+  "text": "Put the ball next to the bed!"
+ },
+ {
+  "h": "f36142ea",
+  "lang": "en",
+  "text": "Put the ball in the box!"
+ },
+ {
+  "h": "c1a106f0",
+  "lang": "en",
+  "text": "Put the ball on the box!"
+ },
+ {
+  "h": "06274305",
+  "lang": "en",
+  "text": "Put the ball next to the box!"
+ },
+ {
+  "h": "fdfe6aab",
+  "lang": "en",
+  "text": "Put the ball in the basket!"
+ },
+ {
+  "h": "0abdb8c6",
+  "lang": "en",
+  "text": "Put the ball next to the basket!"
+ },
+ {
+  "h": "3298e8df",
+  "lang": "en",
+  "text": "Put the cat on the chair!"
+ },
+ {
+  "h": "a6f5feb0",
+  "lang": "en",
+  "text": "Put the cat under the chair!"
+ },
+ {
+  "h": "e72e07e0",
+  "lang": "en",
+  "text": "Put the cat next to the chair!"
+ },
+ {
+  "h": "574e78f5",
+  "lang": "en",
+  "text": "Put the cat on the bed!"
+ },
+ {
+  "h": "ba4c2596",
+  "lang": "en",
+  "text": "Put the cat under the bed!"
+ },
+ {
+  "h": "ec0283a6",
+  "lang": "en",
+  "text": "Put the cat next to the bed!"
+ },
+ {
+  "h": "88298cb1",
+  "lang": "en",
+  "text": "Put the cat in the box!"
+ },
+ {
+  "h": "476664ab",
+  "lang": "en",
+  "text": "Put the cat on the box!"
+ },
+ {
+  "h": "fc11a760",
+  "lang": "en",
+  "text": "Put the cat next to the box!"
+ },
+ {
+  "h": "bcd7e802",
+  "lang": "en",
+  "text": "Put the cat in the basket!"
+ },
+ {
+  "h": "6871f279",
+  "lang": "en",
+  "text": "Put the cat next to the basket!"
+ },
+ {
   "h": "ba9f1247",
   "lang": "en",
   "text": "Two languages"
@@ -17328,6 +20028,16 @@
   "h": "c3f222fd",
   "lang": "es",
   "text": "¡Muy bien! ¡Nuevo nivel!"
+ },
+ {
+  "h": "b517f41e",
+  "lang": "es",
+  "text": "¡Pausa! Has jugado mucho: muévete un poco y bebe un vaso de agua."
+ },
+ {
+  "h": "a7a2c823",
+  "lang": "es",
+  "text": "Se acabó la pausa. ¿Jugamos un poco más?"
  },
  {
   "h": "0112a2a0",
@@ -18983,6 +21693,466 @@
   "h": "82c5acc5",
   "lang": "es",
   "text": "¡Toca 10 plátanos!"
+ },
+ {
+  "h": "8cfaaf48",
+  "lang": "es",
+  "text": "Mira: unas cosas llegan y otras se van. ¡Cuéntalas!"
+ },
+ {
+  "h": "d2bf8f4b",
+  "lang": "es",
+  "text": "¡Luego toca el número correcto!"
+ },
+ {
+  "h": "acb101e2",
+  "lang": "es",
+  "text": "¿uno más uno?"
+ },
+ {
+  "h": "1ce09980",
+  "lang": "es",
+  "text": "¡uno más uno son dos!"
+ },
+ {
+  "h": "6ea8fe04",
+  "lang": "es",
+  "text": "¿uno más dos?"
+ },
+ {
+  "h": "4a8638f2",
+  "lang": "es",
+  "text": "¡uno más dos son tres!"
+ },
+ {
+  "h": "8ac7d5bc",
+  "lang": "es",
+  "text": "¿uno más tres?"
+ },
+ {
+  "h": "33f88592",
+  "lang": "es",
+  "text": "¡uno más tres son cuatro!"
+ },
+ {
+  "h": "8c0b7eb8",
+  "lang": "es",
+  "text": "¿uno más cuatro?"
+ },
+ {
+  "h": "cd4d49f8",
+  "lang": "es",
+  "text": "¡uno más cuatro son cinco!"
+ },
+ {
+  "h": "1ba443ea",
+  "lang": "es",
+  "text": "¿uno más cinco?"
+ },
+ {
+  "h": "a42880a2",
+  "lang": "es",
+  "text": "¡uno más cinco son seis!"
+ },
+ {
+  "h": "57e27694",
+  "lang": "es",
+  "text": "¿dos más uno?"
+ },
+ {
+  "h": "2ad33322",
+  "lang": "es",
+  "text": "¡dos más uno son tres!"
+ },
+ {
+  "h": "11da661e",
+  "lang": "es",
+  "text": "¿dos más dos?"
+ },
+ {
+  "h": "a0e9b0b0",
+  "lang": "es",
+  "text": "¡dos más dos son cuatro!"
+ },
+ {
+  "h": "d095408a",
+  "lang": "es",
+  "text": "¿dos más tres?"
+ },
+ {
+  "h": "d80f3d8e",
+  "lang": "es",
+  "text": "¡dos más tres son cinco!"
+ },
+ {
+  "h": "58f1bca2",
+  "lang": "es",
+  "text": "¿dos más cuatro?"
+ },
+ {
+  "h": "2bccdf9a",
+  "lang": "es",
+  "text": "¡dos más cuatro son seis!"
+ },
+ {
+  "h": "8b821cdc",
+  "lang": "es",
+  "text": "¿dos más cinco?"
+ },
+ {
+  "h": "2bbdf5ec",
+  "lang": "es",
+  "text": "¡dos más cinco son siete!"
+ },
+ {
+  "h": "b09a411a",
+  "lang": "es",
+  "text": "¿tres más uno?"
+ },
+ {
+  "h": "b0fd0aec",
+  "lang": "es",
+  "text": "¡tres más uno son cuatro!"
+ },
+ {
+  "h": "00078c6c",
+  "lang": "es",
+  "text": "¿tres más dos?"
+ },
+ {
+  "h": "8ecdb11c",
+  "lang": "es",
+  "text": "¡tres más dos son cinco!"
+ },
+ {
+  "h": "bd0182c4",
+  "lang": "es",
+  "text": "¿tres más tres?"
+ },
+ {
+  "h": "f8ab10a4",
+  "lang": "es",
+  "text": "¡tres más tres son seis!"
+ },
+ {
+  "h": "a996f0d0",
+  "lang": "es",
+  "text": "¿tres más cuatro?"
+ },
+ {
+  "h": "1026c4f8",
+  "lang": "es",
+  "text": "¡tres más cuatro son siete!"
+ },
+ {
+  "h": "6ca8db32",
+  "lang": "es",
+  "text": "¿tres más cinco?"
+ },
+ {
+  "h": "eef80245",
+  "lang": "es",
+  "text": "¡tres más cinco son ocho!"
+ },
+ {
+  "h": "6ce798a6",
+  "lang": "es",
+  "text": "¿cuatro más uno?"
+ },
+ {
+  "h": "143283ea",
+  "lang": "es",
+  "text": "¡cuatro más uno son cinco!"
+ },
+ {
+  "h": "d18aeee0",
+  "lang": "es",
+  "text": "¿cuatro más dos?"
+ },
+ {
+  "h": "f53535e0",
+  "lang": "es",
+  "text": "¡cuatro más dos son seis!"
+ },
+ {
+  "h": "39a07920",
+  "lang": "es",
+  "text": "¿cuatro más tres?"
+ },
+ {
+  "h": "15ea6be8",
+  "lang": "es",
+  "text": "¡cuatro más tres son siete!"
+ },
+ {
+  "h": "941c1174",
+  "lang": "es",
+  "text": "¿cuatro más cuatro?"
+ },
+ {
+  "h": "909a0c83",
+  "lang": "es",
+  "text": "¡cuatro más cuatro son ocho!"
+ },
+ {
+  "h": "7208c3f6",
+  "lang": "es",
+  "text": "¿cuatro más cinco?"
+ },
+ {
+  "h": "486dbfe3",
+  "lang": "es",
+  "text": "¡cuatro más cinco son nueve!"
+ },
+ {
+  "h": "51fc4d22",
+  "lang": "es",
+  "text": "¿cinco más uno?"
+ },
+ {
+  "h": "a134091a",
+  "lang": "es",
+  "text": "¡cinco más uno son seis!"
+ },
+ {
+  "h": "1179e044",
+  "lang": "es",
+  "text": "¿cinco más dos?"
+ },
+ {
+  "h": "95234fc4",
+  "lang": "es",
+  "text": "¡cinco más dos son siete!"
+ },
+ {
+  "h": "82c8eafc",
+  "lang": "es",
+  "text": "¿cinco más tres?"
+ },
+ {
+  "h": "d97771eb",
+  "lang": "es",
+  "text": "¡cinco más tres son ocho!"
+ },
+ {
+  "h": "c81b0ff8",
+  "lang": "es",
+  "text": "¿cinco más cuatro?"
+ },
+ {
+  "h": "d5efc861",
+  "lang": "es",
+  "text": "¡cinco más cuatro son nueve!"
+ },
+ {
+  "h": "5ea6362a",
+  "lang": "es",
+  "text": "¿cinco más cinco?"
+ },
+ {
+  "h": "8dc8f946",
+  "lang": "es",
+  "text": "¡cinco más cinco son diez!"
+ },
+ {
+  "h": "73a18eb3",
+  "lang": "es",
+  "text": "¿tres menos uno?"
+ },
+ {
+  "h": "024a3185",
+  "lang": "es",
+  "text": "¡tres menos uno son dos!"
+ },
+ {
+  "h": "24344361",
+  "lang": "es",
+  "text": "¿tres menos dos?"
+ },
+ {
+  "h": "1a1beac9",
+  "lang": "es",
+  "text": "¡tres menos dos son uno!"
+ },
+ {
+  "h": "26fa6d57",
+  "lang": "es",
+  "text": "¿cuatro menos uno?"
+ },
+ {
+  "h": "6522bc9f",
+  "lang": "es",
+  "text": "¡cuatro menos uno son tres!"
+ },
+ {
+  "h": "7d0296fd",
+  "lang": "es",
+  "text": "¿cuatro menos dos?"
+ },
+ {
+  "h": "c6a90b5b",
+  "lang": "es",
+  "text": "¡cuatro menos dos son dos!"
+ },
+ {
+  "h": "d84dd50b",
+  "lang": "es",
+  "text": "¿cuatro menos tres?"
+ },
+ {
+  "h": "1a0d6b47",
+  "lang": "es",
+  "text": "¡cuatro menos tres son uno!"
+ },
+ {
+  "h": "b779007b",
+  "lang": "es",
+  "text": "¿cinco menos uno?"
+ },
+ {
+  "h": "f7f6b1fb",
+  "lang": "es",
+  "text": "¡cinco menos uno son cuatro!"
+ },
+ {
+  "h": "3a85d299",
+  "lang": "es",
+  "text": "¿cinco menos dos?"
+ },
+ {
+  "h": "67fbfb79",
+  "lang": "es",
+  "text": "¡cinco menos dos son tres!"
+ },
+ {
+  "h": "89880eef",
+  "lang": "es",
+  "text": "¿cinco menos tres?"
+ },
+ {
+  "h": "36d05771",
+  "lang": "es",
+  "text": "¡cinco menos tres son dos!"
+ },
+ {
+  "h": "f59033d7",
+  "lang": "es",
+  "text": "¿cinco menos cuatro?"
+ },
+ {
+  "h": "b7ac7ccb",
+  "lang": "es",
+  "text": "¡cinco menos cuatro son uno!"
+ },
+ {
+  "h": "5a5fbd81",
+  "lang": "es",
+  "text": "¿seis menos uno?"
+ },
+ {
+  "h": "c3587ba9",
+  "lang": "es",
+  "text": "¡seis menos uno son cinco!"
+ },
+ {
+  "h": "92e3b0c7",
+  "lang": "es",
+  "text": "¿seis menos dos?"
+ },
+ {
+  "h": "8010bdd7",
+  "lang": "es",
+  "text": "¡seis menos dos son cuatro!"
+ },
+ {
+  "h": "1f8b24b9",
+  "lang": "es",
+  "text": "¿seis menos tres?"
+ },
+ {
+  "h": "54347199",
+  "lang": "es",
+  "text": "¡seis menos tres son tres!"
+ },
+ {
+  "h": "2a3204c5",
+  "lang": "es",
+  "text": "¿seis menos cuatro?"
+ },
+ {
+  "h": "1c6da293",
+  "lang": "es",
+  "text": "¡seis menos cuatro son dos!"
+ },
+ {
+  "h": "df424a71",
+  "lang": "es",
+  "text": "¿seis menos cinco?"
+ },
+ {
+  "h": "22592459",
+  "lang": "es",
+  "text": "¡seis menos cinco son uno!"
+ },
+ {
+  "h": "ec8b681f",
+  "lang": "es",
+  "text": "¿siete menos uno?"
+ },
+ {
+  "h": "2bb4bf41",
+  "lang": "es",
+  "text": "¡siete menos uno son seis!"
+ },
+ {
+  "h": "32937895",
+  "lang": "es",
+  "text": "¿siete menos dos?"
+ },
+ {
+  "h": "2b0579bd",
+  "lang": "es",
+  "text": "¡siete menos dos son cinco!"
+ },
+ {
+  "h": "d0de1243",
+  "lang": "es",
+  "text": "¿siete menos tres?"
+ },
+ {
+  "h": "e5371ba3",
+  "lang": "es",
+  "text": "¡siete menos tres son cuatro!"
+ },
+ {
+  "h": "7276a7a3",
+  "lang": "es",
+  "text": "¿siete menos cuatro?"
+ },
+ {
+  "h": "0afc39a3",
+  "lang": "es",
+  "text": "¡siete menos cuatro son tres!"
+ },
+ {
+  "h": "fa5ee97f",
+  "lang": "es",
+  "text": "¿siete menos cinco?"
+ },
+ {
+  "h": "713577c1",
+  "lang": "es",
+  "text": "¡siete menos cinco son dos!"
+ },
+ {
+  "h": "97791365",
+  "lang": "es",
+  "text": "¿siete menos seis?"
+ },
+ {
+  "h": "13694f35",
+  "lang": "es",
+  "text": "¡siete menos seis son uno!"
  },
  {
   "h": "5d5b734a",
@@ -21038,6 +24208,211 @@
   "h": "af7d0f43",
   "lang": "es",
   "text": "¡Z!"
+ },
+ {
+  "h": "bab3fb1c",
+  "lang": "es",
+  "text": "¿Encima o debajo?"
+ },
+ {
+  "h": "7fcc7604",
+  "lang": "es",
+  "text": "¡Casi! Escucha otra vez."
+ },
+ {
+  "h": "2899036f",
+  "lang": "es",
+  "text": "Escucha dónde poner el juguete…"
+ },
+ {
+  "h": "9da264e3",
+  "lang": "es",
+  "text": "¡Arrástralo con el dedo al sitio correcto!"
+ },
+ {
+  "h": "02269926",
+  "lang": "es",
+  "text": "¡Encima!"
+ },
+ {
+  "h": "f45afefe",
+  "lang": "es",
+  "text": "¡Debajo!"
+ },
+ {
+  "h": "0ea02b3d",
+  "lang": "es",
+  "text": "¡Dentro!"
+ },
+ {
+  "h": "5546edc0",
+  "lang": "es",
+  "text": "¡Al lado!"
+ },
+ {
+  "h": "aaff858b",
+  "lang": "es",
+  "text": "¡Pon el osito encima de la silla!"
+ },
+ {
+  "h": "3ef28453",
+  "lang": "es",
+  "text": "¡Pon el osito debajo de la silla!"
+ },
+ {
+  "h": "456c6aa1",
+  "lang": "es",
+  "text": "¡Pon el osito al lado de la silla!"
+ },
+ {
+  "h": "16c00d2a",
+  "lang": "es",
+  "text": "¡Pon el osito encima de la cama!"
+ },
+ {
+  "h": "29a1f3e2",
+  "lang": "es",
+  "text": "¡Pon el osito debajo de la cama!"
+ },
+ {
+  "h": "b088c8f4",
+  "lang": "es",
+  "text": "¡Pon el osito al lado de la cama!"
+ },
+ {
+  "h": "d30b5704",
+  "lang": "es",
+  "text": "¡Pon el osito dentro de la caja!"
+ },
+ {
+  "h": "26b7d795",
+  "lang": "es",
+  "text": "¡Pon el osito encima de la caja!"
+ },
+ {
+  "h": "a877733b",
+  "lang": "es",
+  "text": "¡Pon el osito al lado de la caja!"
+ },
+ {
+  "h": "86f676b4",
+  "lang": "es",
+  "text": "¡Pon el osito dentro del cesto!"
+ },
+ {
+  "h": "f25c8d51",
+  "lang": "es",
+  "text": "¡Pon el osito al lado del cesto!"
+ },
+ {
+  "h": "c3a250b0",
+  "lang": "es",
+  "text": "¡Pon la pelota encima de la silla!"
+ },
+ {
+  "h": "fb293cb0",
+  "lang": "es",
+  "text": "¡Pon la pelota debajo de la silla!"
+ },
+ {
+  "h": "3d66a8a0",
+  "lang": "es",
+  "text": "¡Pon la pelota al lado de la silla!"
+ },
+ {
+  "h": "9cca2997",
+  "lang": "es",
+  "text": "¡Pon la pelota encima de la cama!"
+ },
+ {
+  "h": "e22b0d97",
+  "lang": "es",
+  "text": "¡Pon la pelota debajo de la cama!"
+ },
+ {
+  "h": "09cf6e07",
+  "lang": "es",
+  "text": "¡Pon la pelota al lado de la cama!"
+ },
+ {
+  "h": "0d44b1f9",
+  "lang": "es",
+  "text": "¡Pon la pelota dentro de la caja!"
+ },
+ {
+  "h": "b4c67dc8",
+  "lang": "es",
+  "text": "¡Pon la pelota encima de la caja!"
+ },
+ {
+  "h": "e1ccf078",
+  "lang": "es",
+  "text": "¡Pon la pelota al lado de la caja!"
+ },
+ {
+  "h": "bbeee8df",
+  "lang": "es",
+  "text": "¡Pon la pelota dentro del cesto!"
+ },
+ {
+  "h": "edf303c8",
+  "lang": "es",
+  "text": "¡Pon la pelota al lado del cesto!"
+ },
+ {
+  "h": "3467c566",
+  "lang": "es",
+  "text": "¡Pon el gato encima de la silla!"
+ },
+ {
+  "h": "80e67f72",
+  "lang": "es",
+  "text": "¡Pon el gato debajo de la silla!"
+ },
+ {
+  "h": "580ec8ee",
+  "lang": "es",
+  "text": "¡Pon el gato al lado de la silla!"
+ },
+ {
+  "h": "26f626c9",
+  "lang": "es",
+  "text": "¡Pon el gato encima de la cama!"
+ },
+ {
+  "h": "d0b73c75",
+  "lang": "es",
+  "text": "¡Pon el gato debajo de la cama!"
+ },
+ {
+  "h": "2b945041",
+  "lang": "es",
+  "text": "¡Pon el gato al lado de la cama!"
+ },
+ {
+  "h": "2d1cee13",
+  "lang": "es",
+  "text": "¡Pon el gato dentro de la caja!"
+ },
+ {
+  "h": "26e95ad6",
+  "lang": "es",
+  "text": "¡Pon el gato encima de la caja!"
+ },
+ {
+  "h": "2b87844e",
+  "lang": "es",
+  "text": "¡Pon el gato al lado de la caja!"
+ },
+ {
+  "h": "1a875bb9",
+  "lang": "es",
+  "text": "¡Pon el gato dentro del cesto!"
+ },
+ {
+  "h": "a07da9b6",
+  "lang": "es",
+  "text": "¡Pon el gato al lado del cesto!"
  },
  {
   "h": "5b772b9d",

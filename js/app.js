@@ -4,7 +4,7 @@ const App = (() => {
   const NAME = 'Lena';
   const BIRTH = { y: 2022, m: 0, d: 18 }; // 18 gennaio 2022
   const KEY = 'lena_v1';
-  const VERSION = '14 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
+  const VERSION = '15 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
   /* lingue disponibili; il genitore sceglie le 2 del bambino (state.langs) */
   const LANGS = ['fr', 'it', 'de', 'en', 'es'];
   const FLAG = { fr: '🇫🇷', it: '🇮🇹', de: '🇩🇪', en: '🇬🇧', es: '🇪🇸' };
@@ -137,6 +137,13 @@ const App = (() => {
       es: n => (n === 1 ? '¡Te falta una estrella! Juega para ganarla.' : `¡Te faltan ${n} estrellas! Juega para ganarlas.`),
     },
     storyNext: { fr: 'Suite ▶', it: 'Avanti ▶', de: 'Weiter ▶', en: 'Next ▶', es: 'Seguir ▶' },
+    breakTxt: {
+      fr: "Pause ! Tu as beaucoup joué : bouge un peu et bois un verre d'eau.", it: "Pausa! Hai giocato tanto: muoviti un po' e bevi un bicchiere d'acqua.",
+      de: 'Pause! Du hast viel gespielt: Beweg dich ein bisschen und trink ein Glas Wasser.', en: "Break time! You've played a lot: move around a bit and have a glass of water.",
+      es: '¡Pausa! Has jugado mucho: muévete un poco y bebe un vaso de agua.',
+    },
+    breakOver: { fr: 'La pause est finie. On rejoue un peu ?', it: "La pausa è finita. Giochiamo ancora un po'?", de: 'Die Pause ist vorbei. Spielen wir noch ein bisschen?', en: 'Break is over. Shall we play a little more?', es: 'Se acabó la pausa. ¿Jugamos un poco más?' },
+    breakBack: { fr: "C'est reparti ! ▶", it: 'Si riparte! ▶', de: "Weiter geht's! ▶", en: "Let's go again! ▶", es: '¡Seguimos! ▶' },
     newLevel: { fr: 'Bravo ! Nouveau niveau !', it: 'Brava! Nuovo livello!', de: 'Super! Neues Level!', en: 'Well done! New level!', es: '¡Muy bien! ¡Nuevo nivel!' },
   };
   const PRAISE = {
@@ -185,6 +192,7 @@ const App = (() => {
     { id: 'logica', name: 'Forme e logica', icon: '🔷', game: 'forme', max: 4 },
     { id: 'suoni', name: 'Suoni e sillabe', icon: '🥁', game: 'suoni', max: 3 },
     { id: 'scrittura', name: 'Scrittura', icon: '✏️', game: 'scrivi', max: 3 },
+    { id: 'spazio', name: 'Sopra e sotto', icon: '🧸', game: 'spazio', max: 3 },
     { id: 'lingue', name: 'Due lingue', icon: '🌍', game: 'lingue', max: 3 },
     { id: 'colori', name: 'Colori', icon: '🖍️', game: 'colora', max: 0 },
     { id: 'strada', name: 'Educazione stradale', icon: '🚦', game: 'salta', max: 4 },
@@ -236,13 +244,14 @@ const App = (() => {
   const langMode = () => {
     if (pair().length === 1) return pair()[0];
     const m = state.langMode || 'alt';
-    return m === 'alt' || pair().includes(m) ? m : 'alt';
+    return m === 'alt' || m === 'game' || pair().includes(m) ? m : 'alt';
   };
+  let gameLang = null;
   /* nuovo turno: in alternanza cambia lingua dentro la coppia */
   function nextLang() {
     const m = langMode();
     const [a, b] = pair();
-    lang = m === 'alt' ? (lang === a ? b : a) : m;
+    lang = m === 'alt' ? (lang === a ? b : a) : m === 'game' ? (gameLang || a) : m;
     if (!lang) lang = a;
     document.querySelectorAll('.flag-pill').forEach(p => {
       p.textContent = FLAG[lang];
@@ -255,7 +264,7 @@ const App = (() => {
   const defaults = () => ({
     char: null, color: '#ff6fa8', stickers: [], levels: {}, timerMin: 20, pin: null,
     usage: { day: '', sec: 0, extra: 0, warned: false }, bdayShown: 0, hopBest: 0, diploma: false, tut: {},
-    langMode: 'alt', langs: null, stars: 0, owned: [], wear: {}, story: 0, hist: {}, levelLog: [],
+    langMode: 'alt', langs: null, breakMin: 0, calm: false, stars: 0, owned: [], wear: {}, story: 0, hist: {}, levelLog: [],
     stats: { letters: {}, numbers: {}, langs: { fr: [0, 0], it: [0, 0] }, greens: 0, reds: 0, zebra: 0, days: {}, games: {} },
   });
   function load() {
@@ -547,6 +556,7 @@ const App = (() => {
   /* ---------- effetti ---------- */
   const GLITTER = ['#ffd700', '#fff4b0', '#ff9ad5', '#c9a7ff', '#9fe8ff', '#ffffff'];
   function confetti(n = 70) {
+    if (state && state.calm) n = Math.round(n / 5);
     const fx = document.getElementById('fx');
     const cols = ['#ff6fa8', '#ffd23f', '#4cd06b', '#3fb8ff', '#9b5cff', '#ff9f40'];
     for (let i = 0; i < n; i++) {
@@ -560,6 +570,7 @@ const App = (() => {
   }
   /* brillantini: piccola esplosione di glitter nel punto toccato */
   function glitter(x, y, n = 9) {
+    if (state && state.calm) return;
     const fx = document.getElementById('fx');
     for (let i = 0; i < n; i++) {
       const a = Math.random() * Math.PI * 2, dist = 25 + Math.random() * 45;
@@ -670,7 +681,7 @@ const App = (() => {
         h('h1', {}, T.hello[pair()[0]]), pair()[1] ? h('div', { class: 'sub' }, T.hello[pair()[1]]) : null,
         h('button', { class: 'big-btn', onclick: start }, `${pair().map(l => FLAG[l]).join(' ')} ▶`),
         h('div', { class: 'ver' }, `versione ${VERSION}`),
-        ...[...Array(14)].map(() => h('span', {
+        ...[...Array(state.calm ? 0 : 14)].map(() => h('span', {
           class: 'spark',
           style: `left:${rint(4, 92)}%;top:${rint(4, 92)}%;font-size:${rint(14, 34)}px;animation-delay:-${(Math.random() * 2.4).toFixed(2)}s`,
         }, '✦')),
@@ -685,6 +696,7 @@ const App = (() => {
     lang = langMode() === 'alt' ? pick(pair()) : langMode();
     if (!state.char && !state.langs) return langSetup();
     if (isLocked()) return sleepScreen();
+    if (onBreak()) return breakScreen();
     const greet = (media.voices.ciao || []).length ? playClip('ciao') : say(t('greet'));
     if (isBirthdayToday() && state.bdayShown !== new Date().getFullYear()) {
       stopVoice();
@@ -892,6 +904,8 @@ const App = (() => {
   function startGame(g) {
     state.stats.games[g.id] = (state.stats.games[g.id] || 0) + 1;
     save();
+    /* "una lingua per partita": ogni partita nuova passa all'altra lingua */
+    if (langMode() === 'game') { const [a, b] = pair(); gameLang = gameLang === a ? b : a; lang = gameLang; }
     show('game', 'game ' + (g.cls || ''), s => {
       const stage = h('div', { class: 'stage' });
       let help = null;
@@ -916,13 +930,23 @@ const App = (() => {
     return state.usage;
   }
   const limitSec = () => state.timerMin ? (state.timerMin + usage().extra) * 60 : Infinity;
+  const BREAK_MIN = 10;
+  const onBreak = () => (usage().breakUntil || 0) > Date.now();
   const isLocked = () => state.timerMin > 0 && usage().sec >= limitSec();
 
   function tick() {
     if (document.hidden || !started) return;
-    if (['sleep', 'parent', 'splash', 'story'].includes(screenName)) return;
+    if (['sleep', 'parent', 'splash', 'story', 'break'].includes(screenName)) return;
     const days = state.stats.days;
     days[today()] = (days[today()] || 0) + 1;
+    if (state.breakMin) {
+      const u0 = usage();
+      u0.sess = (u0.sess || 0) + 1;
+      if (u0.sess >= state.breakMin * 60 && !(state.timerMin && limitSec() - u0.sec <= 120)) {
+        u0.sess = 0; u0.breakUntil = Date.now() + BREAK_MIN * 60e3; save();
+        return breakScreen();
+      }
+    }
     if (!state.timerMin) { if (days[today()] % 10 === 0) save(); return; }
     const u = usage();
     u.sec++;
@@ -933,6 +957,30 @@ const App = (() => {
       say(t('minute', tr(char().the)), { queue: true });
     }
     if (left <= 0) { save(); story(); }
+  }
+
+  /* pausa: il personaggio si stiracchia, conto alla rovescia, poi si riparte */
+  function breakScreen() {
+    show('break', 'sleep breaktime', s => {
+      const clock = h('div', { class: 'break-clock' });
+      const back = h('button', { class: 'big-btn', style: 'visibility:hidden', onclick: () => { sfx.pop(); home(); } }, t('breakBack'));
+      s.append(h('div', { class: 'moon' }, '💧🤸'), h('div', { class: 'sleeper' }, avatar(110)), h('p', {}, t('breakTxt')), clock, back,
+        h('button', { class: 'parent-link', onclick: parentGate }, '🔒 Genitore'));
+      say(t('breakTxt'));
+      const upd = () => {
+        const ms = (usage().breakUntil || 0) - Date.now();
+        if (ms <= 0) {
+          clearInterval(iv); clock.textContent = '✅'; back.style.visibility = 'visible';
+          sfx.win(); say(t('breakOver'));
+          return;
+        }
+        const m = Math.floor(ms / 60e3), sec = Math.floor(ms / 1000) % 60;
+        clock.textContent = `${m}:${String(sec).padStart(2, '0')}`;
+      };
+      const iv = setInterval(upd, 1000);
+      upd();
+      return () => clearInterval(iv);
+    });
   }
 
   /* storia della buonanotte, poi la schermata della nanna */
@@ -1118,7 +1166,7 @@ const App = (() => {
     return section('🗣️ Lingue del bambino', 'Scegli 1 o 2 lingue (tocca per selezionare). Il telefono scarica solo le voci di quelle scelte.',
       langPicker(() => { if (state.langs && state.langs.length) { state.langMode = 'alt'; afterLangChange().then(render); } }),
       b ? h('p', { class: 'hint', style: 'margin-top:10px' }, 'Come usarle nei giochi:') : null,
-      b ? opts([['alt', `${FLAG[a]}${FLAG[b]} Alternanza`], [a, `${FLAG[a]} Solo ${LANG_IT[a].toLowerCase()}`], [b, `${FLAG[b]} Solo ${LANG_IT[b].toLowerCase()}`]], langMode(), v => { state.langMode = v; save(); })
+      b ? opts([['alt', `${FLAG[a]}${FLAG[b]} A ogni turno`], ['game', '🎮 Una lingua per partita'], [a, `${FLAG[a]} Solo ${LANG_IT[a].toLowerCase()}`], [b, `${FLAG[b]} Solo ${LANG_IT[b].toLowerCase()}`]], langMode(), v => { state.langMode = v; save(); })
         : h('p', { class: 'hint' }, `Solo ${LANG_IT[a].toLowerCase()}: il gioco «Le due lingue» è nascosto.`),
       hint);
   }
@@ -1246,7 +1294,15 @@ const App = (() => {
           h('div', { class: 'opts', style: 'margin-top:10px' },
             h('button', { class: 'act', onclick: () => { u.extra += 10; save(); render(); } }, '+10 min oggi'),
             h('button', { class: 'act ghost', onclick: () => { u.sec = 0; u.extra = 0; u.warned = false; save(); render(); } }, 'Azzera oggi'),
-            h('button', { class: 'act ghost', onclick: story }, 'Prova la storia'))));
+            h('button', { class: 'act ghost', onclick: story }, 'Prova la storia')),
+          h('p', { class: 'hint', style: 'margin-top:12px' }, `Pausa di ${BREAK_MIN} minuti dopo ogni sessione di gioco:`),
+          opts([[0, 'Mai'], [20, 'Ogni 20 min'], [30, 'Ogni 30 min']], state.breakMin, v => { state.breakMin = v; usage().sess = 0; save(); }),
+          h('div', { class: 'opts', style: 'margin-top:10px' },
+            h('button', { class: 'act ghost', onclick: () => { state.timerMin = 60; state.breakMin = 30; save(); render(); } }, 'Consiglio pediatri 3-6-9-12: 2 × 30 min'),
+            onBreak() ? h('button', { class: 'act ghost', onclick: () => { usage().breakUntil = 0; save(); render(); } }, 'Termina la pausa') : null)));
+
+        scroll.append(section('✨ Effetti', 'Brillantini a ogni tocco e coriandoli, oppure una versione più calma.',
+          opts([[false, '✨ Brillantini e coriandoli'], [true, '🌙 Calmi']], !!state.calm, v => { state.calm = v; save(); document.body.classList.toggle('calm', v); })));
 
         scroll.append(langSection(section, opts, render));
 
@@ -1440,7 +1496,7 @@ const App = (() => {
         if (!ov.isConnected) return resolve();
         if (s.before) s.before();
         capEl.innerHTML = '';
-        capEl.append(h('span', { class: 'ico' }, s.icon || '👆'), h('span', {}, s.text));
+        capEl.append(h('span', { class: 'mascot' }, avatar(46), h('i', {}, s.icon || '👆')), h('span', {}, s.text));
         capEl.classList.toggle('top', s.cap === 'top');
         const v = say(s.text);
         for (let i = 0; i < (s.reps || 2) && ov.isConnected; i++) await act(s);
@@ -1474,7 +1530,7 @@ const App = (() => {
       const add = (...xs) => xs.forEach(x => out.push([l, x]));
       add(...PRAISE[l], ...RETRY[l]);
       ['greet', 'forDad', 'setupSay', 'albumDone', 'albumLocked', 'newStickerSay', 'diplomaSay', 'yourTurn',
-        'tutGame', 'tutAlbum', 'tutWardrobe', 'wardrobeSay', 'bought', 'newLevel'].forEach(k => add(t(k)));
+        'tutGame', 'tutAlbum', 'tutWardrobe', 'wardrobeSay', 'bought', 'newLevel', 'breakTxt', 'breakOver'].forEach(k => add(t(k)));
       CHARS.forEach(c => add(excl(tr(c.name)), t('hiChar', tr(c.name)), t('minute', tr(c.the)), t('sleepSay', tr(c.the), tr(c.fem))));
       COLORS.forEach(c => add(excl(tr(c.n))));
       for (let n = 0; n < STICKERS.length; n++) add(t('albumCount', n));
@@ -1507,6 +1563,7 @@ const App = (() => {
       });
     }
     document.addEventListener('pointerdown', e => { if (e.isPrimary !== false) glitter(e.clientX, e.clientY); }, { passive: true });
+    document.body.classList.toggle('calm', !!state.calm);
     await Promise.all([DB.open().then(reloadMedia), loadVoiceIndex(), loadEmoji()]);
     new MutationObserver(ms => ms.forEach(m => (m.type === 'characterData' ? emojify(m.target) : m.addedNodes.forEach(emojify))))
       .observe(document.body, { childList: true, subtree: true, characterData: true });

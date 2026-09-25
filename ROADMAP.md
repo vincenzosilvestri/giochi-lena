@@ -27,10 +27,10 @@ _Ricerca del 25/09/2026: concorrenti, pedagogia 5-6 anni, requisiti store. Stato
 ## Fase A — Per Lena, subito (valore educativo alto, sforzo medio-basso)
 1. ✅ (v13) **Suoni e sillabe** 🥁 (gioco nuovo) — battere le mani per ogni sillaba, trovare le rime, riconoscere il suono iniziale. Una lingua per partita. È il buco più grosso rispetto ai programmi di *grande section* (FR) e dell'ultimo anno dell'infanzia (IT).
 2. ✅ (v13) **Scrivi con il dito** ✏️ (già proposto) — tracciare lettere, cifre e il proprio nome, con correzione gentile e scia di glitter.
-3. **Conta +/−** — nel gioco dei numeri: aggiungere e togliere oggetti entro 10 ("3 mele, ne arrivano 2: quante sono?").
-4. **Sopra, sotto, dentro, fuori** 🧸 — mini-gioco di orientamento nello spazio ("metti l'orsetto sotto il tavolo"), in FR e IT.
-5. **Lingua coerente** — opzione "una lingua per partita" (più prevedibile) accanto all'alternanza a ogni turno; opzione "storia della buonanotte sempre in italiano" per dare più spazio alla lingua meno parlata.
-6. **Timer in stile 3-6-9-12** — preset "2 sessioni da 30 minuti", promemoria gentile di pausa.
+3. ✅ (v15) **Conta +/−** — nel gioco dei numeri: aggiungere e togliere oggetti entro 10 ("3 mele, ne arrivano 2: quante sono?").
+4. ✅ (v15) **Sopra, sotto, dentro, fuori** 🧸 — mini-gioco di orientamento nello spazio ("metti l'orsetto sotto il tavolo"), in FR e IT.
+5. ✅ (v15, «una lingua per partita») **Lingua coerente** — opzione "una lingua per partita" (più prevedibile) accanto all'alternanza a ogni turno; opzione "storia della buonanotte sempre in italiano" per dare più spazio alla lingua meno parlata.
+6. ✅ (v15) **Timer in stile 3-6-9-12** — preset "2 sessioni da 30 minuti", promemoria gentile di pausa.
 7. **Momenti da fare insieme** 👨‍👧 — ogni tanto la voce propone "Chiedi a papà come si dice… in italiano!" o piccole attività reali (pilastro "socialmente interattivo" di Hirsh-Pasek).
 8. ~~Livelli visibili e statistiche per abilità~~ ✅ fatto in v11.
 9. **Difficoltà adattiva** — usare la pagella: lettere e numeri sbagliati ricompaiono più spesso, quelli saputi meno.
@@ -44,10 +44,10 @@ Cosa rende premium le app migliori (Khan Academy Kids, Pok Pok, Sago Mini):
 - atmosfera **calma, non da slot machine**.
 
 1. ✅ (v14, Fluent Emoji 3D) **Un solo set di illustrazioni incluso nell'app** — sostituire le emoji di sistema con Twemoji (CC-BY) o Noto Emoji (OFL): stesso aspetto su Android e iPhone, licenza chiara. Primo passo facile e ad alto impatto.
-2. **Mascotte bilingue** — un personaggio guida (es. una volpe o un gufo) che sostituisce la manina nei tutorial, con animazioni quando è ferma (respira, sbatte le palpebre).
+2. ✅ (v15, il personaggio del bambino parla nei tutorial) **Mascotte bilingue** — un personaggio guida (es. una volpe o un gufo) che sostituisce la manina nei tutorial, con animazioni quando è ferma (respira, sbatte le palpebre).
 3. **Suoni e musica** — effetti più morbidi (campionati, non bip sintetici), musica di sottofondo leggera disattivabile.
 4. **Transizioni e animazioni** fra le schermate, per esempio il personaggio che saltella in Home.
-5. **Interruttore "effetti calmi"** nel menu genitori — meno glitter e coriandoli per i momenti tranquilli (le famiglie apprezzano la calma).
+5. ✅ (v15) **Interruttore "effetti calmi"** nel menu genitori — meno glitter e coriandoli per i momenti tranquilli (le famiglie apprezzano la calma).
 6. **Mappa del mondo** 🗺️ (sforzo alto) — una mappa con isole al posto della griglia di giochi: dà un filo narrativo come Toca o Khan Kids.
 7. **Gioco libero** — una scena esplorabile senza obiettivi (la casa del personaggio con l'armadio), da affiancare ai quiz.
 
