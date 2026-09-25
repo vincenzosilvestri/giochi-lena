@@ -106,7 +106,7 @@
               sfx.ding();
               const rr = b.c.getBoundingClientRect();
               App.addStars(1, rr.left + rr.width / 2, rr.top);
-              App.track(null, null, true);
+              App.track('memoria', null, true);
               found++;
               pill.textContent = `🃏 ${found}/${pairs}`;
               busy = false;
@@ -116,10 +116,11 @@
                 if (!alive) return;
                 await App.reward();
                 if (!alive) return;
-                if (lv < PAIRS.length - 1) { lv++; App.setLevel('memory', lv); }
+                if (lv < PAIRS.length - 1) { lv++; App.levelUp('memory', lv); }
                 board(false);
               }
             } else {
+              App.track('memoria', null, false);
               await wait(1200);
               a.c.classList.remove('up'); b.c.classList.remove('up');
               busy = false;

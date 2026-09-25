@@ -3,7 +3,7 @@ _Aggiornato: 25/09/2026_
 
 ## Obiettivo
 PWA senza pubblicità con giochi educativi **bilingui FR/IT** per Lena (5 anni il 18/01/2027, prima lingua francese), da telefono (Android papà, iPhone Mahault).
-Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vincenzosilvestri/giochi-lena` (GitHub Pages, main). Versione online: **v9**.
+Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vincenzosilvestri/giochi-lena` (GitHub Pages, main). Versione online: **v11**.
 
 ## Fatto finora
 - 7 giochi (`js/games/`): Lena Salta (semaforo, strisce, treno con passaggio a livello, 4 mondi prato/neve/spiaggia/città di notte), Conta, Memory (animali/foto), Pesca le Lettere (+ comporre il nome), Forme e Colori, Colora (12 disegni, arcobaleno, 4 glitter, galleria), Le due lingue (Dov'è…, Memory FR↔IT, Quale lingua?).
@@ -11,6 +11,7 @@ Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vinc
 - Voci: 1497 frasi pre-generate con edge-tts (IT Isabella, FR Denise, ~28 MB) in `voice/`; fallback TTS del telefono per nomi delle foto.
 - Premi: stelle ⭐ → Armadio (14 accessori sul personaggio), album 24 sticker + diploma.
 - Menu papà (⚙️ premuto 1,5 s + PIN): timer nanna con storia della buonanotte (3 storie), lingua, Pagella (lettere/numeri, lingue, strada, tempo 7 giorni), voci registrate, foto, disegni, festa compleanno 18/01.
+- **v11 — Livelli e statistiche:** badge 🏅 nei giochi con livelli (Conta 1-4, Lettere 1-3, Memory 1-4, Forme 1-4, Due lingue 1-3; Strada da record distanza), festa + voce al passaggio di livello. Storico giornaliero per abilità (`state.hist`, 200 giorni) e registro livelli (`state.levelLog`). Menu papà: tabella «Livelli e progressi» (livello, % giuste 7 giorni, tendenza vs settimana prima, 8 settimane, ultimi livelli). API: `App.track(skill, key, ok)`, `App.levelUp(game, n)`.
 - Tutorial con manina 👆 + tasto ❓; glitter ovunque; app centrata su PC; aggiornamento automatico (SW `no-cache` + reload) e numero versione in basso.
 
 ## Prossimi passi

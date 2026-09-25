@@ -344,7 +344,7 @@
             App.floatAt(e.clientX, e.clientY, '⭐');
             say(tx().exact);
             App.addStars(1, e.clientX, e.clientY);
-            App.track(null, null, true);
+            App.track('colori', null, true);
           }
         });
 

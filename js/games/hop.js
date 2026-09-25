@@ -215,6 +215,7 @@
           sfx.boing();
           sign('✋');
           App.count('reds');
+          App.track('strada', null, false);
           if (time - lastStop > 3) { lastStop = time; speak(T => pick(trainStop ? T.trainStop : T.stop)); }
           return;
         }
@@ -236,6 +237,7 @@
           if (greenFlag && row(pl.row - 1).t === 'road') {
             greens++;
             App.count('greens');
+            App.track('strada', null, true);
             greenPill.textContent = `🚦 ${greens}`;
             sfx.ding();
             const p = screenPt(W / 2, H * .38);
@@ -287,8 +289,9 @@
         pl.dead = .9;
         pl.deathIco = kind === 'splash' ? '💦' : '💫';
         if (kind === 'splash') { sfx.splash(); speak(T => T.splash); }
-        else if (kind === 'train') { sfx.puff(); speak(T => T.trainDie); }
+        else if (kind === 'train') { sfx.puff(); App.track('strada', null, false); speak(T => T.trainDie); }
         else {
+          App.track('strada', null, false);
           sfx.puff();
           speak(T => (R.light && lightState(R.light) === 'red' ? T.dieRed : pick(T.die)));
         }

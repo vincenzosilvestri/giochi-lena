@@ -177,7 +177,7 @@
 
         onCatch = async f => {
           if (f.caught) return;
-          if (first) { App.track('letters', TL, f.L === TL); first = false; }
+          if (first) { App.track('lettere', TL, f.L === TL); first = false; }
           if (f.L === TL) {
             onCatch = null;
             const fr = f.el.getBoundingClientRect();
@@ -244,7 +244,7 @@
           await App.reward();
           if (!alive) return;
           good = 0; pill.textContent = `🐟 0/${ROUND}`;
-          if (lv < POOLS.length - 1) { lv++; App.setLevel('lettere', lv); }
+          if (lv < POOLS.length - 1) { lv++; App.levelUp('lettere', lv); }
           question();
         };
       }

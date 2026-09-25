@@ -96,7 +96,7 @@
           await App.reward();
           if (!alive) return;
           good = 0; pill.textContent = `⭐ 0/${ROUND}`;
-          if (lv < MAX_BY_LEVEL.length - 1) { lv++; App.setLevel('conta', lv); }
+          if (lv < MAX_BY_LEVEL.length - 1) { lv++; App.levelUp('conta', lv); }
         }
         await wait(300);
         next();
@@ -124,7 +124,7 @@
           const b = h('button', {}, String(v));
           b.onclick = async () => {
             if (locked) return;
-            if (first) { App.track('numbers', n, v === n); first = false; }
+            if (first) { App.track('numeri', n, v === n); first = false; }
             if (v === n) {
               locked = true;
               b.classList.add('ok');
@@ -164,7 +164,7 @@
           sfx.pop();
           say(App.numWord(got, w.f));
           if (got === n) {
-            App.track('numbers', n, true);
+            App.track('numeri', n, true);
             const br = basket.getBoundingClientRect();
             setTimeout(() => alive && success(br.left + br.width / 2, br.top), 600);
           }

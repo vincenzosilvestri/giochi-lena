@@ -82,7 +82,7 @@
           await App.reward();
           if (!alive) return;
           done = 0; pill.textContent = `⭐ 0/${ROUND}`;
-          if (lv < LEVELS.length - 1) { lv++; App.setLevel('forme', lv); }
+          if (lv < LEVELS.length - 1) { lv++; App.levelUp('forme', lv); }
         }
         next();
       }
@@ -178,12 +178,14 @@
               p.style.left = `${hr.left - S.left + (hr.width - 90) / 2}px`;
               p.style.top = `${hr.top - S.top + (hr.height - 90) / 2}px`;
               sfx.ding();
+              App.track('logica', null, true);
               App.floatAt(hr.left + hr.width / 2, hr.top, '✨');
               left--;
               if (!left) setTimeout(() => alive && roundDone(), 500);
             } else {
               if (near) {
                 sfx.boing();
+                App.track('logica', null, false);
                 say(L.color && near.ho.it.shape === it.shape ? tx().lookColor : tx().noFit);
               }
               p.classList.add('back');
@@ -223,7 +225,7 @@
           const b = h('button', { html: svg(u.shape, u.color.c) });
           b.onclick = async () => {
             if (locked) return;
-            if (first) { App.track(null, null, u === answer); first = false; }
+            if (first) { App.track('logica', null, u === answer); first = false; }
             if (u === answer) {
               locked = true;
               row.querySelector('.q').innerHTML = svg(u.shape, u.color.c);

@@ -55,6 +55,7 @@
       let alive = true;
       let good = 0;
       let turn = 0;
+      let lv = App.level('lingue');
       let lastSteps = [];
       let replay = () => {};
       const pill = addPill(`⭐ 0/${ROUND}`);
@@ -73,6 +74,7 @@
           await App.reward();
           if (!alive) return;
           good = 0; pill.textContent = `⭐ 0/${ROUND}`;
+          if (lv < 3) { lv++; App.levelUp('lingue', lv); }
         }
         await wait(700);
         next();
@@ -81,7 +83,7 @@
       /* 1) Dov'è…? — ascolta e trova l'immagine */
       function find() {
         const l = App.nextLang(), T = TX[l];
-        const opts = shuffle(WORDS).slice(0, 4);
+        const opts = shuffle(WORDS).slice(0, lv >= 3 ? 6 : 4);
         const w = pick(opts);
         const q = T.where(w);
         const grid = h('div', { class: 'lng-grid' });
@@ -90,7 +92,7 @@
         opts.forEach(o => {
           const b = h('button', { class: 'lng-pic' }, o.e);
           b.onclick = async () => {
-            if (first) { App.track(null, null, o === w); first = false; }
+            if (first) { App.track('lingue', null, o === w); first = false; }
             if (o === w) {
               grid.querySelectorAll('button').forEach(x => { x.disabled = true; });
               b.classList.add('ok');
@@ -121,7 +123,7 @@
       /* 2) Memory bilingue — carta francese + carta italiana con la stessa immagine */
       function memory() {
         const T = tx();
-        const pairs = shuffle(WORDS).slice(0, good >= 3 ? 4 : 3);
+        const pairs = shuffle(WORDS).slice(0, [3, 4, 5][lv - 1] || 5);
         const cards = shuffle(pairs.flatMap(w => [{ w, l: 'fr' }, { w, l: 'it' }]));
         const grid = h('div', { class: 'lng-mem' });
         let open = [], busy = false, found = 0;
@@ -144,7 +146,7 @@
               await wait(700);
               a.c.classList.add('match'); b.c.classList.add('match');
               sfx.ding();
-              App.track(null, null, true);
+              App.track('lingue', null, true);
               /* il ponte: la parola nelle due lingue */
               await say(TX.fr.word(a.cd.w), { lang: 'fr' });
               await say(TX.it.word(a.cd.w), { lang: 'it', queue: true });
@@ -185,7 +187,7 @@
         const pic = h('div', { class: 'lng-which-pic' }, showE);
         let first = true;
         const choose = async (lc, btn) => {
-          if (first) { App.track(null, null, lc === l); first = false; }
+          if (first) { App.track('lingue', null, lc === l); first = false; }
           if (lc === l) {
             sfx.ding();
             btn.classList.add('ok');

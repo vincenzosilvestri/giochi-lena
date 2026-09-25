@@ -4,7 +4,7 @@ const App = (() => {
   const NAME = 'Lena';
   const BIRTH = { y: 2022, m: 0, d: 18 }; // 18 gennaio 2022
   const KEY = 'lena_v1';
-  const VERSION = '10 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
+  const VERSION = '11 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
   const LANGS = ['fr', 'it'];
   const FLAG = { fr: '🇫🇷', it: '🇮🇹' };
 
@@ -92,6 +92,7 @@ const App = (() => {
     bought: { fr: "Youpi ! C'est à toi !", it: 'Evviva! È tuo!' },
     missing: { fr: n => (n === 1 ? 'Il te manque une étoile ! Joue pour en gagner.' : `Il te manque ${n} étoiles ! Joue pour en gagner.`), it: n => (n === 1 ? 'Ti manca una stella! Gioca per vincerla.' : `Ti mancano ${n} stelle! Gioca per vincerle.`) },
     storyNext: { fr: 'Suite ▶', it: 'Avanti ▶' },
+    newLevel: { fr: 'Bravo ! Nouveau niveau !', it: 'Brava! Nuovo livello!' },
   };
   const PRAISE = {
     fr: ['Bravo !', `Bravo ${NAME} !`, 'Youpi !', 'Super !', 'Génial !', 'Trop bien !', 'Parfait !', 'Bien joué !'],
@@ -123,6 +124,18 @@ const App = (() => {
       { s: '🌙 ☁️ 💤', fr: 'Et le petit nuage a fait de beaux rêves tout doux. Bonne nuit !', it: 'E la nuvoletta ha fatto sogni belli e morbidi. Buonanotte!' },
     ],
   ];
+
+  /* abilità seguite nella pagella: livello dal gioco collegato + storico giornaliero delle risposte */
+  const SKILLS = [
+    { id: 'numeri', name: 'Numeri', icon: '🔢', game: 'conta', max: 4 },
+    { id: 'lettere', name: 'Lettere', icon: '🔤', game: 'lettere', max: 3 },
+    { id: 'memoria', name: 'Memoria', icon: '🃏', game: 'memory', max: 4 },
+    { id: 'logica', name: 'Forme e logica', icon: '🔷', game: 'forme', max: 4 },
+    { id: 'lingue', name: 'Due lingue', icon: '🌍', game: 'lingue', max: 3 },
+    { id: 'colori', name: 'Colori', icon: '🖍️', game: 'colora', max: 0 },
+    { id: 'strada', name: 'Educazione stradale', icon: '🚦', game: 'salta', max: 4 },
+  ];
+  const DETAIL = { numeri: 'numbers', lettere: 'letters' };
 
   const games = [];
   let state;
@@ -179,28 +192,51 @@ const App = (() => {
   const defaults = () => ({
     char: null, color: '#ff6fa8', stickers: [], levels: {}, timerMin: 20, pin: null,
     usage: { day: '', sec: 0, extra: 0, warned: false }, bdayShown: 0, hopBest: 0, diploma: false, tut: {},
-    langMode: 'alt', stars: 0, owned: [], wear: {}, story: 0,
+    langMode: 'alt', stars: 0, owned: [], wear: {}, story: 0, hist: {}, levelLog: [],
     stats: { letters: {}, numbers: {}, langs: { fr: [0, 0], it: [0, 0] }, greens: 0, reds: 0, zebra: 0, days: {}, games: {} },
   });
   function load() {
     try { state = Object.assign(defaults(), JSON.parse(localStorage.getItem(KEY) || '{}')); }
     catch (e) { state = defaults(); }
     state.stats = Object.assign(defaults().stats, state.stats);
+    /* storico: si tengono gli ultimi 200 giorni */
+    const old = Date.now() - 200 * 864e5;
+    Object.keys(state.hist).forEach(k => { const [y, m, d] = k.split('-').map(Number); if (new Date(y, m - 1, d).getTime() < old) delete state.hist[k]; });
   }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* storage pieno o bloccato */ } }
   const char = () => CHARS.find(c => c.id === state.char) || CHARS[0];
   const level = id => state.levels[id] || 1;
   function setLevel(id, n) { state.levels[id] = n; save(); }
 
-  /* pagella: registra la prima risposta a una domanda (cat: letters|numbers) */
-  function track(cat, key, ok) {
+  /* pagella: registra una risposta per abilità (dettaglio per lettere/numeri, lingua, storico del giorno) */
+  function track(skill, key, ok) {
     const s = state.stats;
+    const cat = DETAIL[skill];
     if (cat && key != null) {
       const e = s[cat][key] = s[cat][key] || [0, 0];
       e[ok ? 0 : 1]++;
     }
-    s.langs[lang][ok ? 0 : 1]++;
+    if (skill !== 'strada') s.langs[lang][ok ? 0 : 1]++;
+    const day = state.hist[today()] = state.hist[today()] || {};
+    const h0 = day[skill] = day[skill] || [0, 0];
+    h0[ok ? 0 : 1]++;
     save();
+  }
+  const hopLevel = () => (state.hopBest < 25 ? 1 : state.hopBest < 60 ? 2 : state.hopBest < 100 ? 3 : 4);
+  const skillLevel = sk => (sk.id === 'strada' ? hopLevel() : sk.max ? level(sk.game) : 0);
+  /* sale di livello: badge nel gioco, festa, voce e registro per papà */
+  function levelUp(id, n) {
+    if (n <= level(id)) return;
+    state.levels[id] = n;
+    state.levelLog.push({ d: today(), g: id, lv: n });
+    if (state.levelLog.length > 60) state.levelLog.shift();
+    save();
+    document.querySelectorAll('.lvl-pill').forEach(p => { p.textContent = `🏅 ${n}`; p.classList.remove('flip'); void p.offsetWidth; p.classList.add('flip'); });
+    const b = h('div', { class: 'lvl-up' }, h('span', {}, '🏅'), h('b', {}, n));
+    document.body.append(b);
+    setTimeout(() => b.remove(), 2200);
+    confetti(50); sfx.win();
+    say(t('newLevel'), { queue: true });
   }
   function count(key, n = 1) { state.stats[key] = (state.stats[key] || 0) + n; save(); }
 
@@ -721,6 +757,7 @@ const App = (() => {
         h('button', { class: 'icon-btn', onclick: () => { stopVoice(); home(); } }, '🏠'),
         h('button', { class: 'icon-btn', 'aria-label': 'Aiuto', onclick: () => help && help() }, '❓'),
         h('div', { class: 'pill flag-pill' }, FLAG[lang]),
+        SKILLS.some(sk => sk.game === g.id && sk.max) ? h('div', { class: 'pill lvl-pill' }, `🏅 ${level(g.id)}`) : null,
         h('div', { class: 'spacer' }));
       s.append(stage, hud);
       const addPill = txt => { const p = h('div', { class: 'pill' }, txt); hud.append(p); return p; };
@@ -907,6 +944,47 @@ const App = (() => {
     }, forgot);
   }
 
+  /* livelli e progressi: per ogni abilità livello, % giuste questa settimana vs precedente, ultime 8 settimane */
+  function progressSection(section) {
+    const dayKey = ms => { const d = new Date(ms); return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`; };
+    const week = (skill, w) => {
+      let ok = 0, ko = 0;
+      for (let i = 0; i < 7; i++) {
+        const e = (state.hist[dayKey(Date.now() - (w * 7 + i) * 864e5)] || {})[skill];
+        if (e) { ok += e[0]; ko += e[1]; }
+      }
+      return { ok, ko, n: ok + ko, p: ok + ko ? Math.round(ok / (ok + ko) * 100) : null };
+    };
+    const rows = SKILLS.map(sk => {
+      const cur = week(sk.id, 0), prev = week(sk.id, 1);
+      const lvTxt = sk.max ? `${skillLevel(sk)}/${sk.max}` : '—';
+      let trend = h('span', { class: 'tr eq' }, '·');
+      if (cur.p != null && prev.p != null) {
+        const d = cur.p - prev.p;
+        trend = d >= 5 ? h('span', { class: 'tr up' }, `▲ +${d}%`) : d <= -5 ? h('span', { class: 'tr down' }, `▼ ${d}%`) : h('span', { class: 'tr eq' }, '= stabile');
+      }
+      const weeks = [7, 6, 5, 4, 3, 2, 1, 0].map(w => week(sk.id, w));
+      return h('div', { class: 'prog-row' },
+        h('div', { class: 'prog-name' }, `${sk.icon} ${sk.name}`),
+        h('div', { class: 'prog-lv' }, sk.max ? h('span', { class: 'lv' }, `Liv. ${lvTxt}`) : h('span', { class: 'lv off' }, 'libero')),
+        h('div', { class: 'prog-pct' }, cur.p != null ? `${cur.p}%` : '—', h('small', {}, cur.n ? ` (${cur.n})` : '')),
+        h('div', { class: 'prog-trend' }, trend),
+        h('div', { class: 'spark', title: 'ultime 8 settimane' }, weeks.map(x => h('i', { class: x.p == null ? 'none' : '', style: `height:${x.p == null ? 6 : Math.max(8, x.p)}%` }))));
+    });
+    const gName = Object.fromEntries(games.map(g => [g.id, g.short]));
+    const log = state.levelLog.slice(-6).reverse().map(e => {
+      const [y, m, d] = e.d.split('-').map(Number);
+      return h('li', {}, `${new Date(y, m - 1, d).toLocaleDateString('it-IT', { day: 'numeric', month: 'short' })} · ${gName[e.g] || e.g} → livello ${e.lv}`);
+    });
+    return section('📈 Livelli e progressi',
+      '% di risposte giuste negli ultimi 7 giorni (tra parentesi quante risposte), confronto con la settimana prima e andamento delle ultime 8 settimane.',
+      h('div', { class: 'prog' },
+        h('div', { class: 'prog-row head' }, h('div', {}, 'Abilità'), h('div', {}, 'Livello'), h('div', {}, '7 giorni'), h('div', {}, 'Tendenza'), h('div', {}, '8 settimane')),
+        rows),
+      h('b', {}, 'Ultimi livelli raggiunti'),
+      log.length ? h('ul', { class: 'lvl-log' }, log) : h('p', { class: 'hint' }, 'Ancora nessun livello nuovo: arriveranno giocando!'));
+  }
+
   /* pagella: riassunto leggibile per papà */
   function reportSection(section) {
     const st = state.stats;
@@ -978,6 +1056,7 @@ const App = (() => {
         scroll.append(section('🗣️ Lingua dei giochi', 'Alternanza: un turno in francese e uno in italiano.',
           opts([['alt', '🇫🇷🇮🇹 Alternanza'], ['fr', '🇫🇷 Solo francese'], ['it', '🇮🇹 Solo italiano']], langMode(), v => { state.langMode = v; save(); })));
 
+        scroll.append(progressSection(section));
         scroll.append(reportSection(section));
 
         const voicesSec = section('🎙️ Le vostre voci',
@@ -1042,7 +1121,7 @@ const App = (() => {
               class: 'act ghost', onclick: () => {
                 if (!confirm('Azzerare sticker, livelli, stelle, armadio e pagella?')) return;
                 const d = defaults();
-                Object.assign(state, { stickers: [], levels: {}, hopBest: 0, diploma: false, stars: 0, owned: [], wear: {}, stats: d.stats });
+                Object.assign(state, { stickers: [], levels: {}, hopBest: 0, diploma: false, stars: 0, owned: [], wear: {}, stats: d.stats, hist: {}, levelLog: [] });
                 save(); render();
               },
             }, 'Azzera progressi'),
@@ -1202,7 +1281,7 @@ const App = (() => {
       const add = (...xs) => xs.forEach(x => out.push([l, x]));
       add(...PRAISE[l], ...RETRY[l]);
       ['greet', 'forDad', 'setupSay', 'albumDone', 'albumLocked', 'newStickerSay', 'diplomaSay', 'yourTurn',
-        'tutGame', 'tutAlbum', 'tutWardrobe', 'wardrobeSay', 'bought'].forEach(k => add(t(k)));
+        'tutGame', 'tutAlbum', 'tutWardrobe', 'wardrobeSay', 'bought', 'newLevel'].forEach(k => add(t(k)));
       CHARS.forEach(c => add(tr(c.name) + bang, t('hiChar', tr(c.name)), t('minute', tr(c.the)), t('sleepSay', tr(c.the), tr(c.fem))));
       COLORS.forEach(c => add(tr(c.n) + bang));
       for (let n = 0; n < STICKERS.length; n++) add(t('albumCount', n));
@@ -1246,7 +1325,7 @@ const App = (() => {
     NAME, CHARS, NUM, FLAG, boot, h, say, stopVoice, sfx, praise, retry, reward, confetti, floatAt,
     rint, pick, shuffle, wait, level, setLevel, char, registerGame, home, media,
     tutorial, intro, phrases, vhash, modal, saveDrawing, glitter, avatar,
-    tr, t, nextLang, numWord, track, count, addStars,
+    tr, t, nextLang, numWord, track, count, addStars, levelUp,
     get lang() { return lang; }, set lang(l) { lang = l; },
     get state() { return state; }, save,
   };
