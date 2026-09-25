@@ -33,7 +33,7 @@ _Ricerca del 25/09/2026: concorrenti, pedagogia 5-6 anni, requisiti store. Stato
 6. ✅ (v15) **Timer in stile 3-6-9-12** — preset "2 sessioni da 30 minuti", promemoria gentile di pausa.
 7. **Momenti da fare insieme** 👨‍👧 — ogni tanto la voce propone "Chiedi a papà come si dice… in italiano!" o piccole attività reali (pilastro "socialmente interattivo" di Hirsh-Pasek).
 8. ~~Livelli visibili e statistiche per abilità~~ ✅ fatto in v11.
-9. **Difficoltà adattiva** — usare la pagella: lettere e numeri sbagliati ricompaiono più spesso, quelli saputi meno.
+9. ✅ (v16) **Difficoltà adattiva** — usare la pagella: lettere e numeri sbagliati ricompaiono più spesso, quelli saputi meno.
 
 ## Fase B — App "bellissima" (aspetto premium)
 Cosa rende premium le app migliori (Khan Academy Kids, Pok Pok, Sago Mini):

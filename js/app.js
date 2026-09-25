@@ -4,7 +4,7 @@ const App = (() => {
   const NAME = 'Lena';
   const BIRTH = { y: 2022, m: 0, d: 18 }; // 18 gennaio 2022
   const KEY = 'lena_v1';
-  const VERSION = '15 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
+  const VERSION = '16 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
   /* lingue disponibili; il genitore sceglie le 2 del bambino (state.langs) */
   const LANGS = ['fr', 'it', 'de', 'en', 'es'];
   const FLAG = { fr: '🇫🇷', it: '🇮🇹', de: '🇩🇪', en: '🇬🇧', es: '🇪🇸' };
@@ -309,6 +309,14 @@ const App = (() => {
     setTimeout(() => b.remove(), 2200);
     confetti(50); sfx.win();
     say(t('newLevel'), { queue: true });
+  }
+  /* difficoltà adattiva: sceglie più spesso ciò che il bambino sbaglia (pagella: letters / numbers) */
+  function adaptivePick(items, cat) {
+    const st = state.stats[cat] || {};
+    const w = items.map(k => { const [ok, ko] = st[k] || [0, 0]; return 1 + 3 * ko / (ok + ko + 1); });
+    let r = Math.random() * w.reduce((a, b) => a + b, 0);
+    for (let i = 0; i < items.length; i++) { r -= w[i]; if (r <= 0) return items[i]; }
+    return items[items.length - 1];
   }
   function count(key, n = 1) { state.stats[key] = (state.stats[key] || 0) + n; save(); }
 
@@ -1578,7 +1586,7 @@ const App = (() => {
     NAME, CHARS, NUM, FLAG, LANGS, LANG_NAME, pair, excl, boot, h, say, stopVoice, sfx, praise, retry, reward, confetti, floatAt,
     rint, pick, shuffle, wait, level, setLevel, char, registerGame, home, media,
     tutorial, intro, phrases, vhash, modal, saveDrawing, glitter, avatar, emojiImage,
-    tr, t, nextLang, numWord, track, count, addStars, levelUp,
+    tr, t, nextLang, numWord, track, count, addStars, levelUp, adaptivePick,
     get lang() { return lang; }, set lang(l) { lang = l; },
     get state() { return state; }, save,
   };

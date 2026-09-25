@@ -145,7 +145,8 @@
 
       function askHowMany(th, max) {
         const w = th[App.lang], T = tx();
-        const n = rint(lv === 1 ? 1 : 2, max);
+        const lo = lv === 1 ? 1 : 2;
+        const n = App.adaptivePick([...Array(max - lo + 1).keys()].map(i => i + lo), 'numbers');
         prompt.innerHTML = '';
         prompt.append(`${T.howShort(w)} `, h('span', { class: 'pic' }, th.e), ' ?');
         let counted = 0;

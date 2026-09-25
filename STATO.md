@@ -3,7 +3,7 @@ _Aggiornato: 25/09/2026_
 
 ## Obiettivo
 PWA senza pubblicità con giochi educativi **multilingua** (1 o 2 lingue a scelta tra FR/IT/DE/EN/ES) per Lena (FR+IT, 5 anni il 18/01/2027, prima lingua francese), da telefono (Android papà, iPhone Mahault).
-Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vincenzosilvestri/giochi-lena` (GitHub Pages, main). Versione online: **v15**.
+Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vincenzosilvestri/giochi-lena` (GitHub Pages, main). Versione online: **v16**.
 
 ## Fatto finora
 - 10 giochi (`js/games/`): **Sopra o sotto?** (v15: trascinare un giocattolo sopra/sotto/dentro/accanto), **Suoni e sillabe** (v13: batti le sillabe + rime, 5 lingue), **Scrivi con il dito** (v13: tracciato di lettere A-Z e cifre 0-9 nel verso giusto, livelli nome→vocali→tutto), Lena Salta (semaforo, strisce, treno con passaggio a livello, 4 mondi prato/neve/spiaggia/città di notte), Conta, Memory (animali/foto), Pesca le Lettere (+ comporre il nome), Forme e Colori, Colora (12 disegni, arcobaleno, 4 glitter, galleria), Le due lingue (Dov'è…, Memory FR↔IT, Quale lingua?).
@@ -14,12 +14,13 @@ Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vinc
 - **v11 — Livelli e statistiche:** badge 🏅 nei giochi con livelli (Conta 1-4, Lettere 1-3, Memory 1-4, Forme 1-4, Due lingue 1-3; Strada da record distanza), festa + voce al passaggio di livello. Storico giornaliero per abilità (`state.hist`, 200 giorni) e registro livelli (`state.levelLog`). Menu papà: tabella «Livelli e progressi» (livello, % giuste 7 giorni, tendenza vs settimana prima, 8 settimane, ultimi livelli). API: `App.track(skill, key, ok)`, `App.levelUp(game, n)`.
 - **v14 — Grafica coerente:** tutte le emoji sono immagini incluse (Microsoft Fluent Emoji 3D, MIT, 219 immagini ~4 MB in `emoji/`, bandiere SVG fatte a mano); sostituzione automatica nel DOM (MutationObserver) e nel canvas di Salta (`App.emojiImage`). Strumenti: `tools/scan-emoji.mjs` + `tools/fetch_emoji.py`.
 - **v15:** Conta +/− (addizioni entro 10 dal livello 2, sottrazioni dal 4, con voce «tre più due fa cinque»); mascotte = personaggio del bambino nei tutorial; pausa ogni 20/30 min (10 min di stop, preset 3-6-9-12 2×30); «Effetti calmi»; lingua «una per partita».
+- **v16:** difficoltà adattiva (`App.adaptivePick`): lettere e numeri sbagliati più spesso ricompaiono di più.
 - Tutorial con manina 👆 + tasto ❓; glitter ovunque; app centrata su PC; aggiornamento automatico (SW `no-cache` + reload) e numero versione in basso.
 
 ## Prossimi passi
 _Roadmap completa (ricerca concorrenti, pedagogia, store) in `ROADMAP.md`._
 1. Raccogliere feedback e statistiche dall'uso reale (tabella «Livelli e progressi»).
-2. Prossimo (ROADMAP): difficoltà adattiva (A9), suoni e musica più curati (B3), transizioni (B4), mappa del mondo / gioco libero (B6-B7) → preparazione store (profili, voci Azure, Android TWA).
+2. Prossimo (ROADMAP): suoni e musica più curati (B3), transizioni (B4), mappa del mondo / gioco libero (B6-B7) → preparazione store (profili, voci Azure, Android TWA).
 3. Papà caricherà foto e voci registrate dal menu papà (restano in IndexedDB sul telefono).
 
 ## Decisioni / vincoli

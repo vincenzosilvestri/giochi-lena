@@ -209,7 +209,7 @@
         const pool = POOLS[Math.min(lv, POOLS.length - 1)].slice();
         const fam = lv >= 2 ? familyWords() : [];
         fam.forEach(([n]) => { const L = norm(n)[0]; if (L && !pool.includes(L)) pool.push(L); });
-        const TL = pick(pool);
+        const TL = App.adaptivePick(pool, 'letters');
         const options = (WORDS[l][TL] || []).concat(fam.filter(([n]) => norm(n)[0] === TL));
         const [word, pic] = options.length ? pick(options) : [TL, '🔤'];
         const cnt = Math.min(3 + lv, 6);
