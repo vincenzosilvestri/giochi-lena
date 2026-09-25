@@ -2,24 +2,31 @@
 (() => {
   const { h, say, sfx, pick, wait } = App;
 
+  /* glitter: fondo sfumato con puntini e stelline brillanti */
+  const GLITTERS = [
+    { id: 'gloro', n: 'Glitter oro', bg: ['#f7c21a', '#ffe27a', '#e0a100'], dot: '#fffbe0' },
+    { id: 'glrosa', n: 'Glitter rosa', bg: ['#ff5fae', '#ffb3dd', '#e0358e'], dot: '#ffffff' },
+    { id: 'glarg', n: 'Glitter argento', bg: ['#b8c0cc', '#eef2f7', '#8e98a8'], dot: '#ffffff' },
+    { id: 'glviola', n: 'Glitter viola', bg: ['#9b5cff', '#d8b8ff', '#7a3de0'], dot: '#ffffff' },
+  ];
+  const glitterDef = g => `<linearGradient id="${g.id}bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${g.bg[0]}"/><stop offset=".5" stop-color="${g.bg[1]}"/><stop offset="1" stop-color="${g.bg[2]}"/></linearGradient>` +
+    `<pattern id="${g.id}" width="36" height="36" patternUnits="userSpaceOnUse"><rect width="36" height="36" fill="url(#${g.id}bg)"/>` +
+    `<g stroke="none" fill="${g.dot}"><circle cx="5" cy="6" r="2.2"/><circle cx="22" cy="4" r="1.5"/><circle cx="30" cy="20" r="2.4"/>` +
+    `<circle cx="12" cy="26" r="1.8"/><circle cx="26" cy="32" r="1.4"/><circle cx="17" cy="15" r="1.2"/>` +
+    `<path d="M8 14 l1.5 3.5 3.5 1.5 -3.5 1.5 -1.5 3.5 -1.5 -3.5 -3.5 -1.5 3.5 -1.5z"/>` +
+    `<path d="M28 8 l1 2.5 2.5 1 -2.5 1 -1 2.5 -1 -2.5 -2.5 -1 2.5 -1z"/></g></pattern>`;
   const PAL = [
     { c: '#ff4d4d', n: 'Rosso' }, { c: '#ff9f40', n: 'Arancione' }, { c: '#ffd23f', n: 'Giallo' },
     { c: '#4cd06b', n: 'Verde' }, { c: '#3fb8ff', n: 'Azzurro' }, { c: '#4a6cff', n: 'Blu' },
     { c: '#9b5cff', n: 'Viola' }, { c: '#ff7eb6', n: 'Rosa' }, { c: '#9a6a3a', n: 'Marrone' },
     { c: '#9aa0a6', n: 'Grigio' }, { c: '#2b2b2b', n: 'Nero' }, { c: '#ffffff', n: 'Bianco' },
     { c: 'url(#rb)', n: 'Arcobaleno magico', rb: true },
-    { c: 'url(#gl)', n: 'Brillantini', gl: true },
+    ...GLITTERS.map(g => ({ c: `url(#${g.id})`, n: g.n, gl: g })),
   ];
   const RB = ['#ff4d4d', '#ff9f40', '#ffd23f', '#4cd06b', '#3fb8ff', '#4a6cff', '#9b5cff'];
   const DEFS = `<defs><linearGradient id="rb" x1="0" y1="0" x2="0" y2="1">${RB.map((c, i) =>
     `<stop offset="${(i / RB.length * 100).toFixed(1)}%" stop-color="${c}"/><stop offset="${((i + 1) / RB.length * 100).toFixed(1)}%" stop-color="${c}"/>`).join('')}</linearGradient>` +
-    /* brillantini: fondo dorato-rosa con puntini e stelline */
-    `<linearGradient id="glbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd86b"/><stop offset=".5" stop-color="#ffb3dd"/><stop offset="1" stop-color="#c9a7ff"/></linearGradient>` +
-    `<pattern id="gl" width="36" height="36" patternUnits="userSpaceOnUse"><rect width="36" height="36" fill="url(#glbg)" stroke="none"/>` +
-    `<g stroke="none"><circle cx="5" cy="6" r="2.2" fill="#fff"/><circle cx="22" cy="4" r="1.5" fill="#fff8c4"/><circle cx="30" cy="20" r="2.4" fill="#fff"/>` +
-    `<circle cx="12" cy="26" r="1.8" fill="#ffe680"/><circle cx="26" cy="32" r="1.4" fill="#fff"/><circle cx="17" cy="15" r="1.2" fill="#ffffff"/>` +
-    `<path d="M8 14 l1.5 3.5 3.5 1.5 -3.5 1.5 -1.5 3.5 -1.5 -3.5 -3.5 -1.5 3.5 -1.5z" fill="#fff"/>` +
-    `<path d="M28 8 l1 2.5 2.5 1 -2.5 1 -1 2.5 -1 -2.5 -2.5 -1 2.5 -1z" fill="#fffbe0"/></g></pattern></defs>`;
+    GLITTERS.map(glitterDef).join('') + '</defs>';
 
   /* r = zona colorabile (q/c = sfida "colora q di c"), d = linea di dettaglio, k = dettaglio nero */
   const r = (tag, a, q, c) => `<${tag} class="r" fill="#ffffff" ${a}${q ? ` data-q="${q}" data-c="${c}"` : ''}/>`;
@@ -274,7 +281,7 @@
         const swatches = PAL.map(p => {
           const b = h('button', {
             class: 'col-sw' + (p.gl ? ' glitter-sw' : '') + (p === cur ? ' sel' : ''), 'aria-label': p.n,
-            style: p.rb ? `background:linear-gradient(180deg,${RB.join(',')})` : p.gl ? '' : `background:${p.c}`,
+            style: p.rb ? `background:linear-gradient(180deg,${RB.join(',')})` : p.gl ? `--g1:${p.gl.bg[0]};--g2:${p.gl.bg[1]};--g3:${p.gl.bg[2]}` : `background:${p.c}`,
             onclick: () => {
               cur = p; sfx.tap(); say(`${p.n}!`);
               swatches.forEach(s => s.classList.toggle('sel', s === b));

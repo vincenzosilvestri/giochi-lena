@@ -3,7 +3,7 @@ const App = (() => {
   const NAME = 'Lena';
   const BIRTH = { y: 2022, m: 0, d: 27 }; // 27 gennaio 2022
   const KEY = 'lena_v1';
-  const VERSION = '4 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
+  const VERSION = '5 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
 
   const CHARS = [
     { id: 'coniglio', e: '🐰', name: 'Coniglietto', the: 'il coniglietto' },
