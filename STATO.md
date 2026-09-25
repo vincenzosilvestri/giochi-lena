@@ -14,6 +14,7 @@ Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vinc
 - Tutorial con manina 👆 + tasto ❓; glitter ovunque; app centrata su PC; aggiornamento automatico (SW `no-cache` + reload) e numero versione in basso.
 
 ## Prossimi passi
+_Roadmap completa (ricerca concorrenti, pedagogia, store) in `ROADMAP.md`._
 1. Raccogliere feedback dall'uso reale di v8-v9 e sistemare.
 2. Proposte in coda: Scrivi con il dito (tracciare lettere, consigliato), Pianoforte magico (+ ripeti la melodia), Il mio cucciolo, Puzzle 4-9 pezzi con disegni/foto, Labirinti col dito, Primo inglese.
 3. Papà caricherà foto e voci registrate dal menu papà (restano in IndexedDB sul telefono).
