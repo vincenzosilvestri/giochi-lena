@@ -1,0 +1,33 @@
+# Giochi di Lena
+
+App web installabile (PWA), senza pubblicità, che funziona offline. Contiene 5 giochi educativi per bambini di 5 anni.
+
+| Gioco | Cosa insegna |
+|---|---|
+| Lena Salta | Educazione stradale: si attraversa quando il semaforo è verde |
+| Conta con Lena | Numeri da 1 a 10, contare e fermarsi |
+| Memory degli Animali | Memoria, nomi e versi degli animali, foto di famiglia |
+| Pesca le Lettere | Lettere, iniziali delle parole, comporre il proprio nome |
+| Forme e Colori | Forme, colori, sequenze logiche |
+
+Ci sono anche: album di 24 sticker con diploma finale, voce in italiano, timer della nanna e festa di compleanno il 27 gennaio.
+
+## Area genitori
+Tieni premuto l'ingranaggio ⚙️ in alto a destra per 1,5 secondi. Al primo accesso crei un PIN. Da lì puoi:
+- impostare il timer;
+- registrare le vostre voci;
+- aggiungere foto con nome;
+- cambiare personaggio;
+- provare la festa di compleanno.
+
+Voci e foto restano solo sul telefono dove le carichi. Non finiscono su GitHub.
+
+## Installare sul telefono
+- **Android (Chrome):** apri il link, menu ⋮, poi "Aggiungi a schermata Home" / "Installa app".
+- **iPhone (Safari):** apri il link, tasto Condividi, poi "Aggiungi alla schermata Home".
+
+## Aggiornare
+Dopo ogni modifica cambia `VERSION` in `sw.js` (es. `lena-v2`). Poi fai commit e push.
+
+## Provare in locale
+`python -m http.server 8765`, poi apri http://localhost:8765
