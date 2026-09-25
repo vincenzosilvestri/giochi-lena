@@ -10,7 +10,7 @@ App web installabile (PWA), senza pubblicità, che funziona offline. Contiene 5 
 | Pesca le Lettere | Lettere, iniziali delle parole, comporre il proprio nome |
 | Forme e Colori | Forme, colori, sequenze logiche |
 
-Ci sono anche: album di 24 sticker con diploma finale, voce in italiano, timer della nanna e festa di compleanno il 27 gennaio.
+Ci sono anche: album di 24 sticker con diploma finale, voce in italiano, timer della nanna e festa di compleanno il 18 gennaio.
 
 ## Area genitori
 Tieni premuto l'ingranaggio ⚙️ in alto a destra per 1,5 secondi. Al primo accesso crei un PIN. Da lì puoi:

@@ -1,9 +1,9 @@
 /* Giochi di Lena — nucleo dell'app: stato, voce, suoni, schermate, premi, timer, area genitori. */
 const App = (() => {
   const NAME = 'Lena';
-  const BIRTH = { y: 2022, m: 0, d: 27 }; // 27 gennaio 2022
+  const BIRTH = { y: 2022, m: 0, d: 18 }; // 18 gennaio 2022
   const KEY = 'lena_v1';
-  const VERSION = '5 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
+  const VERSION = '6 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
 
   const CHARS = [
     { id: 'coniglio', e: '🐰', name: 'Coniglietto', the: 'il coniglietto' },
@@ -736,7 +736,7 @@ const App = (() => {
         scroll.append(section('🎨 Personaggio e colore', null,
           h('button', { class: 'act', onclick: () => setup(false) }, `Cambia (ora: ${char().e} ${char().name})`)));
 
-        scroll.append(section('🎂 Compleanno', `Il 27 gennaio l'app si apre con la festa (${ageAtBirthday()} candeline).`,
+        scroll.append(section('🎂 Compleanno', `Il 18 gennaio l'app si apre con la festa (${ageAtBirthday()} candeline).`,
           h('button', { class: 'act', onclick: () => birthday(true) }, 'Prova la festa')));
 
         scroll.append(section('📒 Progressi', `Sticker: ${state.stickers.length}/${STICKERS.length}. Livelli: ` +
