@@ -3,7 +3,7 @@ const App = (() => {
   const NAME = 'Lena';
   const BIRTH = { y: 2022, m: 0, d: 27 }; // 27 gennaio 2022
   const KEY = 'lena_v1';
-  const VERSION = '3 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
+  const VERSION = '4 · 25/09/2026'; // aggiornare insieme a VERSION in sw.js
 
   const CHARS = [
     { id: 'coniglio', e: '🐰', name: 'Coniglietto', the: 'il coniglietto' },
@@ -238,7 +238,7 @@ const App = (() => {
   const retry = () => say(pick(RETRY));
 
   /* ---------- foto e voci registrate (IndexedDB) ---------- */
-  const media = { voices: {}, photos: [] };
+  const media = { voices: {}, photos: [], drawings: [] };
   const DB = {
     db: null,
     open() {
@@ -263,14 +263,15 @@ const App = (() => {
     del(id) { return this.tx('readwrite', s => s.delete(id)); },
   };
   async function reloadMedia() {
-    Object.values(media.voices).flat().concat(media.photos).forEach(m => URL.revokeObjectURL(m.url));
-    media.voices = {}; media.photos = [];
+    Object.values(media.voices).flat().concat(media.photos, media.drawings).forEach(m => URL.revokeObjectURL(m.url));
+    media.voices = {}; media.photos = []; media.drawings = [];
     const items = await DB.all();
     items.sort((a, b) => a.created - b.created);
     for (const it of items) {
       const m = { id: it.id, name: it.name, secs: it.secs, url: URL.createObjectURL(it.blob) };
       if (it.kind === 'voice') (media.voices[it.slot] = media.voices[it.slot] || []).push(m);
       else if (it.kind === 'photo') media.photos.push(m);
+      else if (it.kind === 'drawing') media.drawings.push(m);
     }
   }
 
@@ -279,11 +280,27 @@ const App = (() => {
     const fx = document.getElementById('fx');
     const cols = ['#ff6fa8', '#ffd23f', '#4cd06b', '#3fb8ff', '#9b5cff', '#ff9f40'];
     for (let i = 0; i < n; i++) {
-      const d = h('div', { class: 'confetto' });
+      const gl = i % 3 === 0;
+      const d = h('div', { class: gl ? 'confetto glitter' : 'confetto' });
       const dur = 1.6 + Math.random() * 1.6;
-      d.style.cssText = `left:${Math.random() * 100}%;background:${pick(cols)};animation-duration:${dur}s;animation-delay:${Math.random() * .5}s`;
+      d.style.cssText = `left:${Math.random() * 100}%;background:${gl ? pick(GLITTER) : pick(cols)};animation-duration:${dur}s;animation-delay:${Math.random() * .5}s`;
       fx.append(d);
       setTimeout(() => d.remove(), (dur + .6) * 1000);
+    }
+  }
+  /* brillantini: piccola esplosione di glitter nel punto toccato */
+  const GLITTER = ['#ffd700', '#fff4b0', '#ff9ad5', '#c9a7ff', '#9fe8ff', '#ffffff'];
+  function glitter(x, y, n = 9) {
+    const fx = document.getElementById('fx');
+    for (let i = 0; i < n; i++) {
+      const a = Math.random() * Math.PI * 2, dist = 25 + Math.random() * 45;
+      const star = Math.random() < .35;
+      const sz = star ? 14 + Math.random() * 8 : 5 + Math.random() * 5;
+      const d = h('div', { class: star ? 'gl-star' : 'gl-dot' }, star ? '✦' : null);
+      d.style.cssText = `left:${x}px;top:${y}px;--dx:${Math.cos(a) * dist}px;--dy:${Math.sin(a) * dist}px;` +
+        (star ? `font-size:${sz}px;color:${pick(GLITTER)}` : `width:${sz}px;height:${sz}px;background:${pick(GLITTER)}`);
+      fx.append(d);
+      setTimeout(() => d.remove(), 900);
     }
   }
   function floatAt(x, y, emoji) {
@@ -293,7 +310,9 @@ const App = (() => {
   }
 
   /* ---------- schermate ---------- */
+  let pendingReload = false;
   function show(name, cls, render) {
+    if (pendingReload && (name === 'home' || name === 'splash')) { location.reload(); return; }
     if (cleanup) { try { cleanup(); } catch (e) { console.error(e); } cleanup = null; }
     document.querySelectorAll('.modal-back, .tut').forEach(m => m.remove());
     const app = document.getElementById('app');
@@ -318,6 +337,10 @@ const App = (() => {
         h('h1', {}, `Ciao ${NAME}!`),
         h('button', { class: 'big-btn', onclick: start }, 'Giochiamo! ▶'),
         h('div', { class: 'ver' }, `versione ${VERSION}`),
+        ...[...Array(14)].map(() => h('span', {
+          class: 'spark',
+          style: `left:${rint(4, 92)}%;top:${rint(4, 92)}%;font-size:${rint(14, 34)}px;animation-delay:-${(Math.random() * 2.4).toFixed(2)}s`,
+        }, '✦')),
       );
     });
   }
@@ -360,7 +383,7 @@ const App = (() => {
         }, h('div', { class: 'ico' }, g.icon), h('div', { class: 'lbl' }, g.title)));
       });
       tiles.append(h('button', {
-        class: 'tile t6 wide',
+        class: 'tile talbum wide',
         onclick: () => { sfx.pop(); album(); },
       }, h('div', { class: 'ico' }, '📒'), h('div', { class: 'lbl' }, `Album di ${NAME}  ${state.stickers.length}/${STICKERS.length}`)));
       s.append(tiles);
@@ -703,6 +726,13 @@ const App = (() => {
           ))),
         ));
 
+        scroll.append(section('🖼️ Disegni di Lena', media.drawings.length ? 'Tocca ⬇️ per salvarli tra le foto o condividerli.' : 'Qui compaiono i disegni finiti in «Colora con Lena».',
+          h('div', { class: 'list' }, media.drawings.slice().reverse().map(dw => h('div', { class: 'item' },
+            h('img', { src: dw.url, alt: '' }), h('span', {}, dw.name || 'Disegno'),
+            h('button', { class: 'act ghost', onclick: () => exportDrawing(dw) }, '⬇️'),
+            h('button', { class: 'act ghost', onclick: async () => { if (!confirm('Eliminare questo disegno?')) return; await DB.del(dw.id); await reloadMedia(); render(); } }, '🗑'),
+          )))));
+
         scroll.append(section('🎨 Personaggio e colore', null,
           h('button', { class: 'act', onclick: () => setup(false) }, `Cambia (ora: ${char().e} ${char().name})`)));
 
@@ -750,6 +780,20 @@ const App = (() => {
       render();
       return () => { if (rec && rec.state === 'recording') rec.stop(); };
     });
+  }
+
+  async function saveDrawing(blob, name) {
+    await DB.put({ id: 'd' + Date.now(), kind: 'drawing', name, blob, created: Date.now() });
+    await reloadMedia();
+  }
+  async function exportDrawing(dw) {
+    const blob = await (await fetch(dw.url)).blob();
+    const file = new File([blob], `disegno-lena-${dw.id}.png`, { type: 'image/png' });
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      try { await navigator.share({ files: [file], title: 'Disegno di Lena' }); return; } catch (e) { if (e.name === 'AbortError') return; }
+    }
+    const a = h('a', { href: dw.url, download: file.name });
+    document.body.append(a); a.click(); a.remove();
   }
 
   function resizePhoto(file) {
@@ -874,7 +918,19 @@ const App = (() => {
     load();
     applyTheme(state.color);
     if ('speechSynthesis' in window) { pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
-    if ('serviceWorker' in navigator && location.protocol !== 'file:') navigator.serviceWorker.register('sw.js').catch(() => {});
+    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+      /* aggiornamenti: controlla a ogni riapertura; quando arriva la nuova versione ricarica (solo fuori dai giochi) */
+      navigator.serviceWorker.register('sw.js').then(reg => {
+        document.addEventListener('visibilitychange', () => { if (!document.hidden) reg.update().catch(() => {}); });
+      }).catch(() => {});
+      let hadController = !!navigator.serviceWorker.controller;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (!hadController) { hadController = true; return; }
+        if (['splash', 'home', 'sleep'].includes(screenName)) location.reload();
+        else pendingReload = true;
+      });
+    }
+    document.addEventListener('pointerdown', e => { if (e.isPrimary !== false) glitter(e.clientX, e.clientY); }, { passive: true });
     await Promise.all([DB.open().then(reloadMedia), loadVoiceIndex()]);
     setInterval(tick, 1000);
     document.addEventListener('visibilitychange', () => { if (document.hidden) { stopVoice(); save(); } });
@@ -885,7 +941,7 @@ const App = (() => {
   return {
     NAME, CHARS, boot, h, say, stopVoice, sfx, praise, retry, reward, confetti, floatAt,
     rint, pick, shuffle, wait, level, setLevel, char, registerGame, home, media,
-    tutorial, intro, phrases, vhash,
+    tutorial, intro, phrases, vhash, modal, saveDrawing, glitter,
     get state() { return state; }, save,
   };
 })();

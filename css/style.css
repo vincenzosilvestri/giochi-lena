@@ -364,3 +364,92 @@ button:active { transform: translateY(3px) scale(.98); }
 .hop .pill { padding: 6px 9px; font-size: 16px; }
 .hop .hud .icon-btn { width: 48px; height: 48px; font-size: 24px; }
 .ver { position: absolute; bottom: calc(10px + var(--safe-bottom)); left: 0; right: 0; text-align: center; font-size: 13px; opacity: .45; font-weight: 700; }
+
+/* ---------- PC: app centrata, larga come un telefono ---------- */
+@media (min-width: 560px) {
+  html { background: #2d2240; }
+  body { background: radial-gradient(circle at 30% 20%, #5a3d7a 0%, #2d2240 70%); }
+  #app { left: 0; right: 0; margin: 0 auto; width: 100%; max-width: 440px; box-shadow: 0 0 60px rgba(0, 0, 0, .45); overflow: hidden; }
+}
+
+/* ---------- Home con 6 giochi ---------- */
+.tiles { overflow-y: auto; }
+.tile.t6 { background: #ffe0f0; }
+.tile.talbum { background: var(--accent-soft); }
+@media (max-height: 700px) { .tile { min-height: 104px; } .tile .ico { font-size: 46px; } }
+
+/* ---------- Brillantini ---------- */
+.gl-dot, .gl-star {
+  position: absolute; pointer-events: none; transform: translate(-50%, -50%);
+  animation: glit .85s ease-out forwards;
+}
+.gl-dot { border-radius: 50%; box-shadow: 0 0 6px 1px rgba(255, 255, 255, .9); }
+.gl-star { line-height: 1; text-shadow: 0 0 6px #fff; }
+@keyframes glit {
+  0% { transform: translate(-50%, -50%) scale(.4); opacity: 1; }
+  60% { opacity: 1; }
+  100% { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1) rotate(90deg); opacity: 0; }
+}
+.confetto.glitter { width: 9px; height: 9px; border-radius: 50%; box-shadow: 0 0 8px 2px rgba(255, 240, 180, .9); animation-name: fall, twinkle; animation-timing-function: linear, ease-in-out; animation-iteration-count: 1, infinite; }
+@keyframes twinkle { 0%, 100% { filter: brightness(1); } 50% { filter: brightness(1.8); } }
+
+/* titolo scintillante */
+.splash h1, .home-head h1, .diploma .name {
+  background: linear-gradient(100deg, var(--accent-dark) 0%, var(--accent-dark) 35%, #ffd700 45%, #fff6c9 50%, #ff9ad5 55%, var(--accent-dark) 65%, var(--accent-dark) 100%);
+  background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: shine 3.5s linear infinite;
+}
+@keyframes shine { from { background-position: 100% 0; } to { background-position: 0 0; } }
+
+/* stelline che brillano sulla schermata iniziale */
+.splash { overflow: hidden; }
+.splash .spark { position: absolute; color: #ffd700; text-shadow: 0 0 8px #fff; animation: spark 2.4s ease-in-out infinite; pointer-events: none; }
+@keyframes spark { 0%, 100% { opacity: 0; transform: scale(.4) rotate(0); } 50% { opacity: 1; transform: scale(1.1) rotate(45deg); } }
+
+/* avatar e sticker con riflesso luccicante */
+.avatar, .sticker:not(.off) { position: relative; overflow: hidden; }
+.avatar::after, .sticker:not(.off)::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, .75) 45%, rgba(255, 240, 180, .6) 50%, transparent 62%);
+  background-size: 250% 100%; animation: gloss 3s ease-in-out infinite;
+}
+.sticker:not(.off):nth-child(3n+1)::after { animation-delay: .6s; }
+.sticker:not(.off):nth-child(3n+2)::after { animation-delay: 1.3s; }
+@keyframes gloss { 0% { background-position: 120% 0; } 60%, 100% { background-position: -30% 0; } }
+
+/* ---------- Colora ---------- */
+.col-picker {
+  position: absolute; left: 12px; right: 12px; top: calc(190px + var(--safe-top)); bottom: calc(12px + var(--safe-bottom));
+  overflow-y: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; align-content: start; padding: 4px 2px 20px;
+}
+.col-thumb { aspect-ratio: 1; background: #fff; border-radius: 18px; box-shadow: var(--shadow); padding: 6px; }
+.col-thumb svg { pointer-events: none; }
+.col-gal-btn { position: absolute; left: 50%; transform: translateX(-50%); top: calc(134px + var(--safe-top)); white-space: nowrap; }
+.col-gal-btn:active { transform: translateX(-50%) translateY(3px); }
+.col-board {
+  position: absolute; left: 50%; transform: translateX(-50%); top: calc(76px + var(--safe-top));
+  width: min(calc(100% - 20px), calc(100vh - 290px)); aspect-ratio: 1;
+  background: #fff; border-radius: 22px; box-shadow: var(--shadow); padding: 4px;
+}
+.col-board svg { display: block; touch-action: manipulation; }
+.col-tools {
+  position: absolute; left: 12px; right: 12px; bottom: calc(132px + var(--safe-bottom));
+  display: flex; gap: 10px; align-items: center;
+}
+.col-tools .col-done { margin-left: auto; font-size: 22px; padding: 12px 22px; }
+.col-pal {
+  position: absolute; left: 10px; right: 10px; bottom: calc(12px + var(--safe-bottom));
+  display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px;
+}
+.col-sw { aspect-ratio: 1; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 3px 0 rgba(0, 0, 0, .15); padding: 0; max-height: 52px; justify-self: center; width: 100%; max-width: 52px; }
+.col-sw.sel { border-color: var(--ink); transform: scale(1.15); }
+.glitter-sw {
+  background:
+    radial-gradient(circle at 25% 30%, #fff 0 2px, transparent 3px),
+    radial-gradient(circle at 70% 20%, #fff8c4 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 60% 70%, #fff 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 75%, #ffe680 0 1.5px, transparent 2.5px),
+    linear-gradient(135deg, #ffd86b, #ffb3dd 50%, #c9a7ff);
+  animation: twinkle 1.6s ease-in-out infinite;
+}
+.col-sw[aria-label="Bianco"]:not(.sel) { border-color: #d9d2e0; }

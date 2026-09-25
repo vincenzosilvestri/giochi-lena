@@ -362,16 +362,18 @@
       function tutSteps() {
         const li = visibleRow(R => R.post);
         const ri = visibleRow(R => R.t === 'river');
-        const lightPt = () => ({ x: cell * .5, y: rowY(li) + cell * .15 });
+        /* coordinate del canvas -> coordinate dello schermo (su PC l'app è centrata) */
+        const sp = (x, y) => () => { const b = stage.getBoundingClientRect(); return { x: b.left + x, y: b.top + y }; };
+        const lightPt = () => sp(cell * .5, rowY(li) + cell * .15)();
         const steps = [
-          { text: TUT_TEXT[0], icon: '👆', action: 'tap', at: { x: W / 2, y: H * .62 }, cap: 'top' },
-          { text: TUT_TEXT[1], icon: '👉', action: 'swipe', at: { x: W * .25, y: H * .62 }, to: { x: W * .75, y: H * .62 }, cap: 'top' },
+          { text: TUT_TEXT[0], icon: '👆', action: 'tap', at: sp(W / 2, H * .62), cap: 'top' },
+          { text: TUT_TEXT[1], icon: '👉', action: 'swipe', at: sp(W * .25, H * .62), to: sp(W * .75, H * .62), cap: 'top' },
         ];
         if (li >= 0) {
           steps.push({ text: TUT_TEXT[2], icon: '🔴', action: 'tap', at: lightPt, cap: 'top', before: () => { forceLight = 'red'; } });
           steps.push({ text: TUT_TEXT[3], icon: '🟢', action: 'tap', at: lightPt, cap: 'top', before: () => { forceLight = 'green'; } });
         }
-        if (ri >= 0) steps.push({ text: TUT_TEXT[4], icon: '🪵', action: 'tap', at: () => ({ x: W / 2, y: rowY(ri) + cell / 2 }), cap: 'top' });
+        if (ri >= 0) steps.push({ text: TUT_TEXT[4], icon: '🪵', action: 'tap', at: () => sp(W / 2, rowY(ri) + cell / 2)(), cap: 'top' });
         return steps;
       }
       const runTut = p => p.then(() => { forceLight = null; });
