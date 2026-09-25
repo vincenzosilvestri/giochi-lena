@@ -312,7 +312,7 @@
       }
       let drawnPlayer = false;
       function drawPlayer(i) {
-        if (drawnPlayer || i !== Math.max(pl.row, pl.frow)) return;
+        if (drawnPlayer || i !== (pl.t < 1 ? Math.max(pl.row, pl.frow) : pl.row)) return;
         drawnPlayer = true;
         const e = pl.t < 1 ? pl.t : 1;
         const x = (pl.fx + (pl.x - pl.fx) * e + .5) * cell;
