@@ -86,7 +86,9 @@ Cosa rende premium le app migliori (Khan Academy Kids, Pok Pok, Sago Mini):
 - Salta: "tic-tic" durante il lampeggio, premio pazienza; Colora: zone più grandi sui disegni fitti.
 
 ## Proposte in coda (non ancora prioritarie)
-Pianoforte magico (+ ripeti la melodia), Il mio cucciolo (accudire), Puzzle 4-9 pezzi con disegni e foto, Labirinti col dito, Primo inglese, pacchetti stagionali di sticker (Natale, Halloween).
+Pianoforte magico (+ ripeti la melodia), Puzzle 4-9 pezzi con disegni e foto, Labirinti col dito, Primo inglese, pacchetti stagionali di sticker (Natale, Halloween).
+- ~~Il mio cucciolo~~ ✅ v20. Prossime scene: **passeggiata** (destra/sinistra agli incroci, parole della natura, semaforo, sacchetto per i bisognini), **lavare i denti** prima della nanna (routine), spazzolata come variante del bagnetto; poi prototipo 3D (three.js + modelli CC0) col solo cane.
+- **Impara a cucinare** 👩‍🍳 (proposta utente, 26/09/2026) — ricette semplici illustrate (pizza, macedonia, torta, panino): leggere la ricetta a figure, contare gli ingredienti ("3 pomodori"), versare mezzo/tutto, sequenze (prima-poi-alla fine), mescolare col dito, forno con timer da guardare; vocabolario del cibo nelle due lingue; sicurezza in cucina (il forno scotta, chiedi a un grande). Si collega al cucciolo (cucinare la sua pappa).
 
 ## Ordine consigliato
 1. Fase A1-A2 (Suoni e sillabe, Scrivi con il dito) — sono le lacune educative più grandi.
