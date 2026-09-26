@@ -1070,6 +1070,16 @@
   "text": "J'ai sommeil…"
  },
  {
+  "h": "503ddd19",
+  "lang": "fr",
+  "text": "On va se promener ?"
+ },
+ {
+  "h": "f7c19e6b",
+  "lang": "fr",
+  "text": "Avant de dormir… je dois me brosser les dents !"
+ },
+ {
   "h": "bcc6b732",
   "lang": "fr",
   "text": "Regarde la bulle !"
@@ -1188,6 +1198,106 @@
   "h": "30b2ac36",
   "lang": "fr",
   "text": "Touche la bonne balle !"
+ },
+ {
+  "h": "f2360d2d",
+  "lang": "fr",
+  "text": "Oups ! Il faut le petit sac !"
+ },
+ {
+  "h": "b893dde3",
+  "lang": "fr",
+  "text": "Merci ! Le parc reste propre !"
+ },
+ {
+  "h": "0589ad3f",
+  "lang": "fr",
+  "text": "Quelle belle promenade ! On rentre à la maison."
+ },
+ {
+  "h": "7607b229",
+  "lang": "fr",
+  "text": "Brosse les dents, de haut en bas !"
+ },
+ {
+  "h": "ab388687",
+  "lang": "fr",
+  "text": "Maintenant, rince !"
+ },
+ {
+  "h": "8b3611ae",
+  "lang": "fr",
+  "text": "Des dents toutes blanches et brillantes !"
+ },
+ {
+  "h": "365c7c6f",
+  "lang": "fr",
+  "text": "Touche le bon chemin !"
+ },
+ {
+  "h": "cf74611e",
+  "lang": "fr",
+  "text": "Fais glisser le sac sur le caca !"
+ },
+ {
+  "h": "43f805df",
+  "lang": "fr",
+  "text": "Tourne à gauche !"
+ },
+ {
+  "h": "73cb7695",
+  "lang": "fr",
+  "text": "Tourne à droite !"
+ },
+ {
+  "h": "e3685f58",
+  "lang": "fr",
+  "text": "Ça, c'est la gauche !"
+ },
+ {
+  "h": "1ac9de8a",
+  "lang": "fr",
+  "text": "Ça, c'est la droite !"
+ },
+ {
+  "h": "1a997ba3",
+  "lang": "fr",
+  "text": "Regarde ! Une fleur !"
+ },
+ {
+  "h": "bb56c3e3",
+  "lang": "fr",
+  "text": "Regarde ! Un papillon !"
+ },
+ {
+  "h": "d4fe6094",
+  "lang": "fr",
+  "text": "Regarde ! Un oiseau !"
+ },
+ {
+  "h": "87efb1c8",
+  "lang": "fr",
+  "text": "Regarde ! Un champignon !"
+ },
+ {
+  "h": "1dbb07e2",
+  "lang": "fr",
+  "text": "Regarde ! Un escargot !"
+ },
+ {
+  "h": "c3b10836",
+  "lang": "fr",
+  "text": "Regarde ! Une coccinelle !"
+ },
+ {
+  "h": "6f9febd6",
+  "lang": "fr",
+  "text": "Regarde ! Un écureuil !"
+ },
+ {
+  "h": "0ad3040f",
+  "lang": "fr",
+  "text": "Regarde ! Une feuille !"
  },
  {
   "h": "ea5a75f6",
@@ -6560,6 +6670,16 @@
   "text": "Ho sonno…"
  },
  {
+  "h": "85bf53f0",
+  "lang": "it",
+  "text": "Andiamo a fare una passeggiata?"
+ },
+ {
+  "h": "574d446f",
+  "lang": "it",
+  "text": "Prima della nanna… devo lavarmi i denti!"
+ },
+ {
   "h": "25ead43c",
   "lang": "it",
   "text": "Guarda la nuvoletta!"
@@ -6678,6 +6798,106 @@
   "h": "21f71af5",
   "lang": "it",
   "text": "Tocca la palla giusta!"
+ },
+ {
+  "h": "360cb8f0",
+  "lang": "it",
+  "text": "Oops! Serve il sacchetto!"
+ },
+ {
+  "h": "7891d6d7",
+  "lang": "it",
+  "text": "Grazie! Il parco resta pulito!"
+ },
+ {
+  "h": "a13b2992",
+  "lang": "it",
+  "text": "Che bella passeggiata! Torniamo a casa."
+ },
+ {
+  "h": "407f6872",
+  "lang": "it",
+  "text": "Spazzola i denti, su e giù!"
+ },
+ {
+  "h": "f80bc0dc",
+  "lang": "it",
+  "text": "Adesso sciacqua!"
+ },
+ {
+  "h": "263d1fcb",
+  "lang": "it",
+  "text": "Denti bianchi e brillanti!"
+ },
+ {
+  "h": "58c9a95c",
+  "lang": "it",
+  "text": "Tocca la strada giusta!"
+ },
+ {
+  "h": "e7362f9f",
+  "lang": "it",
+  "text": "Trascina il sacchetto sulla cacca!"
+ },
+ {
+  "h": "07cfdafe",
+  "lang": "it",
+  "text": "Gira a sinistra!"
+ },
+ {
+  "h": "17ed28cc",
+  "lang": "it",
+  "text": "Gira a destra!"
+ },
+ {
+  "h": "21e1e72a",
+  "lang": "it",
+  "text": "Questa è la sinistra!"
+ },
+ {
+  "h": "c611aa70",
+  "lang": "it",
+  "text": "Questa è la destra!"
+ },
+ {
+  "h": "13e6dc7f",
+  "lang": "it",
+  "text": "Guarda! Un fiore!"
+ },
+ {
+  "h": "f975e09a",
+  "lang": "it",
+  "text": "Guarda! Una farfalla!"
+ },
+ {
+  "h": "c84e0e00",
+  "lang": "it",
+  "text": "Guarda! Un uccellino!"
+ },
+ {
+  "h": "ea01cb1f",
+  "lang": "it",
+  "text": "Guarda! Un fungo!"
+ },
+ {
+  "h": "79df9528",
+  "lang": "it",
+  "text": "Guarda! Una lumaca!"
+ },
+ {
+  "h": "7281bb7c",
+  "lang": "it",
+  "text": "Guarda! Una coccinella!"
+ },
+ {
+  "h": "03162798",
+  "lang": "it",
+  "text": "Guarda! Uno scoiattolo!"
+ },
+ {
+  "h": "0a981fbf",
+  "lang": "it",
+  "text": "Guarda! Una foglia!"
  },
  {
   "h": "082cda62",
@@ -12060,6 +12280,16 @@
   "text": "Ich bin müde…"
  },
  {
+  "h": "d92aac18",
+  "lang": "de",
+  "text": "Gehen wir spazieren?"
+ },
+ {
+  "h": "3ac54120",
+  "lang": "de",
+  "text": "Vor dem Schlafen… muss ich Zähne putzen!"
+ },
+ {
   "h": "2b77ac7d",
   "lang": "de",
   "text": "Schau in die Sprechblase!"
@@ -12178,6 +12408,106 @@
   "h": "e5967303",
   "lang": "de",
   "text": "Tippe auf den richtigen Ball!"
+ },
+ {
+  "h": "bd36a7d4",
+  "lang": "de",
+  "text": "Hoppla! Wir brauchen das Tütchen!"
+ },
+ {
+  "h": "832790c0",
+  "lang": "de",
+  "text": "Danke! Der Park bleibt sauber!"
+ },
+ {
+  "h": "3a4635ac",
+  "lang": "de",
+  "text": "Was für ein schöner Spaziergang! Wir gehen nach Hause."
+ },
+ {
+  "h": "7d34cfa7",
+  "lang": "de",
+  "text": "Putz die Zähne, rauf und runter!"
+ },
+ {
+  "h": "25e9eaa0",
+  "lang": "de",
+  "text": "Jetzt ausspülen!"
+ },
+ {
+  "h": "875dae20",
+  "lang": "de",
+  "text": "Blitzblanke weiße Zähne!"
+ },
+ {
+  "h": "03e05d8b",
+  "lang": "de",
+  "text": "Tippe auf den richtigen Weg!"
+ },
+ {
+  "h": "2bfca3a1",
+  "lang": "de",
+  "text": "Zieh das Tütchen auf das Häufchen!"
+ },
+ {
+  "h": "b83d0cc5",
+  "lang": "de",
+  "text": "Geh nach links!"
+ },
+ {
+  "h": "40c473a7",
+  "lang": "de",
+  "text": "Geh nach rechts!"
+ },
+ {
+  "h": "0b502bcf",
+  "lang": "de",
+  "text": "Das ist links!"
+ },
+ {
+  "h": "7e4c4f15",
+  "lang": "de",
+  "text": "Das ist rechts!"
+ },
+ {
+  "h": "c27dc45c",
+  "lang": "de",
+  "text": "Schau mal! Eine Blume!"
+ },
+ {
+  "h": "1f27e2c3",
+  "lang": "de",
+  "text": "Schau mal! Ein Schmetterling!"
+ },
+ {
+  "h": "dc871ac5",
+  "lang": "de",
+  "text": "Schau mal! Ein Vogel!"
+ },
+ {
+  "h": "e3f4c6a1",
+  "lang": "de",
+  "text": "Schau mal! Ein Pilz!"
+ },
+ {
+  "h": "671b0d9d",
+  "lang": "de",
+  "text": "Schau mal! Eine Schnecke!"
+ },
+ {
+  "h": "875d9ff8",
+  "lang": "de",
+  "text": "Schau mal! Ein Marienkäfer!"
+ },
+ {
+  "h": "21ff035f",
+  "lang": "de",
+  "text": "Schau mal! Ein Eichhörnchen!"
+ },
+ {
+  "h": "a14742f9",
+  "lang": "de",
+  "text": "Schau mal! Ein Blatt!"
  },
  {
   "h": "1ed9a6bc",
@@ -17520,6 +17850,16 @@
   "text": "I'm sleepy…"
  },
  {
+  "h": "a84f64a7",
+  "lang": "en",
+  "text": "Shall we go for a walk?"
+ },
+ {
+  "h": "5b32bbf8",
+  "lang": "en",
+  "text": "Before bed… I need to brush my teeth!"
+ },
+ {
   "h": "51d63fb5",
   "lang": "en",
   "text": "Look at the bubble!"
@@ -17638,6 +17978,106 @@
   "h": "a1cea39b",
   "lang": "en",
   "text": "Tap the right ball!"
+ },
+ {
+  "h": "ed461f20",
+  "lang": "en",
+  "text": "Oops! We need the little bag!"
+ },
+ {
+  "h": "ec4f4e69",
+  "lang": "en",
+  "text": "Thank you! The park stays clean!"
+ },
+ {
+  "h": "114002a2",
+  "lang": "en",
+  "text": "What a lovely walk! Let's go home."
+ },
+ {
+  "h": "ef892d7b",
+  "lang": "en",
+  "text": "Brush the teeth, up and down!"
+ },
+ {
+  "h": "c9bdcfbb",
+  "lang": "en",
+  "text": "Now rinse!"
+ },
+ {
+  "h": "94d62f36",
+  "lang": "en",
+  "text": "Shiny white teeth!"
+ },
+ {
+  "h": "ed984b19",
+  "lang": "en",
+  "text": "Tap the right path!"
+ },
+ {
+  "h": "3888d6aa",
+  "lang": "en",
+  "text": "Drag the bag onto the poo!"
+ },
+ {
+  "h": "700bc086",
+  "lang": "en",
+  "text": "Turn left!"
+ },
+ {
+  "h": "2456833b",
+  "lang": "en",
+  "text": "Turn right!"
+ },
+ {
+  "h": "05aea7e8",
+  "lang": "en",
+  "text": "This way is left!"
+ },
+ {
+  "h": "2cac09fd",
+  "lang": "en",
+  "text": "This way is right!"
+ },
+ {
+  "h": "3b107afd",
+  "lang": "en",
+  "text": "Look! A flower!"
+ },
+ {
+  "h": "1fc184f9",
+  "lang": "en",
+  "text": "Look! A butterfly!"
+ },
+ {
+  "h": "267fa1f1",
+  "lang": "en",
+  "text": "Look! A bird!"
+ },
+ {
+  "h": "d0037de0",
+  "lang": "en",
+  "text": "Look! A mushroom!"
+ },
+ {
+  "h": "0291a2cb",
+  "lang": "en",
+  "text": "Look! A snail!"
+ },
+ {
+  "h": "f7cd7281",
+  "lang": "en",
+  "text": "Look! A ladybird!"
+ },
+ {
+  "h": "39448199",
+  "lang": "en",
+  "text": "Look! A squirrel!"
+ },
+ {
+  "h": "6e7601da",
+  "lang": "en",
+  "text": "Look! A leaf!"
  },
  {
   "h": "f5b0d9a5",
@@ -23020,6 +23460,16 @@
   "text": "Tengo sueño…"
  },
  {
+  "h": "7df963f2",
+  "lang": "es",
+  "text": "¿Vamos de paseo?"
+ },
+ {
+  "h": "9deed93a",
+  "lang": "es",
+  "text": "Antes de dormir… ¡tengo que lavarme los dientes!"
+ },
+ {
   "h": "4e6ddfb6",
   "lang": "es",
   "text": "¡Mira la burbuja!"
@@ -23138,6 +23588,106 @@
   "h": "e8c11caf",
   "lang": "es",
   "text": "¡Toca la pelota correcta!"
+ },
+ {
+  "h": "8f7bb02d",
+  "lang": "es",
+  "text": "¡Uy! ¡Hace falta la bolsita!"
+ },
+ {
+  "h": "1d13b1e2",
+  "lang": "es",
+  "text": "¡Gracias! ¡El parque queda limpio!"
+ },
+ {
+  "h": "21802270",
+  "lang": "es",
+  "text": "¡Qué paseo tan bonito! Volvemos a casa."
+ },
+ {
+  "h": "54376b5e",
+  "lang": "es",
+  "text": "¡Cepilla los dientes, arriba y abajo!"
+ },
+ {
+  "h": "3c8ee5b7",
+  "lang": "es",
+  "text": "¡Ahora enjuaga!"
+ },
+ {
+  "h": "e4bdaba2",
+  "lang": "es",
+  "text": "¡Dientes blancos y brillantes!"
+ },
+ {
+  "h": "f8fed0af",
+  "lang": "es",
+  "text": "¡Toca el camino correcto!"
+ },
+ {
+  "h": "52bca822",
+  "lang": "es",
+  "text": "¡Arrastra la bolsita a la caca!"
+ },
+ {
+  "h": "2205c7f8",
+  "lang": "es",
+  "text": "¡Gira a la izquierda!"
+ },
+ {
+  "h": "e3cfa2a8",
+  "lang": "es",
+  "text": "¡Gira a la derecha!"
+ },
+ {
+  "h": "95d57a73",
+  "lang": "es",
+  "text": "¡Esta es la izquierda!"
+ },
+ {
+  "h": "0ca0b52f",
+  "lang": "es",
+  "text": "¡Esta es la derecha!"
+ },
+ {
+  "h": "325728f5",
+  "lang": "es",
+  "text": "¡Mira! ¡Una flor!"
+ },
+ {
+  "h": "268f67a4",
+  "lang": "es",
+  "text": "¡Mira! ¡Una mariposa!"
+ },
+ {
+  "h": "733621ef",
+  "lang": "es",
+  "text": "¡Mira! ¡Un pajarito!"
+ },
+ {
+  "h": "d1d315c1",
+  "lang": "es",
+  "text": "¡Mira! ¡Una seta!"
+ },
+ {
+  "h": "aa98bb0e",
+  "lang": "es",
+  "text": "¡Mira! ¡Un caracol!"
+ },
+ {
+  "h": "e82acb91",
+  "lang": "es",
+  "text": "¡Mira! ¡Una mariquita!"
+ },
+ {
+  "h": "888311b1",
+  "lang": "es",
+  "text": "¡Mira! ¡Una ardilla!"
+ },
+ {
+  "h": "f408b966",
+  "lang": "es",
+  "text": "¡Mira! ¡Una hoja!"
  },
  {
   "h": "71f74ddd",

@@ -4,7 +4,7 @@ const App = (() => {
   const NAME = 'Lena';
   const BIRTH = { y: 2022, m: 0, d: 18 }; // 18 gennaio 2022
   const KEY = 'lena_v1';
-  const VERSION = '20 · 26/09/2026'; // aggiornare insieme a VERSION in sw.js
+  const VERSION = '21 · 26/09/2026'; // aggiornare insieme a VERSION in sw.js
   /* lingue disponibili; il genitore sceglie le 2 del bambino (state.langs) */
   const LANGS = ['fr', 'it', 'de', 'en', 'es'];
   const FLAG = { fr: '🇫🇷', it: '🇮🇹', de: '🇩🇪', en: '🇬🇧', es: '🇪🇸' };

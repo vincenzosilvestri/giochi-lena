@@ -60,7 +60,7 @@
     { id: 'palloncino', e: '🎈', slot: 'room', price: 6, n: { it: 'Il palloncino', fr: 'Le ballon', de: 'Der Luftballon', en: 'The balloon', es: 'El globo' } },
     { id: 'arcobaleno', e: '🌈', slot: 'room', price: 20, n: { it: "L'arcobaleno", fr: "L'arc-en-ciel", de: 'Der Regenbogen', en: 'The rainbow', es: 'El arcoíris' } },
   ];
-  const NEEDS = { eat: '🍎', bath: '🛁', hurt: '🩹', play: '⚽', sleep: '🌙' };
+  const NEEDS = { eat: '🍎', bath: '🛁', hurt: '🩹', play: '⚽', walk: '🌳', teeth: '🪥', sleep: '🌙' };
   const TX = {
     it: {
       need: { eat: 'Ho fame!', bath: 'Ho bisogno di un bagnetto!', hurt: 'Ahi! Ho la bua!', play: 'Mi annoio… giochiamo?', sleep: 'Ho sonno…' },
@@ -123,6 +123,49 @@
       tutFood: '¡Arrastra la comida hasta su boca!', tutBall: '¡Toca la pelota correcta!',
     },
   };
+
+  /* v21: passeggiata (destra/sinistra, natura, sacchetto) e denti prima della nanna */
+  const NATURE = [
+    { e: '🌸', n: { it: 'Un fiore', fr: 'Une fleur', de: 'Eine Blume', en: 'A flower', es: 'Una flor' } },
+    { e: '🦋', n: { it: 'Una farfalla', fr: 'Un papillon', de: 'Ein Schmetterling', en: 'A butterfly', es: 'Una mariposa' } },
+    { e: '🐦', n: { it: 'Un uccellino', fr: 'Un oiseau', de: 'Ein Vogel', en: 'A bird', es: 'Un pajarito' } },
+    { e: '🍄', n: { it: 'Un fungo', fr: 'Un champignon', de: 'Ein Pilz', en: 'A mushroom', es: 'Una seta' } },
+    { e: '🐌', n: { it: 'Una lumaca', fr: 'Un escargot', de: 'Eine Schnecke', en: 'A snail', es: 'Un caracol' } },
+    { e: '🐞', n: { it: 'Una coccinella', fr: 'Une coccinelle', de: 'Ein Marienkäfer', en: 'A ladybird', es: 'Una mariquita' } },
+    { e: '🐿️', n: { it: 'Uno scoiattolo', fr: 'Un écureuil', de: 'Ein Eichhörnchen', en: 'A squirrel', es: 'Una ardilla' } },
+    { e: '🍂', n: { it: 'Una foglia', fr: 'Une feuille', de: 'Ein Blatt', en: 'A leaf', es: 'Una hoja' } },
+  ];
+  const LOOK = {
+    it: t => `Guarda! ${t.n.it}!`, fr: t => `Regarde ! ${t.n.fr} !`, de: t => `Schau mal! ${t.n.de}!`, en: t => `Look! ${t.n.en}!`, es: t => `¡Mira! ¡${t.n.es}!`,
+  };
+  const TX2 = {
+    it: { need: { walk: 'Andiamo a fare una passeggiata?', teeth: 'Prima della nanna… devo lavarmi i denti!' },
+      turn: { left: 'Gira a sinistra!', right: 'Gira a destra!' }, side: { left: 'Questa è la sinistra!', right: 'Questa è la destra!' },
+      poo: 'Oops! Serve il sacchetto!', pooDone: 'Grazie! Il parco resta pulito!', walkDone: 'Che bella passeggiata! Torniamo a casa.',
+      brush: 'Spazzola i denti, su e giù!', rinse: 'Adesso sciacqua!', teethDone: 'Denti bianchi e brillanti!',
+      tutWalk: 'Tocca la strada giusta!', tutBag: 'Trascina il sacchetto sulla cacca!' },
+    fr: { need: { walk: 'On va se promener ?', teeth: 'Avant de dormir… je dois me brosser les dents !' },
+      turn: { left: 'Tourne à gauche !', right: 'Tourne à droite !' }, side: { left: "Ça, c'est la gauche !", right: "Ça, c'est la droite !" },
+      poo: 'Oups ! Il faut le petit sac !', pooDone: 'Merci ! Le parc reste propre !', walkDone: 'Quelle belle promenade ! On rentre à la maison.',
+      brush: 'Brosse les dents, de haut en bas !', rinse: 'Maintenant, rince !', teethDone: 'Des dents toutes blanches et brillantes !',
+      tutWalk: 'Touche le bon chemin !', tutBag: 'Fais glisser le sac sur le caca !' },
+    de: { need: { walk: 'Gehen wir spazieren?', teeth: 'Vor dem Schlafen… muss ich Zähne putzen!' },
+      turn: { left: 'Geh nach links!', right: 'Geh nach rechts!' }, side: { left: 'Das ist links!', right: 'Das ist rechts!' },
+      poo: 'Hoppla! Wir brauchen das Tütchen!', pooDone: 'Danke! Der Park bleibt sauber!', walkDone: 'Was für ein schöner Spaziergang! Wir gehen nach Hause.',
+      brush: 'Putz die Zähne, rauf und runter!', rinse: 'Jetzt ausspülen!', teethDone: 'Blitzblanke weiße Zähne!',
+      tutWalk: 'Tippe auf den richtigen Weg!', tutBag: 'Zieh das Tütchen auf das Häufchen!' },
+    en: { need: { walk: 'Shall we go for a walk?', teeth: 'Before bed… I need to brush my teeth!' },
+      turn: { left: 'Turn left!', right: 'Turn right!' }, side: { left: 'This way is left!', right: 'This way is right!' },
+      poo: 'Oops! We need the little bag!', pooDone: 'Thank you! The park stays clean!', walkDone: "What a lovely walk! Let's go home.",
+      brush: 'Brush the teeth, up and down!', rinse: 'Now rinse!', teethDone: 'Shiny white teeth!',
+      tutWalk: 'Tap the right path!', tutBag: 'Drag the bag onto the poo!' },
+    es: { need: { walk: '¿Vamos de paseo?', teeth: 'Antes de dormir… ¡tengo que lavarme los dientes!' },
+      turn: { left: '¡Gira a la izquierda!', right: '¡Gira a la derecha!' }, side: { left: '¡Esta es la izquierda!', right: '¡Esta es la derecha!' },
+      poo: '¡Uy! ¡Hace falta la bolsita!', pooDone: '¡Gracias! ¡El parque queda limpio!', walkDone: '¡Qué paseo tan bonito! Volvemos a casa.',
+      brush: '¡Cepilla los dientes, arriba y abajo!', rinse: '¡Ahora enjuaga!', teethDone: '¡Dientes blancos y brillantes!',
+      tutWalk: '¡Toca el camino correcto!', tutBag: '¡Arrastra la bolsita a la caca!' },
+  };
+  Object.keys(TX2).forEach(l => { const { need, ...rest } = TX2[l]; Object.assign(TX[l].need, need); Object.assign(TX[l], rest); });
   const MUD = [[.3, .34], [.64, .3], [.24, .6], [.72, .58], [.48, .8], [.5, .48]];
   const BUA = [[.28, .42], [.7, .42], [.5, .24], [.36, .72], [.64, .74]];
   const countWord = (n, f, l) => App.excl(App.numWord(n, !!(f.f[l]), l), l);
@@ -134,6 +177,8 @@
       const T = TX[l];
       const out = [...Object.values(T.need), T.look, T.notThis, T.full, T.rub, T.clean, T.plaster, T.kiss, T.better, T.caught, T.noBall,
         T.playDone, T.lamp, T.night, T.wake, ...T.love, T.choose, T.hello, T.shop, ...T.tut, T.tutFood, T.tutBall,
+        T.poo, T.pooDone, T.walkDone, T.brush, T.rinse, T.teethDone, T.tutWalk, T.tutBag, ...Object.values(T.turn), ...Object.values(T.side),
+        ...NATURE.map(t => LOOK[l](t)),
         ...Object.values(BALLQ[l]), ...Object.keys(SOMETHING[l]).map(c => WANT_C[l](c))];
       FOOD.forEach(f => { for (let n = 1; n <= 5; n++) { if (n > 1) out.push(WANT_N[l](n, f)); out.push(countWord(n, f, l)); } });
       PETS.forEach(p => out.push(App.excl(p.n[l], l), p.v[l]));
@@ -247,7 +292,7 @@
 
       /* ---------- bisogni ---------- */
       function newSession() {
-        needs = shuffle(['eat', 'bath', 'hurt', 'play']).slice(0, 3).concat('sleep');
+        needs = shuffle(['eat', 'bath', 'hurt', 'play', 'walk']).slice(0, 3).concat('teeth', 'sleep');   // i denti sempre prima della nanna
         nextNeed();
       }
       let firstTap = true;
@@ -283,7 +328,7 @@
         sfx.pop();
         mode = 'busy';
         setBubble('');
-        const done = await { eat: feed, bath, hurt, play, sleep }[cur]();
+        const done = await { eat: feed, bath, hurt, play, walk, teeth, sleep }[cur]();
         if (!alive || done === false) return;
         if (cur !== 'sleep') {
           const r = petRect();
@@ -459,6 +504,150 @@
             else speak(q);
           };
           one();
+        });
+      }
+
+      /* ---------- passeggiata: incroci (destra/sinistra), natura, sacchetto per i bisognini ---------- */
+      function walk() {
+        return new Promise(res => {
+          bar.innerHTML = '';
+          const scene = h('div', { class: 'pw-scene' });
+          room.append(scene);
+          const J = lv >= 2 ? 3 : 2, pooAt = rint(0, J - 1), things = shuffle(NATURE);
+          const walker = h('div', { class: 'pw-pet' }, h('span', { class: `pc-body a-${petNow().id}` }, petNow().e));
+          const moveTo = (x, y, ms = 1100) => new Promise(ok => {
+            walker.style.transition = `left ${ms}ms ease-in-out, top ${ms}ms ease-in-out`;
+            walker.style.left = `${x}%`; walker.style.top = `${y}%`;
+            walker.classList.add('walking');
+            later(() => { walker.classList.remove('walking'); ok(); }, ms);
+          });
+          const DECO = [[10, 64], [16, 86], [90, 64], [84, 86], [12, 28], [34, 24], [66, 26], [88, 30]];
+          function poo() {
+            return new Promise(ok => {
+              const pp = h('div', { class: 'pw-poo', style: `left:${50 + pick([-1, 1]) * 14}%;top:76%` }, '💩');
+              const bag = h('div', { class: 'pc-food' }, '🛍️');
+              const tray = h('div', { class: 'pw-tray' }, bag);
+              scene.append(pp, tray);
+              const ppPt = () => { const r = pp.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; };
+              drag(bag, (x, y) => {
+                const p = ppPt();
+                if (Math.hypot(x - p.x, y - p.y) > 75) return false;
+                tray.remove(); pp.classList.add('gone'); sfx.pop();
+                App.glitter(p.x, p.y, 12);
+                speak(T.pooDone).then(() => { pp.remove(); ok(); });
+                return true;
+              });
+              steps = [{ text: T.tutBag, icon: '🛍️', action: 'drag', at: () => bag, to: ppPt, cap: 'top' }];
+              anim('shake');
+              speak(T.poo).then(() => alive && pp.isConnected && App.intro('cucciolo_sacchetto', steps));
+            });
+          }
+          let s = 0;
+          async function leg() {
+            if (!alive) return;
+            scene.innerHTML = '';
+            scene.classList.remove('fade');
+            const deco = h('div', { class: 'pw-deco' });
+            shuffle(DECO).slice(0, 6).forEach(([x, y]) => deco.append(h('span', { style: `left:${x}%;top:${y}%` }, pick(['🌳', '🌳', '🌲', '🌷', '🌼']))));
+            const thing = things[s % things.length], tside = pick([-1, 1]);
+            const th = h('button', { class: 'pw-thing', style: `left:${50 + tside * 23}%;top:64%` }, thing.e);
+            th.onclick = () => { const r = th.getBoundingClientRect(); App.glitter(r.left + r.width / 2, r.top + r.height / 2, 10); speak(LOOK[l](thing)); };
+            const want = pick(['left', 'right']);
+            const arrows = ['left', 'right'].map(d => h('button', { class: `pw-arrow pw-${d}`, 'aria-label': d }, d === 'left' ? '⬅️' : '➡️'));
+            scene.append(h('i', { class: 'pw-v' }), h('i', { class: 'pw-h' }), deco, th, walker, ...arrows);
+            walker.style.transition = 'none'; walker.style.left = '50%'; walker.style.top = '96%';
+            await wait(60);
+            await moveTo(50, 72);
+            if (!alive) return;
+            th.classList.add('on'); sfx.ding();
+            await speak(LOOK[l](thing));
+            if (!alive) return;
+            await wait(400);
+            if (s === pooAt) { await poo(); if (!alive) return; }
+            await moveTo(50, 47);
+            if (!alive) return;
+            arrows.forEach(a => a.classList.add('on'));
+            const q = T.turn[want];
+            const d = await new Promise(ok => {
+              let first = true;
+              arrows.forEach((a, i) => { a.onclick = () => {
+                const dd = i ? 'right' : 'left';
+                if (first) { first = false; App.track('spazio', null, dd === want); }
+                if (dd !== want) {
+                  sfx.boing(); a.classList.remove('no'); void a.offsetWidth; a.classList.add('no');
+                  speak(T.side[dd]).then(() => alive && speak(q, { queue: true }));
+                  return;
+                }
+                arrows.forEach(x => { x.onclick = null; });
+                sfx.ding(); ok(dd);
+              }; });
+              steps = [{ text: T.tutWalk, icon: want === 'left' ? '⬅️' : '➡️', action: 'tap', at: () => arrows[want === 'left' ? 0 : 1], cap: 'top' }];
+              App.intro('cucciolo_passeggiata', steps).then(() => alive && speak(q));
+            });
+            if (!alive) return;
+            arrows.forEach(a => a.classList.remove('on'));
+            await moveTo(d === 'left' ? -14 : 114, 47, 1300);
+            if (!alive) return;
+            s++;
+            scene.classList.add('fade');
+            await wait(450);
+            if (s < J) return leg();
+            scene.remove();
+            anim('jump', 600);
+            await speak(T.walkDone);
+            res(true);
+          }
+          leg();
+        });
+      }
+
+      /* ---------- denti: spazzolino su e giù, poi sciacquo ---------- */
+      function teeth() {
+        return new Promise(res => {
+          bar.innerHTML = '';
+          const scene = h('div', { class: 'pt-scene' });
+          const mouth = h('div', { class: 'pt-mouth' });
+          [0, 1].forEach(k => { const row = h('div', { class: 'pt-row' + (k ? ' low' : '') }); for (let i = 0; i < 5; i++) row.append(h('i', { class: 'pt-tooth' })); mouth.append(row); });
+          const brush = h('div', { class: 'pt-brush' }, '🪥');
+          scene.append(h('div', { class: 'pt-face' }, h('span', { class: `pc-body a-${petNow().id}` }, petNow().e)), mouth, brush);
+          room.append(scene);
+          shuffle([...mouth.querySelectorAll('.pt-tooth')]).slice(0, lv >= 2 ? 7 : 5).forEach(t => t.append(h('b', { class: 'pt-dirt' })));
+          const put = (x, y) => { const s0 = scene.getBoundingClientRect(); brush.style.left = `${x - s0.left}px`; brush.style.top = `${y - s0.top}px`; };
+          let pid = null, lastBub = 0, finished = false;
+          const scrub = e => {
+            put(e.clientX, e.clientY);
+            mouth.querySelectorAll('.pt-dirt').forEach(m => {
+              const r = m.getBoundingClientRect();
+              if (Math.hypot(e.clientX - (r.left + r.width / 2), e.clientY - (r.top + r.height / 2)) > Math.max(32, r.width)) return;
+              const o = (m._o ?? 1) - .1;
+              m._o = o; m.style.opacity = Math.max(0, o);
+              if (o <= 0) { m.remove(); sfx.pop(); }
+            });
+            if (Date.now() - lastBub > 150) { lastBub = Date.now(); App.floatAt(e.clientX + rint(-18, 18), e.clientY - 12, '🫧'); }
+            if (finished || mouth.querySelector('.pt-dirt')) return;
+            finished = true;
+            brush.remove();
+            const cup = h('button', { class: 'big-btn pt-cup' }, '🥛');
+            scene.append(cup);
+            speak(T.rinse);
+            cup.onclick = () => {
+              cup.remove(); sfx.splash();
+              const r = mouth.getBoundingClientRect();
+              for (let i = 0; i < 7; i++) later(() => App.floatAt(r.left + r.width * Math.random(), r.top + r.height * Math.random(), '💧'), i * 80);
+              mouth.classList.add('shine');
+              App.glitter(r.left + r.width / 2, r.top + r.height / 2, 18);
+              speak(T.teethDone).then(() => { if (!alive) return; scene.classList.add('fade'); later(() => { scene.remove(); res(true); }, 450); });
+            };
+          };
+          scene.addEventListener('pointerdown', e => { if (pid !== null || finished) return; pid = e.pointerId; e.preventDefault(); scrub(e); });
+          scene.addEventListener('pointermove', e => { if (e.pointerId === pid && !finished) scrub(e); });
+          const up = e => { if (e.pointerId === pid) pid = null; };
+          scene.addEventListener('pointerup', up); scene.addEventListener('pointercancel', up);
+          later(() => { const r = mouth.getBoundingClientRect(); put(r.right - 30, r.bottom + 40); }, 30);
+          const a0 = () => { const r = mouth.getBoundingClientRect(); return { x: r.left + r.width * .2, y: r.top + r.height * .3 }; };
+          const a1 = () => { const r = mouth.getBoundingClientRect(); return { x: r.left + r.width * .8, y: r.top + r.height * .7 }; };
+          steps = [{ text: T.brush, icon: '🪥', action: 'swipe', at: a0, to: a1, cap: 'top' }];
+          later(() => App.intro('cucciolo_denti', steps).then(() => alive && !finished && speak(T.brush)), 80);
         });
       }
 

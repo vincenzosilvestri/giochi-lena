@@ -1,5 +1,5 @@
 /* Service worker: tutto in cache per giocare offline. Cambiare VERSION a ogni aggiornamento. */
-const VERSION = 'lena-v20';
+const VERSION = 'lena-v21';
 /* voci ed emoji stanno in cache separate che sopravvivono agli aggiornamenti */
 const VOICE_CACHE = 'lena-voice-1';
 const EMOJI_CACHE = 'lena-emoji-1';

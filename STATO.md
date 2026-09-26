@@ -3,7 +3,7 @@ _Aggiornato: 26/09/2026_
 
 ## Obiettivo
 PWA senza pubblicità con giochi educativi **multilingua** (1 o 2 lingue a scelta tra FR/IT/DE/EN/ES) per Lena (FR+IT, 5 anni il 18/01/2027, prima lingua francese), da telefono (Android papà, iPhone Mahault). Obiettivo successivo: pubblicarla sugli store.
-Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vincenzosilvestri/giochi-lena` (GitHub Pages, main). Versione online: **v20**.
+Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vincenzosilvestri/giochi-lena` (GitHub Pages, main). Versione online: **v21**.
 
 ## Fatto finora
 - 11 giochi (`js/games/`): **Il mio cucciolo** (v20), Lena Salta (semafori, strisce, treno, 4 mondi), Conta (+/−), Memory (animali/foto), Pesca le Lettere (+ comporre il nome), Forme e Colori (incastri + sequenze), Colora (12 disegni, glitter, galleria), Suoni e sillabe, Scrivi con il dito, Sopra o sotto?, Le due lingue (solo con 2 lingue).
@@ -16,6 +16,7 @@ Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vinc
 - Musica generata, transizioni, tutorial con mascotte (v15-v17). Barra di aggiornamento sulla schermata iniziale (v18).
 - **v18 e v19 — due giri di revisione completa** (revisori in parallelo + test "mano scimmia" su tutti i giochi, 3 configurazioni di lingua, 360×640): ~70 + ~35 correzioni. v19: griglia "Dov'è" a 6 immagini, pesci sovrapposti/scatto, Colora durante il salvataggio, manina di Forme sulla risposta giusta, Salta (strisce in tutte le corsie, HUD stretto), PIN (✕, cambio sicuro), barra voci solo se mancano file, musica sotto la voce, microfono, lingua fissa nei tutorial.
 - **v20 — Il mio cucciolo** (`js/games/cucciolo.js`): 8 animali (emoji Fluent) con movimento e verso propri; bisogni nella nuvoletta (pappa, bagnetto, bua, palla, nanna) → pulsante giusto (abilità «Cura ed emozioni»); pappa = contare 2-5 o riconoscere il colore; bagnetto strofinando; cerotto + bacino; palla del colore giusto; nanna con lampada e risveglio; regali con le stelle (testa, collo, cameretta); livelli 1-3 ogni 2 giornate. Home a 11 giochi con Armadio come barra larga.
+- **v21 — Cucciolo: passeggiata e denti.** Passeggiata: 2-3 incroci «gira a destra/sinistra» (pagella «Sopra e sotto»; errore = «questa è la sinistra»), scoperte della natura con nome (fiore, farfalla, lumaca…), bisognino da raccogliere col sacchetto. Denti sempre prima della nanna: spazzolino sulle macchie + bicchiere per sciacquare. Barra bisogni su 2 righe (7 pulsanti). Fix: le schermate del cucciolo coprivano i pulsanti 🏠/❓ (ora `.pc-room` ha il suo z-index).
 - **Piano store + monetizzazione** scritto in `ROADMAP.md` Fase C (C1 obbligatori, C2 pubblicazione, C3 monetizzazione, C4 miglioramenti).
 
 ## Prossimi passi
@@ -24,7 +25,7 @@ Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vinc
 3. Store C2: Android TWA con Bubblewrap (25 $) → poi iOS con Capacitor (99 $/anno).
 4. Monetizzazione proposta: 3 giochi gratis (Salta, Conta, Colora) + sblocco unico 6,99-9,99 €, dietro il cancello genitori; Play Billing / StoreKit; Stripe per il web. Da confermare con l'utente.
 5. Intanto: feedback e statistiche dall'uso reale di Lena.
-6. **Cucciolo più realistico** (proposta): 3D con three.js + modelli animati CC0 (Quaternius copre volpe, cani, cavallo; gatto/coniglio/panda/pulcino/tigre da trovare o comprare) e versi veri (Freesound CC0: cane, gatto; altri da verificare). Nuove scene proposte: passeggiata, spazzolata.
+6. **Cucciolo più realistico** (proposta): 3D con three.js + modelli animati CC0 (Quaternius copre volpe, cani, cavallo; gatto/coniglio/panda/pulcino/tigre da trovare o comprare) e versi veri (Freesound CC0: cane, gatto; altri da verificare). Scene fatte: passeggiata, denti; spazzolata come variante del bagnetto (da fare). Proposta in coda: gioco «Impara a cucinare» (ROADMAP).
 
 ## Decisioni / vincoli
 - Vanilla JS/HTML/CSS, nessun build step. Giochi con `App.registerGame`, elencati in `index.html`, `sw.js` (FILES) e `tools/build-catalog.mjs`.
