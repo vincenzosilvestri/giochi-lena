@@ -3110,9 +3110,9 @@
   "text": "Attention : la couleur aussi doit être pareille !"
  },
  {
-  "h": "69476d3c",
+  "h": "1f60687b",
   "lang": "fr",
-  "text": "Regarde la suite : les formes se répètent."
+  "text": "Regarde la suite : qu'est-ce qui se répète ?"
  },
  {
   "h": "39d8b5d1",
@@ -4383,6 +4383,26 @@
   "h": "a47e33cb",
   "lang": "fr",
   "text": "À côté !"
+ },
+ {
+  "h": "5a83989b",
+  "lang": "fr",
+  "text": "Là, c'est dessus."
+ },
+ {
+  "h": "f2dbaa28",
+  "lang": "fr",
+  "text": "Là, c'est dessous."
+ },
+ {
+  "h": "06c79609",
+  "lang": "fr",
+  "text": "Là, c'est dedans."
+ },
+ {
+  "h": "648ca006",
+  "lang": "fr",
+  "text": "Là, c'est à côté."
  },
  {
   "h": "30ed2660",
@@ -8155,9 +8175,9 @@
   "text": "Attenta: anche il colore deve essere uguale!"
  },
  {
-  "h": "f390bc44",
+  "h": "9a72cee1",
   "lang": "it",
-  "text": "Guarda la fila: le forme si ripetono."
+  "text": "Guarda la fila: cosa si ripete?"
  },
  {
   "h": "aa75c320",
@@ -8730,9 +8750,9 @@
   "text": "Tocca la parola: la senti divisa in sillabe."
  },
  {
-  "h": "d1cc2d88",
+  "h": "83fe41d8",
   "lang": "it",
-  "text": "Poi tocca quanti battiti di mani!"
+  "text": "Poi tocca il numero di battiti di mani!"
  },
  {
   "h": "d22c46f8",
@@ -9443,6 +9463,26 @@
   "h": "c76081ec",
   "lang": "it",
   "text": "Accanto!"
+ },
+ {
+  "h": "90749609",
+  "lang": "it",
+  "text": "Adesso è sopra."
+ },
+ {
+  "h": "e5efb181",
+  "lang": "it",
+  "text": "Adesso è sotto."
+ },
+ {
+  "h": "1141e050",
+  "lang": "it",
+  "text": "Adesso è dentro."
+ },
+ {
+  "h": "11377135",
+  "lang": "it",
+  "text": "Adesso è accanto."
  },
  {
   "h": "63897e64",
@@ -13195,9 +13235,9 @@
   "text": "Achtung: Auch die Farbe muss gleich sein!"
  },
  {
-  "h": "07533f97",
+  "h": "29ca1aa8",
   "lang": "de",
-  "text": "Schau dir die Reihe an: Die Formen wiederholen sich."
+  "text": "Schau dir die Reihe an: Was wiederholt sich?"
  },
  {
   "h": "332a2ba8",
@@ -14443,6 +14483,26 @@
   "h": "e1441459",
   "lang": "de",
   "text": "Daneben!"
+ },
+ {
+  "h": "32ee1647",
+  "lang": "de",
+  "text": "Jetzt ist es oben drauf."
+ },
+ {
+  "h": "ba88031c",
+  "lang": "de",
+  "text": "Jetzt ist es darunter."
+ },
+ {
+  "h": "0df6b72e",
+  "lang": "de",
+  "text": "Jetzt ist es drin."
+ },
+ {
+  "h": "76100ce6",
+  "lang": "de",
+  "text": "Jetzt ist es daneben."
  },
  {
   "h": "e3fea87e",
@@ -18200,9 +18260,9 @@
   "text": "Careful: the colour must match too!"
  },
  {
-  "h": "bdf0919f",
+  "h": "ab24adb9",
   "lang": "en",
-  "text": "Look at the row: the shapes repeat."
+  "text": "Look at the row: what repeats?"
  },
  {
   "h": "df462755",
@@ -18915,9 +18975,9 @@
   "text": "How many syllables in the word crocodile? Clap along!"
  },
  {
-  "h": "9324e9a3",
+  "h": "6e045bb9",
   "lang": "en",
-  "text": "crock, uh, dial!"
+  "text": "crock, uh, dile!"
  },
  {
   "h": "4113a396",
@@ -18945,9 +19005,9 @@
   "text": "How many syllables in the word watermelon? Clap along!"
  },
  {
-  "h": "da97c046",
+  "h": "ef275fdd",
   "lang": "en",
-  "text": "wor, ter, mel, un!"
+  "text": "waw, ter, mel, un!"
  },
  {
   "h": "20dd62b0",
@@ -19518,6 +19578,26 @@
   "h": "71c36e45",
   "lang": "en",
   "text": "Next to it!"
+ },
+ {
+  "h": "b3f9bf14",
+  "lang": "en",
+  "text": "Now it's on top."
+ },
+ {
+  "h": "41698f18",
+  "lang": "en",
+  "text": "Now it's underneath."
+ },
+ {
+  "h": "7da6bbf2",
+  "lang": "en",
+  "text": "Now it's inside."
+ },
+ {
+  "h": "a067bafd",
+  "lang": "en",
+  "text": "Now it's next to it."
  },
  {
   "h": "fd734f9d",
@@ -23260,9 +23340,9 @@
   "text": "Cuidado: ¡el color también tiene que ser igual!"
  },
  {
-  "h": "07864ee4",
+  "h": "b6f84e5b",
   "lang": "es",
-  "text": "Mira la fila: las formas se repiten."
+  "text": "Mira la fila: ¿qué se repite?"
  },
  {
   "h": "5ebf53ee",
@@ -24125,29 +24205,34 @@
   "text": "¡Tractor!"
  },
  {
-  "h": "cf4c4679",
+  "h": "49453324",
   "lang": "es",
-  "text": "¿Qué rima con sol?"
+  "text": "¿Qué rima con gorro?"
  },
  {
-  "h": "b0923caa",
+  "h": "6a1e4f45",
   "lang": "es",
-  "text": "¡Sol, farol! ¡Riman!"
+  "text": "¡Gorro, perro! ¡Riman!"
  },
  {
-  "h": "b7368905",
+  "h": "0c780edf",
   "lang": "es",
-  "text": "¿Qué rima con farol?"
+  "text": "¿Qué rima con perro?"
  },
  {
-  "h": "f951fa4e",
+  "h": "fdd1d59d",
   "lang": "es",
-  "text": "¡Farol, sol! ¡Riman!"
+  "text": "¡Perro, gorro! ¡Riman!"
  },
  {
-  "h": "9cddb2f3",
+  "h": "4943a83a",
   "lang": "es",
-  "text": "¡Farol!"
+  "text": "¡Gorro!"
+ },
+ {
+  "h": "8a108e95",
+  "lang": "es",
+  "text": "¡Perro!"
  },
  {
   "h": "ba885507",
@@ -24545,6 +24630,26 @@
   "text": "¡Al lado!"
  },
  {
+  "h": "5b95ffc2",
+  "lang": "es",
+  "text": "Ahora está encima."
+ },
+ {
+  "h": "d77cd5da",
+  "lang": "es",
+  "text": "Ahora está debajo."
+ },
+ {
+  "h": "f39bbd69",
+  "lang": "es",
+  "text": "Ahora está dentro."
+ },
+ {
+  "h": "529bd03c",
+  "lang": "es",
+  "text": "Ahora está al lado."
+ },
+ {
   "h": "aaff858b",
   "lang": "es",
   "text": "¡Pon el osito encima de la silla!"
@@ -24793,11 +24898,6 @@
   "h": "a88799df",
   "lang": "es",
   "text": "¿Dónde está el perro?"
- },
- {
-  "h": "8a108e95",
-  "lang": "es",
-  "text": "¡Perro!"
  },
  {
   "h": "de3ed838",

@@ -25,13 +25,13 @@
     en: [[['🐱', 'cat'], ['🎩', 'hat']], [['🐶', 'dog'], ['🐸', 'frog']], [['🐝', 'bee'], ['🌳', 'tree']],
       [['🌙', 'moon'], ['🥄', 'spoon']], [['🚗', 'car'], ['⭐', 'star']], [['🐭', 'mouse'], ['🏠', 'house']], [['🎂', 'cake'], ['🐍', 'snake']]],
     es: [[['🐱', 'gato'], ['🦆', 'pato']], [['🐭', 'ratón'], ['🚚', 'camión']], [['🐝', 'abeja'], ['🐑', 'oveja']],
-      [['🌸', 'flor'], ['🚜', 'tractor']], [['☀️', 'sol'], ['🏮', 'farol']], [['🍐', 'pera'], ['🪜', 'escalera']]],
+      [['🌸', 'flor'], ['🚜', 'tractor']], [['🧢', 'gorro'], ['🐶', 'perro']], [['🍐', 'pera'], ['🪜', 'escalera']]],
   };
   const word = s => s.replace(/-/g, '');
   /* come vanno pronunciate le sillabe dette da sole (la voce sbaglierebbe "llon", "e" inglese…); sullo schermo resta la grafia vera */
   const SPOKEN = {
     fr: { 'pa-pi-llon': 'pa-pi-yon', 'coc-ci-nelle': 'coc-si-nelle', 'hé-li-cop-tère': 'é-li-cop-tère' },
-    en: { 'el-e-phant': 'el-uh-fant', 'hel-i-cop-ter': 'hel-ih-cop-ter', 'croc-o-dile': 'crock-uh-dial', 'wa-ter-mel-on': 'wor-ter-mel-un' },
+    en: { 'el-e-phant': 'el-uh-fant', 'hel-i-cop-ter': 'hel-ih-cop-ter', 'croc-o-dile': 'crock-uh-dile', 'wa-ter-mel-on': 'waw-ter-mel-un' },
   };
   const spk = (s, l) => (SPOKEN[l] && SPOKEN[l][s]) || s;
   const parts = s => s.split('-');
@@ -40,7 +40,7 @@
     it: {
       howMany: w => `Quante sillabe ha la parola ${w}? Batti le mani!`, syl: s => `${parts(s).join(', ')}!`,
       rhymeQ: w => `Cosa fa rima con ${w}?`, rhymeOk: (a, b) => `${cap(a)}, ${b}! Fanno rima!`,
-      tutSyl: ['Tocca la parola: la senti divisa in sillabe.', 'Poi tocca quanti battiti di mani!'],
+      tutSyl: ['Tocca la parola: la senti divisa in sillabe.', 'Poi tocca il numero di battiti di mani!'],
       tutRhyme: ['Ascolta la parola…', 'Tocca la cosa che fa rima: finisce con lo stesso suono!'],
     },
     fr: {

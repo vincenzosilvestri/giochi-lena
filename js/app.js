@@ -4,7 +4,7 @@ const App = (() => {
   const NAME = 'Lena';
   const BIRTH = { y: 2022, m: 0, d: 18 }; // 18 gennaio 2022
   const KEY = 'lena_v1';
-  const VERSION = '18 · 26/09/2026'; // aggiornare insieme a VERSION in sw.js
+  const VERSION = '19 · 26/09/2026'; // aggiornare insieme a VERSION in sw.js
   /* lingue disponibili; il genitore sceglie le 2 del bambino (state.langs) */
   const LANGS = ['fr', 'it', 'de', 'en', 'es'];
   const FLAG = { fr: '🇫🇷', it: '🇮🇹', de: '🇩🇪', en: '🇬🇧', es: '🇪🇸' };
@@ -506,12 +506,14 @@ const App = (() => {
     try {
       const c = await caches.open(VOICE_CACHE);
       const list = [...clips.have];
-      voiceProgress.total = list.length; voiceProgress.done = 0;
-      for (let i = 0; i < list.length; i += 8) {
+      /* prima si guarda cosa c'è già: la barra compare solo se manca qualcosa */
+      const have = new Set((await c.keys()).map(r => (r.url.match(/([0-9a-f]{8})\.mp3$/) || [])[1]));
+      const missing = list.filter(hsh => !have.has(hsh));
+      voiceProgress.total = list.length; voiceProgress.done = list.length - missing.length;
+      for (let i = 0; i < missing.length; i += 8) {
         if (prefetchAgain) break;
-        await Promise.all(list.slice(i, i + 8).map(async hsh => {
-          const u = `voice/${hsh}.mp3`;
-          if (!(await c.match(u))) { try { await c.add(u); } catch (e) { return; } }
+        await Promise.all(missing.slice(i, i + 8).map(async hsh => {
+          try { await c.add(`voice/${hsh}.mp3`); } catch (e) { return; }
           voiceProgress.done++;
         }));
         progress('voc', voiceProgress.done, voiceProgress.total);
@@ -618,6 +620,7 @@ const App = (() => {
       const end = () => { if (done) return; done = true; if (clipEnd === end) clipEnd = null; duck(false); res(); };
       clipEnd = end;
       clipAudio.onended = end; clipAudio.onerror = end;
+      setTimeout(end, 12000);   // le registrazioni durano al massimo 8 s: se l'audio si blocca il gioco va avanti
       duck(true);
       clipAudio.play().catch(end);
     });
@@ -786,7 +789,9 @@ const App = (() => {
     screenName = name;
     music.night = ['story', 'sleep', 'break', 'bday'].includes(name);
     music.target = name === 'bday' ? 0 : musicLevel();
-    if (music.on) musicFade(music.target);
+    if (music.on) musicFade(ducks ? music.target * .3 : music.target);
+    const dlEl = document.getElementById('dl');
+    if (dlEl) dlEl.className = name === 'splash' ? 'big' : '';
     const c = render(scr);
     if (typeof c === 'function') cleanup = c;
   }
@@ -1066,6 +1071,7 @@ const App = (() => {
 
   function tick() {
     if (document.hidden || !started) return;
+    if (screenName === 'sleep' && !isLocked()) return splash();
     if (['sleep', 'parent', 'splash', 'story', 'break', 'bday', 'langs', 'setup'].includes(screenName)) return;
     const days = state.stats.days;
     days[today()] = (days[today()] || 0) + 1;
@@ -1218,10 +1224,10 @@ const App = (() => {
     const upd = () => [...dots.children].forEach((d, i) => d.classList.toggle('on', i < code.length));
     const pad = h('div', { class: 'pin-pad' });
     const keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '✕', '0', '⌫'];
-    let close, busy = false;
+    let close, busy = false, closed = false;
     keys.forEach(k => pad.append(h('button', {
       onclick: () => {
-        if (k === '✕') return close();
+        if (k === '✕') { closed = true; return close(); }
         if (busy) return;
         if (k === '⌫') code = code.slice(0, -1);
         else if (code.length < 4) code += k;
@@ -1230,6 +1236,7 @@ const App = (() => {
           busy = true;
           setTimeout(() => {
             busy = false;
+            if (closed) return;
             const ok = onDone(code);
             if (ok === false) { box.classList.add('shake'); setTimeout(() => box.classList.remove('shake'), 500); code = ''; upd(); }
             else close();
@@ -1260,22 +1267,23 @@ const App = (() => {
     setTimeout(() => input.focus(), 100);
   }
 
+  /* crea il PIN (dopo la moltiplicazione o dall'area genitori): il vecchio vale finché il nuovo non è confermato */
+  function newPin() {
+    pinPad('Crea un PIN genitore (4 cifre)', code => {
+      setTimeout(() => pinPad('Ripeti il PIN', c2 => {
+        if (c2 !== code) return false;
+        state.pin = code; save();
+        setTimeout(parentArea, 50);
+      }), 50);
+    });
+  }
   function parentGate() {
     stopVoice();
-    if (!state.pin) {
-      mathGate('Area genitori: rispondi per creare il PIN', () => pinPad('Crea un PIN genitore (4 cifre)', code => {
-        setTimeout(() => pinPad('Ripeti il PIN', c2 => {
-          if (c2 !== code) return false;
-          state.pin = code; save();
-          setTimeout(parentArea, 50);
-        }), 50);
-      }));
-      return;
-    }
+    if (!state.pin) { mathGate('Area genitori: rispondi per creare il PIN', newPin); return; }
     let closePad;
     const forgot = h('button', {
       class: 'soft-btn', style: 'margin-top:14px;font-size:15px',
-      onclick: () => { closePad(); mathGate('PIN dimenticato? Rispondi per crearne uno nuovo', () => { state.pin = null; save(); parentGate(); }); },
+      onclick: () => { closePad(); mathGate('PIN dimenticato? Rispondi per crearne uno nuovo', newPin); },
     }, 'PIN dimenticato?');
     closePad = pinPad('PIN genitore', code => {
       if (code !== state.pin) return false;
@@ -1418,7 +1426,7 @@ const App = (() => {
 
   function parentArea() {
     show('parent', 'parent', s => {
-      let rec = null;
+      let rec = null, here = true;
       const scroll = h('div', { class: 'scroll' });
       s.append(h('div', { class: 'topbar' },
         h('button', { class: 'icon-btn', onclick: () => (isLocked() ? sleepScreen() : onBreak() ? breakScreen() : home()) }, '🏠'),
@@ -1528,7 +1536,7 @@ const App = (() => {
                 save(); render();
               },
             }, 'Azzera progressi'),
-            h('button', { class: 'act ghost', onclick: () => { state.pin = null; save(); parentGate(); } }, 'Cambia PIN'))));
+            h('button', { class: 'act ghost', onclick: newPin }, 'Cambia PIN'))));
       }
 
       async function toggleRec(slot, btn) {
@@ -1538,7 +1546,8 @@ const App = (() => {
         let stream;
         rec = 'starting';
         try { stream = await navigator.mediaDevices.getUserMedia({ audio: true }); }
-        catch (e) { rec = null; alert('Serve il permesso per il microfono.'); return; }
+        catch (e) { rec = null; if (here) alert('Serve il permesso per il microfono.'); return; }
+        if (!here) { stream.getTracks().forEach(tr0 => tr0.stop()); rec = null; return; }
         const chunks = [];
         const r = new MediaRecorder(stream);
         const t0 = Date.now();
@@ -1560,13 +1569,14 @@ const App = (() => {
       }
 
       render();
-      return () => { if (rec && rec.state === 'recording') rec.stop(); };
+      return () => { here = false; if (rec && rec.state === 'recording') rec.stop(); };
     });
   }
 
   async function saveDrawing(blob, name) {
-    await DB.put({ id: 'd' + Date.now(), kind: 'drawing', name, blob, created: Date.now() });
+    const ok = await DB.put({ id: 'd' + Date.now(), kind: 'drawing', name, blob, created: Date.now() });
     await reloadMedia();
+    return ok != null;
   }
   async function exportDrawing(dw) {
     const blob = await (await fetch(dw.url)).blob();
@@ -1599,6 +1609,7 @@ const App = (() => {
      at/to: elemento, {x,y} o funzione che li restituisce (valutata al momento). */
   function tutorial(steps) {
     stopVoice();
+    const tl = lang;   // i testi dei passi sono in questa lingua, anche se nel frattempo il gioco la cambia
     document.querySelectorAll('.tut').forEach(x => x.remove());
     const ov = h('div', { class: 'tut' });
     ov.addEventListener('gone', () => stopVoice());
@@ -1655,7 +1666,7 @@ const App = (() => {
         capEl.innerHTML = '';
         capEl.append(h('span', { class: 'mascot' }, avatar(46), h('i', {}, s.icon || '👆')), h('span', {}, s.text));
         capEl.classList.toggle('top', s.cap === 'top');
-        const v = say(s.text);
+        const v = say(s.text, { lang: tl });
         for (let i = 0; i < (s.reps || 2) && ov.isConnected; i++) await act(s);
         await v;
         await wait(250);
@@ -1665,7 +1676,7 @@ const App = (() => {
       capEl.innerHTML = '';
       capEl.classList.remove('top');
       capEl.append(h('span', { class: 'ico' }, '⭐'), h('span', {}, t('yourTurn')));
-      say(t('yourTurn'));
+      say(T.yourTurn[tl], { lang: tl });
       ov.append(h('button', { class: 'big-btn tut-go', onclick: () => { sfx.pop(); ov.remove(); resolve(true); } }, t('gotIt')));
     });
   }
@@ -1735,7 +1746,7 @@ const App = (() => {
     let hiddenAt = 0;
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) { hiddenAt = Date.now(); stopVoice(); save(); musicFade(0, .1); return; }
-      if (music.on) musicFade(musicTarget());
+      if (music.on) musicFade(ducks ? musicTarget() * .3 : musicTarget());
       if (Date.now() - hiddenAt > 10 * 60e3 && state.usage) state.usage.sess = 0;   // dopo 10 minuti lontano la sessione riparte
       if (screenName === 'sleep' && !isLocked()) splash();   // il giorno dopo la nanna è finita
       if (screenName === 'break' && !onBreak()) home();

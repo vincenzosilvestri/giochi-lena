@@ -418,7 +418,7 @@
 
         svg.addEventListener('click', e => {
           const el = e.target.closest('.r');
-          if (!el) return;
+          if (!el || finishing) return;
           const before = el.getAttribute('fill');
           if (before === cur.c) return;
           undo.push([el, before]);
@@ -438,11 +438,13 @@
 
         const tools = h('div', { class: 'col-tools' },
           h('button', { class: 'icon-btn', 'aria-label': 'Annulla', onclick: () => {
+            if (finishing) return;
             const u = undo.pop();
             if (!u) return;
             u[0].setAttribute('fill', u[1]); sfx.tap(); persist();
           } }, '↩️'),
           h('button', { class: 'icon-btn', 'aria-label': 'Ricomincia', onclick: () => {
+            if (finishing) return;
             say(tx().restart);
             const close = App.modal([h('div', { class: 'big' }, '🗑️'), h('div', { class: 'row' },
               h('button', { class: 'big-btn', style: 'background:#4cd06b;box-shadow:0 8px 0 #2f9a4a', onclick: () => {
@@ -450,7 +452,7 @@
               } }, '✔️'),
               h('button', { class: 'big-btn', style: 'background:#ff6b6b;box-shadow:0 8px 0 #c94444', onclick: () => close() }, '✖️'))]);
           } }, '🗑️'),
-          h('button', { class: 'icon-btn', 'aria-label': 'Disegni', onclick: () => { sfx.pop(); picker(); } }, '🎨'),
+          h('button', { class: 'icon-btn', 'aria-label': 'Disegni', onclick: () => { if (finishing) return; sfx.pop(); picker(); } }, '🎨'),
           h('button', { class: 'big-btn col-done', onclick: finish }, tx().done));
 
         let finishing = false;
@@ -461,7 +463,7 @@
           finishing = true;
           const blob = await toPng(svg);
           if (!blob) { finishing = false; sfx.boing(); return; }
-          await App.saveDrawing(blob, dr.name);
+          if (!(await App.saveDrawing(blob, dr.name))) { finishing = false; sfx.boing(); return; }   // memoria non disponibile: il disegno resta com'è
           delete st.paint[dr.id];
           st.colorDone = (st.colorDone || 0) + 1;
           App.save();

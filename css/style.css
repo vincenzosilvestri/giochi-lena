@@ -295,7 +295,7 @@ button:active { transform: translateY(3px) scale(.98); }
   display: grid; place-items: center; font-size: 34px; color: var(--accent);
 }
 .seq-choices { position: absolute; left: 12px; right: 12px; bottom: calc(40px + var(--safe-bottom)); display: flex; justify-content: center; gap: 16px; }
-.seq-choices button { width: 96px; height: 96px; border-radius: 24px; background: #fff; box-shadow: var(--shadow); padding: 12px; }
+.seq-choices button { width: min(96px, 27vw); height: min(96px, 27vw); border-radius: 24px; background: #fff; box-shadow: var(--shadow); padding: 12px; }
 .seq-choices button svg { width: 100%; height: 100%; }
 
 /* Hop */
@@ -429,6 +429,7 @@ button:active { transform: translateY(3px) scale(.98); }
 .col-board {
   position: absolute; left: 50%; transform: translateX(-50%); top: calc(76px + var(--safe-top));
   width: min(calc(100% - 20px), calc(100vh - 290px)); aspect-ratio: 1;
+  width: min(calc(100% - 20px), calc(100dvh - 290px - var(--safe-top) - var(--safe-bottom)));
   background: #fff; border-radius: 22px; box-shadow: var(--shadow); padding: 4px;
 }
 .col-board svg { display: block; touch-action: manipulation; }
@@ -735,3 +736,15 @@ body.calm .tiles .tile, body.calm .screen { animation: none; }
 .seq-row { flex-wrap: nowrap; }
 .seq-row .it, .seq-row .q { width: var(--it, 58px); height: var(--it, 58px); flex: none; }
 .sp-toy.small { transform: scale(.82); transform-origin: 50% 100%; }
+
+/* v19: pesci mossi a ogni frame, niente transizione (tornavano indietro di scatto) */
+.fish { transition: none; }
+/* nomi lunghi nella composizione: gli slot si stringono */
+.slots i { width: min(40px, calc((100vw - 70px) / var(--n, 6))); }
+.sp-toy.small.drag { transform: scale(.95); }
+/* v19: HUD di Salta su telefoni stretti (7 elementi): più compatto e, se serve, va a capo */
+@media (max-width: 400px) {
+  .hop .hud { gap: 4px; left: 8px; right: 8px; flex-wrap: wrap; row-gap: 6px; }
+  .hop .pill { padding: 5px 7px; font-size: 14px; }
+  .hop .hud .icon-btn { width: 42px; height: 42px; font-size: 21px; }
+}

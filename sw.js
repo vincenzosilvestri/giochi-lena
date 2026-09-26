@@ -1,5 +1,5 @@
 /* Service worker: tutto in cache per giocare offline. Cambiare VERSION a ogni aggiornamento. */
-const VERSION = 'lena-v18';
+const VERSION = 'lena-v19';
 /* voci ed emoji stanno in cache separate che sopravvivono agli aggiornamenti */
 const VOICE_CACHE = 'lena-voice-1';
 const EMOJI_CACHE = 'lena-emoji-1';
@@ -19,22 +19,26 @@ self.addEventListener('install', e => {
   e.waitUntil((async () => {
     const c = await caches.open(VERSION);
     const ec = await caches.open(EMOJI_CACHE);
-    let emoji = [];
-    try { emoji = await (await fetch('emoji/index.json', { cache: 'no-cache' })).json(); } catch (err) { /* offline */ }
+    let emoji = null;
+    try { const r = await fetch('emoji/index.json', { cache: 'no-cache' }); if (r.ok) emoji = await r.json(); } catch (err) { /* offline */ }
     const todo = [];
-    for (const f of emoji) if (!(await ec.match(`emoji/${f}`))) todo.push(f);
-    const total = FILES.length + todo.length;
-    await tell(0, total);
-    for (let i = 0; i < FILES.length; i += 5) {
-      await Promise.all(FILES.slice(i, i + 5).map(f => c.add(new Request(f, { cache: 'no-cache' }))));
-      await tell(Math.min(FILES.length, i + 5), total);
+    let total = FILES.length;
+    try {
+      for (const f of emoji || []) if (!(await ec.match(`emoji/${f}`))) todo.push(f);
+      total = FILES.length + todo.length;
+      await tell(0, total);
+      for (let i = 0; i < FILES.length; i += 5) {
+        await Promise.all(FILES.slice(i, i + 5).map(f => c.add(new Request(f, { cache: 'no-cache' }))));
+        await tell(Math.min(FILES.length, i + 5), total);
+      }
+      if (emoji) await ec.put('emoji/index.json', new Response(JSON.stringify(emoji), { headers: { 'Content-Type': 'application/json' } }));
+      for (let i = 0; i < todo.length; i += 20) {
+        await Promise.all(todo.slice(i, i + 20).map(f => ec.add(`emoji/${f}`).catch(() => {})));
+        await tell(FILES.length + Math.min(todo.length, i + 20), total);
+      }
+    } finally {
+      await tell(total, total);   // anche se l'aggiornamento fallisce la barra sparisce
     }
-    await ec.put('emoji/index.json', new Response(JSON.stringify(emoji), { headers: { 'Content-Type': 'application/json' } }));
-    for (let i = 0; i < todo.length; i += 20) {
-      await Promise.all(todo.slice(i, i + 20).map(f => ec.add(`emoji/${f}`).catch(() => {})));
-      await tell(FILES.length + Math.min(todo.length, i + 20), total);
-    }
-    await tell(total, total);
     /* le voci non si scaricano qui: le scarica l'app, solo per le lingue scelte dal genitore */
     await self.skipWaiting();
   })());

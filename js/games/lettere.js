@@ -161,13 +161,15 @@
         const laneOrder = shuffle([...Array(nLanes).keys()]);
         const laneDir = laneOrder.map(() => (Math.random() < .5 ? -1 : 1));
         const laneSpeed = laneOrder.map(() => rint(28, 45) + lv * 8);
+        const laneX = [];
         fish = letters.map((L, i) => {
           const lane = i % nLanes, second = i >= nLanes;
           const el = h('button', { class: 'fish', style: 'background:none;padding:0', html: fishSVG(pick(FISH_COLORS)) },
             h('span', { class: 'letter' }, L));
           const f = {
             el, L, dir: laneDir[lane],
-            x: second ? ((W + 130) / 2 + rint(0, 40)) % (W + 130) - 120 : rint(0, Math.max(0, W - 110)),
+            /* il secondo pesce della corsia parte a mezzo giro dal primo: non si sovrappongono mai */
+            x: second ? ((laneX[lane] + 120 + (W + 140) / 2) % (W + 140)) - 120 : (laneX[lane] = rint(0, Math.max(0, W - 110))),
             lanePos: laneOrder[lane] / Math.max(1, nLanes - 1),
             speed: laneSpeed[lane], boost: 0, t: Math.random() * 6,
           };
@@ -260,6 +262,7 @@
         if (!word) return question();
         let idx = 0;
         const slots = h('div', { class: 'slots' }, [...word].map(() => h('i')));
+        slots.style.setProperty('--n', word.length);
         const mark = () => [...slots.children].forEach((s, i) => { s.classList.toggle('next', i === idx); });
         prompt.innerHTML = '';
         prompt.append(slots);

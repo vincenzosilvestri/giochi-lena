@@ -161,7 +161,7 @@
         });
         const opts = new Set([n]);
         /* dal livello 3 le risposte sbagliate sono vicine a quella giusta: non si indovina a colpo d'occhio */
-        const near = [n - 2, n - 1, n + 1, n + 2].filter(v => v >= 1 && v <= Math.max(max, 4));
+        const near = [n - 2, n - 1, n + 1, n + 2].filter(v => v >= 1 && v <= Math.min(10, Math.max(max, 4) + 1));
         while (opts.size < 3) { const v = lv >= 3 && near.length ? pick(near) : rint(1, Math.max(max, 4)); if (v !== n) opts.add(v); }
         let locked = false;
         [...opts].sort((a, b) => a - b).forEach(v => {
@@ -211,6 +211,7 @@
           sfx.pop();
           say(App.numWord(got, w.f));
           if (got === n) {
+            App.track('numeri', n, true);
             const br = basket.getBoundingClientRect();
             setTimeout(() => alive && success(br.left + br.width / 2, br.top), 600);
           }

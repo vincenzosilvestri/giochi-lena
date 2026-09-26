@@ -1,9 +1,9 @@
 # STATO — Giochi di Lena
-_Aggiornato: 25/09/2026_
+_Aggiornato: 26/09/2026_
 
 ## Obiettivo
 PWA senza pubblicità con giochi educativi **multilingua** (1 o 2 lingue a scelta tra FR/IT/DE/EN/ES) per Lena (FR+IT, 5 anni il 18/01/2027, prima lingua francese), da telefono (Android papà, iPhone Mahault).
-Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vincenzosilvestri/giochi-lena` (GitHub Pages, main). Versione online: **v18**.
+Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vincenzosilvestri/giochi-lena` (GitHub Pages, main). Versione online: **v19**.
 
 ## Fatto finora
 - 10 giochi (`js/games/`): **Sopra o sotto?** (v15: trascinare un giocattolo sopra/sotto/dentro/accanto), **Suoni e sillabe** (v13: batti le sillabe + rime, 5 lingue), **Scrivi con il dito** (v13: tracciato di lettere A-Z e cifre 0-9 nel verso giusto, livelli nome→vocali→tutto), Lena Salta (semaforo, strisce, treno con passaggio a livello, 4 mondi prato/neve/spiaggia/città di notte), Conta, Memory (animali/foto), Pesca le Lettere (+ comporre il nome), Forme e Colori, Colora (12 disegni, arcobaleno, 4 glitter, galleria), Le due lingue (Dov'è…, Memory FR↔IT, Quale lingua?).
@@ -17,12 +17,13 @@ Online: https://vincenzosilvestri.github.io/giochi-lena/ — repo pubblico `vinc
 - **v16:** difficoltà adattiva (`App.adaptivePick`): lettere e numeri sbagliati più spesso ricompaiono di più.
 - **v17 — Rifiniture:** musica di sottofondo generata (pentatonica, si abbassa quando parla la voce, «notturna» in storia/nanna, interruttore nel menu papà); caselle Home che entrano a cascata, stelle che saltano, transizioni morbide.
 - **v18 — Revisione completa** (6 revisori in parallelo + test "mano scimmia" automatico su tutti i giochi in 3 configurazioni di lingua): ~70 correzioni. Principali: PIN creabile solo dopo una moltiplicazione (niente più prompt/confirm); lingua «una per partita» all'avvio; voce registrata interrotta che bloccava il gioco; musica che si rialzava sotto la voce; audio iOS ripreso al tocco; compleanno non perso/interrotto; nanna sbloccata il giorno dopo; doppi tocchi (PIN, armadio, storia, bandiere, stella di Colora); Salta: acqua durante invulnerabilità, salti in coda, farming delle stelle, aiuto in pausa, auto sulle strisce, lampeggio non premiato, campo centrato in orizzontale; Memory griglia con foto; Due lingue senza parole quasi uguali; Lettere pesci distanziati e parole con iniziali «pulite»; Forme sequenze su una riga; Sopra/sotto classificato sul piano vero; Scrivi 8/9/G/4 nel verso scolastico; Suoni rime in entrambi i versi. **Barra di aggiornamento** sulla schermata iniziale (messaggi dal service worker) e download voci. SW: cache solo risposte valide, emoji in cache separata.
+- **v19 — 2° giro di revisione** (4 revisori + mano scimmia a 360×640): griglia 6 immagini di "Dov'è" che usciva dallo schermo; Memory conta l'errore solo se la carta uguale era già vista; Conta traccia di nuovo i numeri giusti; Salta: auto sulle strisce controllate in tutte le corsie, oggetti tagliati al campo, "rossi" contati per ciclo di semaforo, HUD compatto sui telefoni stretti; Sopra/sotto: frase neutra "Adesso è sopra" invece del complimento, voci che non si accavallano; Pesca: pesci della stessa corsia mai sovrapposti e senza scatto indietro, slot del nome che si stringono; Colora: niente tocchi durante il salvataggio, disegno non perso se la memoria non c'è; Forme: manina del tutorial sulla risposta giusta, colori ben distinti nelle sequenze; nucleo: barra voci solo se mancano file, musica bassa anche cambiando schermata mentre parla la voce, PIN (✕ annulla, niente doppia moltiplicazione, il vecchio PIN vale finché il nuovo non è confermato), microfono spento se si esce, nanna sbloccata anche con l'app aperta; SW: barra che sparisce anche se l'aggiornamento fallisce.
 - Tutorial con manina 👆 + tasto ❓; glitter ovunque; app centrata su PC; aggiornamento automatico (SW `no-cache` + reload) e numero versione in basso.
 
 ## Prossimi passi
 _Roadmap completa (ricerca concorrenti, pedagogia, store) in `ROADMAP.md`._
 1. Raccogliere feedback e statistiche dall'uso reale (tabella «Livelli e progressi»).
-2. Prossimo (ROADMAP): mappa del mondo / gioco libero (B6-B7) → preparazione store (profili, voci Azure, Android TWA).
+2. **Piano store + monetizzazione** in `ROADMAP.md` Fase C (C1 obbligatori, C2 pubblicazione, C3 freemium con sblocco una tantum 6,99-9,99 €, C4 miglioramenti).
 3. **Nome del bambino nelle voci (proposta, in attesa di ok):** libreria dei ~300 nomi più diffusi per lingua generati con la stessa voce + frasi spezzate [prefisso][nome][suffisso]; riserva: nome registrato dal genitore; opzione frasi senza nome.
 4. Papà caricherà foto e voci registrate dal menu papà (restano in IndexedDB sul telefono).
 

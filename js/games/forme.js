@@ -29,13 +29,13 @@
   const ROUND = 3;
   const TX = {
     it: {
-      tut: ['Trascina la forma nel posto uguale!', 'Attenta: anche il colore deve essere uguale!', 'Guarda la fila: le forme si ripetono.', 'Tocca quella che viene dopo!'],
+      tut: ['Trascina la forma nel posto uguale!', 'Attenta: anche il colore deve essere uguale!', 'Guarda la fila: cosa si ripete?', 'Tocca quella che viene dopo!'],
       putColor: 'Metti ogni forma al suo posto. Attenta ai colori!', put: 'Trascina ogni forma nel suo posto!',
       lookColor: 'Guarda il colore!', noFit: 'Non entra! Prova un altro posto.', next: 'Cosa viene dopo?', nextShow: 'Cosa viene dopo? 🤔',
       lookRow: 'Guarda bene la fila! Riprova.',
     },
     fr: {
-      tut: ['Fais glisser la forme à la bonne place !', 'Attention : la couleur aussi doit être pareille !', 'Regarde la suite : les formes se répètent.', 'Touche celle qui vient après !'],
+      tut: ['Fais glisser la forme à la bonne place !', 'Attention : la couleur aussi doit être pareille !', "Regarde la suite : qu'est-ce qui se répète ?", 'Touche celle qui vient après !'],
       putColor: 'Mets chaque forme à sa place. Attention aux couleurs !', put: 'Fais glisser chaque forme à sa place !',
       lookColor: 'Regarde la couleur !', noFit: 'Ça ne rentre pas ! Essaie une autre place.', next: "Qu'est-ce qui vient après ?", nextShow: 'Et après ? 🤔',
       lookRow: 'Regarde bien la suite ! Réessaie.',
@@ -43,19 +43,19 @@
   };
   Object.assign(TX, {
     de: {
-      tut: ['Zieh die Form an den passenden Platz!', 'Achtung: Auch die Farbe muss gleich sein!', 'Schau dir die Reihe an: Die Formen wiederholen sich.', 'Tippe auf die, die als Nächstes kommt!'],
+      tut: ['Zieh die Form an den passenden Platz!', 'Achtung: Auch die Farbe muss gleich sein!', 'Schau dir die Reihe an: Was wiederholt sich?', 'Tippe auf die, die als Nächstes kommt!'],
       putColor: 'Leg jede Form an ihren Platz. Achte auf die Farben!', put: 'Zieh jede Form an ihren Platz!',
       lookColor: 'Schau dir die Farbe an!', noFit: 'Das passt nicht! Probier einen anderen Platz.', next: 'Was kommt als Nächstes?', nextShow: 'Was kommt dann? 🤔',
       lookRow: 'Schau dir die Reihe genau an! Versuch es nochmal.',
     },
     en: {
-      tut: ['Drag the shape to the matching place!', 'Careful: the colour must match too!', 'Look at the row: the shapes repeat.', 'Tap the one that comes next!'],
+      tut: ['Drag the shape to the matching place!', 'Careful: the colour must match too!', 'Look at the row: what repeats?', 'Tap the one that comes next!'],
       putColor: 'Put each shape in its place. Watch the colours!', put: 'Drag each shape to its place!',
       lookColor: 'Look at the colour!', noFit: "It doesn't fit! Try another place.", next: 'What comes next?', nextShow: 'What comes next? 🤔',
       lookRow: 'Look carefully at the row! Try again.',
     },
     es: {
-      tut: ['¡Arrastra la forma a su sitio!', 'Cuidado: ¡el color también tiene que ser igual!', 'Mira la fila: las formas se repiten.', '¡Toca la que viene después!'],
+      tut: ['¡Arrastra la forma a su sitio!', 'Cuidado: ¡el color también tiene que ser igual!', 'Mira la fila: ¿qué se repite?', '¡Toca la que viene después!'],
       putColor: 'Pon cada forma en su sitio. ¡Fíjate en los colores!', put: '¡Arrastra cada forma a su sitio!',
       lookColor: '¡Mira el color!', noFit: '¡No cabe! Prueba otro sitio.', next: '¿Qué viene después?', nextShow: '¿Y después? 🤔',
       lookRow: '¡Mira bien la fila! Inténtalo otra vez.',
@@ -120,12 +120,14 @@
         if (done === ROUND - 1) sequence(); else puzzle();
       }
 
+      /* colori ben distinguibili: al massimo uno tra rosso, rosa e arancione */
+      const WARM = ['#ff5a5a', '#ff6fa8', '#ff9f40'];
+      const distinct = () => { let warm = 0; return shuffle(COLORS).filter(c => !WARM.includes(c.c) || warm++ === 0); };
+
       /* --- incastri --- */
       function puzzle() {
         const L = LEVELS[Math.min(lv, LEVELS.length - 1)];
         const shapes = shuffle(Object.keys(SHAPES));
-        const WARM = ['#ff5a5a', '#ff6fa8', '#ff9f40'];
-        const distinct = () => { let warm = 0; return shuffle(COLORS).filter(c => !WARM.includes(c.c) || warm++ === 0); };
         let items;
         if (L.color) {
           const twin = shapes[0];
@@ -237,7 +239,7 @@
       function sequence() {
         const pat = pick(PATTERNS[Math.min(lv, PATTERNS.length - 1)]);
         const kinds = [...new Set(pat)];
-        const cols = shuffle(COLORS);
+        const cols = distinct();
         const sameShape = lv <= 2 ? pick(Object.keys(SHAPES)) : null;
         const shp = shuffle(Object.keys(SHAPES));
         const unit = {};
@@ -252,9 +254,10 @@
           .filter(Boolean).filter(u => u !== answer).slice(0, 2);
         const choices = h('div', { class: 'seq-choices' });
         let locked = false;
-        let first = true;
+        let first = true, okBtn = null;
         shuffle([answer].concat(wrong)).forEach(u => {
           const b = h('button', { html: svg(u.shape, u.color.c) });
+          if (u === answer) okBtn = b;
           b.onclick = async () => {
             if (locked) return;
             if (first) { App.track('logica', null, u === answer); first = false; }
@@ -276,7 +279,7 @@
         stage.append(h('div', { class: 'prompt' }, tx().nextShow), row, choices);
         ask(tx().next, 'sequenze', [
           { text: tx().tut[2], icon: '👀', action: 'swipe', at: () => row.firstElementChild, to: () => row.querySelector('.q') },
-          { text: tx().tut[3], icon: '❓', action: 'tap', at: () => choices.children[1], cap: 'top' },
+          { text: tx().tut[3], icon: '❓', action: 'tap', at: () => okBtn, cap: 'top' },
         ]);
       }
 

@@ -267,12 +267,15 @@
         /* verifiche: dal prato non si scende in strada col rosso, né sui binari quando arriva il treno */
         const redStop = R.t === 'road' && R.light && from.t === 'grass' && lightState(R.light) === 'red';
         const trainStop = R.t === 'rail' && from.t === 'grass' && trainDanger(R);
-        if (R.t === 'road' && R.light && from.t === 'grass' && carsStopped(R) && R.cars.some(onZebra)) { sfx.tap(); return; }
+        /* col verde si entra solo quando nessuna auto sta ancora liberando le strisce, in tutte le corsie del semaforo */
+        if (R.t === 'road' && R.light && carsStopped(R)) {
+          for (let k = tr; row(k).t === 'road' && row(k).light === R.light; k++) if (row(k).cars.some(onZebra)) { sfx.tap(); return; }
+        }
         if (redStop || trainStop) {
           sfx.boing();
           sign('✋');
-          const key = `${tr}:${Math.floor(time / 10)}`;
-          if (key !== lastStopKey) { lastStopKey = key; App.count('reds'); }
+          const key = trainStop ? `t${tr}` : `${tr}:${Math.floor((time + R.light.offset) / (LIGHT.green + LIGHT.blink + LIGHT.red))}`;
+          if (key !== lastStopKey) { lastStopKey = key; if (redStop) App.count('reds'); }
           if (time - lastStop > 3) { lastStop = time; speak(T => pick(trainStop ? T.trainStop : T.stop)); }
           return;
         }
@@ -505,6 +508,8 @@
           }
           if (w.night) { ctx.fillStyle = 'rgba(15,15,60,.38)'; ctx.fillRect(-ox, y, W, cell + 1); }
         }
+        ctx.save();
+        ctx.beginPath(); ctx.rect(0, -cell, COLS * cell, H + 2 * cell); ctx.clip();
         for (let i = lastR; i >= first; i--) {
           const R = row(i), y = rowY(i), cy = y + cell / 2, w = world(i);
           if (R.t === 'grass') {
@@ -536,6 +541,7 @@
           }
           if (i === pl.row || (pl.t < 1 && i === pl.frow)) drawPlayer(i);
         }
+        ctx.restore();
       }
       let drawnPlayer = false;
       function drawPlayer(i) {
@@ -612,7 +618,7 @@
       App.nextLang();
       (async () => {
         const ran = await runTut(App.intro('salta', tutSteps()));
-        if (ran) { App.state.tut.salta2 = true; App.save(); return; }
+        if (ran && App.state.tut.salta) { App.state.tut.salta2 = true; App.save(); return; }
         /* chi aveva già visto il primo tutorial vede solo la novità delle strisce */
         const li = visibleRow(R => R.post);
         if (!App.state.tut.salta2 && li >= 0) { await runTut(App.intro('salta2', [zebraStep(li)])); return; }

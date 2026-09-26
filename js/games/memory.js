@@ -18,7 +18,6 @@
     { e: '🐭', it: ['Topo', 'Squit squit!'], fr: ['Souris', 'Couic couic !'], de: ['Maus', 'Piep piep!'], en: ['Mouse', 'Squeak squeak!'], es: ['Ratón', '¡Iic iic!'] },
   ];
   const PAIRS = [3, 3, 4, 5, 6];
-  const COLS = { 3: 2, 4: 2, 6: 3, 8: 4 };
   const TX = {
     it: { tut: ['Tocca una carta per girarla.', 'Poi cerca quella uguale: se sono uguali restano girate!', 'Gira le carte e trova le coppie uguali!'],
       which: 'Vuoi giocare con gli animali o con la famiglia?', animals: 'Animali', family: 'Famiglia' },
@@ -91,6 +90,7 @@
         grid.style.gridAutoRows = `${s}px`;
 
         let open = [];
+        const seen = new Map();
         let found = 0;
         let busy = false;
         pill.textContent = `🃏 0/${pairs}`;
@@ -105,6 +105,7 @@
             c.classList.add('up');
             sfx.flip();
             if (it.speak) say(it.speak);
+            seen.set(c, it.key);
             open.push({ c, it });
             if (open.length < 2) return;
             busy = true;
@@ -130,7 +131,8 @@
                 board(false);
               }
             } else {
-              App.track('memoria', null, false);
+              /* è un errore di memoria solo se la carta uguale era già stata vista */
+              if ([...seen.entries()].some(([el, k]) => k === a.it.key && el !== a.c)) App.track('memoria', null, false);
               await wait(700);
               sfx.boing();
               await wait(900);

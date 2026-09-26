@@ -23,14 +23,19 @@
   };
   const TX = {
     it: { pos: { on: 'Sopra!', under: 'Sotto!', in: 'Dentro!', next: 'Accanto!' }, no: 'Non proprio! Ascolta di nuovo.',
+      put: { on: 'Adesso è sopra.', under: 'Adesso è sotto.', in: 'Adesso è dentro.', next: 'Adesso è accanto.' },
       tut: ['Ascolta dove mettere il giocattolo…', 'Trascinalo con il dito nel posto giusto!'] },
     fr: { pos: { on: 'Dessus !', under: 'Dessous !', in: 'Dedans !', next: 'À côté !' }, no: 'Pas tout à fait ! Écoute encore.',
+      put: { on: "Là, c'est dessus.", under: "Là, c'est dessous.", in: "Là, c'est dedans.", next: "Là, c'est à côté." },
       tut: ['Écoute où mettre le jouet…', 'Fais-le glisser avec ton doigt à la bonne place !'] },
     de: { pos: { on: 'Obendrauf!', under: 'Darunter!', in: 'Hinein!', next: 'Daneben!' }, no: 'Nicht ganz! Hör nochmal zu.',
+      put: { on: 'Jetzt ist es oben drauf.', under: 'Jetzt ist es darunter.', in: 'Jetzt ist es drin.', next: 'Jetzt ist es daneben.' },
       tut: ['Hör zu, wohin das Spielzeug soll…', 'Zieh es mit dem Finger an die richtige Stelle!'] },
     en: { pos: { on: 'On top!', under: 'Under!', in: 'Inside!', next: 'Next to it!' }, no: 'Not quite! Listen again.',
+      put: { on: "Now it's on top.", under: "Now it's underneath.", in: "Now it's inside.", next: "Now it's next to it." },
       tut: ['Listen to where the toy goes…', 'Drag it with your finger to the right place!'] },
     es: { pos: { on: '¡Encima!', under: '¡Debajo!', in: '¡Dentro!', next: '¡Al lado!' }, no: '¡Casi! Escucha otra vez.',
+      put: { on: 'Ahora está encima.', under: 'Ahora está debajo.', in: 'Ahora está dentro.', next: 'Ahora está al lado.' },
       tut: ['Escucha dónde poner el juguete…', '¡Arrástralo con el dedo al sitio correcto!'] },
   };
   const LEVEL_POS = [null, ['on', 'under'], ['on', 'under', 'in'], ['on', 'under', 'in', 'next']];
@@ -41,7 +46,7 @@
     title: { fr: 'Dessus ou dessous ?', it: 'Sopra o sotto?', de: 'Oben oder unten?', en: 'On or under?', es: '¿Encima o debajo?' },
     phrases: l => {
       const T = TX[l];
-      const out = [T.no, ...T.tut, ...Object.values(T.pos)];
+      const out = [T.no, ...T.tut, ...Object.values(T.pos), ...Object.values(T.put)];
       OBJ.forEach(o => REF.forEach(r => r.pos.forEach(p => out.push(PUT[l](o, r, p)))));
       return out;
     },
@@ -106,7 +111,9 @@
         }
 
         let ox = 0, oy = 0, dragging = false, first = true, done = false, pid = null;
+        let tries = 0, backT = 0;
         toy.addEventListener('pointerdown', e => {
+          clearTimeout(backT);
           if (done || dragging) return;
           pid = e.pointerId;
           e.preventDefault();
@@ -152,8 +159,12 @@
             round();
           } else {
             sfx.boing();
-            say(T.pos[w], { lang: l }).then(() => alive && say(T.no, { lang: l, queue: true })).then(() => alive && say(q, { lang: l, queue: true }));
-            setTimeout(() => { if (!alive || done) return; toy.classList.add('back'); goHome(); }, 900);
+            /* dice dove l'ha messo (senza sembrare un complimento), poi ripete la richiesta */
+            const my = ++tries;
+            const still = () => alive && !done && my === tries;
+            say(T.put[w], { lang: l }).then(() => still() && say(T.no, { lang: l, queue: true })).then(() => still() && say(q, { lang: l, queue: true }));
+            clearTimeout(backT);
+            backT = setTimeout(() => { if (!alive || done || dragging) return; toy.classList.add('back'); goHome(); }, 900);
           }
         };
         toy.addEventListener('pointerup', drop);

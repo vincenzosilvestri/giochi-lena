@@ -168,6 +168,13 @@
           grid.append(b);
         });
         stage.append(h('div', { class: 'prompt lng-prompt' }, spk, h('span', {}, '🔎')), grid);
+        /* immagini il più grandi possibile senza uscire dallo schermo (6 al livello 3) */
+        const gr = grid.getBoundingClientRect();
+        const cols = opts.length > 4 ? 3 : 2, rw = Math.ceil(opts.length / cols);
+        const sz = Math.floor(Math.min((gr.width - 16 * (cols - 1)) / cols, (gr.height - 16 * (rw - 1)) / rw));
+        grid.style.gridTemplateColumns = `repeat(${cols}, ${sz}px)`;
+        grid.style.justifyContent = 'center';
+        [...grid.children].forEach(b => { b.style.width = b.style.height = `${sz}px`; b.style.maxHeight = 'none'; b.style.fontSize = `${Math.floor(sz * .5)}px`; });
         replay = () => say(q, { lang: l });
         lastSteps = [
           { text: T.tutFind[0], icon: '👂', action: 'tap', at: () => spk, cap: 'top' },
@@ -214,7 +221,9 @@
                 if (alive) success(innerWidth / 2, innerHeight / 2);
               }
             } else {
-              await wait(1300);
+              await wait(600);
+              sfx.boing();
+              await wait(800);
               a.c.classList.remove('up'); b.c.classList.remove('up');
               busy = false;
             }
@@ -232,6 +241,8 @@
         }
         grid.style.gridTemplateColumns = `repeat(${best.c}, ${Math.floor(best.w)}px)`;
         grid.style.justifyContent = 'center';
+        /* parole sulle carte: il testo si rimpicciolisce se la parola è lunga */
+        grid.querySelectorAll('.w').forEach(w => { w.style.fontSize = `${Math.max(9, Math.min(15, (best.w - 14) / (w.textContent.length * .58)))}px`; });
         replay = () => {};
         lastSteps = [
           { text: T.tutMem[0], icon: '🃏', action: 'tap', at: () => grid.querySelector(`.lng-card.${A}`), cap: 'top' },

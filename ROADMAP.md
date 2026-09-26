@@ -51,16 +51,39 @@ Cosa rende premium le app migliori (Khan Academy Kids, Pok Pok, Sago Mini):
 6. **Mappa del mondo** 🗺️ (sforzo alto) — una mappa con isole al posto della griglia di giochi: dà un filo narrativo come Toca o Khan Kids.
 7. **Gioco libero** — una scena esplorabile senza obiettivi (la casa del personaggio con l'armadio), da affiancare ai quiz.
 
-## Fase C — Verso gli store
+## Fase C — Verso gli store (piano v19, 26/09/2026)
 0. ~~Lingue a scelta (1 o 2 tra FR/IT/DE/EN/ES)~~ ✅ fatto in v12.
-1. **Profili bambino** — nome, data di nascita, lingue (poi anche altre coppie, per esempio FR/EN o IT/EN: l'architettura con `LANGS` lo permette). Più profili per famiglia.
-2. **Frasi audio senza nome** — riscrivere le 81 frasi con "Lena" in forma neutra; il nome solo scritto, o registrato dal genitore.
-3. **Voci con licenza** — generare le stesse voci (Isabella, Denise) tramite **Azure Neural TTS** ufficiale: circa 100.000 caratteri, rientra nel piano gratuito da 500.000 al mese. Serve una API key Azure.
-4. **Menu genitori in FR/IT/EN**, informativa privacy pubblica (i dati restano sul telefono; microfono e foto usati solo in locale), cancello genitori su ogni link esterno.
-5. **Android** — Trusted Web Activity con Bubblewrap/PWABuilder (circa 25 $ una tantum), categoria *Families* per età ≤5, modulo *Data safety*, poi richiesta *Teacher Approved*.
-6. **iOS** — Apple rifiuta i siti impacchettati (linea guida 4.2): serve Capacitor con funzioni native vere (notifiche, archivio nativo). Circa 99 $ l'anno. Da fare dopo Android.
-7. **Modello economico** — le famiglie odiano gli abbonamenti per bambini: meglio **gratis** oppure **pagamento unico** (tipo Endless Alphabet, 8,99 $), acquisti sempre dietro il cancello genitori. Da comunicare nello store: "senza pubblicità, senza dark pattern, offline".
-8. **Nome e brand** — scegliere un nome da store (l'app resta "di Lena" per noi), icona e screenshot curati.
+
+**C1. Obbligatori prima di pubblicare** (senza questi lo store rifiuta o è rischioso)
+1. **Nome del bambino** — decisione dell'utente in sospeso: libreria di ~300 nomi per lingua + frasi spezzate, oppure nome registrato dal genitore, oppure frasi senza nome. Oggi 81 frasi dicono "Lena".
+2. **Profili bambino** — nome, età, lingue, personaggio; più profili per famiglia (statistiche separate).
+3. **Voci con licenza commerciale** — rigenerare le stesse voci con Azure Neural TTS ufficiale (edge-tts non è licenziato per uso commerciale). Circa 5.000 frasi: rientra nel piano gratuito.
+4. **Privacy e sicurezza** — informativa pubblica (nessun dato esce dal telefono), pulsante "cancella tutti i dati", cancello genitori su ogni link esterno, nessun tracciamento/analytics. Moduli *Data safety* (Google) e *Privacy nutrition label* (Apple).
+5. **Menu genitori in FR/IT/EN/DE/ES** (oggi solo italiano) e testi store nelle 5 lingue.
+6. **Nome, icona, brand, screenshot** — nome da store neutro (l'app "di Lena" resta la nostra), 6-8 screenshot per telefono e tablet, video breve.
+7. **Accessibilità** — aria-label su tutti i pulsanti, contrasto, test con lettore schermo (richiesto per *Teacher Approved*).
+8. **Test su telefoni veri** — Android economico, iPhone, tablet: voci, glitter, microfono, foto, prestazioni di Salta.
+
+**C2. Pubblicazione**
+1. **Android** — Trusted Web Activity con Bubblewrap (25 $ una tantum), programma *Families* (età ≤5), poi richiesta *Teacher Approved*.
+2. **iOS** — Capacitor con funzioni native (archivio nativo, notifica "è ora di nanna"), 99 $/anno; Apple rifiuta i siti impacchettati (linea guida 4.2). Dopo Android.
+3. **Web** — la PWA resta disponibile (dimostrazione e canale di vendita diretto).
+
+**C3. Monetizzazione (consigliata)**
+- **Freemium con sblocco una tantum**: 3 giochi gratis (Salta, Conta, Colora) + tutto il resto con un solo acquisto a **6,99-9,99 €** (eventuale "famiglia a vita" ~11,99 €). Niente abbonamento come default (le famiglie lo odiano per le app per bambini), niente pubblicità, niente valute virtuali.
+- Acquisto sempre **dietro il cancello genitori** (moltiplicazione) — obbligatorio nelle categorie bambini.
+- Pagamenti: Google Play Billing obbligatorio nella versione Play (anche TWA); StoreKit su iOS. Commissione 15% (Google fino a 1 M$, Apple Small Business Program). Web: Stripe con codice di sblocco, commissione ~1,5-3%.
+- IVA: gestita dagli store come rivenditori; per il canale web va gestita a parte (Stripe Tax / OSS).
+- Conversione tipica gratis→pagante 2-5%: servono volumi, quindi puntare su nicchia **bilingue**.
+- Canali: comunità di famiglie espatriate/bilingui (CH, DE, ES, BE, Canada), scuole materne bilingui (licenza classe B2B), ASO: "app bilingue enfants", "bilingual kids app", "zweisprachige Kinder-App", "app bilingue bambini".
+- Extra futuri (solo acquisti una tantum): pacchetti lingua aggiuntivi (PT, NL), pacchetti stagionali di disegni/sticker.
+- Da verificare prima di pubblicare: nuove tariffe Apple UE 2026, regole Families di Google aggiornate.
+
+**C4. Miglioramenti prima del lancio (valore percepito)**
+- Mappa del mondo o scena di gioco libero (B6-B7) al posto della griglia.
+- 2-3 giochi in più dalla coda (Pianoforte magico, Puzzle, Labirinti).
+- Pagella esportabile (PDF) per il genitore.
+- Salta: "tic-tic" durante il lampeggio, premio pazienza; Colora: zone più grandi sui disegni fitti.
 
 ## Proposte in coda (non ancora prioritarie)
 Pianoforte magico (+ ripeti la melodia), Il mio cucciolo (accudire), Puzzle 4-9 pezzi con disegni e foto, Labirinti col dito, Primo inglese, pacchetti stagionali di sticker (Natale, Halloween).
