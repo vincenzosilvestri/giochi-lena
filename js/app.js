@@ -4,7 +4,7 @@ const App = (() => {
   const NAME = 'Lena';
   const BIRTH = { y: 2022, m: 0, d: 18 }; // 18 gennaio 2022
   const KEY = 'lena_v1';
-  const VERSION = '19 · 26/09/2026'; // aggiornare insieme a VERSION in sw.js
+  const VERSION = '20 · 26/09/2026'; // aggiornare insieme a VERSION in sw.js
   /* lingue disponibili; il genitore sceglie le 2 del bambino (state.langs) */
   const LANGS = ['fr', 'it', 'de', 'en', 'es'];
   const FLAG = { fr: '🇫🇷', it: '🇮🇹', de: '🇩🇪', en: '🇬🇧', es: '🇪🇸' };
@@ -196,6 +196,7 @@ const App = (() => {
     { id: 'lingue', name: 'Due lingue', icon: '🌍', game: 'lingue', max: 3 },
     { id: 'colori', name: 'Colori', icon: '🖍️', game: 'colora', max: 0 },
     { id: 'strada', name: 'Educazione stradale', icon: '🚦', game: 'salta', max: 4 },
+    { id: 'cura', name: 'Cura ed emozioni', icon: '🐾', game: 'cucciolo', max: 3 },
   ];
   const DETAIL = { numeri: 'numbers', lettere: 'letters' };
 
@@ -866,6 +867,7 @@ const App = (() => {
       const wardTile = h('button', { class: 'tile tward', onclick: () => { sfx.pop(); wardrobe(); } },
         h('div', { class: 'ico' }, '👗'), h('div', { class: 'lbl' }, T.wardrobeTile[pair()[0]]), pair()[1] ? h('div', { class: 'lbl2' }, T.wardrobeTile[pair()[1]]) : null);
       tiles.append(albumTile, wardTile);
+      tiles.classList.toggle('many', tiles.children.length > 12);   // 11 giochi: caselle più basse, armadio come barra larga
       s.append(tiles);
       var tm = state.tut.home ? 0 : setTimeout(() => screenName === 'home' && !document.querySelector('.modal-back') && intro('home', [
         { text: t('tutGame'), icon: '🎮', action: 'tap', at: () => tiles.children[0] },
